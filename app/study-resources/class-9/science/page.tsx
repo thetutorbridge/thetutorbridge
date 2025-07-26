@@ -12,6 +12,7 @@ const chapters = [
   { number: 6, title: "Tissues", link: "/study-resources/class-9/science/Chapter-6-Tissues" },
   { number: 7, title: "Diversity in Living Organisms", link: "/study-resources/class-9/science/Chapter-7-Diversity-in-Living-Organisms" },
   { number: 8, title: "Motions", link: "/study-resources/class-9/science/Chapter-8-Motions" },
+  { number: 9, title: "Force and Laws of Motion", link: "/study-resources/class-9/science/Chapter-9-Force-and-Laws-of-Motion" },
 ];
 
 export default function Class9ScienceResources() {
