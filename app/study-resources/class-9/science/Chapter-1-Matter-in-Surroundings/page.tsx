@@ -30,7 +30,7 @@ export default function ProfessionalScienceNotes() {
           <div className="d-flex align-items-center justify-content-between flex-wrap gap-2">
             <div className="flex-grow-1 min-w-0">
               <h1 className="h4 h3-sm font-bold text-gray-900 text-truncate">Class 9 Science Notes</h1>
-              <p className="text-sm text-base-sm text-gray-600 text-truncate">Chapter 1: Matter Force in Our Surroundings</p>
+              <p className="text-sm text-base-sm text-gray-600 text-truncate">Chapter 1: Matter Forced in Our Surroundings</p>
             </div>
             <Badge variant="outline" className="text-xs text-sm-sm flex-shrink-0">
               <BookOpen className="w-3 h-3 w-sm-4 h-sm-4 mr-1" />
