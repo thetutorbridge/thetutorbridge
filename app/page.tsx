@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import FloaterMessenger from "@/app/components/FloaterMessenger"
+import PhotoSlider from "@/app/components/PhotoSlider"
 
 export const metadata: Metadata = {
   title: "The Tutor Bridge - #1 Online Tutoring Platform for Grades 6-12 | Math, Science, English",
@@ -16,9 +17,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function Home() {
-  // Real fetch to trigger suspense/loading UI
-  await fetch("https://jsonplaceholder.typicode.com/todos/1");
+export default function Home() {
 
   return (
     <div className="relative min-h-screen flex flex-col overflow-x-hidden">
@@ -28,15 +27,15 @@ export default async function Home() {
           src="/banner.png"
           alt="Background"
           fill
-          className="object-cover object-center w-full h-full opacity-30 blur-sm"
+          className="object-cover object-center w-full h-full opacity-10 blur-xl"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-blue-50/60 to-purple-50/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-blue-50/80 to-purple-50/95" />
       </div>
       <Navigation />
       <main className="flex-1">
         {/* Hero Section - Modern and Beautiful */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-[90vh] flex items-center">
+        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-[90vh] flex items-start pt-0">
           {/* Background Elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -44,8 +43,8 @@ export default async function Home() {
             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-2000"></div>
           </div>
 
-          <div className="container px-4 py-20 relative z-10">
-            <div className="grid gap-16 lg:grid-cols-2 items-center">
+          <div className="container px-4 pt-8 relative z-10">
+            <div className="grid gap-16 lg:grid-cols-2 items-start">
               <div className="space-y-8">
                 {/* Trust Badge */}
                 <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200 shadow-sm">
@@ -106,14 +105,6 @@ export default async function Home() {
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
-                  {/* <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 py-6 rounded-2xl border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                  >
-                    <Play className="mr-2 h-5 w-5" />
-                    Watch Success Stories
-                  </Button> */}
                 </div>
 
                 {/* Trust Indicators */}
@@ -133,36 +124,10 @@ export default async function Home() {
                 </div>
               </div>
 
-              {/* Hero Image/Visual */}
-              <div className="relative">
-                <div className="relative bg-gradient-to-br  ">
-                  {/* Main Image */}
-                  <div className="relative bg-white rounded-2xl p-6 shadow-lg">
-                    <Image
-                      src="/banner.png?height=400&width=500"
-                      width={500}
-                      height={400}
-                      alt="Online tutoring session showing student and teacher interaction"
-                      className="rounded-xl w-full"
-                    />
+              {/* Photo Slider */}
+              <PhotoSlider />
 
-                    {/* Floating Elements */}
-                    {/* <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
-                      Live Session
-                    </div> */}
-                    {/* <div className="absolute -bottom-4 -left-4 bg-white px-4 py-3 rounded-xl shadow-lg border">
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm font-medium">Grade improved by 40%</span>
-                      </div>
-                    </div> */}
-                  </div>
 
-                  {/* Background Decorations */}
-                  {/* <div className="absolute top-4 right-4 w-20 h-20 bg-yellow-200 rounded-full opacity-50"></div>
-                  <div className="absolute bottom-4 left-4 w-16 h-16 bg-blue-200 rounded-full opacity-50"></div> */}
-                </div>
-              </div>
             </div>
           </div>
         </section>
