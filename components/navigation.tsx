@@ -90,14 +90,9 @@ export function Navigation() {
           {/* <Link href="/pricing" className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors">
             Pricing
           </Link>  */}
-          <a
-            href="https://blog.thetutorbridge.com"
-            target="_blank"
-  rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors"
-          >
+          <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors">
             Blog
-          </a>
+          </Link>
           <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors">
             About
           </Link>
@@ -138,7 +133,7 @@ export function Navigation() {
               <Link href="/pricing" className="block py-2 text-gray-700">
                 Pricing
               </Link>
-              <Link href="https://thetutorbridge.com/blog" className="block py-2 text-gray-700">
+              <Link href="/blog" className="block py-2 text-gray-700">
                 Blog
               </Link>
               <Link href="/about" className="block py-2 text-gray-700">
