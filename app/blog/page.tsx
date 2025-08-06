@@ -83,13 +83,13 @@ export default function BlogPage() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-red-600 to-red-800 text-white">
+      <div className="bg-gradient-to-r from-red-900 via-red-800 to-black text-white">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              The Tutor Bridge Blog
+              TheTutorBridge Blog
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-red-100">
+            <p className="text-xl md:text-2xl mb-8 text-red-200">
               Expert insights, study tips, and educational resources to help you excel in your academic journey
             </p>
             <div className="relative max-w-2xl mx-auto">
@@ -99,7 +99,7 @@ export default function BlogPage() {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 pr-4 py-3 text-lg bg-white/10 border-white/20 text-white placeholder:text-red-200 focus:bg-white/20"
+                className="pl-12 pr-4 py-3 text-lg bg-white/10 border-white/20 text-white placeholder:text-red-300 focus:bg-white/20"
               />
             </div>
           </div>
@@ -159,6 +159,14 @@ export default function BlogPage() {
                       alt={post.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        // Hide the image container if image fails to load
+                        const target = e.target as HTMLImageElement
+                        target.style.display = 'none'
+                        if (target.parentElement) {
+                          target.parentElement.style.display = 'none'
+                        }
+                      }}
                     />
                   </div>
                 )}
@@ -210,26 +218,84 @@ export default function BlogPage() {
           </div>
         )}
 
-        {/* Newsletter Signup */}
-        <div className="mt-16 bg-white rounded-lg shadow-lg p-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-            <p className="text-gray-600 mb-6">
-              Get the latest educational insights, study tips, and career guidance delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1"
-              />
-              <Button className="bg-red-600 hover:bg-red-700">
-                Subscribe
-              </Button>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container px-4">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Image src="/logo.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
+                <span className="text-xl font-bold">TheTutorBridge</span>
+              </div>
+              <p className="text-gray-400 leading-relaxed">
+                India's leading online tutoring platform helping students achieve academic excellence since 2020.
+              </p>
+              <div className="flex space-x-4">
+                <a href="https://www.linkedin.com/company/thetutorbridge/" className="text-gray-400 hover:text-white transition-colors">
+                  LinkedIn
+                </a>
+                <a href="https://t.me/thetutorbridge" className="text-gray-400 hover:text-white transition-colors">
+                  Telegram
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link href="/doubt-solving" className="hover:text-white transition-colors">
+                    Doubt Solving
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/career-guidance" className="hover:text-white transition-colors">
+                    Career Guidance
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/study-resources" className="hover:text-white transition-colors">
+                    Study Resources
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link href="/about" className="hover:text-white transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="hover:text-white transition-colors">
+                    Blog
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Contact</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>info@thetutorbridge.com</li>
+                <li>+91 98765 43210</li>
+              </ul>
             </div>
           </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>
+              © {new Date().getFullYear()} The Tutor Bridge. All rights reserved. | Helping students excel since 2020
+            </p>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
   )
 } 

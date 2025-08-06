@@ -5,7 +5,16 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, Calendar, Clock, Tag, Share2, BookOpen } from "lucide-react"
-import { getBlogPostBySlug, getAllBlogPosts, type BlogPost } from "@/lib/blog"
+import { 
+  getBlogPostBySlug, 
+  getAllBlogPosts, 
+  getBlogComments,
+  createBlogComment,
+  getCommentCount,
+  type BlogPost,
+  type BlogComment,
+  type CommentFormData
+} from "@/lib/blog"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -108,24 +117,60 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           return <br key={index} />
         }
 
+        // Handle images separately
+        if (/!\[([^\]]*)\]\(([^)]+)\)/.test(line.trim())) {
+          const match = line.trim().match(/!\[([^\]]*)\]\(([^)]+)\)/)
+          if (match) {
+            const [, alt, url] = match
+            let actualUrl = url.trim()
+            
+            // Extract actual image URL from Google search results (legacy support)
+            if (url.includes('google.com/imgres') && url.includes('imgurl=')) {
+              const imgurlMatch = url.match(/imgurl=([^&]+)/)
+              if (imgurlMatch) {
+                actualUrl = decodeURIComponent(imgurlMatch[1])
+              }
+            }
+            
+            return (
+              <div key={index} className="my-8 text-center">
+                <img 
+                  src={actualUrl} 
+                  alt={alt || 'Image'} 
+                  className="max-w-full h-auto rounded-lg shadow-lg border mx-auto"
+                  style={{ maxHeight: '500px', objectFit: 'contain' }}
+                  onLoad={() => {
+                    console.log('✅ Image loaded successfully:', actualUrl)
+                  }}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    console.error('❌ Failed to load image:', actualUrl)
+                    target.style.display = 'none'
+                    // Show a placeholder or error message
+                    const errorDiv = document.createElement('div')
+                    errorDiv.className = 'text-gray-500 text-sm italic py-4'
+                    errorDiv.textContent = `Failed to load image: ${alt || 'Image'}`
+                    if (target.parentElement) {
+                      target.parentElement.appendChild(errorDiv)
+                    }
+                  }}
+                  loading="lazy"
+                />
+                {alt && (
+                  <p className="text-sm text-gray-600 mt-2 italic">{alt}</p>
+                )}
+              </div>
+            )
+          }
+        }
+
         // Regular paragraphs
         if (line.trim()) {
-          // Handle bold, italic, links, and images
+          // Handle bold, italic, and links (but not images - they're handled above)
           let processedLine = line
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\*(.*?)\*/g, '<em>$1</em>')
             .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" class="text-blue-600 hover:underline">$1</a>')
-            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, url) => {
-              // Extract actual image URL from Google search results
-              let actualUrl = url
-              if (url.includes('google.com/imgres') && url.includes('imgurl=')) {
-                const imgurlMatch = url.match(/imgurl=([^&]+)/)
-                if (imgurlMatch) {
-                  actualUrl = decodeURIComponent(imgurlMatch[1])
-                }
-              }
-              return `<img src="${actualUrl}" alt="${alt || 'Image'}" class="max-w-full h-auto rounded-lg my-4" onerror="this.style.display='none'" />`
-            })
           
           return (
             <p key={index} 

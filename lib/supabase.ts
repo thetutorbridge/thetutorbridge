@@ -67,6 +67,7 @@ export interface Database {
           created_at?: string
         }
       }
+
     }
   }
 } 

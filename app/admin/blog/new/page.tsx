@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef, ChangeEvent } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import {
@@ -47,6 +47,7 @@ import {
   generateSlug,
   calculateReadTime,
   createBlogPost,
+  createImageMarkdown,
   type BlogPostFormData
 } from "@/lib/blog"
 import { supabase } from "@/lib/supabase"
@@ -74,8 +75,6 @@ export default function NewBlogPostPage() {
   const [selectedColor, setSelectedColor] = useState("#000000")
   const [selectedFontSize, setSelectedFontSize] = useState("16px")
   const [imageUrl, setImageUrl] = useState("")
-  const [imageFile, setImageFile] = useState<File | null>(null)
-  const [uploading, setUploading] = useState(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
@@ -210,61 +209,21 @@ export default function NewBlogPostPage() {
     }
   }
 
-  // --- IMAGE UPLOAD / INSERT
+  // --- IMAGE INSERT
 
   const resetImageDialog = () => {
     setImageUrl("")
-    setImageFile(null)
-    setUploading(false)
   }
 
   // Insert markdown image from URL
-  const handleInsertImage = async () => {
-    if (uploading) return
+  const handleInsertImage = () => {
     if (imageUrl.trim()) {
-      insertText(`![alt text](${imageUrl.trim()})`)
+      const markdown = createImageMarkdown(imageUrl.trim(), 'Image')
+      insertText(markdown)
       setShowImageDialog(false)
       resetImageDialog()
-      return
-    }
-    // If using file, upload to Supabase Storage and insert public URL
-    if (imageFile) {
-      setUploading(true)
-      try {
-        const fileExt = imageFile.name.split(".").pop()
-        const fileName = `${Date.now()}.${fileExt}`
-        const filePath = `blog-images/${fileName}`
-        // Make sure your storage bucket name matches!
-        const { error } = await supabase.storage
-          .from("blog-images")
-          .upload(filePath, imageFile)
-        if (error) {
-          alert(`Upload failed: ${error.message}`)
-          setUploading(false)
-          return
-        }
-        const { data } = await supabase.storage
-          .from("blog-images")
-          .getPublicUrl(filePath)
-        if (!data || !data.publicUrl) {
-          alert("Could not retrieve public URL")
-          setUploading(false)
-          return
-        }
-        insertText(`![alt text](${data.publicUrl})`)
-        setShowImageDialog(false)
-        resetImageDialog()
-      } catch (err) {
-        alert("Image upload failed")
-        setUploading(false)
-      }
-    }
-  }
-
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setImageFile(e.target.files[0])
-      setImageUrl("") // clear URL input if uploading file
+    } else {
+      alert("Please enter an image URL")
     }
   }
 
@@ -539,37 +498,25 @@ export default function NewBlogPostPage() {
                             <DialogTitle>Insert Image</DialogTitle>
                           </DialogHeader>
                           <div className="space-y-4">
-                            <Label htmlFor="imageUrl">Image URL</Label>
-                            <Input
-                              id="imageUrl"
-                              placeholder="Paste image URL or upload file"
-                              value={imageUrl}
-                              onChange={e => {
-                                setImageUrl(e.target.value)
-                                setImageFile(null)
-                              }}
-                              disabled={uploading}
-                            />
                             <div>
-                              <Label htmlFor="imageFile">Or select an image to upload</Label>
+                              <Label htmlFor="imageUrl">Image URL</Label>
                               <Input
-                                id="imageFile"
-                                type="file"
-                                accept="image/*"
-                                onChange={handleFileChange}
-                                disabled={uploading}
+                                id="imageUrl"
+                                placeholder="https://example.com/image.jpg"
+                                value={imageUrl}
+                                onChange={e => setImageUrl(e.target.value)}
                               />
-                              {imageFile && (
-                                <div className="text-xs text-gray-500 mt-1">{imageFile.name}</div>
-                              )}
+                              <p className="text-xs text-gray-500 mt-1">
+                                Enter the direct URL of an image (JPG, PNG, GIF, WebP)
+                              </p>
                             </div>
                             <div className="flex gap-2">
                               <Button
                                 onClick={handleInsertImage}
                                 className="flex-1"
-                                disabled={uploading || (!imageUrl.trim() && !imageFile)}
+                                disabled={!imageUrl.trim()}
                               >
-                                {uploading ? "Uploading..." : "Insert Image"}
+                                Insert Image
                               </Button>
                               <Button
                                 variant="outline"

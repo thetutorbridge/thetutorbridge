@@ -5,6 +5,8 @@ export type BlogPost = Database['public']['Tables']['blog_posts']['Row']
 export type BlogPostInsert = Database['public']['Tables']['blog_posts']['Insert']
 export type BlogPostUpdate = Database['public']['Tables']['blog_posts']['Update']
 
+
+
 export interface BlogPostFormData {
   title: string;
   excerpt: string;
@@ -305,6 +307,265 @@ export function generateSlug(title: string): string {
     .replace(/-+/g, '-')
     .trim();
 }
+
+// Image upload and management functions
+export interface ImageUploadResult {
+  success: boolean;
+  publicUrl?: string;
+  error?: string;
+  filePath?: string;
+}
+
+export interface ImageUploadOptions {
+  fileName?: string;
+  folder?: string;
+  maxSizeBytes?: number;
+}
+
+/**
+ * Upload an image to Supabase storage and return the public URL
+ * @param file - The image file to upload
+ * @param options - Upload options including custom filename and folder
+ * @returns Promise with upload result including public URL
+ */
+export async function uploadBlogImage(
+  file: File, 
+  options: ImageUploadOptions = {}
+): Promise<ImageUploadResult> {
+  try {
+    // Validate file type
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+    if (!allowedTypes.includes(file.type)) {
+      return {
+        success: false,
+        error: 'Invalid file type. Please upload a JPEG, PNG, GIF, or WebP image.'
+      };
+    }
+
+    // Validate file size (default 5MB limit)
+    const maxSize = options.maxSizeBytes || 5 * 1024 * 1024; // 5MB
+    if (file.size > maxSize) {
+      return {
+        success: false,
+        error: `File size too large. Maximum size is ${Math.round(maxSize / 1024 / 1024)}MB.`
+      };
+    }
+
+    // Generate unique filename
+    const fileExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
+    const timestamp = Date.now();
+    const randomString = Math.random().toString(36).substring(2, 8);
+    const fileName = options.fileName || `${timestamp}-${randomString}.${fileExt}`;
+    
+    // Set folder path
+    const folder = options.folder || 'blog-images';
+    const filePath = `${folder}/${fileName}`;
+
+    console.log('Uploading image:', { fileName, filePath, fileSize: file.size });
+
+    // Upload to Supabase Storage
+    const { data: uploadData, error: uploadError } = await supabase.storage
+      .from('blog-images')
+      .upload(filePath, file, {
+        cacheControl: '3600',
+        upsert: false
+      });
+
+    if (uploadError) {
+      console.error('Upload error:', uploadError);
+      return {
+        success: false,
+        error: `Upload failed: ${uploadError.message}`
+      };
+    }
+
+    // Get public URL
+    const { data: urlData } = supabase.storage
+      .from('blog-images')
+      .getPublicUrl(filePath);
+
+    if (!urlData?.publicUrl) {
+      return {
+        success: false,
+        error: 'Failed to get public URL for uploaded image'
+      };
+    }
+
+    console.log('Image uploaded successfully:', urlData.publicUrl);
+
+    return {
+      success: true,
+      publicUrl: urlData.publicUrl,
+      filePath: filePath
+    };
+
+  } catch (error) {
+    console.error('Error uploading image:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error occurred'
+    };
+  }
+}
+
+/**
+ * Get the public URL for an image stored in Supabase storage
+ * @param filePath - The path to the file in storage
+ * @returns The public URL or null if error
+ */
+export function getBlogImageUrl(filePath: string): string | null {
+  try {
+    const { data } = supabase.storage
+      .from('blog-images')
+      .getPublicUrl(filePath);
+
+    return data?.publicUrl || null;
+  } catch (error) {
+    console.error('Error getting image URL:', error);
+    return null;
+  }
+}
+
+/**
+ * Delete an image from Supabase storage
+ * @param filePath - The path to the file in storage
+ * @returns Promise with deletion result
+ */
+export async function deleteBlogImage(filePath: string): Promise<{ success: boolean; error?: string }> {
+  try {
+    const { error } = await supabase.storage
+      .from('blog-images')
+      .remove([filePath]);
+
+    if (error) {
+      console.error('Error deleting image:', error);
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+
+    console.log('Image deleted successfully:', filePath);
+    return { success: true };
+
+  } catch (error) {
+    console.error('Error deleting image:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error occurred'
+    };
+  }
+}
+
+/**
+ * List all images in the blog-images bucket
+ * @param folder - Optional folder to filter by
+ * @param limit - Maximum number of images to return
+ * @returns Promise with list of image files
+ */
+export async function listBlogImages(folder?: string, limit: number = 50) {
+  try {
+    const { data, error } = await supabase.storage
+      .from('blog-images')
+      .list(folder || '', {
+        limit: limit,
+        sortBy: { column: 'created_at', order: 'desc' }
+      });
+
+    if (error) {
+      console.error('Error listing images:', error);
+      return { success: false, error: error.message };
+    }
+
+    // Add public URLs to each file
+    const filesWithUrls = data?.map(file => {
+      const filePath = folder ? `${folder}/${file.name}` : file.name;
+      const publicUrl = getBlogImageUrl(filePath);
+      return {
+        ...file,
+        filePath,
+        publicUrl
+      };
+    }) || [];
+
+    return {
+      success: true,
+      files: filesWithUrls
+    };
+
+  } catch (error) {
+    console.error('Error listing images:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error occurred'
+    };
+  }
+}
+
+/**
+ * Upload multiple images at once
+ * @param files - Array of files to upload
+ * @param options - Upload options
+ * @returns Promise with array of upload results
+ */
+export async function uploadMultipleBlogImages(
+  files: File[], 
+  options: ImageUploadOptions = {}
+): Promise<ImageUploadResult[]> {
+  const results: ImageUploadResult[] = [];
+  
+  for (const file of files) {
+    const result = await uploadBlogImage(file, options);
+    results.push(result);
+  }
+  
+  return results;
+}
+
+/**
+ * Create markdown image syntax from uploaded image
+ * @param publicUrl - The public URL of the uploaded image
+ * @param altText - Alt text for the image
+ * @param title - Optional title for the image
+ * @returns Markdown image syntax
+ */
+export function createImageMarkdown(publicUrl: string, altText: string = 'Image', title?: string): string {
+  if (title) {
+    return `![${altText}](${publicUrl} "${title}")`;
+  }
+  return `![${altText}](${publicUrl})`;
+}
+
+/**
+ * Extract image URLs from markdown content
+ * @param content - Markdown content
+ * @returns Array of image URLs found in the content
+ */
+export function extractImageUrlsFromMarkdown(content: string): string[] {
+  const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
+  const urls: string[] = [];
+  let match;
+  
+  while ((match = imageRegex.exec(content)) !== null) {
+    urls.push(match[2]);
+  }
+  
+  return urls;
+}
+
+/**
+ * Validate if a URL is a valid blog image URL from our storage
+ * @param url - URL to validate
+ * @returns Boolean indicating if URL is from our blog images storage
+ */
+export function isBlogImageUrl(url: string): boolean {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!supabaseUrl) return false;
+  
+  return url.includes(`${supabaseUrl}/storage/v1/object/public/blog-images/`);
+}
+
+
 
 // Helper function to transform database data to match the old interface
 export function transformBlogPost(dbPost: BlogPost): BlogPost {

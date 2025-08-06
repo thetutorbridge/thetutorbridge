@@ -3,8 +3,15 @@
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, Save, Eye, Plus, X, Bold, Italic, Link as LinkIcon, Type, Palette } from "lucide-react"
-import { getBlogPostById, generateSlug, calculateReadTime, updateBlogPost, type BlogPostFormData } from "@/lib/blog"
+import { ArrowLeft, Save, Eye, Plus, X, Bold, Italic, Link as LinkIcon, Type, Palette, Image as ImageIcon } from "lucide-react"
+import { 
+  getBlogPostById, 
+  generateSlug, 
+  calculateReadTime, 
+  updateBlogPost, 
+  createImageMarkdown,
+  type BlogPostFormData
+} from "@/lib/blog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -38,10 +45,12 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
   const [loading, setLoading] = useState(true)
   const [showLinkDialog, setShowLinkDialog] = useState(false)
   const [showColorDialog, setShowColorDialog] = useState(false)
+  const [showImageDialog, setShowImageDialog] = useState(false)
   const [linkUrl, setLinkUrl] = useState("")
   const [linkText, setLinkText] = useState("")
   const [selectedColor, setSelectedColor] = useState("#000000")
   const [selectedFontSize, setSelectedFontSize] = useState("16px")
+  const [imageUrl, setImageUrl] = useState("")
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
@@ -198,6 +207,22 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
     }
   }
 
+  // Image insert functions
+  const resetImageDialog = () => {
+    setImageUrl("")
+  }
+
+  const handleInsertImage = () => {
+    if (imageUrl.trim()) {
+      const markdown = createImageMarkdown(imageUrl.trim(), 'Image')
+      insertText(markdown)
+      setShowImageDialog(false)
+      resetImageDialog()
+    } else {
+      alert("Please enter an image URL")
+    }
+  }
+
   const handleSave = async () => {
     const resolvedParams = await params
     const result = await updateBlogPost(resolvedParams.id, formData)
@@ -226,6 +251,13 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
         }
         if (line.startsWith('### ')) {
           return <h3 key={index} className="text-xl font-bold mt-4 mb-2">{line.substring(4)}</h3>
+        }
+        if (/!\[([^\]]*)\]\(([^)]+)\)/.test(line)) {
+          const match = line.match(/!\[([^\]]*)\]\(([^)]+)\)/)
+          if (match)
+            return (
+              <img key={index} src={match[2]} alt={match[1]} className="my-4 rounded shadow max-w-full" />
+            )
         }
         if (line.startsWith('- ')) {
           return <li key={index} className="ml-4 mb-1">{line.substring(2)}</li>
@@ -413,6 +445,60 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
                             <div className="flex gap-2">
                               <Button onClick={insertLink} className="flex-1">Insert Link</Button>
                               <Button variant="outline" onClick={() => setShowLinkDialog(false)}>Cancel</Button>
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                      
+                      <Separator orientation="vertical" className="h-6" />
+                      
+                      {/* IMAGE BUTTON */}
+                      <Dialog open={showImageDialog} onOpenChange={setShowImageDialog}>
+                        <DialogTrigger asChild>
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            className="flex items-center gap-1"
+                          >
+                            <ImageIcon className="h-4 w-4" />
+                            Image
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>Insert Image</DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-4">
+                            <div>
+                              <Label htmlFor="imageUrl">Image URL</Label>
+                              <Input
+                                id="imageUrl"
+                                placeholder="https://example.com/image.jpg"
+                                value={imageUrl}
+                                onChange={e => setImageUrl(e.target.value)}
+                              />
+                              <p className="text-xs text-gray-500 mt-1">
+                                Enter the direct URL of an image (JPG, PNG, GIF, WebP)
+                              </p>
+                            </div>
+                            <div className="flex gap-2">
+                              <Button
+                                onClick={handleInsertImage}
+                                className="flex-1"
+                                disabled={!imageUrl.trim()}
+                              >
+                                Insert Image
+                              </Button>
+                              <Button
+                                variant="outline"
+                                onClick={() => {
+                                  setShowImageDialog(false)
+                                  resetImageDialog()
+                                }}
+                              >
+                                Cancel
+                              </Button>
                             </div>
                           </div>
                         </DialogContent>
