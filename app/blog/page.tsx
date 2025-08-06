@@ -25,19 +25,29 @@ export default function BlogPage() {
 
   useEffect(() => {
     const loadPosts = async () => {
-      setIsLoading(true)
-      const allPosts = await getAllBlogPosts()
-      setPosts(allPosts)
+      if (!isClient) return
       
-      // Extract unique tags
-      const tags = Array.from(new Set(allPosts.flatMap(post => post.tags)))
-      setAllTags(tags)
-      setIsLoading(false)
+      setIsLoading(true)
+      try {
+        console.log('🔄 Loading blog posts...')
+        const allPosts = await getAllBlogPosts()
+        setPosts(allPosts)
+        
+        // Extract unique tags
+        const tags = Array.from(new Set(allPosts.flatMap(post => post.tags)))
+        setAllTags(tags)
+        console.log('✅ Blog posts loaded successfully:', allPosts.length, 'posts')
+      } catch (error) {
+        console.error('❌ Error loading blog posts:', error)
+        // Set empty posts array on error
+        setPosts([])
+        setAllTags([])
+      } finally {
+        setIsLoading(false)
+      }
     }
     
-    if (isClient) {
-      loadPosts()
-    }
+    loadPosts()
   }, [isClient])
 
   useEffect(() => {
@@ -67,17 +77,6 @@ export default function BlogPage() {
     const date = new Date(dateString)
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
-  }
-
-  const getActualImageUrl = (url: string) => {
-    // Extract actual image URL from Google search results
-    if (url.includes('google.com/imgres') && url.includes('imgurl=')) {
-      const imgurlMatch = url.match(/imgurl=([^&]+)/)
-      if (imgurlMatch) {
-        return decodeURIComponent(imgurlMatch[1])
-      }
-    }
-    return url
   }
 
   return (
@@ -156,16 +155,10 @@ export default function BlogPage() {
                 {post.featured_image && (
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={getActualImageUrl(post.featured_image)}
+                      src={post.featured_image}
                       alt={post.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        // Hide the image container if image fails to load
-                        const target = e.target as HTMLImageElement
-                        target.style.display = 'none'
-                        target.parentElement!.style.display = 'none'
-                      }}
                     />
                   </div>
                 )}

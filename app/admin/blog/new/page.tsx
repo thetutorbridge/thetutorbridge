@@ -1,19 +1,54 @@
 "use client"
 
-import { useState, useMemo, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, ChangeEvent } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, Save, Eye, Plus, X, Bold, Italic, Link as LinkIcon, Type, Palette } from "lucide-react"
+import {
+  ArrowLeft,
+  Save,
+  Eye,
+  Plus,
+  X,
+  Bold,
+  Italic,
+  Link as LinkIcon,
+  Type,
+  Palette,
+  Image as ImageIcon
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { generateSlug, calculateReadTime, createBlogPost, type BlogPostFormData } from "@/lib/blog"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from "@/components/ui/dialog"
+import {
+  generateSlug,
+  calculateReadTime,
+  createBlogPost,
+  type BlogPostFormData
+} from "@/lib/blog"
 import { supabase } from "@/lib/supabase"
 import { Navigation } from "@/components/navigation"
 
@@ -33,10 +68,14 @@ export default function NewBlogPostPage() {
   const [isClient, setIsClient] = useState(false)
   const [showLinkDialog, setShowLinkDialog] = useState(false)
   const [showColorDialog, setShowColorDialog] = useState(false)
+  const [showImageDialog, setShowImageDialog] = useState(false)
   const [linkUrl, setLinkUrl] = useState("")
   const [linkText, setLinkText] = useState("")
   const [selectedColor, setSelectedColor] = useState("#000000")
   const [selectedFontSize, setSelectedFontSize] = useState("16px")
+  const [imageUrl, setImageUrl] = useState("")
+  const [imageFile, setImageFile] = useState<File | null>(null)
+  const [uploading, setUploading] = useState(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
@@ -58,19 +97,16 @@ export default function NewBlogPostPage() {
     handleInputChange("tags", formData.tags.filter(tag => tag !== tagToRemove))
   }
 
-  // Rich text formatting functions
+  // --- Rich Text Insert Functions
+
   const insertText = (text: string) => {
     if (!textareaRef.current) return
-    
     const textarea = textareaRef.current
     const start = textarea.selectionStart
     const end = textarea.selectionEnd
-    const selectedText = formData.content.substring(start, end)
-    
-    const newContent = formData.content.substring(0, start) + text + formData.content.substring(end)
+    const newContent =
+      formData.content.substring(0, start) + text + formData.content.substring(end)
     handleInputChange("content", newContent)
-    
-    // Set cursor position after inserted text
     setTimeout(() => {
       if (textareaRef.current) {
         textareaRef.current.focus()
@@ -81,17 +117,17 @@ export default function NewBlogPostPage() {
 
   const formatBold = () => {
     if (!textareaRef.current) return
-    
     const textarea = textareaRef.current
     const start = textarea.selectionStart
     const end = textarea.selectionEnd
     const selectedText = formData.content.substring(start, end)
-    
     if (selectedText) {
       const newText = `**${selectedText}**`
-      const newContent = formData.content.substring(0, start) + newText + formData.content.substring(end)
+      const newContent =
+        formData.content.substring(0, start) +
+        newText +
+        formData.content.substring(end)
       handleInputChange("content", newContent)
-      
       setTimeout(() => {
         if (textareaRef.current) {
           textareaRef.current.focus()
@@ -105,17 +141,17 @@ export default function NewBlogPostPage() {
 
   const formatItalic = () => {
     if (!textareaRef.current) return
-    
     const textarea = textareaRef.current
     const start = textarea.selectionStart
     const end = textarea.selectionEnd
     const selectedText = formData.content.substring(start, end)
-    
     if (selectedText) {
       const newText = `*${selectedText}*`
-      const newContent = formData.content.substring(0, start) + newText + formData.content.substring(end)
+      const newContent =
+        formData.content.substring(0, start) +
+        newText +
+        formData.content.substring(end)
       handleInputChange("content", newContent)
-      
       setTimeout(() => {
         if (textareaRef.current) {
           textareaRef.current.focus()
@@ -129,130 +165,158 @@ export default function NewBlogPostPage() {
 
   const insertLink = () => {
     if (!linkUrl.trim()) return
-    
     const linkTextValue = linkText.trim() || linkUrl
     const linkMarkdown = `[${linkTextValue}](${linkUrl})`
     insertText(linkMarkdown)
-    
     setLinkUrl("")
     setLinkText("")
     setShowLinkDialog(false)
   }
 
-
-
   const insertColor = () => {
     if (!textareaRef.current) return
-    
     const textarea = textareaRef.current
     const start = textarea.selectionStart
     const end = textarea.selectionEnd
     const selectedText = formData.content.substring(start, end)
-    
     if (selectedText) {
       const newText = `<span style="color: ${selectedColor}">${selectedText}</span>`
-      const newContent = formData.content.substring(0, start) + newText + formData.content.substring(end)
+      const newContent =
+        formData.content.substring(0, start) +
+        newText +
+        formData.content.substring(end)
       handleInputChange("content", newContent)
     } else {
       insertText(`<span style="color: ${selectedColor}">colored text</span>`)
     }
-    
     setShowColorDialog(false)
   }
 
   const insertFontSize = () => {
     if (!textareaRef.current) return
-    
     const textarea = textareaRef.current
     const start = textarea.selectionStart
     const end = textarea.selectionEnd
     const selectedText = formData.content.substring(start, end)
-    
     if (selectedText) {
       const newText = `<span style="font-size: ${selectedFontSize}">${selectedText}</span>`
-      const newContent = formData.content.substring(0, start) + newText + formData.content.substring(end)
+      const newContent =
+        formData.content.substring(0, start) +
+        newText +
+        formData.content.substring(end)
       handleInputChange("content", newContent)
     } else {
       insertText(`<span style="font-size: ${selectedFontSize}">resized text</span>`)
     }
   }
 
-  // Test function to check Supabase connection
+  // --- IMAGE UPLOAD / INSERT
+
+  const resetImageDialog = () => {
+    setImageUrl("")
+    setImageFile(null)
+    setUploading(false)
+  }
+
+  // Insert markdown image from URL
+  const handleInsertImage = async () => {
+    if (uploading) return
+    if (imageUrl.trim()) {
+      insertText(`![alt text](${imageUrl.trim()})`)
+      setShowImageDialog(false)
+      resetImageDialog()
+      return
+    }
+    // If using file, upload to Supabase Storage and insert public URL
+    if (imageFile) {
+      setUploading(true)
+      try {
+        const fileExt = imageFile.name.split(".").pop()
+        const fileName = `${Date.now()}.${fileExt}`
+        const filePath = `blog-images/${fileName}`
+        // Make sure your storage bucket name matches!
+        const { error } = await supabase.storage
+          .from("blog-images")
+          .upload(filePath, imageFile)
+        if (error) {
+          alert(`Upload failed: ${error.message}`)
+          setUploading(false)
+          return
+        }
+        const { data } = await supabase.storage
+          .from("blog-images")
+          .getPublicUrl(filePath)
+        if (!data || !data.publicUrl) {
+          alert("Could not retrieve public URL")
+          setUploading(false)
+          return
+        }
+        insertText(`![alt text](${data.publicUrl})`)
+        setShowImageDialog(false)
+        resetImageDialog()
+      } catch (err) {
+        alert("Image upload failed")
+        setUploading(false)
+      }
+    }
+  }
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setImageFile(e.target.files[0])
+      setImageUrl("") // clear URL input if uploading file
+    }
+  }
+
+  // --- Supabase Test
   const testSupabaseConnection = async () => {
     try {
-      console.log('🧪 Testing Supabase connection...')
-      
-      // Test a simple query
       const { data, error } = await supabase
-        .from('blog_posts')
-        .select('count')
+        .from("blog_posts")
+        .select("count")
         .limit(1)
-      
       if (error) {
-        console.error('❌ Supabase test failed:', error)
         alert(`Supabase test failed: ${error.message}`)
       } else {
-        console.log('✅ Supabase test successful:', data)
-        alert('Supabase connection is working!')
+        alert("Supabase connection is working!")
       }
     } catch (error) {
-      console.error('❌ Supabase test error:', error)
       alert(`Supabase test error: ${error}`)
     }
   }
 
-  const handleSave = async () => {
-    try {
-      // Validate required fields
-      if (!formData.title.trim()) {
-        alert("Please enter a title for the blog post")
-        return
-      }
-      if (!formData.content.trim()) {
-        alert("Please enter content for the blog post")
-        return
-      }
-      if (!formData.author.trim()) {
-        alert("Please enter an author name")
-        return
-      }
-      if (!formData.excerpt.trim()) {
-        alert("Please enter an excerpt for the blog post")
-        return
-      }
+  // --- SAVE / PUBLISH
 
-      console.log("🔄 Starting save process...")
-      console.log("📝 Form data:", formData)
-      console.log("🌐 Environment check:")
-      console.log("- Supabase URL exists:", !!process.env.NEXT_PUBLIC_SUPABASE_URL)
-      console.log("- Supabase key exists:", !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
-      console.log("- Supabase URL:", process.env.NEXT_PUBLIC_SUPABASE_URL)
-      console.log("- Supabase key (first 10 chars):", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.substring(0, 10) + "...")
-      
+  const handleSave = async () => {
+    if (!formData.title.trim()) {
+      alert("Please enter a title for the blog post")
+      return
+    }
+    if (!formData.content.trim()) {
+      alert("Please enter content for the blog post")
+      return
+    }
+    if (!formData.author.trim()) {
+      alert("Please enter an author name")
+      return
+    }
+    if (!formData.excerpt.trim()) {
+      alert("Please enter an excerpt for the blog post")
+      return
+    }
+    try {
       const result = await createBlogPost(formData)
-      console.log("✅ Save result:", result)
-      
       if (result) {
         alert("Post saved successfully!")
         router.push("/admin/blog")
       } else {
         alert("Error saving post. Please try again.")
       }
-    } catch (error) {
-      console.error("❌ Error creating post:", error)
-      console.error("Error type:", typeof error)
-      console.error("Error constructor:", error?.constructor?.name)
-      console.error("Error stack:", (error as Error)?.stack)
-      
+    } catch (error: any) {
       let errorMessage = 'Unknown error'
-      if (error instanceof Error) {
-        errorMessage = error.message
-      } else if (typeof error === 'string') {
-        errorMessage = error
-      } else if (error && typeof error === 'object') {
-        errorMessage = JSON.stringify(error)
-      }
-      
+      if (error instanceof Error) errorMessage = error.message
+      else if (typeof error === "string") errorMessage = error
+      else if (error && typeof error === "object") errorMessage = JSON.stringify(error)
       alert(`Error saving post: ${errorMessage}`)
     }
   }
@@ -262,6 +326,7 @@ export default function NewBlogPostPage() {
     await handleSave()
   }
 
+  // --- MARKDOWN PREVIEW (images handled)
   const renderMarkdownPreview = (content: string) => {
     return content
       .split('\n')
@@ -275,6 +340,13 @@ export default function NewBlogPostPage() {
         if (line.startsWith('### ')) {
           return <h3 key={index} className="text-xl font-bold mt-4 mb-2">{line.substring(4)}</h3>
         }
+        if (/!\[([^\]]*)\]\(([^)]+)\)/.test(line)) {
+          const match = line.match(/!\[([^\]]*)\]\(([^)]+)\)/)
+          if (match)
+            return (
+              <img key={index} src={match[2]} alt={match[1]} className="my-4 rounded shadow max-w-full" />
+            )
+        }
         if (line.startsWith('- ')) {
           return <li key={index} className="ml-4 mb-1">{line.substring(2)}</li>
         }
@@ -286,11 +358,10 @@ export default function NewBlogPostPage() {
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\*(.*?)\*/g, '<em>$1</em>')
             .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" class="text-blue-600 hover:underline">$1</a>')
-          
           return (
-            <p key={index} 
-               className="mb-4 leading-relaxed"
-               dangerouslySetInnerHTML={{ __html: processedLine }}
+            <p key={index}
+              className="mb-4 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: processedLine }}
             />
           )
         }
@@ -299,7 +370,7 @@ export default function NewBlogPostPage() {
       .filter(Boolean)
   }
 
-  // Only calculate these values on the client to avoid hydration issues
+  // --- Derived
   const estimatedReadTime = isClient && formData.content ? calculateReadTime(formData.content) : 0
   const generatedSlug = isClient && formData.title ? generateSlug(formData.title) : ''
 
@@ -323,10 +394,7 @@ export default function NewBlogPostPage() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                onClick={() => setPreviewMode(!previewMode)}
-              >
+              <Button variant="outline" onClick={() => setPreviewMode(!previewMode)}>
                 <Eye className="h-4 w-4 mr-2" />
                 {previewMode ? "Edit" : "Preview"}
               </Button>
@@ -368,7 +436,6 @@ export default function NewBlogPostPage() {
                 )}
               </CardContent>
             </Card>
-
             {/* Content */}
             <Card>
               <CardHeader>
@@ -410,9 +477,7 @@ export default function NewBlogPostPage() {
                         <Italic className="h-4 w-4" />
                         Italic
                       </Button>
-                      
                       <Separator orientation="vertical" className="h-6" />
-                      
                       <Dialog open={showLinkDialog} onOpenChange={setShowLinkDialog}>
                         <DialogTrigger asChild>
                           <Button
@@ -455,9 +520,71 @@ export default function NewBlogPostPage() {
                           </div>
                         </DialogContent>
                       </Dialog>
-                      
                       <Separator orientation="vertical" className="h-6" />
-                      
+                      {/* IMAGE BUTTON */}
+                      <Dialog open={showImageDialog} onOpenChange={setShowImageDialog}>
+                        <DialogTrigger asChild>
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            className="flex items-center gap-1"
+                          >
+                            <ImageIcon className="h-4 w-4" />
+                            Image
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>Insert Image</DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-4">
+                            <Label htmlFor="imageUrl">Image URL</Label>
+                            <Input
+                              id="imageUrl"
+                              placeholder="Paste image URL or upload file"
+                              value={imageUrl}
+                              onChange={e => {
+                                setImageUrl(e.target.value)
+                                setImageFile(null)
+                              }}
+                              disabled={uploading}
+                            />
+                            <div>
+                              <Label htmlFor="imageFile">Or select an image to upload</Label>
+                              <Input
+                                id="imageFile"
+                                type="file"
+                                accept="image/*"
+                                onChange={handleFileChange}
+                                disabled={uploading}
+                              />
+                              {imageFile && (
+                                <div className="text-xs text-gray-500 mt-1">{imageFile.name}</div>
+                              )}
+                            </div>
+                            <div className="flex gap-2">
+                              <Button
+                                onClick={handleInsertImage}
+                                className="flex-1"
+                                disabled={uploading || (!imageUrl.trim() && !imageFile)}
+                              >
+                                {uploading ? "Uploading..." : "Insert Image"}
+                              </Button>
+                              <Button
+                                variant="outline"
+                                onClick={() => {
+                                  setShowImageDialog(false)
+                                  resetImageDialog()
+                                }}
+                              >
+                                Cancel
+                              </Button>
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                      <Separator orientation="vertical" className="h-6" />
                       <div className="flex items-center gap-2">
                         <Label htmlFor="fontSize" className="text-sm">Size:</Label>
                         <Select value={selectedFontSize} onValueChange={setSelectedFontSize}>
@@ -486,7 +613,6 @@ export default function NewBlogPostPage() {
                           Apply
                         </Button>
                       </div>
-                      
                       <Dialog open={showColorDialog} onOpenChange={setShowColorDialog}>
                         <DialogTrigger asChild>
                           <Button
@@ -528,9 +654,7 @@ export default function NewBlogPostPage() {
                           </div>
                         </DialogContent>
                       </Dialog>
-                      
                       <Separator orientation="vertical" className="h-6" />
-                      
                       <Button
                         type="button"
                         variant="outline"
@@ -541,7 +665,6 @@ export default function NewBlogPostPage() {
                         🧪 Test Connection
                       </Button>
                     </div>
-                    
                     <Textarea
                       ref={textareaRef}
                       placeholder="Write your blog post content here... You can use markdown formatting like **bold**, *italic*, # headings, and - lists"
@@ -558,7 +681,6 @@ export default function NewBlogPostPage() {
                 )}
               </CardContent>
             </Card>
-
             {/* Excerpt */}
             <Card>
               <CardHeader>
@@ -577,7 +699,6 @@ export default function NewBlogPostPage() {
               </CardContent>
             </Card>
           </div>
-
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Post Settings */}
@@ -595,7 +716,6 @@ export default function NewBlogPostPage() {
                     onChange={(e) => handleInputChange("author", e.target.value)}
                   />
                 </div>
-
                 <div>
                   <Label htmlFor="status">Status</Label>
                   <Select value={formData.status} onValueChange={(value: "draft" | "published") => handleInputChange("status", value)}>
@@ -608,7 +728,6 @@ export default function NewBlogPostPage() {
                     </SelectContent>
                   </Select>
                 </div>
-
                 <div>
                   <Label htmlFor="featuredImage">Featured Image URL</Label>
                   <Input
@@ -620,7 +739,6 @@ export default function NewBlogPostPage() {
                 </div>
               </CardContent>
             </Card>
-
             {/* Tags */}
             <Card>
               <CardHeader>
@@ -656,7 +774,6 @@ export default function NewBlogPostPage() {
                 </div>
               </CardContent>
             </Card>
-
             {/* Post Preview */}
             <Card>
               <CardHeader>
@@ -704,4 +821,4 @@ export default function NewBlogPostPage() {
       </div>
     </div>
   )
-} 
+}

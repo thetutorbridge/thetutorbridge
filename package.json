@@ -6,7 +6,12 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "test-delete": "node test-delete-post.js",
+    "check-rls": "node check-rls-policies.js",
+    "fix-images": "node fix-blog-images.js",
+    "debug-supabase": "node debug-supabase.js",
+    "test-cors": "node test-browser-cors.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

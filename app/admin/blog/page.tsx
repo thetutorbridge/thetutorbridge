@@ -18,6 +18,7 @@ export default function AdminBlogPage() {
   const [statusFilter, setStatusFilter] = useState<string>("all")
   const [selectedPosts, setSelectedPosts] = useState<string[]>([])
   const [isClient, setIsClient] = useState(false)
+  const [deletingPostId, setDeletingPostId] = useState<string | null>(null)
 
   useEffect(() => {
     setIsClient(true)
@@ -43,9 +44,25 @@ export default function AdminBlogPage() {
   })
 
   const handleDeletePost = async (postId: string) => {
-    const success = await deleteBlogPost(postId)
-    if (success) {
-      setPosts(posts.filter(post => post.id !== postId))
+    try {
+      setDeletingPostId(postId)
+      console.log('Attempting to delete post with ID:', postId)
+      const success = await deleteBlogPost(postId)
+      
+      if (success) {
+        console.log('Post deleted successfully')
+        setPosts(posts.filter(post => post.id !== postId))
+        // You can add a toast notification here if you have a toast system
+        alert('Post deleted successfully!')
+      } else {
+        console.error('Failed to delete post')
+        alert('Failed to delete post. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error deleting post:', error)
+      alert(`Error deleting post: ${error instanceof Error ? error.message : 'Unknown error'}`)
+    } finally {
+      setDeletingPostId(null)
     }
   }
 
@@ -252,7 +269,12 @@ export default function AdminBlogPage() {
                           </Link>
                           <AlertDialog>
                             <AlertDialogTrigger asChild>
-                              <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700">
+                              <Button 
+                                variant="ghost" 
+                                size="sm" 
+                                className="text-red-600 hover:text-red-700"
+                                disabled={deletingPostId === post.id}
+                              >
                                 <Trash2 className="h-4 w-4" />
                               </Button>
                             </AlertDialogTrigger>
@@ -264,9 +286,13 @@ export default function AdminBlogPage() {
                                 </AlertDialogDescription>
                               </AlertDialogHeader>
                               <AlertDialogFooter>
-                                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                <AlertDialogAction onClick={() => handleDeletePost(post.id)} className="bg-red-600 hover:bg-red-700">
-                                  Delete
+                                <AlertDialogCancel disabled={deletingPostId === post.id}>Cancel</AlertDialogCancel>
+                                <AlertDialogAction 
+                                  onClick={() => handleDeletePost(post.id)} 
+                                  className="bg-red-600 hover:bg-red-700"
+                                  disabled={deletingPostId === post.id}
+                                >
+                                  {deletingPostId === post.id ? 'Deleting...' : 'Delete'}
                                 </AlertDialogAction>
                               </AlertDialogFooter>
                             </AlertDialogContent>

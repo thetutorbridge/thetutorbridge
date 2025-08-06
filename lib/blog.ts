@@ -17,18 +17,56 @@ export interface BlogPostFormData {
 
 // Utility functions
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  const { data, error } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('status', 'published')
-    .order('published_at', { ascending: false })
+  try {
+    console.log('🔍 Fetching all blog posts...')
+    
+    // Check if Supabase client is properly initialized
+    if (!supabase) {
+      console.error('❌ Supabase client not initialized')
+      throw new Error('Supabase client not initialized')
+    }
 
-  if (error) {
-    console.error('Error fetching blog posts:', error)
-    return []
+    const { data, error } = await supabase
+      .from('blog_posts')
+      .select('*')
+      .eq('status', 'published')
+      .order('published_at', { ascending: false })
+
+    if (error) {
+      console.error('❌ Error fetching blog posts:', error)
+      console.error('Error details:', {
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+        code: error.code
+      })
+      
+      // Fallback to API route if direct Supabase call fails
+      console.log('🔄 Trying fallback API route...')
+      try {
+        const response = await fetch('/api/blog-posts')
+        if (!response.ok) {
+          throw new Error(`API route failed: ${response.status}`)
+        }
+        const apiData = await response.json()
+        console.log('✅ Blog posts fetched via API route:', apiData.length, 'posts')
+        return apiData
+      } catch (apiError) {
+        console.error('❌ API route also failed:', apiError)
+        throw new Error(`Database error: ${error.message}`)
+      }
+    }
+
+    console.log('✅ Blog posts fetched successfully:', data?.length || 0, 'posts')
+    return data || []
+  } catch (error) {
+    console.error('❌ Error in getAllBlogPosts:', error)
+    if (error instanceof Error) {
+      throw new Error(`Failed to fetch blog posts: ${error.message}`)
+    } else {
+      throw new Error('Failed to fetch blog posts: Unknown error')
+    }
   }
-
-  return data || []
 }
 
 export async function getAllBlogPostsAdmin(): Promise<BlogPost[]> {
@@ -216,17 +254,41 @@ export async function updateBlogPost(id: string, postData: BlogPostFormData): Pr
 }
 
 export async function deleteBlogPost(id: string): Promise<boolean> {
-  const { error } = await supabase
-    .from('blog_posts')
-    .delete()
-    .eq('id', id)
+  try {
+    console.log('Attempting to delete blog post with ID:', id)
+    
+    // Check if Supabase client is properly initialized
+    if (!supabase) {
+      console.error('Supabase client not initialized')
+      throw new Error('Supabase client not initialized')
+    }
 
-  if (error) {
-    console.error('Error deleting blog post:', error)
-    return false
+    const { error } = await supabase
+      .from('blog_posts')
+      .delete()
+      .eq('id', id)
+
+    if (error) {
+      console.error('Supabase error deleting blog post:', error)
+      console.error('Error details:', {
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+        code: error.code
+      })
+      throw new Error(`Database error: ${error.message}`)
+    }
+
+    console.log('Blog post deleted successfully')
+    return true
+  } catch (error) {
+    console.error('Error in deleteBlogPost:', error)
+    if (error instanceof Error) {
+      throw new Error(`Failed to delete blog post: ${error.message}`)
+    } else {
+      throw new Error('Failed to delete blog post: Unknown error')
+    }
   }
-
-  return true
 }
 
 export function calculateReadTime(content: string): number {
