@@ -83,23 +83,23 @@ export default function BlogPage() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-red-900 via-red-800 to-black text-white">
+      <div className="bg-gradient-to-r from-brand-blue via-brand-teal to-brand-amber text-white">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               TheTutorBridge Blog
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-red-200">
+            <p className="text-xl md:text-2xl mb-8 text-white/90">
               Expert insights, study tips, and educational resources to help you excel in your academic journey
             </p>
             <div className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/80 h-5 w-5" />
               <Input
                 type="text"
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 pr-4 py-3 text-lg bg-white/10 border-white/20 text-white placeholder:text-red-300 focus:bg-white/20"
+                className="pl-12 pr-4 py-3 text-lg bg-white/10 border-white/20 text-white placeholder:text-white/80 focus:bg-white/20"
               />
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function BlogPage() {
                       </Badge>
                     )}
                   </div>
-                  <CardTitle className="text-xl group-hover:text-red-600 transition-colors">
+                  <CardTitle className="text-xl group-hover:text-brand-teal transition-colors">
                     <Link href={`/blog/${post.slug}`}>
                       {post.title}
                     </Link>
@@ -206,7 +206,7 @@ export default function BlogPage() {
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">By {post.author}</span>
                     <Link href={`/blog/${post.slug}`}>
-                      <Button variant="ghost" size="sm" className="group-hover:text-red-600">
+                      <Button variant="ghost" size="sm" className="group-hover:text-brand-teal">
                         Read More
                         <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </Button>

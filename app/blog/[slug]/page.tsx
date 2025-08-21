@@ -8,12 +8,7 @@ import { ArrowLeft, Calendar, Clock, Tag, Share2, BookOpen } from "lucide-react"
 import { 
   getBlogPostBySlug, 
   getAllBlogPosts, 
-  getBlogComments,
-  createBlogComment,
-  getCommentCount,
-  type BlogPost,
-  type BlogComment,
-  type CommentFormData
+  type BlogPost
 } from "@/lib/blog"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -340,20 +335,20 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           )}
 
           {/* Call to Action */}
-          <div className="mt-12 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-lg p-8 text-center">
+          <div className="mt-12 bg-gradient-to-r from-brand-blue to-brand-teal text-white rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Excel in Your Studies?</h2>
-            <p className="text-red-100 mb-6">
+            <p className="text-white/90 mb-6">
               Get personalized tutoring, instant doubt solving, and expert guidance from our experienced educators.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book-demo-class">
-                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100">
-                  Book Free Demo Class
+                <Button size="lg" className="bg-white text-brand-blue hover:bg-gray-100">
+                  Book Free Session
                 </Button>
               </Link>
               <Link href="/doubt-solving">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-red-600">
-                  Ask a Doubt
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-blue">
+                  Learn More
                 </Button>
               </Link>
             </div>

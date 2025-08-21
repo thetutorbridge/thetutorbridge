@@ -11,11 +11,6 @@ export function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   const services = [
-    // {
-    //   name: "One-on-One Tutoring",
-    //   href: "/tutoring",
-    //   description: "Personalized sessions with expert tutors",
-    // },
     {
       name: "Instant Doubt Solving",
       href: "/doubt-solving",
@@ -26,11 +21,6 @@ export function Navigation() {
       href: "/career-guidance",
       description: "Expert mentorship for your future",
     },
-    // {
-    //   name: "Motivational Sessions",
-    //   href: "/motivational-sessions",
-    //   description: "Inspiring webinars and success stories",
-    // },
     {
       name: "Study Resources",
       href: "/study-resources",
@@ -44,7 +34,7 @@ export function Navigation() {
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" width={40} height={40} alt="The Tutor Bridge Logo" className="h-10 w-10" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-red-600 to-black bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">
               TheTutorBridge
             </span>
           </Link>
@@ -52,62 +42,58 @@ export function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors">
+          <Link href="/" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Home
           </Link>
 
-<div className="relative">
-  <button
-    className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors"
-    onClick={() =>
-      setActiveDropdown(activeDropdown === "services" ? null : "services")
-    }
-    type="button"
-  >
-    Services
-    <ChevronDown className="h-4 w-4" />
-  </button>
+          <div className="relative">
+            <button
+              className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors"
+              onClick={() =>
+                setActiveDropdown(activeDropdown === "services" ? null : "services")
+              }
+              type="button"
+            >
+              Services
+              <ChevronDown className="h-4 w-4" />
+            </button>
 
-  {activeDropdown === "services" && (
-    <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4 z-50">
-      <div className="grid gap-3">
-        {services.map((service) => (
-          <Link
-            key={service.name}
-            href={service.href}
-            className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
-            onClick={() => setActiveDropdown(null)}
-          >
-            <div className="font-medium text-gray-900">{service.name}</div>
-            <div className="text-sm text-gray-600">{service.description}</div>
-          </Link>
-        ))}
-      </div>
-    </div>
-  )}
-</div>
+            {activeDropdown === "services" && (
+              <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4 z-50">
+                <div className="grid gap-3">
+                  {services.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      <div className="font-medium text-gray-900">{service.name}</div>
+                      <div className="text-sm text-gray-600">{service.description}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
 
-          {/* <Link href="/pricing" className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors">
-            Pricing
-          </Link>  */}
-          <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors">
+          <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Blog
           </Link>
-          <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors">
+          <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors">
+          <Link href="/contact" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Contact
           </Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="hidden md:flex text-gray-700">
-            Sign In
-          </Button>
-          {/* <Button className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-orange-dark hover:to-brand-red-dark">
-            Book Free Trial
-          </Button> */}
+          <Link href="/book-demo-class" className="hidden md:flex">
+            <Button className="bg-brand-blue text-white hover:shadow-md hover:shadow-brand-teal/30">
+              Start Your Journey
+            </Button>
+          </Link>
 
           {/* Mobile menu button */}
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -130,9 +116,6 @@ export function Navigation() {
                   </Link>
                 ))}
               </div>
-              <Link href="/pricing" className="block py-2 text-gray-700">
-                Pricing
-              </Link>
               <Link href="/blog" className="block py-2 text-gray-700">
                 Blog
               </Link>
@@ -141,6 +124,9 @@ export function Navigation() {
               </Link>
               <Link href="/contact" className="block py-2 text-gray-700">
                 Contact
+              </Link>
+              <Link href="/book-demo-class" className="block py-2 text-gray-700">
+                Start Your Journey
               </Link>
             </div>
           </div>

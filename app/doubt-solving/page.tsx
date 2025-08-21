@@ -588,7 +588,7 @@ export default function DoubtSolving() {
             <div>
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>📱 WhatsApp: +91-98765-43210</li>
+                <li>📱 WhatsApp: +91-93100-96171</li>
                 <li>📧 doubts@thetutorbridge.com</li>
                 <li>🕒 Available: 24/7</li>
                 <li>⚡ Response: 30-60 minutes</li>
