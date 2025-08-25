@@ -3,30 +3,12 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-
-  const services = [
-    {
-      name: "Instant Doubt Solving",
-      href: "/doubt-solving",
-      description: "Get answers within 30-60 minutes",
-    },
-    {
-      name: "Career Guidance",
-      href: "/career-guidance",
-      description: "Expert mentorship for your future",
-    },
-    {
-      name: "Study Resources",
-      href: "/study-resources",
-      description: "Premium notes and practice materials",
-    },
-  ]
+  
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -45,37 +27,6 @@ export function Navigation() {
           <Link href="/" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Home
           </Link>
-
-          <div className="relative">
-            <button
-              className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors"
-              onClick={() =>
-                setActiveDropdown(activeDropdown === "services" ? null : "services")
-              }
-              type="button"
-            >
-              Services
-              <ChevronDown className="h-4 w-4" />
-            </button>
-
-            {activeDropdown === "services" && (
-              <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4 z-50">
-                <div className="grid gap-3">
-                  {services.map((service) => (
-                    <Link
-                      key={service.name}
-                      href={service.href}
-                      className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
-                      onClick={() => setActiveDropdown(null)}
-                    >
-                      <div className="font-medium text-gray-900">{service.name}</div>
-                      <div className="text-sm text-gray-600">{service.description}</div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
 
           <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Blog
@@ -108,14 +59,6 @@ export function Navigation() {
               <Link href="/" className="block py-2 text-gray-700">
                 Home
               </Link>
-              <div className="space-y-2">
-                <div className="font-medium text-gray-900">Services</div>
-                {services.map((service) => (
-                  <Link key={service.name} href={service.href} className="block py-2 pl-4 text-gray-600">
-                    {service.name}
-                  </Link>
-                ))}
-              </div>
               <Link href="/blog" className="block py-2 text-gray-700">
                 Blog
               </Link>
