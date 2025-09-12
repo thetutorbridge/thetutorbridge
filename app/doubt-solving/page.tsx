@@ -542,7 +542,7 @@ export default function DoubtSolving() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Image src="/logo.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
+                <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
                 <span className="text-xl font-bold">TheTutorBridge</span>
               </div>
               <p className="text-gray-400">

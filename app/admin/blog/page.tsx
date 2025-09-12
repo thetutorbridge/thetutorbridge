@@ -4,11 +4,32 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Plus, Edit, Trash2, Eye, Calendar, Clock, Tag } from "lucide-react"
-import { getAllBlogPostsAdmin, deleteBlogPost, type BlogPost } from "@/lib/blog"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
+
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: any;
+  featured_image: string;
+  author_name: string;
+  author_linkedin: string;
+  author_image: string;
+  tags: string[];
+  status: 'draft' | 'published' | 'archived';
+  published_at: string | null;
+  created_at: string;
+  updated_at: string;
+  view_count: number;
+  read_time: number;
+  meta_title: string;
+  meta_description: string;
+  meta_keywords: string[];
+}
 
 export default function AdminBlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([])
@@ -25,8 +46,12 @@ export default function AdminBlogPage() {
       
       setIsLoading(true)
       try {
-        const allPosts = await getAllBlogPostsAdmin()
-        setPosts(allPosts)
+        const response = await fetch('/api/blog/posts?status=all')
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts')
+        }
+        const result = await response.json()
+        setPosts(result.posts || [])
       } catch (error) {
         console.error('Error loading blog posts:', error)
         setPosts([])
@@ -41,10 +66,20 @@ export default function AdminBlogPage() {
   const handleDeletePost = async (id: string) => {
     if (confirm('Are you sure you want to delete this blog post? This action cannot be undone.')) {
       try {
-        await deleteBlogPost(id)
+        const response = await fetch(`/api/blog/posts/id/${id}`, {
+          method: 'DELETE'
+        })
+        
+        if (!response.ok) {
+          throw new Error('Failed to delete post')
+        }
+        
         // Reload posts after deletion
-        const updatedPosts = await getAllBlogPostsAdmin()
-        setPosts(updatedPosts)
+        const updatedResponse = await fetch('/api/blog/posts?status=all')
+        if (updatedResponse.ok) {
+          const result = await updatedResponse.json()
+          setPosts(result.posts || [])
+        }
       } catch (error) {
         console.error('Error deleting blog post:', error)
         alert('Failed to delete blog post')
@@ -170,11 +205,11 @@ export default function AdminBlogPage() {
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="h-3 w-3" />
-                      {post.read_time} min read
+                      {post.view_count || 0} views
                     </div>
                   </div>
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-sm text-gray-600">By {post.author}</span>
+                    <span className="text-sm text-gray-600">By {post.author_name || 'Unknown Author'}</span>
                   </div>
                   <div className="flex flex-wrap gap-1">
                     {post.tags.slice(0, 3).map((tag) => (
@@ -201,7 +236,7 @@ export default function AdminBlogPage() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Image src="/logo.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
+                <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
                 <span className="text-xl font-bold">TheTutorBridge</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
@@ -260,7 +295,7 @@ export default function AdminBlogPage() {
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>info@thetutorbridge.com</li>
-                <li>+91 98765 43210</li>
+                <li>+91 9310096171</li>
               </ul>
             </div>
           </div>

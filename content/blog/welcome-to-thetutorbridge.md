@@ -99,6 +99,6 @@ Don't let academic challenges hold you back. Take the first step towards success
 
 ---
 
-*For more information or to get started, contact us at info@thetutorbridge.com or call +91 98765 43210.*
+*For more information or to get started, contact us at info@thetutorbridge.com or call +91 9310096171.*
 
 *TheTutorBridge - Empowering students to reach their full potential since 2020.*

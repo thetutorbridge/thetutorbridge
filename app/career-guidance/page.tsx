@@ -1,299 +1,506 @@
+"use client"
+
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, Target, Users, TrendingUp, Award, BookOpen, Briefcase } from "lucide-react"
+import { 
+  ArrowRight, 
+  CheckCircle, 
+  Target, 
+  Users, 
+  TrendingUp, 
+  Award, 
+  BookOpen, 
+  Briefcase,
+  Globe,
+  GraduationCap,
+  Lightbulb,
+  FileText,
+  Star,
+  Brain,
+  Heart,
+  MapPin,
+  Phone,
+  Mail,
+  ChevronDown,
+  ChevronUp,
+  Compass,
+  UserCheck,
+  BookMarked,
+  Zap
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Navigation } from "@/components/navigation"
+import FloaterMessenger from "@/app/components/FloaterMessenger"
+import CareerGuidanceFAQ from "@/components/CareerGuidanceFAQ"
+
+// Metadata is handled in layout.tsx for client components
+
 
 export default function CareerGuidance() {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Image src="/logo.png" width={40} height={40} alt="The Tutor Bridge Logo" className="h-10 w-10" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
-              TheTutorBridge
-            </span>
-          </div>
-          <nav className="hidden md:flex gap-8">
-            <Link href="/" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-              Home
-            </Link>
-            <Link href="#" className="text-sm font-medium text-purple-600">
-              Career Guidance
-            </Link>
-            <Link
-              href="https://thetutorbridge.com/blog"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Blog
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" className="hidden md:flex text-gray-700">
-              Sign In
-            </Button>
-            <Button className="bg-gradient-to-r from-purple-600 to-brand-orange hover:from-purple-700 hover:to-brand-orange-dark">
-              Book Session
-            </Button>
-          </div>
-        </div>
-      </header>
+    <div className="relative min-h-screen flex flex-col overflow-x-hidden font-merriweather">
+      {/* Background */}
+      <div className="fixed inset-0 -z-10 w-full h-full">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1A3D7C]/5 via-[#2BAE66]/5 to-[#FFC857]/10" />
+      </div>
+
+      <Navigation />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-orange-50">
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-          <div className="container px-4 py-20 md:py-32">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-              <div className="space-y-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                  <Target className="h-4 w-4" />
-                  Expert Career Mentorship
-                </div>
-                <div className="space-y-6">
-                  <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                    Shape Your
-                    <span className="bg-gradient-to-r from-purple-600 to-brand-orange bg-clip-text text-transparent">
-                      {" "}
-                      Future Career
-                    </span>
-                  </h1>
-                  <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-                    Get personalized career guidance from industry experts. Make informed decisions about stream
-                    selection, college choices, and career paths with our comprehensive mentorship program.
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-lg px-8 py-4"
-                  >
-                    Book Free Consultation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2">
-                    View Success Stories
-                  </Button>
-                </div>
+        {/* 1. Hero Section */}
+        <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="relative z-10 max-w-6xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-poppins font-bold leading-tight mb-6">
+              Find Your Path.
+              <br />
+              <span className="text-[#FFC857]">Shape Your Future.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8 font-merriweather">
+              From subject choices to scholarships and career planning — we guide students at every step.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Link href="/book-demo-class">
+                <Button
+                  size="lg"
+                  className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold"
+                >
+                  Book a Free Guidance Session
+                </Button>
+              </Link>
+              <Link href="#success-stories">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold"
+                >
+                  View Success Stories
+                </Button>
+              </Link>
+            </div>
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/80">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Expert Career Counselors</span>
               </div>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-3xl blur-3xl opacity-20"></div>
-                <Image
-                  src="/success.jpg?height=600&width=600"
-                  width={600}
-                  height={600}
-                  alt="Career guidance session"
-                  className="relative rounded-3xl shadow-2xl"
-                />
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Personalized Roadmaps</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Study Abroad Guidance</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services */}
+        {/* 2. Why Career Guidance Matters */}
         <section className="py-20 bg-white">
-          <div className="container px-4">
+          <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Our Career
-                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  {" "}
-                  Services
-                </span>
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Why Career Guidance Matters
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive career guidance tailored to your goals and aspirations
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Today's students face more choices than ever before. Without proper guidance, these decisions can become overwhelming and lead to career paths that don't align with their true potential.
               </p>
             </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
-                    <BookOpen className="h-8 w-8 text-white" />
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-red-50 to-red-100">
+                <CardContent>
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <GraduationCap className="w-8 h-8 text-red-600" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">Stream Selection</h3>
-                  <p className="text-gray-600">
-                    Get expert advice on choosing between Science, Commerce, or Humanities based on your interests and
-                    career goals.
-                  </p>
+                  <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Confusion about Subject Choices</h3>
+                  <p className="text-gray-600">Students often struggle to choose between Science, Commerce, and Arts streams without understanding their long-term career implications.</p>
                 </CardContent>
               </Card>
-
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-indigo-50 to-indigo-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
-                    <Award className="h-8 w-8 text-white" />
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+                <CardContent>
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Globe className="w-8 h-8 text-orange-600" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">College Roadmap</h3>
-                  <p className="text-gray-600">
-                    Detailed guidance on entrance exams, college applications, and roadmaps to top institutions like
-                    IIT, AIIMS, and more.
-                  </p>
+                  <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Lack of Clarity about Future Careers</h3>
+                  <p className="text-gray-600">Many students have limited exposure to various career options and don't understand what different professions actually involve.</p>
                 </CardContent>
               </Card>
-
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                    <Briefcase className="h-8 w-8 text-white" />
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-yellow-50 to-yellow-100">
+                <CardContent>
+                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="w-8 h-8 text-yellow-600" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">Career Planning</h3>
-                  <p className="text-gray-600">
-                    Explore various career options, understand industry trends, and create a personalized career
-                    development plan.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
-                    <TrendingUp className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">Skill Development</h3>
-                  <p className="text-gray-600">
-                    Identify key skills needed for your chosen career and get guidance on internships, certifications,
-                    and projects.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6">
-                    <Users className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">LinkedIn & Networking</h3>
-                  <p className="text-gray-600">
-                    Learn how to build a professional online presence and network effectively for future opportunities.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-pink-50 to-pink-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
-                    <Target className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">Goal Setting</h3>
-                  <p className="text-gray-600">
-                    Set SMART career goals and create actionable plans to achieve your short-term and long-term
-                    objectives.
-                  </p>
+                  <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Stress in Planning for Higher Studies</h3>
+                  <p className="text-gray-600">The complexity of college applications, entrance exams, and study abroad processes creates significant stress for students and parents.</p>
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
 
-        {/* Pricing */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-          <div className="container px-4">
+        {/* 3. Our Approach */}
+        <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+          <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Investment in Your
-                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  {" "}
-                  Future
-                </span>
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Our Approach
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">Choose the mentorship plan that fits your needs</p>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Our proven 4-step process ensures you get comprehensive career guidance tailored to your unique needs and aspirations.
+              </p>
             </div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="border-2 hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4">Single Session</h3>
-                  <div className="text-4xl font-bold text-purple-600 mb-6">
-                    ₹199-999
-                    <span className="text-lg font-normal text-gray-600">/session</span>
-                  </div>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>1-hour personalized session</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>Expert career counselor</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>Detailed career assessment</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>Personalized action plan</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>Resource recommendations</span>
-                    </li>
-                  </ul>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700">Book Single Session</Button>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-purple-500 hover:shadow-xl transition-all duration-300 relative">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                    Best Value
-                  </span>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              <div className="text-center relative">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                  <Brain className="w-10 h-10 text-white" />
                 </div>
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4">3-Month Mentorship</h3>
-                  <div className="text-4xl font-bold text-purple-600 mb-6">
-                    ₹2,499
-                    <span className="text-lg font-normal text-gray-600">/3 months</span>
+                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
+                  <ArrowRight className="w-6 h-6 text-[#2BAE66]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">1. Assess</h3>
+                <p className="text-gray-600">Understanding student's interests, strengths, learning style, and career goals through comprehensive assessment tools.</p>
+              </div>
+
+              <div className="text-center relative">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#2BAE66] to-[#FFC857] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                  <Compass className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
+                  <ArrowRight className="w-6 h-6 text-[#2BAE66]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">2. Explore</h3>
+                <p className="text-gray-600">Sharing academic pathways, career options, industry insights, and real-world opportunities that align with your profile.</p>
+              </div>
+
+              <div className="text-center relative">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FFC857] to-[#1A3D7C] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                  <Target className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
+                  <ArrowRight className="w-6 h-6 text-[#2BAE66]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">3. Plan</h3>
+                <p className="text-gray-600">Subject selection, exam strategies, scholarship opportunities, and creating a personalized roadmap for success.</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <TrendingUp className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">4. Support</h3>
+                <p className="text-gray-600">Continuous mentorship, progress tracking, and ongoing support to ensure you stay on track towards your goals.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Services Offered */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Services Offered
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Comprehensive career guidance services designed to help you make informed decisions at every stage of your academic journey.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="w-8 h-8 text-blue-600" />
                   </div>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>6 one-on-one sessions</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>Dedicated career mentor</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>Comprehensive career roadmap</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>Monthly progress reviews</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>WhatsApp support</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-purple-500" />
-                      <span>LinkedIn profile optimization</span>
-                    </li>
-                  </ul>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700">Start Mentorship</Button>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Subject & Stream Selection</h3>
+                  <p className="text-gray-600">Expert guidance for Class 6-12 students on choosing the right subjects and streams based on interests, strengths, and career goals.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Globe className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Career Path Mapping</h3>
+                  <p className="text-gray-600">Explore diverse career options in STEM, Commerce, Arts, and Humanities with detailed insights into industry trends and opportunities.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Study Abroad Guidance</h3>
+                  <p className="text-gray-600">Complete support for international education including university selection, scholarships, application processes, and visa guidance.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-yellow-50 to-yellow-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Lightbulb className="w-8 h-8 text-yellow-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Skill & Personality Development</h3>
+                  <p className="text-gray-600">Identify and develop essential skills, personality traits, and competencies needed for your chosen career path.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-red-50 to-red-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FileText className="w-8 h-8 text-red-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Resume Building & Applications</h3>
+                  <p className="text-gray-600">Professional resume building, college application support, and interview preparation to help you stand out.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-indigo-50 to-indigo-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-indigo-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Ongoing Mentorship</h3>
+                  <p className="text-gray-600">Continuous support and guidance throughout your academic journey with regular check-ins and progress tracking.</p>
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-          <div className="container px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Plan Your Career?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Take the first step towards a successful career with expert guidance
-            </p>
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-              Book Free Consultation
-            </Button>
+        {/* 5. Success Stories */}
+        <section id="success-stories" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Success Stories
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Don't just take our word for it. Here's what our students have achieved with our career guidance.
+              </p>
+            </div>
+            
+            {/* Success Metrics */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 mb-16 max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <div className="text-4xl md:text-5xl font-bold text-[#2BAE66] mb-2">95%</div>
+                <p className="text-lg text-gray-700">of students reported improved clarity in career direction after just 3 sessions with The Tutor Bridge.</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "The career guidance helped me discover my passion for computer science. I was confused between engineering and medicine, but the counselor helped me understand my strengths and interests clearly."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-blue-600 font-semibold">A</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Arjun Sharma</div>
+                      <div className="text-sm text-gray-600">IIT Computer Science Student</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "The study abroad guidance was exceptional. They helped me secure a full scholarship to study in Canada and guided me through the entire application process."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-green-600 font-semibold">P</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Priya Patel</div>
+                      <div className="text-sm text-gray-600">University of Toronto</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "As a parent, I was worried about my daughter's career choices. The counselor helped both of us understand the options and made the decision-making process much clearer."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-purple-600 font-semibold">R</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Rajesh Kumar</div>
+                      <div className="text-sm text-gray-600">Parent of Class 11 Student</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
+
+        {/* 6. Tools & Resources */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Tools & Resources
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Access our comprehensive collection of career guidance tools and resources to support your journey.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100 h-full flex flex-col">                                                                                    
+                <CardContent className="text-center flex flex-col h-full">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">                                                                                                   
+                    <BookOpen className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Career Roadmaps</h3>
+                  <p className="text-gray-600 text-sm mb-4 flex-grow">Detailed career pathways and roadmaps for various fields and industries.</p>                                                                              
+                  <div className="text-blue-600 font-semibold">Coming Soon</div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100 h-full flex flex-col">                                                                                  
+                <CardContent className="text-center flex flex-col h-full">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">                                                                                                   
+                    <Brain className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Aptitude Tests</h3>
+                  <p className="text-gray-600 text-sm mb-4 flex-grow">Comprehensive assessments to identify your strengths, interests, and career inclinations.</p>                                                               
+                  <div className="text-green-600 font-semibold">Coming Soon</div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100 h-full flex flex-col">                                                                                
+                <CardContent className="text-center flex flex-col h-full">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">                                                                                                  
+                    <Award className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Guidance Webinars</h3>
+                  <p className="text-gray-600 text-sm mb-4 flex-grow">Recorded sessions and live webinars on various career topics and industry insights.</p>                                                                     
+                  <div className="text-purple-600 font-semibold">Coming Soon</div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. Meet Our Mentors */}
+        <section className="py-20 bg-gradient-to-br from-[#F8FAFC] to-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Meet Our Mentors
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Our team of experienced career counselors and industry experts are here to guide you on your journey.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300">
+                <CardContent>
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#1A3D7C] mb-2">Industry Experts</h3>
+                  <p className="text-gray-600">Our mentors come from diverse backgrounds including technology, healthcare, finance, and education sectors.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300">
+                <CardContent>
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <GraduationCap className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#1A3D7C] mb-2">Academic Excellence</h3>
+                  <p className="text-gray-600">Many of our counselors have advanced degrees and extensive experience in academic counseling and career development.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300">
+                <CardContent>
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#1A3D7C] mb-2">Passionate Mentors</h3>
+                  <p className="text-gray-600">Our team is passionate about helping students discover their potential and achieve their career dreams.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* 8. Call-to-Action */}
+        <section className="py-20 bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold mb-6">
+              Your Career Journey Shouldn't Be Confusing
+            </h2>
+            <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
+              Let us help you build clarity and confidence today. Book your free guidance session and take the first step towards a successful career.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Link href="/book-demo-class">
+                <Button
+                  size="lg"
+                  className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold"
+                >
+                  Book Your Guidance Session
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold"
+                >
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/80">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Free Initial Consultation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Personalized Approach</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Proven Results</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 9. FAQ Section */}
+        <CareerGuidanceFAQ />
       </main>
 
       {/* Footer */}
@@ -302,19 +509,24 @@ export default function CareerGuidance() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Image src="/success.jpg" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
+                <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
                 <span className="text-xl font-bold">TheTutorBridge</span>
               </div>
-              <p className="text-gray-400">Transforming education through personalized learning experiences.</p>
+              <p className="text-gray-400 leading-relaxed">
+                India's leading online tutoring platform helping students achieve academic excellence since 2020.
+              </p>
+              <div className="flex space-x-4">
+                <a href="https://www.linkedin.com/company/thetutorbridge/" className="text-gray-400 hover:text-white transition-colors">
+                  LinkedIn
+                </a>
+                <a href="https://t.me/thetutorbridge" className="text-gray-400 hover:text-white transition-colors">
+                  Telegram
+                </a>
+              </div>
             </div>
             <div>
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/" className="hover:text-white transition-colors">
-                    One-on-One Tutoring
-                  </Link>
-                </li>
                 <li>
                   <Link href="/doubt-solving" className="hover:text-white transition-colors">
                     Doubt Solving
@@ -325,19 +537,29 @@ export default function CareerGuidance() {
                     Career Guidance
                   </Link>
                 </li>
+                <li>
+                  <Link href="/study-resources" className="hover:text-white transition-colors">
+                    Study Resources
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Resources</h4>
+              <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="https://thetutorbridge.com/blog" className="hover:text-white transition-colors">
-                    Blog
+                  <Link href="/about" className="hover:text-white transition-colors">
+                    About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Help Center
+                  <Link href="/contact" className="hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="hover:text-white transition-colors">
+                    Blog
                   </Link>
                 </li>
               </ul>
@@ -346,15 +568,19 @@ export default function CareerGuidance() {
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>info@thetutorbridge.com</li>
-                <li>+91 98765 43210</li>
+                <li>+91 9310096171</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            © {new Date().getFullYear()} The Tutor Bridge. All rights reserved.
+            <p>
+              © {new Date().getFullYear()} The Tutor Bridge. All rights reserved. | Helping students excel since 2020
+            </p>
           </div>
         </div>
       </footer>
+
+      <FloaterMessenger />
     </div>
   )
 }

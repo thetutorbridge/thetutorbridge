@@ -1,25 +1,53 @@
--- Create blog_posts table
-CREATE TABLE blog_posts (
+-- Create admin_users table (for access control)
+CREATE TABLE IF NOT EXISTS admin_users (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  email TEXT UNIQUE NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Create blog_posts table (updated schema)
+CREATE TABLE IF NOT EXISTS blog_posts (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   title TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
-  excerpt TEXT NOT NULL,
-  content TEXT NOT NULL,
-  author TEXT NOT NULL,
-  published_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  tags TEXT[] DEFAULT '{}',
+  content JSONB NOT NULL,
+  excerpt TEXT,
   featured_image TEXT,
-  read_time INTEGER DEFAULT 0,
+  author_name TEXT,
+  author_avatar TEXT,
+  author_linkedin TEXT,
   status TEXT DEFAULT 'draft' CHECK (status IN ('draft', 'published')),
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+  published_at TIMESTAMPTZ,
+  meta_title TEXT,
+  meta_description TEXT,
+  tags TEXT[],
+  view_count INTEGER DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Create blog_categories table
+CREATE TABLE IF NOT EXISTS blog_categories (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT UNIQUE NOT NULL,
+  slug TEXT UNIQUE NOT NULL,
+  description TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Create blog_post_categories junction table
+CREATE TABLE IF NOT EXISTS blog_post_categories (
+  post_id UUID REFERENCES blog_posts(id) ON DELETE CASCADE,
+  category_id UUID REFERENCES blog_categories(id) ON DELETE CASCADE,
+  PRIMARY KEY (post_id, category_id)
 );
 
 -- Create indexes for better performance
 CREATE INDEX idx_blog_posts_status ON blog_posts(status);
 CREATE INDEX idx_blog_posts_slug ON blog_posts(slug);
-CREATE INDEX idx_blog_posts_published_at ON blog_posts(published_at);
+CREATE INDEX idx_blog_posts_published_at ON blog_posts(published_at DESC);
 CREATE INDEX idx_blog_posts_tags ON blog_posts USING GIN(tags);
+CREATE INDEX idx_blog_posts_author_name ON blog_posts(author_name);
 
 -- Create function to update updated_at timestamp
 CREATE OR REPLACE FUNCTION update_updated_at_column()
@@ -36,79 +64,37 @@ CREATE TRIGGER update_blog_posts_updated_at
     FOR EACH ROW 
     EXECUTE FUNCTION update_updated_at_column();
 
+-- Insert sample admin user (replace with your email)
+INSERT INTO admin_users (email) VALUES ('your-email@example.com') ON CONFLICT (email) DO NOTHING;
+
 -- Insert sample data
 INSERT INTO blog_posts (
   title,
   slug,
   excerpt,
   content,
-  author,
+  author_name,
+  author_linkedin,
   tags,
   featured_image,
-  read_time,
   status,
-  published_at
+  published_at,
+  meta_title,
+  meta_description
 ) VALUES 
 (
   'How to Excel in Mathematics: A Complete Guide for Students',
   'how-to-excel-in-mathematics',
   'Discover proven strategies and techniques to master mathematics and build a strong foundation for academic success.',
-  '# How to Excel in Mathematics: A Complete Guide for Students
-
-Mathematics is often considered one of the most challenging subjects for students. However, with the right approach and mindset, anyone can excel in math. In this comprehensive guide, we''ll explore proven strategies that can help you master mathematics and build a strong foundation for academic success.
-
-## Understanding the Fundamentals
-
-The key to excelling in mathematics lies in understanding the fundamental concepts. Many students struggle because they try to memorize formulas without understanding the underlying principles.
-
-### 1. Build a Strong Foundation
-- Start with basic arithmetic operations
-- Master fractions, decimals, and percentages
-- Understand the concept of variables and equations
-
-### 2. Practice Regularly
-Mathematics is a skill that improves with practice. Set aside dedicated time each day to solve problems and work through exercises.
-
-### 3. Use Visual Learning
-Many mathematical concepts become clearer when visualized. Use diagrams, graphs, and models to understand abstract concepts.
-
-## Effective Study Techniques
-
-### Problem-Solving Approach
-1. **Read the problem carefully** - Understand what is being asked
-2. **Identify given information** - List all the data provided
-3. **Choose the right method** - Select the appropriate mathematical approach
-4. **Solve step by step** - Show your work clearly
-5. **Verify your answer** - Check if your solution makes sense
-
-### Common Mistakes to Avoid
-- Rushing through problems without understanding
-- Not showing your work
-- Skipping the verification step
-- Memorizing without understanding
-
-## Advanced Strategies
-
-### 1. Connect Concepts
-Mathematics is interconnected. Try to see how different topics relate to each other.
-
-### 2. Use Technology
-Leverage calculators, graphing software, and online resources to enhance your learning.
-
-### 3. Join Study Groups
-Collaborating with peers can provide new perspectives and help clarify difficult concepts.
-
-## Conclusion
-
-Excelling in mathematics requires dedication, practice, and the right approach. By building a strong foundation, practicing regularly, and using effective study techniques, you can master this essential subject.
-
-Remember, mathematics is not just about numbers—it''s about logical thinking and problem-solving skills that will serve you throughout your academic and professional life.',
+  '{"type":"doc","content":[{"type":"heading","attrs":{"level":1},"content":[{"type":"text","text":"How to Excel in Mathematics: A Complete Guide for Students"}]},{"type":"paragraph","content":[{"type":"text","text":"Mathematics is often considered one of the most challenging subjects for students. However, with the right approach and mindset, anyone can excel in math. In this comprehensive guide, we''ll explore proven strategies that can help you master mathematics and build a strong foundation for academic success."}]},{"type":"heading","attrs":{"level":2},"content":[{"type":"text","text":"Understanding the Fundamentals"}]},{"type":"paragraph","content":[{"type":"text","text":"The key to excelling in mathematics lies in understanding the fundamental concepts. Many students struggle because they try to memorize formulas without understanding the underlying principles."}]},{"type":"heading","attrs":{"level":3},"content":[{"type":"text","text":"1. Build a Strong Foundation"}]},{"type":"bulletList","content":[{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Start with basic arithmetic operations"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Master fractions, decimals, and percentages"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Understand the concept of variables and equations"}]}]}]},{"type":"heading","attrs":{"level":3},"content":[{"type":"text","text":"2. Practice Regularly"}]},{"type":"paragraph","content":[{"type":"text","text":"Mathematics is a skill that improves with practice. Set aside dedicated time each day to solve problems and work through exercises."}]},{"type":"heading","attrs":{"level":3},"content":[{"type":"text","text":"3. Use Visual Learning"}]},{"type":"paragraph","content":[{"type":"text","text":"Many mathematical concepts become clearer when visualized. Use diagrams, graphs, and models to understand abstract concepts."}]}]}',
   'Dr. Sarah Johnson',
+  'https://linkedin.com/in/sarah-johnson',
   ARRAY['Mathematics', 'Study Tips', 'Academic Success'],
   '/blog/math-excellence.jpg',
-  8,
   'published',
-  '2024-01-15T10:00:00Z'
+  '2024-01-15T10:00:00Z',
+  'How to Excel in Mathematics: A Complete Guide for Students',
+  'Discover proven strategies and techniques to master mathematics and build a strong foundation for academic success.'
 ),
 (
   'The Science of Effective Learning: Techniques That Actually Work',
@@ -266,11 +252,89 @@ The key is to stay curious, keep learning, and be open to new opportunities as t
 
 -- Enable Row Level Security (RLS)
 ALTER TABLE blog_posts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE admin_users ENABLE ROW LEVEL SECURITY;
+ALTER TABLE blog_categories ENABLE ROW LEVEL SECURITY;
+ALTER TABLE blog_post_categories ENABLE ROW LEVEL SECURITY;
 
--- Create policies for public read access to published posts
-CREATE POLICY "Public can view published blog posts" ON blog_posts
+-- Drop any existing policies
+DROP POLICY IF EXISTS "Public can view published blog posts" ON blog_posts;
+DROP POLICY IF EXISTS "Authenticated users can manage blog posts" ON blog_posts;
+DROP POLICY IF EXISTS "Users can check admin status" ON admin_users;
+
+-- blog_posts policies
+CREATE POLICY "Public can read published posts" ON blog_posts
   FOR SELECT USING (status = 'published');
 
--- Create policies for authenticated users to manage posts
-CREATE POLICY "Authenticated users can manage blog posts" ON blog_posts
-  FOR ALL USING (auth.role() = 'authenticated'); 
+CREATE POLICY "Admins can read all posts" ON blog_posts
+  FOR SELECT USING (
+    EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+  );
+
+CREATE POLICY "Admins can insert posts" ON blog_posts
+  FOR INSERT WITH CHECK (
+    EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+  );
+
+CREATE POLICY "Admins can update posts" ON blog_posts
+  FOR UPDATE USING (
+    EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+  );
+
+CREATE POLICY "Admins can delete posts" ON blog_posts
+  FOR DELETE USING (
+    EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+  );
+
+-- admin_users policies
+CREATE POLICY "Users can check admin status" ON admin_users
+  FOR SELECT USING (auth.uid() IS NOT NULL);
+
+-- blog_categories policies
+CREATE POLICY "Public can read categories" ON blog_categories
+  FOR SELECT USING (true);
+
+CREATE POLICY "Admins can manage categories" ON blog_categories
+  FOR ALL USING (
+    EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+  );
+
+-- blog_post_categories policies
+CREATE POLICY "Public can read post categories" ON blog_post_categories
+  FOR SELECT USING (true);
+
+CREATE POLICY "Admins can manage post categories" ON blog_post_categories
+  FOR ALL USING (
+    EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+  );
+
+-- Create blog-images storage bucket
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('blog-images', 'blog-images', true)
+ON CONFLICT (id) DO NOTHING;
+
+-- Storage policies for blog-images bucket
+CREATE POLICY "Admin users can upload blog images" ON storage.objects
+FOR INSERT TO authenticated
+WITH CHECK (
+  bucket_id = 'blog-images' 
+  AND EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+);
+
+CREATE POLICY "Admin users can update blog images" ON storage.objects
+FOR UPDATE TO authenticated
+USING (
+  bucket_id = 'blog-images' 
+  AND EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+);
+
+CREATE POLICY "Admin users can delete blog images" ON storage.objects
+FOR DELETE TO authenticated
+USING (
+  bucket_id = 'blog-images' 
+  AND EXISTS (SELECT 1 FROM admin_users WHERE email = auth.email())
+);
+
+-- Public can read images
+CREATE POLICY "Anyone can view blog images" ON storage.objects
+FOR SELECT TO public
+USING (bucket_id = 'blog-images'); 

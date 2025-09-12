@@ -2,31 +2,41 @@ export interface BlogPost {
   id: string
   title: string
   slug: string
-  excerpt: string
-  content: string
-  author: string
-  tags: string[]
-  featured_image?: string
-  read_time: number
+  content: any // JSONB content from TipTap
+  excerpt: string | null
+  featured_image: string | null
+  author_name: string | null
+  author_avatar: string | null
+  author_linkedin: string | null
   status: 'draft' | 'published'
   published_at: string | null
+  meta_title: string | null
+  meta_description: string | null
+  tags: string[]
+  view_count: number
   created_at: string
+  updated_at: string
 }
 
 export interface BlogPostFormData {
   title: string
-  excerpt: string
-  content: string
-  author: string
-  tags: string[]
-  featuredImage?: string
+  slug?: string
+  excerpt?: string
+  content: any // JSONB content from TipTap
+  author_name?: string
+  author_avatar?: string
+  author_linkedin?: string
+  tags?: string[]
+  featured_image?: string
   status: 'draft' | 'published'
+  meta_title?: string
+  meta_description?: string
 }
 
 // Get all blog posts from API
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
-    const response = await fetch('/api/blog-posts')
+    const response = await fetch('/api/blog/posts')
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
@@ -41,7 +51,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 // Get all blog posts for admin (including drafts)
 export async function getAllBlogPostsAdmin(): Promise<BlogPost[]> {
   try {
-    const response = await fetch('/api/blog-posts?admin=true')
+    const response = await fetch('/api/blog/posts?admin=true')
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
@@ -56,7 +66,7 @@ export async function getAllBlogPostsAdmin(): Promise<BlogPost[]> {
 // Get blog post by slug
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
-    const response = await fetch(`/api/blog-posts?slug=${encodeURIComponent(slug)}`)
+    const response = await fetch(`/api/blog/posts/${encodeURIComponent(slug)}`)
     if (!response.ok) {
       if (response.status === 404) {
         return null
@@ -74,8 +84,15 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
 // Get blog post by ID
 export async function getBlogPostById(id: string): Promise<BlogPost | null> {
   try {
-    const allPosts = await getAllBlogPostsAdmin()
-    return allPosts.find(post => post.id === id) || null
+    const response = await fetch(`/api/blog/posts/id/${encodeURIComponent(id)}`)
+    if (!response.ok) {
+      if (response.status === 404) {
+        return null
+      }
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    const post = await response.json()
+    return post
   } catch (error) {
     console.error('Error fetching blog post by ID:', error)
     return null
@@ -104,7 +121,7 @@ export async function searchBlogPosts(query: string): Promise<BlogPost[]> {
 // Create a new blog post via API
 export async function createBlogPost(postData: BlogPostFormData): Promise<BlogPost | null> {
   try {
-    const response = await fetch('/api/blog-posts?action=create', {
+    const response = await fetch('/api/blog/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -114,7 +131,7 @@ export async function createBlogPost(postData: BlogPostFormData): Promise<BlogPo
 
     if (!response.ok) {
       const errorData = await response.json()
-      throw new Error(errorData.message || `HTTP error! status: ${response.status}`)
+      throw new Error(errorData.error || `HTTP error! status: ${response.status}`)
     }
 
     const result = await response.json()
@@ -132,17 +149,17 @@ export async function createBlogPost(postData: BlogPostFormData): Promise<BlogPo
 // Update an existing blog post via API
 export async function updateBlogPost(id: string, postData: BlogPostFormData): Promise<BlogPost | null> {
   try {
-    const response = await fetch('/api/blog-posts?action=update', {
-      method: 'POST',
+    const response = await fetch(`/api/blog/posts/id/${encodeURIComponent(id)}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ ...postData, id }),
+      body: JSON.stringify(postData),
     })
 
     if (!response.ok) {
       const errorData = await response.json()
-      throw new Error(errorData.message || `HTTP error! status: ${response.status}`)
+      throw new Error(errorData.error || `HTTP error! status: ${response.status}`)
     }
 
     const result = await response.json()
@@ -160,13 +177,13 @@ export async function updateBlogPost(id: string, postData: BlogPostFormData): Pr
 // Delete a blog post via API
 export async function deleteBlogPost(id: string): Promise<boolean> {
   try {
-    const response = await fetch(`/api/blog-posts?id=${encodeURIComponent(id)}`, {
+    const response = await fetch(`/api/blog/posts/id/${encodeURIComponent(id)}`, {
       method: 'DELETE',
     })
 
     if (!response.ok) {
       const errorData = await response.json()
-      throw new Error(errorData.message || `HTTP error! status: ${response.status}`)
+      throw new Error(errorData.error || `HTTP error! status: ${response.status}`)
     }
 
     return true
@@ -200,33 +217,38 @@ export function generateId(): string {
   return Date.now().toString(36) + Math.random().toString(36).substring(2)
 }
 
-// Image management functions (simplified for static system)
+// Image management functions
 export interface ImageUploadResult {
   success: boolean
   publicUrl?: string
+  fileName?: string
   error?: string
 }
 
 export async function uploadBlogImage(file: File): Promise<ImageUploadResult> {
-  // For static system, we'll just return the file as a data URL
-  // In production, you might want to save images to public/images/blog/ directory
   try {
-    return new Promise((resolve) => {
-      const reader = new FileReader()
-      reader.onload = () => {
-        resolve({
-          success: true,
-          publicUrl: reader.result as string
-        })
-      }
-      reader.onerror = () => {
-        resolve({
-          success: false,
-          error: 'Failed to read file'
-        })
-      }
-      reader.readAsDataURL(file)
+    const formData = new FormData()
+    formData.append('file', file)
+
+    const response = await fetch('/api/blog/upload-image', {
+      method: 'POST',
+      body: formData,
     })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      return {
+        success: false,
+        error: errorData.error || 'Upload failed'
+      }
+    }
+
+    const result = await response.json()
+    return {
+      success: true,
+      publicUrl: result.publicUrl,
+      fileName: result.fileName
+    }
   } catch (error) {
     return {
       success: false,

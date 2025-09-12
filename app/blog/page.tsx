@@ -3,19 +3,36 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Search, Calendar, Clock, Tag, ArrowRight } from "lucide-react"
-import { getAllBlogPosts, searchBlogPosts, getBlogPostsByTag, type BlogPost } from "@/lib/blog"
-import { Button } from "@/components/ui/button"
+import { Search, Calendar, Clock } from "lucide-react"
 import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
+
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: any;
+  featured_image: string;
+  author_name: string;
+  author_linkedin: string;
+  author_image: string;
+  tags: string[];
+  status: 'draft' | 'published' | 'archived';
+  published_at: string | null;
+  created_at: string;
+  updated_at: string;
+  view_count: number;
+  read_time: number;
+  meta_title: string;
+  meta_description: string;
+  meta_keywords: string[];
+}
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedTag, setSelectedTag] = useState<string | null>(null)
-  const [allTags, setAllTags] = useState<string[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isClient, setIsClient] = useState(false)
 
@@ -30,18 +47,18 @@ export default function BlogPage() {
       setIsLoading(true)
       try {
         console.log('🔄 Loading blog posts...')
-        const allPosts = await getAllBlogPosts()
+        const response = await fetch('/api/blog/posts?status=published')
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts')
+        }
+        const result = await response.json()
+        const allPosts = result.posts || []
         setPosts(allPosts)
-        
-        // Extract unique tags
-        const tags = Array.from(new Set(allPosts.flatMap(post => post.tags)))
-        setAllTags(tags)
         console.log('✅ Blog posts loaded successfully:', allPosts.length, 'posts')
       } catch (error) {
         console.error('❌ Error loading blog posts:', error)
         // Set empty posts array on error
         setPosts([])
-        setAllTags([])
       } finally {
         setIsLoading(false)
       }
@@ -55,22 +72,39 @@ export default function BlogPage() {
       if (!isClient) return
       
       setIsLoading(true)
-      let filteredPosts: BlogPost[] = []
+      try {
+        let filteredPosts: BlogPost[] = []
 
-      if (searchQuery) {
-        filteredPosts = await searchBlogPosts(searchQuery)
-      } else if (selectedTag) {
-        filteredPosts = await getBlogPostsByTag(selectedTag)
-      } else {
-        filteredPosts = await getAllBlogPosts()
+        if (searchQuery) {
+          // Client-side search for now
+          const response = await fetch('/api/blog/posts?status=published')
+          if (response.ok) {
+            const result = await response.json()
+            const allPosts = result.posts || []
+            filteredPosts = allPosts.filter((post: BlogPost) => 
+              post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+          }
+        } else {
+          const response = await fetch('/api/blog/posts?status=published')
+          if (response.ok) {
+            const result = await response.json()
+            filteredPosts = result.posts || []
+          }
+        }
+
+        setPosts(filteredPosts)
+      } catch (error) {
+        console.error('Error filtering posts:', error)
+        setPosts([])
+      } finally {
+        setIsLoading(false)
       }
-
-      setPosts(filteredPosts)
-      setIsLoading(false)
     }
 
     filterPosts()
-  }, [searchQuery, selectedTag, isClient])
+  }, [searchQuery, isClient])
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return 'Not published'
@@ -106,27 +140,8 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* Tags Filter */}
+      {/* Blog Posts Section */}
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-wrap gap-2 justify-center mb-8">
-          <Button
-            variant={selectedTag === null ? "default" : "outline"}
-            onClick={() => setSelectedTag(null)}
-            className="rounded-full"
-          >
-            All Posts
-          </Button>
-          {allTags.map((tag) => (
-            <Button
-              key={tag}
-              variant={selectedTag === tag ? "default" : "outline"}
-              onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-              className="rounded-full"
-            >
-              {tag}
-            </Button>
-          ))}
-        </div>
 
         {/* Blog Posts Grid */}
         {!isClient ? (
@@ -140,11 +155,11 @@ export default function BlogPage() {
         ) : posts.length === 0 ? (
           <div className="text-center py-16">
             <div className="text-gray-500 text-lg mb-4">
-              {searchQuery || selectedTag ? "No posts found matching your criteria." : "No posts available."}
+              {searchQuery ? "No posts found matching your search." : "No posts available."}
             </div>
-            {(searchQuery || selectedTag) && (
-              <Button onClick={() => { setSearchQuery(""); setSelectedTag(null); }}>
-                Clear filters
+            {searchQuery && (
+              <Button onClick={() => setSearchQuery("")}>
+                Clear search
               </Button>
             )}
           </div>
@@ -171,18 +186,6 @@ export default function BlogPage() {
                   </div>
                 )}
                 <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    {post.tags.slice(0, 2).map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                    {post.tags.length > 2 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{post.tags.length - 2} more
-                      </Badge>
-                    )}
-                  </div>
                   <CardTitle className="text-xl group-hover:text-brand-teal transition-colors">
                     <Link href={`/blog/${post.slug}`}>
                       {post.title}
@@ -193,24 +196,14 @@ export default function BlogPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
                       {formatDate(post.published_at)}
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      {post.read_time} min read
-                    </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">By {post.author}</span>
-                    <Link href={`/blog/${post.slug}`}>
-                      <Button variant="ghost" size="sm" className="group-hover:text-brand-teal">
-                        Read More
-                        <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
+                  <div className="flex items-center">
+                    <span className="text-sm text-gray-600">By {post.author_name || 'Unknown Author'}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -226,7 +219,7 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Image src="/logo.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
+                <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
                 <span className="text-xl font-bold">TheTutorBridge</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
@@ -285,7 +278,7 @@ export default function BlogPage() {
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>info@thetutorbridge.com</li>
-                <li>+91 98765 43210</li>
+                <li>+91 9310096171</li>
               </ul>
             </div>
           </div>

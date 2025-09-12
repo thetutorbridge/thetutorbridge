@@ -101,7 +101,7 @@ export default function RootLayout({
               name: "The Tutor Bridge",
               description: "India's leading online tutoring platform offering personalized education for grades 6-12",
               url: "https://thetutorbridge.com",
-              logo: "https://thetutorbridge.com/logo.png",
+              logo: "https://thetutorbridge.com/TheTutorBridge Logo New.png",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+91-93100-96171",

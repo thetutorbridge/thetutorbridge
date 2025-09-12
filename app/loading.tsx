@@ -10,7 +10,7 @@ export default function Loading() {
       <div className="flex flex-col items-center gap-6 z-10">
         {/* Pulsing logo */}
         <div className="p-6 bg-white/80 rounded-full shadow-xl animate-pulse-slow">
-          <Image src="/logo.png" width={80} height={80} alt="The Tutor Bridge Logo" className="rounded-full" />
+          <Image src="/TheTutorBridge Logo New.png" width={80} height={80} alt="The Tutor Bridge Logo" className="rounded-full" />
         </div>
         <span className="text-2xl font-bold text-blue-700 tracking-wide animate-fade-in">Loading The Tutor Bridge...</span>
       </div>
