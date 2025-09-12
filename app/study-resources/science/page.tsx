@@ -44,7 +44,7 @@ const ScienceResourcesPage = () => (
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <Image src="/logo.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
+              <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
               <span className="text-xl font-bold">TheTutorBridge</span>
             </div>
             <p className="text-gray-400">Transforming education through personalized learning experiences.</p>
@@ -88,7 +88,7 @@ const ScienceResourcesPage = () => (
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
               <li>info@thetutorbridge.com</li>
-              <li>+91 98765 43210</li>
+                <li>+91 9310096171</li>
             </ul>
           </div>
         </div>

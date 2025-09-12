@@ -1,11 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Poppins, Merriweather } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-heading" })
+const merriweather = Merriweather({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-body" })
 
 export const metadata: Metadata = {
   title: {
@@ -74,7 +75,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://thetutorbridge.com",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -86,11 +87,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#FF6B35" />
+        <meta name="theme-color" content="#1A3D7C" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -100,10 +101,10 @@ export default function RootLayout({
               name: "The Tutor Bridge",
               description: "India's leading online tutoring platform offering personalized education for grades 6-12",
               url: "https://thetutorbridge.com",
-              logo: "https://thetutorbridge.com/logo.png",
+              logo: "https://thetutorbridge.com/TheTutorBridge Logo New.png",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+91-98765-43210",
+                telephone: "+91-93100-96171",
                 contactType: "customer service",
                 availableLanguage: ["English", "Hindi"],
               },
@@ -117,16 +118,17 @@ export default function RootLayout({
             }),
           }}
         />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2600923553967122"
-          crossOrigin="anonymous"
-        />
       </head>
-      <body className={inter.className}>
+      <body className={`${poppins.variable} ${merriweather.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2600923553967122"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )

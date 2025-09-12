@@ -1,412 +1,532 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, Play, Users, Calendar, Star, Video } from "lucide-react"
+import { 
+  ArrowRight, 
+  CheckCircle, 
+  Target, 
+  Users, 
+  TrendingUp, 
+  Award, 
+  BookOpen, 
+  Briefcase,
+  Globe,
+  GraduationCap,
+  Lightbulb,
+  FileText,
+  Star,
+  Brain,
+  Heart,
+  MapPin,
+  Phone,
+  Mail,
+  ChevronDown,
+  ChevronUp,
+  Compass,
+  UserCheck,
+  BookMarked,
+  Zap,
+  Play,
+  Calendar,
+  Video,
+  MessageSquare,
+  Shield,
+  Trophy
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Navigation } from "@/components/navigation"
+import FloaterMessenger from "@/app/components/FloaterMessenger"
+import MotivationalSessionsFAQ from "@/components/MotivationalSessionsFAQ"
+
 
 export default function MotivationalSessions() {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Image src="/logo.png" width={40} height={40} alt="The Tutor Bridge Logo" className="h-10 w-10" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
-              TheTutorBridge
-            </span>
-          </div>
-          <nav className="hidden md:flex gap-8">
-            <Link href="/" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-              Home
-            </Link>
-            <Link href="#" className="text-sm font-medium text-orange-600">
-              Motivational Sessions
-            </Link>
-            <Link
-              href="https://thetutorbridge.com/blog"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Blog
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" className="hidden md:flex text-gray-700">
-              Sign In
-            </Button>
-            <Button className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-orange-dark hover:to-brand-red-dark">
-              Join Session
-            </Button>
-          </div>
-        </div>
-      </header>
+    <div className="relative min-h-screen flex flex-col overflow-x-hidden font-merriweather">
+      {/* Background */}
+      <div className="fixed inset-0 -z-10 w-full h-full">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1A3D7C]/5 via-[#FFC857]/10 to-[#2BAE66]/5" />
+      </div>
+
+      <Navigation />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-red-50">
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-          <div className="container px-4 py-20 md:py-32">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-              <div className="space-y-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
-                  <Star className="h-4 w-4" />
-                  Inspiring Success Stories
-                </div>
-                <div className="space-y-6">
-                  <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                    Unlock Your
-                    <span className="bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
-                      {" "}
-                      True Potential
-                    </span>
-                  </h1>
-                  <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-                    Join inspiring live sessions and access recorded webinars on study techniques, mindset development,
-                    and success strategies from achievers who've been where you are.
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-orange-dark hover:to-brand-red-dark text-lg px-8 py-4"
-                  >
-                    Join Live Session
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2">
-                    Watch Free Preview
-                  </Button>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 rounded-3xl blur-3xl opacity-20"></div>
-                <Image
-                  src="/placeholder.svg?height=600&width=600"
-                  width={600}
-                  height={600}
-                  alt="Motivational session"
-                  className="relative rounded-3xl shadow-2xl"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Session Topics */}
-        <section className="py-20 bg-white">
-          <div className="container px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Popular
-                <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  {" "}
-                  Session Topics
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Learn from real experiences and proven strategies for academic and personal success
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6">
-                    <Star className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">How I Cracked 16 Internships During College</h3>
-                  <p className="text-gray-600 mb-4">
-                    Learn the exact strategies, networking techniques, and application processes that led to multiple
-                    internship offers.
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span className="flex items-center gap-1">
-                      <Users className="h-4 w-4" />
-                      2,500+ attended
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Star className="h-4 w-4" />
-                      4.9/5 rating
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-red-50 to-red-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
-                    <CheckCircle className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">Failing an Exam Isn't the End: What to Do Next</h3>
-                  <p className="text-gray-600 mb-4">
-                    Overcome setbacks, rebuild confidence, and create a comeback strategy that turns failure into
-                    success.
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span className="flex items-center gap-1">
-                      <Users className="h-4 w-4" />
-                      1,800+ attended
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Star className="h-4 w-4" />
-                      4.8/5 rating
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                    <Play className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">Smart Study Techniques for Board Toppers</h3>
-                  <p className="text-gray-600 mb-4">
-                    Discover proven study methods, time management strategies, and exam preparation techniques from top
-                    scorers.
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span className="flex items-center gap-1">
-                      <Users className="h-4 w-4" />
-                      3,200+ attended
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Star className="h-4 w-4" />
-                      4.9/5 rating
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
-                    <Users className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">Your Network is Your Net Worth: How to Start Early</h3>
-                  <p className="text-gray-600 mb-4">
-                    Build meaningful connections, leverage social media professionally, and create opportunities through
-                    networking.
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span className="flex items-center gap-1">
-                      <Users className="h-4 w-4" />
-                      1,500+ attended
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Star className="h-4 w-4" />
-                      4.7/5 rating
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Session Formats */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-          <div className="container px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Choose Your
-                <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  {" "}
-                  Learning Format
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Flexible options to fit your schedule and learning preferences
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="border-2 hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center">
-                      <Video className="h-8 w-8 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">Live Sessions</h3>
-                      <p className="text-gray-600">Interactive webinars with Q&A</p>
-                    </div>
-                  </div>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex justify-between items-center">
-                      <span>Single Session</span>
-                      <span className="font-bold text-orange-600">₹49-199</span>
-                    </div>
-                    <ul className="space-y-2">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-orange-500" />
-                        <span>Live interaction with speaker</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-orange-500" />
-                        <span>Q&A session included</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-orange-500" />
-                        <span>Session recording provided</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-orange-500" />
-                        <span>Certificate of attendance</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <Button className="w-full bg-orange-600 hover:bg-orange-700">Join Next Live Session</Button>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-orange-500 hover:shadow-xl transition-all duration-300 relative">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                    Best Value
-                  </span>
-                </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center">
-                      <Play className="h-8 w-8 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">All-Access Pass</h3>
-                      <p className="text-gray-600">Unlimited recorded sessions</p>
-                    </div>
-                  </div>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex justify-between items-center">
-                      <span>Monthly Subscription</span>
-                      <span className="font-bold text-red-600">₹499</span>
-                    </div>
-                    <ul className="space-y-2">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-red-500" />
-                        <span>Access to all recorded sessions</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-red-500" />
-                        <span>New sessions added weekly</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-red-500" />
-                        <span>Downloadable resources</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-red-500" />
-                        <span>Priority access to live sessions</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-red-500" />
-                        <span>Community access</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <Button className="w-full bg-red-600 hover:bg-red-700">Start Free Trial</Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Upcoming Sessions */}
-        <section className="py-20 bg-white">
-          <div className="container px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Upcoming
-                <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  {" "}
-                  Live Sessions
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Don't miss these inspiring sessions happening this month
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 text-orange-600 mb-3">
-                    <Calendar className="h-4 w-4" />
-                    <span className="text-sm font-medium">June 25, 2024 • 7:00 PM</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">From Zero to Hero: My JEE Success Story</h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Learn how I went from average scores to cracking JEE Advanced
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-orange-600 font-bold">₹99</span>
-                    <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
-                      Register
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 text-orange-600 mb-3">
-                    <Calendar className="h-4 w-4" />
-                    <span className="text-sm font-medium">June 28, 2024 • 6:30 PM</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Time Management Mastery for Students</h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Proven techniques to balance studies, hobbies, and social life
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-orange-600 font-bold">₹149</span>
-                    <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
-                      Register
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 text-orange-600 mb-3">
-                    <Calendar className="h-4 w-4" />
-                    <span className="text-sm font-medium">July 2, 2024 • 8:00 PM</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Building Confidence for Board Exams</h3>
-                  <p className="text-gray-600 text-sm mb-4">Overcome exam anxiety and perform at your best</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-orange-600 font-bold">₹79</span>
-                    <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
-                      Register
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
-          <div className="container px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Inspired?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Join thousands of motivated students who are transforming their mindset and achieving their goals
+        {/* 1. Hero Section */}
+        <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-[#FFC857] to-[#1A3D7C] text-white">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="relative z-10 max-w-6xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-poppins font-bold leading-tight mb-6">
+              Inspiration That
+              <br />
+              <span className="text-[#FFC857]">Transforms Learning.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8 font-merriweather">
+              Our motivational sessions empower students with confidence, focus, and resilience — helping them dream bigger and achieve more.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-                Join Next Session
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Link href="/book-demo-class">
+                <Button
+                  size="lg"
+                  className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold"
+                >
+                  Book a Session
+                </Button>
+              </Link>
+              <Link href="#impact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold"
+                >
+                  View Impact Stories
+                </Button>
+              </Link>
+            </div>
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/80">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Interactive Sessions</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Expert Speakers</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
+                <span>Proven Results</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 2. Why Motivation Matters */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Why Motivation Matters
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Students often struggle with stress, procrastination, or self-doubt. Our motivational sessions address these challenges and help students unlock their true potential.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-yellow-50 to-yellow-100">
+                <CardContent>
+                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-8 h-8 text-yellow-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Boost Confidence</h3>
+                  <p className="text-gray-600">Build self-belief and overcome fear of failure through inspiring stories and practical strategies.</p>
+                </CardContent>
+              </Card>
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+                <CardContent>
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Brain className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Improve Focus & Discipline</h3>
+                  <p className="text-gray-600">Learn time management techniques and develop the discipline needed for academic success.</p>
+                </CardContent>
+              </Card>
+              <Card className="p-6 text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent>
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Lightbulb className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Unlock Inner Potential</h3>
+                  <p className="text-gray-600">Discover hidden talents and develop a growth mindset that leads to continuous improvement.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. Our Sessions (How They Work) */}
+        <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Our Sessions
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Our structured approach ensures every student gets maximum value from our motivational sessions.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              <div className="text-center relative">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FFC857] to-[#1A3D7C] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                  <MessageSquare className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
+                  <ArrowRight className="w-6 h-6 text-[#FFC857]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">1. Interactive Talks</h3>
+                <p className="text-gray-600">Real-life examples, storytelling, and engaging presentations that connect with students emotionally.</p>
+        </div>
+
+              <div className="text-center relative">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                  <Target className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
+                  <ArrowRight className="w-6 h-6 text-[#FFC857]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">2. Practical Strategies</h3>
+                <p className="text-gray-600">Time management, stress handling, study hacks, and actionable techniques for immediate implementation.</p>
+              </div>
+
+              <div className="text-center relative">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#2BAE66] to-[#FFC857] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                  <Users className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
+                  <ArrowRight className="w-6 h-6 text-[#FFC857]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">3. Activities & Engagement</h3>
+                <p className="text-gray-600">Games, group discussions, reflections, and interactive exercises that make learning fun and memorable.</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FFC857] to-[#1A3D7C] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <UserCheck className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">4. Personalized Guidance</h3>
+                <p className="text-gray-600">Tailored takeaways, individual attention, and customized action plans for every student's unique needs.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Types of Sessions We Offer */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Types of Sessions We Offer
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Choose from our diverse range of motivational sessions designed to address different aspects of student development.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-yellow-50 to-yellow-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-yellow-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Student Motivation Workshops</h3>
+                  <p className="text-gray-600">Focus on growth mindset, resilience, and building positive attitudes towards learning and challenges.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-red-50 to-red-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <GraduationCap className="w-8 h-8 text-red-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Exam Stress-Busting Sessions</h3>
+                  <p className="text-gray-600">Build confidence before board exams and competitive tests with proven stress management techniques.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Globe className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Future Vision Talks</h3>
+                  <p className="text-gray-600">Career inspiration, life skills development, and leadership training for holistic student growth.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
+                <CardContent className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">1:1 Motivational Counseling</h3>
+                  <p className="text-gray-600">Personal mentoring sessions for individual attention and customized guidance for specific challenges.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Impact Section */}
+        <section id="impact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Impact & Results
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Our motivational sessions have transformed thousands of students' lives. Here's what we've achieved together.
+              </p>
+            </div>
+            
+            {/* Success Metrics */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 mb-16 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-[#2BAE66] mb-2">90%</div>
+                  <p className="text-lg text-gray-700">of students reported increased confidence after attending our motivational sessions.</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-[#FFC857] mb-2">85%</div>
+                  <p className="text-lg text-gray-700">of parents shared that their children showed better focus and reduced exam anxiety.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "The motivational session completely changed my perspective on studies. I went from being afraid of exams to actually looking forward to them!"
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-yellow-600 font-semibold">S</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Sneha Sharma</div>
+                      <div className="text-sm text-gray-600">Class 12 Student</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "My son's attitude towards studies completely transformed after the session. He's more focused, confident, and actually enjoys learning now."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-green-600 font-semibold">M</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Mrs. Meera Patel</div>
+                      <div className="text-sm text-gray-600">Parent of Class 10 Student</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "The time management techniques I learned in the session helped me balance my studies, sports, and social life perfectly."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-blue-600 font-semibold">A</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Arjun Kumar</div>
+                      <div className="text-sm text-gray-600">Class 11 Student</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Highlights from Past Sessions */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                Highlights from Past Sessions
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Real stories of transformation and success from our motivational sessions.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-yellow-50 to-yellow-100">
+                <CardContent>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                      <Trophy className="w-6 h-6 text-yellow-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-[#1A3D7C]">Class 10 Exam Fear Overcome</h3>
+                      <p className="text-sm text-gray-600">Success Story</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700">
+                    "How Class 10 students overcame exam fear in our workshop. 95% of participants reported feeling more confident and prepared for their board exams after just one session."
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-[#1A3D7C]">JEE Aspirants' Mindset Shift</h3>
+                      <p className="text-sm text-gray-600">Transformation Story</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700">
+                    "A group of JEE aspirants transformed their approach to preparation after our motivation session. They learned to embrace challenges and view failures as stepping stones to success."
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. Testimonials */}
+        <section className="py-20 bg-gradient-to-br from-[#F8FAFC] to-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+                What Students & Parents Say
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Hear from the students and parents whose lives have been transformed by our motivational sessions.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "The session helped me understand that failure is not the end, but a beginning of something better. I'm now more resilient and confident."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-purple-600 font-semibold">R</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Riya Gupta</div>
+                      <div className="text-sm text-gray-600">Class 12 Student</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "As a parent, I was amazed to see how the session changed my daughter's perspective. She's now more motivated and takes ownership of her studies."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-blue-600 font-semibold">D</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Mr. Deepak Singh</div>
+                      <div className="text-sm text-gray-600">Parent of Class 11 Student</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">
+                    "The time management techniques and study strategies shared in the session have been game-changers for my academic performance."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <span className="text-green-600 font-semibold">V</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Vikram Joshi</div>
+                      <div className="text-sm text-gray-600">Class 10 Student</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* 8. Call-to-Action Block */}
+        <section className="py-20 bg-gradient-to-r from-[#FFC857] to-[#1A3D7C] text-white">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold mb-6">
+              Every Student Has a Spark
+            </h2>
+            <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
+              Our sessions ignite it into confidence and success. Join thousands of students who have transformed their mindset and achieved their goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Link href="/book-demo-class">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-white/90 transition-all text-lg font-semibold"
+                >
+                  Book a Motivational Session
               </Button>
+              </Link>
+              <Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-orange-600"
+                  className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold"
               >
-                Browse All Sessions
+                  Contact Us
               </Button>
+              </Link>
+            </div>
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/80">
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5 text-white" />
+                <span>Proven Methods</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Trophy className="w-5 h-5 text-white" />
+                <span>Success Stories</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Heart className="w-5 h-5 text-white" />
+                <span>Personal Touch</span>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* 9. FAQ Section */}
+        <MotivationalSessionsFAQ />
       </main>
 
       {/* Footer */}
@@ -415,19 +535,24 @@ export default function MotivationalSessions() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Image src="/logo.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
+                <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
                 <span className="text-xl font-bold">TheTutorBridge</span>
               </div>
-              <p className="text-gray-400">Transforming education through personalized learning experiences.</p>
+              <p className="text-gray-400 leading-relaxed">
+                India's leading online tutoring platform helping students achieve academic excellence since 2020.
+              </p>
+              <div className="flex space-x-4">
+                <a href="https://www.linkedin.com/company/thetutorbridge/" className="text-gray-400 hover:text-white transition-colors">
+                  LinkedIn
+                </a>
+                <a href="https://t.me/thetutorbridge" className="text-gray-400 hover:text-white transition-colors">
+                  Telegram
+                </a>
+              </div>
             </div>
             <div>
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/" className="hover:text-white transition-colors">
-                    One-on-One Tutoring
-                  </Link>
-                </li>
                 <li>
                   <Link href="/doubt-solving" className="hover:text-white transition-colors">
                     Doubt Solving
@@ -438,19 +563,29 @@ export default function MotivationalSessions() {
                     Career Guidance
                   </Link>
                 </li>
+                <li>
+                  <Link href="/study-resources" className="hover:text-white transition-colors">
+                    Study Resources
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Resources</h4>
+              <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="https://thetutorbridge.com/blog" className="hover:text-white transition-colors">
-                    Blog
+                  <Link href="/about" className="hover:text-white transition-colors">
+                    About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Help Center
+                  <Link href="/contact" className="hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="hover:text-white transition-colors">
+                    Blog
                   </Link>
                 </li>
               </ul>
@@ -459,15 +594,19 @@ export default function MotivationalSessions() {
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>info@thetutorbridge.com</li>
-                <li>+91 98765 43210</li>
+                <li>+91 9310096171</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            © {new Date().getFullYear()} The Tutor Bridge. All rights reserved.
+            <p>
+              © {new Date().getFullYear()} The Tutor Bridge. All rights reserved. | Helping students excel since 2020
+            </p>
           </div>
         </div>
       </footer>
+
+      <FloaterMessenger />
     </div>
   )
 }

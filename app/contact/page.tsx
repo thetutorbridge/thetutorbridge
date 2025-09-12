@@ -12,11 +12,11 @@ export default function Contact() {
     <div className="flex min-h-screen flex-col">
       <Navigation />
       <main className="flex-1">
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-[60vh] flex items-center">
+        <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue/5 via-white to-brand-amber/10 min-h-[60vh] flex items-center">
           <div className="container px-4 py-20 relative z-10">
             <div className="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-10">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">
                   Contact Us
                 </span>
               </h1>
@@ -65,7 +65,7 @@ export default function Contact() {
                   <input
                     name="name"
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-[12px] focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal"
                     placeholder="Your Name"
                     required
                   />
@@ -77,7 +77,7 @@ export default function Contact() {
                   <input
                     name="email"
                     type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-[12px] focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal"
                     placeholder="you@email.com"
                     required
                   />
@@ -88,7 +88,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     name="message"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-[12px] focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal"
                     rows={4}
                     placeholder="How can we help you?"
                     required
@@ -96,13 +96,13 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all disabled:opacity-60"
+                  className="w-full bg-brand-blue text-white font-semibold py-3 rounded-[12px] shadow-lg hover:shadow-brand-teal/30 transition-all disabled:opacity-60"
                   disabled={loading}
                 >
                   {loading ? "Sending..." : "Send Message"}
                 </button>
                 {success && (
-                  <div className="text-green-600 text-center mt-4">
+                  <div className="text-brand-teal text-center mt-4">
                     Your message has been sent!
                   </div>
                 )}
@@ -116,13 +116,13 @@ export default function Contact() {
                 Or email us at{" "}
                 <a
                   href="mailto:info@thetutorbridge.com"
-                  className="text-blue-600 underline"
+                  className="text-brand-blue underline"
                 >
                   info@thetutorbridge.com
                 </a>
                 <br />
                 Call us:{" "}
-                <a href="tel:+919876543210" className="text-blue-600 underline">
+                <a href="tel:+919876543210" className="text-brand-blue underline">
                   +91 9310096171
                 </a>
               </div>

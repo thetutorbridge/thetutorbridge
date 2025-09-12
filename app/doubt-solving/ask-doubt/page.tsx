@@ -44,11 +44,11 @@ export default function AskDoubt() {
     <div className="flex min-h-screen flex-col">
       <Navigation />
       <main className="flex-1">
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-[60vh] flex items-center">
+        <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue/5 via-white to-brand-amber/10 min-h-[60vh] flex items-center">
           <div className="container px-4 py-20 relative z-10">
             <div className="max-w-xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-10">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">
                   Ask a Doubt
                 </span>
               </h1>
@@ -59,7 +59,7 @@ export default function AskDoubt() {
                     name="name"
                     type="text"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-[12px] focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal"
                   />
                 </div>
                 <div>
@@ -69,7 +69,7 @@ export default function AskDoubt() {
                     type="tel"
                     required
                     pattern="[0-9]{10,}"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-[12px] focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal"
                   />
                 </div>
                 <div>
@@ -78,7 +78,7 @@ export default function AskDoubt() {
                     name="email"
                     type="email"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-[12px] focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal"
                   />
                 </div>
                 <div>
@@ -86,7 +86,7 @@ export default function AskDoubt() {
                   <select
                     name="class"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-[12px] focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal"
                     defaultValue=""
                   >
                     <option value="" disabled>
@@ -107,18 +107,18 @@ export default function AskDoubt() {
                     name="doubt"
                     required
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-[12px] focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-brand-teal"
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                  className="w-full"
                   disabled={loading}
                 >
                   {loading ? "Submitting..." : "Submit Doubt"}
                 </Button>
                 {success && (
-                  <div className="text-green-700 bg-green-100 border border-green-300 rounded-lg px-4 py-3 text-center font-semibold mt-4">
+                  <div className="text-brand-teal bg-brand-teal/10 border border-brand-teal/30 rounded-[12px] px-4 py-3 text-center font-semibold mt-4">
                     ✅ Your doubt has been submitted! We will get back to you soon.
                   </div>
                 )}
