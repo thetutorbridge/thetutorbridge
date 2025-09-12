@@ -1,7 +1,7 @@
 import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
 // Debug logging
@@ -10,7 +10,8 @@ console.log('SUPABASE_URL:', supabaseUrl ? '✅ Set' : '❌ Missing')
 console.log('SUPABASE_ANON_KEY:', supabaseAnonKey ? '✅ Set' : '❌ Missing')
 console.log('SUPABASE_SERVICE_ROLE_KEY:', supabaseServiceKey ? '✅ Set' : '❌ Missing')
 
-export const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey, {
+// Only create Supabase client if environment variables are available
+export const supabase = supabaseUrl && supabaseAnonKey ? createSupabaseClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     autoRefreshToken: false,
     persistSession: false,
@@ -21,10 +22,10 @@ export const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey, {
       'X-Client-Info': 'supabase-js/2.53.0'
     }
   }
-})
+}) : null
 
 // Service role client for admin operations (only available on server side)
-export const supabaseAdmin = supabaseServiceKey ? createSupabaseClient(supabaseUrl, supabaseServiceKey, {
+export const supabaseAdmin = supabaseUrl && supabaseServiceKey ? createSupabaseClient(supabaseUrl, supabaseServiceKey, {
   auth: {
     autoRefreshToken: false,
     persistSession: false,
@@ -169,6 +170,9 @@ export function createClient() {
     return supabaseAdmin
   } else {
     // Client-side: create a new client instance
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error('Supabase environment variables not configured')
+    }
     return createSupabaseClient(supabaseUrl, supabaseAnonKey, {
       auth: {
         autoRefreshToken: false,

@@ -3,11 +3,15 @@ import { createClient } from '@/lib/supabase';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: { slug: string } }
 ) {
   try {
     const supabase = createClient();
-    const { slug } = await params;
+    const { slug } = params;
+
+    if (!supabase) {
+      return NextResponse.json({ error: 'Database not configured' }, { status: 503 });
+    }
 
     const { data, error } = await supabase
       .from('blog_posts')
