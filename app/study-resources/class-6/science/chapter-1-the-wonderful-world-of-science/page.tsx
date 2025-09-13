@@ -75,23 +75,29 @@ export default function Class6ScienceChapter1() {
       {/* Breadcrumb Navigation */}
       <div className="bg-gray-50 py-4 px-6">
         <div className="container mx-auto">
-          <nav className="flex items-center space-x-2 text-sm">
-            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center">
-              <Home className="w-4 h-4 mr-1" />
-              Study Resources
+          <nav className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm overflow-x-auto">
+            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+              <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              <span className="hidden sm:inline">Study Resources</span>
+              <span className="sm:hidden">Resources</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center">
-              <GraduationCap className="w-4 h-4 mr-1" />
-              Class 6
+            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+              <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              <span className="hidden sm:inline">Class 6</span>
+              <span className="sm:hidden">C6</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center">
-              <Beaker className="w-4 h-4 mr-1" />
-              Science
+            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+              <Beaker className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              <span className="hidden sm:inline">Science</span>
+              <span className="sm:hidden">Sci</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <span className="text-gray-600">Chapter 1 - The Wonderful World of Science</span>
+            <span className="text-gray-600 truncate max-w-[200px] sm:max-w-none">
+              <span className="hidden sm:inline">Chapter 1 - The Wonderful World of Science</span>
+              <span className="sm:hidden">Ch 1</span>
+            </span>
           </nav>
         </div>
       </div>
@@ -99,9 +105,9 @@ export default function Class6ScienceChapter1() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white py-16 px-6">
         <div className="container mx-auto text-center max-w-4xl">
-          <div className="flex items-center justify-center mb-6">
-            <BookOpen className="w-12 h-12 text-[#FFC857] mr-4" />
-            <h1 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-6">
+            <BookOpen className="w-12 h-12 text-[#FFC857] mb-4 sm:mb-0 sm:mr-4" />
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold leading-tight text-center">
               The Wonderful World of Science
             </h1>
           </div>
