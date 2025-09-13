@@ -18,23 +18,29 @@ export default function Chapter2Page() {
       {/* Breadcrumb Navigation */}
       <div className="bg-gray-50 py-4 px-6">
         <div className="container mx-auto">
-          <nav className="flex items-center space-x-2 text-sm">
-            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center">
-              <Home className="w-4 h-4 mr-1" />
-              Study Resources
+          <nav className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm overflow-x-auto">
+            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+              <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              <span className="hidden sm:inline">Study Resources</span>
+              <span className="sm:hidden">Resources</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/study-resources/class-6" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center">
-              <GraduationCap className="w-4 h-4 mr-1" />
-              Class 6
+            <Link href="/study-resources/class-6" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+              <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              <span className="hidden sm:inline">Class 6</span>
+              <span className="sm:hidden">C6</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/study-resources/class-6/science" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center">
-              <Beaker className="w-4 h-4 mr-1" />
-              Science
+            <Link href="/study-resources/class-6/science" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+              <Beaker className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              <span className="hidden sm:inline">Science</span>
+              <span className="sm:hidden">Sci</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <span className="text-gray-600">Chapter 2 - Diversity in the Living World</span>
+            <span className="text-gray-600 truncate max-w-[200px] sm:max-w-none">
+              <span className="hidden sm:inline">Chapter 2 - Diversity in the Living World</span>
+              <span className="sm:hidden">Ch 2</span>
+            </span>
           </nav>
         </div>
       </div>
