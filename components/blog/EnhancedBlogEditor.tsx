@@ -87,6 +87,13 @@ function LinkDialog({ isOpen, onClose, onSetLink, currentUrl = '', currentText =
   const [text, setText] = useState(currentText)
   const [nofollow, setNofollow] = useState(currentNofollow)
 
+  // Update state when props change
+  useEffect(() => {
+    setUrl(currentUrl)
+    setText(currentText)
+    setNofollow(currentNofollow)
+  }, [currentUrl, currentText, currentNofollow])
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (url.trim()) {
@@ -134,7 +141,13 @@ function LinkDialog({ isOpen, onClose, onSetLink, currentUrl = '', currentText =
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Link text (optional)"
+              className={text ? "bg-blue-50 border-blue-200" : ""}
             />
+            {text && (
+              <p className="text-xs text-blue-600 mt-1">
+                ✨ Auto-filled from selected text: "{text}"
+              </p>
+            )}
           </div>
           <div className="flex items-center space-x-2">
             <input
@@ -200,6 +213,8 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
           keepMarks: true,
           keepAttributes: false,
         },
+        // Disable table from StarterKit to avoid conflicts
+        table: false,
       }),
       UnderlineExtension,
       Strike,
@@ -220,107 +235,10 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
       }),
       Table.configure({
         resizable: true,
-        HTMLAttributes: {
-          class: 'border-collapse border border-gray-300',
-        },
       }),
       TableRow,
-      TableHeader.extend({
-        addAttributes() {
-          return {
-            ...this.parent?.(),
-            rowspan: {
-              default: null,
-              parseHTML: element => {
-                const rowspan = element.getAttribute('rowspan')
-                return rowspan ? parseInt(rowspan, 10) : null
-              },
-              renderHTML: attributes => {
-                if (!attributes.rowspan) {
-                  return {}
-                }
-                return { rowspan: attributes.rowspan }
-              },
-            },
-            colspan: {
-              default: null,
-              parseHTML: element => {
-                const colspan = element.getAttribute('colspan')
-                return colspan ? parseInt(colspan, 10) : null
-              },
-              renderHTML: attributes => {
-                if (!attributes.colspan) {
-                  return {}
-                }
-                return { colspan: attributes.colspan }
-              },
-            },
-          }
-        },
-        toDOM(node) {
-          const attrs: any = {
-            class: 'border border-gray-300 px-4 py-2 bg-gray-100 font-semibold',
-          }
-          
-          if (node.attrs.rowspan) {
-            attrs.rowspan = node.attrs.rowspan
-          }
-          
-          if (node.attrs.colspan) {
-            attrs.colspan = node.attrs.colspan
-          }
-          
-          return ['th', attrs, 0]
-        },
-      }),
-      TableCell.extend({
-        addAttributes() {
-          return {
-            ...this.parent?.(),
-            rowspan: {
-              default: null,
-              parseHTML: element => {
-                const rowspan = element.getAttribute('rowspan')
-                return rowspan ? parseInt(rowspan, 10) : null
-              },
-              renderHTML: attributes => {
-                if (!attributes.rowspan) {
-                  return {}
-                }
-                return { rowspan: attributes.rowspan }
-              },
-            },
-            colspan: {
-              default: null,
-              parseHTML: element => {
-                const colspan = element.getAttribute('colspan')
-                return colspan ? parseInt(colspan, 10) : null
-              },
-              renderHTML: attributes => {
-                if (!attributes.colspan) {
-                  return {}
-                }
-                return { colspan: attributes.colspan }
-              },
-            },
-          }
-        },
-        toDOM(node) {
-          const attrs: any = {
-            class: 'border border-gray-300 px-4 py-2',
-          }
-          
-          if (node.attrs.rowspan) {
-            attrs.rowspan = node.attrs.rowspan
-          }
-          
-          if (node.attrs.colspan) {
-            attrs.colspan = node.attrs.colspan
-          }
-          
-          return ['td', attrs, 0]
-        },
-      }),
+      TableHeader,
+      TableCell,
       Mathematics.configure({
         katexOptions: {
           macros: {
@@ -538,7 +456,45 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
   }
 
   const addTable = () => {
-    editor?.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()
+    if (!editor) {
+      console.error('Editor not available')
+      return
+    }
+
+    // Try TipTap table insertion first
+    const success = editor.chain().focus().insertTable({ 
+      rows: 3, 
+      cols: 3, 
+      withHeaderRow: true 
+    }).run()
+
+    // If TipTap method fails, use HTML insertion as fallback
+    if (!success) {
+      const tableHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>Header 1</th>
+              <th>Header 2</th>
+              <th>Header 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cell 1</td>
+              <td>Cell 2</td>
+              <td>Cell 3</td>
+            </tr>
+            <tr>
+              <td>Cell 4</td>
+              <td>Cell 5</td>
+              <td>Cell 6</td>
+            </tr>
+          </tbody>
+        </table>
+      `
+      editor.chain().focus().insertContent(tableHTML).run()
+    }
   }
 
   const addTableWithMergedCells = () => {
@@ -696,14 +652,15 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
 
   const openLinkDialog = () => {
     const { from, to } = editor?.state.selection || {}
-    const text = editor?.state.doc.textBetween(from || 0, to || 0, ' ')
+    const selectedText = editor?.state.doc.textBetween(from || 0, to || 0, ' ').trim()
     
     // Check if we're editing an existing link
     const linkMark = editor?.getAttributes('link')
     
+    
     setLinkDialog({
       isOpen: true,
-      text: text || '',
+      text: selectedText || '',
       url: linkMark?.href || '',
       nofollow: linkMark?.target === '_blank' || false,
     })
@@ -721,11 +678,11 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
     // If we're editing an existing link, update it
     if (editor.isActive('link')) {
       editor.chain().focus().updateAttributes('link', attributes).run()
-    } else if (text) {
+    } else if (text.trim()) {
       // Insert new link with text
-      editor.chain().focus().insertContent(`<a href="${url}">${text}</a>`).run()
+      editor.chain().focus().insertContent(`<a href="${url}">${text.trim()}</a>`).run()
     } else {
-      // Set link on selected text
+      // Set link on selected text (fallback)
       editor.chain().focus().setLink(attributes).run()
     }
     
