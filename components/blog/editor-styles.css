@@ -402,3 +402,110 @@
 .border-accent {
   border-color: #FFC857;
 }
+
+/* HTML Block Styles */
+.ProseMirror .htmlBlock {
+  border: 2px dashed #E5E7EB;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #F9FAFB;
+  position: relative;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.ProseMirror .htmlBlock:hover {
+  border-color: #2BAE66;
+  background-color: rgba(43, 174, 102, 0.05);
+}
+
+.ProseMirror .htmlBlock::before {
+  content: "HTML Block";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #2BAE66;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.ProseMirror .htmlBlock .html-content {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ProseMirror .htmlBlock .html-content * {
+  max-width: 100% !important;
+}
+
+.ProseMirror .htmlBlock.selected {
+  border-color: #1A3D7C;
+  background-color: rgba(26, 61, 124, 0.05);
+  box-shadow: 0 0 0 2px rgba(26, 61, 124, 0.2);
+}
+
+.ProseMirror .htmlBlock.selected::before {
+  background-color: #1A3D7C;
+}
+
+/* HTML Block Edit Button */
+.ProseMirror .htmlBlock .edit-html-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #1A3D7C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ProseMirror .htmlBlock:hover .edit-html-btn {
+  opacity: 1;
+}
+
+.ProseMirror .htmlBlock .edit-html-btn:hover {
+  background-color: #2BAE66;
+}
+
+/* HTML Block Preview */
+.ProseMirror .htmlBlock .html-preview {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  font-style: italic;
+}
+
+.ProseMirror .htmlBlock .html-preview:not(:empty) {
+  color: inherit;
+  font-style: normal;
+}
+
+/* Responsive HTML Blocks */
+@media (max-width: 768px) {
+  .ProseMirror .htmlBlock {
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+  }
+  
+  .ProseMirror .htmlBlock::before {
+    font-size: 11px;
+    padding: 1px 6px;
+  }
+}
