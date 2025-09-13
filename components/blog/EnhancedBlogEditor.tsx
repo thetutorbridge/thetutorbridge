@@ -45,7 +45,9 @@ import {
   Square,
   FileText,
   Download,
-  Copy
+  Copy,
+  Sigma,
+  Calculator
 } from 'lucide-react'
 import { uploadBlogImage, type BlogPostFormData } from '@/lib/blog'
 import { useEditor, EditorContent } from '@tiptap/react'
@@ -60,6 +62,7 @@ import { Table } from '@tiptap/extension-table'
 import TableRow from '@tiptap/extension-table-row'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
+import Mathematics from '@tiptap/extension-mathematics'
 
 
 interface EnhancedBlogEditorProps {
@@ -222,8 +225,113 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
         },
       }),
       TableRow,
-      TableHeader,
-      TableCell,
+      TableHeader.extend({
+        addAttributes() {
+          return {
+            ...this.parent?.(),
+            rowspan: {
+              default: null,
+              parseHTML: element => {
+                const rowspan = element.getAttribute('rowspan')
+                return rowspan ? parseInt(rowspan, 10) : null
+              },
+              renderHTML: attributes => {
+                if (!attributes.rowspan) {
+                  return {}
+                }
+                return { rowspan: attributes.rowspan }
+              },
+            },
+            colspan: {
+              default: null,
+              parseHTML: element => {
+                const colspan = element.getAttribute('colspan')
+                return colspan ? parseInt(colspan, 10) : null
+              },
+              renderHTML: attributes => {
+                if (!attributes.colspan) {
+                  return {}
+                }
+                return { colspan: attributes.colspan }
+              },
+            },
+          }
+        },
+        toDOM(node) {
+          const attrs: any = {
+            class: 'border border-gray-300 px-4 py-2 bg-gray-100 font-semibold',
+          }
+          
+          if (node.attrs.rowspan) {
+            attrs.rowspan = node.attrs.rowspan
+          }
+          
+          if (node.attrs.colspan) {
+            attrs.colspan = node.attrs.colspan
+          }
+          
+          return ['th', attrs, 0]
+        },
+      }),
+      TableCell.extend({
+        addAttributes() {
+          return {
+            ...this.parent?.(),
+            rowspan: {
+              default: null,
+              parseHTML: element => {
+                const rowspan = element.getAttribute('rowspan')
+                return rowspan ? parseInt(rowspan, 10) : null
+              },
+              renderHTML: attributes => {
+                if (!attributes.rowspan) {
+                  return {}
+                }
+                return { rowspan: attributes.rowspan }
+              },
+            },
+            colspan: {
+              default: null,
+              parseHTML: element => {
+                const colspan = element.getAttribute('colspan')
+                return colspan ? parseInt(colspan, 10) : null
+              },
+              renderHTML: attributes => {
+                if (!attributes.colspan) {
+                  return {}
+                }
+                return { colspan: attributes.colspan }
+              },
+            },
+          }
+        },
+        toDOM(node) {
+          const attrs: any = {
+            class: 'border border-gray-300 px-4 py-2',
+          }
+          
+          if (node.attrs.rowspan) {
+            attrs.rowspan = node.attrs.rowspan
+          }
+          
+          if (node.attrs.colspan) {
+            attrs.colspan = node.attrs.colspan
+          }
+          
+          return ['td', attrs, 0]
+        },
+      }),
+      Mathematics.configure({
+        katexOptions: {
+          macros: {
+            '\\RR': '\\mathbb{R}',
+            '\\NN': '\\mathbb{N}',
+            '\\ZZ': '\\mathbb{Z}',
+            '\\QQ': '\\mathbb{Q}',
+            '\\CC': '\\mathbb{C}',
+          },
+        },
+      }),
       Placeholder.configure({
         placeholder: 'Start writing your blog post here...',
       }),
@@ -431,6 +539,112 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
 
   const addTable = () => {
     editor?.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()
+  }
+
+  const addTableWithMergedCells = () => {
+    if (editor) {
+      // Create a properly structured table with rowspan using TipTap's JSON format
+      const tableContent = {
+        type: 'table',
+        content: [
+          {
+            type: 'tableRow',
+            content: [
+              { type: 'tableHeader', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Date and Time' }] }] },
+              { type: 'tableHeader', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Subject Code' }] }] },
+              { type: 'tableHeader', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Subject Name' }] }] }
+            ]
+          },
+          {
+            type: 'tableRow',
+            content: [
+              { 
+                type: 'tableCell', 
+                attrs: { rowspan: 3 },
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Saturday, 15th February, 2025' }] }] 
+              },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '101' }] }] },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'English (Communicative)' }] }] }
+            ]
+          },
+          {
+            type: 'tableRow',
+            content: [
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '184' }] }] },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'English (Language and Literature)' }] }] }
+            ]
+          },
+          {
+            type: 'tableRow',
+            content: [
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '002' }] }] },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Hindi Course-A' }] }] }
+            ]
+          },
+          {
+            type: 'tableRow',
+            content: [
+              { 
+                type: 'tableCell', 
+                attrs: { rowspan: 5 },
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Monday, 17th February, 2025' }] }] 
+              },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '036' }] }] },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Hindustani Music (Per Ins)' }] }] }
+            ]
+          },
+          {
+            type: 'tableRow',
+            content: [
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '131' }] }] },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Rai' }] }] }
+            ]
+          },
+          {
+            type: 'tableRow',
+            content: [
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '132' }] }] },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Gurung' }] }] }
+            ]
+          },
+          {
+            type: 'tableRow',
+            content: [
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '133' }] }] },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Tamang' }] }] }
+            ]
+          },
+          {
+            type: 'tableRow',
+            content: [
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '134' }] }] },
+              { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Sherpa' }] }] }
+            ]
+          }
+        ]
+      }
+      
+      // Insert the table using TipTap's JSON format
+      editor.chain().focus().insertContent(tableContent).run()
+    }
+  }
+
+  const addMathEquation = () => {
+    if (editor) {
+      const equation = prompt('Enter LaTeX equation (e.g., \\forall x \\in X, (x, x) \\in R):', '\\forall x \\in X, (x, x) \\in R')
+      if (equation) {
+        editor.chain().focus().setMathInline(equation).run()
+      }
+    }
+  }
+
+  const addMathBlock = () => {
+    if (editor) {
+      const equation = prompt('Enter LaTeX equation for block (e.g., \\forall x \\in X, (x, x) \\in R):', '\\forall x \\in X, (x, x) \\in R')
+      if (equation) {
+        editor.chain().focus().setMathBlock(equation).run()
+      }
+    }
   }
 
 
@@ -727,11 +941,30 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
                 >
                   <Minus className="h-4 w-4" />
                 </MenuButton>
-                <MenuButton 
+                <MenuButton
                   onClick={addTable} 
                   title="Insert Table"
                 >
                   <TableIcon className="h-4 w-4" />
+                </MenuButton>
+                <MenuButton
+                  onClick={addTableWithMergedCells} 
+                  title="Insert Table with Merged Cells Support"
+                >
+                  <TableIcon className="h-4 w-4" />
+                  <span className="text-xs ml-1">+</span>
+                </MenuButton>
+                <MenuButton
+                  onClick={addMathEquation} 
+                  title="Insert Inline Math Equation"
+                >
+                  <Sigma className="h-4 w-4" />
+                </MenuButton>
+                <MenuButton
+                  onClick={addMathBlock} 
+                  title="Insert Math Block"
+                >
+                  <Calculator className="h-4 w-4" />
                 </MenuButton>
                 <MenuSeparator />
 

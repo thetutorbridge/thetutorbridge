@@ -96,6 +96,98 @@
   transition: opacity 0.2s ease;
 }
 
+/* KaTeX Math Styles */
+@import 'katex/dist/katex.min.css';
+
+.ProseMirror .math-inline {
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.ProseMirror .math-block {
+  display: block;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.ProseMirror .katex {
+  font-size: 1em;
+}
+
+.ProseMirror .katex-display {
+  margin: 1rem 0;
+}
+
+/* Table Styles */
+.ProseMirror table {
+  margin: 1rem 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ProseMirror table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.ProseMirror table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.ProseMirror table tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Table cell merging support */
+.ProseMirror table td[rowspan],
+.ProseMirror table th[rowspan] {
+  vertical-align: middle;
+  border-right: 2px solid #1A3D7C;
+}
+
+.ProseMirror table td[colspan],
+.ProseMirror table th[colspan] {
+  text-align: center;
+  border-bottom: 2px solid #1A3D7C;
+}
+
+/* Enhanced table styling for merged cells */
+.ProseMirror table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.ProseMirror table td:last-child,
+.ProseMirror table th:last-child {
+  border-right: none;
+}
+
+.ProseMirror table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .ProseMirror table {
+    font-size: 0.875rem;
+  }
+  
+  .ProseMirror table td,
+  .ProseMirror table th {
+    padding: 6px 8px;
+  }
+}
+
 .ProseMirror a:hover::after {
   opacity: 1;
 }

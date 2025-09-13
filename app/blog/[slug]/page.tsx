@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Navigation } from "@/components/navigation"
 import '@/components/blog/editor-styles.css'
+import '@/app/globals.css'
 
 interface BlogPost {
   id: string;
@@ -458,13 +459,25 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           
           return (
             <div key={index} className="overflow-x-auto my-8">
-              <table className="min-w-full border-collapse border border-gray-300 bg-white shadow-sm rounded-lg overflow-hidden">
+              <table className="min-w-full border-collapse border border-gray-300 bg-white shadow-sm rounded-lg overflow-hidden" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
                 <thead>
                   <tr className="bg-gradient-to-r from-primary to-secondary">
                     {headerRow.content?.map((cell: any, cellIndex: number) => (
                       <th 
                         key={cellIndex} 
                         className="border border-gray-300 px-4 py-3 text-left font-semibold text-white"
+                        style={{
+                          ...(cell.attrs?.rowspan && { 
+                            verticalAlign: 'middle',
+                            borderRight: '2px solid #1A3D7C'
+                          }),
+                          ...(cell.attrs?.colspan && { 
+                            textAlign: 'center',
+                            borderBottom: '2px solid #1A3D7C'
+                          })
+                        }}
+                        rowSpan={cell.attrs?.rowspan || undefined}
+                        colSpan={cell.attrs?.colspan || undefined}
                       >
                         {cell.content ? renderTextContent(cell.content) : ''}
                       </th>
@@ -478,6 +491,18 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                         <td 
                           key={cellIndex} 
                           className="border border-gray-300 px-4 py-3 text-gray-700"
+                          style={{
+                            ...(cell.attrs?.rowspan && { 
+                              verticalAlign: 'middle',
+                              borderRight: '2px solid #1A3D7C'
+                            }),
+                            ...(cell.attrs?.colspan && { 
+                              textAlign: 'center',
+                              borderBottom: '2px solid #1A3D7C'
+                            })
+                          }}
+                          rowSpan={cell.attrs?.rowspan || undefined}
+                          colSpan={cell.attrs?.colspan || undefined}
                         >
                           {cell.content ? renderTextContent(cell.content) : ''}
                         </td>
