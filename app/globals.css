@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* KaTeX Math Rendering */
+@import 'katex/dist/katex.min.css';
+
 /* Prevent horizontal overflow on mobile */
 @layer base {
   html, body {
