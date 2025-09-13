@@ -61,6 +61,7 @@ import TableRow from '@tiptap/extension-table-row'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 
+
 interface EnhancedBlogEditorProps {
   initialData: BlogPostFormData
   onSave: (data: BlogPostFormData) => Promise<void>
@@ -76,6 +77,7 @@ interface LinkDialogProps {
   currentText?: string
   currentNofollow?: boolean
 }
+
 
 function LinkDialog({ isOpen, onClose, onSetLink, currentUrl = '', currentText = '', currentNofollow = false }: LinkDialogProps) {
   const [url, setUrl] = useState(currentUrl)
@@ -155,6 +157,7 @@ function LinkDialog({ isOpen, onClose, onSetLink, currentUrl = '', currentText =
   )
 }
 
+
 export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode }: EnhancedBlogEditorProps) {
   const [formData, setFormData] = useState<BlogPostFormData>(initialData)
   const [newTag, setNewTag] = useState('')
@@ -166,6 +169,7 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
     text?: string
     nofollow?: boolean
   }>({ isOpen: false })
+
   const [imageDialog, setImageDialog] = useState<{
     isOpen: boolean
     alt?: string
@@ -177,6 +181,7 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
   useEffect(() => {
     setIsMounted(true)
   }, [])
+
 
   const editor = useEditor({
     extensions: [
@@ -427,6 +432,7 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
   const addTable = () => {
     editor?.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()
   }
+
 
   const handleFeaturedImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
@@ -1026,6 +1032,7 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
         currentText={linkDialog.text}
         currentNofollow={linkDialog.nofollow}
       />
+
 
       {/* Image Dialog */}
       {imageDialog.isOpen && (

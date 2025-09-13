@@ -6,17 +6,24 @@ export async function GET(request: NextRequest) {
     const supabase = createClient();
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status') || 'published';
-    const limit = parseInt(searchParams.get('limit') || '10');
+    const limitParam = searchParams.get('limit');
     const offset = parseInt(searchParams.get('offset') || '0');
+
+    // If no limit is specified, fetch all posts. Otherwise use the specified limit
+    const limit = limitParam ? parseInt(limitParam) : null;
 
     let query = supabase
       .from('blog_posts')
       .select('*')
-      .order('created_at', { ascending: false })
-      .range(offset, offset + limit - 1);
+      .order('created_at', { ascending: false });
 
     if (status !== 'all') {
       query = query.eq('status', status);
+    }
+
+    // Only apply range if limit is specified
+    if (limit !== null) {
+      query = query.range(offset, offset + limit - 1);
     }
 
     const { data, error } = await query;
