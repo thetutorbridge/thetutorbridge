@@ -45,6 +45,7 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
             author_image: result.post.author_image || "Rishabh Jain.jpeg",
             tags: result.post.tags || [],
             status: result.post.status,
+            published_at: result.post.published_at || "",
             meta_title: result.post.meta_title || result.post.title,
             meta_description: result.post.meta_description || "",
             meta_keywords: result.post.meta_keywords || []

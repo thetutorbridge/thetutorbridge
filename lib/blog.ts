@@ -29,6 +29,7 @@ export interface BlogPostFormData {
   tags?: string[]
   featured_image?: string
   status: 'draft' | 'published'
+  published_at?: string
   meta_title?: string
   meta_description?: string
 }
