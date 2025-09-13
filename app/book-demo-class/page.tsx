@@ -48,7 +48,7 @@ export default function BookDemoClass() {
       <main className="flex-1">
         <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue/5 via-white to-brand-amber/10 min-h-[60vh] flex items-center">
           <div className="container px-4 py-20 relative z-10">
-            <div className="max-w-xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-10">
+            <div className="max-w-xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-10">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
                 <span className="bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">
                   Book a Free Demo Class
@@ -107,33 +107,36 @@ export default function BookDemoClass() {
                 </div>
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">Subject</label>
-                  <div className="flex gap-6">
-                    <label className="flex items-center gap-2">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
                         name="subject"
                         value="Mathematics"
                         required
+                        className="w-4 h-4 text-brand-teal focus:ring-brand-teal"
                       />
-                      Mathematics
+                      <span className="text-sm sm:text-base">Mathematics</span>
                     </label>
-                    <label className="flex items-center gap-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
                         name="subject"
                         value="Science"
                         required
+                        className="w-4 h-4 text-brand-teal focus:ring-brand-teal"
                       />
-                      Science
+                      <span className="text-sm sm:text-base">Science</span>
                     </label>
-                    <label className="flex items-center gap-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
                         name="subject"
                         value="English"
                         required
+                        className="w-4 h-4 text-brand-teal focus:ring-brand-teal"
                       />
-                      English
+                      <span className="text-sm sm:text-base">English</span>
                     </label>
                   </div>
                 </div>

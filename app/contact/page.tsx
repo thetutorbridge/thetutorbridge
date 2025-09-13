@@ -14,7 +14,7 @@ export default function Contact() {
       <main className="flex-1">
         <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue/5 via-white to-brand-amber/10 min-h-[60vh] flex items-center">
           <div className="container px-4 py-20 relative z-10">
-            <div className="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-10">
+            <div className="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-10">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
                 <span className="bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">
                   Contact Us
