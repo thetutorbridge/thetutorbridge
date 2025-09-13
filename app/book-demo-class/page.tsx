@@ -1,9 +1,37 @@
 "use client"
 
+import type { Metadata } from "next"
 import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+
+export const metadata: Metadata = {
+  title: "Book Free Demo Class - Expert Online Tutoring | The Tutor Bridge",
+  description: "Book a free demo class with The Tutor Bridge! Experience personalized 1-on-1 tutoring for Math, Science, and English. Expert tutors for grades 6-12. No commitment required.",
+  keywords: [
+    "book demo class",
+    "free trial",
+    "online tutoring demo",
+    "personalized tutoring",
+    "math tutor demo",
+    "science tutor demo",
+    "english tutor demo",
+    "grades 6-12",
+    "expert tutors",
+    "free tutoring session"
+  ],
+  alternates: {
+    canonical: "https://thetutorbridge.com/book-demo-class",
+  },
+  openGraph: {
+    title: "Book Free Demo Class - Expert Online Tutoring | The Tutor Bridge",
+    description: "Book a free demo class with The Tutor Bridge! Experience personalized 1-on-1 tutoring for Math, Science, and English. Expert tutors for grades 6-12.",
+    url: "https://thetutorbridge.com/book-demo-class",
+    siteName: "The Tutor Bridge",
+    type: "website",
+  },
+}
 
 export default function BookDemoClass() {
   const [loading, setLoading] = useState(false)

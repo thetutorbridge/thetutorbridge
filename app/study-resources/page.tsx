@@ -1,5 +1,6 @@
 "use client"
 
+import type { Metadata } from "next"
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -12,6 +13,33 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/navigation";
+
+export const metadata: Metadata = {
+  title: "Study Resources - Free Learning Materials for Grades 6-12 | The Tutor Bridge",
+  description: "Access comprehensive study resources for grades 6-12. Free notes, practice questions, and learning materials for Math, Science, and English. Expert-curated content to boost your academic performance.",
+  keywords: [
+    "study resources",
+    "learning materials",
+    "free notes",
+    "practice questions",
+    "grades 6-12",
+    "math resources",
+    "science resources",
+    "english resources",
+    "academic materials",
+    "study guides"
+  ],
+  alternates: {
+    canonical: "https://thetutorbridge.com/study-resources",
+  },
+  openGraph: {
+    title: "Study Resources - Free Learning Materials for Grades 6-12 | The Tutor Bridge",
+    description: "Access comprehensive study resources for grades 6-12. Free notes, practice questions, and learning materials for Math, Science, and English.",
+    url: "https://thetutorbridge.com/study-resources",
+    siteName: "The Tutor Bridge",
+    type: "website",
+  },
+}
 
 export default function StudyResources() {
   const classes = [6, 7, 8, 9, 10, 11, 12];

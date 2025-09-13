@@ -1,7 +1,35 @@
 "use client";
 
+import type { Metadata } from "next"
 import { useState } from "react";
 import { Navigation } from "@/components/navigation";
+
+export const metadata: Metadata = {
+  title: "Contact Us - Get Help & Support | The Tutor Bridge",
+  description: "Contact The Tutor Bridge for personalized tutoring, doubt solving, career guidance, and academic support. Get expert help for students in grades 6-12. Reach out today!",
+  keywords: [
+    "contact us",
+    "get help",
+    "support",
+    "online tutoring help",
+    "doubt solving",
+    "career guidance",
+    "academic support",
+    "student help",
+    "tutoring assistance",
+    "contact tutor"
+  ],
+  alternates: {
+    canonical: "https://thetutorbridge.com/contact",
+  },
+  openGraph: {
+    title: "Contact Us - Get Help & Support | The Tutor Bridge",
+    description: "Contact The Tutor Bridge for personalized tutoring, doubt solving, career guidance, and academic support. Get expert help for students in grades 6-12.",
+    url: "https://thetutorbridge.com/contact",
+    siteName: "The Tutor Bridge",
+    type: "website",
+  },
+}
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
