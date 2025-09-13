@@ -198,10 +198,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           const HeadingTag = `h${node.attrs?.level || 1}` as keyof JSX.IntrinsicElements
           const level = node.attrs?.level || 1
           const headingClasses = {
-            1: 'text-3xl font-bold mt-8 mb-4 text-primary',
-            2: 'text-2xl font-bold mt-6 mb-3 text-primary',
-            3: 'text-xl font-bold mt-4 mb-2 text-secondary',
-            4: 'text-lg font-bold mt-3 mb-2 text-primary'
+            1: 'text-3xl font-bold mt-8 mb-4 text-blue-700',
+            2: 'text-2xl font-bold mt-6 mb-3 text-blue-700',
+            3: 'text-xl font-bold mt-4 mb-2 text-green-600',
+            4: 'text-lg font-bold mt-3 mb-2 text-blue-700'
           }
           return (
             <HeadingTag key={index} className={headingClasses[level as keyof typeof headingClasses] || headingClasses[1]}>
@@ -233,10 +233,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                               if (textNode.marks) {
                                 textNode.marks.forEach((mark: any) => {
                                   if (mark.type === 'bold') {
-                                    text = <strong key={textIndex} className="font-semibold text-primary">{text}</strong>
+                                    text = <strong key={textIndex} className="font-semibold text-blue-700">{text}</strong>
                                   }
                                   if (mark.type === 'italic') {
-                                    text = <em key={textIndex} className="italic text-secondary">{text}</em>
+                                    text = <em key={textIndex} className="italic text-green-600">{text}</em>
                                   }
                                   if (mark.type === 'underline') {
                                     text = <u key={textIndex}>{text}</u>
@@ -248,7 +248,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                         href={mark.attrs?.href} 
                                         target={mark.attrs?.target || "_blank"}
                                         rel={mark.attrs?.rel || "noopener noreferrer"}
-                                        className="text-primary underline hover:text-secondary transition-colors"
+                                        className="text-blue-700 underline hover:text-green-600 transition-colors"
                                       >
                                         {text}
                                       </a>
@@ -265,7 +265,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                   href={textNode.attrs?.href} 
                                   target={textNode.attrs?.target || "_blank"}
                                   rel={textNode.attrs?.rel || "noopener noreferrer"}
-                                  className="text-primary underline hover:text-secondary transition-colors"
+                                  className="text-blue-700 underline hover:text-green-600 transition-colors"
                                 >
                                   {textNode.content?.[0]?.text || ''}
                                 </a>
@@ -282,10 +282,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                       if (paragraphNode.marks) {
                         paragraphNode.marks.forEach((mark: any) => {
                           if (mark.type === 'bold') {
-                            text = <strong key={paragraphIndex} className="font-semibold text-primary">{text}</strong>
+                            text = <strong key={paragraphIndex} className="font-semibold text-blue-700">{text}</strong>
                           }
                           if (mark.type === 'italic') {
-                            text = <em key={paragraphIndex} className="italic text-secondary">{text}</em>
+                            text = <em key={paragraphIndex} className="italic text-green-600">{text}</em>
                           }
                           if (mark.type === 'underline') {
                             text = <u key={paragraphIndex}>{text}</u>
@@ -316,10 +316,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                               if (textNode.marks) {
                                 textNode.marks.forEach((mark: any) => {
                                   if (mark.type === 'bold') {
-                                    text = <strong key={textIndex} className="font-semibold text-primary">{text}</strong>
+                                    text = <strong key={textIndex} className="font-semibold text-blue-700">{text}</strong>
                                   }
                                   if (mark.type === 'italic') {
-                                    text = <em key={textIndex} className="italic text-secondary">{text}</em>
+                                    text = <em key={textIndex} className="italic text-green-600">{text}</em>
                                   }
                                   if (mark.type === 'underline') {
                                     text = <u key={textIndex}>{text}</u>
@@ -331,7 +331,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                         href={mark.attrs?.href} 
                                         target={mark.attrs?.target || "_blank"}
                                         rel={mark.attrs?.rel || "noopener noreferrer"}
-                                        className="text-primary underline hover:text-secondary transition-colors"
+                                        className="text-blue-700 underline hover:text-green-600 transition-colors"
                                       >
                                         {text}
                                       </a>
@@ -348,7 +348,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                   href={textNode.attrs?.href} 
                                   target={textNode.attrs?.target || "_blank"}
                                   rel={textNode.attrs?.rel || "noopener noreferrer"}
-                                  className="text-primary underline hover:text-secondary transition-colors"
+                                  className="text-blue-700 underline hover:text-green-600 transition-colors"
                                 >
                                   {textNode.content?.[0]?.text || ''}
                                 </a>
@@ -365,10 +365,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                       if (paragraphNode.marks) {
                         paragraphNode.marks.forEach((mark: any) => {
                           if (mark.type === 'bold') {
-                            text = <strong key={paragraphIndex} className="font-semibold text-primary">{text}</strong>
+                            text = <strong key={paragraphIndex} className="font-semibold text-blue-700">{text}</strong>
                           }
                           if (mark.type === 'italic') {
-                            text = <em key={paragraphIndex} className="italic text-secondary">{text}</em>
+                            text = <em key={paragraphIndex} className="italic text-green-600">{text}</em>
                           }
                           if (mark.type === 'underline') {
                             text = <u key={paragraphIndex}>{text}</u>
@@ -402,37 +402,79 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         }
         if (node.type === 'blockquote') {
           return (
-            <blockquote key={index} className="border-l-4 border-accent bg-accent/5 p-4 my-6 italic text-gray-700">
-              {node.content?.map((textNode: any, textIndex: number) => {
-                if (textNode.type === 'text') {
-                  let text = textNode.text || ''
-                  if (textNode.marks) {
-                    textNode.marks.forEach((mark: any) => {
-                      if (mark.type === 'bold') {
-                        text = <strong key={textIndex} className="font-semibold text-primary">{text}</strong>
+            <blockquote key={index} className="border-l-4 border-yellow-400 bg-yellow-50 p-4 my-6 italic text-gray-700">
+              <div className="flex items-start gap-2">
+                <span className="w-3 h-3 text-blue-600 mt-1 flex-shrink-0 text-lg">◆</span>
+                <div>
+                  {node.content?.map((paragraphNode: any, paragraphIndex: number) => {
+                    if (paragraphNode.type === 'paragraph') {
+                      return (
+                        <div key={paragraphIndex}>
+                          {paragraphNode.content?.map((textNode: any, textIndex: number) => {
+                            if (textNode.type === 'text') {
+                              let text = textNode.text || ''
+                              if (textNode.marks) {
+                                textNode.marks.forEach((mark: any) => {
+                                  if (mark.type === 'bold') {
+                                    text = <strong key={textIndex} className="font-semibold text-blue-700">{text}</strong>
+                                  }
+                                  if (mark.type === 'italic') {
+                                    text = <em key={textIndex} className="italic text-green-600">{text}</em>
+                                  }
+                                  if (mark.type === 'link') {
+                                    text = (
+                                      <a 
+                                        key={textIndex}
+                                        href={mark.attrs?.href} 
+                                        target={mark.attrs?.target || "_blank"}
+                                        rel={mark.attrs?.rel || "noopener noreferrer"}
+                                        className="text-blue-700 underline hover:text-green-600 transition-colors"
+                                      >
+                                        {text}
+                                      </a>
+                                    )
+                                  }
+                                })
+                              }
+                              return <span key={textIndex}>{text}</span>
+                            }
+                            return <span key={textIndex}>{textNode.text || ''}</span>
+                          })}
+                        </div>
+                      )
+                    }
+                    // Handle direct text content
+                    if (paragraphNode.type === 'text') {
+                      let text = paragraphNode.text || ''
+                      if (paragraphNode.marks) {
+                        paragraphNode.marks.forEach((mark: any) => {
+                          if (mark.type === 'bold') {
+                            text = <strong key={paragraphIndex} className="font-semibold text-blue-700">{text}</strong>
+                          }
+                          if (mark.type === 'italic') {
+                            text = <em key={paragraphIndex} className="italic text-green-600">{text}</em>
+                          }
+                          if (mark.type === 'link') {
+                            text = (
+                              <a 
+                                key={paragraphIndex}
+                                href={mark.attrs?.href} 
+                                target={mark.attrs?.target || "_blank"}
+                                rel={mark.attrs?.rel || "noopener noreferrer"}
+                                className="text-blue-700 underline hover:text-green-600 transition-colors"
+                              >
+                                {text}
+                              </a>
+                            )
+                          }
+                        })
                       }
-                      if (mark.type === 'italic') {
-                        text = <em key={textIndex} className="italic text-secondary">{text}</em>
-                      }
-                      if (mark.type === 'link') {
-                        text = (
-                          <a 
-                            key={textIndex}
-                            href={mark.attrs?.href} 
-                            target={mark.attrs?.target || "_blank"}
-                            rel={mark.attrs?.rel || "noopener noreferrer"}
-                            className="text-primary underline hover:text-secondary transition-colors"
-                          >
-                            {text}
-                          </a>
-                        )
-                      }
-                    })
-                  }
-                  return text
-                }
-                return textNode.text || ''
-              })}
+                      return <span key={paragraphIndex}>{text}</span>
+                    }
+                    return <span key={paragraphIndex}>{paragraphNode.text || ''}</span>
+                  })}
+                </div>
+              </div>
             </blockquote>
           )
         }
