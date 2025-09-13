@@ -31,32 +31,6 @@ interface BlogPost {
   meta_keywords: string[];
 }
 
-export const metadata: Metadata = {
-  title: "Educational Blog - Study Tips & Academic Insights | The Tutor Bridge",
-  description: "Read expert educational insights, study tips, and academic guidance on The Tutor Bridge blog. Get the latest advice for students in grades 6-12 to excel in their studies.",
-  keywords: [
-    "educational blog",
-    "study tips",
-    "academic insights",
-    "student guidance",
-    "learning strategies",
-    "educational articles",
-    "study advice",
-    "academic success",
-    "student tips",
-    "education blog"
-  ],
-  alternates: {
-    canonical: "https://thetutorbridge.com/blog",
-  },
-  openGraph: {
-    title: "Educational Blog - Study Tips & Academic Insights | The Tutor Bridge",
-    description: "Read expert educational insights, study tips, and academic guidance on The Tutor Bridge blog. Get the latest advice for students in grades 6-12.",
-    url: "https://thetutorbridge.com/blog",
-    siteName: "The Tutor Bridge",
-    type: "website",
-  },
-}
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([])

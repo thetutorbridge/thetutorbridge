@@ -41,32 +41,6 @@ import { Navigation } from "@/components/navigation"
 import FloaterMessenger from "@/app/components/FloaterMessenger"
 import MotivationalSessionsFAQ from "@/components/MotivationalSessionsFAQ"
 
-export const metadata: Metadata = {
-  title: "Motivational Sessions - Inspire & Excel | The Tutor Bridge",
-  description: "Join our motivational sessions to boost confidence, overcome academic challenges, and achieve your goals. Expert-led sessions for students in grades 6-12. Transform your mindset today!",
-  keywords: [
-    "motivational sessions",
-    "student motivation",
-    "academic confidence",
-    "mindset coaching",
-    "student success",
-    "goal setting",
-    "study motivation",
-    "academic excellence",
-    "student empowerment",
-    "inspirational sessions"
-  ],
-  alternates: {
-    canonical: "https://thetutorbridge.com/motivational-sessions",
-  },
-  openGraph: {
-    title: "Motivational Sessions - Inspire & Excel | The Tutor Bridge",
-    description: "Join our motivational sessions to boost confidence, overcome academic challenges, and achieve your goals. Expert-led sessions for students in grades 6-12.",
-    url: "https://thetutorbridge.com/motivational-sessions",
-    siteName: "The Tutor Bridge",
-    type: "website",
-  },
-}
 
 export default function MotivationalSessions() {
   return (

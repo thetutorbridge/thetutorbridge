@@ -5,32 +5,6 @@ import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "Ask a Doubt - Get Instant Help | The Tutor Bridge",
-  description: "Ask your academic doubts and get instant expert help from The Tutor Bridge tutors. Quick solutions for Math, Science, and English questions. Submit your doubt now!",
-  keywords: [
-    "ask doubt",
-    "instant help",
-    "academic questions",
-    "homework help",
-    "doubt solving",
-    "math doubts",
-    "science doubts",
-    "english doubts",
-    "quick solutions",
-    "expert help"
-  ],
-  alternates: {
-    canonical: "https://thetutorbridge.com/doubt-solving/ask-doubt",
-  },
-  openGraph: {
-    title: "Ask a Doubt - Get Instant Help | The Tutor Bridge",
-    description: "Ask your academic doubts and get instant expert help from The Tutor Bridge tutors. Quick solutions for Math, Science, and English questions.",
-    url: "https://thetutorbridge.com/doubt-solving/ask-doubt",
-    siteName: "The Tutor Bridge",
-    type: "website",
-  },
-}
 
 export default function AskDoubt() {
   const [loading, setLoading] = useState(false)
