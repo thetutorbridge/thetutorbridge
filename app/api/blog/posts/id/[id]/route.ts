@@ -48,6 +48,7 @@ export async function PUT(
       author_image,
       tags,
       status,
+      published_at,
       meta_title,
       meta_description,
       meta_keywords
@@ -79,8 +80,16 @@ export async function PUT(
     if (meta_keywords) updateData.meta_keywords = meta_keywords;
     if (readTime) updateData.read_time = readTime;
 
-    // Set published_at if status is being changed to published
-    if (status === 'published') {
+    // Handle published_at date
+    if (published_at !== undefined) {
+      if (published_at && published_at.trim() !== '') {
+        updateData.published_at = published_at;
+      } else if (status === 'published') {
+        updateData.published_at = new Date().toISOString();
+      } else {
+        updateData.published_at = null;
+      }
+    } else if (status === 'published') {
       updateData.published_at = new Date().toISOString();
     }
 

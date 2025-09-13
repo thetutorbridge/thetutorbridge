@@ -866,6 +866,24 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
                     </SelectContent>
                   </Select>
                 </div>
+
+                <div>
+                  <Label htmlFor="published_at">Published Date</Label>
+                  <Input
+                    id="published_at"
+                    type="datetime-local"
+                    value={formData.published_at ? new Date(formData.published_at).toISOString().slice(0, 16) : ''}
+                    onChange={(e) => {
+                      const value = e.target.value ? new Date(e.target.value).toISOString() : '';
+                      handleInputChange('published_at', value);
+                    }}
+                    className="mt-1"
+                    placeholder="Select publication date"
+                  />
+                  <p className="text-sm text-gray-500 mt-1">
+                    Leave empty to use current date when publishing
+                  </p>
+                </div>
               </CardContent>
             </Card>
 

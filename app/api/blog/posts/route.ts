@@ -51,6 +51,7 @@ export async function POST(request: NextRequest) {
       author_avatar = 'Rishabh Jain.jpeg', // Handle both field names
       tags = [],
       status = 'draft',
+      published_at,
       meta_title,
       meta_description,
       meta_keywords = []
@@ -73,6 +74,16 @@ export async function POST(request: NextRequest) {
     const wordCount = JSON.stringify(content).split(' ').length;
     const readTime = Math.ceil(wordCount / 200);
 
+    // Determine published_at date
+    let finalPublishedAt = null;
+    if (status === 'published') {
+      if (published_at) {
+        finalPublishedAt = published_at;
+      } else {
+        finalPublishedAt = new Date().toISOString();
+      }
+    }
+
     const postData = {
       title,
       slug: finalSlug,
@@ -88,7 +99,7 @@ export async function POST(request: NextRequest) {
       meta_description,
       meta_keywords,
       read_time: readTime,
-      published_at: status === 'published' ? new Date().toISOString() : null
+      published_at: finalPublishedAt
     };
 
     const { data, error } = await supabase
