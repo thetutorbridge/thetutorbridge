@@ -1,9 +1,11 @@
 "use client"
 
+import type { Metadata } from "next"
 import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+
 
 export default function BookDemoClass() {
   const [loading, setLoading] = useState(false)

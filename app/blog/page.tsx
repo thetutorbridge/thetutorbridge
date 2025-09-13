@@ -1,5 +1,6 @@
 "use client"
 
+import type { Metadata } from "next"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -29,6 +30,7 @@ interface BlogPost {
   meta_description: string;
   meta_keywords: string[];
 }
+
 
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([])

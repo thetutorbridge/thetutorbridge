@@ -1,6 +1,34 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import Image from "next/image"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "About Us - Expert Online Tutoring & Academic Support | The Tutor Bridge",
+  description: "Learn about The Tutor Bridge's mission to provide personalized online tutoring, career guidance, and academic support for students in grades 6-12. Meet our expert mentors and discover our success stories.",
+  keywords: [
+    "about us",
+    "online tutoring platform",
+    "academic support",
+    "career guidance",
+    "expert mentors",
+    "student success",
+    "educational platform",
+    "grades 6-12",
+    "personalized learning",
+    "tutoring mission"
+  ],
+  alternates: {
+    canonical: "https://thetutorbridge.com/about",
+  },
+  openGraph: {
+    title: "About Us - Expert Online Tutoring & Academic Support | The Tutor Bridge",
+    description: "Learn about The Tutor Bridge's mission to provide personalized online tutoring, career guidance, and academic support for students in grades 6-12.",
+    url: "https://thetutorbridge.com/about",
+    siteName: "The Tutor Bridge",
+    type: "website",
+  },
+}
 
 export default function About() {
   return (

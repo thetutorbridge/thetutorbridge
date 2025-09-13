@@ -1,8 +1,10 @@
 "use client"
 
+import type { Metadata } from "next"
 import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
+
 
 export default function AskDoubt() {
   const [loading, setLoading] = useState(false)

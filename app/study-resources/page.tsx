@@ -1,5 +1,6 @@
 "use client"
 
+import type { Metadata } from "next"
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -12,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/navigation";
+
 
 export default function StudyResources() {
   const classes = [6, 7, 8, 9, 10, 11, 12];

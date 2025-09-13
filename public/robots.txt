@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thetutorbridge.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all other content
+Allow: /blog/
+Allow: /study-resources/
+Allow: /doubt-solving/
+Allow: /career-guidance/
+Allow: /motivational-sessions/
+Allow: /about/
+Allow: /contact/
+Allow: /book-demo-class/
+
+# Crawl delay (optional)
+Crawl-delay: 1

@@ -1,7 +1,9 @@
 "use client";
 
+import type { Metadata } from "next"
 import { useState } from "react";
 import { Navigation } from "@/components/navigation";
+
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
