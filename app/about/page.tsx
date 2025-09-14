@@ -410,27 +410,33 @@ export default function About() {
         </section>
 
         {/* Join the Journey CTA */}
-        <section className="py-20 bg-gradient-to-br from-[#1A3D7C] via-[#2BAE66] to-[#FFC857] text-white">
-          <div className="container px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">
-                Join the Journey
-              </h2>
-              <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-                Whether you're in Class 6 or preparing for college, The Tutor Bridge is here to guide your path. 
-                Let's build your future, together.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/study-resources" className="inline-block">
-                  <span className="bg-white text-[#1A3D7C] text-lg px-8 py-4 rounded-xl font-poppins font-semibold hover:bg-gray-100 transition-all">
-                    Start Your Journey
-                  </span>
-                </Link>
-                <Link href="/contact" className="inline-block">
-                  <span className="border-2 border-white text-white text-lg px-8 py-4 rounded-xl font-poppins font-semibold hover:bg-white hover:text-[#1A3D7C] transition-all">
-                    Get in Touch
-                  </span>
-                </Link>
+        <section className="py-20 text-white relative overflow-hidden">
+          {/* Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1A3D7C] via-[#2BAE66] to-[#FFC857]"></div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="container px-4 sm:px-6 max-w-4xl mx-auto">
+              <div className="text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-6 px-4">
+                  Join the Journey
+                </h2>
+                <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed px-4 max-w-3xl mx-auto">
+                  Whether you're in Class 6 or preparing for college, The Tutor Bridge is here to guide your path. 
+                  Let's build your future, together.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+                  <Link href="/book-demo-class" className="w-full sm:w-auto">
+                    <span className="inline-block bg-white text-[#1A3D7C] text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-poppins font-semibold hover:bg-gray-100 transition-all w-full text-center">
+                      Start Your Journey
+                    </span>
+                  </Link>
+                  <Link href="/contact" className="w-full sm:w-auto">
+                    <span className="inline-block border-2 border-white text-white text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-poppins font-semibold hover:bg-white hover:text-[#1A3D7C] transition-all w-full text-center">
+                      Get in Touch
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

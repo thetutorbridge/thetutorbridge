@@ -16,6 +16,18 @@
     max-width: 100vw;
     overflow-x: hidden;
   }
+  
+  /* Better text wrapping for long content */
+  p, h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Prevent horizontal scroll on all sections */
+  section {
+    overflow-x: hidden;
+  }
 }
 
 @layer utilities {
