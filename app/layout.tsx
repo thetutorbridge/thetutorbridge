@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://thetutorbridge.com",
+    url: "https://www.thetutorbridge.com",
     siteName: "The Tutor Bridge",
     title: "The Tutor Bridge - #1 Online Tutoring Platform for Grades 6-12",
     description:
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     google: "KpkvQp8VxFV7-obKHHmwexGdICgx5vhXw8nLHEKPvog",
   },
   alternates: {
-    canonical: "https://thetutorbridge.com",
+    canonical: "https://www.thetutorbridge.com",
   },
   generator: 'v0.dev'
 }
@@ -99,8 +99,8 @@ export default function RootLayout({
               "@type": "EducationalOrganization",
               name: "The Tutor Bridge",
               description: "India's leading online tutoring platform offering personalized education for grades 6-12",
-              url: "https://thetutorbridge.com",
-              logo: "https://thetutorbridge.com/TheTutorBridge Logo New.png",
+              url: "https://www.thetutorbridge.com",
+              logo: "https://www.thetutorbridge.com/TheTutorBridge Logo New.png",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+91-93100-96171",

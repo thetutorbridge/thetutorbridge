@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         images: [imageUrl],
       },
       alternates: {
-        canonical: `https://thetutorbridge.com/blog/${resolvedParams.slug}`,
+        canonical: `https://www.thetutorbridge.com/blog/${resolvedParams.slug}`,
       },
     }
   } catch (error) {

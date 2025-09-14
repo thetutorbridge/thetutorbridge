@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Academic support, career mentorship, and resources to help students from Class 6 to 12 discover their true path.",
   alternates: {
-    canonical: "https://thetutorbridge.com",
+    canonical: "https://www.thetutorbridge.com",
   },
 }
 

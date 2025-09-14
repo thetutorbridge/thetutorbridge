@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://thetutorbridge.com/blog",
+    canonical: "https://www.thetutorbridge.com/blog",
   },
 }
 

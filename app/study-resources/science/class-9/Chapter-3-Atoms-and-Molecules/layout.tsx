@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://thetutorbridge.com/study-resources/science/class-9/Chapter-3-Atoms-and-Molecules",
+    canonical: "https://www.thetutorbridge.com/study-resources/science/class-9/Chapter-3-Atoms-and-Molecules",
   },
 }
 

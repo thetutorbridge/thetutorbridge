@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "quick answers",
   ],
   alternates: {
-    canonical: "https://thetutorbridge.com/doubt-solving",
+    canonical: "https://www.thetutorbridge.com/doubt-solving",
   },
 }
 

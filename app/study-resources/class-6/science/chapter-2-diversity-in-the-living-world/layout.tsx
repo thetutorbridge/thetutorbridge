@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://thetutorbridge.com/study-resources/class-6/science/chapter-2-diversity-in-the-living-world",
+    canonical: "https://www.thetutorbridge.com/study-resources/class-6/science/chapter-2-diversity-in-the-living-world",
   },
 }
 

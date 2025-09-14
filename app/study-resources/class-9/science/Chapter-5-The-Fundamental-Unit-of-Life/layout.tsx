@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://thetutorbridge.com/study-resources/class-9/science/Chapter-5-The-Fundamental-Unit-of-Life",
+    canonical: "https://www.thetutorbridge.com/study-resources/class-9/science/Chapter-5-The-Fundamental-Unit-of-Life",
   },
 }
 

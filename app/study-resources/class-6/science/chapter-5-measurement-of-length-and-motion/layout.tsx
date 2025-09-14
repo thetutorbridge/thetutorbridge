@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://thetutorbridge.com/study-resources/class-6/science/chapter-5-measurement-of-length-and-motion",
+    canonical: "https://www.thetutorbridge.com/study-resources/class-6/science/chapter-5-measurement-of-length-and-motion",
   },
 }
 

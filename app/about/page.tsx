@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     "tutoring mission"
   ],
   alternates: {
-    canonical: "https://thetutorbridge.com/about",
+    canonical: "https://www.thetutorbridge.com/about",
   },
   openGraph: {
     title: "About Us - Expert Online Tutoring & Academic Support",
     description: "Learn about The Tutor Bridge's mission to provide personalized online tutoring, career guidance, and academic support for students in grades 6-12.",
-    url: "https://thetutorbridge.com/about",
+    url: "https://www.thetutorbridge.com/about",
     siteName: "The Tutor Bridge",
     type: "website",
   },
