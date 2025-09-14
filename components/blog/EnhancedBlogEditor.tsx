@@ -310,9 +310,13 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
     
     // Add click listener for removal
     const removeListener = () => {
-      if (editor) {
-        const pos = editor.view.posAtDOM(imgElement, 0)
-        editor.commands.deleteRange({ from: pos - 1, to: pos + 1 })
+      if (editor && editor.view) {
+        try {
+          const pos = editor.view.posAtDOM(imgElement, 0)
+          editor.commands.deleteRange({ from: pos - 1, to: pos + 1 })
+        } catch (error) {
+          console.warn('Editor not ready for image removal:', error)
+        }
       }
       imgElement.classList.remove('selected')
       imgElement.removeEventListener('click', removeListener)

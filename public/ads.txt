@@ -1,0 +1,5 @@
+# ads.txt file for thetutorbridge.com
+# This file authorizes digital sellers to sell your inventory
+
+# Google AdSense
+google.com, pub-2600923553967122, DIRECT, f08c47fec0942fa0

@@ -104,7 +104,17 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const getActualImageUrl = (url: string) => {
-    // Extract actual image URL from Google search results
+    // Return Supabase URLs as-is since they're already correct
+    if (url.includes('supabase.co')) {
+      return url
+    }
+    
+    // Return WordPress URLs as-is since they're already correct
+    if (url.includes('thetutorbridge.com')) {
+      return url
+    }
+    
+    // Extract actual image URL from Google search results (legacy support)
     if (url.includes('google.com/imgres') && url.includes('imgurl=')) {
       const imgurlMatch = url.match(/imgurl=([^&]+)/)
       if (imgurlMatch) {
@@ -385,15 +395,39 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           )
         }
         if (node.type === 'image') {
+          const imageUrl = getActualImageUrl(node.attrs?.src || '')
           return (
             <div key={index} className="my-8 text-center">
-              <img 
-                src={node.attrs?.src} 
-                alt={node.attrs?.alt || 'Image'} 
-                className="max-w-full h-auto rounded-lg shadow-lg mx-auto"
-                style={{ maxHeight: '500px' }}
-                loading="lazy"
-              />
+              <div className="relative w-full h-auto max-h-[500px] mx-auto">
+                <Image 
+                  src={imageUrl} 
+                  alt={node.attrs?.alt || 'Image'} 
+                  width={800}
+                  height={400}
+                  className="max-w-full h-auto rounded-lg shadow-lg mx-auto"
+                  style={{ maxHeight: '500px', objectFit: 'contain' }}
+                  onLoad={() => {
+                    console.log('✅ Inline image loaded successfully:', imageUrl)
+                  }}
+                  onError={(e) => {
+                    console.error('❌ Inline image failed to load:', imageUrl)
+                    // Show a placeholder for broken images
+                    const target = e.target as HTMLImageElement
+                    const parent = target.parentElement
+                    if (parent) {
+                      parent.innerHTML = `
+                        <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                          <div class="text-center">
+                            <div class="text-gray-400 text-4xl mb-2">🖼️</div>
+                            <p class="text-gray-500 text-sm">Image not available</p>
+                            <p class="text-gray-400 text-xs mt-1">${node.attrs?.alt || 'Missing image'}</p>
+                          </div>
+                        </div>
+                      `
+                    }
+                  }}
+                />
+              </div>
               {node.attrs?.alt && (
                 <p className="text-sm text-gray-600 mt-2 italic">{node.attrs.alt}</p>
               )}
@@ -691,8 +725,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   alt={post.title}
                   fill
                   className="object-cover"
+                  onLoad={() => {
+                    console.log('✅ Featured image loaded successfully:', post.featured_image)
+                  }}
                   onError={(e) => {
-                    // Hide the image container if image fails to load
+                    console.error('❌ Featured image failed to load:', post.featured_image)
                     const target = e.target as HTMLImageElement
                     target.style.display = 'none'
                     target.parentElement!.style.display = 'none'
