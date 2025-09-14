@@ -161,29 +161,42 @@ export interface Database {
 
 // Helper function to create a Supabase client
 export function createClient() {
-  // Check if we're on the server side
-  if (typeof window === 'undefined') {
-    // Server-side: use service role for admin operations
-    if (!supabaseAdmin) {
-      throw new Error('Supabase service role key not configured')
-    }
-    return supabaseAdmin
-  } else {
-    // Client-side: create a new client instance
-    if (!supabaseUrl || !supabaseAnonKey) {
-      throw new Error('Supabase environment variables not configured')
-    }
-    return createSupabaseClient(supabaseUrl, supabaseAnonKey, {
-      auth: {
-        autoRefreshToken: false,
-        persistSession: false,
-        detectSessionInUrl: false
-      },
-      global: {
-        headers: {
-          'X-Client-Info': 'supabase-js/2.53.0'
-        }
-      }
-    })
+  // Always use anon key for public operations (both client and server)
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Supabase environment variables not configured')
   }
+  return createSupabaseClient(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+      detectSessionInUrl: false
+    },
+    global: {
+      headers: {
+        'X-Client-Info': 'supabase-js/2.53.0'
+      }
+    }
+  })
+}
+
+// Helper function to create an admin Supabase client (server-side only)
+export function createAdminClient() {
+  if (typeof window !== 'undefined') {
+    throw new Error('Admin client can only be used on server side')
+  }
+  if (!supabaseUrl || !supabaseServiceKey) {
+    throw new Error('Supabase service role key not configured')
+  }
+  return createSupabaseClient(supabaseUrl, supabaseServiceKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+      detectSessionInUrl: false
+    },
+    global: {
+      headers: {
+        'X-Client-Info': 'supabase-js/2.53.0'
+      }
+    }
+  })
 } 
