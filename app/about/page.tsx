@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "About Us - Expert Online Tutoring & Academic Support | The Tutor Bridge",
+  title: "About Us - Expert Online Tutoring & Academic Support",
   description: "Learn about The Tutor Bridge's mission to provide personalized online tutoring, career guidance, and academic support for students in grades 6-12. Meet our expert mentors and discover our success stories.",
   keywords: [
     "about us",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://thetutorbridge.com/about",
   },
   openGraph: {
-    title: "About Us - Expert Online Tutoring & Academic Support | The Tutor Bridge",
+    title: "About Us - Expert Online Tutoring & Academic Support",
     description: "Learn about The Tutor Bridge's mission to provide personalized online tutoring, career guidance, and academic support for students in grades 6-12.",
     url: "https://thetutorbridge.com/about",
     siteName: "The Tutor Bridge",

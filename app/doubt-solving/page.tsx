@@ -18,7 +18,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Instant Doubt Solving - Get Answers in 30 Minutes | The Tutor Bridge",
+  title: "Instant Doubt Solving - Get Answers in 30 Minutes",
   description:
     "Upload your questions via WhatsApp and get detailed step-by-step solutions within 30-60 minutes from expert tutors. Math, Science, English doubts solved instantly. Try free doubt now!",
   keywords: [

@@ -11,7 +11,6 @@ const merriweather = Merriweather({ subsets: ["latin"], weight: ["400", "700"], 
 export const metadata: Metadata = {
   title: {
     default: "The Tutor Bridge - #1 Online Tutoring Platform for Grades 6-12 | Math, Science, English",
-    template: "%s | The Tutor Bridge",
   },
   description:
     "India's leading online tutoring platform offering personalized 1-on-1 sessions, instant doubt solving, career guidance & study resources for grades 6-12. 95% success rate. Book free trial today!",
