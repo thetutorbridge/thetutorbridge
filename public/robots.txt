@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap - Dynamic sitemap that automatically includes all pages
 Sitemap: https://thetutorbridge.com/sitemap.xml
 
 # Disallow admin areas
