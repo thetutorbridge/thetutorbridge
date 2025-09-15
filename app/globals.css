@@ -260,3 +260,19 @@ h6 {
 /* Performance */
 img { max-width: 100%; height: auto; }
 .will-change-transform { will-change: transform; }
+
+/* Remove frames and descriptions from blog images */
+.prose img,
+.blog-content img,
+article img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Hide image descriptions in blog posts */
+.prose img + p,
+.blog-content img + p,
+article img + p,
+.text-sm.text-gray-600.mt-2.italic {
+  display: none !important;
+}

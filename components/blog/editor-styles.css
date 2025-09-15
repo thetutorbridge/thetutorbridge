@@ -285,8 +285,6 @@
 .ProseMirror img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   margin: 1rem 0;
   display: block;
   margin-left: auto;
@@ -294,11 +292,21 @@
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .ProseMirror img:hover {
-  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
+  box-shadow: none !important;
+}
+
+/* Hide any image descriptions/captions */
+.ProseMirror .image-caption,
+.ProseMirror .image-description,
+.ProseMirror p:has(+ img),
+.ProseMirror img + p {
+  display: none !important;
 }
 
 .ProseMirror img.selected {

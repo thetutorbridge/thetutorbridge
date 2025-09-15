@@ -404,7 +404,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   alt={node.attrs?.alt || 'Image'} 
                   width={800}
                   height={400}
-                  className="max-w-full h-auto rounded-lg shadow-lg mx-auto"
+                  className="max-w-full h-auto mx-auto"
                   style={{ maxHeight: '500px', objectFit: 'contain' }}
                   onLoad={() => {
                     console.log('✅ Inline image loaded successfully:', imageUrl)
@@ -428,9 +428,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   }}
                 />
               </div>
-              {node.attrs?.alt && (
-                <p className="text-sm text-gray-600 mt-2 italic">{node.attrs.alt}</p>
-              )}
             </div>
           )
         }
@@ -649,7 +646,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <img 
                   src={actualUrl} 
                   alt={alt || 'Image'} 
-                  className="max-w-full h-auto rounded-lg shadow-lg border mx-auto"
+                  className="max-w-full h-auto mx-auto"
                   style={{ maxHeight: '500px', objectFit: 'contain' }}
                   onLoad={() => {
                     console.log('✅ Image loaded successfully:', actualUrl)
@@ -668,9 +665,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   }}
                   loading="lazy"
                 />
-                {alt && (
-                  <p className="text-sm text-gray-600 mt-2 italic">{alt}</p>
-                )}
               </div>
             )
           }
