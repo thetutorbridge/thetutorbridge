@@ -120,7 +120,7 @@ export default function Class6Resources() {
                             Science Resources Available!
                           </h3>
                <p className="text-gray-600 max-w-md mx-auto">
-                 Access comprehensive Class 6 Science resources including 6 detailed chapters with notes, examples, and interactive content.
+                 Access comprehensive Class 6 Science resources including 7 detailed chapters with notes, examples, and interactive content.
                </p>
                         </div>
                         
@@ -197,6 +197,19 @@ export default function Class6Resources() {
                      <div className="min-w-0 flex-1">
                        <h4 className="font-semibold text-[#1A3D7C] break-words">Materials Around Us</h4>
                        <p className="text-sm text-gray-600">Properties of materials, classification, lustre, hardness, transparency, solubility</p>
+                     </div>
+                   </div>
+                   <ArrowRight className="w-5 h-5 text-[#2BAE66]" />
+                 </div>
+               </Link>
+
+               <Link href="/study-resources/class-6/science/chapter-7-temperature-and-its-measurement" className="block">
+                 <div className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors border border-gray-200 hover:border-[#2BAE66] min-w-0">
+                   <div className="flex items-center gap-3">
+                     <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center text-sm font-semibold">7</div>
+                     <div className="min-w-0 flex-1">
+                       <h4 className="font-semibold text-[#1A3D7C] break-words">Temperature and Its Measurement</h4>
+                       <p className="text-sm text-gray-600">Clinical & lab thermometers, temperature scales, measurement techniques, safety tips</p>
                      </div>
                    </div>
                    <ArrowRight className="w-5 h-5 text-[#2BAE66]" />

@@ -1,18 +1,18 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Home, GraduationCap, Beaker, ArrowRight } from 'lucide-react';
+import { Home, GraduationCap, BookOpen, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Class 9 Science Study Resources – Complete Chapter-wise Notes & Study Materials',
-  description: 'Get comprehensive Class 9 science study resources covering all chapters. Complete Science study materials including all chapters covering physics, chemistry, and biology concepts. Free notes, explanations, and practice questions.',
+  title: 'Class 6 English Study Resources – Complete Chapter-wise Notes & Study Materials',
+  description: 'Get comprehensive Class 6 english study resources covering all chapters. Complete English study materials including literature, grammar, writing skills, and comprehension. Free notes, explanations, and practice questions.',
 };
 
-export default function Class9SciencePage() {
+export default function Class6EnglishPage() {
   const chapters = [
-    // TODO: Add specific chapters for Class 9 science
+    // TODO: Add specific chapters for Class 6 english
     // This is a template - customize with actual chapter content
   ];
 
@@ -30,16 +30,16 @@ export default function Class9SciencePage() {
               <span className="sm:hidden">Resources</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/study-resources/class-9" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+            <Link href="/study-resources/class-6" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
               <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-              <span className="hidden sm:inline">Class 9</span>
-              <span className="sm:hidden">C9</span>
+              <span className="hidden sm:inline">Class 6</span>
+              <span className="sm:hidden">C6</span>
             </Link>
             <span className="text-gray-400">/</span>
             <span className="text-gray-600 flex items-center">
-              <Beaker className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-              <span className="hidden sm:inline">Science</span>
-              <span className="sm:hidden">SCI</span>
+              <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              <span className="hidden sm:inline">English</span>
+              <span className="sm:hidden">ENG</span>
             </span>
           </nav>
         </div>
@@ -49,23 +49,23 @@ export default function Class9SciencePage() {
       <section className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white py-16 px-6">
         <div className="container mx-auto text-center max-w-4xl">
           <div className="flex items-center justify-center mb-6">
-            <Beaker className="w-12 h-12 text-[#FFC857] mr-4" />
+            <BookOpen className="w-12 h-12 text-[#FFC857] mr-4" />
             <h1 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
-              Class 9 Science
+              Class 6 English
             </h1>
           </div>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-            Master Class 9 Science with comprehensive study materials covering all chapters. Build strong foundations for academic success.
+            Master Class 6 English with comprehensive study materials covering all chapters. Build strong foundations for academic success.
           </p>
           <div className="bg-white/10 p-4 rounded-xl mb-8">
             <p className="text-lg italic">"Education is the most powerful weapon which you can use to change the world."<br />
-            <strong>Develop strong science skills for future success</strong></p>
+            <strong>Develop strong english skills for future success</strong></p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/study-resources/class-9">
+            <Link href="/study-resources/class-6">
               <Button size="lg" variant="outline" className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold">
                 <ArrowRight className="mr-2 h-5 w-5" />
-                Back to Class 9
+                Back to Class 6
               </Button>
             </Link>
             <Link href="/book-demo-class">
@@ -85,10 +85,10 @@ export default function Class9SciencePage() {
           <section className="mb-12">
             <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl text-center">
               <h2 className="text-2xl font-bold mb-4">
-                📚 Class 9 Science Content Coming Soon!
+                📚 Class 6 English Content Coming Soon!
               </h2>
               <p className="text-lg mb-6 opacity-90">
-                We're working hard to bring you comprehensive Class 9 science study materials. 
+                We're working hard to bring you comprehensive Class 6 english study materials. 
                 In the meantime, book a free session with our expert tutors to get personalized help.
               </p>
               <Link href="/book-demo-class">
@@ -103,10 +103,10 @@ export default function Class9SciencePage() {
           <section className="text-center py-12">
             <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Need Help Understanding Science Concepts?
+                Need Help Understanding English Concepts?
               </h2>
               <p className="text-lg mb-6 opacity-90">
-                Our expert science tutors can help you master all Class 9 topics with personalized guidance and interactive learning.
+                Our expert english tutors can help you master all Class 6 topics with personalized guidance and interactive learning.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/book-demo-class">

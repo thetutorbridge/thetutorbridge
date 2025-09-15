@@ -82,13 +82,13 @@ export default function Class6ScienceChapter1() {
               <span className="sm:hidden">Resources</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+            <Link href="/study-resources/class-6" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
               <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
               <span className="hidden sm:inline">Class 6</span>
               <span className="sm:hidden">C6</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/study-resources" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+            <Link href="/study-resources/class-6/science" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
               <Beaker className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
               <span className="hidden sm:inline">Science</span>
               <span className="sm:hidden">Sci</span>
@@ -115,10 +115,10 @@ export default function Class6ScienceChapter1() {
             Class 6 Science - Chapter 1: Explore the fascinating world of science through curiosity, observation, and discovery.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/study-resources">
+            <Link href="/study-resources/class-6">
               <Button size="lg" variant="outline" className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold">
                 <ArrowLeft className="mr-2 h-5 w-5" />
-                Back to Resources
+                Back to Class 6
               </Button>
             </Link>
             <Link href="/book-demo-class">
