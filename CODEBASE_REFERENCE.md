@@ -502,4 +502,49 @@ export default function ChapterXPage() {
 }
 ```
 
+---
+
+## 12. CRITICAL STEP: UPDATE PARENT PAGES
+
+### ⚠️ IMPORTANT: Always Update Parent Pages When Adding New Chapters
+
+When creating a new chapter, you **MUST** update the parent page to include the new chapter in the navigation list.
+
+### For Class 6 Science Chapters:
+**File to Update:** `/app/study-resources/class-6/page.tsx`
+
+**What to Add:**
+```tsx
+<Link href="/study-resources/class-6/science/chapter-X-descriptive-title" className="block">
+  <div className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors border border-gray-200 hover:border-[#2BAE66] min-w-0">
+    <div className="flex items-center gap-3">
+      <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center text-sm font-semibold">X</div>
+      <div className="min-w-0 flex-1">
+        <h4 className="font-semibold text-[#1A3D7C] break-words">Chapter Title</h4>
+        <p className="text-sm text-gray-600">Brief description of chapter content</p>
+      </div>
+    </div>
+    <ArrowRight className="w-5 h-5 text-[#2BAE66]" />
+  </div>
+</Link>
+```
+
+**Also Update:**
+- Chapter count in description (e.g., "7 detailed chapters" → "8 detailed chapters")
+- Ensure proper sequential numbering
+
+### For Other Classes/Subjects:
+Follow the same pattern for the respective parent pages:
+- Class 7: `/app/study-resources/class-7/page.tsx`
+- Class 8: `/app/study-resources/class-8/page.tsx`
+- etc.
+
+### Checklist for New Chapter Creation:
+1. ✅ Create chapter directory with proper naming convention
+2. ✅ Create `layout.tsx` with metadata
+3. ✅ Create `page.tsx` following established patterns
+4. ✅ **UPDATE PARENT PAGE** to include new chapter
+5. ✅ Update chapter count in descriptions
+6. ✅ Test navigation and links
+
 This comprehensive reference document should provide all the patterns, structures, and conventions needed to create consistent chapter pages in the codebase. The identified Package import issue in Chapter 7 should be fixed by replacing it with the `Box` icon that's already imported.

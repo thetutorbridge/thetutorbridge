@@ -120,7 +120,7 @@ export default function Class6Resources() {
                             Science Resources Available!
                           </h3>
                <p className="text-gray-600 max-w-md mx-auto">
-                 Access comprehensive Class 6 Science resources including 7 detailed chapters with notes, examples, and interactive content.
+                 Access comprehensive Class 6 Science resources including 10 detailed chapters with notes, examples, and interactive content.
                </p>
                         </div>
                         
@@ -210,6 +210,45 @@ export default function Class6Resources() {
                      <div className="min-w-0 flex-1">
                        <h4 className="font-semibold text-[#1A3D7C] break-words">Temperature and Its Measurement</h4>
                        <p className="text-sm text-gray-600">Clinical & lab thermometers, temperature scales, measurement techniques, safety tips</p>
+                     </div>
+                   </div>
+                   <ArrowRight className="w-5 h-5 text-[#2BAE66]" />
+                 </div>
+               </Link>
+
+               <Link href="/study-resources/class-6/science/chapter-8-a-journey-through-states-of-water" className="block">
+                 <div className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors border border-gray-200 hover:border-[#2BAE66] min-w-0">
+                   <div className="flex items-center gap-3">
+                     <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center text-sm font-semibold">8</div>
+                     <div className="min-w-0 flex-1">
+                       <h4 className="font-semibold text-[#1A3D7C] break-words">A Journey Through States of Water</h4>
+                       <p className="text-sm text-gray-600">States of water, evaporation, condensation, water cycle, melting and freezing</p>
+                     </div>
+                   </div>
+                   <ArrowRight className="w-5 h-5 text-[#2BAE66]" />
+                 </div>
+               </Link>
+
+               <Link href="/study-resources/class-6/science/chapter-9-methods-of-separation-in-everyday-life" className="block">
+                 <div className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors border border-gray-200 hover:border-[#2BAE66] min-w-0">
+                   <div className="flex items-center gap-3">
+                     <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center text-sm font-semibold">9</div>
+                     <div className="min-w-0 flex-1">
+                       <h4 className="font-semibold text-[#1A3D7C] break-words">Methods of Separation in Everyday Life</h4>
+                       <p className="text-sm text-gray-600">Handpicking, sieving, filtration, evaporation, winnowing, threshing, magnetic separation</p>
+                     </div>
+                   </div>
+                   <ArrowRight className="w-5 h-5 text-[#2BAE66]" />
+                 </div>
+               </Link>
+
+               <Link href="/study-resources/class-6/science/chapter-10-living-creatures-exploring-their-characteristics" className="block">
+                 <div className="flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors border border-gray-200 hover:border-[#2BAE66] min-w-0">
+                   <div className="flex items-center gap-3">
+                     <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center text-sm font-semibold">10</div>
+                     <div className="min-w-0 flex-1">
+                       <h4 className="font-semibold text-[#1A3D7C] break-words">Living Creatures: Exploring their Characteristics</h4>
+                       <p className="text-sm text-gray-600">MRS GREN + D life processes, germination conditions, plant growth and movement</p>
                      </div>
                    </div>
                    <ArrowRight className="w-5 h-5 text-[#2BAE66]" />
