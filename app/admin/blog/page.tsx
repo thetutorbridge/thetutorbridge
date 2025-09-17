@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Plus, Edit, Trash2, Eye, Calendar, Clock, Tag } from "lucide-react"
+import { Plus, Edit, Trash2, Eye, Calendar, Clock, Tag, Filter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Navigation } from "@/components/navigation"
 
 interface BlogPost {
@@ -33,8 +34,10 @@ interface BlogPost {
 
 export default function AdminBlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([])
+  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isClient, setIsClient] = useState(false)
+  const [statusFilter, setStatusFilter] = useState<string>('all')
 
   useEffect(() => {
     setIsClient(true)
@@ -52,6 +55,10 @@ export default function AdminBlogPage() {
         }
         const result = await response.json()
         setPosts(result.posts || [])
+        console.log('🔍 Admin Blog Debug:')
+        console.log('- Total posts loaded:', result.posts?.length || 0)
+        console.log('- Posts data:', result.posts)
+        console.log('- Draft posts:', result.posts?.filter(p => p.status === 'draft') || [])
       } catch (error) {
         console.error('Error loading blog posts:', error)
         setPosts([])
@@ -62,6 +69,15 @@ export default function AdminBlogPage() {
     
     loadPosts()
   }, [isClient])
+
+  // Filter posts based on status
+  useEffect(() => {
+    if (statusFilter === 'all') {
+      setFilteredPosts(posts)
+    } else {
+      setFilteredPosts(posts.filter(post => post.status === statusFilter))
+    }
+  }, [posts, statusFilter])
 
   const handleDeletePost = async (id: string) => {
     if (confirm('Are you sure you want to delete this blog post? This action cannot be undone.')) {
@@ -95,7 +111,12 @@ export default function AdminBlogPage() {
   }
 
   const getStatusColor = (status: string) => {
-    return status === 'published' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+    switch (status) {
+      case 'published': return 'bg-green-100 text-green-800 hover:bg-green-200 border border-green-200';
+      case 'draft': return 'bg-orange-100 text-orange-800 hover:bg-orange-200 border border-orange-200 font-semibold';
+      case 'archived': return 'bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200';
+      default: return 'bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-200';
+    }
   }
 
   if (!isClient) {
@@ -132,28 +153,54 @@ export default function AdminBlogPage() {
 
       {/* Content */}
       <div className="container mx-auto px-4 py-8">
+        {/* Filter Controls */}
+        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="flex items-center gap-4 mb-2">
+            <div className="flex items-center gap-2">
+              <Filter className="h-4 w-4 text-gray-600" />
+              <label className="text-sm font-medium text-gray-700">Filter by status:</label>
+            </div>
+            <Select value={statusFilter} onValueChange={setStatusFilter}>
+              <SelectTrigger className="w-48">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Posts ({posts.length})</SelectItem>
+                <SelectItem value="published">Published ({posts.filter(p => p.status === 'published').length})</SelectItem>
+                <SelectItem value="draft">Drafts ({posts.filter(p => p.status === 'draft').length})</SelectItem>
+                <SelectItem value="archived">Archived ({posts.filter(p => p.status === 'archived').length})</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="text-xs text-gray-600">
+            Debug: Total posts loaded: {posts.length}, Currently showing: {filteredPosts.length}, Filter: {statusFilter}
+          </div>
+        </div>
+
         {isLoading ? (
           <div className="text-center py-16">
             <div className="text-gray-500 text-lg mb-4">Loading posts...</div>
           </div>
-        ) : posts.length === 0 ? (
+        ) : filteredPosts.length === 0 ? (
           <div className="text-center py-16">
-            <div className="text-gray-500 text-lg mb-4">No blog posts found.</div>
+            <div className="text-gray-500 text-lg mb-4">
+              {statusFilter === 'all' ? 'No blog posts found.' : `No ${statusFilter} posts found.`}
+            </div>
             <Link href="/admin/blog/new">
               <Button>Create Your First Blog Post</Button>
             </Link>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((post) => (
+            {filteredPosts.map((post) => (
               <Card key={post.id} className="group hover:shadow-lg transition-all duration-300">
                 {post.featured_image && (
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
                     <Image
                       src={post.featured_image}
                       alt={post.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-contain group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement
                         target.style.display = 'none'
@@ -191,6 +238,7 @@ export default function AdminBlogPage() {
                     </div>
                   </div>
                   <CardTitle className="text-lg line-clamp-2">
+                    {post.status === 'draft' && <span className="text-orange-500 mr-2">📝</span>}
                     {post.title}
                   </CardTitle>
                   <CardDescription className="line-clamp-3">

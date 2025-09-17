@@ -170,12 +170,12 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                 {post.featured_image && (
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative w-full aspect-video bg-gray-100 overflow-hidden border-b border-gray-200">
                     <Image
                       src={post.featured_image}
                       alt={post.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-contain group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
                         // Hide the image container if image fails to load
                         const target = e.target as HTMLImageElement

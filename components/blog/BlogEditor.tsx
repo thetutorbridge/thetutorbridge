@@ -420,11 +420,11 @@ function BlogEditorComponent({
                 </div>
                 
                 {formData.featured_image && (
-                  <div className="featured-image-container w-full h-64 bg-gray-100 rounded-lg overflow-hidden">
+                  <div className="featured-image-container w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
                     <img
                       src={formData.featured_image}
                       alt="Featured"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 )}

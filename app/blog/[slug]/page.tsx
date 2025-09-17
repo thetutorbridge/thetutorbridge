@@ -713,12 +713,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Article Header */}
           <article className="bg-white rounded-lg shadow-lg overflow-hidden">
             {post.featured_image && (
-              <div className="relative h-64 md:h-96">
+              <div className="relative w-full aspect-video bg-gray-100">
                 <Image
                   src={getActualImageUrl(post.featured_image)}
                   alt={post.title}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   onLoad={() => {
                     console.log('✅ Featured image loaded successfully:', post.featured_image)
                   }}
