@@ -56,9 +56,12 @@ export default function AdminBlogPage() {
         const result = await response.json()
         setPosts(result.posts || [])
         console.log('🔍 Admin Blog Debug:')
+        console.log('- API URL called:', '/api/blog/posts?status=all')
+        console.log('- Response status:', response.status)
         console.log('- Total posts loaded:', result.posts?.length || 0)
         console.log('- Posts data:', result.posts)
         console.log('- Draft posts:', result.posts?.filter(p => p.status === 'draft') || [])
+        console.log('- All post statuses:', result.posts?.map(p => p.status) || [])
       } catch (error) {
         console.error('Error loading blog posts:', error)
         setPosts([])

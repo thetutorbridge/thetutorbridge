@@ -3,7 +3,7 @@ import { createClient, createAdminClient } from '@/lib/supabase';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createClient();
+    const supabase = createAdminClient();
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status') || 'published';
     const limitParam = searchParams.get('limit');
