@@ -76,6 +76,19 @@ export async function checkUsageStats(userId?: string, sessionId?: string): Prom
     
     if (error) {
       console.error('Error checking usage stats:', error);
+      
+      // If table doesn't exist, return default stats (graceful fallback)
+      if (error.code === '42P01') {
+        console.log('📊 Database tables not created yet, using default stats');
+        return {
+          total_guides: 0,
+          remaining_free: FREEMIUM_LIMITS.ANONYMOUS_LIMIT,
+          is_registered: !!userId,
+          needs_registration: false,
+          needs_upgrade: false
+        };
+      }
+      
       throw error;
     }
     
@@ -96,7 +109,15 @@ export async function checkUsageStats(userId?: string, sessionId?: string): Prom
     
   } catch (error) {
     console.error('Error in checkUsageStats:', error);
-    throw error;
+    
+    // Fallback to default stats if anything fails
+    return {
+      total_guides: 0,
+      remaining_free: FREEMIUM_LIMITS.ANONYMOUS_LIMIT,
+      is_registered: !!userId,
+      needs_registration: false,
+      needs_upgrade: false
+    };
   }
 }
 
@@ -148,6 +169,13 @@ export async function logStudyGuideUsage(usageData: {
     
     if (error) {
       console.error('Error logging usage:', error);
+      
+      // If table doesn't exist, just log and continue
+      if (error.code === '42P01') {
+        console.log('📊 Database tables not created yet, skipping usage logging');
+        return;
+      }
+      
       throw error;
     }
     
@@ -171,12 +199,20 @@ export async function getUserByEmail(email: string): Promise<User | null> {
     
     if (error) {
       console.error('Error getting user by email:', error);
+      
+      // If table doesn't exist, return null
+      if (error.code === '42P01') {
+        console.log('📊 Database tables not created yet, returning null user');
+        return null;
+      }
+      
       throw error;
     }
     
     return data;
   } catch (error) {
     console.error('Error in getUserByEmail:', error);
-    throw error;
+    // Return null instead of throwing to prevent UI breaks
+    return null;
   }
 }

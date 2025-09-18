@@ -69,8 +69,21 @@ export default function AIStudyGuideMakerPage() {
         }
       }
       
-      // Check current usage stats
-      await checkCurrentUsage(currentSessionId, storedUser ? JSON.parse(storedUser).email : null);
+      // Check current usage stats (with error handling)
+      try {
+        await checkCurrentUsage(currentSessionId, storedUser ? JSON.parse(storedUser).email : null);
+      } catch (error) {
+        console.error('Error checking usage, using defaults:', error);
+        // Set default stats if checking fails
+        setUsageStats({
+          total_guides: 0,
+          remaining_free: 2,
+          is_registered: false,
+          needs_registration: false,
+          needs_upgrade: false
+        });
+        setIsCheckingUsage(false);
+      }
     };
     
     initializeSession();
@@ -88,9 +101,26 @@ export default function AIStudyGuideMakerPage() {
       if (response.ok) {
         const stats = await response.json();
         setUsageStats(stats);
+      } else {
+        // If API fails, set default stats
+        setUsageStats({
+          total_guides: 0,
+          remaining_free: 2,
+          is_registered: false,
+          needs_registration: false,
+          needs_upgrade: false
+        });
       }
     } catch (error) {
       console.error('Error checking usage:', error);
+      // Set default stats on error
+      setUsageStats({
+        total_guides: 0,
+        remaining_free: 2,
+        is_registered: false,
+        needs_registration: false,
+        needs_upgrade: false
+      });
     } finally {
       setIsCheckingUsage(false);
     }
