@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   BookOpen, 
   Brain, 
@@ -17,7 +17,9 @@ import {
   Play,
   Star,
   Zap,
-  FileText
+  FileText,
+  Gift,
+  Crown
 } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -28,6 +30,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
+import { RegistrationModal } from '@/components/registration-modal';
+import { UpgradeModal } from '@/components/upgrade-modal';
+import { getSessionId } from '@/lib/freemium';
 
 
 
@@ -37,6 +42,59 @@ export default function AIStudyGuideMakerPage() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedGuide, setGeneratedGuide] = useState<string | null>(null);
   const [fullHTML, setFullHTML] = useState<string>('');
+  
+  // Freemium state management
+  const [sessionId, setSessionId] = useState<string>('');
+  const [user, setUser] = useState<any>(null);
+  const [usageStats, setUsageStats] = useState<any>(null);
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [isCheckingUsage, setIsCheckingUsage] = useState(true);
+
+  // Initialize session and check usage on component mount
+  useEffect(() => {
+    const initializeSession = async () => {
+      const currentSessionId = getSessionId();
+      setSessionId(currentSessionId);
+      
+      // Check if user is stored in localStorage
+      const storedUser = localStorage.getItem('study_guide_user');
+      if (storedUser) {
+        try {
+          const userData = JSON.parse(storedUser);
+          setUser(userData);
+        } catch (error) {
+          console.error('Error parsing stored user data:', error);
+          localStorage.removeItem('study_guide_user');
+        }
+      }
+      
+      // Check current usage stats
+      await checkCurrentUsage(currentSessionId, storedUser ? JSON.parse(storedUser).email : null);
+    };
+    
+    initializeSession();
+  }, []);
+
+  // Function to check current usage
+  const checkCurrentUsage = async (sessionId: string, userEmail?: string) => {
+    try {
+      const response = await fetch('/api/check-usage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId, userEmail })
+      });
+      
+      if (response.ok) {
+        const stats = await response.json();
+        setUsageStats(stats);
+      }
+    } catch (error) {
+      console.error('Error checking usage:', error);
+    } finally {
+      setIsCheckingUsage(false);
+    }
+  };
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
@@ -54,17 +112,37 @@ export default function AIStudyGuideMakerPage() {
         },
         body: JSON.stringify({
           topic,
-          language: selectedLanguage
+          language: selectedLanguage,
+          sessionId,
+          userEmail: user?.email
         })
       });
 
       if (!response.ok) {
-        throw new Error('Failed to generate study guide');
+        const errorData = await response.json();
+        
+        // Handle freemium restrictions
+        if (errorData.error === 'REGISTRATION_REQUIRED') {
+          setShowRegistrationModal(true);
+          return;
+        }
+        
+        if (errorData.error === 'UPGRADE_REQUIRED') {
+          setShowUpgradeModal(true);
+          return;
+        }
+        
+        throw new Error(errorData.error || 'Failed to generate study guide');
       }
 
       const data = await response.json();
       setGeneratedGuide(data.studyGuide);
       setFullHTML(data.fullHTML || data.studyGuide);
+      
+      // Update usage stats
+      if (data.usageStats) {
+        setUsageStats(data.usageStats);
+      }
       
       // Show note if using fallback
       if (data.note) {
@@ -77,6 +155,13 @@ export default function AIStudyGuideMakerPage() {
     } finally {
       setIsGenerating(false);
     }
+  };
+
+  // Handle successful registration
+  const handleRegistrationSuccess = async (userData: any) => {
+    setUser(userData);
+    await checkCurrentUsage(sessionId, userData.email);
+    alert('🎉 Registration successful! You now have 1 additional free study guide.');
   };
 
   const handleDownload = async () => {
@@ -196,6 +281,55 @@ export default function AIStudyGuideMakerPage() {
               </Select>
             </div>
 
+            {/* Usage Stats Display */}
+            {!isCheckingUsage && usageStats && (
+              <div className="mb-8">
+                <div className="bg-gradient-to-r from-[#2BAE66]/10 to-[#1A3D7C]/10 p-4 rounded-xl border border-[#2BAE66]/20">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      {usageStats.is_registered ? (
+                        <>
+                          <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                          <span className="text-[#1A3D7C] font-semibold">
+                            Welcome back, {user?.name}!
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          <Gift className="w-5 h-5 text-[#FFC857]" />
+                          <span className="text-[#1A3D7C] font-semibold">
+                            Free User
+                          </span>
+                        </>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="outline" className="bg-white">
+                        {usageStats.remaining_free} free guides left
+                      </Badge>
+                      {!usageStats.is_registered && usageStats.remaining_free === 1 && (
+                        <Badge className="bg-[#2BAE66] text-white">
+                          <Gift className="w-3 h-3 mr-1" />
+                          Register for +1 bonus
+                        </Badge>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {usageStats.remaining_free === 0 && (
+                    <div className="mt-3 p-3 bg-[#FFC857]/20 rounded-lg">
+                      <p className="text-sm text-[#1A3D7C]">
+                        <strong>🎓 Ready to unlock unlimited learning?</strong> 
+                        {usageStats.is_registered 
+                          ? ' Upgrade to continue creating amazing study guides!'
+                          : ' Register now to get 1 bonus free guide, then upgrade for unlimited access!'
+                        }
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Topic Input */}
             <div className="mb-8">
@@ -774,6 +908,21 @@ export default function AIStudyGuideMakerPage() {
           </div>
         </div>
       </footer>
+
+      {/* Registration Modal */}
+      <RegistrationModal
+        isOpen={showRegistrationModal}
+        onClose={() => setShowRegistrationModal(false)}
+        onSuccess={handleRegistrationSuccess}
+        remainingFree={usageStats?.remaining_free || 0}
+      />
+
+      {/* Upgrade Modal */}
+      <UpgradeModal
+        isOpen={showUpgradeModal}
+        onClose={() => setShowUpgradeModal(false)}
+        totalGuides={usageStats?.total_guides || 0}
+      />
     </div>
   );
 }

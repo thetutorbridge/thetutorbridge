@@ -556,13 +556,42 @@ interface ProcessedContent {
 
 export async function POST(request: NextRequest) {
   try {
-    const { topic, language = 'english' } = await request.json();
+    const { topic, language = 'english', sessionId, userEmail } = await request.json();
 
     if (!topic) {
       return NextResponse.json({ error: 'Topic is required' }, { status: 400 });
     }
 
-    console.log(`🚀 Generating GPT-4o RESEARCH-BASED study guide for: "${topic}"`);
+    // Import freemium functions
+    const { checkUsageStats, logStudyGuideUsage, getUserByEmail } = await import('@/lib/freemium');
+
+    // Check usage limits before generating
+    let userId: string | undefined;
+    if (userEmail) {
+      const user = await getUserByEmail(userEmail);
+      userId = user?.id;
+    }
+
+    const usageStats = await checkUsageStats(userId, sessionId);
+    
+    // Enforce freemium limits
+    if (usageStats.needs_upgrade) {
+      return NextResponse.json({
+        error: 'UPGRADE_REQUIRED',
+        message: 'You have reached your free guide limit. Please upgrade to continue.',
+        usageStats
+      }, { status: 403 });
+    }
+
+    if (usageStats.needs_registration) {
+      return NextResponse.json({
+        error: 'REGISTRATION_REQUIRED',
+        message: 'Please register to unlock 1 additional free study guide.',
+        usageStats
+      }, { status: 403 });
+    }
+
+    console.log(`🚀 Generating GPT-4o RESEARCH-BASED study guide for: "${topic}" (${usageStats.remaining_free} free guides remaining)`);
 
     // Step 1: Try GPT-4o with research for best quality and deep reasoning
     let content: ProcessedContent;
@@ -590,10 +619,30 @@ export async function POST(request: NextRequest) {
     };
     const fullHTML = generateProfessionalHTML(content, topic, language, 'comprehensive', analysis);
 
+    // Step 3: Log usage for freemium tracking
+    try {
+      await logStudyGuideUsage({
+        user_id: userId,
+        session_id: sessionId,
+        topic,
+        language,
+        tokens_used: method.includes('gpt') ? 3400 : 0, // Estimated tokens for GPT calls
+        cost_usd: method.includes('gpt') ? 0.017 : 0,   // Estimated cost
+        ip_address: request.ip,
+        user_agent: request.headers.get('user-agent') || undefined
+      });
+    } catch (logError) {
+      console.error('⚠️ Failed to log usage, but continuing:', logError);
+    }
+
+    // Update usage stats after logging
+    const updatedStats = await checkUsageStats(userId, sessionId);
+
     return NextResponse.json({ 
       studyGuide: generateCleanHTML(content, topic, language, analysis),
       fullHTML: fullHTML,
-      method: method
+      method: method,
+      usageStats: updatedStats
     });
 
   } catch (error) {
