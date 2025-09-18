@@ -19,6 +19,10 @@ const config = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				'poppins': ['var(--font-heading)', 'Poppins', 'sans-serif'],
+				'merriweather': ['var(--font-body)', 'Merriweather', 'serif'],
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -44,6 +48,10 @@ const config = {
 					charcoal: "#2C2C2C",
 					gray: "#F5F5F5",
 				},
+				// Add specific colors for AI Study Guide Maker
+				'ttb-blue': "#1A3D7C",
+				'ttb-teal': "#2BAE66", 
+				'ttb-amber': "#FFC857",
 				destructive: {
 					DEFAULT: "hsl(var(--destructive))",
 					foreground: "hsl(var(--destructive-foreground))",

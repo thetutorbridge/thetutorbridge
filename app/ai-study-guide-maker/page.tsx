@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { 
   BookOpen, 
   Brain, 
@@ -17,9 +17,7 @@ import {
   Play,
   Star,
   Zap,
-  FileText,
-  Gift,
-  Crown
+  FileText
 } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -30,9 +28,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { RegistrationModal } from '@/components/registration-modal';
-import { UpgradeModal } from '@/components/upgrade-modal';
-import { getSessionId } from '@/lib/freemium';
 
 
 
@@ -42,89 +37,6 @@ export default function AIStudyGuideMakerPage() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedGuide, setGeneratedGuide] = useState<string | null>(null);
   const [fullHTML, setFullHTML] = useState<string>('');
-  
-  // Freemium state management
-  const [sessionId, setSessionId] = useState<string>('');
-  const [user, setUser] = useState<any>(null);
-  const [usageStats, setUsageStats] = useState<any>(null);
-  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
-  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
-  const [isCheckingUsage, setIsCheckingUsage] = useState(true);
-
-  // Initialize session and check usage on component mount
-  useEffect(() => {
-    const initializeSession = async () => {
-      const currentSessionId = getSessionId();
-      setSessionId(currentSessionId);
-      
-      // Check if user is stored in localStorage
-      const storedUser = localStorage.getItem('study_guide_user');
-      if (storedUser) {
-        try {
-          const userData = JSON.parse(storedUser);
-          setUser(userData);
-        } catch (error) {
-          console.error('Error parsing stored user data:', error);
-          localStorage.removeItem('study_guide_user');
-        }
-      }
-      
-      // Check current usage stats (with error handling)
-      try {
-        await checkCurrentUsage(currentSessionId, storedUser ? JSON.parse(storedUser).email : null);
-      } catch (error) {
-        console.error('Error checking usage, using defaults:', error);
-        // Set default stats if checking fails
-        setUsageStats({
-          total_guides: 0,
-          remaining_free: 2,
-          is_registered: false,
-          needs_registration: false,
-          needs_upgrade: false
-        });
-        setIsCheckingUsage(false);
-      }
-    };
-    
-    initializeSession();
-  }, []);
-
-  // Function to check current usage
-  const checkCurrentUsage = async (sessionId: string, userEmail?: string) => {
-    try {
-      const response = await fetch('/api/check-usage', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sessionId, userEmail })
-      });
-      
-      if (response.ok) {
-        const stats = await response.json();
-        setUsageStats(stats);
-      } else {
-        // If API fails, set default stats
-        setUsageStats({
-          total_guides: 0,
-          remaining_free: 2,
-          is_registered: false,
-          needs_registration: false,
-          needs_upgrade: false
-        });
-      }
-    } catch (error) {
-      console.error('Error checking usage:', error);
-      // Set default stats on error
-      setUsageStats({
-        total_guides: 0,
-        remaining_free: 2,
-        is_registered: false,
-        needs_registration: false,
-        needs_upgrade: false
-      });
-    } finally {
-      setIsCheckingUsage(false);
-    }
-  };
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
@@ -142,37 +54,17 @@ export default function AIStudyGuideMakerPage() {
         },
         body: JSON.stringify({
           topic,
-          language: selectedLanguage,
-          sessionId,
-          userEmail: user?.email
+          language: selectedLanguage
         })
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        
-        // Handle freemium restrictions
-        if (errorData.error === 'REGISTRATION_REQUIRED') {
-          setShowRegistrationModal(true);
-          return;
-        }
-        
-        if (errorData.error === 'UPGRADE_REQUIRED') {
-          setShowUpgradeModal(true);
-          return;
-        }
-        
-        throw new Error(errorData.error || 'Failed to generate study guide');
+        throw new Error('Failed to generate study guide');
       }
 
       const data = await response.json();
       setGeneratedGuide(data.studyGuide);
       setFullHTML(data.fullHTML || data.studyGuide);
-      
-      // Update usage stats
-      if (data.usageStats) {
-        setUsageStats(data.usageStats);
-      }
       
       // Show note if using fallback
       if (data.note) {
@@ -185,13 +77,6 @@ export default function AIStudyGuideMakerPage() {
     } finally {
       setIsGenerating(false);
     }
-  };
-
-  // Handle successful registration
-  const handleRegistrationSuccess = async (userData: any) => {
-    setUser(userData);
-    await checkCurrentUsage(sessionId, userData.email);
-    alert('🎉 Registration successful! You now have 1 additional free study guide.');
   };
 
   const handleDownload = async () => {
@@ -269,10 +154,10 @@ export default function AIStudyGuideMakerPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white py-12 md:py-16 px-4 md:px-6">
+      <section className="bg-gradient-to-br from-ttb-blue to-ttb-teal text-white py-12 md:py-16 px-4 md:px-6">
         <div className="container mx-auto text-center max-w-6xl">
           <div className="flex flex-col sm:flex-row items-center justify-center mb-6 gap-4">
-            <Brain className="w-12 h-12 md:w-16 md:h-16 text-[#FFC857]" />
+            <Brain className="w-12 h-12 md:w-16 md:h-16 text-ttb-amber" />
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-poppins font-bold leading-tight">
               AI Study Guide Maker
             </h1>
@@ -297,8 +182,8 @@ export default function AIStudyGuideMakerPage() {
             {/* Language Selection */}
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-4">
-                <Languages className="w-5 h-5 md:w-6 md:h-6 text-[#2BAE66]" />
-                <label className="text-base md:text-lg font-semibold text-[#1A3D7C]">Select Language:</label>
+                <Languages className="w-5 h-5 md:w-6 md:h-6 text-ttb-teal" />
+                <label className="text-base md:text-lg font-semibold text-ttb-blue">Select Language:</label>
               </div>
               <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
                 <SelectTrigger className="w-full sm:w-64 md:w-48">
@@ -311,60 +196,11 @@ export default function AIStudyGuideMakerPage() {
               </Select>
             </div>
 
-            {/* Usage Stats Display */}
-            {!isCheckingUsage && usageStats && (
-              <div className="mb-8">
-                <div className="bg-gradient-to-r from-[#2BAE66]/10 to-[#1A3D7C]/10 p-4 rounded-xl border border-[#2BAE66]/20">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      {usageStats.is_registered ? (
-                        <>
-                          <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
-                          <span className="text-[#1A3D7C] font-semibold">
-                            Welcome back, {user?.name}!
-                          </span>
-                        </>
-                      ) : (
-                        <>
-                          <Gift className="w-5 h-5 text-[#FFC857]" />
-                          <span className="text-[#1A3D7C] font-semibold">
-                            Free User
-                          </span>
-                        </>
-                      )}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="bg-white">
-                        {usageStats.remaining_free} free guides left
-                      </Badge>
-                      {!usageStats.is_registered && usageStats.remaining_free === 1 && (
-                        <Badge className="bg-[#2BAE66] text-white">
-                          <Gift className="w-3 h-3 mr-1" />
-                          Register for +1 bonus
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
-                  
-                  {usageStats.remaining_free === 0 && (
-                    <div className="mt-3 p-3 bg-[#FFC857]/20 rounded-lg">
-                      <p className="text-sm text-[#1A3D7C]">
-                        <strong>🎓 Ready to unlock unlimited learning?</strong> 
-                        {usageStats.is_registered 
-                          ? ' Upgrade to continue creating amazing study guides!'
-                          : ' Register now to get 1 bonus free guide, then upgrade for unlimited access!'
-                        }
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
 
             {/* Topic Input */}
             <div className="mb-8">
-              <h3 className="text-lg md:text-xl font-bold text-[#1A3D7C] mb-4 flex items-center">
-                <Lightbulb className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-[#2BAE66]" />
+              <h3 className="text-lg md:text-xl font-bold text-ttb-blue mb-4 flex items-center">
+                <Lightbulb className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-ttb-teal" />
                 Enter Your Topic
               </h3>
               <Textarea
@@ -374,7 +210,7 @@ export default function AIStudyGuideMakerPage() {
                 }
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                className="min-h-[100px] md:min-h-[120px] text-base md:text-lg border-2 border-gray-200 focus:border-[#2BAE66] rounded-xl"
+                className="min-h-[100px] md:min-h-[120px] text-base md:text-lg border-2 border-gray-200 focus:border-ttb-teal rounded-xl"
                 maxLength={5000}
               />
               <div className="text-right text-sm text-gray-500 mt-2">
@@ -388,7 +224,7 @@ export default function AIStudyGuideMakerPage() {
                 onClick={handleGenerate}
                 disabled={isGenerating || !topic.trim()}
                 size="lg"
-                className="bg-[#2BAE66] hover:bg-[#2BAE66]/90 text-white px-6 md:px-12 py-3 md:py-4 text-lg md:text-xl font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+                className="bg-ttb-teal hover:bg-ttb-teal/90 text-white px-6 md:px-12 py-3 md:py-4 text-lg md:text-xl font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
               >
                 {isGenerating ? (
                   <>
@@ -408,21 +244,21 @@ export default function AIStudyGuideMakerPage() {
             {generatedGuide && (
               <div className="border-t-2 border-gray-200 pt-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-[#1A3D7C] flex items-center">
-                    <CheckCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+                  <h3 className="text-xl md:text-2xl font-bold text-ttb-blue flex items-center">
+                    <CheckCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-ttb-teal" />
                     Your Study Guide is Ready!
                   </h3>
                   <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
                     <Button
                       onClick={handleDownload}
-                      className="bg-[#FFC857] hover:bg-[#FFC857]/90 text-[#1A3D7C] font-semibold rounded-xl px-4 py-2 text-sm md:text-base w-full sm:w-auto"
+                      className="bg-ttb-amber hover:bg-ttb-amber/90 text-ttb-blue font-semibold rounded-xl px-4 py-2 text-sm md:text-base w-full sm:w-auto"
                     >
                       <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                       Download PDF
                     </Button>
                     <Button
                       onClick={handleViewFull}
-                      className="bg-[#1A3D7C] hover:bg-[#1A3D7C]/90 text-white font-semibold rounded-xl px-4 py-2 text-sm md:text-base w-full sm:w-auto"
+                      className="bg-ttb-blue hover:bg-ttb-blue/90 text-white font-semibold rounded-xl px-4 py-2 text-sm md:text-base w-full sm:w-auto"
                     >
                       <BookOpen className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                       View Full Guide
@@ -446,7 +282,7 @@ export default function AIStudyGuideMakerPage() {
       <section className="py-12 md:py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1A3D7C] mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-ttb-blue mb-4">
               Why Choose Our AI Study Guide Maker?
             </h2>
             <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
@@ -457,10 +293,10 @@ export default function AIStudyGuideMakerPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#2BAE66]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-6 h-6 md:w-8 md:h-8 text-[#2BAE66]" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-ttb-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="w-6 h-6 md:w-8 md:h-8 text-ttb-teal" />
                 </div>
-                <CardTitle className="text-lg md:text-xl text-[#1A3D7C]">Quick & Easy Generation</CardTitle>
+                <CardTitle className="text-lg md:text-xl text-ttb-blue">Quick & Easy Generation</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 text-center">
@@ -471,10 +307,10 @@ export default function AIStudyGuideMakerPage() {
 
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#FFC857]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Languages className="w-6 h-6 md:w-8 md:h-8 text-[#FFC857]" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-ttb-amber/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Languages className="w-6 h-6 md:w-8 md:h-8 text-ttb-amber" />
                 </div>
-                <CardTitle className="text-lg md:text-xl text-[#1A3D7C]">Bilingual Support</CardTitle>
+                <CardTitle className="text-lg md:text-xl text-ttb-blue">Bilingual Support</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 text-center">
@@ -485,10 +321,10 @@ export default function AIStudyGuideMakerPage() {
 
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#1A3D7C]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-6 h-6 md:w-8 md:h-8 text-[#1A3D7C]" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-ttb-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Brain className="w-6 h-6 md:w-8 md:h-8 text-ttb-blue" />
                 </div>
-                <CardTitle className="text-lg md:text-xl text-[#1A3D7C]">Research-Based Content</CardTitle>
+                <CardTitle className="text-lg md:text-xl text-ttb-blue">Research-Based Content</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 text-center">
@@ -499,10 +335,10 @@ export default function AIStudyGuideMakerPage() {
 
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#2BAE66]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-6 h-6 md:w-8 md:h-8 text-[#2BAE66]" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-ttb-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="w-6 h-6 md:w-8 md:h-8 text-ttb-teal" />
                 </div>
-                <CardTitle className="text-lg md:text-xl text-[#1A3D7C]">Exam-Ready Format</CardTitle>
+                <CardTitle className="text-lg md:text-xl text-ttb-blue">Exam-Ready Format</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 text-center">
@@ -513,10 +349,10 @@ export default function AIStudyGuideMakerPage() {
 
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#FFC857]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Download className="w-6 h-6 md:w-8 md:h-8 text-[#FFC857]" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-ttb-amber/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Download className="w-6 h-6 md:w-8 md:h-8 text-ttb-amber" />
                 </div>
-                <CardTitle className="text-lg md:text-xl text-[#1A3D7C]">Easy Download</CardTitle>
+                <CardTitle className="text-lg md:text-xl text-ttb-blue">Easy Download</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 text-center">
@@ -527,10 +363,10 @@ export default function AIStudyGuideMakerPage() {
 
             <Card className="hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#1A3D7C]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-6 h-6 md:w-8 md:h-8 text-[#1A3D7C]" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-ttb-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Brain className="w-6 h-6 md:w-8 md:h-8 text-ttb-blue" />
                 </div>
-                <CardTitle className="text-lg md:text-xl text-[#1A3D7C]">AI-Powered Intelligence</CardTitle>
+                <CardTitle className="text-lg md:text-xl text-ttb-blue">AI-Powered Intelligence</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-600 text-center">
@@ -546,7 +382,7 @@ export default function AIStudyGuideMakerPage() {
       <section className="py-16 px-6 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A3D7C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-ttb-blue mb-4">
               How to Use the AI Study Guide Maker
             </h2>
             <p className="text-xl text-gray-600">
@@ -556,30 +392,30 @@ export default function AIStudyGuideMakerPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+              <div className="w-20 h-20 bg-ttb-teal text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
                 1
               </div>
-              <h3 className="text-2xl font-bold text-[#1A3D7C] mb-4">Input Your Topic</h3>
+              <h3 className="text-2xl font-bold text-ttb-blue mb-4">Input Your Topic</h3>
               <p className="text-gray-600 leading-relaxed">
                 Enter your study topic or paste your notes. Our AI supports both English and Hindi content for comprehensive learning.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#FFC857] text-[#1A3D7C] rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+              <div className="w-20 h-20 bg-ttb-amber text-ttb-blue rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
                 2
               </div>
-              <h3 className="text-2xl font-bold text-[#1A3D7C] mb-4">Generate Study Guide</h3>
+              <h3 className="text-2xl font-bold text-ttb-blue mb-4">Generate Study Guide</h3>
               <p className="text-gray-600 leading-relaxed">
                 Choose your language and enter your topic. Our AI will research and create a comprehensive study guide in seconds.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#1A3D7C] text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+              <div className="w-20 h-20 bg-ttb-blue text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
                 3
               </div>
-              <h3 className="text-2xl font-bold text-[#1A3D7C] mb-4">Download & Study</h3>
+              <h3 className="text-2xl font-bold text-ttb-blue mb-4">Download & Study</h3>
               <p className="text-gray-600 leading-relaxed">
                 Review your personalized study guide and download it for offline use. Perfect for exam preparation and revision.
               </p>
@@ -592,7 +428,7 @@ export default function AIStudyGuideMakerPage() {
       <section className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A3D7C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-ttb-blue mb-4">
               Transform Your Learning Experience
             </h2>
             <p className="text-xl text-gray-600">
@@ -604,41 +440,41 @@ export default function AIStudyGuideMakerPage() {
             <div>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#2BAE66]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-6 h-6 text-[#2BAE66]" />
+                  <div className="w-12 h-12 bg-ttb-teal/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-6 h-6 text-ttb-teal" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Improved Retention</h3>
+                    <h3 className="text-xl font-semibold text-ttb-blue mb-2">Improved Retention</h3>
                     <p className="text-gray-600">Structured visual guides help improve information retention by up to 65% compared to traditional note-taking.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#FFC857]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Target className="w-6 h-6 text-[#FFC857]" />
+                  <div className="w-12 h-12 bg-ttb-amber/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-ttb-amber" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Exam-Focused Preparation</h3>
+                    <h3 className="text-xl font-semibold text-ttb-blue mb-2">Exam-Focused Preparation</h3>
                     <p className="text-gray-600">AI organizes content in exam-friendly formats with key points, summaries, and practice questions.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#1A3D7C]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Users className="w-6 h-6 text-[#1A3D7C]" />
+                  <div className="w-12 h-12 bg-ttb-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 text-ttb-blue" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Perfect for Group Study</h3>
+                    <h3 className="text-xl font-semibold text-ttb-blue mb-2">Perfect for Group Study</h3>
                     <p className="text-gray-600">Download and share study guides with classmates for collaborative learning and group discussions.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#2BAE66]/10 to-[#1A3D7C]/10 p-8 rounded-2xl">
+            <div className="bg-gradient-to-br from-ttb-teal/10 to-ttb-blue/10 p-8 rounded-2xl">
               <div className="text-center">
-                <Brain className="w-24 h-24 text-[#2BAE66] mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-[#1A3D7C] mb-4">AI-Powered Learning</h3>
+                <Brain className="w-24 h-24 text-ttb-teal mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-ttb-blue mb-4">AI-Powered Learning</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Our advanced AI analyzes your content and creates optimized study guides that adapt to different learning styles and academic levels.
                 </p>
@@ -652,7 +488,7 @@ export default function AIStudyGuideMakerPage() {
       <section className="py-16 px-6 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A3D7C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-ttb-blue mb-4">
               Perfect for Every Learning Need
             </h2>
             <p className="text-xl text-gray-600">
@@ -663,8 +499,8 @@ export default function AIStudyGuideMakerPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="text-center hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <GraduationCap className="w-12 h-12 text-[#2BAE66] mx-auto mb-4" />
-                <CardTitle className="text-[#1A3D7C]">Students</CardTitle>
+                <GraduationCap className="w-12 h-12 text-ttb-teal mx-auto mb-4" />
+                <CardTitle className="text-ttb-blue">Students</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
@@ -675,8 +511,8 @@ export default function AIStudyGuideMakerPage() {
 
             <Card className="text-center hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <Users className="w-12 h-12 text-[#FFC857] mx-auto mb-4" />
-                <CardTitle className="text-[#1A3D7C]">Educators</CardTitle>
+                <Users className="w-12 h-12 text-ttb-amber mx-auto mb-4" />
+                <CardTitle className="text-ttb-blue">Educators</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
@@ -687,8 +523,8 @@ export default function AIStudyGuideMakerPage() {
 
             <Card className="text-center hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <BookOpen className="w-12 h-12 text-[#2BAE66] mx-auto mb-4" />
-                <CardTitle className="text-[#1A3D7C]">Researchers</CardTitle>
+                <BookOpen className="w-12 h-12 text-ttb-teal mx-auto mb-4" />
+                <CardTitle className="text-ttb-blue">Researchers</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
@@ -699,8 +535,8 @@ export default function AIStudyGuideMakerPage() {
 
             <Card className="text-center hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <Lightbulb className="w-12 h-12 text-[#FFC857] mx-auto mb-4" />
-                <CardTitle className="text-[#1A3D7C]">Lifelong Learners</CardTitle>
+                <Lightbulb className="w-12 h-12 text-ttb-amber mx-auto mb-4" />
+                <CardTitle className="text-ttb-blue">Lifelong Learners</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
@@ -716,7 +552,7 @@ export default function AIStudyGuideMakerPage() {
       <section className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A3D7C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-ttb-blue mb-4">
               What Students Say About Our AI Study Guide Maker
             </h2>
             <p className="text-xl text-gray-600">
@@ -729,10 +565,10 @@ export default function AIStudyGuideMakerPage() {
               <CardHeader>
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#FFC857] text-[#FFC857]" />
+                    <Star key={i} className="w-4 h-4 fill-ttb-amber text-ttb-amber" />
                   ))}
                 </div>
-                <CardTitle className="text-lg text-[#1A3D7C]">Priya Sharma</CardTitle>
+                <CardTitle className="text-lg text-ttb-blue">Priya Sharma</CardTitle>
                 <CardDescription>Class 12 Student, Delhi</CardDescription>
               </CardHeader>
               <CardContent>
@@ -746,10 +582,10 @@ export default function AIStudyGuideMakerPage() {
               <CardHeader>
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#FFC857] text-[#FFC857]" />
+                    <Star key={i} className="w-4 h-4 fill-ttb-amber text-ttb-amber" />
                   ))}
                 </div>
-                <CardTitle className="text-lg text-[#1A3D7C]">Rahul Gupta</CardTitle>
+                <CardTitle className="text-lg text-ttb-blue">Rahul Gupta</CardTitle>
                 <CardDescription>Engineering Student, Mumbai</CardDescription>
               </CardHeader>
               <CardContent>
@@ -763,10 +599,10 @@ export default function AIStudyGuideMakerPage() {
               <CardHeader>
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#FFC857] text-[#FFC857]" />
+                    <Star key={i} className="w-4 h-4 fill-ttb-amber text-ttb-amber" />
                   ))}
                 </div>
-                <CardTitle className="text-lg text-[#1A3D7C]">Dr. Anjali Mehta</CardTitle>
+                <CardTitle className="text-lg text-ttb-blue">Dr. Anjali Mehta</CardTitle>
                 <CardDescription>High School Teacher, Bangalore</CardDescription>
               </CardHeader>
               <CardContent>
@@ -783,7 +619,7 @@ export default function AIStudyGuideMakerPage() {
       <section className="py-16 px-6 bg-gray-50">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A3D7C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-ttb-blue mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600">
@@ -794,7 +630,7 @@ export default function AIStudyGuideMakerPage() {
           <div className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle className="text-[#1A3D7C]">What is the AI Study Guide Maker?</CardTitle>
+                <CardTitle className="text-ttb-blue">What is the AI Study Guide Maker?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
@@ -805,7 +641,7 @@ export default function AIStudyGuideMakerPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-[#1A3D7C]">Is the AI Study Guide Maker free?</CardTitle>
+                <CardTitle className="text-ttb-blue">Is the AI Study Guide Maker free?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
@@ -816,7 +652,7 @@ export default function AIStudyGuideMakerPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-[#1A3D7C]">Which languages are supported?</CardTitle>
+                <CardTitle className="text-ttb-blue">Which languages are supported?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
@@ -827,7 +663,7 @@ export default function AIStudyGuideMakerPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-[#1A3D7C]">Can I download the study guides?</CardTitle>
+                <CardTitle className="text-ttb-blue">Can I download the study guides?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
@@ -838,7 +674,7 @@ export default function AIStudyGuideMakerPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-[#1A3D7C]">What subjects can I create study guides for?</CardTitle>
+                <CardTitle className="text-ttb-blue">What subjects can I create study guides for?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
@@ -853,7 +689,7 @@ export default function AIStudyGuideMakerPage() {
       {/* CTA Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-12 rounded-2xl">
+          <div className="bg-gradient-to-r from-ttb-blue to-ttb-teal text-white p-12 rounded-2xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Study Experience?
             </h2>
@@ -863,7 +699,7 @@ export default function AIStudyGuideMakerPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold"
+                className="bg-ttb-amber text-ttb-blue rounded-xl px-8 py-4 hover:shadow-lg hover:bg-ttb-amber/90 transition-all text-lg font-semibold"
                 onClick={() => document.querySelector('textarea')?.focus()}
               >
                 <Sparkles className="mr-2 h-5 w-5" />
@@ -873,7 +709,7 @@ export default function AIStudyGuideMakerPage() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold"
+                  className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-ttb-blue transition-all text-lg font-semibold"
                 >
                   <GraduationCap className="mr-2 h-5 w-5" />
                   Book Free Session
@@ -885,7 +721,7 @@ export default function AIStudyGuideMakerPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1A3D7C] text-white py-12 px-6">
+      <footer className="bg-ttb-blue text-white py-12 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {/* Brand */}
@@ -901,20 +737,20 @@ export default function AIStudyGuideMakerPage() {
 
             {/* Services */}
             <div className="text-center md:text-left">
-              <h3 className="text-lg font-semibold mb-4 text-[#2BAE66]">Services</h3>
+              <h3 className="text-lg font-semibold mb-4 text-ttb-teal">Services</h3>
               <ul className="space-y-2 text-gray-300">
-                <li><Link href="/study-resources" className="hover:text-[#2BAE66] transition-colors">Study Resources</Link></li>
-                <li><Link href="/doubt-solving" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
-                <li><Link href="/career-guidance" className="hover:text-[#2BAE66] transition-colors">Career Guidance</Link></li>
-                <li><Link href="/motivational-sessions" className="hover:text-[#2BAE66] transition-colors">Motivational Sessions</Link></li>
+                <li><Link href="/study-resources" className="hover:text-ttb-teal transition-colors">Study Resources</Link></li>
+                <li><Link href="/doubt-solving" className="hover:text-ttb-teal transition-colors">Doubt Solving</Link></li>
+                <li><Link href="/career-guidance" className="hover:text-ttb-teal transition-colors">Career Guidance</Link></li>
+                <li><Link href="/motivational-sessions" className="hover:text-ttb-teal transition-colors">Motivational Sessions</Link></li>
               </ul>
             </div>
 
             {/* AI Tools */}
             <div className="text-center md:text-left">
-              <h3 className="text-lg font-semibold mb-4 text-[#FFC857]">AI Tools</h3>
+              <h3 className="text-lg font-semibold mb-4 text-ttb-amber">AI Tools</h3>
               <ul className="space-y-2 text-gray-300">
-                <li><Link href="/ai-study-guide-maker" className="hover:text-[#2BAE66] transition-colors">Study Guide Maker</Link></li>
+                <li><Link href="/ai-study-guide-maker" className="hover:text-ttb-teal transition-colors">Study Guide Maker</Link></li>
                 <li><span className="text-gray-500">Flashcard Generator (Coming Soon)</span></li>
                 <li><span className="text-gray-500">Quiz Creator (Coming Soon)</span></li>
                 <li><span className="text-gray-500">Note Summarizer (Coming Soon)</span></li>
@@ -923,11 +759,11 @@ export default function AIStudyGuideMakerPage() {
 
             {/* Company */}
             <div className="text-center md:text-left">
-              <h3 className="text-lg font-semibold mb-4 text-[#FFC857]">Company</h3>
+              <h3 className="text-lg font-semibold mb-4 text-ttb-amber">Company</h3>
               <ul className="space-y-2 text-gray-300">
-                <li><Link href="/about" className="hover:text-[#2BAE66] transition-colors">About Us</Link></li>
-                <li><Link href="/blog" className="hover:text-[#2BAE66] transition-colors">Blog</Link></li>
-                <li><Link href="/contact" className="hover:text-[#2BAE66] transition-colors">Contact</Link></li>
+                <li><Link href="/about" className="hover:text-ttb-teal transition-colors">About Us</Link></li>
+                <li><Link href="/blog" className="hover:text-ttb-teal transition-colors">Blog</Link></li>
+                <li><Link href="/contact" className="hover:text-ttb-teal transition-colors">Contact</Link></li>
                 <li><span className="text-gray-500">Privacy Policy</span></li>
               </ul>
             </div>
@@ -938,21 +774,6 @@ export default function AIStudyGuideMakerPage() {
           </div>
         </div>
       </footer>
-
-      {/* Registration Modal */}
-      <RegistrationModal
-        isOpen={showRegistrationModal}
-        onClose={() => setShowRegistrationModal(false)}
-        onSuccess={handleRegistrationSuccess}
-        remainingFree={usageStats?.remaining_free || 0}
-      />
-
-      {/* Upgrade Modal */}
-      <UpgradeModal
-        isOpen={showUpgradeModal}
-        onClose={() => setShowUpgradeModal(false)}
-        totalGuides={usageStats?.total_guides || 0}
-      />
     </div>
   );
 }
