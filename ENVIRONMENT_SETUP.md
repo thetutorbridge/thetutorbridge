@@ -16,6 +16,15 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key-here
 SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key-here
 ```
 
+### AI Study Guide Maker Configuration
+```bash
+# OpenAI API key for GPT-4o powered study guide generation (CRITICAL!)
+OPENAI_API_KEY=your-openai-api-key-here
+
+# Optional: Perplexity API key for additional research capabilities
+PERPLEXITY_API_KEY=your-perplexity-api-key-here
+```
+
 ## How to Set Up Environment Variables
 
 ### For Local Development
@@ -62,8 +71,25 @@ If you see errors like "Supabase environment variables not configured":
 
 ## Example .env.local file
 ```bash
+# Supabase Configuration
 NEXT_PUBLIC_SUPABASE_URL=https://abcdefghijklmnop.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+# AI Study Guide Maker (CRITICAL for premium content generation!)
+OPENAI_API_KEY=sk-proj-your-openai-api-key-here
+PERPLEXITY_API_KEY=pplx-your-perplexity-api-key-here
+
+# Environment
 NODE_ENV=development
 ```
+
+## 🚨 CRITICAL PRODUCTION DEPLOYMENT NOTE
+
+**Without the `OPENAI_API_KEY` in production, your AI Study Guide Maker will generate generic, low-quality content instead of the premium, research-backed study guides!**
+
+### Production Deployment Checklist:
+- ✅ Add `OPENAI_API_KEY` to Vercel environment variables
+- ✅ Add `PERPLEXITY_API_KEY` (optional, for enhanced research)
+- ✅ Redeploy application after adding environment variables
+- ✅ Test study guide generation to verify premium content quality
