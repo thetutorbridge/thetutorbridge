@@ -1,10 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize OpenAI client conditionally
+let openai: OpenAI | null = null;
+
+function getOpenAIClient() {
+  if (!openai && process.env.OPENAI_API_KEY) {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  return openai;
+}
 
 // Debug function to check API key
 function checkOpenAIConfig() {
@@ -425,7 +432,18 @@ NO GENERIC CONTENT. Every sentence should add unique value and specific insights
   try {
     // Check if OpenAI is configured
     if (!checkOpenAIConfig()) {
-      throw new Error('OpenAI API key not configured');
+      console.log('⚠️ OpenAI API key not configured, falling back to intelligent system');
+      // Fall back to intelligent content generation when API key is missing
+      const topicAnalysis = analyzeTopicIntelligently(topic);
+      const content = generateIntelligentContent(topic, language, topicAnalysis);
+      const inlineHTML = generateCleanHTML(content, topic, language, topicAnalysis);
+      const fullHTML = generateProfessionalHTML(content, topic, language, 'comprehensive');
+      
+      return NextResponse.json({
+        studyGuide: inlineHTML,
+        fullHTML: fullHTML,
+        note: 'Generated using intelligent content system (OpenAI API not configured)'
+      });
     }
 
     // Step 1: RESEARCH the topic thoroughly
@@ -457,7 +475,12 @@ ${researchData}
     const userTokens = enhancedUserPrompt.length / 4;
     console.log(`📊 Estimated input tokens: System: ${Math.round(systemTokens)}, User: ${Math.round(userTokens)}, Total: ${Math.round(systemTokens + userTokens)}`);
     
-    const response = await openai.chat.completions.create({
+    const openaiClient = getOpenAIClient();
+    if (!openaiClient) {
+      throw new Error('OpenAI client not available');
+    }
+    
+    const response = await openaiClient.chat.completions.create({
       model: "gpt-4o", // Using GPT-4o (most reliable) for superior reasoning and deep content
       messages: [
         { role: "system", content: systemPrompt },
