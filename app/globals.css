@@ -2,6 +2,212 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Study Guide Styles for Dynamic Content */
+.study-guide-container .study-guide-content {
+  font-family: 'Merriweather', serif;
+  line-height: 1.7;
+  color: #2C2C2C;
+}
+
+.study-guide-container .header-section {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #1A3D7C;
+}
+
+.study-guide-container .brand-section {
+  margin-bottom: 20px;
+}
+
+.study-guide-container .brand-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.study-guide-container .brand-logo {
+  height: 50px;
+  width: auto;
+}
+
+.study-guide-container .brand-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1A3D7C;
+}
+
+.study-guide-container .brand-tagline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9em;
+  color: #2BAE66;
+}
+
+.study-guide-container .main-title {
+  font-family: 'Poppins', sans-serif;
+  color: #1A3D7C;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.study-guide-container .section {
+  margin-bottom: 25px;
+}
+
+.study-guide-container .section-title {
+  font-family: 'Poppins', sans-serif;
+  color: #1A3D7C;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-left: 5px solid #2BAE66;
+  padding-left: 15px;
+}
+
+.study-guide-container .summary-box {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #2BAE66;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+.study-guide-container .concept-card,
+.study-guide-container .strategy-card,
+.study-guide-container .example-card,
+.study-guide-container .application-card,
+.study-guide-container .tip-card {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.study-guide-container .concept-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-left: 5px solid #2BAE66;
+}
+
+.study-guide-container .strategy-card {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-left: 5px solid #1A3D7C;
+}
+
+.study-guide-container .example-card {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  border-left: 5px solid #2BAE66;
+}
+
+.study-guide-container .application-card {
+  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+  border-left: 5px solid #1A3D7C;
+}
+
+.study-guide-container .tip-card {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  border-left: 5px solid #FFC857;
+}
+
+.study-guide-container .definition-card {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  padding: 18px;
+  border-radius: 10px;
+  margin: 12px 0;
+  border: 2px solid #FFC857;
+}
+
+.study-guide-container .definition-term {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #1A3D7C;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.study-guide-container .concept-number,
+.study-guide-container .strategy-icon,
+.study-guide-container .example-icon,
+.study-guide-container .application-icon,
+.study-guide-container .tip-icon {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Scientific notation support */
+.study-guide-container sub {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  bottom: -0.25em;
+}
+
+.study-guide-container sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+
+/* Enhanced chemical and mathematical notation */
+.study-guide-container .chemical-formula,
+.study-guide-container .math-expression {
+  font-family: 'Times New Roman', serif;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .study-guide-container .main-title {
+    font-size: 1.5em;
+  }
+  .study-guide-container .section-title {
+    font-size: 1.2em;
+  }
+  .study-guide-container .brand-link {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .study-guide-container .brand-logo {
+    height: 45px;
+  }
+  
+  /* Mobile button improvements */
+  .study-guide-container .concept-card,
+  .study-guide-container .definition-card,
+  .study-guide-container .strategy-card,
+  .study-guide-container .example-card,
+  .study-guide-container .application-card,
+  .study-guide-container .tip-card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  
+  /* Mobile text sizing */
+  .study-guide-container .concept-number,
+  .study-guide-container .tip-icon {
+    font-size: 0.9em;
+  }
+  
+  /* Mobile spacing */
+  .study-guide-container .section {
+    margin-bottom: 20px;
+  }
+  
+  .study-guide-container .header-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+}
+
 /* KaTeX Math Rendering */
 @import 'katex/dist/katex.min.css';
 
