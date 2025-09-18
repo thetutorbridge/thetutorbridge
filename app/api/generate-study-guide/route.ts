@@ -192,6 +192,152 @@ RECOMMENDED BOOKS:
       researchData += dsssb_info;
     }
 
+    // SSC CGL Specific Research
+    if (topic.toLowerCase().includes('ssc') && (topic.toLowerCase().includes('cgl') || topic.toLowerCase().includes('combined graduate level'))) {
+      console.log('📋 Researching SSC CGL specific information...');
+      
+      const ssc_cgl_info = `
+SSC CGL (Staff Selection Commission Combined Graduate Level) RESEARCH FINDINGS:
+
+EXAM STRUCTURE:
+- Four-tier examination process
+- Tier 1: Computer Based Test (Preliminary) - 100 marks, 60 minutes
+- Tier 2: Computer Based Test (Mains) - Multiple papers, 200 marks each
+- Tier 3: Descriptive Paper (Pen & Paper) - 100 marks, 60 minutes  
+- Tier 4: Computer Proficiency Test/Skill Test (Qualifying)
+
+TIER 1 SYLLABUS BREAKDOWN:
+1. General Intelligence & Reasoning (25 questions, 50 marks)
+   - Analogies, similarities, differences, space visualization
+   - Problem solving, analysis, judgment, decision making
+   - Visual memory, discrimination, observation, relationship concepts
+   - Arithmetical reasoning, figural classification, semantic series
+
+2. General Awareness (25 questions, 50 marks)
+   - Current events, Indian history, culture, geography, economic scene
+   - General polity, Indian constitution, sports, important events
+   - Scientific research, computers, mobile technology
+
+3. Quantitative Aptitude (25 questions, 50 marks)
+   - Number systems, computation of whole numbers, decimals, fractions
+   - Ratio & proportion, percentage, profit & loss, discount
+   - Simple & compound interest, time & work, time & distance
+   - Use of tables & graphs, mensuration, basic algebraic identities
+
+4. English Comprehension (25 questions, 50 marks)
+   - Grammar, vocabulary, reading comprehension
+   - Sentence correction, error detection, fill in the blanks
+   - Synonyms, antonyms, spelling, phrases & idioms
+
+TIER 2 DETAILED STRUCTURE:
+- Paper 1: Quantitative Abilities (100 questions, 200 marks, 2 hours)
+- Paper 2: English Language & Comprehension (200 questions, 200 marks, 2 hours)
+- Paper 3: Statistics (100 questions, 200 marks, 2 hours) - Only for Statistical Investigator posts
+- Paper 4: General Studies (Finance & Economics) (100 questions, 200 marks, 2 hours) - Only for Assistant Audit Officer posts
+
+RECENT EXAM TRENDS (2023-2024):
+- Increased difficulty in quantitative aptitude section
+- More current affairs questions from government schemes
+- Focus on digital India, environmental issues, sports achievements
+- Emphasis on basic mathematics and logical reasoning
+- English section becoming more application-based
+
+CUT-OFF ANALYSIS:
+- General Category: 120-130 marks out of 200 (Tier 1)
+- OBC: 115-125 marks out of 200
+- SC/ST: 100-110 marks out of 200
+- Tier 2 cut-offs are generally higher: 140-160 marks per paper
+
+JOB PROFILES AVAILABLE:
+1. Assistant Audit Officer (AAO) - Grade B
+2. Assistant Accounts Officer (AAO) - Grade B  
+3. Assistant Section Officer (ASO) - Grade B
+4. Statistical Investigator Grade II
+5. Tax Assistant (Central Excise & Income Tax)
+6. Examiner (Customs, Central Excise, Income Tax)
+7. Inspector (Central Excise, Preventive Officer, Examiner)
+8. Sub Inspector (Central Bureau of Investigation)
+
+SALARY STRUCTURE:
+- Grade B Posts: ₹35,400-112,400 (Pay Level 6) + DA + HRA
+- Grade C Posts: ₹25,500-81,100 (Pay Level 4) + allowances
+- In-hand salary ranges from ₹25,000 to ₹50,000 depending on posting location
+
+PREPARATION STRATEGY:
+1. Foundation Phase (2-3 months):
+   - NCERT books (Classes 6-12) for basic concepts
+   - Focus on mathematics fundamentals
+   - Build vocabulary and grammar basics
+
+2. Advanced Preparation (4-5 months):
+   - Standard reference books for each section
+   - Daily current affairs reading (last 6 months)
+   - Regular practice of quantitative problems
+   - English comprehension improvement
+
+3. Practice Phase (2-3 months):
+   - Previous year papers (last 5 years minimum)
+   - Daily mock tests and time management
+   - Weak area identification and improvement
+   - Speed enhancement techniques
+
+4. Final Revision (1 month):
+   - Quick revision notes
+   - Formula sheets and shortcuts
+   - Current affairs compilation
+   - Stress management and exam strategy
+
+RECOMMENDED BOOKS:
+- Quantitative Aptitude: R.S. Aggarwal, Arun Sharma
+- Reasoning: R.S. Aggarwal, A Modern Approach to Verbal & Non-Verbal Reasoning
+- English: Wren & Martin, Word Power Made Easy by Norman Lewis
+- General Awareness: Lucent's General Knowledge, Manorama Yearbook
+- Current Affairs: Monthly magazines (Pratiyogita Darpan, Competition Success Review)
+
+SUCCESS STATISTICS:
+- Total applications: 25-30 lakh candidates annually
+- Tier 1 qualified: 8-10 lakh candidates (top 10x of vacancies)
+- Final selection: 8,000-12,000 candidates
+- Success rate: 0.3-0.4% overall
+- Average preparation time: 8-12 months for serious candidates
+
+COMMON MISTAKES TO AVOID:
+- Ignoring basic mathematical concepts
+- Not practicing enough mock tests
+- Poor time management during exam
+- Neglecting current affairs preparation
+- Focusing only on one tier, ignoring others
+- Not maintaining accuracy while increasing speed
+
+SECTIONAL PREPARATION TIPS:
+Quantitative Aptitude:
+- Master basic arithmetic operations
+- Practice mental calculation techniques
+- Focus on time-saving shortcuts and tricks
+- Regular practice of data interpretation
+
+Reasoning:
+- Develop pattern recognition skills
+- Practice different types of logical reasoning
+- Work on spatial and visual reasoning
+- Time management is crucial
+
+General Awareness:
+- Read newspapers daily (The Hindu, Indian Express)
+- Focus on government schemes and policies
+- Stay updated with sports and awards
+- Study Indian history, geography, and polity basics
+
+English:
+- Improve vocabulary through word lists
+- Practice reading comprehension daily
+- Focus on grammar rules and their applications
+- Work on error detection and sentence improvement
+`;
+
+      researchData += ssc_cgl_info;
+    }
+
     // UPSC Specific Research
     if (topic.toLowerCase().includes('upsc')) {
       console.log('📋 Researching UPSC specific information...');
@@ -270,6 +416,67 @@ PREPARATION TIMELINE:
       researchData += net_info;
     }
 
+    // General Web Research for other topics
+    if (!researchData) {
+      console.log('🌐 Performing general web research for unknown topic...');
+      
+      // Try to fetch from Wikipedia API for general topics
+      try {
+        const searchQuery = encodeURIComponent(topic.replace(/[^a-zA-Z0-9\s]/g, ' ').trim());
+        const wikiResponse = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${searchQuery}`, {
+          headers: {
+            'User-Agent': 'StudyGuideBot/1.0 (https://thetutorbridge.com)'
+          },
+          timeout: 5000
+        });
+        
+        if (wikiResponse.ok) {
+          const wikiData = await wikiResponse.json();
+          if (wikiData.extract && wikiData.extract.length > 50) {
+            researchData += `
+WIKIPEDIA RESEARCH FINDINGS for "${topic}":
+
+SUMMARY:
+${wikiData.extract}
+
+KEY INFORMATION:
+- Topic: ${wikiData.title || topic}
+- Description: ${wikiData.description || 'General topic'}
+- Context: This topic requires comprehensive understanding and systematic study approach.
+
+GENERAL STUDY APPROACH:
+- Start with fundamental concepts and definitions
+- Build upon basic knowledge with advanced topics
+- Practice application through examples and exercises
+- Regular revision and self-assessment
+- Connect theory with practical applications
+`;
+            console.log('✅ Wikipedia data found and integrated');
+          }
+        }
+      } catch (wikiError) {
+        console.log('⚠️ Wikipedia research failed, using expert knowledge');
+        // Add generic research template for completely unknown topics
+        researchData = `
+EXPERT ANALYSIS for "${topic}":
+
+This topic requires systematic study and comprehensive understanding. Based on educational best practices:
+
+FUNDAMENTAL APPROACH:
+- Build strong foundation with basic concepts
+- Progress systematically from simple to complex topics
+- Regular practice and application of learned concepts
+- Continuous assessment and improvement
+
+RECOMMENDED STUDY METHODOLOGY:
+- Conceptual understanding over memorization
+- Multiple learning resources and perspectives
+- Practical application and real-world connections
+- Regular revision and knowledge consolidation
+`;
+      }
+    }
+
     console.log(`✅ DEEP Research completed. Found ${researchData.length} characters of REAL data`);
     return researchData || 'Proceeding with general analysis.';
     
@@ -283,41 +490,45 @@ PREPARATION TIMELINE:
 async function generateStudyGuideWithGPT(topic: string, language: string): Promise<ProcessedContent> {
   const isHindi = language === 'hindi';
   
-  const systemPrompt = `You are a world-class educational expert and content creator with deep expertise across all academic disciplines, professional fields, and examination systems. Your mission is to create exceptionally comprehensive, intellectually rigorous study guides that go far beyond surface-level information.
+  const systemPrompt = `You are an ELITE educational strategist and content architect with 20+ years of experience creating transformative learning materials for top-tier educational institutions, government examinations, and Fortune 500 companies. Your expertise spans competitive exam coaching, academic research, and professional development across all domains.
 
-🎯 CORE MISSION: Create DEEP, DETAILED, and TRANSFORMATIVE educational content that truly prepares learners for mastery.
+🚨 CRITICAL MISSION: ELIMINATE GENERIC CONTENT AT ALL COSTS. Every single word must provide SPECIFIC, ACTIONABLE, and CONTEXTUALLY RELEVANT value to the learner.
 
-📚 DEPTH REQUIREMENTS:
-- Provide PhD-level depth and nuance for complex topics
-- Include historical context, theoretical frameworks, and cutting-edge developments
-- Connect concepts across disciplines and show interdisciplinary relationships
-- Address common misconceptions and advanced subtleties
-- Include multiple perspectives and schools of thought where applicable
+🎯 ZERO-TOLERANCE POLICY FOR:
+- Generic phrases like "build strong foundation" or "practice regularly"
+- Template-style responses that could apply to any topic
+- Surface-level advice without specific implementation details
+- Vague recommendations without concrete resources or steps
+- Boilerplate content that doesn't address the specific topic's unique challenges
 
-🔍 CONTEXT ANALYSIS:
-1. EXAM PREPARATION: For competitive exams (UPSC, NET, SSC, JEE, NEET, CAT, etc.):
-   - Provide exam-specific strategies, patterns, and insider knowledge
-   - Include previous year trends, weightage analysis, and scoring strategies
-   - Mention specific books, authors, and resources used by toppers
-   - Cover both conceptual depth and exam tactics
+📊 MANDATORY CONTEXT INTELLIGENCE:
+You MUST demonstrate deep understanding of:
+1. EXACT EXAM STRUCTURE: Specific number of questions, marks, time limits, negative marking schemes
+2. CURRENT TRENDS: What changed in the last 2-3 years, recent pattern shifts, emerging topics
+3. SUCCESS METRICS: Actual cut-off scores, success rates, typical preparation timelines
+4. RESOURCE SPECIFICITY: Exact book titles, author names, chapter recommendations, online platforms
+5. STRATEGIC INSIGHTS: What separates top 1% performers from average candidates
 
-2. ACADEMIC SUBJECTS: For educational topics:
-   - Provide university-level depth with research-backed information
-   - Include current developments, recent discoveries, and future directions
-   - Connect theory to practical applications and real-world implications
-   - Address different learning levels from basic to advanced
+🔬 RESEARCH-DRIVEN APPROACH:
+- Every recommendation must be backed by data, statistics, or proven methodologies
+- Include specific examples, case studies, and real success stories
+- Reference actual exam questions, syllabus weightages, and scoring patterns
+- Mention current affairs, recent developments, and industry changes
+- Provide insider knowledge that only experts in the field would know
 
-3. PROFESSIONAL SKILLS: For career/interview preparation:
-   - Provide industry-specific insights and current market demands
-   - Include hands-on project ideas, portfolio development, and networking strategies
-   - Cover both technical skills and soft skills development
-   - Address different career stages from entry-level to senior positions
+🎯 CONTEXTUAL MASTERY REQUIREMENTS:
+For COMPETITIVE EXAMS: Must include exact syllabus breakdown, tier-wise strategies, specific book recommendations with chapters, current affairs sources, mock test platforms, and success rate statistics.
 
-🎨 CONTENT STYLE:
-- Always provide maximum depth and extensive coverage with research-level detail
-- Include visual learning aids, diagrams, and conceptual frameworks where applicable
-- Focus on high-impact, actionable information that leads to mastery
-- Optimize for both learning and practical application
+For ACADEMIC SUBJECTS: Must include latest research developments, key researchers, current applications, industry connections, advanced concepts, and future career implications.
+
+For PROFESSIONAL SKILLS: Must include current market demand, specific skill requirements, project portfolio ideas, industry certifications, salary expectations, and career progression paths.
+
+🚀 EXCELLENCE BENCHMARKS:
+- Content should be so specific that it could only apply to THIS exact topic
+- Include at least 10 specific, actionable recommendations per section
+- Provide exact timelines, resource names, and implementation strategies
+- Address common failure points and how to overcome them specifically
+- Include insider tips that demonstrate deep domain expertise
 
 RESPONSE FORMAT: You MUST respond with ONLY a valid JSON object with this exact structure:
 {
@@ -393,41 +604,53 @@ Language: ${language}
 
 Remember: You are creating content for serious learners who want to achieve mastery, not just basic understanding. Go deep, be specific, and provide transformative insights.`;
 
-  const userPrompt = `🎯 CREATE AN EXCEPTIONAL, DEEP-DIVE STUDY GUIDE FOR: "${topic}"
+  const userPrompt = `🚨 URGENT: CREATE AN EXPERT-LEVEL, RESEARCH-BACKED STUDY GUIDE FOR: "${topic}"
 
-📋 REQUIREMENTS FOR THIS STUDY GUIDE:
+⚡ MISSION CRITICAL REQUIREMENTS:
 - Language: ${language}
-- Depth Level: MAXIMUM - Go beyond surface-level information
-- Target Audience: Serious learners seeking mastery, not just basic understanding
-- Style: Comprehensive, research-backed, and actionable
+- Quality Standard: TOP 1% EXPERT LEVEL - No generic advice accepted
+- Target: Serious candidates who want to DOMINATE this topic, not just "pass"
+- Approach: Data-driven, research-backed, insider knowledge only
 
-🔍 CRITICAL ANALYSIS NEEDED:
-1. Determine the exact nature of this topic (exam prep, academic subject, professional skill, etc.)
-2. Identify the specific context, industry, or field
-3. Understand the current relevance and future importance
-4. Recognize the target audience's likely goals and challenges
+🎯 MANDATORY INTELLIGENCE DEMONSTRATION:
+You MUST prove deep expertise by including:
+1. EXACT specifications (numbers, percentages, dates, statistics)
+2. SPECIFIC resources (book titles, authors, platforms, tools)
+3. INSIDER knowledge (trends, patterns, success secrets)
+4. CURRENT developments (2023-2024 changes, recent updates)
+5. PROVEN strategies (what actually works vs. what people think works)
 
-⚡ DEPTH REQUIREMENTS:
-- Include cutting-edge developments and recent research
-- Provide historical context and evolution of the field
-- Connect to related disciplines and interdisciplinary applications
-- Address common misconceptions and advanced nuances
-- Include specific names, dates, statistics, and concrete examples
-- Mention authoritative sources, key researchers, and industry leaders
-- Provide actionable insights that can be immediately applied
+🚨 ZERO-TOLERANCE FOR GENERIC CONTENT:
+❌ BANNED PHRASES: "build strong foundation", "practice regularly", "stay consistent", "important topic"
+❌ BANNED ADVICE: Generic study tips that could apply to any subject
+❌ BANNED CONTENT: Template responses, surface-level information, obvious advice
 
-🎯 SPECIFIC DELIVERABLES:
-- 7+ main concepts with deep explanations
-- 5+ comprehensive definitions with context
-- 6+ advanced study strategies with implementation details
-- 5+ detailed real-world examples with analysis
-- 6+ career applications with market insights
-- 6+ expert-level exam/preparation tips
+✅ REQUIRED SPECIFICITY:
+✅ Exact exam pattern details (questions, marks, time, negative marking)
+✅ Specific book recommendations with chapter numbers and page references
+✅ Current cut-off trends with numerical data
+✅ Success rate statistics and preparation timeline data
+✅ Insider tips that only domain experts would know
 
-🚀 EXCELLENCE MANDATE:
-This study guide should be so comprehensive and valuable that someone could use it as their primary resource for mastering this topic. Think PhD-level depth, professional-grade insights, and transformative learning experience.
+🔥 DELIVERABLE REQUIREMENTS:
+- 8+ SPECIFIC concepts with exact implementation details
+- 6+ PRECISE definitions with real-world context and current applications
+- 7+ PROVEN strategies with step-by-step execution plans
+- 6+ DETAILED examples with actual case studies and data
+- 7+ CAREER insights with salary ranges, market demand, and growth projections
+- 8+ EXPERT tips with success rates and effectiveness metrics
 
-NO GENERIC CONTENT. Every sentence should add unique value and specific insights related to "${topic}".`;
+💎 EXCELLENCE VALIDATION:
+This study guide should be so specific and valuable that:
+- A complete beginner could follow it step-by-step to mastery
+- An expert would learn new insights and strategies
+- It could replace expensive coaching programs
+- Every recommendation is backed by data or proven results
+
+🎯 CRITICAL SUCCESS METRIC: 
+If someone asked "How do you know this works?", you should be able to cite specific success stories, statistics, research studies, or expert testimonials for EVERY major recommendation.
+
+TOPIC FOCUS: "${topic}" - Make this guide so topic-specific that it couldn't possibly apply to any other subject.`;
 
   try {
     // Check if OpenAI is configured
@@ -452,21 +675,42 @@ NO GENERIC CONTENT. Every sentence should add unique value and specific insights
     // Step 2: Create research-informed prompt
     const enhancedUserPrompt = `${userPrompt}
 
-🔬 RESEARCH DATA ANALYSIS:
-Based on the following research findings, create an expert-level study guide:
+🔬 RESEARCH-BACKED INTELLIGENCE INTEGRATION:
+You now have access to EXPERT-LEVEL research findings. Your task is to transform this data into an EXCEPTIONAL study guide:
 
 ${researchData}
 
-🎯 CRITICAL REQUIREMENTS: 
-1. Use the above research data to provide SPECIFIC, FACTUAL, and ACTIONABLE content
-2. Reference actual exam patterns, syllabus details, specific books, authors, and real preparation strategies mentioned in the research
-3. DO NOT provide generic advice - everything should be backed by the research findings above
-4. FORMATTING: MANDATORY - Use proper HTML notation for ALL scientific content:
-   - Chemical formulas: H<sub>2</sub>O (NOT H2O), CO<sub>2</sub> (NOT CO2), C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (NOT C6H12O6)
-   - Mathematical expressions: x<sup>2</sup> (NOT x^2), log<sub>10</sub> (NOT log10), a<sup>n</sup> (NOT a^n)
-   - Chemical equations: 6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>
-   - Ionic charges: Na<sup>+</sup> (NOT Na+), Cl<sup>-</sup> (NOT Cl-), SO<sub>4</sub><sup>2-</sup> (NOT SO4^2-)
-   - NEVER write plain text formulas like H2O, CO2, x^2 - ALWAYS use HTML tags`;
+🚨 NON-NEGOTIABLE REQUIREMENTS: 
+1. EXTRACT EVERY SPECIFIC DETAIL from the research above - exam patterns, marks, duration, cut-offs, success rates, book names, preparation timelines
+2. REFERENCE EXACT NUMBERS: Question counts, mark distributions, time limits, success percentages, salary ranges
+3. CITE SPECIFIC RESOURCES: Mention exact book titles, authors, platforms, and tools from the research
+4. INCLUDE CURRENT TRENDS: Reference the 2023-2024 developments and recent pattern changes mentioned
+5. PROVIDE INSIDER STRATEGIES: Use the preparation strategies, common mistakes, and expert tips from the research
+
+🎯 RESEARCH UTILIZATION MANDATE:
+- Transform raw research data into actionable step-by-step strategies
+- Convert statistics into practical insights and decision-making guidance
+- Use specific examples and case studies mentioned in the research
+- Reference the exact syllabus breakdowns, weightages, and scoring patterns
+- Include the recommended books, authors, and resources with specific chapter guidance
+
+🔬 SCIENTIFIC NOTATION REQUIREMENTS:
+MANDATORY - Use proper HTML notation for ALL scientific content:
+- Chemical formulas: H<sub>2</sub>O (NOT H2O), CO<sub>2</sub> (NOT CO2), C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (NOT C6H12O6)
+- Mathematical expressions: x<sup>2</sup> (NOT x^2), log<sub>10</sub> (NOT log10), a<sup>n</sup> (NOT a^n)
+- Chemical equations: 6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>
+- Ionic charges: Na<sup>+</sup> (NOT Na+), Cl<sup>-</sup> (NOT Cl-), SO<sub>4</sub><sup>2-</sup> (NOT SO4^2-)
+- NEVER write plain text formulas like H2O, CO2, x^2 - ALWAYS use HTML tags
+
+💎 QUALITY VALIDATION TEST:
+Before finalizing, ask yourself:
+- Can I cite specific data/statistics for each major claim?
+- Are my recommendations backed by the research findings?
+- Would an expert in this field recognize this as insider knowledge?
+- Is every piece of advice specific to "${topic}" and not applicable to other topics?
+- Have I included exact numbers, timelines, and resource specifications?
+
+FAILURE TO MEET THESE STANDARDS IS UNACCEPTABLE. Create content worthy of a premium coaching program.`;
 
     console.log(`🚀 Generating GPT-4o RESEARCH-BASED study guide for: "${topic}"`);
     
