@@ -235,12 +235,13 @@ TIER 2 DETAILED STRUCTURE:
 - Paper 3: Statistics (100 questions, 200 marks, 2 hours) - Only for Statistical Investigator posts
 - Paper 4: General Studies (Finance & Economics) (100 questions, 200 marks, 2 hours) - Only for Assistant Audit Officer posts
 
-RECENT EXAM TRENDS (2023-2024):
-- Increased difficulty in quantitative aptitude section
-- More current affairs questions from government schemes
-- Focus on digital India, environmental issues, sports achievements
-- Emphasis on basic mathematics and logical reasoning
-- English section becoming more application-based
+RECENT EXAM TRENDS (2024-2025):
+- Increased difficulty in quantitative aptitude section with data interpretation focus
+- Heavy emphasis on current affairs from government schemes (PM Vishwakarma, PLI schemes)
+- Focus on digital India 2.0, AI initiatives, environmental policies, and sports achievements
+- Integration of financial literacy and digital payment systems questions
+- English section emphasizing comprehension and practical communication skills
+- More questions on sustainable development goals and climate change initiatives
 
 CUT-OFF ANALYSIS:
 - General Category: 120-130 marks out of 200 (Tier 1)
@@ -351,11 +352,13 @@ EXAM STRUCTURE:
 - Mains: 9 papers (Essay, 4 GS, 2 Optional, 2 Language), 1750 marks total
 - Interview: 275 marks
 
-CURRENT TRENDS (2024-2025):
-- Increased focus on contemporary issues and government schemes
-- Integration of technology, environment, and governance
-- Emphasis on analytical thinking over factual recall
-- Rising importance of ethics and integrity questions
+CURRENT TRENDS (2025):
+- Heavy focus on AI and digital governance initiatives
+- Increased emphasis on climate change and sustainable development
+- Integration of fintech, blockchain, and digital currency concepts
+- Rising importance of ethics, integrity, and social responsibility questions
+- Focus on India's G20 presidency outcomes and global leadership role
+- Emphasis on space technology, quantum computing, and emerging technologies
 
 SUCCESS STATISTICS:
 - Success rate: 0.1-0.2% (around 1000 selections from 10+ lakh applicants)
@@ -425,7 +428,7 @@ PREPARATION TIMELINE:
         const searchQuery = encodeURIComponent(topic.replace(/[^a-zA-Z0-9\s]/g, ' ').trim());
         const wikiResponse = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${searchQuery}`, {
           headers: {
-            'User-Agent': 'StudyGuideBot/1.0 (https://thetutorbridge.com)'
+            'User-Agent': 'StudyGuideBot/2025 (https://thetutorbridge.com)'
           },
           timeout: 5000
         });
@@ -529,6 +532,7 @@ For PROFESSIONAL SKILLS: Must include current market demand, specific skill requ
 - Provide exact timelines, resource names, and implementation strategies
 - Address common failure points and how to overcome them specifically
 - Include insider tips that demonstrate deep domain expertise
+- CRITICAL: All information must be current as of 2025, including recent policy changes, technological updates, and emerging trends
 
 RESPONSE FORMAT: You MUST respond with ONLY a valid JSON object with this exact structure:
 {
@@ -617,7 +621,7 @@ You MUST prove deep expertise by including:
 1. EXACT specifications (numbers, percentages, dates, statistics)
 2. SPECIFIC resources (book titles, authors, platforms, tools)
 3. INSIDER knowledge (trends, patterns, success secrets)
-4. CURRENT developments (2023-2024 changes, recent updates)
+4. CURRENT developments (2024-2025 changes, recent updates, and 2025 trends)
 5. PROVEN strategies (what actually works vs. what people think works)
 
 🚨 ZERO-TOLERANCE FOR GENERIC CONTENT:
@@ -684,7 +688,7 @@ ${researchData}
 1. EXTRACT EVERY SPECIFIC DETAIL from the research above - exam patterns, marks, duration, cut-offs, success rates, book names, preparation timelines
 2. REFERENCE EXACT NUMBERS: Question counts, mark distributions, time limits, success percentages, salary ranges
 3. CITE SPECIFIC RESOURCES: Mention exact book titles, authors, platforms, and tools from the research
-4. INCLUDE CURRENT TRENDS: Reference the 2023-2024 developments and recent pattern changes mentioned
+4. INCLUDE CURRENT TRENDS: Reference the 2024-2025 developments, recent pattern changes, and emerging 2025 trends mentioned
 5. PROVIDE INSIDER STRATEGIES: Use the preparation strategies, common mistakes, and expert tips from the research
 
 🎯 RESEARCH UTILIZATION MANDATE:
