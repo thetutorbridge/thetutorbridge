@@ -1,13 +1,26 @@
-"use client"
-
 import type { Metadata } from "next"
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Search, Calendar, Clock } from "lucide-react"
-import { Input } from "@/components/ui/input"
+import { Search, Calendar } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
+import { createAdminClient } from "@/lib/supabase"
+import { BlogSearchClient } from "./BlogSearchClient"
+
+// Enable ISR - revalidate every 60 seconds
+export const revalidate = 60
+
+export const metadata: Metadata = {
+  title: "TheTutorBridge Blog - Expert Study Tips & Educational Resources",
+  description: "Expert insights, study tips, and educational resources to help you excel in your academic journey",
+  openGraph: {
+    title: "TheTutorBridge Blog",
+    description: "Expert insights, study tips, and educational resources",
+    url: "https://www.thetutorbridge.com/blog",
+    siteName: "TheTutorBridge",
+    type: "website",
+  },
+}
 
 interface BlogPost {
   id: string;
@@ -31,82 +44,33 @@ interface BlogPost {
   meta_keywords: string[];
 }
 
+async function getPosts(): Promise<BlogPost[]> {
+  try {
+    console.time('Fetching blog posts');
+    const supabase = createAdminClient();
+    const { data, error } = await supabase
+      .from('blog_posts')
+      .select('id, title, slug, excerpt, featured_image, author_name, author_linkedin, author_image, tags, status, published_at, created_at, updated_at, view_count, read_time, meta_title, meta_description, meta_keywords')
+      .eq('status', 'published')
+      .order('published_at', { ascending: false });
 
-export default function BlogPage() {
-  const [posts, setPosts] = useState<BlogPost[]>([])
-  const [searchQuery, setSearchQuery] = useState("")
-  const [isLoading, setIsLoading] = useState(true)
-  const [isClient, setIsClient] = useState(false)
+    console.timeEnd('Fetching blog posts');
 
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  useEffect(() => {
-    const loadPosts = async () => {
-      if (!isClient) return
-      
-      setIsLoading(true)
-      try {
-        console.log('🔄 Loading blog posts...')
-        const response = await fetch('/api/blog/posts?status=published')
-        if (!response.ok) {
-          throw new Error('Failed to fetch posts')
-        }
-        const result = await response.json()
-        const allPosts = result.posts || []
-        setPosts(allPosts)
-        console.log('✅ Blog posts loaded successfully:', allPosts.length, 'posts')
-      } catch (error) {
-        console.error('❌ Error loading blog posts:', error)
-        // Set empty posts array on error
-        setPosts([])
-      } finally {
-        setIsLoading(false)
-      }
-    }
-    
-    loadPosts()
-  }, [isClient])
-
-  useEffect(() => {
-    const filterPosts = async () => {
-      if (!isClient) return
-      
-      setIsLoading(true)
-      try {
-        let filteredPosts: BlogPost[] = []
-
-        if (searchQuery) {
-          // Client-side search for now
-          const response = await fetch('/api/blog/posts?status=published')
-          if (response.ok) {
-            const result = await response.json()
-            const allPosts = result.posts || []
-            filteredPosts = allPosts.filter((post: BlogPost) => 
-              post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-              post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
-            )
-          }
-        } else {
-          const response = await fetch('/api/blog/posts?status=published')
-          if (response.ok) {
-            const result = await response.json()
-            filteredPosts = result.posts || []
-          }
-        }
-
-        setPosts(filteredPosts)
-      } catch (error) {
-        console.error('Error filtering posts:', error)
-        setPosts([])
-      } finally {
-        setIsLoading(false)
-      }
+    if (error) {
+      console.error('Database error fetching posts:', error);
+      return [];
     }
 
-    filterPosts()
-  }, [searchQuery, isClient])
+    console.log(`✅ Fetched ${data?.length || 0} blog posts`);
+    return data || [];
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return [];
+  }
+}
+
+export default async function BlogPage() {
+  const posts = await getPosts();
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return 'Not published'
@@ -128,47 +92,31 @@ export default function BlogPage() {
             <p className="text-xl md:text-2xl mb-8 text-white/90">
               Expert insights, study tips, and educational resources to help you excel in your academic journey
             </p>
-            <div className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/80 h-5 w-5" />
-              <Input
-                type="text"
-                placeholder="Search articles..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 pr-4 py-3 text-lg bg-white/10 border-white/20 text-white placeholder:text-white/80 focus:bg-white/20"
-              />
-            </div>
+            {/* Search component will be a client component */}
+            <BlogSearchClient initialPosts={posts} />
           </div>
         </div>
       </div>
 
       {/* Blog Posts Section */}
       <div className="container mx-auto px-4 py-8">
-
-        {/* Blog Posts Grid */}
-        {!isClient ? (
-          <div className="text-center py-16">
-            <div className="text-gray-500 text-lg mb-4">Loading...</div>
-          </div>
-        ) : isLoading ? (
-          <div className="text-center py-16">
-            <div className="text-gray-500 text-lg mb-4">Loading posts...</div>
-          </div>
-        ) : posts.length === 0 ? (
+        {/* Blog Posts Grid - Server-rendered */}
+        {posts.length === 0 ? (
           <div className="text-center py-16">
             <div className="text-gray-500 text-lg mb-4">
-              {searchQuery ? "No posts found matching your search." : "No posts available."}
+              No posts available.
             </div>
-            {searchQuery && (
-              <Button onClick={() => setSearchQuery("")}>
-                Clear search
-              </Button>
-            )}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-posts-grid">
             {posts.map((post) => (
-              <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <Card
+                key={post.id}
+                className="group hover:shadow-lg transition-all duration-300 overflow-hidden"
+                data-post-id={post.id}
+                data-post-title={post.title}
+                data-post-excerpt={post.excerpt}
+              >
                 {post.featured_image && (
                   <div className="relative w-full aspect-video bg-gray-100 overflow-hidden border-b border-gray-200">
                     <Image
@@ -176,14 +124,6 @@ export default function BlogPage() {
                       alt={post.title}
                       fill
                       className="object-contain group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        // Hide the image container if image fails to load
-                        const target = e.target as HTMLImageElement
-                        target.style.display = 'none'
-                        if (target.parentElement) {
-                          target.parentElement.style.display = 'none'
-                        }
-                      }}
                     />
                   </div>
                 )}
@@ -212,7 +152,6 @@ export default function BlogPage() {
             ))}
           </div>
         )}
-
       </div>
 
       {/* Footer */}
@@ -293,4 +232,4 @@ export default function BlogPage() {
       </footer>
     </div>
   )
-} 
+}
