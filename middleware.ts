@@ -3,11 +3,12 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
+  const { pathname } = request.nextUrl;
 
-  // Only redirect in production (when host is thetutorbridge.com)
-  if (hostname === 'thetutorbridge.com') {
-    const url = request.nextUrl.clone();
-    url.host = 'www.thetutorbridge.com';
+  // Redirect non-www to www for thetutorbridge.com
+  if (hostname === 'thetutorbridge.com' || hostname.startsWith('thetutorbridge.com:')) {
+    const url = new URL(request.url);
+    url.hostname = 'www.thetutorbridge.com';
 
     // Use 308 permanent redirect for non-www to www
     return NextResponse.redirect(url, { status: 308 });
