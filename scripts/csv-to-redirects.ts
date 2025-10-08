@@ -16,18 +16,33 @@ function csvToRedirects(csvPath: string, jsonPath: string): void {
     // Skip header row
     const dataLines = lines.slice(1);
 
-    const redirects: Redirect[] = dataLines.map(line => {
+    const redirects: Redirect[] = [];
+
+    dataLines.forEach(line => {
       const [from, to] = line.split(',').map(s => s.trim());
 
       // Extract path from full URL (remove protocol and domain)
       const fromPath = from.replace(/https?:\/\/[^/]+/, '');
       const toUrl = to;
 
-      return {
+      // Add redirect with trailing slash
+      redirects.push({
         source: fromPath,
         destination: toUrl,
         permanent: true
-      };
+      });
+
+      // Also add redirect without trailing slash if the original has one
+      if (fromPath.endsWith('/') && fromPath !== '/') {
+        const fromPathNoSlash = fromPath.slice(0, -1);
+        const toUrlNoSlash = toUrl.endsWith('/') ? toUrl.slice(0, -1) : toUrl;
+
+        redirects.push({
+          source: fromPathNoSlash,
+          destination: toUrlNoSlash,
+          permanent: true
+        });
+      }
     });
 
     // Write to JSON file
