@@ -1,16 +1,3 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
-
-// Load redirects from JSON file
-let wpRedirects = [];
-try {
-  const redirectsPath = join(process.cwd(), 'redirects', 'wp-redirects.json');
-  const redirectsData = readFileSync(redirectsPath, 'utf-8');
-  wpRedirects = JSON.parse(redirectsData);
-} catch (error) {
-  console.warn('⚠️  Could not load redirects:', error.message);
-}
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -38,6 +25,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'www.thetutorbridge.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'localhost',
         port: '3000',
         pathname: '/**',
@@ -48,9 +41,6 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   trailingSlash: false,
-  async redirects() {
-    return wpRedirects;
-  },
   async headers() {
     return [
       {
