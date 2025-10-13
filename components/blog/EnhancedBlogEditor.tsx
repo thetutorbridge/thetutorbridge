@@ -85,13 +85,16 @@ interface LinkDialogProps {
 function LinkDialog({ isOpen, onClose, onSetLink, currentUrl = '', currentText = '', currentNofollow = false }: LinkDialogProps) {
   const [url, setUrl] = useState(currentUrl)
   const [text, setText] = useState(currentText)
-  const [nofollow, setNofollow] = useState(currentNofollow)
+  const [nofollow, setNofollow] = useState(false) // Always default to dofollow (unchecked)
 
-  // Update state when props change
+  // Update state when props change (but keep nofollow as false by default)
   useEffect(() => {
     setUrl(currentUrl)
     setText(currentText)
-    setNofollow(currentNofollow)
+    // Only set nofollow to true if explicitly set, otherwise keep as false (dofollow)
+    if (currentNofollow === true) {
+      setNofollow(true)
+    }
   }, [currentUrl, currentText, currentNofollow])
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -672,24 +675,31 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
 
   const setLink = (url: string, text: string, nofollow: boolean) => {
     if (!editor) return
-    
+
     const attributes: any = { href: url }
+
+    // Only add nofollow if explicitly requested
     if (nofollow) {
-      attributes.rel = 'nofollow'
+      attributes.rel = 'noopener noreferrer nofollow'
+      attributes.target = '_blank'
+    } else {
+      // For dofollow links, only add noopener noreferrer for security (no nofollow)
+      attributes.rel = 'noopener noreferrer'
       attributes.target = '_blank'
     }
-    
+
     // If we're editing an existing link, update it
     if (editor.isActive('link')) {
       editor.chain().focus().updateAttributes('link', attributes).run()
     } else if (text.trim()) {
       // Insert new link with text
-      editor.chain().focus().insertContent(`<a href="${url}">${text.trim()}</a>`).run()
+      const relAttr = nofollow ? ' rel="noopener noreferrer nofollow"' : ' rel="noopener noreferrer"'
+      editor.chain().focus().insertContent(`<a href="${url}"${relAttr} target="_blank">${text.trim()}</a>`).run()
     } else {
       // Set link on selected text (fallback)
       editor.chain().focus().setLink(attributes).run()
     }
-    
+
     setLinkDialog({ isOpen: false })
   }
 
