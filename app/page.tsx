@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { BookOpen, MessageSquare, Users, Award, Star, CheckCircle, ArrowRight, Play, Target, Lightbulb, TrendingUp, Clock, Shield, Globe, UserCheck, BookMarked, Brain, Phone, Mail, MapPin, ChevronDown, ChevronUp, Calendar, User, GraduationCap, Zap, Heart, Trophy } from "lucide-react"
+import { BookOpen, MessageSquare, Users, Award, Star, CheckCircle, ArrowRight, Play, Target, Lightbulb, TrendingUp, Clock, Shield, Globe, UserCheck, BookMarked, Brain, Phone, Mail, MapPin, ChevronDown, ChevronUp, Calendar, User, GraduationCap, Zap, Heart, Trophy, Calculator } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
@@ -238,7 +238,7 @@ export default function Home() {
                 Comprehensive educational support designed to help students excel in their academic journey.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Link href="/study-resources">
                 <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group">
                   <CardContent className="text-center">
@@ -279,6 +279,21 @@ export default function Home() {
                     <p className="text-gray-600 text-sm mb-4">Expert mentorship to help you discover and pursue your passion.</p>
                     <div className="flex items-center justify-center text-yellow-600 font-semibold group-hover:translate-x-1 transition-transform">
                       Get Guidance <ArrowRight className="w-4 h-4 ml-1" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link href="/calculators">
+                <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                  <CardContent className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <Calculator className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Financial Calculators</h3>
+                    <p className="text-gray-600 text-sm mb-4">Free SIP and EMI calculators to plan your investments and loans.</p>
+                    <div className="flex items-center justify-center text-orange-600 font-semibold group-hover:translate-x-1 transition-transform">
+                      Calculate <ArrowRight className="w-4 h-4 ml-1" />
                     </div>
                   </CardContent>
                 </Card>
