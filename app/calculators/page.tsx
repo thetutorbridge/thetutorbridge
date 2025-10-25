@@ -66,22 +66,22 @@ export default function CalculatorsPage() {
             <div className="grid md:grid-cols-2 gap-6">
 
               {/* SIP Calculator Card */}
-              <Link href="/calculators/sip-calculator" className="block">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group">
+              <Link href="/calculators/sip-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
                       <TrendingUp className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SIP Calculator</h3>
                   </div>
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-gray-700 mb-4 flex-grow">
                     Calculate your mutual fund returns through Systematic Investment Plans. Estimate maturity amount, total investment, and expected returns with monthly compounding.
                   </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform">
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
                     <span>Use Calculator</span>
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </div>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Monthly Investment</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Returns Estimation</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Wealth Planning</span>
@@ -90,22 +90,22 @@ export default function CalculatorsPage() {
               </Link>
 
               {/* EMI Calculator Card */}
-              <Link href="/calculators/emi-calculator" className="block">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group">
+              <Link href="/calculators/emi-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
                       <CreditCard className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">EMI Calculator</h3>
                   </div>
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-gray-700 mb-4 flex-grow">
                     Calculate monthly loan payments for home, car, personal, and education loans. Get instant EMI, interest, and total payment breakdowns in INR.
                   </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform">
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
                     <span>Use Calculator</span>
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </div>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Loan EMI</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Interest Calculation</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Loan Planning</span>
