@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calculator, TrendingUp, Home, ArrowRight } from 'lucide-react';
+import { Calculator, TrendingUp, Home, ArrowRight, CreditCard } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Financial Calculators - SIP, Investment & Returns Calculator',
-  description: 'Free online financial calculators for students and professionals. Calculate SIP returns, investment growth, compound interest, and plan your financial future with The Tutor Bridge.',
+  title: 'Financial Calculators - SIP, EMI, Loan & Investment Calculator',
+  description: 'Free online financial calculators for students and professionals. Calculate SIP returns, loan EMI, investment growth, and plan your financial future with The Tutor Bridge.',
 };
 
 export default function CalculatorsPage() {
@@ -70,7 +70,7 @@ export default function CalculatorsPage() {
                 <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
+                      <TrendingUp className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SIP Calculator</h3>
                   </div>
@@ -89,19 +89,29 @@ export default function CalculatorsPage() {
                 </div>
               </Link>
 
-              {/* Placeholder for future calculators */}
-              <div className="bg-gray-50 p-6 rounded-lg shadow-sm border-2 border-dashed border-gray-300">
-                <div className="flex items-center mb-4 opacity-50">
-                  <div className="w-12 h-12 bg-gray-300 text-white rounded-full flex items-center justify-center">
-                    <Calculator className="w-6 h-6" />
+              {/* EMI Calculator Card */}
+              <Link href="/calculators/emi-calculator" className="block">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <CreditCard className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">EMI Calculator</h3>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-500 ml-4">More Calculators Coming Soon</h3>
+                  <p className="text-gray-700 mb-4">
+                    Calculate monthly loan payments for home, car, personal, and education loans. Get instant EMI, interest, and total payment breakdowns in INR.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Loan EMI</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Interest Calculation</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Loan Planning</span>
+                  </div>
                 </div>
-                <p className="text-gray-500 mb-4">
-                  We're working on adding more financial calculators including compound interest, EMI calculator, retirement planning, and more.
-                </p>
-                <div className="text-gray-400 italic">Stay tuned!</div>
-              </div>
+              </Link>
 
             </div>
           </section>
