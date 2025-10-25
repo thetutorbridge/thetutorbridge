@@ -36,6 +36,22 @@ export default function NewBlogPostPage() {
 
       const result = await response.json()
       if (result.post) {
+        // Trigger instant revalidation if published
+        if (formData.status === 'published' && formData.slug) {
+          try {
+            await fetch('/api/revalidate', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.NEXT_PUBLIC_REVALIDATION_SECRET || 'ttb-revalidate-secret-key-2024'}`
+              },
+              body: JSON.stringify({ slug: formData.slug })
+            })
+            console.log('✅ Page revalidated successfully after creating published post')
+          } catch (error) {
+            console.error('❌ Failed to revalidate page:', error)
+          }
+        }
         router.push('/admin/blog')
       }
     } catch (error) {

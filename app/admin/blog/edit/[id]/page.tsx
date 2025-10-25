@@ -79,6 +79,22 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
 
       const result = await response.json()
       if (result.post) {
+        // Trigger revalidation if the post is published
+        if (data.status === 'published') {
+          try {
+            await fetch('/api/revalidate', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.NEXT_PUBLIC_REVALIDATION_SECRET || 'ttb-revalidate-secret-key-2024'}`
+              },
+              body: JSON.stringify({ slug: data.slug })
+            })
+            console.log('✅ Page revalidated successfully')
+          } catch (error) {
+            console.error('❌ Failed to revalidate page:', error)
+          }
+        }
         router.push('/admin/blog')
       }
     } catch (error) {
@@ -107,6 +123,20 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
 
       const result = await response.json()
       if (result.post) {
+        // Trigger instant revalidation after publishing
+        try {
+          await fetch('/api/revalidate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${process.env.NEXT_PUBLIC_REVALIDATION_SECRET || 'ttb-revalidate-secret-key-2024'}`
+            },
+            body: JSON.stringify({ slug: data.slug })
+          })
+          console.log('✅ Page revalidated successfully after publish')
+        } catch (error) {
+          console.error('❌ Failed to revalidate page:', error)
+        }
         router.push('/admin/blog')
       }
     } catch (error) {
