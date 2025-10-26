@@ -117,26 +117,26 @@ export default function SIPCalculatorPage() {
               <div className="grid lg:grid-cols-2 gap-0">
 
                 {/* Left: Calculator Inputs */}
-                <div className="p-8 lg:p-10 bg-white">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-8 flex items-center">
-                    <Calculator className="w-8 h-8 mr-3 text-[#2BAE66]" />
-                    Calculate Your SIP Returns
+                <div className="p-4 md:p-8 lg:p-10 bg-white">
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 md:mb-8 flex items-center">
+                    <Calculator className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+                    <span className="text-base md:text-2xl lg:text-3xl">Calculate Your SIP Returns</span>
                   </h2>
 
                   {/* Monthly Investment */}
-                  <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
-                      <Label htmlFor="monthly-investment" className="text-lg font-semibold text-gray-700">
+                  <div className="mb-6 md:mb-8">
+                    <div className="flex items-center justify-between mb-3 gap-2">
+                      <Label htmlFor="monthly-investment" className="text-sm md:text-lg font-semibold text-gray-700 flex-shrink-0">
                         Monthly Investment
                       </Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                      <div className="flex items-center gap-1 md:gap-2 flex-shrink-0">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           id="monthly-investment"
                           type="number"
                           value={monthlyInvestment}
                           onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
-                          className="w-32 text-right font-bold text-lg border-2 border-[#2BAE66]"
+                          className="w-20 md:w-32 text-right font-bold text-sm md:text-lg border-2 border-[#2BAE66]"
                           min="500"
                           max="1000000"
                         />
@@ -157,23 +157,23 @@ export default function SIPCalculatorPage() {
                   </div>
 
                   {/* Expected Return */}
-                  <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
-                      <Label htmlFor="expected-return" className="text-lg font-semibold text-gray-700">
+                  <div className="mb-6 md:mb-8">
+                    <div className="flex items-center justify-between mb-3 gap-2">
+                      <Label htmlFor="expected-return" className="text-sm md:text-lg font-semibold text-gray-700 flex-shrink-0">
                         Expected Return (p.a.)
                       </Label>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2 flex-shrink-0">
                         <Input
                           id="expected-return"
                           type="number"
                           value={expectedReturn}
                           onChange={(e) => setExpectedReturn(Number(e.target.value))}
-                          className="w-24 text-right font-bold text-lg border-2 border-[#2BAE66]"
+                          className="w-16 md:w-24 text-right font-bold text-sm md:text-lg border-2 border-[#2BAE66]"
                           min="1"
                           max="30"
                           step="0.1"
                         />
-                        <span className="text-sm text-gray-500">%</span>
+                        <span className="text-xs md:text-sm text-gray-500">%</span>
                       </div>
                     </div>
                     <Slider
@@ -191,22 +191,22 @@ export default function SIPCalculatorPage() {
                   </div>
 
                   {/* Time Period */}
-                  <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
-                      <Label htmlFor="time-period" className="text-lg font-semibold text-gray-700">
+                  <div className="mb-6 md:mb-8">
+                    <div className="flex items-center justify-between mb-3 gap-2">
+                      <Label htmlFor="time-period" className="text-sm md:text-lg font-semibold text-gray-700 flex-shrink-0">
                         Time Period
                       </Label>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2 flex-shrink-0">
                         <Input
                           id="time-period"
                           type="number"
                           value={timePeriod}
                           onChange={(e) => setTimePeriod(Number(e.target.value))}
-                          className="w-24 text-right font-bold text-lg border-2 border-[#2BAE66]"
+                          className="w-16 md:w-24 text-right font-bold text-sm md:text-lg border-2 border-[#2BAE66]"
                           min="1"
                           max="40"
                         />
-                        <span className="text-sm text-gray-500">Yr</span>
+                        <span className="text-xs md:text-sm text-gray-500">Yr</span>
                       </div>
                     </div>
                     <Slider
@@ -231,22 +231,22 @@ export default function SIPCalculatorPage() {
                 </div>
 
                 {/* Right: Results */}
-                <div className="p-8 lg:p-10 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
-                    <BarChart3 className="w-8 h-8 mr-3 text-[#FFC857]" />
-                    Your Investment Summary
+                <div className="p-4 md:p-8 lg:p-10 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white">
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 flex items-center">
+                    <BarChart3 className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#FFC857]" />
+                    <span className="text-base md:text-2xl lg:text-3xl">Your Investment Summary</span>
                   </h2>
 
                   {/* Results Cards */}
                   <div className="space-y-6">
 
                     {/* Invested Amount */}
-                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-all">
+                    <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-all">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-white/80 text-sm font-medium">Invested Amount</span>
-                        <DollarSign className="w-5 h-5 text-[#FFC857]" />
+                        <span className="text-white/80 text-xs md:text-sm font-medium">Invested Amount</span>
+                        <DollarSign className="w-4 h-4 md:w-5 md:h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-white">
+                      <p className="text-xl md:text-3xl lg:text-4xl font-bold text-white break-words">
                         {formatCurrency(results.investedAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -255,12 +255,12 @@ export default function SIPCalculatorPage() {
                     </div>
 
                     {/* Estimated Returns */}
-                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-all">
+                    <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-all">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-white/80 text-sm font-medium">Estimated Returns</span>
-                        <TrendingUp className="w-5 h-5 text-[#FFC857]" />
+                        <span className="text-white/80 text-xs md:text-sm font-medium">Estimated Returns</span>
+                        <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-[#FFC857]">
+                      <p className="text-xl md:text-3xl lg:text-4xl font-bold text-[#FFC857] break-words">
                         {formatCurrency(results.estimatedReturns)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -269,12 +269,12 @@ export default function SIPCalculatorPage() {
                     </div>
 
                     {/* Total Value */}
-                    <div className="bg-[#FFC857] p-6 rounded-xl shadow-lg">
+                    <div className="bg-[#FFC857] p-4 md:p-6 rounded-xl shadow-lg">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-[#1A3D7C] text-sm font-medium">Total Value (Maturity)</span>
-                        <PieChart className="w-5 h-5 text-[#1A3D7C]" />
+                        <span className="text-[#1A3D7C] text-xs md:text-sm font-medium">Total Value (Maturity)</span>
+                        <PieChart className="w-4 h-4 md:w-5 md:h-5 text-[#1A3D7C]" />
                       </div>
-                      <p className="text-4xl md:text-5xl font-bold text-[#1A3D7C]">
+                      <p className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#1A3D7C] break-words">
                         {formatCurrency(results.totalValue)}
                       </p>
                       <p className="text-xs text-[#1A3D7C]/70 mt-2">
