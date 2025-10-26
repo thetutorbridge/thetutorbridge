@@ -13,12 +13,15 @@ import { Label } from '@/components/ui/label';
 export default function FDCalculatorPage() {
   const [totalInvestment, setTotalInvestment] = useState<number>(100000);
   const [interestRate, setInterestRate] = useState<number>(7);
-  const [timePeriod, setTimePeriod] = useState<number>(5);
+  const [years, setYears] = useState<number>(5);
+  const [months, setMonths] = useState<number>(0);
+  const [days, setDays] = useState<number>(0);
 
   const calculateFD = () => {
     const principal = totalInvestment;
     const rate = interestRate / 100;
-    const time = timePeriod;
+    // Convert years, months, days to total time in years
+    const time = years + (months / 12) + (days / 365);
     const n = 4; // Quarterly compounding (standard for FDs in India)
 
     // Compound Interest Formula: A = P(1 + r/n)^(nt)
@@ -161,31 +164,91 @@ export default function FDCalculatorPage() {
                     </div>
                   </div>
 
-                  {/* Time Period */}
+                  {/* Time Period - Years */}
                   <div>
                     <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Time Period</Label>
+                      <Label className="text-gray-700 font-semibold">Time Period - Years</Label>
                       <div className="flex items-center gap-2">
                         <Input
                           type="number"
-                          value={timePeriod}
-                          onChange={(e) => setTimePeriod(Number(e.target.value))}
+                          value={years}
+                          onChange={(e) => setYears(Number(e.target.value))}
                           className="w-24 text-right"
                         />
                         <span className="text-sm text-gray-500">Years</span>
                       </div>
                     </div>
                     <Slider
-                      value={[timePeriod]}
-                      onValueChange={(value) => setTimePeriod(value[0])}
-                      min={1}
+                      value={[years]}
+                      onValueChange={(value) => setYears(value[0])}
+                      min={0}
                       max={10}
                       step={1}
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-500 mt-1">
-                      <span>1 Year</span>
+                      <span>0 Years</span>
                       <span>10 Years</span>
+                    </div>
+                  </div>
+
+                  {/* Time Period - Months */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <Label className="text-gray-700 font-semibold">Time Period - Months</Label>
+                      <div className="flex items-center gap-2">
+                        <Input
+                          type="number"
+                          value={months}
+                          onChange={(e) => setMonths(Number(e.target.value))}
+                          className="w-24 text-right"
+                          min="0"
+                          max="11"
+                        />
+                        <span className="text-sm text-gray-500">Months</span>
+                      </div>
+                    </div>
+                    <Slider
+                      value={[months]}
+                      onValueChange={(value) => setMonths(value[0])}
+                      min={0}
+                      max={11}
+                      step={1}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-xs text-gray-500 mt-1">
+                      <span>0 Months</span>
+                      <span>11 Months</span>
+                    </div>
+                  </div>
+
+                  {/* Time Period - Days */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <Label className="text-gray-700 font-semibold">Time Period - Days</Label>
+                      <div className="flex items-center gap-2">
+                        <Input
+                          type="number"
+                          value={days}
+                          onChange={(e) => setDays(Number(e.target.value))}
+                          className="w-24 text-right"
+                          min="0"
+                          max="30"
+                        />
+                        <span className="text-sm text-gray-500">Days</span>
+                      </div>
+                    </div>
+                    <Slider
+                      value={[days]}
+                      onValueChange={(value) => setDays(value[0])}
+                      min={0}
+                      max={30}
+                      step={1}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-xs text-gray-500 mt-1">
+                      <span>0 Days</span>
+                      <span>30 Days</span>
                     </div>
                   </div>
                 </div>
