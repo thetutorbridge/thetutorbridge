@@ -87,7 +87,7 @@ export default function HomeLoanEMICalculatorPage() {
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Planning to buy your dream home? Use our free home loan EMI calculator to estimate monthly payments for housing loans. Calculate EMI, total interest, and affordability instantly for apartments, villas, and plots.
           </p>
-          <div className="bg-white/10 p-4 rounded-xl mb-8">
+          <div className="bg-white/10 p-3 md:p-4 rounded-xl mb-8">
             <p className="text-lg italic">
               Owning a home is a dream come true!<br />
               <strong>Calculate your home loan EMI and make it a reality.</strong>
@@ -120,19 +120,19 @@ export default function HomeLoanEMICalculatorPage() {
 
                 {/* Left: Calculator Inputs */}
                 <div className="p-8 lg:p-10 bg-white">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-8 flex items-center">
-                    <Calculator className="w-8 h-8 mr-3 text-[#2BAE66]" />
+                  <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-8 flex items-center">
+                    <Calculator className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
                     Calculate Your Home Loan EMI
                   </h2>
 
                   {/* Loan Amount */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="loan-amount" className="text-lg font-semibold text-gray-700">
                         Loan Amount
                       </Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           id="loan-amount"
                           type="number"
@@ -160,11 +160,11 @@ export default function HomeLoanEMICalculatorPage() {
 
                   {/* Interest Rate */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="interest-rate" className="text-lg font-semibold text-gray-700">
                         Rate of Interest (p.a.)
                       </Label>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           id="interest-rate"
                           type="number"
@@ -175,7 +175,7 @@ export default function HomeLoanEMICalculatorPage() {
                           max="15"
                           step="0.1"
                         />
-                        <span className="text-sm text-gray-500">%</span>
+                        <span className="text-xs md:text-sm text-gray-500">%</span>
                       </div>
                     </div>
                     <Slider
@@ -194,11 +194,11 @@ export default function HomeLoanEMICalculatorPage() {
 
                   {/* Loan Tenure */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="loan-tenure" className="text-lg font-semibold text-gray-700">
                         Loan Tenure
                       </Label>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           id="loan-tenure"
                           type="number"
@@ -208,7 +208,7 @@ export default function HomeLoanEMICalculatorPage() {
                           min="5"
                           max="30"
                         />
-                        <span className="text-sm text-gray-500">Yr</span>
+                        <span className="text-xs md:text-sm text-gray-500">Yr</span>
                       </div>
                     </div>
                     <Slider
@@ -235,7 +235,7 @@ export default function HomeLoanEMICalculatorPage() {
                 {/* Right: Results */}
                 <div className="p-8 lg:p-10 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white">
                   <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
-                    <BarChart3 className="w-8 h-8 mr-3 text-[#FFC857]" />
+                    <BarChart3 className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#FFC857]" />
                     Your Home Loan Summary
                   </h2>
 
@@ -262,7 +262,7 @@ export default function HomeLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Principal Amount</span>
                         <DollarSign className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-white">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-white">
                         {formatCurrency(results.principalAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -276,7 +276,7 @@ export default function HomeLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Total Interest</span>
                         <Percent className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-[#FFC857]">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-[#FFC857]">
                         {formatCurrency(results.totalInterest)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -290,7 +290,7 @@ export default function HomeLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Total Amount Payable</span>
                         <PieChart className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-white">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-white">
                         {formatCurrency(results.totalAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">

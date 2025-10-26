@@ -96,7 +96,7 @@ export default function SWPCalculatorPage() {
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Calculate Systematic Withdrawal Plan from your mutual fund investments. Plan regular monthly income from your corpus while your investment continues to grow.
           </p>
-          <div className="bg-white/10 p-4 rounded-xl mb-8">
+          <div className="bg-white/10 p-3 md:p-4 rounded-xl mb-8">
             <p className="text-lg italic">
               Generate Regular Income While Your Money Keeps Growing<br />
               <strong>Perfect for Retirement Planning & Financial Independence</strong>
@@ -114,24 +114,24 @@ export default function SWPCalculatorPage() {
             <div className="grid lg:grid-cols-2 gap-8">
 
               {/* Input Section */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-                <h2 className="text-2xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-                  <Calculator className="w-6 h-6 mr-2 text-[#2BAE66]" />
+              <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-200">
+                <h2 className="text-xl md:text-xl md:text-2xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+                  <Calculator className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#2BAE66]" />
                   Plan Your Withdrawals
                 </h2>
 
                 <div className="space-y-6">
                   {/* Total Investment */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Total Investment</Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Total Investment</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           type="number"
                           value={totalInvestment}
                           onChange={(e) => setTotalInvestment(Number(e.target.value))}
-                          className="w-32 text-right"
+                          className="w-20 md:w-32 text-right text-sm md:text-base"
                         />
                       </div>
                     </div>
@@ -151,15 +151,15 @@ export default function SWPCalculatorPage() {
 
                   {/* Withdrawal Per Month */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Withdrawal per Month</Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Withdrawal per Month</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           type="number"
                           value={withdrawalPerMonth}
                           onChange={(e) => setWithdrawalPerMonth(Number(e.target.value))}
-                          className="w-32 text-right"
+                          className="w-20 md:w-32 text-right text-sm md:text-base"
                         />
                       </div>
                     </div>
@@ -179,17 +179,17 @@ export default function SWPCalculatorPage() {
 
                   {/* Expected Return Rate */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Expected Return Rate (p.a)</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Expected Return Rate (p.a)</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={expectedReturn}
                           onChange={(e) => setExpectedReturn(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                           step="0.5"
                         />
-                        <span className="text-sm text-gray-500">%</span>
+                        <span className="text-xs md:text-sm text-gray-500">%</span>
                       </div>
                     </div>
                     <Slider
@@ -208,16 +208,16 @@ export default function SWPCalculatorPage() {
 
                   {/* Time Period */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Time Period</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Time Period</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={timePeriod}
                           onChange={(e) => setTimePeriod(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                         />
-                        <span className="text-sm text-gray-500">Years</span>
+                        <span className="text-xs md:text-sm text-gray-500">Years</span>
                       </div>
                     </div>
                     <Slider
@@ -237,16 +237,16 @@ export default function SWPCalculatorPage() {
               </div>
 
               {/* Results Section */}
-              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] p-8 rounded-2xl shadow-xl text-white">
-                <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <TrendingDown className="w-6 h-6 mr-2 text-[#FFC857]" />
+              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] p-4 md:p-8 rounded-2xl shadow-xl text-white">
+                <h2 className="text-xl md:text-2xl font-bold mb-6 flex items-center">
+                  <TrendingDown className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#FFC857]" />
                   Your SWP Results
                 </h2>
 
                 <div className="space-y-4">
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Total Investment</p>
-                    <p className="text-2xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.totalInvestment)}
                     </p>
                     <p className="text-xs text-white/70 mt-1">
@@ -254,9 +254,9 @@ export default function SWPCalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Total Withdrawal</p>
-                    <p className="text-2xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.totalWithdrawal)}
                     </p>
                     <p className="text-xs text-white/70 mt-1">
@@ -264,9 +264,9 @@ export default function SWPCalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/20 p-6 rounded-xl backdrop-blur border-2 border-[#FFC857]">
+                  <div className="bg-white/20 p-4 md:p-6 rounded-xl backdrop-blur border-2 border-[#FFC857]">
                     <p className="text-sm text-white/80 mb-1">Final Value</p>
-                    <p className="text-4xl font-bold text-[#FFC857]">
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.finalValue)}
                     </p>
                     <p className="text-xs text-white/70 mt-2">
@@ -285,7 +285,7 @@ export default function SWPCalculatorPage() {
                     </div>
                   )}
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-xs text-white/70">
                       <strong>Note:</strong> Returns are calculated monthly and compounded. Actual returns may vary based on market conditions and fund performance.
                     </p>
@@ -298,7 +298,7 @@ export default function SWPCalculatorPage() {
           {/* What is SWP Section */}
           <section className="mb-12">
             <div className="bg-gradient-to-r from-[#1A3D7C]/5 to-[#2BAE66]/5 p-8 rounded-2xl border border-[#2BAE66]/20">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+              <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
                 What is a Systematic Withdrawal Plan (SWP)?
               </h2>
               <div className="prose max-w-none text-gray-700 space-y-4">
@@ -317,7 +317,7 @@ export default function SWPCalculatorPage() {
 
           {/* How SWP Works */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               How Does SWP Work?
             </h2>
             <div className="grid md:grid-cols-4 gap-6">
@@ -325,7 +325,7 @@ export default function SWPCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <span className="text-xl font-bold">1</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Invest Your Corpus</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">Invest Your Corpus</h3>
                 <p className="text-gray-700">
                   Start by investing a lump sum amount in a mutual fund scheme of your choice. This forms your corpus for regular withdrawals.
                 </p>
@@ -335,7 +335,7 @@ export default function SWPCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <span className="text-xl font-bold">2</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Set Withdrawal Amount</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">Set Withdrawal Amount</h3>
                 <p className="text-gray-700">
                   Specify the fixed amount you want to withdraw regularly (monthly/quarterly) and the frequency of withdrawals.
                 </p>
@@ -345,7 +345,7 @@ export default function SWPCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <span className="text-xl font-bold">3</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Regular Withdrawals</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">Regular Withdrawals</h3>
                 <p className="text-gray-700">
                   The specified amount is automatically credited to your bank account at regular intervals as per your instruction.
                 </p>
@@ -355,7 +355,7 @@ export default function SWPCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <span className="text-xl font-bold">4</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Corpus Keeps Growing</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">Corpus Keeps Growing</h3>
                 <p className="text-gray-700">
                   The remaining amount continues to stay invested and earn returns, potentially growing your corpus even while withdrawing.
                 </p>
@@ -412,12 +412,12 @@ export default function SWPCalculatorPage() {
 
           {/* SWP vs Other Options */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               SWP vs Other Income Options
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">💰 SWP from Mutual Funds</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">💰 SWP from Mutual Funds</h3>
                 <div className="space-y-2 text-sm">
                   <p className="text-green-600 font-semibold">✓ Advantages:</p>
                   <ul className="text-gray-700 space-y-1 ml-4">
@@ -436,7 +436,7 @@ export default function SWPCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">🏦 Bank FD Interest</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">🏦 Bank FD Interest</h3>
                 <div className="space-y-2 text-sm">
                   <p className="text-green-600 font-semibold">✓ Advantages:</p>
                   <ul className="text-gray-700 space-y-1 ml-4">
@@ -456,7 +456,7 @@ export default function SWPCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">📊 Annuity Plans</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">📊 Annuity Plans</h3>
                 <div className="space-y-2 text-sm">
                   <p className="text-green-600 font-semibold">✓ Advantages:</p>
                   <ul className="text-gray-700 space-y-1 ml-4">
@@ -479,10 +479,10 @@ export default function SWPCalculatorPage() {
 
           {/* Smart Tips Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Smart Tips for Using SWP
             </h2>
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+            <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-200">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex gap-3">
@@ -565,7 +565,7 @@ export default function SWPCalculatorPage() {
 
           {/* FAQs Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">

@@ -82,7 +82,7 @@ export default function PersonalLoanEMICalculatorPage() {
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Calculate EMI for personal loans instantly. Get quick estimates for medical emergencies, weddings, education, travel, or debt consolidation with accurate monthly payment calculations.
           </p>
-          <div className="bg-white/10 p-4 rounded-xl mb-8">
+          <div className="bg-white/10 p-3 md:p-4 rounded-xl mb-8">
             <p className="text-lg italic">
               Instant Approvals, Minimal Documentation, Quick Disbursal<br />
               <strong>Plan Your Personal Loan Repayment Today</strong>
@@ -100,24 +100,24 @@ export default function PersonalLoanEMICalculatorPage() {
             <div className="grid lg:grid-cols-2 gap-8">
 
               {/* Input Section */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-                <h2 className="text-2xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-                  <Calculator className="w-6 h-6 mr-2 text-[#2BAE66]" />
+              <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-200">
+                <h2 className="text-xl md:text-xl md:text-2xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+                  <Calculator className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#2BAE66]" />
                   Calculate Personal Loan EMI
                 </h2>
 
                 <div className="space-y-6">
                   {/* Loan Amount */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Loan Amount</Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Loan Amount</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           type="number"
                           value={loanAmount}
                           onChange={(e) => setLoanAmount(Number(e.target.value))}
-                          className="w-32 text-right"
+                          className="w-20 md:w-32 text-right text-sm md:text-base"
                         />
                       </div>
                     </div>
@@ -137,17 +137,17 @@ export default function PersonalLoanEMICalculatorPage() {
 
                   {/* Interest Rate */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Rate of Interest (p.a.)</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Rate of Interest (p.a.)</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={interestRate}
                           onChange={(e) => setInterestRate(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                           step="0.1"
                         />
-                        <span className="text-sm text-gray-500">%</span>
+                        <span className="text-xs md:text-sm text-gray-500">%</span>
                       </div>
                     </div>
                     <Slider
@@ -166,16 +166,16 @@ export default function PersonalLoanEMICalculatorPage() {
 
                   {/* Loan Tenure */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Loan Tenure</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Loan Tenure</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={loanTenure}
                           onChange={(e) => setLoanTenure(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                         />
-                        <span className="text-sm text-gray-500">Years</span>
+                        <span className="text-xs md:text-sm text-gray-500">Years</span>
                       </div>
                     </div>
                     <Slider
@@ -195,16 +195,16 @@ export default function PersonalLoanEMICalculatorPage() {
               </div>
 
               {/* Results Section */}
-              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] p-8 rounded-2xl shadow-xl text-white">
-                <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <TrendingUp className="w-6 h-6 mr-2 text-[#FFC857]" />
+              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] p-4 md:p-8 rounded-2xl shadow-xl text-white">
+                <h2 className="text-xl md:text-2xl font-bold mb-6 flex items-center">
+                  <TrendingUp className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#FFC857]" />
                   Your EMI Breakdown
                 </h2>
 
                 <div className="space-y-4">
-                  <div className="bg-white/20 p-6 rounded-xl backdrop-blur border-2 border-[#FFC857]">
+                  <div className="bg-white/20 p-4 md:p-6 rounded-xl backdrop-blur border-2 border-[#FFC857]">
                     <p className="text-sm text-white/80 mb-1">Monthly EMI</p>
-                    <p className="text-4xl font-bold text-[#FFC857]">
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.monthlyEMI)}
                     </p>
                     <p className="text-xs text-white/70 mt-2">
@@ -212,9 +212,9 @@ export default function PersonalLoanEMICalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Principal Amount</p>
-                    <p className="text-2xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.principalAmount)}
                     </p>
                     <p className="text-xs text-white/70 mt-1">
@@ -222,9 +222,9 @@ export default function PersonalLoanEMICalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Total Interest</p>
-                    <p className="text-2xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.totalInterest)}
                     </p>
                     <p className="text-xs text-white/70 mt-1">
@@ -232,9 +232,9 @@ export default function PersonalLoanEMICalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Total Amount Payable</p>
-                    <p className="text-2xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.totalAmount)}
                     </p>
                     <p className="text-xs text-white/70 mt-1">
@@ -242,7 +242,7 @@ export default function PersonalLoanEMICalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-xs text-white/70">
                       <strong>Note:</strong> EMI calculations are based on reducing balance method. Actual EMI may vary based on bank processing fees and other charges.
                     </p>
@@ -255,7 +255,7 @@ export default function PersonalLoanEMICalculatorPage() {
           {/* What is Personal Loan Section */}
           <section className="mb-12">
             <div className="bg-gradient-to-r from-[#1A3D7C]/5 to-[#2BAE66]/5 p-8 rounded-2xl border border-[#2BAE66]/20">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+              <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
                 What is a Personal Loan?
               </h2>
               <div className="prose max-w-none text-gray-700 space-y-4">
@@ -274,47 +274,47 @@ export default function PersonalLoanEMICalculatorPage() {
 
           {/* Personal Loan Uses */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Common Uses of Personal Loans
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">💍 Weddings & Events</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">💍 Weddings & Events</h3>
                 <p className="text-gray-700">
                   Cover wedding expenses, engagement ceremonies, destination weddings, or other major life events with flexible repayment options.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">🏥 Medical Emergencies</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">🏥 Medical Emergencies</h3>
                 <p className="text-gray-700">
                   Get instant funds for hospitalization, surgeries, treatments, or medical procedures not covered by insurance.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">🎓 Education Expenses</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">🎓 Education Expenses</h3>
                 <p className="text-gray-700">
                   Finance higher education, professional courses, certifications, or skill development programs for yourself or family.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">🏠 Home Renovation</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">🏠 Home Renovation</h3>
                 <p className="text-gray-700">
                   Upgrade or renovate your home, buy furniture, electronics, or carry out repairs without touching your savings.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">✈️ Travel & Vacation</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">✈️ Travel & Vacation</h3>
                 <p className="text-gray-700">
                   Fund your dream vacation, honeymoon, international trip, or family holiday with easy EMI options.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">💳 Debt Consolidation</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">💳 Debt Consolidation</h3>
                 <p className="text-gray-700">
                   Combine multiple high-interest debts (credit cards, other loans) into one personal loan with lower interest rate.
                 </p>
@@ -355,10 +355,10 @@ export default function PersonalLoanEMICalculatorPage() {
 
           {/* Smart Tips Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Smart Tips for Personal Loans
             </h2>
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+            <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-200">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex gap-3">
@@ -441,7 +441,7 @@ export default function PersonalLoanEMICalculatorPage() {
 
           {/* FAQs Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">

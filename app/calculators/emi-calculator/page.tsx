@@ -87,7 +87,7 @@ export default function EMICalculatorPage() {
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Plan your loan repayment with our free EMI calculator. Whether it's a home loan, car loan, personal loan, or education loan—calculate your monthly installments, total interest, and repayment amount instantly.
           </p>
-          <div className="bg-white/10 p-4 rounded-xl mb-8">
+          <div className="bg-white/10 p-3 md:p-4 rounded-xl mb-8">
             <p className="text-lg italic">
               Smart borrowing starts with knowing your numbers.<br />
               <strong>Calculate your EMI and plan your finances wisely!</strong>
@@ -120,19 +120,19 @@ export default function EMICalculatorPage() {
 
                 {/* Left: Calculator Inputs */}
                 <div className="p-8 lg:p-10 bg-white">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-8 flex items-center">
-                    <Calculator className="w-8 h-8 mr-3 text-[#2BAE66]" />
+                  <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-8 flex items-center">
+                    <Calculator className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
                     Calculate Your EMI
                   </h2>
 
                   {/* Loan Amount */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="loan-amount" className="text-lg font-semibold text-gray-700">
                         Loan Amount
                       </Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           id="loan-amount"
                           type="number"
@@ -160,11 +160,11 @@ export default function EMICalculatorPage() {
 
                   {/* Interest Rate */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="interest-rate" className="text-lg font-semibold text-gray-700">
                         Rate of Interest (p.a.)
                       </Label>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           id="interest-rate"
                           type="number"
@@ -175,7 +175,7 @@ export default function EMICalculatorPage() {
                           max="30"
                           step="0.1"
                         />
-                        <span className="text-sm text-gray-500">%</span>
+                        <span className="text-xs md:text-sm text-gray-500">%</span>
                       </div>
                     </div>
                     <Slider
@@ -194,11 +194,11 @@ export default function EMICalculatorPage() {
 
                   {/* Loan Tenure */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="loan-tenure" className="text-lg font-semibold text-gray-700">
                         Loan Tenure
                       </Label>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           id="loan-tenure"
                           type="number"
@@ -208,7 +208,7 @@ export default function EMICalculatorPage() {
                           min="1"
                           max="30"
                         />
-                        <span className="text-sm text-gray-500">Yr</span>
+                        <span className="text-xs md:text-sm text-gray-500">Yr</span>
                       </div>
                     </div>
                     <Slider
@@ -235,7 +235,7 @@ export default function EMICalculatorPage() {
                 {/* Right: Results */}
                 <div className="p-8 lg:p-10 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white">
                   <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
-                    <BarChart3 className="w-8 h-8 mr-3 text-[#FFC857]" />
+                    <BarChart3 className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#FFC857]" />
                     Your Loan Summary
                   </h2>
 
@@ -262,7 +262,7 @@ export default function EMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Principal Amount</span>
                         <DollarSign className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-white">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-white">
                         {formatCurrency(results.principalAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -276,7 +276,7 @@ export default function EMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Total Interest</span>
                         <Percent className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-[#FFC857]">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-[#FFC857]">
                         {formatCurrency(results.totalInterest)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -290,7 +290,7 @@ export default function EMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Total Amount Payable</span>
                         <PieChart className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-white">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-white">
                         {formatCurrency(results.totalAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -345,8 +345,8 @@ export default function EMICalculatorPage() {
 
           {/* What is an EMI Calculator */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <Lightbulb className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               What is an EMI Calculator?
             </h2>
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
@@ -389,7 +389,7 @@ export default function EMICalculatorPage() {
               </ul>
 
               <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg border border-blue-200">
-                <h4 className="text-lg font-semibold text-[#1A3D7C] mb-3">EMI Formula:</h4>
+                <h4 className="text-lg font-semibold text-[#1A3D7C] mb-3 gap-2">EMI Formula:</h4>
                 <div className="bg-white p-4 rounded-lg mb-4">
                   <p className="text-sm font-mono text-gray-700 mb-2">
                     EMI = [P × R × (1+R)^N] / [(1+R)^N - 1]
@@ -402,7 +402,7 @@ export default function EMICalculatorPage() {
                   </ul>
                 </div>
 
-                <h4 className="text-lg font-semibold text-[#1A3D7C] mb-3">Example Calculation:</h4>
+                <h4 className="text-lg font-semibold text-[#1A3D7C] mb-3 gap-2">Example Calculation:</h4>
                 <p className="text-gray-700 mb-4">
                   Loan: <strong>₹10,00,000</strong> | Interest: <strong>8.5% p.a.</strong> | Tenure: <strong>10 years</strong>
                 </p>
@@ -430,8 +430,8 @@ export default function EMICalculatorPage() {
 
           {/* How the EMI Calculator Can Help You */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <Target className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <Target className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               How the EMI Calculator Can Help You
             </h2>
             <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
@@ -492,13 +492,13 @@ export default function EMICalculatorPage() {
 
           {/* Types of Loans in India */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <CreditCard className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <CreditCard className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               Types of Loans You Can Calculate
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🏠</span>
                   </div>
@@ -508,7 +508,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🚗</span>
                   </div>
@@ -518,7 +518,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">💼</span>
                   </div>
@@ -528,7 +528,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🎓</span>
                   </div>
@@ -538,7 +538,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🏢</span>
                   </div>
@@ -548,7 +548,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🏍️</span>
                   </div>
@@ -561,13 +561,13 @@ export default function EMICalculatorPage() {
 
           {/* Features */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <BarChart3 className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <BarChart3 className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               Features of The Tutor Bridge EMI Calculator
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <TrendingUp className="w-5 h-5" />
                   </div>
@@ -577,7 +577,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <Calculator className="w-5 h-5" />
                   </div>
@@ -587,7 +587,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <PieChart className="w-5 h-5" />
                   </div>
@@ -597,7 +597,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <Target className="w-5 h-5" />
                   </div>
@@ -607,7 +607,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">📱</span>
                   </div>
@@ -617,7 +617,7 @@ export default function EMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🇮🇳</span>
                   </div>
@@ -630,8 +630,8 @@ export default function EMICalculatorPage() {
 
           {/* Step-by-Step Guide */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <CheckCircle className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <CheckCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               How to Use the EMI Calculator
             </h2>
             <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
@@ -678,8 +678,8 @@ export default function EMICalculatorPage() {
 
           {/* FAQs */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <HelpCircle className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <HelpCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               Frequently Asked Questions (FAQs)
             </h2>
             <div className="space-y-4">
@@ -739,8 +739,8 @@ export default function EMICalculatorPage() {
 
           {/* Tips Section */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <Lightbulb className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               Smart Tips for Managing Your Loan EMI
             </h2>
             <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl border border-green-200">

@@ -92,13 +92,13 @@ export default function SSYCalculatorPage() {
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6">
             Calculate maturity amount for your daughter's future with SSY - a government-backed savings scheme offering 8.2% interest rate with complete tax benefits.
           </p>
-          <div className="bg-white/10 p-4 rounded-xl mb-4">
-            <p className="text-2xl font-bold text-[#FFC857]">
+          <div className="bg-white/10 p-3 md:p-4 rounded-xl mb-4">
+            <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
               Latest SSY Rate = {SSY_INTEREST_RATE}%
             </p>
             <p className="text-sm text-white/80 mt-1">Compounded Annually | Fully Tax-Free Returns</p>
           </div>
-          <div className="bg-white/10 p-4 rounded-xl">
+          <div className="bg-white/10 p-3 md:p-4 rounded-xl">
             <p className="text-lg italic">
               Beti Bachao, Beti Padhao - Secure Your Daughter's Future<br />
               <strong>Government-backed | Tax Benefits under Section 80C</strong>
@@ -116,24 +116,24 @@ export default function SSYCalculatorPage() {
             <div className="grid lg:grid-cols-2 gap-8">
 
               {/* Input Section */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-                <h2 className="text-2xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-                  <Calculator className="w-6 h-6 mr-2 text-[#2BAE66]" />
+              <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-200">
+                <h2 className="text-xl md:text-xl md:text-2xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+                  <Calculator className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#2BAE66]" />
                   Calculate SSY Maturity Amount
                 </h2>
 
                 <div className="space-y-6">
                   {/* Yearly Investment */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Yearly Investment</Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Yearly Investment</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           type="number"
                           value={yearlyInvestment}
                           onChange={(e) => setYearlyInvestment(Number(e.target.value))}
-                          className="w-32 text-right"
+                          className="w-20 md:w-32 text-right text-sm md:text-base"
                         />
                       </div>
                     </div>
@@ -156,16 +156,16 @@ export default function SSYCalculatorPage() {
 
                   {/* Girl's Age */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Girl's Age</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Girl's Age</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={girlAge}
                           onChange={(e) => setGirlAge(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                         />
-                        <span className="text-sm text-gray-500">Years</span>
+                        <span className="text-xs md:text-sm text-gray-500">Years</span>
                       </div>
                     </div>
                     <Slider
@@ -187,14 +187,14 @@ export default function SSYCalculatorPage() {
 
                   {/* Start Year */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Start Period</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Start Period</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={startYear}
                           onChange={(e) => setStartYear(Number(e.target.value))}
-                          className="w-28 text-right"
+                          className="w-20 md:w-28 text-right text-sm md:text-base"
                         />
                       </div>
                     </div>
@@ -218,16 +218,16 @@ export default function SSYCalculatorPage() {
               </div>
 
               {/* Results Section */}
-              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] p-8 rounded-2xl shadow-xl text-white">
-                <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <TrendingUp className="w-6 h-6 mr-2 text-[#FFC857]" />
+              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] p-4 md:p-8 rounded-2xl shadow-xl text-white">
+                <h2 className="text-xl md:text-2xl font-bold mb-6 flex items-center">
+                  <TrendingUp className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#FFC857]" />
                   Your SSY Maturity Details
                 </h2>
 
                 <div className="space-y-4">
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Total Investment</p>
-                    <p className="text-2xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.totalInvestment)}
                     </p>
                     <p className="text-xs text-white/70 mt-1">
@@ -235,9 +235,9 @@ export default function SSYCalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Total Interest</p>
-                    <p className="text-2xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.totalInterest)}
                     </p>
                     <p className="text-xs text-white/70 mt-1">
@@ -245,9 +245,9 @@ export default function SSYCalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Maturity Year</p>
-                    <p className="text-2xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl font-bold break-words text-[#FFC857]">
                       {results.maturityYear}
                     </p>
                     <p className="text-xs text-white/70 mt-1">
@@ -255,9 +255,9 @@ export default function SSYCalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/20 p-6 rounded-xl backdrop-blur border-2 border-[#FFC857]">
+                  <div className="bg-white/20 p-4 md:p-6 rounded-xl backdrop-blur border-2 border-[#FFC857]">
                     <p className="text-sm text-white/80 mb-1">Maturity Value</p>
-                    <p className="text-4xl font-bold text-[#FFC857]">
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.maturityValue)}
                     </p>
                     <p className="text-xs text-white/70 mt-2">
@@ -265,7 +265,7 @@ export default function SSYCalculatorPage() {
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-xs text-white/70">
                       <strong>Note:</strong> Interest rate is subject to quarterly revision by the Government of India. Current rate: {SSY_INTEREST_RATE}% (Q4 2024-25).
                     </p>
@@ -278,7 +278,7 @@ export default function SSYCalculatorPage() {
           {/* What is SSY Section */}
           <section className="mb-12">
             <div className="bg-gradient-to-r from-[#1A3D7C]/5 to-[#2BAE66]/5 p-8 rounded-2xl border border-[#2BAE66]/20">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+              <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
                 What is Sukanya Samriddhi Yojana (SSY)?
               </h2>
               <div className="prose max-w-none text-gray-700 space-y-4">
@@ -297,7 +297,7 @@ export default function SSYCalculatorPage() {
 
           {/* Key Features Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Key Features of Sukanya Samriddhi Yojana
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -305,7 +305,7 @@ export default function SSYCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <TrendingUp className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">High Interest Rate</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">High Interest Rate</h3>
                 <p className="text-gray-700">
                   Current interest rate of 8.2% p.a. compounded annually - one of the highest among all government savings schemes.
                 </p>
@@ -315,7 +315,7 @@ export default function SSYCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Triple Tax Benefits</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">Triple Tax Benefits</h3>
                 <p className="text-gray-700">
                   Eligible for deduction under Section 80C, interest earned is tax-free, and maturity amount is completely tax-exempt (EEE status).
                 </p>
@@ -325,7 +325,7 @@ export default function SSYCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <GraduationCap className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Partial Withdrawal</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">Partial Withdrawal</h3>
                 <p className="text-gray-700">
                   Withdraw up to 50% of the balance after the girl turns 18 for higher education expenses without penalty.
                 </p>
@@ -335,10 +335,10 @@ export default function SSYCalculatorPage() {
 
           {/* How SSY Works */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               How Does Sukanya Samriddhi Yojana Work?
             </h2>
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+            <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-200">
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="w-10 h-10 bg-[#2BAE66] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">
@@ -444,12 +444,12 @@ export default function SSYCalculatorPage() {
 
           {/* Benefits Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Benefits of Sukanya Samriddhi Yojana
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="flex gap-3 mb-3">
+                <div className="flex gap-3 mb-3 gap-2">
                   <Shield className="w-6 h-6 text-[#2BAE66] flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-[#1A3D7C] mb-2">Government-Backed Security</h3>
@@ -461,7 +461,7 @@ export default function SSYCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="flex gap-3 mb-3">
+                <div className="flex gap-3 mb-3 gap-2">
                   <TrendingUp className="w-6 h-6 text-[#2BAE66] flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-[#1A3D7C] mb-2">Highest Returns Among Small Savings</h3>
@@ -473,7 +473,7 @@ export default function SSYCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="flex gap-3 mb-3">
+                <div className="flex gap-3 mb-3 gap-2">
                   <Heart className="w-6 h-6 text-[#2BAE66] flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-[#1A3D7C] mb-2">Complete Tax Exemption (EEE)</h3>
@@ -485,7 +485,7 @@ export default function SSYCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="flex gap-3 mb-3">
+                <div className="flex gap-3 mb-3 gap-2">
                   <GraduationCap className="w-6 h-6 text-[#2BAE66] flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-[#1A3D7C] mb-2">Flexible Withdrawal for Education</h3>
@@ -497,7 +497,7 @@ export default function SSYCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="flex gap-3 mb-3">
+                <div className="flex gap-3 mb-3 gap-2">
                   <Calculator className="w-6 h-6 text-[#2BAE66] flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-[#1A3D7C] mb-2">Low Minimum Investment</h3>
@@ -509,7 +509,7 @@ export default function SSYCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div className="flex gap-3 mb-3">
+                <div className="flex gap-3 mb-3 gap-2">
                   <ArrowRight className="w-6 h-6 text-[#2BAE66] flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-[#1A3D7C] mb-2">Easy Account Transfer</h3>
@@ -524,7 +524,7 @@ export default function SSYCalculatorPage() {
 
           {/* FAQs Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">

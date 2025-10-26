@@ -87,7 +87,7 @@ export default function CarLoanEMICalculatorPage() {
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Planning to buy your dream car? Use our free car loan EMI calculator to estimate monthly payments for new and used car loans. Calculate EMI, total interest, and down payment requirements instantly.
           </p>
-          <div className="bg-white/10 p-4 rounded-xl mb-8">
+          <div className="bg-white/10 p-3 md:p-4 rounded-xl mb-8">
             <p className="text-lg italic">
               Your dream car is closer than you think!<br />
               <strong>Calculate your car loan EMI and drive away with confidence.</strong>
@@ -120,19 +120,19 @@ export default function CarLoanEMICalculatorPage() {
 
                 {/* Left: Calculator Inputs */}
                 <div className="p-8 lg:p-10 bg-white">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-8 flex items-center">
-                    <Calculator className="w-8 h-8 mr-3 text-[#2BAE66]" />
+                  <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-8 flex items-center">
+                    <Calculator className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
                     Calculate Your Car Loan EMI
                   </h2>
 
                   {/* Loan Amount */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="loan-amount" className="text-lg font-semibold text-gray-700">
                         Loan Amount
                       </Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           id="loan-amount"
                           type="number"
@@ -160,11 +160,11 @@ export default function CarLoanEMICalculatorPage() {
 
                   {/* Interest Rate */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="interest-rate" className="text-lg font-semibold text-gray-700">
                         Rate of Interest (p.a.)
                       </Label>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           id="interest-rate"
                           type="number"
@@ -175,7 +175,7 @@ export default function CarLoanEMICalculatorPage() {
                           max="18"
                           step="0.1"
                         />
-                        <span className="text-sm text-gray-500">%</span>
+                        <span className="text-xs md:text-sm text-gray-500">%</span>
                       </div>
                     </div>
                     <Slider
@@ -194,11 +194,11 @@ export default function CarLoanEMICalculatorPage() {
 
                   {/* Loan Tenure */}
                   <div className="mb-8">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3 gap-2">
                       <Label htmlFor="loan-tenure" className="text-lg font-semibold text-gray-700">
                         Loan Tenure
                       </Label>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           id="loan-tenure"
                           type="number"
@@ -208,7 +208,7 @@ export default function CarLoanEMICalculatorPage() {
                           min="1"
                           max="7"
                         />
-                        <span className="text-sm text-gray-500">Yr</span>
+                        <span className="text-xs md:text-sm text-gray-500">Yr</span>
                       </div>
                     </div>
                     <Slider
@@ -235,7 +235,7 @@ export default function CarLoanEMICalculatorPage() {
                 {/* Right: Results */}
                 <div className="p-8 lg:p-10 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white">
                   <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
-                    <BarChart3 className="w-8 h-8 mr-3 text-[#FFC857]" />
+                    <BarChart3 className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#FFC857]" />
                     Your Car Loan Summary
                   </h2>
 
@@ -262,7 +262,7 @@ export default function CarLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Principal Amount</span>
                         <DollarSign className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-white">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-white">
                         {formatCurrency(results.principalAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -276,7 +276,7 @@ export default function CarLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Total Interest</span>
                         <Percent className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-[#FFC857]">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-[#FFC857]">
                         {formatCurrency(results.totalInterest)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -290,7 +290,7 @@ export default function CarLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Total Amount Payable</span>
                         <PieChart className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-4xl font-bold text-white">
+                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-white">
                         {formatCurrency(results.totalAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -345,8 +345,8 @@ export default function CarLoanEMICalculatorPage() {
 
           {/* What is a Car Loan EMI Calculator */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <Lightbulb className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               What is a Car Loan EMI Calculator?
             </h2>
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
@@ -383,7 +383,7 @@ export default function CarLoanEMICalculatorPage() {
               </ul>
 
               <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg border border-blue-200 mt-6">
-                <h4 className="text-lg font-semibold text-[#1A3D7C] mb-3">Car Loan Example:</h4>
+                <h4 className="text-lg font-semibold text-[#1A3D7C] mb-3 gap-2">Car Loan Example:</h4>
                 <p className="text-gray-700 mb-4">
                   You want to buy a car worth <strong>₹8,00,000</strong>. You pay <strong>₹2,00,000 as down payment</strong>, so you need a loan of <strong>₹6,00,000</strong> at <strong>9% interest</strong> for <strong>5 years</strong>.
                 </p>
@@ -411,13 +411,13 @@ export default function CarLoanEMICalculatorPage() {
 
           {/* Car Loan Types */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <Car className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <Car className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               Types of Car Loans in India
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🚗</span>
                   </div>
@@ -432,7 +432,7 @@ export default function CarLoanEMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🔄</span>
                   </div>
@@ -447,7 +447,7 @@ export default function CarLoanEMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">⚡</span>
                   </div>
@@ -462,7 +462,7 @@ export default function CarLoanEMICalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:border-[#2BAE66] transition-all">
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-3 gap-2">
                   <div className="w-10 h-10 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3">
                     <span className="text-lg">🔁</span>
                   </div>
@@ -480,8 +480,8 @@ export default function CarLoanEMICalculatorPage() {
 
           {/* How to Get Best Car Loan */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <Target className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <Target className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               How to Get the Best Car Loan Deal
             </h2>
             <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
@@ -539,8 +539,8 @@ export default function CarLoanEMICalculatorPage() {
 
           {/* FAQs */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <HelpCircle className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <HelpCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               Car Loan FAQs
             </h2>
             <div className="space-y-4">
@@ -600,8 +600,8 @@ export default function CarLoanEMICalculatorPage() {
 
           {/* Tips Section */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <Lightbulb className="w-8 h-8 mr-3 text-[#2BAE66]" />
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+              <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
               Smart Tips for Car Loan Buyers
             </h2>
             <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl border border-green-200">

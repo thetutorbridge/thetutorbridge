@@ -82,7 +82,7 @@ export default function FDCalculatorPage() {
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Calculate your Fixed Deposit returns with our free FD calculator. Get instant maturity amount and interest calculations with quarterly compounding for accurate financial planning.
           </p>
-          <div className="bg-white/10 p-4 rounded-xl mb-8">
+          <div className="bg-white/10 p-3 md:p-4 rounded-xl mb-8">
             <p className="text-lg italic">
               Fixed Deposits offer guaranteed returns and capital protection.<br />
               <strong>Plan Your Safe Investment Journey Today</strong>
@@ -100,24 +100,24 @@ export default function FDCalculatorPage() {
             <div className="grid lg:grid-cols-2 gap-8">
 
               {/* Input Section */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-                <h2 className="text-2xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-                  <Calculator className="w-6 h-6 mr-2 text-[#2BAE66]" />
+              <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-200">
+                <h2 className="text-xl md:text-xl md:text-2xl font-bold break-words text-[#1A3D7C] mb-6 flex items-center">
+                  <Calculator className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#2BAE66]" />
                   Calculate Your FD Returns
                 </h2>
 
                 <div className="space-y-6">
                   {/* Total Investment */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Total Investment</Label>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">₹</span>
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Total Investment</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="text-xs md:text-sm text-gray-500">₹</span>
                         <Input
                           type="number"
                           value={totalInvestment}
                           onChange={(e) => setTotalInvestment(Number(e.target.value))}
-                          className="w-32 text-right"
+                          className="w-20 md:w-32 text-right text-sm md:text-base"
                         />
                       </div>
                     </div>
@@ -137,17 +137,17 @@ export default function FDCalculatorPage() {
 
                   {/* Rate of Interest */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Rate of Interest (p.a.)</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Rate of Interest (p.a.)</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={interestRate}
                           onChange={(e) => setInterestRate(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                           step="0.1"
                         />
-                        <span className="text-sm text-gray-500">%</span>
+                        <span className="text-xs md:text-sm text-gray-500">%</span>
                       </div>
                     </div>
                     <Slider
@@ -166,16 +166,16 @@ export default function FDCalculatorPage() {
 
                   {/* Time Period - Years */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Time Period - Years</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Time Period - Years</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={years}
                           onChange={(e) => setYears(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                         />
-                        <span className="text-sm text-gray-500">Years</span>
+                        <span className="text-xs md:text-sm text-gray-500">Years</span>
                       </div>
                     </div>
                     <Slider
@@ -194,18 +194,18 @@ export default function FDCalculatorPage() {
 
                   {/* Time Period - Months */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Time Period - Months</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Time Period - Months</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={months}
                           onChange={(e) => setMonths(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                           min="0"
                           max="11"
                         />
-                        <span className="text-sm text-gray-500">Months</span>
+                        <span className="text-xs md:text-sm text-gray-500">Months</span>
                       </div>
                     </div>
                     <Slider
@@ -224,18 +224,18 @@ export default function FDCalculatorPage() {
 
                   {/* Time Period - Days */}
                   <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <Label className="text-gray-700 font-semibold">Time Period - Days</Label>
-                      <div className="flex items-center gap-2">
+                    <div className="flex justify-between items-center mb-3 gap-2">
+                      <Label className="text-sm md:text-base font-semibold text-gray-700 flex-shrink-0">Time Period - Days</Label>
+                      <div className="flex items-center gap-1 md:gap-2">
                         <Input
                           type="number"
                           value={days}
                           onChange={(e) => setDays(Number(e.target.value))}
-                          className="w-24 text-right"
+                          className="w-16 md:w-24 text-right text-sm md:text-base"
                           min="0"
                           max="30"
                         />
-                        <span className="text-sm text-gray-500">Days</span>
+                        <span className="text-xs md:text-sm text-gray-500">Days</span>
                       </div>
                     </div>
                     <Slider
@@ -255,35 +255,35 @@ export default function FDCalculatorPage() {
               </div>
 
               {/* Results Section */}
-              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] p-8 rounded-2xl shadow-xl text-white">
-                <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <TrendingUp className="w-6 h-6 mr-2 text-[#FFC857]" />
+              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] p-4 md:p-8 rounded-2xl shadow-xl text-white">
+                <h2 className="text-xl md:text-2xl font-bold mb-6 flex items-center">
+                  <TrendingUp className="w-5 h-5 md:w-6 md:h-6 mr-2 text-[#FFC857]" />
                   Your FD Returns
                 </h2>
 
                 <div className="space-y-6">
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Invested Amount</p>
-                    <p className="text-3xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.investedAmount)}
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-sm text-white/80 mb-1">Estimated Returns</p>
-                    <p className="text-3xl font-bold text-[#FFC857]">
+                    <p className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.estimatedReturns)}
                     </p>
                   </div>
 
-                  <div className="bg-white/20 p-6 rounded-xl backdrop-blur border-2 border-[#FFC857]">
+                  <div className="bg-white/20 p-4 md:p-6 rounded-xl backdrop-blur border-2 border-[#FFC857]">
                     <p className="text-sm text-white/80 mb-1">Total Maturity Value</p>
-                    <p className="text-4xl font-bold text-[#FFC857]">
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-bold break-words text-[#FFC857]">
                       {formatCurrency(results.totalValue)}
                     </p>
                   </div>
 
-                  <div className="bg-white/10 p-4 rounded-xl backdrop-blur">
+                  <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-xs text-white/70 mb-2">
                       <strong>Note:</strong> Calculations are based on quarterly compounding, which is standard for most FDs in India.
                     </p>
@@ -296,7 +296,7 @@ export default function FDCalculatorPage() {
           {/* What is FD Calculator Section */}
           <section className="mb-12">
             <div className="bg-gradient-to-r from-[#1A3D7C]/5 to-[#2BAE66]/5 p-8 rounded-2xl border border-[#2BAE66]/20">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+              <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
                 What is an FD Calculator?
               </h2>
               <div className="prose max-w-none text-gray-700 space-y-4">
@@ -312,7 +312,7 @@ export default function FDCalculatorPage() {
 
           {/* How FD Calculator Works */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               How Does the FD Calculator Work?
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -320,7 +320,7 @@ export default function FDCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <span className="text-xl font-bold">1</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Enter FD Details</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">Enter FD Details</h3>
                 <p className="text-gray-700">
                   Input your total investment amount, expected interest rate (p.a.), and investment tenure in years.
                 </p>
@@ -330,7 +330,7 @@ export default function FDCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <span className="text-xl font-bold">2</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Instant Calculation</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">Instant Calculation</h3>
                 <p className="text-gray-700">
                   The calculator uses quarterly compounding formula: A = P(1 + r/n)^(nt) to compute your returns instantly.
                 </p>
@@ -340,7 +340,7 @@ export default function FDCalculatorPage() {
                 <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center mb-4">
                   <span className="text-xl font-bold">3</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">View Results</h3>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">View Results</h3>
                 <p className="text-gray-700">
                   Get a clear breakdown of invested amount, interest earned, and total maturity value at a glance.
                 </p>
@@ -397,13 +397,13 @@ export default function FDCalculatorPage() {
 
           {/* Types of FDs Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Types of Fixed Deposits in India
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">🏦 Bank Fixed Deposits</h3>
-                <p className="text-gray-700 mb-3">
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">🏦 Bank Fixed Deposits</h3>
+                <p className="text-gray-700 mb-3 gap-2">
                   Offered by nationalized and private banks with interest rates ranging from 3% to 7.5% p.a. Insured by DICGC up to ₹5 lakhs.
                 </p>
                 <p className="text-sm text-gray-600">
@@ -412,8 +412,8 @@ export default function FDCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">📮 Post Office FDs (Time Deposits)</h3>
-                <p className="text-gray-700 mb-3">
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">📮 Post Office FDs (Time Deposits)</h3>
+                <p className="text-gray-700 mb-3 gap-2">
                   Government-backed fixed deposits with competitive interest rates and tax benefits under Section 80C (for 5-year TD).
                 </p>
                 <p className="text-sm text-gray-600">
@@ -422,8 +422,8 @@ export default function FDCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">🏢 Corporate Fixed Deposits</h3>
-                <p className="text-gray-700 mb-3">
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">🏢 Corporate Fixed Deposits</h3>
+                <p className="text-gray-700 mb-3 gap-2">
                   Offered by companies and NBFCs with higher interest rates (7% to 9% p.a.) but carry higher risk compared to bank FDs.
                 </p>
                 <p className="text-sm text-gray-600">
@@ -432,8 +432,8 @@ export default function FDCalculatorPage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">👴 Senior Citizen FDs</h3>
-                <p className="text-gray-700 mb-3">
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3 gap-2">👴 Senior Citizen FDs</h3>
+                <p className="text-gray-700 mb-3 gap-2">
                   Special FD schemes for senior citizens (60+ years) offering 0.25% to 0.75% higher interest rates than regular FDs.
                 </p>
                 <p className="text-sm text-gray-600">
@@ -445,10 +445,10 @@ export default function FDCalculatorPage() {
 
           {/* Smart Tips Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Smart Tips for FD Investments
             </h2>
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+            <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-200">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex gap-3">
@@ -531,7 +531,7 @@ export default function FDCalculatorPage() {
 
           {/* FAQs Section */}
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#1A3D7C] mb-6">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">
