@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet } from 'lucide-react';
+import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
@@ -157,6 +157,30 @@ export default function CalculatorsPage() {
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Fixed Deposits</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Guaranteed Returns</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Safe Investment</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* PPF Calculator Card */}
+              <Link href="/calculators/ppf-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Landmark className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">PPF Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate Public Provident Fund maturity with 7.1% interest. Government-backed scheme with EEE tax benefits, 15-year lock-in, and completely tax-free returns.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tax Free</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">7.1% Interest</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Govt Backed</span>
                   </div>
                 </div>
               </Link>
