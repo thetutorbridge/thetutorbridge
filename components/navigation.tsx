@@ -30,6 +30,9 @@ export function Navigation() {
           <Link href="/study-resources" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Study Resources
           </Link>
+          <Link href="/calculators" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
+            Calculators
+          </Link>
           <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Blog
           </Link>
@@ -66,6 +69,9 @@ export function Navigation() {
               </Link>
               <Link href="/study-resources" className="block py-2 text-gray-700">
                 Study Resources
+              </Link>
+              <Link href="/calculators" className="block py-2 text-gray-700">
+                Calculators
               </Link>
               <Link href="/blog" className="block py-2 text-gray-700">
                 Blog
