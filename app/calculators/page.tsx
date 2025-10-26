@@ -329,6 +329,30 @@ export default function CalculatorsPage() {
                 </div>
               </Link>
 
+              {/* Lumpsum Calculator Card */}
+              <Link href="/calculators/lumpsum-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <PiggyBank className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Lumpsum Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate returns on one-time investments. Estimate future value with compound interest, visualize wealth growth with interactive charts and projections.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">One-time Investment</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Compound Interest</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Wealth Growth</span>
+                  </div>
+                </div>
+              </Link>
+
               {/* EMI Calculator Card */}
               <Link href="/calculators/emi-calculator" className="block h-full">
                 <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
