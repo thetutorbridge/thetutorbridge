@@ -315,17 +315,166 @@ export default function CompoundInterestCalculatorPage() {
             </div>
           </section>
 
+          {/* Benefits Section */}
           <section className="mb-12">
-            <div className="prose max-w-none">
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong>Compound Interest</strong> is interest calculated on both the initial principal and the accumulated interest from previous periods. Unlike simple interest which is calculated only on principal, compound interest grows exponentially as interest earns interest.
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <Target className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+              Benefits of Compound Interest Calculator
+            </h2>
+            <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
+                Understanding compound interest is the foundation of wealth creation. Our calculator helps you visualize how your money grows exponentially when interest earns interest:
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Our <strong>Compound Interest Calculator</strong> helps you see how your money grows with different compounding frequencies. The more frequently interest is compounded, the faster your money grows—this is the true power of compounding!
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Albert Einstein reportedly called compound interest "the eighth wonder of the world," saying "he who understands it, earns it; he who doesn't, pays it." Start understanding and earning it today!
-              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Exponential Growth Visualization
+                  </h3>
+                  <p className="text-white/90">See how compound interest creates exponential growth compared to simple interest. Over 20 years at 8%, ₹1L grows to ₹4.66L with compounding vs ₹2.6L with simple interest.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Compare Compounding Frequencies
+                  </h3>
+                  <p className="text-white/90">Understand the impact of yearly, half-yearly, quarterly, and monthly compounding. Higher frequency means faster growth and better returns on investments.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Investment Planning
+                  </h3>
+                  <p className="text-white/90">Plan fixed deposits, bonds, debt funds, and other compound interest investments. Calculate exact maturity amounts for different time periods and rates.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Loan Cost Understanding
+                  </h3>
+                  <p className="text-white/90">Understand true cost of loans with compound interest. Credit cards, personal loans compound monthly—see how quickly debt grows if unpaid.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Time Value of Money
+                  </h3>
+                  <p className="text-white/90">Calculate how long it takes to double your money at different interest rates. Apply Rule of 72 (Years to double = 72/Interest Rate) and verify with calculator.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Financial Literacy Tool
+                  </h3>
+                  <p className="text-white/90">Perfect for students learning about compound interest in mathematics or economics. Visualize abstract concepts with real money examples.</p>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-[#FFC857] text-[#1A3D7C] rounded-lg">
+                <p className="font-semibold">
+                  💡 Pro Tip: Albert Einstein called compound interest "the eighth wonder of the world"—those who understand it earn it, those who don't pay it! Start early to maximize exponential growth.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs */}
+          <section className="mb-12">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <HelpCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+              Compound Interest Calculator FAQs
+            </h2>
+            <div className="space-y-4">
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">1. What is compound interest and how is it different from simple interest?</h3>
+                <p className="text-gray-700">Compound interest is interest calculated on <strong>principal + accumulated interest</strong>, while simple interest is calculated only on principal. Formula: A = P(1 + r/n)^(nt). Example: ₹10,000 at 10% for 5 years gives ₹15,000 (simple) vs ₹16,105 (compound annually)—₹1,105 extra!</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">2. How does compounding frequency affect returns?</h3>
+                <p className="text-gray-700"><strong>Higher frequency = better returns.</strong> ₹1L at 12% for 10 years: Yearly compounding = ₹3.11L, Quarterly = ₹3.26L, Monthly = ₹3.30L. Monthly compounding gives ₹19,000 more than yearly! Banks/FDs usually compound quarterly.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">3. What is the Rule of 72 in compound interest?</h3>
+                <p className="text-gray-700">Quick formula to estimate doubling time: <strong>Years to double = 72 ÷ Interest Rate</strong>. At 8% rate, money doubles in 72/8 = 9 years. At 12%, it doubles in 6 years. Useful mental math for comparing investments!</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">4. Which investments use compound interest in India?</h3>
+                <p className="text-gray-700"><strong>Investments:</strong> Fixed Deposits (quarterly), PPF (yearly), Debt Mutual Funds, Bonds, RDs. <strong>Loans:</strong> Credit cards (monthly), personal loans, home loans (reducing balance = compound-like). Most interest-bearing products use compounding.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">5. Can compound interest work against me?</h3>
+                <p className="text-gray-700">Yes! With debt. <strong>Credit card debt compounds monthly</strong> at 36-42% annually. ₹50,000 unpaid becomes ₹73,000 in just 1 year with 3% monthly compounding. This is why minimum payment traps are dangerous—interest compounds on interest!</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">6. What's the power of starting early with compound interest?</h3>
+                <p className="text-gray-700"><strong>Time is more powerful than amount!</strong> Investing ₹5,000/month from age 25-35 (₹6L invested) beats ₹5,000/month from 35-60 (₹15L invested) at 12% return. Starting 10 years early creates ₹1+ crore difference! Start young, let compounding work magic.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">7. How do banks calculate FD interest—simple or compound?</h3>
+                <p className="text-gray-700">Banks use <strong>compound interest with quarterly compounding</strong> for most FDs. Some offer monthly interest payouts (like simple interest for cashflow) vs cumulative FDs (quarterly compounding for growth). Cumulative FDs give higher returns due to compounding.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">8. What is continuous compounding?</h3>
+                <p className="text-gray-700">Theoretical maximum compounding where interest is calculated <strong>every instant (infinite frequency)</strong>. Formula: A = Pe^(rt). Used in advanced finance but rare in real investments. Monthly compounding is close enough for practical purposes.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">9. Does inflation reduce compound interest benefits?</h3>
+                <p className="text-gray-700">Yes. Calculate <strong>real return = nominal return - inflation</strong>. If FD gives 7% compound interest but inflation is 6%, real growth is only 1%. Choose investments with returns beating inflation (8-10%+ for equity, 6-7% for debt).</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">10. Can I use this calculator for SIP or recurring investments?</h3>
+                <p className="text-gray-700">No. This calculator is for <strong>one-time lump sum investments</strong> only. For monthly SIPs, use SIP Calculator which accounts for recurring deposits. Compound interest calculator assumes entire principal is invested upfront and compounds over time.</p>
+              </div>
+
+            </div>
+          </section>
+
+          {/* Tips Section */}
+          <section className="mb-12">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+              Smart Tips for Maximizing Compound Interest
+            </h2>
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl border border-green-200">
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Start as early as possible:</strong> Time is the most powerful factor in compounding. Starting at 25 vs 35 can mean 2-3x more wealth at retirement, even with same monthly investment amount.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Choose higher compounding frequency:</strong> When comparing FDs/bonds, choose monthly or quarterly compounding over yearly. The difference grows significantly over 5-10 years.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Reinvest dividends and interest:</strong> Don't withdraw interest earned. Let it compound. Choose growth/cumulative options over dividend/interest payout options for maximum compounding benefit.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Focus on rate of return:</strong> 2-3% higher return rate has massive long-term impact. 10% vs 12% on ₹10L for 20 years = ₹67L vs ₹96L—₹29L difference just from 2% more!</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Avoid breaking investments early:</strong> Early withdrawal kills compounding. Last 5 years of 20-year investment generate more returns than first 10 years combined due to exponential growth.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Pay off high-interest debt first:</strong> Compound interest works against you in debt. Paying 18% credit card interest is worse than missing 8% FD returns. Always prioritize debt clearance.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>For students:</strong> Even small amounts compound to large sums. ₹1,000/month from age 20-30 at 12% becomes ₹2.3L. Leave it till 60 without adding more = ₹52L! Start your compounding journey early.</p>
+                </li>
+              </ul>
             </div>
           </section>
 
