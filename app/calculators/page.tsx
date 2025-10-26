@@ -185,6 +185,30 @@ export default function CalculatorsPage() {
                 </div>
               </Link>
 
+              {/* Personal Loan EMI Calculator Card */}
+              <Link href="/calculators/personal-loan-emi-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Wallet className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Personal Loan EMI Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate monthly payments for unsecured personal loans. Perfect for medical emergencies, weddings, education, travel, or debt consolidation with instant approval.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Instant Approval</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Flexible Use</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quick Disbursal</span>
+                  </div>
+                </div>
+              </Link>
+
               {/* Car Loan EMI Calculator Card */}
               <Link href="/calculators/car-loan-emi-calculator" className="block h-full">
                 <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
