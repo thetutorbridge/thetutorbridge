@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calculator, TrendingUp, Home, Plus, Trash2, IndianRupee } from 'lucide-react';
+import { ArrowLeft, Calculator, TrendingUp, Home, Plus, Trash2, IndianRupee, Target, CheckCircle, HelpCircle, Lightbulb } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
