@@ -214,99 +214,164 @@ export default function StockAverageCalculatorPage() {
 
           {/* Content Sections */}
           <div className="mt-12 md:mt-16 space-y-8 md:space-y-12">
-            {/* What is Stock Average Calculator */}
+            {/* Benefits Section */}
             <section className="bg-white rounded-xl md:rounded-2xl shadow-lg p-6 md:p-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
-                What is a Stock Average Calculator?
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+                <Target className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+                Benefits of Stock Average Calculator
               </h2>
-              <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-                <p>
-                  A Stock Average Calculator helps investors calculate the average purchase price of stocks across multiple transactions. This is particularly useful when you buy the same stock at different prices over time, also known as dollar-cost averaging or averaging down.
+              <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
+                <p className="text-lg text-white/90 leading-relaxed mb-6">
+                  Track your stock investments like a pro! Our calculator helps you understand your true cost basis across multiple purchases—essential for smart selling decisions and accurate tax reporting:
                 </p>
-                <p>
-                  The calculator computes the weighted average price by considering both the quantity of shares and the price at which they were purchased. This gives you a clear picture of your actual cost basis for tax and investment tracking purposes.
-                </p>
-              </div>
-
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-lg">
-                  <h3 className="font-bold text-[#1A3D7C] mb-3 flex items-center text-lg">
-                    <TrendingUp className="w-5 h-5 mr-2 text-[#2BAE66]" />
-                    Key Benefits
-                  </h3>
-                  <ul className="space-y-2 text-gray-700 text-sm md:text-base">
-                    <li>✓ Track your true cost basis</li>
-                    <li>✓ Make informed selling decisions</li>
-                    <li>✓ Monitor averaging down strategy</li>
-                    <li>✓ Calculate profit/loss accurately</li>
-                  </ul>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white/10 p-5 rounded-xl">
+                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                      <CheckCircle className="w-5 h-5 mr-2" />
+                      Accurate Cost Basis Tracking
+                    </h3>
+                    <p className="text-white/90">Know your exact average purchase price for tax purposes. Essential for calculating capital gains accurately when selling shares partially or fully.</p>
+                  </div>
+                  <div className="bg-white/10 p-5 rounded-xl">
+                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                      <CheckCircle className="w-5 h-5 mr-2" />
+                      Smart Averaging Down Strategy
+                    </h3>
+                    <p className="text-white/90">Determine if averaging down makes sense. See how buying more shares at current price affects your average—crucial for quality stocks during market dips.</p>
+                  </div>
+                  <div className="bg-white/10 p-5 rounded-xl">
+                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                      <CheckCircle className="w-5 h-5 mr-2" />
+                      Profit/Loss Analysis
+                    </h3>
+                    <p className="text-white/90">Instantly know if you're in profit or loss. Compare current market price with average purchase price to make informed hold/sell decisions.</p>
+                  </div>
+                  <div className="bg-white/10 p-5 rounded-xl">
+                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                      <CheckCircle className="w-5 h-5 mr-2" />
+                      Portfolio Management
+                    </h3>
+                    <p className="text-white/90">Manage multiple stock purchases systematically. Perfect for SIP-style stock investing, ESOP additions, or regular accumulation strategies.</p>
+                  </div>
+                  <div className="bg-white/10 p-5 rounded-xl">
+                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                      <CheckCircle className="w-5 h-5 mr-2" />
+                      Tax Planning Tool
+                    </h3>
+                    <p className="text-white/90">Optimize tax by selling strategically. Know exact gains/losses before selling to plan LTCG, STCG, and tax harvesting opportunities.</p>
+                  </div>
+                  <div className="bg-white/10 p-5 rounded-xl">
+                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                      <CheckCircle className="w-5 h-5 mr-2" />
+                      Multi-Asset Support
+                    </h3>
+                    <p className="text-white/90">Works for stocks, mutual funds, ETFs, crypto, gold—anything bought in multiple transactions. Universal averaging calculator for all investments.</p>
+                  </div>
                 </div>
-
-                <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-lg">
-                  <h3 className="font-bold text-[#1A3D7C] mb-3 flex items-center text-lg">
-                    <Calculator className="w-5 h-5 mr-2 text-[#2BAE66]" />
-                    Use Cases
-                  </h3>
-                  <ul className="space-y-2 text-gray-700 text-sm md:text-base">
-                    <li>✓ SIP investments in stocks</li>
-                    <li>✓ Averaging down during dips</li>
-                    <li>✓ Portfolio cost tracking</li>
-                    <li>✓ Tax filing calculations</li>
-                  </ul>
+                <div className="mt-6 p-4 bg-[#FFC857] text-[#1A3D7C] rounded-lg">
+                  <p className="font-semibold">
+                    💡 Pro Tip: Always include brokerage, STT, GST, and transaction charges in your purchase price for accurate cost basis. This ensures correct tax calculation when selling!
+                  </p>
                 </div>
               </div>
             </section>
 
             {/* FAQs */}
             <section className="bg-white rounded-xl md:rounded-2xl shadow-lg p-6 md:p-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-8">
-                Frequently Asked Questions
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+                <HelpCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+                Stock Average Calculator FAQs
               </h2>
-              <div className="space-y-6">
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    How is average stock price calculated?
-                  </h3>
-                  <p className="text-gray-700">
-                    Average price = Total investment amount ÷ Total number of shares. For example, if you bought 100 shares at ₹150 and 50 shares at ₹140, your average is (100×150 + 50×140) ÷ 150 = ₹146.67 per share.
-                  </p>
+              <div className="space-y-4">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">1. How is average stock price calculated?</h3>
+                  <p className="text-gray-700">Average price = <strong>Total investment ÷ Total shares</strong>. Example: Bought 100 shares @ ₹150 + 50 shares @ ₹140 = (100×150 + 50×140) ÷ 150 = ₹22,000 ÷ 150 = ₹146.67 per share. This is your cost basis for tax purposes.</p>
                 </div>
 
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    What is averaging down in stocks?
-                  </h3>
-                  <p className="text-gray-700">
-                    Averaging down means buying more shares of a stock at a lower price than your initial purchase. This reduces your average cost per share. However, it's important to only average down on fundamentally strong stocks.
-                  </p>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">2. What is averaging down and is it a good strategy?</h3>
+                  <p className="text-gray-700">Averaging down = buying more shares when price falls to reduce average cost. <strong>Good:</strong> For quality stocks temporarily down, you accumulate more at lower prices. <strong>Bad:</strong> For fundamentally weak stocks, you're "catching falling knife." Only average down on strong companies!</p>
                 </div>
 
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    Should I include brokerage charges?
-                  </h3>
-                  <p className="text-gray-700">
-                    For accurate cost basis calculation, you should include brokerage, STT, and other transaction charges in the purchase price. This gives you the true average cost per share.
-                  </p>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">3. Should I include brokerage and other charges in purchase price?</h3>
+                  <p className="text-gray-700">Yes! For <strong>accurate cost basis</strong>, include: Brokerage (₹10-20/trade), STT, Exchange charges, GST, DP charges. Example: 100 shares @ ₹100 + ₹50 charges = ₹10,050 total. Average = ₹100.50/share, not ₹100. This affects capital gains tax calculation.</p>
                 </div>
 
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    How does this help with tax filing?
-                  </h3>
-                  <p className="text-gray-700">
-                    Your average purchase price is your cost of acquisition for capital gains tax calculation. When you sell shares, the difference between sale price and this average cost determines your taxable gains.
-                  </p>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">4. How does average price help with tax filing?</h3>
+                  <p className="text-gray-700">Average purchase price = <strong>Cost of Acquisition for capital gains</strong>. When selling: (Sale Price - Average Cost) × Quantity = Capital Gain. LTCG (>1 year): >₹1.25L taxed @ 12.5%. STCG (≤1 year): @ 20%. Accurate average ensures correct tax calculation and claims.</p>
                 </div>
 
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    Can I use this for mutual fund SIPs?
-                  </h3>
-                  <p className="text-gray-700">
-                    Yes! This calculator works for any investment where you're buying units at different prices - stocks, mutual funds, ETFs, or even cryptocurrencies. Just enter each purchase as a separate transaction.
-                  </p>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">5. Can I use this calculator for mutual fund SIPs?</h3>
+                  <p className="text-gray-700">Yes! <strong>Works for any investment</strong> with multiple purchases: Stocks, Mutual Funds (check statement for NAV/units), ETFs, Gold, Crypto, REITs. Enter each SIP installment as transaction (units × NAV). Helps track MF cost basis for redemption/switch tax calculation.</p>
                 </div>
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">6. Does stock split or bonus affect my average price?</h3>
+                  <p className="text-gray-700"><strong>Stock Split:</strong> Adjust shares and price proportionally (1:2 split = double shares, half price). <strong>Bonus:</strong> Add bonus shares at ₹0 cost—reduces average. Example: 100 @ ₹200 + 50 bonus = 150 shares @ ₹133.33 average. Always adjust for corporate actions!</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">7. What if I sell some shares—how do I track remaining average?</h3>
+                  <p className="text-gray-700"><strong>Average price doesn't change</strong> when selling! Example: Average ₹150 with 100 shares. Sell 40 shares → Remaining 60 still have ₹150 average. Only new purchases change average. This principle applies to FIFO (First In First Out) tax calculation too.</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">8. How to calculate if I should average down?</h3>
+                  <p className="text-gray-700">Calculate new average with additional purchase. If current price ₹120, you have 100 @ ₹150 average. Buying 100 more @ ₹120 = new average ₹135. Ask: <strong>(1) Is company fundamentally strong? (2) Can I afford more? (3) Is ₹135 attractive?</strong> Only average down quality stocks!</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">9. What is the difference between averaging down and averaging up?</h3>
+                  <p className="text-gray-700"><strong>Averaging Down:</strong> Buying at lower price than current average (reduces average). <strong>Averaging Up:</strong> Buying at higher price (increases average). Both valid—down for beaten-down quality stocks, up for momentum/growth stocks you want to accumulate more of.</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">10. Do brokers automatically calculate average price?</h3>
+                  <p className="text-gray-700">Yes, but <strong>verify manually!</strong> Zerodha, Upstox, Groww show average in holdings. However, they may not include all charges or adjust for corporate actions correctly. Use this calculator for independent verification and tax filing accuracy. Your average = Your tax liability!</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Tips Section */}
+            <section className="bg-white rounded-xl md:rounded-2xl shadow-lg p-6 md:p-10">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+                <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+                Smart Tips for Stock Averaging
+              </h2>
+              <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl border border-green-200">
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-700"><strong>Average down only quality stocks:</strong> Check fundamentals before averaging—revenue growth, profit margins, debt levels. Don't average down "cheap" stocks without strong business. Quality + discount = opportunity!</p>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-700"><strong>Include all transaction costs:</strong> Brokerage, STT, GST add 0.3-0.5% to purchase price. ₹1L investment with ₹300 charges = ₹100.30 average, not ₹100. Small difference now = significant in tax calculation later.</p>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-700"><strong>Keep detailed transaction records:</strong> Date, quantity, price, charges for every purchase. Broker statements may not have full history. Your own Excel/sheet ensures accurate tax filing and portfolio tracking.</p>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-700"><strong>Set target average, not just price:</strong> Instead of "buy at ₹100," think "reduce average to ₹120." This prevents overleveraging on single price point. Calculate how much needed to reach target average.</p>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-700"><strong>Don't average down with entire capital:</strong> Keep reserve for further dips. If stock at ₹100 (your avg ₹150), use 30-40% capital. If it falls to ₹80, you can average again. Staggered averaging > one-time averaging.</p>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-700"><strong>Adjust for corporate actions immediately:</strong> Stock split, bonus, dividend—adjust calculations same day. Delayed adjustments lead to wrong average and tax errors. Most brokers auto-adjust but verify manually.</p>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-700"><strong>For students/beginners:</strong> Practice with small amounts. Buy 10-20 shares at different prices to learn averaging. Track average manually vs broker's calculation. Understanding averaging = foundation of smart investing!</p>
+                  </li>
+                </ul>
               </div>
             </section>
 
