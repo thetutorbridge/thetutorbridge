@@ -138,7 +138,7 @@ export default function CarLoanEMICalculatorPage() {
                           type="number"
                           value={loanAmount}
                           onChange={(e) => setLoanAmount(Number(e.target.value))}
-                          className="w-40 text-right font-bold text-lg border-2 border-[#2BAE66]"
+                          className="w-24 md:w-32 lg:w-40 text-right font-bold text-sm md:text-base lg:text-lg border-2 border-[#2BAE66]"
                           min="50000"
                           max="10000000"
                         />
@@ -170,7 +170,7 @@ export default function CarLoanEMICalculatorPage() {
                           type="number"
                           value={interestRate}
                           onChange={(e) => setInterestRate(Number(e.target.value))}
-                          className="w-24 text-right font-bold text-lg border-2 border-[#2BAE66]"
+                          className="w-16 md:w-20 lg:w-24 text-right font-bold text-sm md:text-base lg:text-lg border-2 border-[#2BAE66]"
                           min="6"
                           max="18"
                           step="0.1"
@@ -204,7 +204,7 @@ export default function CarLoanEMICalculatorPage() {
                           type="number"
                           value={loanTenure}
                           onChange={(e) => setLoanTenure(Number(e.target.value))}
-                          className="w-24 text-right font-bold text-lg border-2 border-[#2BAE66]"
+                          className="w-16 md:w-20 lg:w-24 text-right font-bold text-sm md:text-base lg:text-lg border-2 border-[#2BAE66]"
                           min="1"
                           max="7"
                         />
@@ -248,7 +248,7 @@ export default function CarLoanEMICalculatorPage() {
                         <span className="text-[#1A3D7C] text-sm font-medium">Monthly EMI</span>
                         <IndianRupee className="w-5 h-5 text-[#1A3D7C]" />
                       </div>
-                      <p className="text-4xl md:text-5xl font-bold text-[#1A3D7C]">
+                      <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1A3D7C] break-words">
                         {formatCurrency(results.monthlyEMI)}
                       </p>
                       <p className="text-xs text-[#1A3D7C]/70 mt-2">
@@ -262,7 +262,7 @@ export default function CarLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Principal Amount</span>
                         <DollarSign className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-white">
+                      <p className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-white">
                         {formatCurrency(results.principalAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -276,7 +276,7 @@ export default function CarLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Total Interest</span>
                         <Percent className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-[#FFC857]">
+                      <p className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-[#FFC857]">
                         {formatCurrency(results.totalInterest)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
@@ -290,7 +290,7 @@ export default function CarLoanEMICalculatorPage() {
                         <span className="text-white/80 text-sm font-medium">Total Amount Payable</span>
                         <PieChart className="w-5 h-5 text-[#FFC857]" />
                       </div>
-                      <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold break-words text-white">
+                      <p className="text-xl md:text-2xl lg:text-3xl font-bold break-words text-white">
                         {formatCurrency(results.totalAmount)}
                       </p>
                       <p className="text-xs text-white/60 mt-2">
