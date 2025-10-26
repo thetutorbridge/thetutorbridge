@@ -327,17 +327,166 @@ export default function StepUpSipCalculatorPage() {
             </div>
           </section>
 
+          {/* Benefits Section */}
           <section className="mb-12">
-            <div className="prose max-w-none">
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong>Step Up SIP</strong> (also called Top-Up SIP) is an enhanced version of regular SIP where your monthly investment automatically increases by a fixed percentage every year. This helps you align your investments with your growing income and accelerate wealth creation.
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <Target className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+              Benefits of Step Up SIP Calculator
+            </h2>
+            <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
+                Step Up SIP is a powerful wealth creation strategy that grows with your income. Our calculator helps you plan systematic investments that match your career growth:
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Our <strong>Step Up SIP Calculator</strong> helps you understand how much wealth you can create by gradually increasing your SIP amount each year. Perfect for salaried professionals expecting annual increments, business owners with growing income, or anyone planning long-term wealth creation.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                With typical annual salary increments of 10-15%, Step Up SIP ensures your investments grow proportionally, helping you build significantly larger corpus compared to regular fixed SIP.
-              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Accelerated Wealth Creation
+                  </h3>
+                  <p className="text-white/90">Build significantly larger corpus compared to regular SIP. With 10% annual step-up, you can accumulate 30-40% more wealth over 20 years.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Inflation-Adjusted Investing
+                  </h3>
+                  <p className="text-white/90">Your investments grow with inflation and salary increments, maintaining purchasing power and ensuring real wealth accumulation.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Disciplined Saving Habit
+                  </h3>
+                  <p className="text-white/90">Automatically increase your savings as income grows. Perfect for maintaining a consistent savings rate throughout your career.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Goal-Based Planning
+                  </h3>
+                  <p className="text-white/90">Calculate exact step-up percentage needed to reach retirement, child education, or home purchase goals with growing SIP amounts.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Compare Scenarios
+                  </h3>
+                  <p className="text-white/90">Test different step-up percentages (5%, 10%, 15%) to find the optimal balance between current affordability and future wealth.</p>
+                </div>
+                <div className="bg-white/10 p-5 rounded-xl">
+                  <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Flexible Strategy
+                  </h3>
+                  <p className="text-white/90">Start small and grow big. Begin with ₹5,000/month and let it grow to ₹20,000+ over 10 years with 15% annual step-up.</p>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-[#FFC857] text-[#1A3D7C] rounded-lg">
+                <p className="font-semibold">
+                  💡 Pro Tip: Match your step-up percentage with your expected annual increment. If you get 10-12% salary hike, set 10% step-up to maintain the same financial impact!
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs */}
+          <section className="mb-12">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <HelpCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+              Step Up SIP Calculator FAQs
+            </h2>
+            <div className="space-y-4">
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">1. What is Step Up SIP or Top Up SIP?</h3>
+                <p className="text-gray-700">Step Up SIP (also called Top-Up SIP) is a mutual fund investment where your <strong>monthly SIP amount automatically increases by a fixed percentage every year</strong>. For example, if you start with ₹5,000/month with 10% annual step-up, it becomes ₹5,500 in year 2, ₹6,050 in year 3, and so on.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">2. How much more wealth can I create with Step Up SIP vs Regular SIP?</h3>
+                <p className="text-gray-700">Step Up SIP can help you accumulate <strong>30-50% more wealth</strong> compared to regular SIP over 15-20 years. Example: ₹10,000/month for 20 years at 12% return gives ₹99 lakhs with regular SIP, but ₹1.35 crores with 10% annual step-up—36% more!</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">3. What should be the ideal step-up percentage?</h3>
+                <p className="text-gray-700"><strong>10-15% annual step-up is ideal</strong> for most investors. Match it with your expected salary increment. Conservative: 5-7%, Moderate: 10-12%, Aggressive: 15-20%. Higher step-up creates more wealth but ensure it remains affordable as amounts increase.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">4. Which mutual funds offer Step Up SIP facility?</h3>
+                <p className="text-gray-700">Most major mutual funds in India offer Step Up SIP: <strong>SBI, HDFC, ICICI Prudential, Axis, Kotak, Nippon India, Mirae Asset</strong>, and others. You can set it up through their websites, apps, or investment platforms like Groww, Zerodha Coin, Paytm Money.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">5. Can I change the step-up percentage later?</h3>
+                <p className="text-gray-700">Yes, but you need to <strong>cancel the existing SIP and start a new one</strong> with different step-up percentage. Some AMCs allow modification through customer service. Plan carefully to avoid frequent changes as it affects rupee cost averaging.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">6. When does the step-up happen—monthly or yearly?</h3>
+                <p className="text-gray-700">Step-up happens <strong>yearly (12 months after SIP start date)</strong>. If you start ₹10,000/month SIP on 5th Jan 2025 with 10% step-up, it increases to ₹11,000 from 5th Jan 2026. The amount remains same for all 12 months of each year.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">7. Is Step Up SIP better for students or working professionals?</h3>
+                <p className="text-gray-700">Step Up SIP is <strong>perfect for working professionals</strong> with annual increments. Students can start regular SIP and convert to step-up once employed. Salaried professionals benefit most as SIP grows with salary, maintaining same financial impact.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">8. Can I skip or stop the step-up increase in any year?</h3>
+                <p className="text-gray-700">Most AMCs <strong>don't allow pausing step-up for specific years</strong>. You can stop the entire SIP, reduce the amount manually, or let it continue. If facing financial difficulty, consider reducing step-up percentage or converting to regular fixed SIP.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">9. What are the tax benefits of Step Up SIP?</h3>
+                <p className="text-gray-700">Same as regular SIP: <strong>ELSS funds qualify for Section 80C deduction</strong> (up to ₹1.5L). Long-term capital gains (LTCG) above ₹1.25L taxed at 12.5%, short-term at 20%. Step-up doesn't change tax treatment but creates more wealth to optimize tax planning.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">10. Can I do Step Up SIP in multiple funds simultaneously?</h3>
+                <p className="text-gray-700">Yes! You can set up <strong>Step Up SIP in multiple mutual funds</strong> with different step-up percentages. For example: 10% step-up in equity fund, 5% in hybrid fund. Diversify across large-cap, mid-cap, and hybrid funds for balanced portfolio growth.</p>
+              </div>
+
+            </div>
+          </section>
+
+          {/* Tips Section */}
+          <section className="mb-12">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
+              Smart Tips for Step Up SIP Investors
+            </h2>
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl border border-green-200">
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Match step-up with salary growth:</strong> If you get 10% annual increment, set 10% step-up. This maintains the same financial impact while building wealth as your income grows.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Start conservative, scale gradually:</strong> Begin with 5-7% step-up if unsure. You can always start a new SIP with higher step-up later. It's better to continue than stop due to unaffordable amounts.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Calculate final SIP amount beforehand:</strong> ₹10,000/month with 15% step-up becomes ₹40,000+ after 10 years. Ensure this remains affordable based on expected income growth.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Combine with regular SIP:</strong> Keep 70% in regular SIP (stable commitment) and 30% in step-up SIP (growth component). This balances affordability with wealth acceleration.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Use for long-term goals (10+ years):</strong> Step Up SIP works best for retirement, child's higher education, or wealth creation goals at least 10-15 years away. Short-term goals need predictable amounts.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>Review annually after increment:</strong> After each salary hike, review if step-up % still aligns with your goals. You can start additional step-up SIPs if you receive bonuses or promotions.</p>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700"><strong>For students & early professionals:</strong> Start regular SIP while studying, convert to step-up SIP once you join work. This builds early investing habit and accelerates wealth when income grows.</p>
+                </li>
+              </ul>
             </div>
           </section>
 
