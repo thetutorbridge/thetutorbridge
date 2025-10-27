@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award } from 'lucide-react';
+import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Financial Calculators - SIP, EMI, Loan & Investment Calculator',
-  description: 'Free online financial calculators for students and professionals. Calculate SIP returns, loan EMI, investment growth, and plan your financial future with The Tutor Bridge.',
+  title: 'Free Online Calculators - Financial, Educational & Practical Tools',
+  description: 'Free online calculators for students, professionals & everyone. Calculate age, SIP returns, loan EMI, income tax, investment growth, and more with The TutorBridge.',
 };
 
 export default function CalculatorsPage() {
@@ -38,16 +38,16 @@ export default function CalculatorsPage() {
           <div className="flex items-center justify-center mb-6">
             <Calculator className="w-12 h-12 text-[#FFC857] mr-4" />
             <h1 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
-              Financial Calculators
+              Free Online Calculators
             </h1>
           </div>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-            Plan your financial future with our free online calculators. Whether you're a student planning for your education, a professional managing investments, or someone looking to understand financial growth, we've got you covered.
+            Comprehensive collection of calculators for students, professionals, and everyone. From financial planning and investment calculations to age verification and educational tools - everything you need in one place.
           </p>
           <div className="bg-white/10 p-4 rounded-xl mb-8">
             <p className="text-lg italic">
-              Smart financial planning starts with understanding your numbers.<br />
-              <strong>Calculate, Plan, and Achieve Your Financial Goals</strong>
+              Smart planning starts with accurate calculations.<br />
+              <strong>Calculate, Plan, and Achieve Your Goals</strong>
             </p>
           </div>
         </div>
@@ -64,6 +64,30 @@ export default function CalculatorsPage() {
               Available Calculators
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
+
+              {/* Age Calculator Card */}
+              <Link href="/calculators/age-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Calendar className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Age Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate exact age or time interval between two dates. Get precise results in years, months, weeks, days, hours, minutes, and seconds - perfect for students and professionals.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Date Calculation</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Age Verification</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Educational Tool</span>
+                  </div>
+                </div>
+              </Link>
 
               {/* SIP Calculator Card */}
               <Link href="/calculators/sip-calculator" className="block h-full">
@@ -503,23 +527,23 @@ export default function CalculatorsPage() {
           {/* Why Use Our Calculators */}
           <section className="mb-12">
             <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
-              <h2 className="text-2xl font-bold mb-6">Why Use Our Financial Calculators?</h2>
+              <h2 className="text-2xl font-bold mb-6">Why Use Our Calculators?</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="font-semibold text-[#FFC857] mb-2">🎯 Accurate Calculations</h3>
-                  <p className="text-white/90">Get precise calculations based on proven financial formulas and monthly compounding.</p>
+                  <p className="text-white/90">Get precise calculations based on proven formulas and industry standards for all your needs.</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#FFC857] mb-2">⚡ Instant Results</h3>
-                  <p className="text-white/90">See your investment projections immediately without any waiting time.</p>
+                  <p className="text-white/90">See your results immediately without any waiting time - calculate as many times as you need.</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#FFC857] mb-2">📱 Mobile Friendly</h3>
-                  <p className="text-white/90">Use our calculators on any device - desktop, tablet, or smartphone.</p>
+                  <p className="text-white/90">Use our calculators on any device - desktop, tablet, or smartphone with responsive design.</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#FFC857] mb-2">📊 Visual Insights</h3>
-                  <p className="text-white/90">Understand your investments with clear breakdowns and visual representations.</p>
+                  <h3 className="font-semibold text-[#FFC857] mb-2">🎓 Educational & Practical</h3>
+                  <p className="text-white/90">Perfect for students, professionals, and everyone with comprehensive tools for learning and planning.</p>
                 </div>
               </div>
             </div>
@@ -529,10 +553,10 @@ export default function CalculatorsPage() {
           <section className="text-center py-12">
             <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Need Help with Financial Planning?
+                Need Academic or Career Guidance?
               </h2>
               <p className="text-lg mb-6 opacity-90">
-                Our expert mentors can help you understand investments, plan your financial goals, and make informed decisions about your future.
+                Our expert mentors can help you with academics, financial planning, career guidance, and make informed decisions about your future.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/book-demo-class">

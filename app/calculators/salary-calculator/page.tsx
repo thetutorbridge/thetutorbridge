@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Navigation } from '@/components/navigation';
+import { Footer } from '@/components/footer';
 
 export default function SalaryCalculatorPage() {
   const [ctc, setCtc] = useState<number>(600000);
@@ -55,8 +57,10 @@ export default function SalaryCalculatorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      {/* Header Section */}
+    <>
+      <Navigation />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+        {/* Header Section */}
       <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-center mb-4">
@@ -530,6 +534,8 @@ export default function SalaryCalculatorPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
