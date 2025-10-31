@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award, Calendar } from 'lucide-react';
+import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award, Calendar, Clock } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Free Online Calculators - Financial, Educational & Practical Tools',
-  description: 'Free online calculators for students, professionals & everyone. Calculate age, SIP returns, loan EMI, income tax, investment growth, and more with The TutorBridge.',
+  description: 'Free online calculators for students, professionals & everyone. Calculate age, work hours, SIP returns, loan EMI, income tax, investment growth, and more with The TutorBridge.',
 };
 
 export default function CalculatorsPage() {
@@ -85,6 +85,30 @@ export default function CalculatorsPage() {
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Date Calculation</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Age Verification</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Educational Tool</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Hours Calculator Card */}
+              <Link href="/calculators/hours-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Clock className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Hours Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate time difference between two times with break deductions. Perfect for work hours, shift calculations, and time tracking with results in hours:minutes, decimal, and total minutes.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Work Hours</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Time Tracking</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Payroll Helper</span>
                   </div>
                 </div>
               </Link>
