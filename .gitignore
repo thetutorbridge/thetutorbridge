@@ -153,3 +153,22 @@ dist
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Backup directories
+*_backup_*/
+*_old/
+
+# Lock files (using legacy-peer-deps)
+package-lock.json
+
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
