@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calculator, TrendingUp, Home, Lightbulb, CheckCircle, HelpCircle, Target, BarChart3, PieChart, DollarSign, Percent, Building2, IndianRupee } from 'lucide-react';
+import { ArrowLeft, Calculator, TrendingUp, Home, Lightbulb, CheckCircle, HelpCircle, Target, BarChart3, PieChart, DollarSign, Percent, Building2, IndianRupee, BookOpen, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
@@ -569,19 +569,23 @@ export default function HomeLoanEMICalculatorPage() {
             </div>
           </section>
 
-          {/* CTA Section */}
+          {/* Book Your Session CTA Section */}
           <section className="text-center py-12">
-            <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Need Help Planning Your Home Purchase?
-              </h2>
-              <p className="text-lg mb-6 opacity-90">
-                Our expert mentors can guide you through home loan planning, property investment, and making smart financial decisions for your real estate purchase. Whether you're a student planning for the future or buying your first home—we're here to help!
+            <div className="bg-gradient-to-r from-[#1A3D7C] via-[#2BAE66] to-[#1A3D7C] text-white p-12 rounded-2xl shadow-xl">
+              <div className="flex items-center justify-center mb-6">
+                <BookOpen className="w-10 h-10 md:w-12 md:h-12 text-[#FFC857] mr-3" />
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+                  Need Help with Loan Calculations?
+                </h2>
+              </div>
+              <p className="text-lg md:text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Our expert tutors can help you understand EMI calculations, interest rates, and financial mathematics. Get personalized one-on-one guidance tailored to your learning style.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/book-demo-class">
-                  <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-[#FFC857]/90 transition-colors">
-                    Book Free Session
+                  <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors flex items-center justify-center gap-2">
+                    Book Your Session
+                    <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>
                 <Link href="/contact">

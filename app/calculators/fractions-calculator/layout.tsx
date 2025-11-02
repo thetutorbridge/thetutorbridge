@@ -1,0 +1,106 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Fractions Calculator - Add, Subtract, Multiply, Divide Fractions with Steps | The Tutor Bridge',
+  description: 'Free fractions calculator with step-by-step solutions. Add, subtract, multiply, and divide fractions easily. Calculate LCD, simplify fractions, convert to mixed numbers with detailed mathematical notation. Perfect for students, teachers, and professionals.',
+  keywords: [
+    'fractions calculator',
+    'fraction calculator',
+    'add fractions calculator',
+    'subtract fractions calculator',
+    'multiply fractions calculator',
+    'divide fractions calculator',
+    'fraction addition calculator',
+    'fraction subtraction calculator',
+    'fraction multiplication calculator',
+    'fraction division calculator',
+    'simplify fractions calculator',
+    'simplifying fractions calculator',
+    'reduce fractions calculator',
+    'lcd calculator',
+    'least common denominator calculator',
+    'gcd calculator',
+    'greatest common divisor calculator',
+    'mixed number calculator',
+    'improper fraction calculator',
+    'proper fraction calculator',
+    'fraction simplifier',
+    'how to add fractions',
+    'how to subtract fractions',
+    'how to multiply fractions',
+    'how to divide fractions',
+    'adding fractions with different denominators',
+    'subtracting fractions with different denominators',
+    'fractions step by step',
+    'fraction solver',
+    'online fraction calculator',
+    'free fraction calculator',
+    'fraction calculator with steps',
+    'fraction calculator with solution',
+    'calculate fractions',
+    'fraction math calculator',
+    'fraction operations calculator',
+    'common denominator calculator',
+    'equivalent fractions calculator',
+    'fraction to mixed number',
+    'mixed number to improper fraction',
+    'fraction reduction calculator',
+    'math fraction calculator',
+    'fraction help',
+    'fraction tutorial',
+    'learn fractions',
+    'fraction formulas',
+    'fraction calculator online free',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/fractions-calculator',
+  },
+  openGraph: {
+    title: 'Fractions Calculator - Add, Subtract, Multiply, Divide with Steps',
+    description: 'Free fractions calculator with step-by-step solutions and proper mathematical notation. Calculate LCD, simplify fractions, and convert to mixed numbers instantly.',
+    url: 'https://thetutorbridge.com/calculators/fractions-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fractions Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fractions Calculator - Free Fraction Operations Tool',
+    description: 'Add, subtract, multiply, and divide fractions with detailed step-by-step solutions. Calculate LCD, simplify, and convert to mixed numbers.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function FractionsCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

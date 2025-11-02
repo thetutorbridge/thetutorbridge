@@ -1,0 +1,105 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Rounding Numbers Calculator - Round Decimals to Any Place Value | The Tutor Bridge',
+  description: 'Free rounding numbers calculator with step-by-step explanations. Round decimals to nearest whole number, tenths, hundredths, thousandths, or any place value. Perfect for students and teachers with visual digit highlighting.',
+  keywords: [
+    'rounding numbers calculator',
+    'rounding calculator',
+    'round numbers calculator',
+    'decimal rounding calculator',
+    'round to nearest tenth calculator',
+    'round to nearest hundredth calculator',
+    'round to nearest whole number',
+    'rounding decimals calculator',
+    'how to round numbers',
+    'rounding rules calculator',
+    'round to significant figures',
+    'round decimals',
+    'number rounding tool',
+    'round to nearest',
+    'rounding off calculator',
+    'round to place value',
+    'round to ones calculator',
+    'round to tenths calculator',
+    'round to hundredths calculator',
+    'round to thousandths calculator',
+    'rounding math calculator',
+    'free rounding calculator',
+    'online rounding calculator',
+    'rounding numbers with explanation',
+    'rounding step by step',
+    'how to round decimals',
+    'rounding up and down',
+    'nearest place value calculator',
+    'educational rounding tool',
+    'student rounding calculator',
+    'teacher rounding tool',
+    'visual rounding calculator',
+    'rounding digits calculator',
+    'precision rounding calculator',
+    'round to cents calculator',
+    'money rounding calculator',
+    'round currency',
+    'rounding for students',
+    'rounding worksheets calculator',
+    'check rounding answers',
+    'rounding practice tool',
+    'learn rounding',
+    'rounding explained',
+    'rounding made easy',
+    'understanding rounding',
+    'rounding number tool online',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/rounding-numbers-calculator',
+  },
+  openGraph: {
+    title: 'Rounding Numbers Calculator - Round Decimals with Visual Steps',
+    description: 'Free rounding calculator with visual digit highlighting and step-by-step explanations. Round to any place value instantly with detailed working.',
+    url: 'https://thetutorbridge.com/calculators/rounding-numbers-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Rounding Numbers Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rounding Numbers Calculator - Free Rounding Tool',
+    description: 'Round numbers to any place value with visual explanations. Perfect for students learning rounding rules with step-by-step solutions.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function RoundingNumbersCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

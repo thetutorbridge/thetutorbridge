@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calculator, TrendingUp, Home, Target, CheckCircle, HelpCircle, Lightbulb, IndianRupee, FileText, PieChart, BarChart3 } from 'lucide-react';
+import { ArrowLeft, Calculator, TrendingUp, Home, Target, CheckCircle, HelpCircle, Lightbulb, IndianRupee, FileText, PieChart, BarChart3, ArrowRight, BookOpen } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
@@ -823,6 +823,34 @@ export default function IncomeTaxCalculatorPage() {
             </Link>
           </section>
         </div>
+
+        {/* Book Your Session CTA */}
+        <section className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <BookOpen className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-6 text-[#FFC857]" />
+              <h2 className="text-2xl md:text-4xl font-bold mb-4">
+                Need Help with Tax Calculations?
+              </h2>
+              <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
+                Our expert tutors can help you understand tax calculations, percentage mathematics, and financial planning concepts. Get personalized one-on-one guidance.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/book-demo-class">
+                  <Button className="bg-[#FFC857] hover:bg-[#FFC857]/90 text-[#1A3D7C] px-8 py-6 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
+                    Book Free Demo Class
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#1A3D7C] px-8 py-6 text-lg font-bold rounded-xl transition-all duration-200">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       {/* Footer */}

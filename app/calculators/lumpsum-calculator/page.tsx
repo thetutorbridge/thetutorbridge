@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calculator, TrendingUp, Home, Target, CheckCircle, HelpCircle, Lightbulb, IndianRupee, PieChart, BarChart3 } from 'lucide-react';
+import { ArrowLeft, Calculator, TrendingUp, Home, Target, CheckCircle, HelpCircle, Lightbulb, IndianRupee, PieChart, BarChart3, BookOpen, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
@@ -498,19 +498,32 @@ export default function LumpsumCalculatorPage() {
             </div>
           </section>
 
-          {/* Related Calculators Section */}
+          {/* Book Your Session CTA Section */}
           <section className="text-center mb-12">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-4">
-              Explore More Calculators
-            </h2>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              Try our other financial calculators for comprehensive investment and loan planning
-            </p>
-            <Link href="/calculators">
-              <Button className="bg-white text-[#1A3D7C] hover:bg-gray-100 font-semibold px-8 py-6 text-lg">
-                View All Calculators
-              </Button>
-            </Link>
+            <div className="bg-gradient-to-r from-[#1A3D7C] via-[#2BAE66] to-[#1A3D7C] text-white p-12 rounded-2xl shadow-xl">
+              <div className="flex items-center justify-center mb-6">
+                <BookOpen className="w-10 h-10 md:w-12 md:h-12 text-[#FFC857] mr-3" />
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+                  Need Help with Investment Mathematics?
+                </h2>
+              </div>
+              <p className="text-lg md:text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Our expert tutors can help you understand investment calculations, compound interest, and financial planning concepts. Get personalized one-on-one guidance.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/book-demo-class">
+                  <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors flex items-center justify-center gap-2">
+                    Book Your Session
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors">
+                    Contact Us
+                  </button>
+                </Link>
+              </div>
+            </div>
           </section>
         </div>
       </div>

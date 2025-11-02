@@ -1,0 +1,105 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Long Division Calculator with Steps - Free Division Calculator with Remainders | The Tutor Bridge',
+  description: 'Free long division calculator with step-by-step visual solution grid. Divide any numbers and see the complete working process with quotient and remainder. Perfect for students learning division with detailed mathematical notation.',
+  keywords: [
+    'long division calculator',
+    'division calculator',
+    'long division calculator with steps',
+    'long division calculator with remainders',
+    'division with remainders calculator',
+    'how to do long division',
+    'long division solver',
+    'long division with steps',
+    'division calculator with remainder',
+    'divide calculator',
+    'long division steps',
+    'long division helper',
+    'division problem solver',
+    'math division calculator',
+    'division calculator showing work',
+    'long division worksheets calculator',
+    'polynomial long division calculator',
+    'long division checker',
+    'division with decimal calculator',
+    'remainder calculator',
+    'quotient and remainder calculator',
+    'divisor dividend calculator',
+    'how to calculate long division',
+    'long division formula',
+    'division algorithm calculator',
+    'step by step division',
+    'visual long division',
+    'long division grid',
+    'long division table',
+    'long division tutor',
+    'learn long division',
+    'division calculator for students',
+    'elementary division calculator',
+    'free division calculator',
+    'online division calculator',
+    'division calculator with work shown',
+    'check division answers',
+    'division practice tool',
+    'division homework help',
+    'educational division calculator',
+    'student division tool',
+    'teaching long division',
+    'long division explained',
+    'division step by step solver',
+    'math long division help',
+    'division with working calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/long-division-calculator',
+  },
+  openGraph: {
+    title: 'Long Division Calculator - Visual Step-by-Step Solutions',
+    description: 'Free long division calculator with visual grid showing complete working. Divide any numbers and see quotient, remainder, and full solution process.',
+    url: 'https://thetutorbridge.com/calculators/long-division-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Long Division Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Long Division Calculator - Free Tool with Steps',
+    description: 'Solve long division problems with visual step-by-step solutions. See quotient, remainder, and complete working grid.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function LongDivisionCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

@@ -1,0 +1,108 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Decimal to Fraction Calculator - Convert Decimals to Fractions with Steps | The Tutor Bridge',
+  description: 'Free decimal to fraction calculator with step-by-step solutions. Convert any decimal to a fraction or mixed number instantly. Shows complete working including GCF reduction and simplification. Perfect for students learning fraction conversion.',
+  keywords: [
+    'decimal to fraction calculator',
+    'decimal to fraction',
+    'convert decimal to fraction',
+    'decimal to fraction converter',
+    'decimal fraction calculator',
+    'how to convert decimal to fraction',
+    'decimal to fraction conversion',
+    'decimal to mixed number',
+    'decimal to improper fraction',
+    'fraction converter',
+    'decimal converter',
+    'convert 0.5 to fraction',
+    'decimal to fraction formula',
+    'decimal to fraction with steps',
+    'decimal to fraction solver',
+    'repeating decimal to fraction',
+    'recurring decimal to fraction',
+    'decimal to fraction simplifier',
+    'simplify decimal to fraction',
+    'decimal to reduced fraction',
+    'decimal to lowest terms',
+    'decimal to simplest form',
+    'math decimal to fraction',
+    'free decimal to fraction calculator',
+    'online decimal to fraction',
+    'decimal to fraction tool',
+    'decimal to fraction examples',
+    'decimal to fraction worksheet calculator',
+    'decimal to fraction conversion chart',
+    'terminating decimal to fraction',
+    'non-terminating decimal to fraction',
+    'decimal to fraction gcf',
+    'decimal to fraction greatest common factor',
+    'decimal places to fraction',
+    'convert 0.25 to fraction',
+    'convert 0.75 to fraction',
+    'convert 1.5 to fraction',
+    'decimal to proper fraction',
+    'decimal point to fraction',
+    'educational decimal converter',
+    'student fraction calculator',
+    'learn decimal to fraction',
+    'decimal to fraction explained',
+    'decimal to fraction method',
+    'decimal to fraction algorithm',
+    'fraction from decimal',
+    'make fraction from decimal',
+    'turn decimal into fraction',
+    'change decimal to fraction',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/decimal-to-fraction-calculator',
+  },
+  openGraph: {
+    title: 'Decimal to Fraction Calculator - Convert with Step-by-Step Solutions',
+    description: 'Free decimal to fraction calculator with complete working. Convert any decimal to fraction or mixed number with GCF reduction and simplification steps.',
+    url: 'https://thetutorbridge.com/calculators/decimal-to-fraction-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Decimal to Fraction Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Decimal to Fraction Calculator - Free Conversion Tool',
+    description: 'Convert decimals to fractions with detailed step-by-step solutions. Shows GCF reduction and mixed number conversion.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function DecimalToFractionCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calculator, TrendingUp, Home, Percent, IndianRupee, Clock, Target, CheckCircle, HelpCircle, Lightbulb } from 'lucide-react';
+import { ArrowLeft, Calculator, TrendingUp, Home, Percent, IndianRupee, Clock, Target, CheckCircle, HelpCircle, Lightbulb, BookOpen, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
@@ -328,19 +328,30 @@ export default function SimpleInterestCalculatorPage() {
               </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] rounded-xl md:rounded-2xl shadow-xl p-8 md:p-12 text-center text-white">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Try Our Other Calculators
-              </h2>
-              <p className="text-lg md:text-xl mb-8 text-white/90">
-                Explore compound interest, EMI, SIP, and more financial calculators
+            {/* Book Your Session CTA Section */}
+            <section className="bg-gradient-to-r from-[#1A3D7C] via-[#2BAE66] to-[#1A3D7C] rounded-xl md:rounded-2xl shadow-xl p-8 md:p-12 text-center text-white">
+              <div className="flex items-center justify-center mb-6">
+                <BookOpen className="w-10 h-10 md:w-12 md:h-12 text-[#FFC857] mr-3" />
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+                  Need Help with Interest Calculations?
+                </h2>
+              </div>
+              <p className="text-lg md:text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Our expert tutors can help you master simple interest, percentage calculations, and financial mathematics. Get personalized one-on-one guidance tailored to your learning style.
               </p>
-              <Link href="/calculators">
-                <Button className="bg-white text-[#1A3D7C] hover:bg-gray-100 font-semibold px-8 py-6 text-lg">
-                  View All Calculators
-                </Button>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/book-demo-class">
+                  <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors flex items-center justify-center gap-2">
+                    Book Your Session
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors">
+                    Contact Us
+                  </button>
+                </Link>
+              </div>
             </section>
 
             {/* Benefits Section */}

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award, Calendar, Clock, Type, Divide, Ruler, Sparkles } from 'lucide-react';
+import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award, Calendar, Clock, Type, Divide, Ruler, Sparkles, RotateCw, Shuffle } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
@@ -253,6 +253,198 @@ export default function CalculatorsPage() {
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quadratic Solver</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Complex Roots</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Percentage Increase Calculator Card */}
+              <Link href="/calculators/percentage-increase-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Percent className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentage Increase Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate percentage increase or decrease between two values with step-by-step solutions. Perfect for price changes, salary raises, growth rates, and business analysis with proper mathematical notation.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">% Change</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Growth Rate</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Math Steps</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Percentage Change Calculator Card */}
+              <Link href="/calculators/percentage-change-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <TrendingUp className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentage Change Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate percentage change between any two values with detailed mathematical solutions. Understand increases, decreases, and growth rates with V₁ to V₂ notation. Perfect for statistics and data analysis.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">V₁ to V₂</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Statistical</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Detailed Steps</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Fractions Calculator Card */}
+              <Link href="/calculators/fractions-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Divide className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Fractions Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Add, subtract, multiply, and divide fractions with step-by-step solutions. Calculate LCD, simplify fractions, and convert to mixed numbers with proper mathematical notation. Perfect for students and educators.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">LCD Calculator</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Simplify Fractions</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mixed Numbers</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Decimal to Fraction Calculator Card */}
+              <Link href="/calculators/decimal-to-fraction-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Divide className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Decimal to Fraction Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Convert decimals to fractions or mixed numbers with complete step-by-step solutions. Shows GCF reduction and simplification process. Perfect for students learning fraction conversion.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">GCF Reduction</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mixed Numbers</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Rounding Numbers Calculator Card */}
+              <Link href="/calculators/rounding-numbers-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <RotateCw className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Rounding Numbers Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Round any number to the nearest whole number, tenth, hundredth, or any decimal place. Get instant results with visual digit highlighting and step-by-step explanations of rounding rules.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Visual Highlighting</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Place Values</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Long Division Calculator Card */}
+              <Link href="/calculators/long-division-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Divide className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Long Division Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Divide any numbers with complete step-by-step visual solution grid. See the entire working process including quotient, remainder, and verification formula. Perfect for students learning division.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Visual Grid</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quotient & Remainder</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Mean Median Mode Calculator Card */}
+              <Link href="/calculators/mean-mode-median-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Mean Median Mode Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate mean, median, mode, range, quartiles, and identify outliers with complete statistical analysis. Perfect for students learning descriptive statistics with instant results.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mean & Average</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quartiles & IQR</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Outlier Detection</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Random Number Generator Card */}
+              <Link href="/calculators/random-number-generator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Shuffle className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Random Number Generator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Generate random numbers with custom range, control duplicates, and sorting options. Perfect for games, lottery picks, passwords, and random selection with instant results.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Custom Range</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">No Duplicates</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Sort Options</span>
                   </div>
                 </div>
               </Link>
