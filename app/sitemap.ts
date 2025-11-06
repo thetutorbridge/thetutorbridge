@@ -109,6 +109,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'ppf-calculator',
     'quadratic-formula-calculator',
     'random-number-generator',
+    'roman-numeral-converter',
     'rounding-numbers-calculator',
     'salary-calculator',
     'sbi-sip-calculator',
