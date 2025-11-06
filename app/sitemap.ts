@@ -97,6 +97,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'home-loan-emi-calculator',
     'hours-calculator',
     'income-tax-calculator',
+    'lcm-calculator',
     'long-division-calculator',
     'lumpsum-calculator',
     'mean-mode-median-calculator',
