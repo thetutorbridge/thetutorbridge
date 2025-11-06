@@ -353,6 +353,30 @@ export default function CalculatorsPage() {
                 </div>
               </Link>
 
+              {/* Simplifying Fractions Calculator Card */}
+              <Link href="/calculators/simplifying-fractions-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+                      <Divide className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Simplifying Fractions Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Reduce fractions to simplest form with step-by-step GCF method. Shows all factors, common factors, and converts improper fractions to mixed numbers. Perfect for learning fraction simplification.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">GCF Method</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Lowest Terms</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mixed Numbers</span>
+                  </div>
+                </div>
+              </Link>
+
               {/* Decimal to Fraction Calculator Card */}
               <Link href="/calculators/decimal-to-fraction-calculator" className="block h-full">
                 <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">

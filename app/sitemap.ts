@@ -113,6 +113,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'salary-calculator',
     'sbi-sip-calculator',
     'simple-interest-calculator',
+    'simplifying-fractions-calculator',
     'sip-calculator',
     'square-footage-calculator',
     'step-up-sip-calculator',
