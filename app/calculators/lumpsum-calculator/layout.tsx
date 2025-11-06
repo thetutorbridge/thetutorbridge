@@ -1,0 +1,108 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Lumpsum Calculator - Calculate One-Time Investment Returns | The Tutor Bridge',
+  description: 'Free lumpsum calculator to estimate returns on one-time investments. Calculate mutual fund returns, compounding growth, and future value. Perfect for windfall investment planning.',
+  keywords: [
+    'lumpsum calculator',
+    'lumpsum investment calculator',
+    'one time investment calculator',
+    'lumpsum return calculator',
+    'mutual fund lumpsum calculator',
+    'lumpsum vs sip calculator',
+    'lumpsum calculator india',
+    'how to calculate lumpsum returns',
+    'free lumpsum calculator',
+    'online lumpsum calculator',
+    'lumpsum investment returns',
+    'compound interest lumpsum calculator',
+    'future value calculator',
+    'lumpsum maturity calculator',
+    'lump sum amount calculator',
+    'investment growth calculator',
+    'lumpsum calculator sip',
+    'lumpsum investment planning',
+    'calculate lumpsum investment',
+    'lumpsum formula',
+    'lumpsum compounding calculator',
+    'single investment calculator',
+    'bulk investment calculator',
+    'windfall investment calculator',
+    'bonus investment calculator',
+    'inheritance investment calculator',
+    'lumpsum equity calculator',
+    'mutual fund one time investment',
+    'lumpsum calculation formula',
+    'how does lumpsum work',
+    'lumpsum investment benefits',
+    'lumpsum vs recurring deposit',
+    'lumpsum tax calculation',
+    'retirement lumpsum calculator',
+    'lumpsum investment strategy',
+    'when to invest lumpsum',
+    'lumpsum market timing',
+    'stp calculator',
+    'systematic transfer plan',
+    'lumpsum wealth creation',
+    'long term lumpsum investment',
+    'equity lumpsum returns',
+    'debt fund lumpsum',
+    'hybrid fund lumpsum',
+    'lumpsum goal planning',
+    'lumpsum retirement planning',
+    'lumpsum corpus calculator',
+    'investment maturity calculator',
+    'lumpsum profit calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/lumpsum-calculator',
+  },
+  openGraph: {
+    title: 'Lumpsum Calculator - One-Time Investment Returns | The Tutor Bridge',
+    description: 'Calculate returns on lumpsum investments with compound interest. Free calculator for mutual funds, stocks, and one-time investments.',
+    url: 'https://thetutorbridge.com/calculators/lumpsum-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Lumpsum Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lumpsum Calculator - Investment Returns',
+    description: 'Calculate your one-time investment returns with compounding. Free lumpsum calculator with step-by-step projections.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function LumpsumCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

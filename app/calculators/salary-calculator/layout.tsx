@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Salary Calculator - CTC to Take Home Salary Calculator | The Tutor Bridge',
+  description: 'Free salary calculator to convert CTC to take-home salary. Calculate in-hand salary from Cost to Company with PF, professional tax, and deductions. Instant breakdown for job comparison.',
+  keywords: [
+    'salary calculator',
+    'ctc to in hand salary calculator',
+    'take home salary calculator',
+    'salary calculator india',
+    'in hand salary calculator',
+    'cost to company calculator',
+    'monthly salary calculator',
+    'annual salary calculator',
+    'how to calculate take home salary',
+    'how to calculate in hand salary from ctc',
+    'ctc breakdown calculator',
+    'salary structure calculator',
+    'free salary calculator',
+    'online salary calculator',
+    'gross salary calculator',
+    'net salary calculator',
+    'epf calculator',
+    'professional tax calculator',
+    'salary deduction calculator',
+    'ctc calculator',
+    'basic salary calculator',
+    'salary comparison calculator',
+    'job offer calculator',
+    'ctc vs take home',
+    'salary after deductions',
+    'monthly in hand salary',
+    'annual ctc calculator',
+    'employee salary calculator',
+    'salary planning calculator',
+    'bonus calculation',
+    'pf deduction calculator',
+    'salary tax calculator india',
+    'gross to net salary',
+    'salary breakdown india',
+    'how much is my take home salary',
+    'calculate monthly salary from ctc',
+    'salary estimator',
+    'payroll calculator',
+    'compensation calculator',
+    'earnings calculator',
+    'deductions from salary',
+    'salary after tax india',
+    'ctc components',
+    'salary structure india',
+    'employee provident fund calculator',
+    'what is ctc',
+    'what is take home salary',
+    'difference between ctc and take home',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/salary-calculator',
+  },
+  openGraph: {
+    title: 'Salary Calculator - CTC to Take Home Salary | The Tutor Bridge',
+    description: 'Free CTC to in-hand salary calculator with instant breakdown of deductions, PF, and professional tax. Compare job offers and plan your finances.',
+    url: 'https://thetutorbridge.com/calculators/salary-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Salary Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Salary Calculator - CTC to Take Home',
+    description: 'Calculate your in-hand salary from CTC with detailed breakdown of all deductions.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function SalaryCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

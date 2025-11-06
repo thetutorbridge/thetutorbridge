@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Income Tax Calculator - Calculate Tax for FY 2024-25 | The Tutor Bridge',
+  description: 'Free income tax calculator for India FY 2024-25. Compare old vs new tax regime, calculate tax liability, and plan tax savings with deductions. Updated as per latest IT rules.',
+  keywords: [
+    'income tax calculator',
+    'income tax calculator india',
+    'tax calculator 2024-25',
+    'income tax calculator 2024',
+    'new tax regime calculator',
+    'old tax regime calculator',
+    'tax calculator old vs new',
+    'how to calculate income tax',
+    'free income tax calculator',
+    'online tax calculator',
+    'tax liability calculator',
+    'tax savings calculator',
+    'income tax slab calculator',
+    'tds calculator',
+    'tax deduction calculator',
+    'section 80c calculator',
+    'hra tax exemption calculator',
+    'tax rebate calculator',
+    'net taxable income calculator',
+    'gross income tax calculator',
+    'annual income tax calculator',
+    'monthly tax calculator',
+    'salary tax calculator',
+    'india tax calculator',
+    'it calculator india',
+    'income tax planning',
+    'tax regime comparison',
+    'which tax regime is better',
+    'tax exemption calculator',
+    '80c deduction calculator',
+    '80d deduction calculator',
+    'standard deduction calculator',
+    'hra calculator',
+    'house rent allowance tax',
+    'tax on salary',
+    'tax refund calculator',
+    'advance tax calculator',
+    'self assessment tax calculator',
+    'professional tax calculator',
+    'surcharge calculator',
+    'education cess calculator',
+    'marginal tax rate calculator',
+    'effective tax rate calculator',
+    'tax planning calculator',
+    'investment tax calculator',
+    'capital gains tax calculator',
+    'ltcg tax calculator',
+    'stcg tax calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/income-tax-calculator',
+  },
+  openGraph: {
+    title: 'Income Tax Calculator - FY 2024-25 India | The Tutor Bridge',
+    description: 'Calculate income tax for FY 2024-25. Compare old vs new tax regime and maximize your tax savings with deductions.',
+    url: 'https://thetutorbridge.com/calculators/income-tax-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Income Tax Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Income Tax Calculator - FY 2024-25',
+    description: 'Calculate your income tax liability with old vs new regime comparison. Free tax calculator for India.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function IncomeTaxCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}
