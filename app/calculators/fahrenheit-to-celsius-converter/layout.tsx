@@ -1,0 +1,106 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Fahrenheit to Celsius Converter - °F to °C Calculator with Formula | The Tutor Bridge',
+  description: 'Free Fahrenheit to Celsius converter (°F to °C) with step-by-step solutions. Convert temperature instantly with conversion formula, examples, and comprehensive temperature conversion guide.',
+  keywords: [
+    'fahrenheit to celsius',
+    'f to c',
+    'fahrenheit to celsius converter',
+    'f to c converter',
+    'fahrenheit celsius conversion',
+    'temperature converter',
+    'fahrenheit to celsius formula',
+    'how to convert fahrenheit to celsius',
+    'fahrenheit to celsius calculator',
+    'celsius to fahrenheit',
+    'c to f',
+    'celsius to fahrenheit converter',
+    'temperature conversion',
+    'fahrenheit celsius',
+    'convert temperature',
+    'temperature calculator',
+    'fahrenheit to celsius chart',
+    'fahrenheit to celsius table',
+    '°f to °c',
+    '°c to °f',
+    'fahrenheit to centigrade',
+    'fahrenheit conversion',
+    'celsius conversion',
+    'temperature conversion formula',
+    'fahrenheit celsius scale',
+    'imperial to metric temperature',
+    'fahrenheit to celsius online',
+    'free temperature converter',
+    'instant temperature conversion',
+    'fahrenheit celsius calculator',
+    'temperature conversion calculator',
+    'fahrenheit to celsius equation',
+    'fahrenheit to celsius examples',
+    'how to calculate celsius',
+    'fahrenheit celsius difference',
+    'temperature scales',
+    'thermometer conversion',
+    'fahrenheit celsius relationship',
+    'temperature unit conversion',
+    'fahrenheit to celsius steps',
+    'fahrenheit celsius comparison',
+    'weather temperature conversion',
+    'cooking temperature conversion',
+    'oven temperature conversion',
+    'body temperature converter',
+    'fahrenheit celsius kelvin',
+    'temperature conversion tool',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/fahrenheit-to-celsius-converter',
+  },
+  openGraph: {
+    title: 'Fahrenheit to Celsius Converter - °F to °C Calculator',
+    description: 'Free temperature converter with step-by-step solutions. Convert Fahrenheit to Celsius (°F to °C) and Celsius to Fahrenheit (°C to °F) instantly with conversion formulas.',
+    url: 'https://thetutorbridge.com/calculators/fahrenheit-to-celsius-converter',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fahrenheit to Celsius Converter - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fahrenheit to Celsius Converter - Free Tool',
+    description: 'Convert temperature between Fahrenheit and Celsius with detailed step-by-step solutions and conversion formulas.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function FahrenheitToCelsiusConverterLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Percentage Difference Calculator - Free % Difference Calculator with Steps | The Tutor Bridge',
+  description: 'Free percentage difference calculator with step-by-step solutions. Calculate the percentage difference between two values instantly. Perfect for students, data analysts, and researchers with comprehensive mathematical notation.',
+  keywords: [
+    'percentage difference calculator',
+    'percent difference calculator',
+    'percentage difference',
+    'percent difference',
+    'how to calculate percentage difference',
+    'percentage difference formula',
+    'difference between percentage',
+    'calculate percent difference',
+    'free percentage difference calculator',
+    'online percentage difference calculator',
+    'percentage difference calculator with steps',
+    'percentage difference between two numbers',
+    'percentage variation calculator',
+    'relative difference calculator',
+    'percent variation',
+    'percentage comparison',
+    'compare two values percentage',
+    'percentage difference equation',
+    'percentage difference method',
+    'symmetric percentage difference',
+    'percentage difference vs percentage change',
+    'absolute percentage difference',
+    'relative percentage difference',
+    'percent diff calculator',
+    'calculate percentage variance',
+    'percentage deviation calculator',
+    'two value percentage calculator',
+    'percentage comparison calculator',
+    'mathematical percentage difference',
+    'statistics percentage difference',
+    'data analysis percentage difference',
+    'percentage difference in excel',
+    'percentage difference tutorial',
+    'how to find percentage difference',
+    'percentage difference examples',
+    'percentage difference explained',
+    'percentage difference step by step',
+    'percentage difference for students',
+    'percentage difference for research',
+    'scientific percentage difference',
+    'percentage difference meaning',
+    'percentage difference definition',
+    'symmetric percent difference formula',
+    'average percentage difference',
+    'percentage difference calculation method',
+    'percentage difference math',
+    'percentage difference statistics',
+    'percentage difference analysis',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/percentage-difference-calculator',
+  },
+  openGraph: {
+    title: 'Percentage Difference Calculator - Free Tool with Steps',
+    description: 'Free percentage difference calculator with step-by-step solutions and mathematical notation. Calculate the symmetric percentage difference between any two values.',
+    url: 'https://thetutorbridge.com/calculators/percentage-difference-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Percentage Difference Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Percentage Difference Calculator - Free Tool',
+    description: 'Calculate percentage difference between two values with detailed step-by-step solutions.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function PercentageDifferenceCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

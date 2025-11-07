@@ -1,638 +1,848 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { ArrowLeft, Calculator, TrendingUp, Home, Percent, IndianRupee, Clock, Target, CheckCircle, HelpCircle, Lightbulb, BookOpen, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import { Navigation } from '@/components/navigation';
+import React, { useState } from 'react';
+import { Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Slider } from '@/components/ui/slider';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
-export default function SimpleInterestCalculatorPage() {
-  const [principalAmount, setPrincipalAmount] = useState<number>(100000);
-  const [interestRate, setInterestRate] = useState<number>(6);
-  const [timePeriod, setTimePeriod] = useState<number>(3);
+type CalculationType = 'totalPlusInterest' | 'interest' | 'principal' | 'rate' | 'time';
 
-  const calculateSimpleInterest = () => {
-    const P = principalAmount;
-    const R = interestRate;
-    const T = timePeriod;
+interface Result {
+  value: number;
+  formula: string;
+  steps: string[];
+  additionalInfo?: {
+    principal?: number;
+    interest?: number;
+    rate?: number;
+    time?: number;
+    totalAmount?: number;
+  };
+}
 
-    // SI = (P × R × T) / 100
-    const simpleInterest = (P * R * T) / 100;
-    const totalAmount = P + simpleInterest;
+export default function SimpleInterestCalculator() {
+  const [calculationType, setCalculationType] = useState<CalculationType>('totalPlusInterest');
+  const [principal, setPrincipal] = useState<string>('');
+  const [rate, setRate] = useState<string>('');
+  const [time, setTime] = useState<string>('');
+  const [timeUnit, setTimeUnit] = useState<'years' | 'months' | 'days'>('years');
+  const [interest, setInterest] = useState<string>('');
+  const [totalAmount, setTotalAmount] = useState<string>('');
+  const [result, setResult] = useState<Result | null>(null);
 
-    return {
-      principalAmount: P,
-      simpleInterest: Math.round(simpleInterest),
-      totalAmount: Math.round(totalAmount),
-    };
+  const convertTimeToYears = (value: number, unit: 'years' | 'months' | 'days'): number => {
+    switch (unit) {
+      case 'years':
+        return value;
+      case 'months':
+        return value / 12;
+      case 'days':
+        return value / 365;
+      default:
+        return value;
+    }
   };
 
-  const results = calculateSimpleInterest();
+  const calculateSimpleInterest = () => {
+    try {
+      let resultValue: number;
+      let formula: string;
+      let steps: string[] = [];
+      let additionalInfo: Result['additionalInfo'] = {};
 
-  const formatCurrency = (num: number) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0,
-    }).format(num);
+      const P = parseFloat(principal);
+      const R = parseFloat(rate);
+      const t = time ? convertTimeToYears(parseFloat(time), timeUnit) : 0;
+      const I = parseFloat(interest);
+      const A = parseFloat(totalAmount);
+
+      if (calculationType === 'totalPlusInterest') {
+        // Calculate A = P(1 + rt)
+        const r = R / 100;
+        resultValue = P * (1 + r * t);
+        const interestEarned = resultValue - P;
+
+        formula = 'A = P(1 + rt)';
+        steps = [
+          `Given: P = ${P.toFixed(2)}, R = ${R}%, t = ${t.toFixed(6)} years`,
+          `Convert rate to decimal: r = R ÷ 100 = ${R} ÷ 100 = ${r.toFixed(6)}`,
+          `Calculate: A = P(1 + rt)`,
+          `A = ${P.toFixed(2)} × (1 + ${r.toFixed(6)} × ${t.toFixed(6)})`,
+          `A = ${P.toFixed(2)} × (1 + ${(r * t).toFixed(6)})`,
+          `A = ${P.toFixed(2)} × ${(1 + r * t).toFixed(6)}`,
+          `A = ${resultValue.toFixed(2)}`,
+          `Interest earned: I = A − P = ${resultValue.toFixed(2)} − ${P.toFixed(2)} = ${interestEarned.toFixed(2)}`,
+        ];
+        additionalInfo = {
+          principal: P,
+          rate: R,
+          time: t,
+          interest: interestEarned,
+          totalAmount: resultValue,
+        };
+      } else if (calculationType === 'interest') {
+        // Calculate I = Prt
+        const r = R / 100;
+        resultValue = P * r * t;
+
+        formula = 'I = Prt';
+        steps = [
+          `Given: P = ${P.toFixed(2)}, R = ${R}%, t = ${t.toFixed(6)} years`,
+          `Convert rate to decimal: r = R ÷ 100 = ${R} ÷ 100 = ${r.toFixed(6)}`,
+          `Calculate: I = Prt`,
+          `I = ${P.toFixed(2)} × ${r.toFixed(6)} × ${t.toFixed(6)}`,
+          `I = ${resultValue.toFixed(2)}`,
+          `Total amount: A = P + I = ${P.toFixed(2)} + ${resultValue.toFixed(2)} = ${(P + resultValue).toFixed(2)}`,
+        ];
+        additionalInfo = {
+          principal: P,
+          rate: R,
+          time: t,
+          interest: resultValue,
+          totalAmount: P + resultValue,
+        };
+      } else if (calculationType === 'principal') {
+        // Calculate P = A / (1 + rt) or P = I / (rt)
+        if (totalAmount) {
+          const r = R / 100;
+          resultValue = A / (1 + r * t);
+          const interestEarned = A - resultValue;
+
+          formula = 'P = A ÷ (1 + rt)';
+          steps = [
+            `Given: A = ${A.toFixed(2)}, R = ${R}%, t = ${t.toFixed(6)} years`,
+            `Convert rate to decimal: r = R ÷ 100 = ${R} ÷ 100 = ${r.toFixed(6)}`,
+            `Calculate: P = A ÷ (1 + rt)`,
+            `P = ${A.toFixed(2)} ÷ (1 + ${r.toFixed(6)} × ${t.toFixed(6)})`,
+            `P = ${A.toFixed(2)} ÷ (1 + ${(r * t).toFixed(6)})`,
+            `P = ${A.toFixed(2)} ÷ ${(1 + r * t).toFixed(6)}`,
+            `P = ${resultValue.toFixed(2)}`,
+            `Interest: I = A − P = ${A.toFixed(2)} − ${resultValue.toFixed(2)} = ${interestEarned.toFixed(2)}`,
+          ];
+          additionalInfo = {
+            principal: resultValue,
+            rate: R,
+            time: t,
+            interest: interestEarned,
+            totalAmount: A,
+          };
+        } else {
+          const r = R / 100;
+          resultValue = I / (r * t);
+
+          formula = 'P = I ÷ (rt)';
+          steps = [
+            `Given: I = ${I.toFixed(2)}, R = ${R}%, t = ${t.toFixed(6)} years`,
+            `Convert rate to decimal: r = R ÷ 100 = ${R} ÷ 100 = ${r.toFixed(6)}`,
+            `Calculate: P = I ÷ (rt)`,
+            `P = ${I.toFixed(2)} ÷ (${r.toFixed(6)} × ${t.toFixed(6)})`,
+            `P = ${I.toFixed(2)} ÷ ${(r * t).toFixed(6)}`,
+            `P = ${resultValue.toFixed(2)}`,
+            `Total amount: A = P + I = ${resultValue.toFixed(2)} + ${I.toFixed(2)} = ${(resultValue + I).toFixed(2)}`,
+          ];
+          additionalInfo = {
+            principal: resultValue,
+            rate: R,
+            time: t,
+            interest: I,
+            totalAmount: resultValue + I,
+          };
+        }
+      } else if (calculationType === 'rate') {
+        // Calculate R = (I / Pt) × 100 or R = ((A/P - 1) / t) × 100
+        if (interest) {
+          resultValue = (I / (P * t)) * 100;
+
+          formula = 'R = (I ÷ Pt) × 100';
+          steps = [
+            `Given: I = ${I.toFixed(2)}, P = ${P.toFixed(2)}, t = ${t.toFixed(6)} years`,
+            `Calculate: R = (I ÷ Pt) × 100`,
+            `R = (${I.toFixed(2)} ÷ (${P.toFixed(2)} × ${t.toFixed(6)})) × 100`,
+            `R = (${I.toFixed(2)} ÷ ${(P * t).toFixed(6)}) × 100`,
+            `R = ${(I / (P * t)).toFixed(6)} × 100`,
+            `R = ${resultValue.toFixed(6)}%`,
+            `Total amount: A = P + I = ${P.toFixed(2)} + ${I.toFixed(2)} = ${(P + I).toFixed(2)}`,
+          ];
+          additionalInfo = {
+            principal: P,
+            rate: resultValue,
+            time: t,
+            interest: I,
+            totalAmount: P + I,
+          };
+        } else {
+          resultValue = ((A / P - 1) / t) * 100;
+          const r = resultValue / 100;
+          const interestEarned = A - P;
+
+          formula = 'R = ((A ÷ P − 1) ÷ t) × 100';
+          steps = [
+            `Given: A = ${A.toFixed(2)}, P = ${P.toFixed(2)}, t = ${t.toFixed(6)} years`,
+            `Calculate: R = ((A ÷ P − 1) ÷ t) × 100`,
+            `R = ((${A.toFixed(2)} ÷ ${P.toFixed(2)} − 1) ÷ ${t.toFixed(6)}) × 100`,
+            `R = ((${(A / P).toFixed(6)} − 1) ÷ ${t.toFixed(6)}) × 100`,
+            `R = (${(A / P - 1).toFixed(6)} ÷ ${t.toFixed(6)}) × 100`,
+            `R = ${((A / P - 1) / t).toFixed(6)} × 100`,
+            `R = ${resultValue.toFixed(6)}%`,
+            `Interest: I = A − P = ${A.toFixed(2)} − ${P.toFixed(2)} = ${interestEarned.toFixed(2)}`,
+          ];
+          additionalInfo = {
+            principal: P,
+            rate: resultValue,
+            time: t,
+            interest: interestEarned,
+            totalAmount: A,
+          };
+        }
+      } else if (calculationType === 'time') {
+        // Calculate t = I / (Pr) or t = (A/P - 1) / r
+        if (interest) {
+          const r = R / 100;
+          resultValue = I / (P * r);
+
+          formula = 't = I ÷ (Pr)';
+          steps = [
+            `Given: I = ${I.toFixed(2)}, P = ${P.toFixed(2)}, R = ${R}%`,
+            `Convert rate to decimal: r = R ÷ 100 = ${R} ÷ 100 = ${r.toFixed(6)}`,
+            `Calculate: t = I ÷ (Pr)`,
+            `t = ${I.toFixed(2)} ÷ (${P.toFixed(2)} × ${r.toFixed(6)})`,
+            `t = ${I.toFixed(2)} ÷ ${(P * r).toFixed(6)}`,
+            `t = ${resultValue.toFixed(6)} years`,
+            `Total amount: A = P + I = ${P.toFixed(2)} + ${I.toFixed(2)} = ${(P + I).toFixed(2)}`,
+          ];
+          additionalInfo = {
+            principal: P,
+            rate: R,
+            time: resultValue,
+            interest: I,
+            totalAmount: P + I,
+          };
+        } else {
+          const r = R / 100;
+          resultValue = (A / P - 1) / r;
+          const interestEarned = A - P;
+
+          formula = 't = (A ÷ P − 1) ÷ r';
+          steps = [
+            `Given: A = ${A.toFixed(2)}, P = ${P.toFixed(2)}, R = ${R}%`,
+            `Convert rate to decimal: r = R ÷ 100 = ${R} ÷ 100 = ${r.toFixed(6)}`,
+            `Calculate: t = (A ÷ P − 1) ÷ r`,
+            `t = (${A.toFixed(2)} ÷ ${P.toFixed(2)} − 1) ÷ ${r.toFixed(6)}`,
+            `t = (${(A / P).toFixed(6)} − 1) ÷ ${r.toFixed(6)}`,
+            `t = ${(A / P - 1).toFixed(6)} ÷ ${r.toFixed(6)}`,
+            `t = ${resultValue.toFixed(6)} years`,
+            `Interest: I = A − P = ${A.toFixed(2)} − ${P.toFixed(2)} = ${interestEarned.toFixed(2)}`,
+          ];
+          additionalInfo = {
+            principal: P,
+            rate: R,
+            time: resultValue,
+            interest: interestEarned,
+            totalAmount: A,
+          };
+        }
+      } else {
+        throw new Error('Invalid calculation type');
+      }
+
+      setResult({
+        value: resultValue,
+        formula,
+        steps,
+        additionalInfo,
+      });
+    } catch (error) {
+      setResult(null);
+      alert('Please enter valid values for all required fields.');
+    }
+  };
+
+  const clearAll = () => {
+    setPrincipal('');
+    setRate('');
+    setTime('');
+    setInterest('');
+    setTotalAmount('');
+    setResult(null);
   };
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-green-50">
       <Navigation />
-      <div className="bg-gradient-to-br from-blue-50 via-green-50 to-blue-100 min-h-screen">
-        {/* Hero Section */}
-        <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white py-8 md:py-12 lg:py-16">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <Link
-              href="/calculators"
-              className="inline-flex items-center text-white/90 hover:text-white mb-4 md:mb-6 transition-colors text-sm md:text-base"
+
+      <main className="flex-grow container mx-auto px-4 py-8 mt-16">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
+              <Calculator className="w-8 h-8" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-[#1A3D7C] mb-4">
+            Simple Interest Calculator
+          </h1>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Calculate simple interest, principal, rate, time, or total amount using the formula <span className="italic font-semibold">A = P(1 + rt)</span>
+          </p>
+        </div>
+
+        {/* Calculator Card */}
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-8 mb-12">
+          {/* Calculation Type Selector */}
+          <div className="mb-6">
+            <Label className="text-lg font-semibold text-[#1A3D7C] mb-2 block">Calculate:</Label>
+            <select
+              value={calculationType}
+              onChange={(e) => {
+                setCalculationType(e.target.value as CalculationType);
+                setResult(null);
+              }}
+              className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#2BAE66] text-lg"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Calculators
-            </Link>
+              <option value="totalPlusInterest">Total P+I (A)</option>
+              <option value="interest">Interest (I)</option>
+              <option value="principal">Principal (P)</option>
+              <option value="rate">Rate (R)</option>
+              <option value="time">Time (t)</option>
+            </select>
+          </div>
 
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6">
-              <div className="flex-1">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-                  Simple Interest Calculator India
-                </h1>
-                <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl">
-                  Calculate simple interest on loans, deposits, and investments. Get instant results with our free SI calculator.
+          {/* Formula Display */}
+          <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border-2 border-[#2BAE66]">
+            <p className="text-center text-xl font-semibold text-[#1A3D7C]">
+              {calculationType === 'totalPlusInterest' && (
+                <span className="italic">Where A = P(1 + rt)</span>
+              )}
+              {calculationType === 'interest' && (
+                <span className="italic">Where I = Prt</span>
+              )}
+              {calculationType === 'principal' && (
+                <span className="italic">Where P = A ÷ (1 + rt) or P = I ÷ (rt)</span>
+              )}
+              {calculationType === 'rate' && (
+                <span className="italic">Where R = (I ÷ Pt) × 100 or R = ((A ÷ P − 1) ÷ t) × 100</span>
+              )}
+              {calculationType === 'time' && (
+                <span className="italic">Where t = I ÷ (Pr) or t = (A ÷ P − 1) ÷ r</span>
+              )}
+            </p>
+          </div>
+
+          {/* Input Fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            {/* Principal Input */}
+            {calculationType !== 'principal' && (
+              <div>
+                <Label htmlFor="principal" className="text-base font-semibold text-[#1A3D7C] mb-2 block">
+                  Principal (P)
+                </Label>
+                <Input
+                  id="principal"
+                  type="number"
+                  value={principal}
+                  onChange={(e) => setPrincipal(e.target.value)}
+                  placeholder="Enter principal amount"
+                  className="text-lg p-3 border-2 focus:border-[#2BAE66]"
+                  step="0.01"
+                />
+              </div>
+            )}
+
+            {/* Rate Input */}
+            {calculationType !== 'rate' && (
+              <div>
+                <Label htmlFor="rate" className="text-base font-semibold text-[#1A3D7C] mb-2 block">
+                  Rate (R) % per year
+                </Label>
+                <Input
+                  id="rate"
+                  type="number"
+                  value={rate}
+                  onChange={(e) => setRate(e.target.value)}
+                  placeholder="Enter rate (percentage)"
+                  className="text-lg p-3 border-2 focus:border-[#2BAE66]"
+                  step="0.01"
+                />
+              </div>
+            )}
+
+            {/* Time Input */}
+            {calculationType !== 'time' && (
+              <div>
+                <Label htmlFor="time" className="text-base font-semibold text-[#1A3D7C] mb-2 block">
+                  Time (t)
+                </Label>
+                <div className="flex gap-2">
+                  <Input
+                    id="time"
+                    type="number"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                    placeholder="Enter time"
+                    className="text-lg p-3 border-2 focus:border-[#2BAE66] flex-1"
+                    step="0.01"
+                  />
+                  <select
+                    value={timeUnit}
+                    onChange={(e) => setTimeUnit(e.target.value as 'years' | 'months' | 'days')}
+                    className="p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#2BAE66]"
+                  >
+                    <option value="years">years</option>
+                    <option value="months">months</option>
+                    <option value="days">days</option>
+                  </select>
+                </div>
+              </div>
+            )}
+
+            {/* Interest Input (for Principal, Rate, Time calculations) */}
+            {(calculationType === 'principal' || calculationType === 'rate' || calculationType === 'time') && (
+              <div>
+                <Label htmlFor="interest" className="text-base font-semibold text-[#1A3D7C] mb-2 block">
+                  Interest (I) <span className="text-sm text-gray-600">(optional)</span>
+                </Label>
+                <Input
+                  id="interest"
+                  type="number"
+                  value={interest}
+                  onChange={(e) => setInterest(e.target.value)}
+                  placeholder="Enter interest amount"
+                  className="text-lg p-3 border-2 focus:border-[#2BAE66]"
+                  step="0.01"
+                />
+              </div>
+            )}
+
+            {/* Total Amount Input (for Principal, Rate, Time calculations) */}
+            {(calculationType === 'principal' || calculationType === 'rate' || calculationType === 'time') && (
+              <div>
+                <Label htmlFor="totalAmount" className="text-base font-semibold text-[#1A3D7C] mb-2 block">
+                  Total Amount (A) <span className="text-sm text-gray-600">(optional)</span>
+                </Label>
+                <Input
+                  id="totalAmount"
+                  type="number"
+                  value={totalAmount}
+                  onChange={(e) => setTotalAmount(e.target.value)}
+                  placeholder="Enter total amount"
+                  className="text-lg p-3 border-2 focus:border-[#2BAE66]"
+                  step="0.01"
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex gap-4">
+            <Button
+              onClick={calculateSimpleInterest}
+              className="flex-1 bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] hover:from-[#2BAE66] hover:to-[#1A3D7C] text-white py-6 text-lg font-semibold rounded-lg transition-all duration-300"
+            >
+              <Calculator className="mr-2 h-5 w-5" />
+              Calculate
+            </Button>
+            <Button
+              onClick={clearAll}
+              variant="outline"
+              className="px-8 py-6 text-lg font-semibold border-2 border-[#1A3D7C] text-[#1A3D7C] hover:bg-[#1A3D7C] hover:text-white rounded-lg transition-all duration-300"
+            >
+              Clear
+            </Button>
+          </div>
+
+          {/* Result Display */}
+          {result && (
+            <div className="mt-8 p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg border-2 border-[#2BAE66]">
+              <h3 className="text-2xl font-bold text-[#1A3D7C] mb-4">Result:</h3>
+
+              <div className="mb-4 p-4 bg-white rounded-lg">
+                <p className="text-xl font-semibold text-[#2BAE66]">
+                  {calculationType === 'totalPlusInterest' && `Total Amount (A) = ${result.value.toFixed(2)}`}
+                  {calculationType === 'interest' && `Interest (I) = ${result.value.toFixed(2)}`}
+                  {calculationType === 'principal' && `Principal (P) = ${result.value.toFixed(2)}`}
+                  {calculationType === 'rate' && `Rate (R) = ${result.value.toFixed(6)}%`}
+                  {calculationType === 'time' && `Time (t) = ${result.value.toFixed(6)} years`}
                 </p>
               </div>
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0">
-                <Calculator className="w-8 h-8 md:w-10 md:h-10 text-white" />
+
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold text-[#1A3D7C] mb-2">Formula:</h4>
+                <p className="text-lg italic font-semibold bg-white p-3 rounded-lg">{result.formula}</p>
               </div>
+
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold text-[#1A3D7C] mb-2">Step-by-step Solution:</h4>
+                <div className="bg-white p-4 rounded-lg space-y-2">
+                  {result.steps.map((step, index) => (
+                    <p key={index} className="text-base">
+                      <span className="font-semibold text-[#2BAE66]">Step {index + 1}:</span> {step}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {result.additionalInfo && (
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="text-lg font-semibold text-[#1A3D7C] mb-3">Summary:</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {result.additionalInfo.principal !== undefined && (
+                      <p className="text-base">
+                        <span className="font-semibold">Principal (P):</span> {result.additionalInfo.principal.toFixed(2)}
+                      </p>
+                    )}
+                    {result.additionalInfo.rate !== undefined && (
+                      <p className="text-base">
+                        <span className="font-semibold">Rate (R):</span> {result.additionalInfo.rate.toFixed(6)}%
+                      </p>
+                    )}
+                    {result.additionalInfo.time !== undefined && (
+                      <p className="text-base">
+                        <span className="font-semibold">Time (t):</span> {result.additionalInfo.time.toFixed(6)} years
+                      </p>
+                    )}
+                    {result.additionalInfo.interest !== undefined && (
+                      <p className="text-base">
+                        <span className="font-semibold">Interest (I):</span> {result.additionalInfo.interest.toFixed(2)}
+                      </p>
+                    )}
+                    {result.additionalInfo.totalAmount !== undefined && (
+                      <p className="text-base">
+                        <span className="font-semibold">Total Amount (A):</span> {result.additionalInfo.totalAmount.toFixed(2)}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
+          )}
         </div>
 
-        {/* Calculator Section */}
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-10 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
-            {/* Left Column - Calculator */}
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl md:rounded-2xl shadow-xl p-4 md:p-8 lg:p-10">
-                <h2 className="text-xl md:text-2xl font-bold text-[#1A3D7C] mb-6 md:mb-8">
-                  Calculate Simple Interest
-                </h2>
+        {/* Educational Content */}
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* What is Simple Interest */}
+          <section className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-4">What is Simple Interest?</h2>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Simple interest is a method of calculating the interest charge on a loan or deposit. It is determined by multiplying the daily interest rate by the principal by the number of time periods that elapse. Simple interest is calculated only on the principal amount of a loan or deposit, so it is easier to determine than compound interest.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              The formula for simple interest is straightforward: multiply the principal amount by the interest rate and the time period. The total amount owed or earned is the sum of the principal and the simple interest calculated.
+            </p>
+          </section>
 
-                <div className="space-y-6 md:space-y-8">
-                  {/* Principal Amount */}
-                  <div>
-                    <div className="flex items-center justify-between mb-3 md:mb-4">
-                      <Label htmlFor="principal-amount" className="text-gray-700 font-semibold flex-shrink-0 text-sm md:text-base">
-                        Principal Amount (₹)
-                      </Label>
-                      <Input
-                        id="principal-amount"
-                        type="number"
-                        value={principalAmount}
-                        onChange={(e) => setPrincipalAmount(Number(e.target.value))}
-                        className="w-24 md:w-32 lg:w-40 text-right font-bold text-sm md:text-base lg:text-lg border-2 border-[#2BAE66]"
-                      />
-                    </div>
-                    <Slider
-                      value={[principalAmount]}
-                      onValueChange={(value) => setPrincipalAmount(value[0])}
-                      min={1000}
-                      max={10000000}
-                      step={1000}
-                      className="w-full"
-                    />
-                    <div className="flex justify-between mt-2 text-xs md:text-sm text-gray-600">
-                      <span>₹1,000</span>
-                      <span>₹1 Cr</span>
-                    </div>
-                  </div>
+          {/* Simple Interest Formula */}
+          <section className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-4">Simple Interest Formula</h2>
+            <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg border-2 border-[#2BAE66] mb-6">
+              <p className="text-2xl font-bold text-center text-[#1A3D7C] mb-4">
+                <span className="italic">I = Prt</span>
+              </p>
+              <p className="text-xl font-semibold text-center text-[#1A3D7C]">
+                <span className="italic">A = P + I = P(1 + rt)</span>
+              </p>
+            </div>
+            <div className="space-y-3">
+              <p className="text-gray-700"><span className="font-semibold text-[#1A3D7C]">I</span> = Simple Interest</p>
+              <p className="text-gray-700"><span className="font-semibold text-[#1A3D7C]">P</span> = Principal amount (initial investment or loan)</p>
+              <p className="text-gray-700"><span className="font-semibold text-[#1A3D7C]">r</span> = Interest rate per period (as a decimal)</p>
+              <p className="text-gray-700"><span className="font-semibold text-[#1A3D7C]">R</span> = Interest rate per period (as a percentage)</p>
+              <p className="text-gray-700"><span className="font-semibold text-[#1A3D7C]">t</span> = Time period (in years)</p>
+              <p className="text-gray-700"><span className="font-semibold text-[#1A3D7C]">A</span> = Total amount (Principal + Interest)</p>
+            </div>
+            <div className="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+              <p className="text-gray-700">
+                <span className="font-semibold">Important:</span> To convert the annual interest rate (R) to a decimal rate (r), divide by 100: <span className="italic">r = R ÷ 100</span>
+              </p>
+            </div>
+          </section>
 
-                  {/* Interest Rate */}
-                  <div>
-                    <div className="flex items-center justify-between mb-3 md:mb-4">
-                      <Label htmlFor="interest-rate" className="text-gray-700 font-semibold flex-shrink-0 text-sm md:text-base">
-                        Interest Rate (% p.a.)
-                      </Label>
-                      <Input
-                        id="interest-rate"
-                        type="number"
-                        value={interestRate}
-                        onChange={(e) => setInterestRate(Number(e.target.value))}
-                        className="w-16 md:w-20 lg:w-24 text-right font-bold text-sm md:text-base lg:text-lg border-2 border-[#2BAE66]"
-                        step="0.1"
-                      />
-                    </div>
-                    <Slider
-                      value={[interestRate]}
-                      onValueChange={(value) => setInterestRate(value[0])}
-                      min={1}
-                      max={20}
-                      step={0.1}
-                      className="w-full"
-                    />
-                    <div className="flex justify-between mt-2 text-xs md:text-sm text-gray-600">
-                      <span>1%</span>
-                      <span>20%</span>
-                    </div>
-                  </div>
+          {/* How to Calculate Simple Interest */}
+          <section className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-4">How to Calculate Simple Interest</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Step 1: Identify the Principal (P)</h3>
+                <p className="text-gray-700">
+                  The principal is the initial amount of money borrowed or invested. For example, if you deposit $5,000 in a savings account, the principal is $5,000.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Step 2: Determine the Interest Rate (R or r)</h3>
+                <p className="text-gray-700">
+                  The interest rate is typically expressed as an annual percentage. Convert the percentage to a decimal by dividing by 100. For example, 5% becomes 0.05.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Step 3: Find the Time Period (t)</h3>
+                <p className="text-gray-700">
+                  The time period is the length of time the money is borrowed or invested, expressed in years. If the time is given in months or days, convert it to years (months ÷ 12, days ÷ 365).
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Step 4: Apply the Formula</h3>
+                <p className="text-gray-700 mb-2">
+                  Use the formula <span className="italic font-semibold">I = Prt</span> to calculate the simple interest.
+                </p>
+                <p className="text-gray-700">
+                  Then calculate the total amount: <span className="italic font-semibold">A = P + I</span> or <span className="italic font-semibold">A = P(1 + rt)</span>
+                </p>
+              </div>
+            </div>
+          </section>
 
-                  {/* Time Period */}
-                  <div>
-                    <div className="flex items-center justify-between mb-3 md:mb-4">
-                      <Label htmlFor="time-period" className="text-gray-700 font-semibold flex-shrink-0 text-sm md:text-base">
-                        Time Period (Years)
-                      </Label>
-                      <Input
-                        id="time-period"
-                        type="number"
-                        value={timePeriod}
-                        onChange={(e) => setTimePeriod(Number(e.target.value))}
-                        className="w-16 md:w-20 lg:w-24 text-right font-bold text-sm md:text-base lg:text-lg border-2 border-[#2BAE66]"
-                      />
-                    </div>
-                    <Slider
-                      value={[timePeriod]}
-                      onValueChange={(value) => setTimePeriod(value[0])}
-                      min={1}
-                      max={30}
-                      step={1}
-                      className="w-full"
-                    />
-                    <div className="flex justify-between mt-2 text-xs md:text-sm text-gray-600">
-                      <span>1 Year</span>
-                      <span>30 Years</span>
-                    </div>
-                  </div>
+          {/* Example Calculations */}
+          <section className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-4">Example Calculations</h2>
+
+            <div className="space-y-6">
+              <div className="p-6 bg-gradient-to-r from-blue-50 to-white rounded-lg border-l-4 border-[#2BAE66]">
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Example 1: Calculate Total Amount</h3>
+                <p className="text-gray-700 mb-2"><span className="font-semibold">Given:</span> P = $10,000, R = 5% per year, t = 3 years</p>
+                <p className="text-gray-700 mb-2"><span className="font-semibold">Solution:</span></p>
+                <div className="ml-4 space-y-1 text-gray-700">
+                  <p>Convert rate: r = 5 ÷ 100 = 0.05</p>
+                  <p>Calculate: A = P(1 + rt)</p>
+                  <p>A = 10,000 × (1 + 0.05 × 3)</p>
+                  <p>A = 10,000 × (1 + 0.15)</p>
+                  <p>A = 10,000 × 1.15</p>
+                  <p className="font-semibold text-[#2BAE66]">A = $11,500</p>
+                  <p>Interest earned: I = A − P = $11,500 − $10,000 = $1,500</p>
                 </div>
+              </div>
 
-                {/* Formula Display */}
-                <div className="mt-8 bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg border-2 border-[#2BAE66]/20">
-                  <h3 className="font-bold text-[#1A3D7C] mb-3 flex items-center text-base md:text-lg">
-                    <Calculator className="w-5 h-5 mr-2" />
-                    Simple Interest Formula
-                  </h3>
-                  <div className="bg-white p-4 rounded border border-gray-200 font-mono text-sm md:text-base text-center">
-                    SI = (P × R × T) / 100
-                  </div>
-                  <p className="text-xs md:text-sm text-gray-600 mt-3">
-                    Where P = Principal, R = Rate (% per annum), T = Time (years)
-                  </p>
+              <div className="p-6 bg-gradient-to-r from-green-50 to-white rounded-lg border-l-4 border-[#1A3D7C]">
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Example 2: Calculate Interest Rate</h3>
+                <p className="text-gray-700 mb-2"><span className="font-semibold">Given:</span> P = $8,000, I = $1,200, t = 2 years</p>
+                <p className="text-gray-700 mb-2"><span className="font-semibold">Solution:</span></p>
+                <div className="ml-4 space-y-1 text-gray-700">
+                  <p>Use formula: R = (I ÷ Pt) × 100</p>
+                  <p>R = (1,200 ÷ (8,000 × 2)) × 100</p>
+                  <p>R = (1,200 ÷ 16,000) × 100</p>
+                  <p>R = 0.075 × 100</p>
+                  <p className="font-semibold text-[#2BAE66]">R = 7.5%</p>
+                </div>
+              </div>
+
+              <div className="p-6 bg-gradient-to-r from-purple-50 to-white rounded-lg border-l-4 border-[#2BAE66]">
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Example 3: Calculate Time Period</h3>
+                <p className="text-gray-700 mb-2"><span className="font-semibold">Given:</span> P = $5,000, R = 6% per year, A = $6,500</p>
+                <p className="text-gray-700 mb-2"><span className="font-semibold">Solution:</span></p>
+                <div className="ml-4 space-y-1 text-gray-700">
+                  <p>Convert rate: r = 6 ÷ 100 = 0.06</p>
+                  <p>Use formula: t = (A ÷ P − 1) ÷ r</p>
+                  <p>t = (6,500 ÷ 5,000 − 1) ÷ 0.06</p>
+                  <p>t = (1.3 − 1) ÷ 0.06</p>
+                  <p>t = 0.3 ÷ 0.06</p>
+                  <p className="font-semibold text-[#2BAE66]">t = 5 years</p>
                 </div>
               </div>
             </div>
+          </section>
 
-            {/* Right Column - Results */}
-            <div className="lg:col-span-1">
-              <div className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] rounded-xl md:rounded-2xl shadow-xl p-6 md:p-8 text-white sticky top-6">
-                <h2 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 flex items-center">
-                  <TrendingUp className="w-6 h-6 mr-3" />
-                  Results
-                </h2>
+          {/* Simple Interest vs Compound Interest */}
+          <section className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-4">Simple Interest vs Compound Interest</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white">
+                    <th className="border border-gray-300 p-3 text-left">Aspect</th>
+                    <th className="border border-gray-300 p-3 text-left">Simple Interest</th>
+                    <th className="border border-gray-300 p-3 text-left">Compound Interest</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 p-3 font-semibold">Calculation Basis</td>
+                    <td className="border border-gray-300 p-3">Calculated only on principal</td>
+                    <td className="border border-gray-300 p-3">Calculated on principal + accumulated interest</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-3 font-semibold">Formula</td>
+                    <td className="border border-gray-300 p-3 italic">I = Prt, A = P(1 + rt)</td>
+                    <td className="border border-gray-300 p-3 italic">A = P(1 + r)ⁿ</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 p-3 font-semibold">Growth Pattern</td>
+                    <td className="border border-gray-300 p-3">Linear growth</td>
+                    <td className="border border-gray-300 p-3">Exponential growth</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-3 font-semibold">Common Use</td>
+                    <td className="border border-gray-300 p-3">Short-term loans, simple savings</td>
+                    <td className="border border-gray-300 p-3">Long-term investments, mortgages</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 p-3 font-semibold">Returns</td>
+                    <td className="border border-gray-300 p-3">Lower returns over time</td>
+                    <td className="border border-gray-300 p-3">Higher returns over time</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-                <div className="space-y-6">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6">
-                    <p className="text-white/80 text-xs md:text-sm mb-2">Principal Amount</p>
-                    <p className="text-xl md:text-2xl lg:text-3xl font-bold break-words">
-                      {formatCurrency(results.principalAmount)}
-                    </p>
-                  </div>
+          {/* Applications of Simple Interest */}
+          <section className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-4">Applications of Simple Interest</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-4 bg-blue-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">Personal Loans</h3>
+                <p className="text-gray-700">
+                  Many short-term personal loans use simple interest to calculate the interest owed on the borrowed amount.
+                </p>
+              </div>
+              <div className="p-4 bg-green-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">Car Loans</h3>
+                <p className="text-gray-700">
+                  Some automobile financing uses simple interest calculations for determining monthly payments and total interest.
+                </p>
+              </div>
+              <div className="p-4 bg-purple-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">Savings Accounts</h3>
+                <p className="text-gray-700">
+                  Certain basic savings accounts calculate interest using simple interest methods for easier understanding.
+                </p>
+              </div>
+              <div className="p-4 bg-yellow-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">Short-term Investments</h3>
+                <p className="text-gray-700">
+                  Treasury bills and other short-term securities often use simple interest for calculating returns.
+                </p>
+              </div>
+              <div className="p-4 bg-pink-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">Promissory Notes</h3>
+                <p className="text-gray-700">
+                  Written promises to pay back borrowed money typically include simple interest calculations.
+                </p>
+              </div>
+              <div className="p-4 bg-indigo-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">Educational Purposes</h3>
+                <p className="text-gray-700">
+                  Simple interest is taught in schools to introduce basic financial literacy and interest concepts.
+                </p>
+              </div>
+            </div>
+          </section>
 
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6">
-                    <p className="text-white/80 text-xs md:text-sm mb-2">Simple Interest</p>
-                    <p className="text-xl md:text-2xl lg:text-3xl font-bold break-words">
-                      {formatCurrency(results.simpleInterest)}
-                    </p>
-                  </div>
-
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 md:p-6 border-2 border-white/30">
-                    <p className="text-white/90 text-xs md:text-sm mb-2 font-semibold">Total Amount</p>
-                    <p className="text-2xl md:text-3xl lg:text-4xl font-bold break-words">
-                      {formatCurrency(results.totalAmount)}
-                    </p>
-                  </div>
+          {/* Tips for Using Simple Interest */}
+          <section className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-4">Tips for Using Simple Interest Calculator</h2>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                  <span className="font-bold">1</span>
                 </div>
-
-                <div className="mt-6 pt-6 border-t border-white/20 space-y-2 text-xs md:text-sm text-white/80">
-                  <p>💰 Principal + Interest = Total Amount</p>
-                  <p>📊 Interest Rate: {interestRate}% per annum</p>
-                  <p>⏱️ Time Period: {timePeriod} {timePeriod === 1 ? 'year' : 'years'}</p>
+                <div>
+                  <h3 className="font-semibold text-[#1A3D7C] mb-1">Convert Percentages</h3>
+                  <p className="text-gray-700">Always convert percentage rates to decimals when using formulas manually (divide by 100).</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                  <span className="font-bold">2</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[#1A3D7C] mb-1">Time Units Matter</h3>
+                  <p className="text-gray-700">Ensure time is expressed in years. Convert months to years (÷ 12) or days to years (÷ 365).</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                  <span className="font-bold">3</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[#1A3D7C] mb-1">Double-Check Units</h3>
+                  <p className="text-gray-700">Make sure the interest rate period matches the time period (both annual, both monthly, etc.).</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                  <span className="font-bold">4</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[#1A3D7C] mb-1">Compare Options</h3>
+                  <p className="text-gray-700">Use the calculator to compare different loan or investment scenarios before making decisions.</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="w-8 h-8 bg-[#2BAE66] text-white rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                  <span className="font-bold">5</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[#1A3D7C] mb-1">Verify Results</h3>
+                  <p className="text-gray-700">Review the step-by-step solution to understand how the result was calculated and verify accuracy.</p>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* Content Sections */}
-          <div className="mt-12 md:mt-16 space-y-8 md:space-y-12">
-            {/* What is Simple Interest */}
-            <section className="bg-white rounded-xl md:rounded-2xl shadow-lg p-6 md:p-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-6">
-                What is Simple Interest?
-              </h2>
-              <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-                <p>
-                  Simple Interest (SI) is a method of calculating interest on the original principal amount only. Unlike compound interest, simple interest does not include interest on accumulated interest from previous periods.
-                </p>
-                <p>
-                  The formula for simple interest is straightforward: <strong>SI = (P × R × T) / 100</strong>, where P is the principal amount, R is the annual interest rate, and T is the time period in years.
-                </p>
-                <p>
-                  Simple interest is commonly used for short-term loans, certain types of deposits, and educational calculations. It's easier to understand and calculate compared to compound interest.
+          {/* Frequently Asked Questions */}
+          <section className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">What is the difference between simple and compound interest?</h3>
+                <p className="text-gray-700">
+                  Simple interest is calculated only on the principal amount, while compound interest is calculated on both the principal and accumulated interest. Simple interest grows linearly, while compound interest grows exponentially over time.
                 </p>
               </div>
-
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-lg">
-                  <h3 className="font-bold text-[#1A3D7C] mb-3 flex items-center text-lg">
-                    <IndianRupee className="w-5 h-5 mr-2 text-[#2BAE66]" />
-                    When is SI Used?
-                  </h3>
-                  <ul className="space-y-2 text-gray-700 text-sm md:text-base">
-                    <li>✓ Personal loans (short-term)</li>
-                    <li>✓ Car loans (some banks)</li>
-                    <li>✓ Education loans</li>
-                    <li>✓ Fixed deposits (simple)</li>
-                    <li>✓ Business credit lines</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-lg">
-                  <h3 className="font-bold text-[#1A3D7C] mb-3 flex items-center text-lg">
-                    <Percent className="w-5 h-5 mr-2 text-[#2BAE66]" />
-                    SI vs Compound Interest
-                  </h3>
-                  <ul className="space-y-2 text-gray-700 text-sm md:text-base">
-                    <li>✓ SI: Interest on principal only</li>
-                    <li>✓ CI: Interest on interest too</li>
-                    <li>✓ SI: Lower total interest</li>
-                    <li>✓ CI: Higher returns/payments</li>
-                    <li>✓ SI: Simpler calculation</li>
-                  </ul>
-                </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">How do I convert monthly interest rate to annual?</h3>
+                <p className="text-gray-700">
+                  To convert a monthly interest rate to an annual rate, multiply it by 12. For example, 1% per month equals 12% per year. However, note that this is different from compound interest calculations.
+                </p>
               </div>
-            </section>
-
-            {/* FAQs */}
-            <section className="bg-white rounded-xl md:rounded-2xl shadow-lg p-6 md:p-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A3D7C] mb-8">
-                Simple Interest FAQs
-              </h2>
-              <div className="space-y-6">
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    How to calculate simple interest?
-                  </h3>
-                  <p className="text-gray-700">
-                    Use the formula: SI = (P × R × T) / 100. For example, on ₹1,00,000 at 6% for 3 years: SI = (100000 × 6 × 3) / 100 = ₹18,000. Total amount = ₹1,00,000 + ₹18,000 = ₹1,18,000.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    What is the difference between simple and compound interest?
-                  </h3>
-                  <p className="text-gray-700">
-                    Simple interest is calculated only on the principal amount throughout the loan period. Compound interest is calculated on the principal plus accumulated interest, resulting in higher total interest over time.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    Which loans use simple interest in India?
-                  </h3>
-                  <p className="text-gray-700">
-                    Some education loans, short-term personal loans, and certain business loans use simple interest. However, most home loans, car loans, and credit cards use compound interest (reducing balance method).
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    Can I use this for monthly calculations?
-                  </h3>
-                  <p className="text-gray-700">
-                    Yes! Convert time to years: For 6 months, use T = 0.5 years. For monthly rate, use R/12 and T in months. Example: 6% annual = 0.5% monthly.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-[#2BAE66] pl-6 py-2">
-                  <h3 className="font-bold text-[#1A3D7C] mb-2 text-lg">
-                    Is simple interest better than compound interest?
-                  </h3>
-                  <p className="text-gray-700">
-                    For borrowers, simple interest is better as total interest paid is less. For investors/savers, compound interest is better as it generates higher returns. The choice depends on whether you're lending or borrowing.
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Can simple interest be negative?</h3>
+                <p className="text-gray-700">
+                  In standard financial contexts, simple interest is not negative. However, in some theoretical scenarios or when dealing with debt reductions, you might see negative interest rates, but this is uncommon in simple interest calculations.
+                </p>
               </div>
-            </section>
-
-            {/* Book Your Session CTA Section */}
-            <section className="bg-gradient-to-r from-[#1A3D7C] via-[#2BAE66] to-[#1A3D7C] rounded-xl md:rounded-2xl shadow-xl p-8 md:p-12 text-center text-white">
-              <div className="flex items-center justify-center mb-6">
-                <BookOpen className="w-10 h-10 md:w-12 md:h-12 text-[#FFC857] mr-3" />
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                  Need Help with Interest Calculations?
-                </h2>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">Is simple interest better than compound interest?</h3>
+                <p className="text-gray-700">
+                  It depends on your perspective. For borrowers, simple interest is better as it results in lower total interest paid. For investors, compound interest is better as it generates higher returns over time. Simple interest is easier to calculate and understand.
+                </p>
               </div>
-              <p className="text-lg md:text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Our expert tutors can help you master simple interest, percentage calculations, and financial mathematics. Get personalized one-on-one guidance tailored to your learning style.
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">How accurate is this simple interest calculator?</h3>
+                <p className="text-gray-700">
+                  This calculator uses precise mathematical formulas and provides results accurate to several decimal places. The step-by-step solutions show exactly how calculations are performed, ensuring transparency and accuracy.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-2">What if my time period is in months or days?</h3>
+                <p className="text-gray-700">
+                  The calculator automatically converts your time input to years based on the unit you select. You can enter time in years, months, or days, and the calculator will handle the conversion (months ÷ 12, days ÷ 365).
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Additional Resources */}
+          <section className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white rounded-xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold mb-4">Additional Resources</h2>
+            <div className="space-y-3">
+              <p className="text-lg">
+                Learn more about financial calculations and interest rates:
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/book-demo-class">
-                  <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors flex items-center justify-center gap-2">
-                    Book Your Session
-                    <ArrowRight className="w-5 h-5" />
-                  </button>
-                </Link>
-                <Link href="/contact">
-                  <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors">
-                    Contact Us
-                  </button>
-                </Link>
-              </div>
-            </section>
-
-            {/* Benefits Section */}
-            <section className="mb-12">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-                <Target className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
-                Benefits of Simple Interest Calculator
-              </h2>
-              <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white/10 p-5 rounded-xl">
-                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Quick Loan Calculations
-                    </h3>
-                    <p className="text-white/90">
-                      Instantly calculate interest on personal loans, car loans, or short-term borrowings. Perfect for understanding the true cost of borrowing before taking a loan.
-                    </p>
-                  </div>
-                  <div className="bg-white/10 p-5 rounded-xl">
-                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Fixed Deposit Planning
-                    </h3>
-                    <p className="text-white/90">
-                      Estimate returns on bank FDs, corporate deposits, or short-term investment instruments that use simple interest calculations for accurate financial planning.
-                    </p>
-                  </div>
-                  <div className="bg-white/10 p-5 rounded-xl">
-                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Education Loan Analysis
-                    </h3>
-                    <p className="text-white/90">
-                      Calculate interest during moratorium periods on education loans. Understand how much interest accumulates while you're still studying before repayment begins.
-                    </p>
-                  </div>
-                  <div className="bg-white/10 p-5 rounded-xl">
-                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Business Cash Flow
-                    </h3>
-                    <p className="text-white/90">
-                      For businesses offering credit terms to customers or taking short-term working capital loans. Calculate interest for accurate cash flow projections.
-                    </p>
-                  </div>
-                  <div className="bg-white/10 p-5 rounded-xl">
-                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Transparent Calculations
-                    </h3>
-                    <p className="text-white/90">
-                      Unlike compound interest, simple interest is straightforward and easy to understand. See exactly how your interest is calculated with no hidden complexities.
-                    </p>
-                  </div>
-                  <div className="bg-white/10 p-5 rounded-xl">
-                    <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Compare Loan Offers
-                    </h3>
-                    <p className="text-white/90">
-                      Evaluate different loan offers side by side. Compare interest rates, terms, and total interest amounts to make the most cost-effective borrowing decision.
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-6 p-4 bg-[#FFC857] text-[#1A3D7C] rounded-lg">
-                  <p className="font-semibold">
-                    💡 Pro Tip: Simple interest is commonly used for car loans, personal loans, and short-term deposits. For long-term investments, compound interest typically offers better returns!
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* FAQs Section */}
-            <section className="mb-12">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-                <HelpCircle className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
-                Frequently Asked Questions
-              </h2>
-              <div className="space-y-4">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    What is simple interest and how is it calculated?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    Simple interest is calculated on the <strong>principal amount only</strong>, not on accumulated interest. The formula is: <strong>Interest = (Principal × Rate × Time) / 100</strong>. For example, ₹10,000 at 8% for 2 years gives ₹1,600 interest (10,000 × 8 × 2 / 100).
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    How is simple interest different from compound interest?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    <strong>Simple interest</strong> is calculated only on the principal amount throughout the loan/investment period. <strong>Compound interest</strong> is calculated on principal plus accumulated interest. For example, ₹1 lakh at 10% for 3 years: Simple Interest = ₹30,000, Compound Interest = ₹33,100. The difference increases with time.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    Which types of loans use simple interest?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    <strong>Car loans, personal loans, and some education loans</strong> often use simple interest calculations. Many short-term business loans, payday loans, and installment loans also use simple interest. However, always verify with your lender as calculation methods can vary.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    Are bank fixed deposits calculated using simple interest?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    Most bank FDs use <strong>compound interest</strong> (quarterly compounding), not simple interest. However, some <strong>short-term company deposits or specific FD schemes</strong> might use simple interest. Always check the terms before investing. Our calculator helps estimate returns for simple interest instruments.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    Can I calculate interest for less than one year?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    Yes! Enter the time in decimal format. For example: <strong>6 months = 0.5 years</strong>, 3 months = 0.25 years, 18 months = 1.5 years. The calculator works for any time period, whether days, months, or years - just convert to years.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    What's the formula to calculate principal if I know the interest?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    If you know the interest amount, rate, and time, you can find the principal using: <strong>Principal = (Interest × 100) / (Rate × Time)</strong>. For example, if you earned ₹5,000 interest at 10% for 2 years, the principal was ₹25,000.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    How do I calculate the interest rate if I know principal and interest?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    Use the formula: <strong>Rate = (Interest × 100) / (Principal × Time)</strong>. For example, if you paid ₹12,000 interest on a ₹1 lakh loan over 3 years, the interest rate was 4% per annum [(12,000 × 100) / (100,000 × 3) = 4%].
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    Is simple interest better for borrowers or lenders?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    <strong>Simple interest is generally better for borrowers</strong> compared to compound interest, as you pay less total interest over time. For lenders/investors, compound interest yields better returns. That's why loans often use compound interest while some deposits use simple interest.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    Does this calculator account for taxes on interest earned?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    No, this calculator shows <strong>gross interest before taxes</strong>. Interest earned on deposits is taxable as per your income tax slab. Banks deduct TDS if annual interest exceeds ₹40,000 (₹50,000 for senior citizens). Consult a tax advisor for post-tax calculations.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                  <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                    Can I use this for EMI calculations?
-                  </h3>
-                  <p className="text-gray-700 pl-6">
-                    This calculator is <strong>not designed for EMI loans</strong>. Most EMI loans (home, car, personal) use the reducing balance method with compound interest. For EMI calculations, you need a dedicated EMI calculator that factors in monthly payments and reducing principal balance.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* Smart Tips Section */}
-            <section className="mb-12">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-                <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3 text-[#2BAE66]" />
-                Smart Tips for Using Simple Interest
-              </h2>
-              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-gray-200">
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      <strong>Understand your loan type:</strong> Before using this calculator, confirm with your lender whether your loan uses simple or compound interest. Most home loans and credit cards use compound interest, while many car loans use simple interest.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      <strong>Convert time periods correctly:</strong> Always convert months or days to years for accurate calculations. Remember: 1 month ≈ 0.0833 years, 6 months = 0.5 years, 90 days ≈ 0.25 years. This ensures your interest calculations are precise.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      <strong>Compare before borrowing:</strong> Use this calculator to compare multiple loan offers. Even a 1% difference in interest rate can save thousands over the loan term. Always calculate total payable amount (principal + interest) before deciding.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      <strong>Plan early repayment:</strong> With simple interest loans, paying off principal early can significantly reduce total interest. Since interest is calculated only on principal, reducing it sooner means less interest overall.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      <strong>Factor in processing fees:</strong> While this calculator shows pure interest, real loans have processing fees, GST, and other charges. Add these to get the true cost of borrowing. Sometimes a slightly higher interest rate with lower fees is better.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      <strong>Use for financial planning:</strong> When planning short-term investments or deposits, this calculator helps set realistic return expectations. For long-term goals, consider compound interest instruments for exponentially better returns.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700">
-                      <strong>Remember tax implications:</strong> Interest paid on certain loans (like home loans) offers tax benefits under Section 24 and 80EE. Interest earned on deposits is taxable. Factor in these tax considerations for accurate financial planning.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            {/* Related Calculators Section */}
-            <section className="text-center mb-12">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#1A3D7C] mb-4">
-                Explore More Calculators
-              </h2>
-              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-                Try our other financial calculators for comprehensive investment and loan planning
-              </p>
-              <Link href="/calculators">
-                <Button className="bg-white text-[#1A3D7C] hover:bg-gray-100 font-semibold px-8 py-6 text-lg">
-                  View All Calculators
-                </Button>
-              </Link>
-            </section>
-          </div>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li>Understanding compound interest and its exponential growth</li>
+                <li>Amortization schedules for loan repayment planning</li>
+                <li>Present value and future value calculations</li>
+                <li>Annual percentage rate (APR) vs annual percentage yield (APY)</li>
+                <li>Effective interest rate calculations and comparisons</li>
+              </ul>
+            </div>
+          </section>
         </div>
+      </main>
 
-        {/* Footer */}
-        <footer className="bg-[#1A3D7C] text-white py-8 md:py-12 mt-12 md:mt-16">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-lg font-bold mb-4">The Tutor Bridge</h3>
-                <p className="text-white/80 text-sm">
-                  Your trusted partner for financial planning and investment calculations.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-                <ul className="space-y-2 text-sm">
-                  <li>
-                    <Link href="/calculators" className="text-white/80 hover:text-white transition-colors">
-                      All Calculators
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" className="text-white/80 hover:text-white transition-colors">
-                      Home
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-4">Disclaimer</h3>
-                <p className="text-white/80 text-sm">
-                  This calculator provides estimates only. Actual interest may vary based on lender terms. Consult a financial advisor for accurate information.
-                </p>
-              </div>
-            </div>
-            <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60 text-sm">
-              <p>&copy; 2025 The Tutor Bridge. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 }

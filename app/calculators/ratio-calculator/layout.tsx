@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ratio Calculator - Solve and Simplify Ratios A:B = C:D | The Tutor Bridge',
+  description: 'Free ratio calculator to solve, simplify, and verify ratios with step-by-step solutions. Calculate missing values in proportions, equivalent ratios, and ratio problems with comprehensive explanations.',
+  keywords: [
+    'ratio calculator',
+    'ratio solver',
+    'calculate ratio',
+    'simplify ratio',
+    'ratio to fraction',
+    'equivalent ratios',
+    'proportion calculator',
+    'ratio formula',
+    'how to find ratio',
+    'ratio equation',
+    'ratio simplifier',
+    'a:b = c:d calculator',
+    'ratio calculator with steps',
+    'ratio problem solver',
+    'find missing ratio',
+    'ratio and proportion',
+    'ratio calculator online',
+    'free ratio calculator',
+    'ratio finder',
+    'ratio comparison',
+    'ratio verification',
+    'simplify ratios calculator',
+    'equivalent ratio calculator',
+    'ratio to percentage',
+    'ratio math calculator',
+    'proportion solver',
+    'cross multiplication ratio',
+    'ratio word problems',
+    'ratio examples',
+    'how to calculate ratio',
+    'ratio calculation',
+    'ratio formula calculator',
+    'ratio equation solver',
+    'proportional reasoning',
+    'ratio relationships',
+    'ratio comparison calculator',
+    'part to whole ratio',
+    'ratio simplification',
+    'ratio problems with solutions',
+    'ratio and proportion calculator',
+    'ratio verification tool',
+    'check if ratios are equal',
+    'proportional calculator',
+    'ratio equivalence',
+    'ratio solver with steps',
+    'a to b ratio calculator',
+    'ratio notation',
+    'ratio analysis calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/ratio-calculator',
+  },
+  openGraph: {
+    title: 'Ratio Calculator - Solve Ratios with Steps',
+    description: 'Free ratio calculator with step-by-step solutions. Solve A:B = C:D ratio problems, simplify ratios, find equivalent ratios, and verify ratio equality instantly.',
+    url: 'https://thetutorbridge.com/calculators/ratio-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ratio Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ratio Calculator - Free Tool with Steps',
+    description: 'Solve ratio problems A:B = C:D with detailed step-by-step solutions. Simplify ratios and check ratio equality instantly.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function RatioCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

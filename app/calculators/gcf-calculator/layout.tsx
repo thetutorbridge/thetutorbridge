@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'GCF Calculator - Greatest Common Factor, HCF, GCD Calculator with Steps | The Tutor Bridge',
+  description: 'Free GCF calculator finds the greatest common factor (GCF, HCF, GCD) of 2 or more numbers with step-by-step solutions. Shows prime factorization, listing factors, and Euclidean algorithm methods with detailed explanations.',
+  keywords: [
+    'gcf calculator',
+    'greatest common factor calculator',
+    'hcf calculator',
+    'highest common factor calculator',
+    'gcd calculator',
+    'greatest common divisor calculator',
+    'gcf',
+    'greatest common factor',
+    'hcf',
+    'highest common factor',
+    'gcd',
+    'greatest common divisor',
+    'how to find gcf',
+    'how to calculate gcf',
+    'gcf formula',
+    'gcf of two numbers',
+    'gcf of three numbers',
+    'free gcf calculator',
+    'online gcf calculator',
+    'gcf calculator with steps',
+    'gcf finder',
+    'greatest common factor finder',
+    'prime factorization gcf',
+    'euclidean algorithm gcf',
+    'listing factors method',
+    'gcf examples',
+    'gcf of multiple numbers',
+    'common factor calculator',
+    'gcf and lcm',
+    'simplifying fractions gcf',
+    'gcf step by step',
+    'gcf tutorial',
+    'gcf for students',
+    'gcf math calculator',
+    'factorization calculator',
+    'greatest common factor explained',
+    'gcf vs lcm',
+    'common divisor calculator',
+    'gcf problems',
+    'gcf worksheets',
+    'gcf practice',
+    'gcf definition',
+    'gcf meaning',
+    'what is gcf',
+    'calculate greatest common factor',
+    'find gcf online',
+    'gcf calculation method',
+    'gcf of numbers calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/gcf-calculator',
+  },
+  openGraph: {
+    title: 'GCF Calculator - Greatest Common Factor with Steps',
+    description: 'Free GCF calculator with step-by-step solutions. Find the greatest common factor (GCF, HCF, GCD) using prime factorization, listing factors, or Euclidean algorithm.',
+    url: 'https://thetutorbridge.com/calculators/gcf-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'GCF Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GCF Calculator - Free Tool with Steps',
+    description: 'Calculate the greatest common factor (GCF, HCF, GCD) with detailed step-by-step solutions and multiple methods.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function GCFCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

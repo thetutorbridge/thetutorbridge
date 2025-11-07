@@ -1,0 +1,106 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Slope Calculator - Calculate Slope from Two Points with Formula | The Tutor Bridge',
+  description: 'Free slope calculator finds the slope (m) between two points with step-by-step solutions. Calculate slope, y-intercept, and linear equations with comprehensive mathematical notation and explanations.',
+  keywords: [
+    'slope calculator',
+    'calculate slope',
+    'slope formula',
+    'find slope',
+    'slope between two points',
+    'slope of a line',
+    'how to find slope',
+    'slope equation',
+    'slope intercept form',
+    'linear equation calculator',
+    'slope calculator with steps',
+    'slope formula calculator',
+    'two point slope calculator',
+    'gradient calculator',
+    'rise over run calculator',
+    'slope from two points',
+    'line slope calculator',
+    'slope and y-intercept calculator',
+    'point slope form calculator',
+    'slope intercept calculator',
+    'm = (y2 - y1) / (x2 - x1)',
+    'slope calculation',
+    'calculate gradient',
+    'linear slope',
+    'slope of line between two points',
+    'slope calculator online',
+    'free slope calculator',
+    'slope finder',
+    'graph slope calculator',
+    'positive slope',
+    'negative slope',
+    'zero slope',
+    'undefined slope',
+    'slope formula examples',
+    'slope math calculator',
+    'algebra slope calculator',
+    'coordinate slope calculator',
+    'slope between coordinates',
+    'rise run slope',
+    'slope equation solver',
+    'linear function slope',
+    'slope and equation calculator',
+    'point slope calculator',
+    'slope from graph',
+    'calculate line slope',
+    'slope calculation formula',
+    'slope intercept equation',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/slope-calculator',
+  },
+  openGraph: {
+    title: 'Slope Calculator - Calculate Slope with Steps',
+    description: 'Free slope calculator with step-by-step solutions. Find the slope between two points, calculate y-intercept, and get the equation of the line with detailed explanations.',
+    url: 'https://thetutorbridge.com/calculators/slope-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Slope Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Slope Calculator - Free Tool with Steps',
+    description: 'Calculate slope between two points with detailed step-by-step solutions. Find slope, y-intercept, and linear equation instantly.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function SlopeCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

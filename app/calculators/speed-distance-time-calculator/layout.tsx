@@ -1,0 +1,108 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Speed Distance Time Calculator - Solve for Speed, Distance & Time with Formula | The Tutor Bridge',
+  description: 'Free speed distance time calculator to solve for speed, distance, or time using the formula speed = distance/time. Calculate velocity, travel time, and distance with step-by-step solutions and unit conversions.',
+  keywords: [
+    'speed distance time calculator',
+    'speed calculator',
+    'distance calculator',
+    'time calculator',
+    'speed formula',
+    'distance formula',
+    'time formula',
+    'speed = distance/time',
+    'velocity calculator',
+    'calculate speed',
+    'calculate distance',
+    'calculate time',
+    'speed distance time formula',
+    'speed distance time problems',
+    'speed distance time solver',
+    'average speed calculator',
+    'travel time calculator',
+    'driving time calculator',
+    'trip calculator',
+    'journey calculator',
+    'mph calculator',
+    'km/h calculator',
+    'miles per hour calculator',
+    'kilometers per hour calculator',
+    'speed conversion',
+    'distance conversion',
+    'time conversion',
+    'speed distance time triangle',
+    'physics calculator',
+    'motion calculator',
+    'kinematics calculator',
+    'rate distance time',
+    'velocity distance time',
+    'how to calculate speed',
+    'how to calculate distance',
+    'how to calculate time',
+    'speed distance time examples',
+    'speed distance time word problems',
+    'average velocity calculator',
+    'constant speed calculator',
+    'uniform motion calculator',
+    'speed distance time online',
+    'free speed calculator',
+    'mph to km/h',
+    'speed units',
+    'distance units',
+    'time units',
+    'speed distance time relationship',
+    'speed distance time equation',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/speed-distance-time-calculator',
+  },
+  openGraph: {
+    title: 'Speed Distance Time Calculator - Calculate Speed, Distance & Time',
+    description: 'Free calculator to solve for speed, distance, or time using the formula speed = distance/time. Get step-by-step solutions with unit conversions for mph, km/h, meters, miles, and more.',
+    url: 'https://thetutorbridge.com/calculators/speed-distance-time-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Speed Distance Time Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Speed Distance Time Calculator - Free Tool',
+    description: 'Calculate speed, distance, or time with step-by-step solutions. Convert between mph, km/h, meters, miles, and more.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function SpeedDistanceTimeCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}
