@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Modulo Calculator - Mod Operation with Steps | The Tutor Bridge',
+  description: 'Free modulo calculator with step-by-step solutions. Calculate a mod b (remainder division) with detailed explanations and verification. Perfect for students learning modular arithmetic with comprehensive mathematical notation.',
+  keywords: [
+    'modulo calculator',
+    'mod calculator',
+    'modulus calculator',
+    'remainder calculator',
+    'a mod b calculator',
+    'modulo operation',
+    'how to calculate modulo',
+    'free modulo calculator',
+    'online modulo calculator',
+    'modulo formula',
+    'mod function',
+    'remainder division',
+    'modular arithmetic calculator',
+    'modulo math',
+    'mod operation calculator',
+    'division remainder calculator',
+    'calculate remainder',
+    'modulo operator',
+    'mod function calculator',
+    'modulus operation',
+    'integer division remainder',
+    'euclidean division',
+    'modulo explained',
+    'mod math calculator',
+    'remainder finder',
+    'modulo solver',
+    'mod b calculator',
+    'modular arithmetic',
+    'clock arithmetic',
+    'congruence calculator',
+    'modulo examples',
+    'how to find modulo',
+    'modulo step by step',
+    'learn modulo',
+    'understand modulo',
+    'modulo help',
+    'modulo tutoring',
+    'modulo mathematics',
+    'number theory calculator',
+    'discrete math modulo',
+    'cryptography modulo',
+    'computer science modulo',
+    'programming modulo',
+    'mod operator',
+    'remainder operation',
+    'modulo division',
+    'modular math',
+    'modulo verification',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/modulo-calculator',
+  },
+  openGraph: {
+    title: 'Modulo Calculator - Free Mod Operation with Steps',
+    description: 'Free modulo calculator with step-by-step solutions and mathematical notation. Calculate remainders and understand modular arithmetic.',
+    url: 'https://thetutorbridge.com/calculators/modulo-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Modulo Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Modulo Calculator - Free Mod Tool',
+    description: 'Calculate modulo (remainder division) with detailed step-by-step solutions.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function ModuloCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

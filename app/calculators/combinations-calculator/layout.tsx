@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Combinations Calculator - nCr Calculator with Steps | The Tutor Bridge',
+  description: 'Free combinations calculator (nCr) with step-by-step solutions. Calculate combinations, permutations, and understand combinatorics. Perfect for students with comprehensive mathematical notation and formulas.',
+  keywords: [
+    'combinations calculator',
+    'nCr calculator',
+    'combination calculator',
+    'combinatorics calculator',
+    'how to calculate combinations',
+    'free combinations calculator',
+    'online combinations calculator',
+    'combinations formula',
+    'nCr formula',
+    'calculate nCr',
+    'combinations and permutations',
+    'permutations calculator',
+    'nPr calculator',
+    'binomial coefficient calculator',
+    'combination formula calculator',
+    'how to find combinations',
+    'combinations without repetition',
+    'combinations with replacement',
+    'probability combinations',
+    'statistics combinations',
+    'choose function calculator',
+    'n choose r calculator',
+    'factorial combinations',
+    'combinatorial calculator',
+    'discrete math calculator',
+    'counting combinations',
+    'combination notation',
+    'binomial calculator',
+    'lottery combinations calculator',
+    'mathematics combinations',
+    'combination problem solver',
+    'combinatorics solver',
+    'math combination tool',
+    'combination calculator with steps',
+    'combination formula explained',
+    'how to solve combinations',
+    'combinations vs permutations',
+    'combination calculation',
+    'combination generator',
+    'mathematical combinations',
+    'combination theory',
+    'combination mathematics',
+    'combination problems',
+    'combination examples',
+    'learn combinations',
+    'understand combinations',
+    'combination help',
+    'combination tutoring',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/combinations-calculator',
+  },
+  openGraph: {
+    title: 'Combinations Calculator - Free nCr Calculator with Steps',
+    description: 'Free combinations calculator (nCr) with step-by-step solutions and mathematical notation. Calculate combinations and permutations easily.',
+    url: 'https://thetutorbridge.com/calculators/combinations-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Combinations Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Combinations Calculator - Free nCr Calculator',
+    description: 'Calculate combinations (nCr) with detailed step-by-step solutions and mathematical formulas.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function CombinationsCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

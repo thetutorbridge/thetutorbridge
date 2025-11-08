@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Variance Calculator - Sample & Population Variance with Steps | The Tutor Bridge',
+  description: 'Free variance calculator with step-by-step solutions. Calculate sample and population variance, standard deviation, mean, and sum of squares. Perfect for statistics students with comprehensive mathematical notation.',
+  keywords: [
+    'variance calculator',
+    'sample variance calculator',
+    'population variance calculator',
+    'standard deviation calculator',
+    'variance formula',
+    'how to calculate variance',
+    'free variance calculator',
+    'online variance calculator',
+    'variance and standard deviation',
+    'calculate variance',
+    's squared calculator',
+    'sigma squared calculator',
+    'statistical variance',
+    'variance statistics',
+    'sample variance formula',
+    'population variance formula',
+    'variance calculation',
+    'variance solver',
+    'variance calculator with steps',
+    'mean variance calculator',
+    'data variance calculator',
+    'sum of squares calculator',
+    'statistics calculator variance',
+    'variance and mean calculator',
+    'sample vs population variance',
+    'unbiased variance calculator',
+    'biased variance calculator',
+    'variance analysis calculator',
+    'descriptive statistics calculator',
+    'measure of spread calculator',
+    'variability calculator',
+    'dispersion calculator',
+    'data dispersion',
+    'statistical dispersion',
+    'variance step by step',
+    'how to find variance',
+    'variance examples',
+    'variance explained',
+    'learn variance',
+    'understand variance',
+    'variance help',
+    'variance tutoring',
+    'statistics variance',
+    'probability variance',
+    'data analysis variance',
+    'variance problems',
+    'variance solutions',
+    'variance mathematics',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/variance-calculator',
+  },
+  openGraph: {
+    title: 'Variance Calculator - Free Sample & Population Variance with Steps',
+    description: 'Free variance calculator with step-by-step solutions and mathematical notation. Calculate sample and population variance, standard deviation, and more.',
+    url: 'https://thetutorbridge.com/calculators/variance-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Variance Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Variance Calculator - Free Statistical Tool',
+    description: 'Calculate variance with detailed step-by-step solutions and statistical formulas.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function VarianceCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

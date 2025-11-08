@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Fraction to Percent Calculator - Convert Fractions to Percentages | The Tutor Bridge',
+  description: 'Free fraction to percent calculator with step-by-step solutions. Convert any fraction to percentage with detailed working, decimal conversion, and rounding options. Perfect for students with comprehensive mathematical notation.',
+  keywords: [
+    'fraction to percent calculator',
+    'fraction to percentage calculator',
+    'convert fraction to percent',
+    'fraction percent converter',
+    'how to convert fraction to percent',
+    'free fraction to percent calculator',
+    'online fraction to percent calculator',
+    'fraction to percent formula',
+    'fraction to percentage conversion',
+    'fraction to % calculator',
+    'fraction percentage converter',
+    'calculate fraction to percent',
+    'fraction to decimal to percent',
+    'convert fractions to percentages',
+    'fraction percent conversion',
+    'fraction to percent with steps',
+    'fraction to percentage formula',
+    'how to turn fraction into percent',
+    'fraction to percent solver',
+    'fraction percent calculator online',
+    'free percentage converter',
+    'fraction to percent examples',
+    'convert 1/2 to percent',
+    'convert 3/4 to percent',
+    'fraction decimal percent',
+    'math fraction to percent',
+    'fraction percentage calculation',
+    'fraction to percent step by step',
+    'learn fraction to percent',
+    'understand fraction to percent',
+    'fraction to percent help',
+    'fraction to percent tutoring',
+    'fraction conversion calculator',
+    'percentage from fraction',
+    'fraction percentage conversion calculator',
+    'numerator denominator to percent',
+    'fraction to percent with rounding',
+    'decimal places percentage',
+    'fraction to percent mathematics',
+    'fraction to percent practice',
+    'fraction to percent problems',
+    'fraction to percent worksheets',
+    'fraction to percent tricks',
+    'fraction to percent method',
+    'simple fraction to percent',
+    'complex fraction to percent',
+    'improper fraction to percent',
+    'mixed number to percent',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/fraction-to-percent-calculator',
+  },
+  openGraph: {
+    title: 'Fraction to Percent Calculator - Free Converter with Steps',
+    description: 'Free fraction to percent calculator with step-by-step solutions and mathematical notation. Convert fractions to percentages easily.',
+    url: 'https://thetutorbridge.com/calculators/fraction-to-percent-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fraction to Percent Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fraction to Percent Calculator - Free Tool',
+    description: 'Convert fractions to percentages with detailed step-by-step solutions.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function FractionToPercentCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

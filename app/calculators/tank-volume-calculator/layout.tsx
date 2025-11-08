@@ -1,0 +1,108 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Tank Volume Calculator - Calculate Tank Capacity & Fill Volume | The Tutor Bridge',
+  description: 'Free tank volume calculator for all tank shapes. Calculate capacity and fill volume for horizontal/vertical cylinders, rectangles, ovals, capsules, ellipses, and more. Get results in gallons, liters, cubic feet, and cubic meters.',
+  keywords: [
+    'tank volume calculator',
+    'tank capacity calculator',
+    'calculate tank volume',
+    'tank fill calculator',
+    'horizontal cylinder tank volume',
+    'vertical cylinder tank volume',
+    'rectangular tank volume',
+    'oval tank volume',
+    'tank volume formula',
+    'tank capacity formula',
+    'how to calculate tank volume',
+    'free tank volume calculator',
+    'online tank volume calculator',
+    'cylindrical tank volume',
+    'tank volume in gallons',
+    'tank volume in liters',
+    'water tank volume calculator',
+    'fuel tank volume calculator',
+    'oil tank volume calculator',
+    'storage tank volume calculator',
+    'tank volume and fill',
+    'tank fill level calculator',
+    'partial tank volume',
+    'tank volume by depth',
+    'horizontal tank calculator',
+    'vertical tank calculator',
+    'capsule tank volume',
+    'elliptical tank volume',
+    'dish end tank volume',
+    'tank volume cubic feet',
+    'tank volume cubic meters',
+    'us gallons tank volume',
+    'imperial gallons tank volume',
+    'tank dimensions to volume',
+    'tank size calculator',
+    'tank capacity calculation',
+    'calculate gallons in tank',
+    'calculate liters in tank',
+    'tank volume with fill depth',
+    'tank fill percentage',
+    'how full is my tank',
+    'tank measurement calculator',
+    'industrial tank volume',
+    'agricultural tank volume',
+    'residential tank volume',
+    'commercial tank volume',
+    'tank volume engineering',
+    'tank volume conversion',
+    'tank capacity conversion',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/tank-volume-calculator',
+  },
+  openGraph: {
+    title: 'Tank Volume Calculator - Calculate Tank Capacity & Fill Volume',
+    description: 'Calculate tank volume and capacity for all shapes. Free tool with results in gallons, liters, cubic feet, and cubic meters.',
+    url: 'https://thetutorbridge.com/calculators/tank-volume-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Tank Volume Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tank Volume Calculator - Free Tool',
+    description: 'Calculate tank volume and fill capacity for all tank shapes with instant results in multiple units.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function TankVolumeCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}
