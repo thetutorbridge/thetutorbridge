@@ -1,0 +1,108 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Love Calculator - Free Love Compatibility & Match Percentage Test | The Tutor Bridge',
+  description: 'Free love calculator to test love compatibility between two people. Calculate your love match percentage and compatibility score for fun. Enter two names to see your romantic compatibility!',
+  keywords: [
+    'love calculator',
+    'love compatibility calculator',
+    'love match calculator',
+    'love percentage calculator',
+    'love test calculator',
+    'relationship calculator',
+    'compatibility calculator',
+    'love meter',
+    'love tester',
+    'love match percentage',
+    'calculate love percentage',
+    'love compatibility test',
+    'relationship compatibility',
+    'romantic compatibility',
+    'couple compatibility',
+    'name love calculator',
+    'love calculator by name',
+    'love calculator names',
+    'crush calculator',
+    'soulmate calculator',
+    'true love calculator',
+    'love match test',
+    'compatibility test',
+    'romance calculator',
+    'couple match calculator',
+    'relationship match',
+    'love percentage test',
+    'love score calculator',
+    'love compatibility by name',
+    'love meter calculator',
+    'heart calculator',
+    'cupid calculator',
+    'love match game',
+    'online love calculator',
+    'free love calculator',
+    'love calculator online',
+    'love test online',
+    'compatibility meter',
+    'relationship test',
+    'love quiz calculator',
+    'boyfriend girlfriend calculator',
+    'dating compatibility',
+    'valentine calculator',
+    'romance compatibility',
+    'couple test',
+    'love algorithm',
+    'match percentage',
+    'love game calculator',
+    'fun love calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: 'https://thetutorbridge.com/calculators/love-calculator',
+  },
+  openGraph: {
+    title: 'Love Calculator - Test Your Love Compatibility',
+    description: 'Free love calculator to test romantic compatibility. Calculate your love match percentage between two names for fun!',
+    url: 'https://thetutorbridge.com/calculators/love-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Love Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Love Calculator - Test Your Love Compatibility',
+    description: 'Calculate your love compatibility percentage with our fun love calculator. Test romantic match between two names!',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function LoveCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

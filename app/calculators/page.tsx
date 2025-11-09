@@ -36,6 +36,13 @@ const calculators = {
       tags: ['Weighted Grades', 'Final Exam', 'Course Grade']
     },
     {
+      name: 'Semester Grade Calculator',
+      href: '/calculators/semester-grade-calculator',
+      description: 'Calculate semester grades using quarterly grades and final exam scores with customizable weights.',
+      gradient: 'from-violet-600 via-purple-600 to-fuchsia-600',
+      tags: ['Weighted Average', 'Quarters', 'Semester GPA']
+    },
+    {
       name: 'EZ Grader',
       href: '/calculators/ez-grader',
       description: 'Quick grade calculator for teachers. Convert test scores to letter grades instantly with printable charts.',
@@ -94,6 +101,13 @@ const calculators = {
       tags: ['EMI', 'Loans', 'Amortization']
     },
     {
+      name: 'Amortization Calculator',
+      href: '/calculators/amortization-calculator',
+      description: 'Create detailed loan amortization schedules with monthly/yearly views and extra payment options.',
+      gradient: 'from-indigo-700 to-purple-700',
+      tags: ['Amortization', 'Loan Schedule', 'Extra Payments']
+    },
+    {
       name: 'Home Loan EMI Calculator',
       href: '/calculators/home-loan-emi-calculator',
       description: 'Calculate home loan EMI with prepayment options, tax benefits, and total interest payable.',
@@ -101,11 +115,25 @@ const calculators = {
       tags: ['Home Loan', 'EMI', 'Tax Benefits']
     },
     {
+      name: 'Mortgage Calculator',
+      href: '/calculators/mortgage-calculator',
+      description: 'Calculate monthly mortgage payments with taxes, insurance, PMI, and HOA fees. Get detailed amortization schedule.',
+      gradient: 'from-blue-700 to-indigo-700',
+      tags: ['Mortgage', 'Home Loan', 'Amortization']
+    },
+    {
       name: 'Car Loan EMI Calculator',
       href: '/calculators/car-loan-emi-calculator',
       description: 'Calculate car loan EMI with down payment, interest rate, and loan tenure options.',
       gradient: 'from-purple-600 to-pink-600',
       tags: ['Car Loan', 'EMI', 'Auto Finance']
+    },
+    {
+      name: 'Car Payment Calculator',
+      href: '/calculators/car-payment-calculator',
+      description: 'Calculate auto loan monthly payments with trade-in, down payment, sales tax, and amortization schedule.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['Auto Loan', 'Car Finance', 'Monthly Payment']
     },
     {
       name: 'Personal Loan EMI Calculator',
@@ -356,6 +384,20 @@ const calculators = {
       gradient: 'from-green-600 to-emerald-600',
       tags: ['Random', 'Generator', 'Numbers']
     },
+    {
+      name: 'Dice Roller',
+      href: '/calculators/dice-roller',
+      description: 'Roll virtual dice online for D&D, RPGs, and board games. Supports d4, d6, d8, d10, d12, d20, d100, and custom dice.',
+      gradient: 'from-purple-600 to-pink-600',
+      tags: ['Dice', 'D&D', 'RPG']
+    },
+    {
+      name: 'Love Calculator',
+      href: '/calculators/love-calculator',
+      description: 'Fun love compatibility calculator to test romantic match percentage between two names. Entertainment only!',
+      gradient: 'from-pink-600 to-rose-600',
+      tags: ['Love', 'Compatibility', 'Fun']
+    },
   ],
   'Fractions & Decimals': [
     {
@@ -425,6 +467,27 @@ const calculators = {
     },
   ],
   'Measurement & Conversion': [
+    {
+      name: 'BMI Calculator',
+      href: '/calculators/bmi-calculator',
+      description: 'Calculate Body Mass Index (BMI) with metric or imperial units. Get BMI category, healthy weight range, and health insights.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['BMI', 'Body Mass Index', 'Health']
+    },
+    {
+      name: 'BMR Calculator',
+      href: '/calculators/bmr-calculator',
+      description: 'Calculate Basal Metabolic Rate (BMR) and TDEE using 3 scientific formulas. Get daily calorie needs for all activity levels.',
+      gradient: 'from-orange-600 to-red-600',
+      tags: ['BMR', 'Metabolism', 'TDEE']
+    },
+    {
+      name: 'Calorie Calculator',
+      href: '/calculators/calorie-calculator',
+      description: 'Calculate daily calorie needs for weight loss, maintenance, or muscle gain. Get BMR, TDEE, and personalized calorie targets.',
+      gradient: 'from-orange-600 to-red-600',
+      tags: ['BMR', 'TDEE', 'Weight Loss']
+    },
     {
       name: 'Square Footage Calculator',
       href: '/calculators/square-footage-calculator',
