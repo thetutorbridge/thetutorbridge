@@ -1,1867 +1,879 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
-import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award, Calendar, Clock, Type, Divide, Ruler, Sparkles, RotateCw, Shuffle, History, Binary, GitMerge, Thermometer, Scale, DollarSign, Atom, Gauge, Receipt, GraduationCap } from 'lucide-react';
-import Image from 'next/image';
-import { Navigation } from '@/components/navigation';
-import { Button } from '@/components/ui/button';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Free Online Calculators - Financial, Educational & Practical Tools',
-  description: 'Free online calculators for students, professionals & everyone. Calculate age, work hours, convert numbers to words, mixed numbers & fractions, SIP returns, loan EMI, income tax, investment growth, and more with The TutorBridge.',
+import Link from 'next/link';
+import { Calculator, Home, ArrowRight, GraduationCap, Percent, DollarSign, Ruler, Clock, Hash, TrendingUp, BookOpen, ChevronDown } from 'lucide-react';
+import { Navigation } from '@/components/navigation';
+import { useState } from 'react';
+
+const calculators = {
+  'Academic & Education': [
+    {
+      name: 'College GPA Calculator',
+      href: '/calculators/college-gpa-calculator',
+      description: 'Calculate your cumulative college GPA with credit weighting across multiple semesters on 4.0 scale.',
+      gradient: 'from-blue-600 to-cyan-600',
+      tags: ['4.0 Scale', 'Credit-Weighted', 'Cumulative GPA']
+    },
+    {
+      name: 'High School GPA Calculator',
+      href: '/calculators/high-school-gpa-calculator',
+      description: 'Calculate weighted and unweighted GPA with AP, IB, and Honors classes. Track class rank and college readiness.',
+      gradient: 'from-purple-600 to-pink-600',
+      tags: ['Weighted GPA', 'AP/IB Bonus', 'Class Rank']
+    },
+    {
+      name: 'Middle School GPA Calculator',
+      href: '/calculators/middle-school-gpa-calculator',
+      description: 'Calculate your junior high GPA for 6th, 7th, and 8th grade on 4.0 scale. Prepare for high school.',
+      gradient: 'from-cyan-600 via-blue-600 to-indigo-600',
+      tags: ['4.0 Scale', 'Junior High', '6th-8th Grade']
+    },
+    {
+      name: 'Grade Calculator',
+      href: '/calculators/grade-calculator',
+      description: 'Calculate your final course grade and find what score you need on finals to achieve your desired grade.',
+      gradient: 'from-indigo-600 via-purple-600 to-pink-600',
+      tags: ['Weighted Grades', 'Final Exam', 'Course Grade']
+    },
+    {
+      name: 'EZ Grader',
+      href: '/calculators/ez-grader',
+      description: 'Quick grade calculator for teachers. Convert test scores to letter grades instantly with printable charts.',
+      gradient: 'from-green-600 via-emerald-600 to-teal-600',
+      tags: ['Grading Chart', 'Printable', 'Teacher Tool']
+    },
+    {
+      name: 'CGPA to Percentage Calculator',
+      href: '/calculators/cgpa-to-percentage-calculator',
+      description: 'Convert CGPA to percentage for Indian universities and colleges with multiple conversion formulas.',
+      gradient: 'from-orange-600 to-red-600',
+      tags: ['CGPA', 'Percentage', 'India']
+    },
+    {
+      name: 'Percentage to CGPA Calculator',
+      href: '/calculators/percentage-to-cgpa-calculator',
+      description: 'Convert percentage marks to CGPA for Indian students with accurate conversion methods.',
+      gradient: 'from-red-600 to-pink-600',
+      tags: ['Percentage', 'CGPA', 'Conversion']
+    },
+    {
+      name: 'SGPA to CGPA Calculator',
+      href: '/calculators/sgpa-to-cgpa-calculator',
+      description: 'Convert semester GPA to cumulative GPA with credit-based weighted calculation.',
+      gradient: 'from-teal-600 to-cyan-600',
+      tags: ['SGPA', 'CGPA', 'Semester']
+    },
+    {
+      name: 'SGPA to Percentage Calculator',
+      href: '/calculators/sgpa-to-percentage-calculator',
+      description: 'Convert SGPA to percentage marks using standard university conversion formulas.',
+      gradient: 'from-cyan-600 to-blue-600',
+      tags: ['SGPA', 'Percentage', 'University']
+    },
+    {
+      name: 'Marks Percentage Calculator',
+      href: '/calculators/marks-percentage-calculator',
+      description: 'Calculate percentage from marks obtained out of total marks for exams and tests.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['Marks', 'Percentage', 'Exams']
+    },
+  ],
+  'Financial & Investment': [
+    {
+      name: 'SIP Calculator',
+      href: '/calculators/sip-calculator',
+      description: 'Calculate SIP returns, maturity amount, and wealth gained through systematic investment plans.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['SIP', 'Mutual Funds', 'Investment']
+    },
+    {
+      name: 'EMI Calculator',
+      href: '/calculators/emi-calculator',
+      description: 'Calculate monthly EMI for loans with detailed amortization schedule and principal-interest breakdown.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['EMI', 'Loans', 'Amortization']
+    },
+    {
+      name: 'Home Loan EMI Calculator',
+      href: '/calculators/home-loan-emi-calculator',
+      description: 'Calculate home loan EMI with prepayment options, tax benefits, and total interest payable.',
+      gradient: 'from-indigo-600 to-purple-600',
+      tags: ['Home Loan', 'EMI', 'Tax Benefits']
+    },
+    {
+      name: 'Car Loan EMI Calculator',
+      href: '/calculators/car-loan-emi-calculator',
+      description: 'Calculate car loan EMI with down payment, interest rate, and loan tenure options.',
+      gradient: 'from-purple-600 to-pink-600',
+      tags: ['Car Loan', 'EMI', 'Auto Finance']
+    },
+    {
+      name: 'Personal Loan EMI Calculator',
+      href: '/calculators/personal-loan-emi-calculator',
+      description: 'Calculate personal loan EMI with flexible tenure and interest rate options.',
+      gradient: 'from-pink-600 to-red-600',
+      tags: ['Personal Loan', 'EMI', 'Finance']
+    },
+    {
+      name: 'Compound Interest Calculator',
+      href: '/calculators/compound-interest-calculator',
+      description: 'Calculate compound interest with different compounding frequencies and time periods.',
+      gradient: 'from-orange-600 to-amber-600',
+      tags: ['Compound Interest', 'Investment', 'Growth']
+    },
+    {
+      name: 'Simple Interest Calculator',
+      href: '/calculators/simple-interest-calculator',
+      description: 'Calculate simple interest on principal amount with customizable rate and time period.',
+      gradient: 'from-yellow-600 to-orange-600',
+      tags: ['Simple Interest', 'Principal', 'Interest Rate']
+    },
+    {
+      name: 'FD Calculator',
+      href: '/calculators/fd-calculator',
+      description: 'Calculate fixed deposit maturity amount and interest earned on FD investments.',
+      gradient: 'from-teal-600 to-green-600',
+      tags: ['Fixed Deposit', 'FD', 'Maturity']
+    },
+    {
+      name: 'PPF Calculator',
+      href: '/calculators/ppf-calculator',
+      description: 'Calculate Public Provident Fund maturity amount, interest, and year-wise balance.',
+      gradient: 'from-cyan-600 to-teal-600',
+      tags: ['PPF', 'Retirement', 'Tax-Free']
+    },
+    {
+      name: 'Lumpsum Calculator',
+      href: '/calculators/lumpsum-calculator',
+      description: 'Calculate returns on lumpsum investment in mutual funds and other instruments.',
+      gradient: 'from-blue-600 to-cyan-600',
+      tags: ['Lumpsum', 'Mutual Funds', 'Returns']
+    },
+    {
+      name: 'SWP Calculator',
+      href: '/calculators/swp-calculator',
+      description: 'Calculate systematic withdrawal plan returns and final corpus after regular withdrawals.',
+      gradient: 'from-indigo-600 to-blue-600',
+      tags: ['SWP', 'Withdrawal', 'Retirement']
+    },
+    {
+      name: 'Step Up SIP Calculator',
+      href: '/calculators/step-up-sip-calculator',
+      description: 'Calculate SIP returns with annual step-up or increment in monthly investment amount.',
+      gradient: 'from-purple-600 to-indigo-600',
+      tags: ['Step-Up SIP', 'Increment', 'Wealth']
+    },
+    {
+      name: 'SBI SIP Calculator',
+      href: '/calculators/sbi-sip-calculator',
+      description: 'Calculate SBI mutual fund SIP returns with historical performance data.',
+      gradient: 'from-green-600 to-teal-600',
+      tags: ['SBI', 'SIP', 'Mutual Funds']
+    },
+    {
+      name: 'Income Tax Calculator',
+      href: '/calculators/income-tax-calculator',
+      description: 'Calculate income tax liability under old and new tax regime with deductions.',
+      gradient: 'from-red-600 to-orange-600',
+      tags: ['Income Tax', 'Tax Liability', 'Deductions']
+    },
+    {
+      name: 'Salary Calculator',
+      href: '/calculators/salary-calculator',
+      description: 'Calculate in-hand salary from CTC with tax deductions and allowances breakdown.',
+      gradient: 'from-orange-600 to-yellow-600',
+      tags: ['Salary', 'CTC', 'In-Hand']
+    },
+    {
+      name: 'Gratuity Calculator',
+      href: '/calculators/gratuity-calculator',
+      description: 'Calculate gratuity amount based on last drawn salary and years of service.',
+      gradient: 'from-amber-600 to-orange-600',
+      tags: ['Gratuity', 'Retirement', 'Service']
+    },
+    {
+      name: 'Stock Average Calculator',
+      href: '/calculators/stock-average-calculator',
+      description: 'Calculate average stock purchase price after multiple buy transactions.',
+      gradient: 'from-emerald-600 to-green-600',
+      tags: ['Stocks', 'Average Price', 'Trading']
+    },
+    {
+      name: 'Sukanya Samriddhi Yojana Calculator',
+      href: '/calculators/sukanya-samriddhi-yojana-calculator',
+      description: 'Calculate SSY maturity amount for girl child savings scheme with government interest.',
+      gradient: 'from-pink-600 to-purple-600',
+      tags: ['SSY', 'Girl Child', 'Savings']
+    },
+  ],
+  'Percentage & Math': [
+    {
+      name: 'Percentage Calculator',
+      href: '/calculators/percentage-calculator',
+      description: 'Calculate percentages, percentage of a number, and solve percentage problems easily.',
+      gradient: 'from-blue-600 to-cyan-600',
+      tags: ['Percentage', 'Calculate', 'Basic Math']
+    },
+    {
+      name: 'Percentage Change Calculator',
+      href: '/calculators/percentage-change-calculator',
+      description: 'Calculate percentage increase or decrease between two values with formula.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['Change', 'Increase', 'Decrease']
+    },
+    {
+      name: 'Percentage Difference Calculator',
+      href: '/calculators/percentage-difference-calculator',
+      description: 'Calculate percentage difference between two numbers with step-by-step solution.',
+      gradient: 'from-purple-600 to-pink-600',
+      tags: ['Difference', 'Compare', 'Values']
+    },
+    {
+      name: 'Percentage Increase Calculator',
+      href: '/calculators/percentage-increase-calculator',
+      description: 'Calculate percentage increase from original to new value with detailed breakdown.',
+      gradient: 'from-orange-600 to-red-600',
+      tags: ['Increase', 'Growth', 'Percentage']
+    },
+    {
+      name: 'Percent Error Calculator',
+      href: '/calculators/percent-error-calculator',
+      description: 'Calculate percent error between experimental and theoretical values for science.',
+      gradient: 'from-red-600 to-pink-600',
+      tags: ['Error', 'Experimental', 'Science']
+    },
+    {
+      name: 'Percentile Calculator',
+      href: '/calculators/percentile-calculator',
+      description: 'Calculate percentile rank and find percentile value from dataset.',
+      gradient: 'from-indigo-600 to-purple-600',
+      tags: ['Percentile', 'Rank', 'Statistics']
+    },
+    {
+      name: 'Quadratic Formula Calculator',
+      href: '/calculators/quadratic-formula-calculator',
+      description: 'Solve quadratic equations using the quadratic formula with step-by-step solutions.',
+      gradient: 'from-cyan-600 to-blue-600',
+      tags: ['Quadratic', 'Algebra', 'Roots']
+    },
+    {
+      name: 'Slope Calculator',
+      href: '/calculators/slope-calculator',
+      description: 'Calculate slope, distance, and midpoint between two points with graph visualization.',
+      gradient: 'from-teal-600 to-cyan-600',
+      tags: ['Slope', 'Geometry', 'Points']
+    },
+    {
+      name: 'Factoring Calculator',
+      href: '/calculators/factoring-calculator',
+      description: 'Factor polynomials, quadratics, and algebraic expressions with detailed steps.',
+      gradient: 'from-green-600 to-teal-600',
+      tags: ['Factoring', 'Polynomials', 'Algebra']
+    },
+    {
+      name: 'GCF Calculator',
+      href: '/calculators/gcf-calculator',
+      description: 'Find greatest common factor (GCF) of numbers using prime factorization method.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['GCF', 'Common Factor', 'Prime']
+    },
+    {
+      name: 'LCM Calculator',
+      href: '/calculators/lcm-calculator',
+      description: 'Find least common multiple (LCM) of numbers with step-by-step calculation.',
+      gradient: 'from-purple-600 to-indigo-600',
+      tags: ['LCM', 'Common Multiple', 'Math']
+    },
+    {
+      name: 'Long Division Calculator',
+      href: '/calculators/long-division-calculator',
+      description: 'Perform long division with remainder and quotient calculation with steps.',
+      gradient: 'from-pink-600 to-purple-600',
+      tags: ['Division', 'Remainder', 'Quotient']
+    },
+    {
+      name: 'Cube Root Calculator',
+      href: '/calculators/cube-root-calculator',
+      description: 'Calculate cube root of any number with perfect cube identification.',
+      gradient: 'from-orange-600 to-amber-600',
+      tags: ['Cube Root', 'Math', 'Roots']
+    },
+    {
+      name: 'Combinations Calculator',
+      href: '/calculators/combinations-calculator',
+      description: 'Calculate combinations and permutations with factorial-based formula.',
+      gradient: 'from-amber-600 to-yellow-600',
+      tags: ['Combinations', 'Permutations', 'Probability']
+    },
+    {
+      name: 'Modulo Calculator',
+      href: '/calculators/modulo-calculator',
+      description: 'Calculate modulo (remainder) operation with detailed explanation.',
+      gradient: 'from-cyan-600 to-teal-600',
+      tags: ['Modulo', 'Remainder', 'Division']
+    },
+    {
+      name: 'Ratio Calculator',
+      href: '/calculators/ratio-calculator',
+      description: 'Simplify ratios and solve ratio problems with proportions.',
+      gradient: 'from-emerald-600 to-green-600',
+      tags: ['Ratio', 'Proportion', 'Simplify']
+    },
+  ],
+  'Statistics & Data': [
+    {
+      name: 'Mean Mode Median Calculator',
+      href: '/calculators/mean-mode-median-calculator',
+      description: 'Calculate mean, median, mode, and range of dataset with frequency distribution.',
+      gradient: 'from-blue-600 to-cyan-600',
+      tags: ['Mean', 'Median', 'Mode']
+    },
+    {
+      name: 'Standard Deviation Calculator',
+      href: '/calculators/standard-deviation-calculator',
+      description: 'Calculate standard deviation, variance, and mean of dataset with population/sample option.',
+      gradient: 'from-purple-600 to-indigo-600',
+      tags: ['Standard Deviation', 'Variance', 'Statistics']
+    },
+    {
+      name: 'Variance Calculator',
+      href: '/calculators/variance-calculator',
+      description: 'Calculate variance of dataset with sample and population variance options.',
+      gradient: 'from-indigo-600 to-purple-600',
+      tags: ['Variance', 'Statistics', 'Data']
+    },
+    {
+      name: 'Quartile Calculator',
+      href: '/calculators/quartile-calculator',
+      description: 'Calculate quartiles (Q1, Q2, Q3), IQR, and identify outliers in dataset.',
+      gradient: 'from-teal-600 to-cyan-600',
+      tags: ['Quartiles', 'IQR', 'Outliers']
+    },
+    {
+      name: 'Random Number Generator',
+      href: '/calculators/random-number-generator',
+      description: 'Generate random numbers within specified range with customizable settings.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['Random', 'Generator', 'Numbers']
+    },
+  ],
+  'Fractions & Decimals': [
+    {
+      name: 'Fractions Calculator',
+      href: '/calculators/fractions-calculator',
+      description: 'Add, subtract, multiply, and divide fractions with step-by-step solutions.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['Fractions', 'Operations', 'Math']
+    },
+    {
+      name: 'Mixed Numbers Calculator',
+      href: '/calculators/mixed-numbers-calculator',
+      description: 'Calculate with mixed numbers and improper fractions with automatic conversion.',
+      gradient: 'from-purple-600 to-pink-600',
+      tags: ['Mixed Numbers', 'Fractions', 'Convert']
+    },
+    {
+      name: 'Simplifying Fractions Calculator',
+      href: '/calculators/simplifying-fractions-calculator',
+      description: 'Simplify fractions to lowest terms with GCF method and steps.',
+      gradient: 'from-green-600 to-teal-600',
+      tags: ['Simplify', 'Reduce', 'Fractions']
+    },
+    {
+      name: 'Decimal to Fraction Calculator',
+      href: '/calculators/decimal-to-fraction-calculator',
+      description: 'Convert decimals to fractions in simplified form with step-by-step process.',
+      gradient: 'from-cyan-600 to-blue-600',
+      tags: ['Decimal', 'Fraction', 'Convert']
+    },
+    {
+      name: 'Fraction to Decimal Calculator',
+      href: '/calculators/fraction-to-decimal-calculator',
+      description: 'Convert fractions to decimals with repeating decimal notation.',
+      gradient: 'from-orange-600 to-red-600',
+      tags: ['Fraction', 'Decimal', 'Convert']
+    },
+    {
+      name: 'Fraction to Percent Calculator',
+      href: '/calculators/fraction-to-percent-calculator',
+      description: 'Convert fractions to percentages with detailed calculation steps.',
+      gradient: 'from-pink-600 to-purple-600',
+      tags: ['Fraction', 'Percent', 'Convert']
+    },
+  ],
+  'Business & Commerce': [
+    {
+      name: 'Profit Margin Calculator',
+      href: '/calculators/profit-margin-calculator',
+      description: 'Calculate profit margin, markup, and profit percentage for business pricing.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['Profit', 'Margin', 'Business']
+    },
+    {
+      name: 'Margin Calculator',
+      href: '/calculators/margin-calculator',
+      description: 'Calculate gross margin, net margin, and operating margin with formulas.',
+      gradient: 'from-emerald-600 to-teal-600',
+      tags: ['Margin', 'Gross', 'Net']
+    },
+    {
+      name: 'Money Calculator',
+      href: '/calculators/money-calculator',
+      description: 'Count money with bills and coins, calculate total cash value.',
+      gradient: 'from-blue-600 to-cyan-600',
+      tags: ['Money', 'Cash', 'Count']
+    },
+  ],
+  'Measurement & Conversion': [
+    {
+      name: 'Square Footage Calculator',
+      href: '/calculators/square-footage-calculator',
+      description: 'Calculate area in sq ft, sq m, and acres for any shape with cost estimation.',
+      gradient: 'from-blue-600 to-cyan-600',
+      tags: ['Multiple Shapes', 'Cost Estimator', 'Unit Converter']
+    },
+    {
+      name: 'Cubic Yards Calculator',
+      href: '/calculators/cubic-yards-calculator',
+      description: 'Calculate cubic yards, cubic feet, and cubic meters for concrete, mulch, gravel.',
+      gradient: 'from-red-700 to-orange-700',
+      tags: ['Volume', 'Concrete', 'Material']
+    },
+    {
+      name: 'Tank Volume Calculator',
+      href: '/calculators/tank-volume-calculator',
+      description: 'Calculate tank capacity and fill volume for all shapes in gallons, liters, cubic feet.',
+      gradient: 'from-amber-600 to-orange-600',
+      tags: ['All Tank Shapes', 'Multiple Units', 'Fill Calculator']
+    },
+    {
+      name: 'Feet and Inches Calculator',
+      href: '/calculators/feet-and-inches-calculator',
+      description: 'Add, subtract, multiply, divide feet and inches with fractions for construction.',
+      gradient: 'from-orange-700 to-red-700',
+      tags: ['Construction', 'Fractions', 'Carpentry']
+    },
+    {
+      name: 'Celsius to Fahrenheit Converter',
+      href: '/calculators/celsius-to-fahrenheit-converter',
+      description: 'Convert Celsius to Fahrenheit with formula and conversion table.',
+      gradient: 'from-red-600 to-orange-600',
+      tags: ['Temperature', 'Celsius', 'Fahrenheit']
+    },
+    {
+      name: 'Fahrenheit to Celsius Converter',
+      href: '/calculators/fahrenheit-to-celsius-converter',
+      description: 'Convert Fahrenheit to Celsius with formula and conversion table.',
+      gradient: 'from-orange-600 to-amber-600',
+      tags: ['Temperature', 'Fahrenheit', 'Celsius']
+    },
+    {
+      name: 'Speed Distance Time Calculator',
+      href: '/calculators/speed-distance-time-calculator',
+      description: 'Calculate speed, distance, or time using the formula with unit conversion.',
+      gradient: 'from-cyan-600 to-blue-600',
+      tags: ['Speed', 'Distance', 'Time']
+    },
+  ],
+  'Time & Date': [
+    {
+      name: 'Age Calculator',
+      href: '/calculators/age-calculator',
+      description: 'Calculate age in years, months, days, hours from date of birth with precision.',
+      gradient: 'from-purple-600 to-pink-600',
+      tags: ['Age', 'Date', 'Birthday']
+    },
+    {
+      name: 'Hours Calculator',
+      href: '/calculators/hours-calculator',
+      description: 'Calculate hours and minutes between times for work hours, duration, timesheet.',
+      gradient: 'from-indigo-600 to-purple-600',
+      tags: ['Work Hours', 'Duration', 'Timesheet']
+    },
+    {
+      name: 'Work Hours Calculator',
+      href: '/calculators/work-hours-calculator',
+      description: 'Calculate total work hours with break time, overtime, and weekly hours.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['Work', 'Overtime', 'Weekly']
+    },
+    {
+      name: 'Military Time Converter',
+      href: '/calculators/military-time-converter',
+      description: 'Convert between 12-hour and 24-hour military time format with chart.',
+      gradient: 'from-green-600 to-teal-600',
+      tags: ['24-Hour', 'Military', 'Time']
+    },
+    {
+      name: 'Time to Decimal Calculator',
+      href: '/calculators/time-to-decimal-calculator',
+      description: 'Convert time to decimal hours for payroll and timesheet calculations.',
+      gradient: 'from-cyan-600 to-blue-600',
+      tags: ['Decimal', 'Payroll', 'Hours']
+    },
+  ],
+  'Number Converters': [
+    {
+      name: 'Numbers to Words Converter',
+      href: '/calculators/numbers-to-words-converter',
+      description: 'Convert numbers to words in Indian and International number system.',
+      gradient: 'from-blue-600 to-purple-600',
+      tags: ['Numbers', 'Words', 'Convert']
+    },
+    {
+      name: 'Roman Numeral Converter',
+      href: '/calculators/roman-numeral-converter',
+      description: 'Convert between Roman numerals and Arabic numbers with validation.',
+      gradient: 'from-purple-600 to-pink-600',
+      tags: ['Roman', 'Numerals', 'Convert']
+    },
+    {
+      name: 'Scientific Notation Converter',
+      href: '/calculators/scientific-notation-converter',
+      description: 'Convert numbers to and from scientific notation with exponent display.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['Scientific', 'Notation', 'Exponent']
+    },
+    {
+      name: 'Rounding Numbers Calculator',
+      href: '/calculators/rounding-numbers-calculator',
+      description: 'Round numbers to nearest whole, tenth, hundredth, or custom decimal place.',
+      gradient: 'from-orange-600 to-red-600',
+      tags: ['Rounding', 'Decimal', 'Place']
+    },
+  ],
+  'General Tools': [
+    {
+      name: 'Basic Calculator',
+      href: '/calculators/basic-calculator',
+      description: 'Simple calculator for basic arithmetic operations - add, subtract, multiply, divide.',
+      gradient: 'from-gray-600 to-slate-600',
+      tags: ['Basic', 'Arithmetic', 'Simple']
+    },
+  ],
 };
 
+const categories = Object.keys(calculators);
+
 export default function CalculatorsPage() {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const scrollToCategory = (category: string) => {
+    setActiveCategory(category);
+    const element = document.getElementById(category.toLowerCase().replace(/[^a-z0-9]+/g, '-'));
+    if (element) {
+      const offset = 100;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <Navigation />
 
-      {/* Breadcrumb Navigation */}
-      <div className="bg-gray-50 py-4 px-6">
-        <div className="container mx-auto">
-          <nav className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm overflow-x-auto">
-            <Link href="/" className="text-[#1A3D7C] hover:text-[#2BAE66] flex items-center whitespace-nowrap">
+      {/* Breadcrumb */}
+      <div className="bg-white/80 backdrop-blur-sm py-3 px-4 sm:px-6 shadow-sm sticky top-0 z-40">
+        <div className="container mx-auto max-w-7xl">
+          <nav className="flex items-center space-x-2 text-xs sm:text-sm overflow-x-auto">
+            <Link href="/" className="text-blue-600 hover:text-blue-800 flex items-center whitespace-nowrap">
               <Home className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
               <span className="hidden sm:inline">Home</span>
             </Link>
             <span className="text-gray-400">/</span>
-            <span className="text-gray-600 truncate">
-              <span className="hidden sm:inline">Calculators</span>
-              <span className="sm:hidden">Calc</span>
-            </span>
+            <span className="text-gray-600 font-medium">Calculators</span>
           </nav>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white py-16 px-6">
+      <section className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white py-12 sm:py-16 px-4 sm:px-6">
         <div className="container mx-auto text-center max-w-4xl">
-          <div className="flex items-center justify-center mb-6">
-            <Calculator className="w-12 h-12 text-[#FFC857] mr-4" />
-            <h1 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6">
+            <Calculator className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-300 mb-3 sm:mb-0 sm:mr-4" />
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Free Online Calculators
             </h1>
           </div>
-          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-            Comprehensive collection of calculators for students, professionals, and everyone. From financial planning and investment calculations to age verification and educational tools - everything you need in one place.
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8">
+            {categories.length} categories with 70+ calculators for students, professionals, and everyone. Calculate accurately, plan smartly, and achieve your goals.
           </p>
-          <div className="bg-white/10 p-4 rounded-xl mb-8">
-            <p className="text-lg italic">
-              Smart planning starts with accurate calculations.<br />
-              <strong>Calculate, Plan, and Achieve Your Goals</strong>
-            </p>
-          </div>
         </div>
       </section>
 
+      {/* Category Quick Navigation - Mobile Optimized */}
+      <div className="sticky top-[52px] z-30 bg-white border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center mb-2 sm:mb-3">
+            <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mr-2" />
+            <h2 className="text-sm sm:text-base font-semibold text-gray-800">Jump to Category</h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => scrollToCategory(category)}
+                className={`text-left text-xs sm:text-sm px-3 py-2 rounded-lg border transition-all ${
+                  activeCategory === category
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-md'
+                    : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-blue-50 hover:border-blue-300'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-medium truncate">{category}</span>
+                  <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 ml-1 flex-shrink-0" />
+                </div>
+                <span className="text-[10px] sm:text-xs text-gray-500 mt-0.5 block">
+                  {calculators[category as keyof typeof calculators].length} tools
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Main Content */}
-      <main className="py-12 px-6">
-        <div className="container mx-auto max-w-5xl">
-
-          {/* Available Calculators */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
-              <TrendingUp className="w-8 h-8 mr-3 text-[#2BAE66]" />
-              Available Calculators
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-
-              {/* Square Footage Calculator Card */}
-              <Link href="/calculators/square-footage-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Ruler className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Square Footage Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate area in sq ft, sq in, sq yd, sq m, and acres for any shape. Includes waste factor and material cost estimation for flooring, painting, roofing, and construction projects.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Multiple Shapes</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Cost Estimator</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Unit Converter</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Feet and Inches Calculator Card */}
-              <Link href="/calculators/feet-and-inches-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-700 to-red-700 text-white rounded-full flex items-center justify-center">
-                      <Ruler className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Feet and Inches Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Add, subtract, multiply, or divide feet and inches with fractions and decimals. Perfect for construction, carpentry, and home improvement projects with step-by-step solutions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Construction</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Fractions</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Carpentry</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Tank Volume Calculator Card */}
-              <Link href="/calculators/tank-volume-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-amber-600 to-orange-600 text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Tank Volume Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate tank capacity and fill volume for all shapes including horizontal/vertical cylinders, rectangles, ovals, capsules, and elliptical tanks. Get results in gallons, liters, cubic feet, and cubic meters.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">All Tank Shapes</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Multiple Units</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Fill Calculator</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Cubic Yards Calculator Card */}
-              <Link href="/calculators/cubic-yards-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-700 to-orange-700 text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Cubic Yards Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate cubic yards, cubic feet, and cubic meters for all shapes. Perfect for concrete, mulch, gravel, and soil with optional cost calculator. Supports rectangle, circle, triangle, and more.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">All Shapes</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Cost Calculator</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Construction</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Work Hours Calculator Card */}
-              <Link href="/calculators/work-hours-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Clock className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Work Hours Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate total work hours, breaks, and overtime for the week. Track time with automatic regular/overtime separation, break deductions, and printable time cards for payroll.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Overtime Tracking</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Time Cards</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Payroll Ready</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Basic Calculator Card */}
-              <Link href="/calculators/basic-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Basic Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Free online calculator with scientific functions including memory, square root, percentage, and power operations. Perfect for students, homework, and everyday calculations.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Scientific Functions</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Memory Storage</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Free Tool</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Age Calculator Card */}
-              <Link href="/calculators/age-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Calendar className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Age Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate exact age or time interval between two dates. Get precise results in years, months, weeks, days, hours, minutes, and seconds - perfect for students and professionals.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Date Calculation</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Age Verification</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Educational Tool</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* CGPA to Percentage Calculator Card */}
-              <Link href="/calculators/cgpa-to-percentage-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 text-white rounded-full flex items-center justify-center">
-                      <Award className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">CGPA to Percentage Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert CGPA to percentage with comprehensive formulas and examples. Supports 4.0, 10.0 grading scales with step-by-step conversion for CBSE, ICSE, and international systems.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">CGPA × 9.5</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Multiple Scales</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Student Tool</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Percentage to CGPA Calculator Card */}
-              <Link href="/calculators/percentage-to-cgpa-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-full flex items-center justify-center">
-                      <Award className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentage to CGPA Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert percentage to CGPA instantly with comprehensive formulas, examples, and university-specific methods. Supports CBSE, Anna University, Mumbai University, VTU, and international 4.0 scale conversions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">% ÷ 9.5</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">6 Universities</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Academic Tool</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Marks Percentage Calculator Card */}
-              <Link href="/calculators/marks-percentage-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-700 text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Marks Percentage Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate your exam percentage instantly from marks obtained and total marks. Get detailed grade classifications, division information, and comprehensive conversion tables for students.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">(Marks/Total) × 100</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Grade System</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Division Info</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* SGPA to CGPA Calculator Card */}
-              <Link href="/calculators/sgpa-to-cgpa-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center">
-                      <GraduationCap className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SGPA to CGPA Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert semester GPA (SGPA) to cumulative GPA (CGPA) with credit-weighted calculations. Get step-by-step solutions, comprehensive grading systems, and accurate percentage conversion for all universities.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Credit Weighted</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Multi-Semester</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Grade System</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* SGPA to Percentage Calculator Card */}
-              <Link href="/calculators/sgpa-to-percentage-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-full flex items-center justify-center">
-                      <Percent className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SGPA to Percentage Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert SGPA to percentage instantly with multiple university-specific formulas. Supports CBSE, VTU, Anna University, Mumbai University with comprehensive conversion tables and examples.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">SGPA × 9.5</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">5 Methods</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">University-Specific</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Hours Calculator Card */}
-              <Link href="/calculators/hours-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Clock className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Hours Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate time difference between two times with break deductions. Perfect for work hours, shift calculations, and time tracking with results in hours:minutes, decimal, and total minutes.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Work Hours</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Time Tracking</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Payroll Helper</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Time to Decimal Calculator Card */}
-              <Link href="/calculators/time-to-decimal-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-600 text-white rounded-full flex items-center justify-center">
-                      <Clock className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Time to Decimal Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert hours, minutes, and seconds to decimal hours, minutes, and seconds with step-by-step mathematical solutions. Perfect for payroll, billing, and time tracking applications.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Decimal Hours</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Payroll Ready</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Military Time Converter Card */}
-              <Link href="/calculators/military-time-converter" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-700 to-red-700 text-white rounded-full flex items-center justify-center">
-                      <Clock className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Military Time Converter</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert between 24-hour military time and 12-hour regular time with AM/PM. Perfect for understanding military, aviation, and international time formats with comprehensive conversion chart.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">24-Hour Clock</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Military Time</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Time Zones</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Numbers to Words Converter Card */}
-              <Link href="/calculators/numbers-to-words-converter" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Type className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Numbers to Words Converter</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert numbers to written words instantly. Perfect for writing checks, invoices, and legal documents. Supports currency format, check writing, and multiple letter cases.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Check Writing</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Currency Format</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Legal Docs</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Roman Numeral Converter Card */}
-              <Link href="/calculators/roman-numeral-converter" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <History className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Roman Numeral Converter</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert between numbers (1-3999) and Roman numerals instantly. Bi-directional converter with step-by-step explanations, symbol breakdowns, and comprehensive rules guide.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Bi-Directional</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Historical</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Mixed Numbers Calculator Card */}
-              <Link href="/calculators/mixed-numbers-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Divide className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Mixed Numbers Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Add, subtract, multiply, and divide mixed numbers, fractions, and whole numbers with step-by-step solutions. Perfect for students learning fractions with detailed solving methods.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Fraction Math</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Educational</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Quadratic Formula Calculator Card */}
-              <Link href="/calculators/quadratic-formula-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Sparkles className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Quadratic Formula Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Solve quadratic equations (ax² + bx + c = 0) with step-by-step solutions. Get exact radical forms, decimal approximations, discriminant analysis, and complex roots. Perfect for algebra students.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quadratic Solver</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Complex Roots</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Cube Root Calculator Card */}
-              <Link href="/calculators/cube-root-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-700 to-red-700 text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Cube Root Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate principal real cube root and all complex cube roots (∛x) with step-by-step solutions. Includes perfect cube checker and proper mathematical notation for algebra and calculus.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Real & Complex Roots</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Perfect Cubes</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">∛ Notation</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Percentage Calculator Card */}
-              <Link href="/calculators/percentage-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Percent className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentage Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Free percentage calculator with 3 quick solutions. Calculate what is X% of Y, X is what % of Y, and X is Y% of what. Perfect for students, business, and everyday calculations with step-by-step solutions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quick Solutions</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">3 Calculators</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Percent Error Calculator Card */}
-              <Link href="/calculators/percent-error-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-600 text-white rounded-full flex items-center justify-center">
-                      <Percent className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percent Error Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate percentage error between experimental and theoretical values with step-by-step solutions. Perfect for chemistry labs, physics experiments, and scientific research. Includes absolute and relative error calculations.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Lab Reports</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Error Analysis</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Scientific</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Margin Calculator Card */}
-              <Link href="/calculators/margin-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-red-600 text-white rounded-full flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Margin Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate profit margin, markup percentage, and profit with step-by-step solutions. Includes support for tax, VAT, and GST calculations. Perfect for business owners, retailers, and financial analysis.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Margin & Markup</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tax Support</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Business Tool</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Profit Margin Calculator Card */}
-              <Link href="/calculators/profit-margin-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-600 text-white rounded-full flex items-center justify-center">
-                      <DollarSign className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Profit Margin Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate net profit margin, net profit, and profit percentage from cost and revenue with step-by-step solutions. Simplified interface for quick business profitability analysis and financial planning.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Net Profit Margin</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Profitability</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Business Metrics</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Percentage Increase Calculator Card */}
-              <Link href="/calculators/percentage-increase-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Percent className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentage Increase Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate percentage increase or decrease between two values with step-by-step solutions. Perfect for price changes, salary raises, growth rates, and business analysis with proper mathematical notation.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">% Change</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Growth Rate</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Math Steps</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Percentage Change Calculator Card */}
-              <Link href="/calculators/percentage-change-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentage Change Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate percentage change between any two values with detailed mathematical solutions. Understand increases, decreases, and growth rates with V₁ to V₂ notation. Perfect for statistics and data analysis.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">V₁ to V₂</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Statistical</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Detailed Steps</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Fractions Calculator Card */}
-              <Link href="/calculators/fractions-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Divide className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Fractions Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Add, subtract, multiply, and divide fractions with step-by-step solutions. Calculate LCD, simplify fractions, and convert to mixed numbers with proper mathematical notation. Perfect for students and educators.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">LCD Calculator</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Simplify Fractions</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mixed Numbers</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Simplifying Fractions Calculator Card */}
-              <Link href="/calculators/simplifying-fractions-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Divide className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Simplifying Fractions Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Reduce fractions to simplest form with step-by-step GCF method. Shows all factors, common factors, and converts improper fractions to mixed numbers. Perfect for learning fraction simplification.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">GCF Method</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Lowest Terms</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mixed Numbers</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Decimal to Fraction Calculator Card */}
-              <Link href="/calculators/decimal-to-fraction-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Divide className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Decimal to Fraction Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert decimals to fractions or mixed numbers with complete step-by-step solutions. Shows GCF reduction and simplification process. Perfect for students learning fraction conversion.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">GCF Reduction</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mixed Numbers</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Fraction to Decimal Calculator Card */}
-              <Link href="/calculators/fraction-to-decimal-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Divide className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Fraction to Decimal Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert any fraction to decimal with step-by-step solutions. Shows GCF reduction, long division explanation, and decimal precision selection (1-10 places). Perfect for learning decimal conversion.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">GCF Reduction</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Long Division</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Precision Control</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Fraction to Percent Calculator Card */}
-              <Link href="/calculators/fraction-to-percent-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Percent className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Fraction to Percent Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert fractions to percentages with step-by-step solutions. Shows decimal conversion, multiplication by 100, and customizable rounding options. Perfect for students learning percentage conversion.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Decimal Conversion</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Rounding Options</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Rounding Numbers Calculator Card */}
-              <Link href="/calculators/rounding-numbers-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <RotateCw className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Rounding Numbers Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Round any number to the nearest whole number, tenth, hundredth, or any decimal place. Get instant results with visual digit highlighting and step-by-step explanations of rounding rules.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Visual Highlighting</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Place Values</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Long Division Calculator Card */}
-              <Link href="/calculators/long-division-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Divide className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Long Division Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Divide any numbers with complete step-by-step visual solution grid. See the entire working process including quotient, remainder, and verification formula. Perfect for students learning division.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Visual Grid</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quotient & Remainder</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Modulo Calculator Card */}
-              <Link href="/calculators/modulo-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Percent className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Modulo Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate modulo operation (a mod b) with remainder division and verification. Get quotient, remainder, and complete proof with step-by-step solutions. Perfect for programming and number theory.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mod Operation</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Verification Proof</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Number Theory</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* LCM Calculator Card */}
-              <Link href="/calculators/lcm-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Binary className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">LCM Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Find the Least Common Multiple (LCM) of 2-10 numbers with three calculation methods. Shows prime factorization, listing multiples, and formula methods with complete step-by-step solutions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">3 Methods</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Prime Factorization</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Multiple Numbers</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Percentage Difference Calculator Card */}
-              <Link href="/calculators/percentage-difference-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Percent className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentage Difference Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate the symmetric percentage difference between two values with proper mathematical notation. Perfect for comparing measurements, data analysis, and scientific research with complete step-by-step solutions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Symmetric Formula</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Math Notation</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Factoring Calculator Card */}
-              <Link href="/calculators/factoring-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-700 to-red-700 text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Factoring Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Find all factors and factor pairs of any number with step-by-step solutions. Shows complete factor list, divisibility testing, and multiplication pairs. Perfect for homework and learning number theory.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">All Factors</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Factor Pairs</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Divisibility</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* GCF Calculator Card */}
-              <Link href="/calculators/gcf-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <GitMerge className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">GCF Calculator (HCF, GCD)</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Find the Greatest Common Factor (GCF, HCF, GCD) of 2-10 numbers with three methods. Shows prime factorization, listing factors, and Euclidean algorithm with complete step-by-step solutions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">3 Methods</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Prime Factorization</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Simplify Fractions</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Combinations Calculator Card */}
-              <Link href="/calculators/combinations-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Shuffle className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Combinations Calculator (nCr)</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate combinations (nCr) and permutations (nPr) with detailed step-by-step solutions. Perfect for probability, statistics, and combinatorics with complete mathematical notation.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">nCr & nPr</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Factorial Display</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Probability</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Celsius to Fahrenheit Converter Card */}
-              <Link href="/calculators/celsius-to-fahrenheit-converter" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Thermometer className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Celsius to Fahrenheit Converter</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert temperature between Celsius (°C) and Fahrenheit (°F) with bidirectional conversion. Shows conversion formulas and step-by-step solutions for accurate temperature conversion.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Converter</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Bidirectional</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">With Formula</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Slope Calculator Card */}
-              <Link href="/calculators/slope-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Slope Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate slope between two points with interactive graph visualization. Shows slope formula, point-slope form, slope-intercept form, and intercepts with complete step-by-step solutions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Graph Visualization</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">All Equation Forms</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Fahrenheit to Celsius Converter Card */}
-              <Link href="/calculators/fahrenheit-to-celsius-converter" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Thermometer className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Fahrenheit to Celsius Converter</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert temperature between Fahrenheit (°F) and Celsius (°C) with bidirectional conversion. Shows conversion formulas and step-by-step solutions for accurate temperature conversion.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Converter</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Bidirectional</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">With Formula</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Ratio Calculator Card */}
-              <Link href="/calculators/ratio-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Scale className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Ratio Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Solve and verify ratios A:B = C:D with cross multiplication. Check if ratios are equal, simplify ratios to lowest terms, and get complete step-by-step solutions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Ratio Verification</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Simplify Ratios</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Money Calculator Card */}
-              <Link href="/calculators/money-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <DollarSign className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Money Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Count and calculate total value of banknotes, coins, and rolled coins with detailed denomination breakdown. Perfect for cash management, retail, and bank deposits.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Cash Counter</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Denomination Breakdown</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Bills & Coins</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Scientific Notation Converter Card */}
-              <Link href="/calculators/scientific-notation-converter" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Atom className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Scientific Notation Converter</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Convert numbers between scientific notation, standard form, e-notation, and engineering notation. Get order of magnitude and word form with comprehensive explanations.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Scientific Notation</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">E-notation</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Engineering Form</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Speed Distance Time Calculator Card */}
-              <Link href="/calculators/speed-distance-time-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Gauge className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Speed Distance Time Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate speed, distance, or time using the formula speed = distance/time. Solve motion problems with multiple unit conversions and step-by-step solutions.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Speed Formula</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Unit Conversion</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Travel Time</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Simple Interest Calculator Card */}
-              <Link href="/calculators/simple-interest-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Receipt className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Simple Interest Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate simple interest, principal, rate, time, or total amount using the formula A = P(1 + rt). Get step-by-step solutions for interest calculations.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Interest Formula</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Financial Math</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Loan Interest</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Mean Median Mode Calculator Card */}
-              <Link href="/calculators/mean-mode-median-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <BarChart3 className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Mean Median Mode Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate mean, median, mode, range, quartiles, and identify outliers with complete statistical analysis. Perfect for students learning descriptive statistics with instant results.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mean & Average</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quartiles & IQR</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Outlier Detection</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Variance Calculator Card */}
-              <Link href="/calculators/variance-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <BarChart3 className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Variance Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate sample and population variance with standard deviation, mean, and sum of squares. Complete statistical analysis with step-by-step solutions and deviation breakdown.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Sample & Population</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Std Deviation</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Statistical Analysis</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Standard Deviation Calculator Card */}
-              <Link href="/calculators/standard-deviation-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Standard Deviation Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate sample and population standard deviation with variance, mean, and sum of squares. Detailed step-by-step solutions with proper mathematical notation and deviation table.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Sample & Population</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Variance & SD</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Full Analysis</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Quartile Calculator Card */}
-              <Link href="/calculators/quartile-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-800 to-red-900 text-white rounded-full flex items-center justify-center">
-                      <BarChart3 className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Quartile Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate Q₁, Q₂, Q₃, IQR, median, min, max, and range with step-by-step solutions. Includes five-number summary and complete quartile statistics for data analysis.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Q₁ Q₂ Q₃</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">IQR Analysis</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Box Plot Data</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Percentile Calculator Card */}
-              <Link href="/calculators/percentile-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-700 to-red-800 text-white rounded-full flex items-center justify-center">
-                      <BarChart3 className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentile Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate any percentile (1st-99th) from datasets with step-by-step solutions. Display every nth percentile option for comprehensive statistical analysis and data ranking.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Any Percentile</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Every Nth</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">P₁-P₉₉</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Random Number Generator Card */}
-              <Link href="/calculators/random-number-generator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Shuffle className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Random Number Generator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Generate random numbers with custom range, control duplicates, and sorting options. Perfect for games, lottery picks, passwords, and random selection with instant results.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Custom Range</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">No Duplicates</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Sort Options</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* SIP Calculator Card */}
-              <Link href="/calculators/sip-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SIP Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate your mutual fund returns through Systematic Investment Plans. Estimate maturity amount, total investment, and expected returns with monthly compounding.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Monthly Investment</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Returns Estimation</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Wealth Planning</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* SSY Calculator Card */}
-              <Link href="/calculators/sukanya-samriddhi-yojana-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Baby className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Sukanya Samriddhi Yojana</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate SSY maturity amount for your daughter's future. Government scheme with 8.2% interest rate and complete tax benefits under Section 80C.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Girl Child Scheme</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tax Free Returns</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">8.2% Interest</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* SWP Calculator Card */}
-              <Link href="/calculators/swp-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Wallet className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SWP Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate Systematic Withdrawal Plan from mutual funds. Plan regular monthly income from your corpus while investment continues to grow - perfect for retirement.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Regular Income</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Retirement Planning</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tax Efficient</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* FD Calculator Card */}
-              <Link href="/calculators/fd-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <PiggyBank className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">FD Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate fixed deposit returns and maturity amount with quarterly compounding. Plan your safe investments with guaranteed returns for bank and post office FDs.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Fixed Deposits</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Guaranteed Returns</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Safe Investment</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* PPF Calculator Card */}
-              <Link href="/calculators/ppf-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Landmark className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">PPF Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate Public Provident Fund maturity with 7.1% interest. Government-backed scheme with EEE tax benefits, 15-year lock-in, and completely tax-free returns.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tax Free</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">7.1% Interest</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Govt Backed</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Step Up SIP Calculator Card */}
-              <Link href="/calculators/step-up-sip-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <ArrowUpCircle className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Step Up SIP Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate SIP returns with annual step-up increases. Boost your wealth creation by increasing your monthly SIP amount each year to match salary hikes.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Annual Increase</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Wealth Growth</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Smart Investing</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Compound Interest Calculator Card */}
-              <Link href="/calculators/compound-interest-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Calculator className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Compound Interest Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate compound interest on investments with multiple compounding frequencies. See how your money grows with yearly, half-yearly, quarterly, or monthly compounding.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Compounding</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Interest Growth</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Investment Planning</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Stock Average Calculator Card */}
-              <Link href="/calculators/stock-average-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <BarChart3 className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Stock Average Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate your average purchase price across multiple stock transactions. Perfect for averaging down or tracking your portfolio cost basis for tax purposes.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Averaging Down</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Cost Tracking</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Portfolio Analysis</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Simple Interest Calculator Card */}
-              <Link href="/calculators/simple-interest-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Percent className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Simple Interest Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate simple interest on loans, deposits, and investments. Quick and accurate SI calculations with instant results for financial planning.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Simple Interest</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Loan Calculator</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Deposit Planning</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* SBI SIP Calculator Card */}
-              <Link href="/calculators/sbi-sip-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Building2 className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SBI SIP Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Official SBI mutual fund SIP calculator. Calculate returns for SBI Bluechip, Small Cap, and other SBI MF schemes with accurate projections.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">SBI Funds</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mutual Fund SIP</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Investment Planning</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Income Tax Calculator Card */}
-              <Link href="/calculators/income-tax-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <FileText className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Income Tax Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate income tax for FY 2025-26 under Old & New tax regime. Compare both regimes, HRA exemption, Section 80C/80D deductions for maximum savings.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tax Planning</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Old vs New Regime</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">HRA Calculation</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Lumpsum Calculator Card */}
-              <Link href="/calculators/lumpsum-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <PiggyBank className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Lumpsum Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate returns on one-time investments. Estimate future value with compound interest, visualize wealth growth with interactive charts and projections.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">One-time Investment</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Compound Interest</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Wealth Growth</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Gratuity Calculator Card */}
-              <Link href="/calculators/gratuity-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Award className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Gratuity Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate gratuity amount as per Payment of Gratuity Act 1972. Instant calculation for employees with 5+ years service. Plan retirement corpus effectively.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Retirement Benefit</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Service Years</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tax Exempt</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Salary Calculator Card */}
-              <Link href="/calculators/salary-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Wallet className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Salary Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate take-home salary from CTC with detailed breakdown. Factor in PF, professional tax, bonus, and deductions to know your actual in-hand salary.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">CTC Breakdown</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">In-hand Salary</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Job Comparison</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* EMI Calculator Card */}
-              <Link href="/calculators/emi-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <CreditCard className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">EMI Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate monthly loan payments for home, car, personal, and education loans. Get instant EMI, interest, and total payment breakdowns in INR.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Loan EMI</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Interest Calculation</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Loan Planning</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Personal Loan EMI Calculator Card */}
-              <Link href="/calculators/personal-loan-emi-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Wallet className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Personal Loan EMI Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate monthly payments for unsecured personal loans. Perfect for medical emergencies, weddings, education, travel, or debt consolidation with instant approval.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Instant Approval</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Flexible Use</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quick Disbursal</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Car Loan EMI Calculator Card */}
-              <Link href="/calculators/car-loan-emi-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Car className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Car Loan EMI Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate monthly payments for new and used car loans. Plan your dream car purchase with accurate EMI estimates and interest calculations.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Auto Loan</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Vehicle Finance</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Car EMI</span>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Home Loan EMI Calculator Card */}
-              <Link href="/calculators/home-loan-emi-calculator" className="block h-full">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white rounded-full flex items-center justify-center">
-                      <Building2 className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Home Loan EMI Calculator</h3>
-                  </div>
-                  <p className="text-gray-700 mb-4 flex-grow">
-                    Calculate mortgage payments for housing loans. Plan your dream home purchase with detailed EMI breakdowns and affordability estimates.
-                  </p>
-                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
-                    <span>Use Calculator</span>
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Housing Loan</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Mortgage EMI</span>
-                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Home Finance</span>
-                  </div>
-                </div>
-              </Link>
-
-            </div>
-          </section>
-
-          {/* Why Use Our Calculators */}
-          <section className="mb-12">
-            <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
-              <h2 className="text-2xl font-bold mb-6">Why Use Our Calculators?</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-[#FFC857] mb-2">🎯 Accurate Calculations</h3>
-                  <p className="text-white/90">Get precise calculations based on proven formulas and industry standards for all your needs.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#FFC857] mb-2">⚡ Instant Results</h3>
-                  <p className="text-white/90">See your results immediately without any waiting time - calculate as many times as you need.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#FFC857] mb-2">📱 Mobile Friendly</h3>
-                  <p className="text-white/90">Use our calculators on any device - desktop, tablet, or smartphone with responsive design.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#FFC857] mb-2">🎓 Educational & Practical</h3>
-                  <p className="text-white/90">Perfect for students, professionals, and everyone with comprehensive tools for learning and planning.</p>
-                </div>
+      <main className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
+        {categories.map((category) => (
+          <section
+            key={category}
+            id={category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
+            className="mb-12 sm:mb-16 scroll-mt-32"
+          >
+            {/* Category Header */}
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center mb-2">
+                {category === 'Academic & Education' && <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600 mr-3" />}
+                {category === 'Financial & Investment' && <DollarSign className="w-6 h-6 sm:w-7 sm:h-7 text-green-600 mr-3" />}
+                {category === 'Percentage & Math' && <Percent className="w-6 h-6 sm:w-7 sm:h-7 text-purple-600 mr-3" />}
+                {category === 'Statistics & Data' && <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 text-indigo-600 mr-3" />}
+                {category === 'Fractions & Decimals' && <Hash className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-600 mr-3" />}
+                {category === 'Business & Commerce' && <DollarSign className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600 mr-3" />}
+                {category === 'Measurement & Conversion' && <Ruler className="w-6 h-6 sm:w-7 sm:h-7 text-orange-600 mr-3" />}
+                {category === 'Time & Date' && <Clock className="w-6 h-6 sm:w-7 sm:h-7 text-pink-600 mr-3" />}
+                {category === 'Number Converters' && <Hash className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600 mr-3" />}
+                {category === 'General Tools' && <Calculator className="w-6 h-6 sm:w-7 sm:h-7 text-gray-600 mr-3" />}
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{category}</h2>
               </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="text-center py-12">
-            <div className="bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white p-8 rounded-2xl">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Need Academic or Career Guidance?
-              </h2>
-              <p className="text-lg mb-6 opacity-90">
-                Our expert mentors can help you with academics, financial planning, career guidance, and make informed decisions about your future.
+              <p className="text-sm sm:text-base text-gray-600 ml-9 sm:ml-10">
+                {calculators[category as keyof typeof calculators].length} calculator{calculators[category as keyof typeof calculators].length !== 1 ? 's' : ''} available
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/book-demo-class">
-                  <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-[#FFC857]/90 transition-colors">
-                    Book Free Session
-                  </button>
+            </div>
+
+            {/* Calculator Cards Grid - Fully Responsive */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {calculators[category as keyof typeof calculators].map((calc) => (
+                <Link key={calc.href} href={calc.href} className="block h-full group">
+                  <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md border-2 border-gray-100 hover:border-blue-500 transition-all hover:shadow-xl h-full flex flex-col">
+                    <div className="flex items-start mb-3 sm:mb-4">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${calc.gradient} text-white rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0`}>
+                        <Calculator className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </div>
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-800 ml-3 leading-tight">
+                        {calc.name}
+                      </h3>
+                    </div>
+                    <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 flex-grow leading-relaxed">
+                      {calc.description}
+                    </p>
+                    <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-2 transition-transform mb-3">
+                      <span>Use Calculator</span>
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {calc.tags.map((tag) => (
+                        <span key={tag} className="text-[10px] sm:text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </Link>
-                <Link href="/contact">
-                  <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors">
-                    Contact Us
-                  </button>
-                </Link>
-              </div>
+              ))}
             </div>
           </section>
+        ))}
 
+        {/* Back to Top Button - Mobile Optimized */}
+        <div className="text-center mt-12 sm:mt-16">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl text-sm sm:text-base"
+          >
+            <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 mr-2 rotate-180" />
+            Back to Top
+          </button>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#1A3D7C] text-white py-12 px-6">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Brand */}
-            <div className="text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
-                <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white mt-16">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12">
+
+            {/* About Section */}
+            <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+              <div className="flex items-center mb-4">
+                <Calculator className="w-8 h-8 text-yellow-400 mr-3" />
+                <h3 className="text-xl font-bold">The Tutor Bridge</h3>
               </div>
-              <p className="text-gray-300 mb-4">
-                Empowering students with personalized education and career guidance for a brighter future.
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                Your trusted source for accurate online calculators. From academic tools to financial planning, we provide free, comprehensive calculators for everyone.
               </p>
+              <div className="flex items-center text-sm text-gray-400">
+                <span>© 2024 The Tutor Bridge</span>
+              </div>
             </div>
 
-            {/* Quick Links */}
-            <div className="text-center md:text-left">
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li><Link href="/study-resources" className="hover:text-[#2BAE66] transition-colors">Study Resources</Link></li>
-                <li><Link href="/calculators" className="hover:text-[#2BAE66] transition-colors">Calculators</Link></li>
-                <li><Link href="/doubt-solving" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
-                <li><Link href="/career-guidance" className="hover:text-[#2BAE66] transition-colors">Career Guidance</Link></li>
+            {/* Quick Links - Academic */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 flex items-center">
+                <GraduationCap className="w-5 h-5 mr-2 text-blue-400" />
+                Academic Tools
+              </h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/calculators/college-gpa-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    College GPA Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators/high-school-gpa-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    High School GPA
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators/grade-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    Grade Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators/percentage-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    Percentage Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators/cgpa-to-percentage-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    CGPA to Percentage
+                  </Link>
+                </li>
               </ul>
             </div>
 
-            {/* Contact */}
-            <div className="text-center md:text-left">
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <p>+91 9310096171</p>
-                <p>info@thetutorbridge.com</p>
-              </div>
+            {/* Quick Links - Financial */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 flex items-center">
+                <DollarSign className="w-5 h-5 mr-2 text-green-400" />
+                Financial Tools
+              </h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/calculators/sip-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    SIP Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators/emi-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    EMI Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators/income-tax-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    Income Tax Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators/compound-interest-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    Compound Interest
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/calculators/ppf-calculator" className="text-gray-300 hover:text-white transition-colors">
+                    PPF Calculator
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Quick Links - Resources */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 flex items-center">
+                <BookOpen className="w-5 h-5 mr-2 text-purple-400" />
+                Resources
+              </h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/study-resources" className="text-gray-300 hover:text-white transition-colors">
+                    Study Resources
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2025 The TutorBridge. All rights reserved.</p>
+          {/* Category Links - Compact */}
+          <div className="border-t border-gray-700 pt-8 mb-8">
+            <h4 className="text-sm font-semibold mb-4 text-gray-400 uppercase tracking-wider">All Calculator Categories</h4>
+            <div className="flex flex-wrap gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setTimeout(() => scrollToCategory(category), 100);
+                  }}
+                  className="text-xs sm:text-sm px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-full transition-all border border-gray-700 hover:border-gray-600"
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-700 pt-8">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-sm text-gray-400 text-center sm:text-left">
+                All calculators are free to use. Results are for informational purposes only.
+              </p>
+              <div className="flex items-center gap-4 text-sm text-gray-400">
+                <Link href="/privacy" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <span>•</span>
+                <Link href="/terms" className="hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
