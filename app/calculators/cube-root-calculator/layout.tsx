@@ -1,0 +1,106 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cube Root Calculator - Calculate ∛x with Real and Complex Roots | The Tutor Bridge',
+  description: 'Free cube root calculator. Calculate principal real cube root and all complex cube roots (∛x) with step-by-step solutions. Includes perfect cube checker and proper mathematical notation.',
+  keywords: [
+    'cube root calculator',
+    'calculate cube root',
+    'cube root',
+    'third root calculator',
+    'cubed root calculator',
+    'find cube root',
+    'cube root formula',
+    'how to find cube root',
+    'free cube root calculator',
+    'online cube root calculator',
+    'cube root solver',
+    'principal cube root',
+    'real cube root',
+    'complex cube roots',
+    'cube root of a number',
+    'perfect cube calculator',
+    'perfect cube checker',
+    'cube root symbol',
+    'radical calculator',
+    'cube root notation',
+    'third root',
+    'cubic root',
+    'cube root table',
+    'cube root examples',
+    'negative cube root',
+    'cube root of negative number',
+    'imaginary cube roots',
+    'all cube roots',
+    'three cube roots',
+    'cube root function',
+    'cube root math',
+    'cube root simplifier',
+    'simplify cube root',
+    'cube root operations',
+    'cube root properties',
+    'cube root rules',
+    'radical expression cube root',
+    'nth root calculator',
+    'root calculator',
+    'radical calculator cube',
+    'cube root decimal',
+    'cube root approximation',
+    'cube root estimation',
+    'cube root steps',
+    'learn cube root',
+    'understand cube root',
+    'cube root help',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/cube-root-calculator',
+  },
+  openGraph: {
+    title: 'Cube Root Calculator - Calculate ∛x with Real and Complex Roots',
+    description: 'Calculate principal real cube root and all complex cube roots with step-by-step solutions. Free tool for students and math learners.',
+    url: 'https://thetutorbridge.com/calculators/cube-root-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Cube Root Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cube Root Calculator - Free Tool',
+    description: 'Calculate cube roots with step-by-step solutions. Includes real and complex roots.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function CubeRootCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

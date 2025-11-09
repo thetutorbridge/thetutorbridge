@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Margin Calculator - Calculate Profit Margin, Markup & Revenue | The Tutor Bridge',
+  description: 'Free margin calculator with step-by-step solutions. Calculate profit margin, markup percentage, profit, cost, and revenue with detailed mathematical formulas. Support for tax, VAT, and GST calculations.',
+  keywords: [
+    'margin calculator',
+    'profit margin calculator',
+    'markup calculator',
+    'calculate margin',
+    'calculate markup',
+    'profit margin',
+    'markup percentage',
+    'gross margin calculator',
+    'net margin calculator',
+    'profit calculator',
+    'revenue calculator',
+    'cost calculator',
+    'margin formula',
+    'markup formula',
+    'free margin calculator',
+    'online margin calculator',
+    'margin vs markup',
+    'profit margin percentage',
+    'calculate profit margin',
+    'margin calculation',
+    'markup calculation',
+    'business margin calculator',
+    'sales margin calculator',
+    'retail margin calculator',
+    'wholesale margin calculator',
+    'product margin calculator',
+    'margin calculator with tax',
+    'VAT margin calculator',
+    'GST margin calculator',
+    'tax inclusive margin',
+    'margin percentage calculator',
+    'markup percentage calculator',
+    'gross profit margin',
+    'net profit margin',
+    'operating margin',
+    'contribution margin',
+    'margin analysis',
+    'profitability calculator',
+    'pricing calculator',
+    'revenue margin calculator',
+    'cost margin calculator',
+    'margin and markup calculator',
+    'profit margin formula',
+    'markup formula calculator',
+    'ecommerce margin calculator',
+    'retail pricing calculator',
+    'wholesale pricing calculator',
+    'product pricing calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/margin-calculator',
+  },
+  openGraph: {
+    title: 'Margin Calculator - Calculate Profit Margin & Markup Percentage',
+    description: 'Calculate profit margin, markup, profit, cost, and revenue with step-by-step solutions. Free tool with tax, VAT, and GST support.',
+    url: 'https://thetutorbridge.com/calculators/margin-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Margin Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Margin Calculator - Free Tool',
+    description: 'Calculate profit margin and markup percentage with detailed step-by-step solutions and tax support.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function MarginCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

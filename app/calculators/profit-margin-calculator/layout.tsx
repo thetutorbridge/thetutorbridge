@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Profit Margin Calculator - Calculate Net Profit Margin & Percentage | The Tutor Bridge',
+  description: 'Free profit margin calculator. Calculate net profit margin, net profit, and profit percentage from cost and revenue with step-by-step solutions and detailed formulas.',
+  keywords: [
+    'profit margin calculator',
+    'net profit margin calculator',
+    'calculate profit margin',
+    'profit percentage calculator',
+    'margin calculator',
+    'net profit calculator',
+    'profit margin formula',
+    'profit margin percentage',
+    'how to calculate profit margin',
+    'free profit margin calculator',
+    'online profit margin calculator',
+    'business profit calculator',
+    'profit calculator',
+    'margin percentage calculator',
+    'calculate net profit',
+    'net margin calculator',
+    'profit margin analysis',
+    'profitability calculator',
+    'gross profit margin',
+    'net profit margin',
+    'profit percentage',
+    'revenue profit calculator',
+    'cost profit calculator',
+    'profit margin formula calculator',
+    'calculate profit percentage',
+    'profit margin ratio',
+    'business margin calculator',
+    'sales profit calculator',
+    'profit margin estimator',
+    'net income calculator',
+    'operating profit margin',
+    'ecommerce profit calculator',
+    'retail profit margin',
+    'wholesale profit margin',
+    'product profit margin',
+    'service profit margin',
+    'profit margin analysis tool',
+    'margin calculation',
+    'profitability analysis',
+    'financial margin calculator',
+    'business profitability calculator',
+    'profit margin checker',
+    'margin profit calculator',
+    'net earnings calculator',
+    'profit return calculator',
+    'ROI calculator',
+    'return on sales',
+    'profit margin metrics',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/profit-margin-calculator',
+  },
+  openGraph: {
+    title: 'Profit Margin Calculator - Calculate Net Profit Margin & Percentage',
+    description: 'Calculate net profit margin, net profit, and profit percentage with step-by-step solutions. Free tool for business profitability analysis.',
+    url: 'https://thetutorbridge.com/calculators/profit-margin-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Profit Margin Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Profit Margin Calculator - Free Tool',
+    description: 'Calculate net profit margin and profit percentage with detailed step-by-step solutions.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function ProfitMarginCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

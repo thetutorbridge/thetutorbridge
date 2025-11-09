@@ -1,0 +1,108 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Time to Decimal Calculator - Convert Hours Minutes Seconds to Decimal | The Tutor Bridge',
+  description: 'Free time to decimal calculator. Convert hours, minutes, and seconds to decimal hours, decimal minutes, and decimal seconds with step-by-step mathematical solutions and formulas.',
+  keywords: [
+    'time to decimal calculator',
+    'time to decimal',
+    'convert time to decimal',
+    'hours to decimal',
+    'minutes to decimal',
+    'seconds to decimal',
+    'time converter',
+    'decimal hours calculator',
+    'decimal minutes calculator',
+    'decimal seconds calculator',
+    'hh:mm:ss to decimal',
+    'time to decimal hours',
+    'time to decimal conversion',
+    'convert hours minutes seconds',
+    'decimal time calculator',
+    'time decimal converter',
+    'calculate decimal hours',
+    'calculate decimal time',
+    'free time to decimal calculator',
+    'online time converter',
+    'time conversion calculator',
+    'hours minutes seconds to decimal',
+    'decimal time conversion',
+    'convert time format',
+    'time format converter',
+    'decimal hours from time',
+    'payroll time calculator',
+    'timesheet calculator',
+    'work hours to decimal',
+    'billable hours calculator',
+    'time tracking decimal',
+    'employee hours calculator',
+    'time card calculator',
+    'punch clock calculator',
+    'labor hours calculator',
+    'project time calculator',
+    'consulting hours calculator',
+    'freelance time calculator',
+    'invoice hours calculator',
+    'billing hours to decimal',
+    'time entry decimal',
+    'decimal hour conversion',
+    'time to hundredths',
+    'time rounding calculator',
+    'payroll decimal converter',
+    'timekeeping calculator',
+    'hr time calculator',
+    'workforce time calculator',
+    'attendance decimal calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/time-to-decimal-calculator',
+  },
+  openGraph: {
+    title: 'Time to Decimal Calculator - Convert Time to Decimal Hours',
+    description: 'Convert hours, minutes, and seconds to decimal format with step-by-step solutions. Perfect for payroll, timesheets, and billing.',
+    url: 'https://thetutorbridge.com/calculators/time-to-decimal-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Time to Decimal Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Time to Decimal Calculator - Free Tool',
+    description: 'Convert time (HH:MM:SS) to decimal hours, minutes, and seconds with detailed step-by-step solutions.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function TimeToDecimalCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

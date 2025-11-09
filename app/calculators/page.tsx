@@ -89,6 +89,30 @@ export default function CalculatorsPage() {
                 </div>
               </Link>
 
+              {/* Feet and Inches Calculator Card */}
+              <Link href="/calculators/feet-and-inches-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-700 to-red-700 text-white rounded-full flex items-center justify-center">
+                      <Ruler className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Feet and Inches Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Add, subtract, multiply, or divide feet and inches with fractions and decimals. Perfect for construction, carpentry, and home improvement projects with step-by-step solutions.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Construction</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Fractions</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Carpentry</span>
+                  </div>
+                </div>
+              </Link>
+
               {/* Tank Volume Calculator Card */}
               <Link href="/calculators/tank-volume-calculator" className="block h-full">
                 <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
@@ -109,6 +133,30 @@ export default function CalculatorsPage() {
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">All Tank Shapes</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Multiple Units</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Fill Calculator</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Cubic Yards Calculator Card */}
+              <Link href="/calculators/cubic-yards-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-700 to-orange-700 text-white rounded-full flex items-center justify-center">
+                      <Calculator className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Cubic Yards Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate cubic yards, cubic feet, and cubic meters for all shapes. Perfect for concrete, mulch, gravel, and soil with optional cost calculator. Supports rectangle, circle, triangle, and more.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">All Shapes</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Cost Calculator</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Construction</span>
                   </div>
                 </div>
               </Link>
@@ -209,6 +257,54 @@ export default function CalculatorsPage() {
                 </div>
               </Link>
 
+              {/* Time to Decimal Calculator Card */}
+              <Link href="/calculators/time-to-decimal-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-600 text-white rounded-full flex items-center justify-center">
+                      <Clock className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Time to Decimal Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Convert hours, minutes, and seconds to decimal hours, minutes, and seconds with step-by-step mathematical solutions. Perfect for payroll, billing, and time tracking applications.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Decimal Hours</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Payroll Ready</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Military Time Converter Card */}
+              <Link href="/calculators/military-time-converter" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-700 to-red-700 text-white rounded-full flex items-center justify-center">
+                      <Clock className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Military Time Converter</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Convert between 24-hour military time and 12-hour regular time with AM/PM. Perfect for understanding military, aviation, and international time formats with comprehensive conversion chart.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">24-Hour Clock</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Military Time</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Time Zones</span>
+                  </div>
+                </div>
+              </Link>
+
               {/* Numbers to Words Converter Card */}
               <Link href="/calculators/numbers-to-words-converter" className="block h-full">
                 <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
@@ -305,6 +401,30 @@ export default function CalculatorsPage() {
                 </div>
               </Link>
 
+              {/* Cube Root Calculator Card */}
+              <Link href="/calculators/cube-root-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-700 to-red-700 text-white rounded-full flex items-center justify-center">
+                      <Calculator className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Cube Root Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate principal real cube root and all complex cube roots (∛x) with step-by-step solutions. Includes perfect cube checker and proper mathematical notation for algebra and calculus.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Real & Complex Roots</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Perfect Cubes</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">∛ Notation</span>
+                  </div>
+                </div>
+              </Link>
+
               {/* Percentage Calculator Card */}
               <Link href="/calculators/percentage-calculator" className="block h-full">
                 <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
@@ -325,6 +445,78 @@ export default function CalculatorsPage() {
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Quick Solutions</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">3 Calculators</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Percent Error Calculator Card */}
+              <Link href="/calculators/percent-error-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-600 text-white rounded-full flex items-center justify-center">
+                      <Percent className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percent Error Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate percentage error between experimental and theoretical values with step-by-step solutions. Perfect for chemistry labs, physics experiments, and scientific research. Includes absolute and relative error calculations.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Lab Reports</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Error Analysis</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Scientific</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Margin Calculator Card */}
+              <Link href="/calculators/margin-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-red-600 text-white rounded-full flex items-center justify-center">
+                      <TrendingUp className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Margin Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate profit margin, markup percentage, and profit with step-by-step solutions. Includes support for tax, VAT, and GST calculations. Perfect for business owners, retailers, and financial analysis.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Margin & Markup</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tax Support</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Business Tool</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Profit Margin Calculator Card */}
+              <Link href="/calculators/profit-margin-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-600 text-white rounded-full flex items-center justify-center">
+                      <DollarSign className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Profit Margin Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate net profit margin, net profit, and profit percentage from cost and revenue with step-by-step solutions. Simplified interface for quick business profitability analysis and financial planning.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Net Profit Margin</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Profitability</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Business Metrics</span>
                   </div>
                 </div>
               </Link>
@@ -613,6 +805,30 @@ export default function CalculatorsPage() {
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Symmetric Formula</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Step-by-Step</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Math Notation</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Factoring Calculator Card */}
+              <Link href="/calculators/factoring-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-700 to-red-700 text-white rounded-full flex items-center justify-center">
+                      <Calculator className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Factoring Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Find all factors and factor pairs of any number with step-by-step solutions. Shows complete factor list, divisibility testing, and multiplication pairs. Perfect for homework and learning number theory.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">All Factors</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Factor Pairs</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Divisibility</span>
                   </div>
                 </div>
               </Link>
@@ -925,6 +1141,54 @@ export default function CalculatorsPage() {
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Sample & Population</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Variance & SD</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Full Analysis</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Quartile Calculator Card */}
+              <Link href="/calculators/quartile-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-800 to-red-900 text-white rounded-full flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Quartile Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate Q₁, Q₂, Q₃, IQR, median, min, max, and range with step-by-step solutions. Includes five-number summary and complete quartile statistics for data analysis.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Q₁ Q₂ Q₃</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">IQR Analysis</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Box Plot Data</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Percentile Calculator Card */}
+              <Link href="/calculators/percentile-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-700 to-red-800 text-white rounded-full flex items-center justify-center">
+                      <BarChart3 className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentile Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate any percentile (1st-99th) from datasets with step-by-step solutions. Display every nth percentile option for comprehensive statistical analysis and data ranking.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Any Percentile</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Every Nth</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">P₁-P₉₉</span>
                   </div>
                 </div>
               </Link>

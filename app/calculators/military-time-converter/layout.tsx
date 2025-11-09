@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Military Time Converter - Convert 24 Hour to 12 Hour Time | The Tutor Bridge',
+  description: 'Free military time converter. Convert between 24-hour military time and 12-hour regular time with AM/PM. Instant conversion with step-by-step explanations and comprehensive time format guide.',
+  keywords: [
+    'military time converter',
+    '24 hour time converter',
+    '12 hour time converter',
+    'convert military time',
+    'military time to regular time',
+    'regular time to military time',
+    '24 hour to 12 hour converter',
+    '12 hour to 24 hour converter',
+    'military time calculator',
+    'free military time converter',
+    'online military time converter',
+    'military time conversion',
+    '24 hour clock converter',
+    'army time converter',
+    'military clock converter',
+    'time format converter',
+    'convert 24 hour time',
+    'convert 12 hour time',
+    'military time chart',
+    'military time format',
+    'what is military time',
+    'how to read military time',
+    'how to convert military time',
+    'military time to standard time',
+    'standard time to military time',
+    'am pm to military time',
+    'military time am pm',
+    'zulu time converter',
+    '24h to 12h converter',
+    '12h to 24h converter',
+    'military time to civilian time',
+    'civilian time to military time',
+    '24 hour format',
+    '12 hour format',
+    'military time reader',
+    'military time translator',
+    'military time tool',
+    'time conversion calculator',
+    '24 hour notation',
+    'military hours',
+    'army time',
+    'nato time',
+    'railway time',
+    'international time format',
+    '24 hour time format',
+    'military time examples',
+    'military time practice',
+    'learn military time',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/military-time-converter',
+  },
+  openGraph: {
+    title: 'Military Time Converter - Convert 24 Hour to 12 Hour Time',
+    description: 'Convert between 24-hour military time and 12-hour regular time instantly. Free tool with step-by-step explanations.',
+    url: 'https://thetutorbridge.com/calculators/military-time-converter',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Military Time Converter - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Military Time Converter - Free Tool',
+    description: 'Convert military time to regular time and vice versa. Quick and accurate conversions.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function MilitaryTimeConverterLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}
