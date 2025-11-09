@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award, Calendar, Clock, Type, Divide, Ruler, Sparkles, RotateCw, Shuffle, History, Binary, GitMerge, Thermometer, Scale, DollarSign, Atom, Gauge, Receipt } from 'lucide-react';
+import { Calculator, TrendingUp, Home, ArrowRight, CreditCard, Car, Building2, PiggyBank, Baby, Wallet, Landmark, Percent, BarChart3, ArrowUpCircle, FileText, Award, Calendar, Clock, Type, Divide, Ruler, Sparkles, RotateCw, Shuffle, History, Binary, GitMerge, Thermometer, Scale, DollarSign, Atom, Gauge, Receipt, GraduationCap } from 'lucide-react';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Button } from '@/components/ui/button';
@@ -229,6 +229,126 @@ export default function CalculatorsPage() {
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Date Calculation</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Age Verification</span>
                     <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Educational Tool</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* CGPA to Percentage Calculator Card */}
+              <Link href="/calculators/cgpa-to-percentage-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 text-white rounded-full flex items-center justify-center">
+                      <Award className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">CGPA to Percentage Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Convert CGPA to percentage with comprehensive formulas and examples. Supports 4.0, 10.0 grading scales with step-by-step conversion for CBSE, ICSE, and international systems.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">CGPA × 9.5</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Multiple Scales</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Student Tool</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Percentage to CGPA Calculator Card */}
+              <Link href="/calculators/percentage-to-cgpa-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-full flex items-center justify-center">
+                      <Award className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Percentage to CGPA Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Convert percentage to CGPA instantly with comprehensive formulas, examples, and university-specific methods. Supports CBSE, Anna University, Mumbai University, VTU, and international 4.0 scale conversions.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">% ÷ 9.5</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">6 Universities</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Academic Tool</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Marks Percentage Calculator Card */}
+              <Link href="/calculators/marks-percentage-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-700 text-white rounded-full flex items-center justify-center">
+                      <Calculator className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">Marks Percentage Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Calculate your exam percentage instantly from marks obtained and total marks. Get detailed grade classifications, division information, and comprehensive conversion tables for students.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">(Marks/Total) × 100</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Grade System</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Division Info</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* SGPA to CGPA Calculator Card */}
+              <Link href="/calculators/sgpa-to-cgpa-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center">
+                      <GraduationCap className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SGPA to CGPA Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Convert semester GPA (SGPA) to cumulative GPA (CGPA) with credit-weighted calculations. Get step-by-step solutions, comprehensive grading systems, and accurate percentage conversion for all universities.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Credit Weighted</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Multi-Semester</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Grade System</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* SGPA to Percentage Calculator Card */}
+              <Link href="/calculators/sgpa-to-percentage-calculator" className="block h-full">
+                <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-200 hover:border-[#2BAE66] transition-all hover:shadow-xl group h-full flex flex-col">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-full flex items-center justify-center">
+                      <Percent className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#1A3D7C] ml-4">SGPA to Percentage Calculator</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4 flex-grow">
+                    Convert SGPA to percentage instantly with multiple university-specific formulas. Supports CBSE, VTU, Anna University, Mumbai University with comprehensive conversion tables and examples.
+                  </p>
+                  <div className="flex items-center text-[#2BAE66] font-semibold group-hover:translate-x-2 transition-transform mb-4">
+                    <span>Use Calculator</span>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">SGPA × 9.5</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">5 Methods</span>
+                    <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">University-Specific</span>
                   </div>
                 </div>
               </Link>

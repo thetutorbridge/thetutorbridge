@@ -1,0 +1,107 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'SGPA to CGPA Calculator - Convert Semester GPA to Cumulative GPA | The Tutor Bridge',
+  description: 'Free SGPA to CGPA calculator with step-by-step conversion formulas. Calculate cumulative GPA from semester GPAs for all universities. Supports 4.0, 10.0 scales with comprehensive examples and grading systems.',
+  keywords: [
+    'sgpa to cgpa calculator',
+    'sgpa to cgpa conversion',
+    'calculate cgpa from sgpa',
+    'semester gpa to cgpa',
+    'sgpa cgpa calculator',
+    'how to calculate cgpa from sgpa',
+    'convert sgpa to cgpa',
+    'cgpa calculator from sgpa',
+    'sgpa to cgpa formula',
+    'cgpa conversion calculator',
+    'semester grade point average to cumulative',
+    'gpa calculator',
+    'cgpa calculation formula',
+    'free sgpa to cgpa calculator',
+    'online cgpa calculator',
+    'university cgpa calculator',
+    'college gpa calculator',
+    'academic gpa calculator',
+    'cbse cgpa calculator',
+    'engineering cgpa calculator',
+    'sgpa to cgpa conversion table',
+    'weighted cgpa calculator',
+    'credit-based cgpa calculator',
+    'how to convert semester gpa to cgpa',
+    'cgpa formula with credits',
+    'calculate overall cgpa',
+    'cumulative grade point average calculator',
+    'semester wise cgpa calculation',
+    'vtu sgpa to cgpa',
+    'anna university cgpa calculator',
+    'jntu cgpa calculator',
+    'iit cgpa calculator',
+    'nit cgpa calculator',
+    'btech cgpa calculator',
+    'mtech cgpa calculator',
+    'mba cgpa calculator',
+    'bba cgpa calculator',
+    'bca cgpa calculator',
+    'mca cgpa calculator',
+    '10 point cgpa scale',
+    '4 point gpa scale',
+    'cgpa grading system',
+    'sgpa meaning',
+    'cgpa meaning',
+    'difference between sgpa and cgpa',
+    'how to improve cgpa',
+    'cgpa to percentage conversion',
+    'academic performance calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: 'https://thetutorbridge.com/calculators/sgpa-to-cgpa-calculator',
+  },
+  openGraph: {
+    title: 'SGPA to CGPA Calculator - Convert Semester GPA to Cumulative GPA',
+    description: 'Free SGPA to CGPA calculator with step-by-step conversion formulas. Calculate cumulative GPA from semester GPAs with comprehensive examples.',
+    url: 'https://thetutorbridge.com/calculators/sgpa-to-cgpa-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'SGPA to CGPA Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SGPA to CGPA Calculator - Convert Semester GPA to Cumulative GPA',
+    description: 'Calculate CGPA from SGPA with detailed step-by-step solutions and comprehensive conversion formulas.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function SGPAToCGPACalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}
