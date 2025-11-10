@@ -13,9 +13,9 @@ console.log('SUPABASE_SERVICE_ROLE_KEY:', supabaseServiceKey ? '✅ Set' : '❌ 
 // Only create Supabase client if environment variables are available
 export const supabase = supabaseUrl && supabaseAnonKey ? createSupabaseClient(supabaseUrl, supabaseAnonKey, {
   auth: {
-    autoRefreshToken: false,
-    persistSession: false,
-    detectSessionInUrl: false
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true
   },
   global: {
     headers: {
@@ -167,9 +167,9 @@ export function createClient() {
   }
   return createSupabaseClient(supabaseUrl, supabaseAnonKey, {
     auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-      detectSessionInUrl: false
+      autoRefreshToken: true,
+      persistSession: true,
+      detectSessionInUrl: true
     },
     global: {
       headers: {
