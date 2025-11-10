@@ -346,14 +346,13 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
   const handleLinkClick = (linkElement: HTMLAnchorElement) => {
     const currentHref = linkElement.getAttribute('href') || ''
     const currentText = linkElement.textContent || ''
-    const currentTarget = linkElement.getAttribute('target') || ''
     const currentRel = linkElement.getAttribute('rel') || ''
-    
+
     setLinkDialog({
       isOpen: true,
       url: currentHref,
       text: currentText,
-      nofollow: currentRel.includes('nofollow') || currentTarget === '_blank'
+      nofollow: currentRel.includes('nofollow')
     })
   }
 
@@ -660,16 +659,16 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
   const openLinkDialog = () => {
     const { from, to } = editor?.state.selection || {}
     const selectedText = editor?.state.doc.textBetween(from || 0, to || 0, ' ').trim()
-    
+
     // Check if we're editing an existing link
     const linkMark = editor?.getAttributes('link')
-    
-    
+
+
     setLinkDialog({
       isOpen: true,
       text: selectedText || '',
       url: linkMark?.href || '',
-      nofollow: linkMark?.target === '_blank' || false,
+      nofollow: linkMark?.rel?.includes('nofollow') || false,
     })
   }
 
