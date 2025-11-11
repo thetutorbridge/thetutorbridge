@@ -74,6 +74,9 @@ async function getPost(slug: string): Promise<BlogPost | null> {
     }
 
     console.log(`✅ Fetched blog post: ${data.title}`)
+    console.log(`📸 Featured image: ${data.featured_image}`)
+    console.log(`👤 Author image: ${data.author_image}`)
+    console.log(`📊 Full data keys:`, Object.keys(data))
     return data as BlogPost
   } catch (error) {
     console.error('❌ Error fetching post:', error)

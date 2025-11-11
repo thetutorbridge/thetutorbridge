@@ -51,7 +51,7 @@ export interface Database {
           excerpt: string | null
           featured_image: string | null
           author_name: string | null
-          author_avatar: string | null
+          author_image: string | null
           author_linkedin: string | null
           status: 'draft' | 'published'
           published_at: string | null
@@ -70,7 +70,7 @@ export interface Database {
           excerpt?: string | null
           featured_image?: string | null
           author_name?: string | null
-          author_avatar?: string | null
+          author_image?: string | null
           author_linkedin?: string | null
           status?: 'draft' | 'published'
           published_at?: string | null
@@ -89,7 +89,7 @@ export interface Database {
           excerpt?: string | null
           featured_image?: string | null
           author_name?: string | null
-          author_avatar?: string | null
+          author_image?: string | null
           author_linkedin?: string | null
           status?: 'draft' | 'published'
           published_at?: string | null
