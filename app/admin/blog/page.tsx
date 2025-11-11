@@ -257,12 +257,12 @@ export default function AdminBlogPage() {
                     <span className="text-sm text-gray-600">By {post.author_name || 'Unknown Author'}</span>
                   </div>
                   <div className="flex flex-wrap gap-1">
-                    {post.tags.slice(0, 3).map((tag) => (
+                    {post.tags && post.tags.slice(0, 3).map((tag) => (
                       <Badge key={tag} variant="outline" className="text-xs">
                         {tag}
                       </Badge>
                     ))}
-                    {post.tags.length > 3 && (
+                    {post.tags && post.tags.length > 3 && (
                       <Badge variant="outline" className="text-xs">
                         +{post.tags.length - 3} more
                       </Badge>
