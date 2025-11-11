@@ -204,13 +204,7 @@ export default function AdminBlogPage() {
                       alt={post.title}
                       fill
                       className="object-contain group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement
-                        target.style.display = 'none'
-                        if (target.parentElement) {
-                          target.parentElement.style.display = 'none'
-                        }
-                      }}
+                      unoptimized
                     />
                   </div>
                 )}

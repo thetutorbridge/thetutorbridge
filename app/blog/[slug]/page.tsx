@@ -11,8 +11,8 @@ import { BlogPostContent } from "./BlogPostContent"
 import '@/components/blog/editor-styles.css'
 import '@/app/globals.css'
 
-// Enable ISR - revalidate every 60 seconds
-export const revalidate = 60
+// Enable ISR - revalidate every 10 seconds for faster content updates
+export const revalidate = 10
 
 interface BlogPost {
   id: string;
@@ -216,6 +216,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   fill
                   className="object-contain"
                   priority
+                  unoptimized={!post.featured_image.includes('supabase.co')}
                 />
               </div>
             )}
