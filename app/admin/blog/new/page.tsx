@@ -16,7 +16,7 @@ export default function NewBlogPostPage() {
     status: 'draft',
     author_name: 'Rishabh Jain',
     author_linkedin: 'https://www.linkedin.com/in/rishabh-jain-33b946214/',
-    author_avatar: 'Rishabh Jain.jpeg'
+    author_image: ''
   }
 
   const handleSave = async (formData: BlogPostFormData) => {

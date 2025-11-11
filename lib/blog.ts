@@ -6,7 +6,7 @@ export interface BlogPost {
   excerpt: string | null
   featured_image: string | null
   author_name: string | null
-  author_avatar: string | null
+  author_image: string | null
   author_linkedin: string | null
   status: 'draft' | 'published'
   published_at: string | null
@@ -24,7 +24,7 @@ export interface BlogPostFormData {
   excerpt?: string
   content: any // JSONB content from TipTap
   author_name?: string
-  author_avatar?: string
+  author_image?: string
   author_linkedin?: string
   tags?: string[]
   featured_image?: string

@@ -422,7 +422,7 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
         if (result.success && result.publicUrl) {
           setFormData(prev => ({
             ...prev,
-            authorAvatar: result.publicUrl
+            author_image: result.publicUrl
           }))
         } else {
           alert('Failed to upload author image')
@@ -677,14 +677,25 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
 
     const attributes: any = { href: url }
 
-    // Only add nofollow if explicitly requested
-    if (nofollow) {
-      attributes.rel = 'noopener noreferrer nofollow'
-      attributes.target = '_blank'
+    // Check if the link is internal (relative or same domain)
+    const isInternal = url.startsWith('/') ||
+                      url.startsWith('#') ||
+                      url.includes('thetutorbridge.com') ||
+                      url.includes('localhost')
+
+    if (isInternal) {
+      // Internal links: no target, no rel attributes (dofollow, same tab)
+      // Don't add any rel or target attributes for internal links
     } else {
-      // For dofollow links, only add noopener noreferrer for security (no nofollow)
-      attributes.rel = 'noopener noreferrer'
-      attributes.target = '_blank'
+      // External links
+      if (nofollow) {
+        attributes.rel = 'noopener noreferrer nofollow'
+        attributes.target = '_blank'
+      } else {
+        // For external dofollow links, add noopener noreferrer for security
+        attributes.rel = 'noopener noreferrer'
+        attributes.target = '_blank'
+      }
     }
 
     // If we're editing an existing link, update it
@@ -692,8 +703,15 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
       editor.chain().focus().updateAttributes('link', attributes).run()
     } else if (text.trim()) {
       // Insert new link with text
-      const relAttr = nofollow ? ' rel="noopener noreferrer nofollow"' : ' rel="noopener noreferrer"'
-      editor.chain().focus().insertContent(`<a href="${url}"${relAttr} target="_blank">${text.trim()}</a>`).run()
+      let linkHtml = `<a href="${url}"`
+      if (attributes.rel) {
+        linkHtml += ` rel="${attributes.rel}"`
+      }
+      if (attributes.target) {
+        linkHtml += ` target="${attributes.target}"`
+      }
+      linkHtml += `>${text.trim()}</a>`
+      editor.chain().focus().insertContent(linkHtml).run()
     } else {
       // Set link on selected text (fallback)
       editor.chain().focus().setLink(attributes).run()
@@ -1006,17 +1024,17 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
                     />
                     <div className="text-sm text-gray-500">Or enter URL manually:</div>
                     <Input
-                      id="author_avatar"
-                      value={formData.author_avatar || ''}
-                      onChange={(e) => handleInputChange('author_avatar', e.target.value)}
+                      id="author_image"
+                      value={formData.author_image || ''}
+                      onChange={(e) => handleInputChange('author_image', e.target.value)}
                       placeholder="https://example.com/avatar.jpg"
                     />
                   </div>
-                  {formData.author_avatar && (
+                  {formData.author_image && (
                     <div className="mt-2">
-                      <img 
-                        src={formData.author_avatar} 
-                        alt="Author Avatar" 
+                      <img
+                        src={formData.author_image}
+                        alt="Author Avatar"
                         className="w-16 h-16 object-cover rounded-full border"
                       />
                     </div>

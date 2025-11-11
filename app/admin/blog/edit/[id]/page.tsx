@@ -42,7 +42,7 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
             featured_image: result.post.featured_image || "",
             author_name: result.post.author_name || "Rishabh Jain",
             author_linkedin: result.post.author_linkedin || "https://www.linkedin.com/in/rishabh-jain-33b946214/",
-            author_image: result.post.author_image || "Rishabh Jain.jpeg",
+            author_image: result.post.author_image || "",
             tags: result.post.tags || [],
             status: result.post.status,
             published_at: result.post.published_at || "",
