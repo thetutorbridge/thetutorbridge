@@ -700,7 +700,9 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
 
     // If we're editing an existing link, update it
     if (editor.isActive('link')) {
-      editor.chain().focus().updateAttributes('link', attributes).run()
+      // Need to unset and reset the link to properly update all attributes
+      // Because updateAttributes doesn't remove old attributes, only adds/updates
+      editor.chain().focus().extendMarkRange('link').unsetLink().setLink(attributes).run()
     } else if (text.trim()) {
       // Insert new link with text
       let linkHtml = `<a href="${url}"`
