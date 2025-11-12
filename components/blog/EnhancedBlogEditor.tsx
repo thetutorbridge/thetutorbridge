@@ -10,15 +10,15 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { 
-  Save, 
-  Eye, 
-  Upload, 
-  X, 
-  Plus, 
-  Bold as BoldIcon, 
-  Italic as ItalicIcon, 
-  Underline, 
+import {
+  Save,
+  Eye,
+  Upload,
+  X,
+  Plus,
+  Bold as BoldIcon,
+  Italic as ItalicIcon,
+  Underline,
   Strikethrough,
   AlignLeft,
   AlignCenter,
@@ -28,6 +28,7 @@ import {
   ListOrdered,
   Quote,
   Link,
+  Unlink,
   Image as ImageIcon,
   Table as TableIcon,
   Code,
@@ -293,6 +294,19 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
     },
     immediatelyRender: false,
   }, [isMounted])
+
+  // Update editor content when initialData changes (for edit mode)
+  useEffect(() => {
+    if (editor && initialData.content && mode === 'edit') {
+      // Only update if content is different to avoid infinite loops
+      const currentContent = JSON.stringify(editor.getJSON())
+      const newContent = JSON.stringify(initialData.content)
+
+      if (currentContent !== newContent) {
+        editor.commands.setContent(initialData.content)
+      }
+    }
+  }, [editor, initialData.content, mode])
 
   const handleInputChange = (field: keyof BlogPostFormData, value: string | string[] | any) => {
     setFormData(prev => ({
@@ -959,15 +973,22 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
                 <MenuSeparator />
 
                 {/* Links and Media */}
-                <MenuButton 
-                  onClick={openLinkDialog} 
+                <MenuButton
+                  onClick={openLinkDialog}
                   isActive={editor?.isActive('link')}
                   title="Add Link"
                 >
                   <Link className="h-4 w-4" />
                 </MenuButton>
-                <MenuButton 
-                  onClick={() => fileInputRef.current?.click()} 
+                <MenuButton
+                  onClick={() => editor?.chain().focus().unsetLink().run()}
+                  isActive={false}
+                  title="Remove Link"
+                >
+                  <Unlink className="h-4 w-4 text-red-600" />
+                </MenuButton>
+                <MenuButton
+                  onClick={() => fileInputRef.current?.click()}
                   title="Insert Image"
                 >
                   <ImageIcon className="h-4 w-4" />
