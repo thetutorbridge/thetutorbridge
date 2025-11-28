@@ -602,6 +602,13 @@ const calculators = {
       gradient: 'from-orange-600 to-pink-600',
       tags: ['Countdown', 'Live Timer', 'Events']
     },
+    {
+      name: 'Download Time Calculator',
+      href: '/calculators/download-time-calculator',
+      description: 'Calculate how long file downloads will take based on file size and internet speed. Works with MB, GB, TB and Mbps, Gbps.',
+      gradient: 'from-blue-600 to-purple-600',
+      tags: ['Download', 'Internet Speed', 'File Size']
+    },
   ],
   'Number Converters': [
     {
