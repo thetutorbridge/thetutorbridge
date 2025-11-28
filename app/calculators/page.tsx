@@ -213,6 +213,13 @@ const calculators = {
       tags: ['Salary', 'CTC', 'In-Hand']
     },
     {
+      name: 'Salary to Hourly Calculator',
+      href: '/calculators/salary-to-hourly-calculator',
+      description: 'Convert annual, monthly, or weekly salary to hourly rate. Calculate wage across all time intervals.',
+      gradient: 'from-yellow-600 to-amber-600',
+      tags: ['Hourly Rate', 'Wage Converter', 'Salary']
+    },
+    {
       name: 'Gratuity Calculator',
       href: '/calculators/gratuity-calculator',
       description: 'Calculate gratuity amount based on last drawn salary and years of service.',
