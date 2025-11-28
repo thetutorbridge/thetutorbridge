@@ -574,6 +574,13 @@ const calculators = {
       gradient: 'from-cyan-600 to-blue-600',
       tags: ['Decimal', 'Payroll', 'Hours']
     },
+    {
+      name: 'Time Until Calculator',
+      href: '/calculators/time-until-calculator',
+      description: 'Calculate countdown to any future date with live updates. Get time until in years, months, weeks, days, hours, minutes, seconds.',
+      gradient: 'from-orange-600 to-pink-600',
+      tags: ['Countdown', 'Live Timer', 'Events']
+    },
   ],
   'Number Converters': [
     {
