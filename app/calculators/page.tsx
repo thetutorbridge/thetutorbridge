@@ -357,6 +357,13 @@ const calculators = {
   ],
   'Statistics & Data': [
     {
+      name: 'Average Calculator',
+      href: '/calculators/average-calculator',
+      description: 'Calculate average (mean), median, mode, range, variance, and standard deviation of any numbers instantly.',
+      gradient: 'from-teal-600 to-blue-600',
+      tags: ['Average', 'Mean', 'Statistics']
+    },
+    {
       name: 'Mean Mode Median Calculator',
       href: '/calculators/mean-mode-median-calculator',
       description: 'Calculate mean, median, mode, and range of dataset with frequency distribution.',
