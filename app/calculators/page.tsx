@@ -354,6 +354,13 @@ const calculators = {
       gradient: 'from-emerald-600 to-green-600',
       tags: ['Ratio', 'Proportion', 'Simplify']
     },
+    {
+      name: 'Circumference Calculator',
+      href: '/calculators/circumference-calculator',
+      description: 'Calculate circle circumference, radius, diameter, and area using C = 2πr formula. Enter any value to find all properties.',
+      gradient: 'from-indigo-600 to-violet-600',
+      tags: ['Circle', 'Geometry', 'C = 2πr']
+    },
   ],
   'Statistics & Data': [
     {
