@@ -573,6 +573,13 @@ const calculators = {
       tags: ['TDEE', 'Maintenance', 'Daily Calories']
     },
     {
+      name: 'Calorie Deficit Calculator',
+      href: '/calculators/calorie-deficit-calculator',
+      description: 'Calculate how many calories to eat for weight loss. Find your daily calorie target based on goal weight and target date.',
+      gradient: 'from-green-500 to-emerald-600',
+      tags: ['Weight Loss', 'Deficit', 'TDEE']
+    },
+    {
       name: 'Body Shape Calculator',
       href: '/calculators/body-shape-calculator',
       description: 'Find your body shape (hourglass, pear, apple, rectangle) from bust, waist, and hip measurements. Get personalized fashion tips.',
