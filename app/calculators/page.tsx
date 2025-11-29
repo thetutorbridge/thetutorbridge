@@ -94,6 +94,13 @@ const calculators = {
       tags: ['SIP', 'Mutual Funds', 'Investment']
     },
     {
+      name: 'Annual Income Calculator',
+      href: '/calculators/annual-income-calculator',
+      description: 'Convert hourly wage to annual salary or calculate hourly rate from yearly income. Includes tax deductions for net pay.',
+      gradient: 'from-emerald-600 to-teal-600',
+      tags: ['Salary', 'Hourly to Annual', 'Net Income']
+    },
+    {
       name: 'EMI Calculator',
       href: '/calculators/emi-calculator',
       description: 'Calculate monthly EMI for loans with detailed amortization schedule and principal-interest breakdown.',
