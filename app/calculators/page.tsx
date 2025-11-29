@@ -593,6 +593,13 @@ const calculators = {
       gradient: 'from-green-600 to-teal-600',
       tags: ['Walking', 'Calories Burned', 'Steps']
     },
+    {
+      name: 'Nm to ft-lbs Converter',
+      href: '/calculators/nm-to-ft-lbs-converter',
+      description: 'Convert torque between Newton-meters and foot-pounds. Includes inch-pounds, kgf-m, and common automotive torque specs.',
+      gradient: 'from-orange-600 to-red-600',
+      tags: ['Torque', 'N·m to ft·lbs', 'Automotive']
+    },
   ],
   'Time & Date': [
     {
