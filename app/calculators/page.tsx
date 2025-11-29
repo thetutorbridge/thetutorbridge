@@ -698,6 +698,13 @@ const calculators = {
       gradient: 'from-teal-600 to-green-600',
       tags: ['Weight', 'kg to lbs', 'Mass']
     },
+    {
+      name: 'Oz to Cups Converter',
+      href: '/calculators/oz-to-cups-converter',
+      description: 'Convert fluid ounces to cups and cups to oz. Supports US/UK fl oz and US customary, legal, and metric cups.',
+      gradient: 'from-cyan-500 to-blue-600',
+      tags: ['Oz to Cups', 'Volume', 'Cooking']
+    },
   ],
   'Time & Date': [
     {
