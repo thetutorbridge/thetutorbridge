@@ -424,6 +424,13 @@ const calculators = {
       gradient: 'from-purple-500 to-indigo-600',
       tags: ['Circle', 'A = πr²', 'Geometry']
     },
+    {
+      name: 'Right Triangle Calculator',
+      href: '/calculators/right-triangle-calculator',
+      description: 'Calculate sides, angles, area, and perimeter of right triangles. Solve using two sides, angle and side, or area and side.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['Pythagorean', 'Triangle', 'SOHCAHTOA']
+    },
   ],
   'Statistics & Data': [
     {

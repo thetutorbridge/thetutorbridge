@@ -1371,9 +1371,9 @@ CGPA to Percentage Calculator gives instant, accurate results."
   content: { /* JSONB TipTap structure */ },
 
   // Author info (REQUIRED)
-  author_name: "The Tutor Bridge Team",
+  author_name: "Rishabh Jain",
   author_avatar: "/author-avatar.jpg",
-  author_linkedin: "https://www.linkedin.com/company/thetutorbridge/",
+  author_linkedin: "https://www.linkedin.com/in/rishabh-jain-33b946214/",
   author_image: "/author-image.jpg",
 
   // Organization (REQUIRED)

@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Financial Calculators - The Tutor Bridge",
-  description: "Free online financial calculators including SIP calculator, compound interest calculator, and more. Plan your investments and financial goals effectively.",
-  keywords: "financial calculators, SIP calculator, investment calculator, compound interest calculator, mutual fund calculator",
+  title: "Free Online Calculators - GPA, Finance, Math & More",
+  description: "Free online calculators for students and professionals. Calculate GPA, grades, SIP returns, EMI, percentages, time conversions, and more educational tools.",
+  keywords: "online calculators, GPA calculator, grade calculator, SIP calculator, EMI calculator, percentage calculator, math calculators, educational tools",
   openGraph: {
-    title: "Financial Calculators - The Tutor Bridge",
-    description: "Free online financial calculators including SIP calculator, compound interest calculator, and more. Plan your investments and financial goals effectively.",
+    title: "Free Online Calculators - GPA, Finance, Math & More",
+    description: "Free online calculators for students and professionals. Calculate GPA, grades, SIP returns, EMI, percentages, time conversions, and more educational tools.",
     type: "website",
     siteName: "The Tutor Bridge",
     images: [
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Financial Calculators - The Tutor Bridge",
+        alt: "Free Online Calculators - The Tutor Bridge",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Financial Calculators - The Tutor Bridge",
-    description: "Free online financial calculators for students and professionals.",
+    title: "Free Online Calculators - GPA, Finance, Math & More",
+    description: "Free online calculators for students and professionals. GPA, grades, finance, math and more.",
     images: ["/og-image.jpg"],
   },
   alternates: {
