@@ -375,6 +375,13 @@ const calculators = {
       gradient: 'from-blue-600 to-cyan-600',
       tags: ['Cylinder', 'Volume', 'V = πr²h']
     },
+    {
+      name: 'Trigonometry Calculator',
+      href: '/calculators/trigonometry-calculator',
+      description: 'Calculate sin, cos, tan and solve right triangles. Find missing sides and angles using SOHCAHTOA.',
+      gradient: 'from-indigo-600 to-purple-600',
+      tags: ['Sin Cos Tan', 'Triangle', 'SOHCAHTOA']
+    },
   ],
   'Statistics & Data': [
     {
