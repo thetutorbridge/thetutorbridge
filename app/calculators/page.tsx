@@ -271,6 +271,13 @@ const calculators = {
       tags: ['Discount', 'Sale Price', 'Shopping']
     },
     {
+      name: 'Discount Calculator',
+      href: '/calculators/discount-calculator',
+      description: 'Calculate discounts with 10 types: % off, 2 for 1, 3 for 2, fixed amount, double/triple discounts, and multi-unit pricing.',
+      gradient: 'from-purple-600 to-indigo-600',
+      tags: ['All Discounts', 'BOGO', '2 for 1']
+    },
+    {
       name: 'Percentage Change Calculator',
       href: '/calculators/percentage-change-calculator',
       description: 'Calculate percentage increase or decrease between two values with formula.',
