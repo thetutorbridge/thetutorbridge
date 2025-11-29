@@ -510,6 +510,13 @@ const calculators = {
       tags: ['BMR', 'TDEE', 'Weight Loss']
     },
     {
+      name: 'Body Shape Calculator',
+      href: '/calculators/body-shape-calculator',
+      description: 'Find your body shape (hourglass, pear, apple, rectangle) from bust, waist, and hip measurements. Get personalized fashion tips.',
+      gradient: 'from-pink-600 to-purple-600',
+      tags: ['Body Type', 'Fashion Tips', 'Measurements']
+    },
+    {
       name: 'Square Footage Calculator',
       href: '/calculators/square-footage-calculator',
       description: 'Calculate area in sq ft, sq m, and acres for any shape with cost estimation.',
