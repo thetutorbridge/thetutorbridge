@@ -733,6 +733,13 @@ const calculators = {
       gradient: 'from-orange-500 to-amber-600',
       tags: ['Tbsp to Grams', 'Cooking', 'Baking']
     },
+    {
+      name: 'VO2 Max Calculator',
+      href: '/calculators/vo2-max-calculator',
+      description: 'Calculate your aerobic capacity using 5 test methods: resting HR, walking, step test, 1.5-mile run, or rowing. Get fitness classification.',
+      gradient: 'from-blue-500 to-indigo-600',
+      tags: ['VO2 Max', 'Aerobic Fitness', 'Cardio']
+    },
   ],
   'Time & Date': [
     {
