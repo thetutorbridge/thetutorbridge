@@ -635,6 +635,13 @@ const calculators = {
       gradient: 'from-amber-500 to-orange-600',
       tags: ['Puppy', 'Adult Weight', 'Pet']
     },
+    {
+      name: 'Calories Burned Walking Calculator',
+      href: '/calculators/calories-burned-walking-calculator',
+      description: 'Calculate calories burned while walking by steps, distance, or time. Works for treadmill and outdoor walking with slope adjustment.',
+      gradient: 'from-green-500 to-emerald-600',
+      tags: ['Walking', 'Calories', 'Fitness']
+    },
   ],
   'Time & Date': [
     {
