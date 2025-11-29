@@ -596,6 +596,13 @@ const calculators = {
       tags: ['Age', 'Date', 'Birthday']
     },
     {
+      name: 'Birth Year Calculator',
+      href: '/calculators/birth-year-calculator',
+      description: 'Find birth year from age or calculate age from birth year. Includes generation info and Chinese zodiac.',
+      gradient: 'from-pink-600 to-rose-600',
+      tags: ['Birth Year', 'Age', 'Generation']
+    },
+    {
       name: 'Hours Calculator',
       href: '/calculators/hours-calculator',
       description: 'Calculate hours and minutes between times for work hours, duration, timesheet.',
