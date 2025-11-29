@@ -614,6 +614,13 @@ const calculators = {
       gradient: 'from-teal-600 to-cyan-600',
       tags: ['Steps', 'Distance', 'Walking']
     },
+    {
+      name: 'Dog Size Calculator',
+      href: '/calculators/dog-size-calculator',
+      description: 'Predict your puppy\'s adult weight and size category. Enter age and current weight to estimate how big your dog will grow.',
+      gradient: 'from-amber-500 to-orange-600',
+      tags: ['Puppy', 'Adult Weight', 'Pet']
+    },
   ],
   'Time & Date': [
     {
