@@ -248,6 +248,13 @@ const calculators = {
       tags: ['Salary', 'Raise', 'Income']
     },
     {
+      name: 'Overtime Calculator',
+      href: '/calculators/overtime-calculator',
+      description: 'Calculate overtime pay with 1.5x, 2x, or custom multipliers. Find total pay from regular hours and overtime hours.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['Overtime Pay', '1.5x Time', 'Double Time']
+    },
+    {
       name: 'Sukanya Samriddhi Yojana Calculator',
       href: '/calculators/sukanya-samriddhi-yojana-calculator',
       description: 'Calculate SSY maturity amount for girl child savings scheme with government interest.',
