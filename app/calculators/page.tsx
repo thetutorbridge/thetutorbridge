@@ -643,6 +643,13 @@ const calculators = {
       tags: ['Steps', 'Distance', 'Walking']
     },
     {
+      name: 'Steps to Km Calculator',
+      href: '/calculators/steps-to-km-calculator',
+      description: 'Convert walking steps to kilometers. Calculate how far 10,000 steps is in km based on stride length, height, or gender averages.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['Steps to km', '10000 steps', 'Walking']
+    },
+    {
       name: 'Dog Size Calculator',
       href: '/calculators/dog-size-calculator',
       description: 'Predict your puppy\'s adult weight and size category. Enter age and current weight to estimate how big your dog will grow.',

@@ -1,0 +1,106 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Steps to Km Calculator - Free Steps to Kilometers Converter | The Tutor Bridge',
+  description: 'Free steps to km calculator. Convert walking steps to kilometers based on stride length, height, or gender averages. Find how far 10,000 steps is in km with instant results.',
+  keywords: [
+    'steps to km',
+    'steps to kilometers',
+    'steps to km calculator',
+    'steps to kilometers calculator',
+    'convert steps to km',
+    'how many km is 10000 steps',
+    'how far is 10000 steps in km',
+    '10000 steps in km',
+    '5000 steps in km',
+    'steps per km',
+    'steps per kilometer',
+    'how many steps in a km',
+    'how many steps in a kilometer',
+    'walking distance calculator',
+    'step counter to km',
+    'steps distance calculator',
+    'stride length calculator',
+    'steps to distance',
+    'walking steps to km',
+    'daily steps to km',
+    'step length km',
+    'pedometer km',
+    '1000 steps in km',
+    '2000 steps in km',
+    '7500 steps in km',
+    '15000 steps in km',
+    '20000 steps in km',
+    'km per step',
+    'kilometers walked',
+    'walking distance from steps',
+    'fitness steps calculator',
+    'health steps km',
+    'step tracker km',
+    'walk distance calculator',
+    'average steps per km',
+    'steps to distance converter',
+    'stride to km',
+    'height to stride length',
+    'calculate km from steps',
+    'step count to kilometers',
+    'free steps calculator',
+    'online km calculator',
+    'walking calculator',
+    'step distance tool',
+    'km from walking',
+    'steps walked calculator',
+    'metric steps calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/steps-to-km-calculator',
+  },
+  openGraph: {
+    title: 'Steps to Km Calculator - Convert Steps to Kilometers',
+    description: 'Free steps to km calculator. Convert walking steps to kilometers based on stride length, height, or averages. Find how far 10,000 steps is instantly.',
+    url: 'https://thetutorbridge.com/calculators/steps-to-km-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Steps to Km Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Steps to Km Calculator - Free Tool',
+    description: 'Convert walking steps to kilometers based on stride length, height, or gender. Find how far 10,000 steps is in km.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function StepsToKmCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}
