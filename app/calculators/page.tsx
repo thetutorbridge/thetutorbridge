@@ -558,6 +558,13 @@ const calculators = {
       gradient: 'from-cyan-600 to-blue-600',
       tags: ['Speed', 'Distance', 'Time']
     },
+    {
+      name: 'mg to ml Converter',
+      href: '/calculators/mg-to-ml-converter',
+      description: 'Convert milligrams to milliliters with density. Works for water, oil, medications, and any substance.',
+      gradient: 'from-purple-600 to-pink-600',
+      tags: ['mg to ml', 'Density', 'Mass to Volume']
+    },
   ],
   'Time & Date': [
     {
