@@ -586,6 +586,13 @@ const calculators = {
       gradient: 'from-purple-600 to-pink-600',
       tags: ['mg to ml', 'Density', 'Mass to Volume']
     },
+    {
+      name: 'Steps to Calories Calculator',
+      href: '/calculators/steps-to-calories-calculator',
+      description: 'Calculate calories burned from walking steps based on weight, height, and walking speed. Find out how many calories 10,000 steps burns.',
+      gradient: 'from-green-600 to-teal-600',
+      tags: ['Walking', 'Calories Burned', 'Steps']
+    },
   ],
   'Time & Date': [
     {
