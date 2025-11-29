@@ -837,6 +837,13 @@ const calculators = {
       gradient: 'from-gray-600 to-slate-600',
       tags: ['Basic', 'Arithmetic', 'Simple']
     },
+    {
+      name: 'Minecraft Circle Generator',
+      href: '/calculators/minecraft-circle-generator',
+      description: 'Generate perfect pixel circles for Minecraft builds. Customize diameter and thickness with visual block grid.',
+      gradient: 'from-emerald-500 to-green-600',
+      tags: ['Minecraft', 'Circle', 'Gaming']
+    },
   ],
 };
 
