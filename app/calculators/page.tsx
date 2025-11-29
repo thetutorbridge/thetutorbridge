@@ -264,6 +264,13 @@ const calculators = {
       tags: ['Percentage', 'Calculate', 'Basic Math']
     },
     {
+      name: 'Percent Off Calculator',
+      href: '/calculators/percent-off-calculator',
+      description: 'Calculate sale prices and savings. Find discounts with stackable percentages and sales tax support.',
+      gradient: 'from-red-600 to-pink-600',
+      tags: ['Discount', 'Sale Price', 'Shopping']
+    },
+    {
       name: 'Percentage Change Calculator',
       href: '/calculators/percentage-change-calculator',
       description: 'Calculate percentage increase or decrease between two values with formula.',
