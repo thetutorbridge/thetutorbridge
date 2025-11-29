@@ -524,6 +524,13 @@ const calculators = {
       tags: ['Body Type', 'Fashion Tips', 'Measurements']
     },
     {
+      name: 'Face Shape Calculator',
+      href: '/calculators/face-shape-calculator',
+      description: 'Discover your face shape (oval, round, square, heart, diamond) from facial measurements. Get hairstyle and glasses recommendations.',
+      gradient: 'from-purple-600 to-indigo-600',
+      tags: ['Face Shape', 'Hairstyle Tips', 'Glasses']
+    },
+    {
       name: 'Square Footage Calculator',
       href: '/calculators/square-footage-calculator',
       description: 'Calculate area in sq ft, sq m, and acres for any shape with cost estimation.',
