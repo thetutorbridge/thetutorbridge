@@ -615,6 +615,13 @@ const calculators = {
       tags: ['mg to ml', 'Density', 'Mass to Volume']
     },
     {
+      name: 'ml to Grams Converter',
+      href: '/calculators/ml-to-grams-converter',
+      description: 'Convert milliliters to grams for cooking ingredients. Works for water, milk, flour, sugar, oil, honey and 30+ ingredients.',
+      gradient: 'from-orange-500 to-amber-500',
+      tags: ['ml to g', 'Cooking', 'Ingredients']
+    },
+    {
       name: 'Steps to Calories Calculator',
       href: '/calculators/steps-to-calories-calculator',
       description: 'Calculate calories burned from walking steps based on weight, height, and walking speed. Find out how many calories 10,000 steps burns.',
