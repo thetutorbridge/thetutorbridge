@@ -475,6 +475,13 @@ const calculators = {
       gradient: 'from-pink-600 to-rose-600',
       tags: ['Love', 'Compatibility', 'Fun']
     },
+    {
+      name: 'Duckworth Lewis Calculator',
+      href: '/calculators/duckworth-lewis-calculator',
+      description: 'Calculate revised targets for rain-interrupted cricket matches using the DLS method. Find par scores and target scores.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['Cricket', 'DLS', 'Sports']
+    },
   ],
   'Fractions & Decimals': [
     {
