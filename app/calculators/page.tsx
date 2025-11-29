@@ -740,6 +740,13 @@ const calculators = {
       gradient: 'from-blue-500 to-indigo-600',
       tags: ['VO2 Max', 'Aerobic Fitness', 'Cardio']
     },
+    {
+      name: 'Grams to Cups Calculator',
+      href: '/calculators/grams-to-cups-calculator',
+      description: 'Convert grams to cups for flour, sugar, butter, honey, and 20+ cooking ingredients. Supports US cups, US legal cups, and metric cups.',
+      gradient: 'from-orange-500 to-amber-600',
+      tags: ['Grams to Cups', 'Cooking', 'Baking']
+    },
   ],
   'Time & Date': [
     {
