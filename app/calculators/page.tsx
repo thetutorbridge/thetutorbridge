@@ -376,6 +376,13 @@ const calculators = {
       tags: ['Circle', 'Geometry', 'C = 2πr']
     },
     {
+      name: 'Area of a Circle Calculator',
+      href: '/calculators/area-of-a-circle-calculator',
+      description: 'Calculate circle area from radius or diameter using A = πr² formula. Find radius from area with step-by-step solutions.',
+      gradient: 'from-purple-600 to-fuchsia-600',
+      tags: ['Circle Area', 'A = πr²', 'Geometry']
+    },
+    {
       name: 'Cylinder Volume Calculator',
       href: '/calculators/cylinder-volume-calculator',
       description: 'Calculate volume, surface area, and lateral area of solid or hollow cylinders. Uses V = πr²h formula with unit conversion.',
