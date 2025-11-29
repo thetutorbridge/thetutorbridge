@@ -1,0 +1,105 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Kg to Lb Converter - Free Kilograms to Pounds Calculator | The Tutor Bridge',
+  description: 'Free kg to lb converter with step-by-step solutions. Convert kilograms to pounds (kg to lbs) and pounds to kilograms instantly with accurate conversion formulas and comprehensive guide.',
+  keywords: [
+    'kg to lb',
+    'kg to lbs',
+    'kilograms to pounds',
+    'kg to pound',
+    'kg to lb converter',
+    'kilogram to pound converter',
+    'kg to pounds calculator',
+    'weight converter',
+    'mass converter',
+    'metric to imperial weight',
+    'convert kg to lbs',
+    'how to convert kg to pounds',
+    'kg to lb formula',
+    'kilograms to pounds formula',
+    'pounds to kg',
+    'lbs to kg',
+    'pounds to kilograms',
+    'lb to kg converter',
+    'weight conversion calculator',
+    'mass conversion',
+    'kg lbs conversion',
+    'kilo to pounds',
+    'kilos to lbs',
+    'convert kilos to pounds',
+    'weight unit converter',
+    'kg to lb chart',
+    'kg to pounds table',
+    'body weight converter',
+    'metric weight converter',
+    'imperial weight converter',
+    'free weight converter',
+    'online kg to lb',
+    'instant weight conversion',
+    'kg lb calculator',
+    'kilogram pound conversion',
+    'weight conversion formula',
+    'kg to lb steps',
+    'how many pounds in a kg',
+    'how many kg in a pound',
+    '1 kg in pounds',
+    '1 lb in kg',
+    'weight measurement conversion',
+    'cooking weight converter',
+    'shipping weight converter',
+    'fitness weight converter',
+    'medical weight converter',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/kg-to-lb-converter',
+  },
+  openGraph: {
+    title: 'Kg to Lb Converter - Kilograms to Pounds Calculator',
+    description: 'Free weight converter with step-by-step solutions. Convert kilograms to pounds (kg to lbs) and pounds to kilograms (lbs to kg) instantly with conversion formulas.',
+    url: 'https://thetutorbridge.com/calculators/kg-to-lb-converter',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Kg to Lb Converter - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kg to Lb Converter - Free Weight Converter',
+    description: 'Convert weight between kilograms and pounds with detailed step-by-step solutions and conversion formulas.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function KgToLbConverterLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

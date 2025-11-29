@@ -642,6 +642,13 @@ const calculators = {
       gradient: 'from-green-500 to-emerald-600',
       tags: ['Walking', 'Calories', 'Fitness']
     },
+    {
+      name: 'Kg to Lb Converter',
+      href: '/calculators/kg-to-lb-converter',
+      description: 'Convert kilograms to pounds and pounds to kilograms instantly. Free weight converter with step-by-step solutions.',
+      gradient: 'from-teal-600 to-green-600',
+      tags: ['Weight', 'kg to lbs', 'Mass']
+    },
   ],
   'Time & Date': [
     {
