@@ -417,6 +417,13 @@ const calculators = {
       gradient: 'from-indigo-600 to-purple-600',
       tags: ['Sin Cos Tan', 'Triangle', 'SOHCAHTOA']
     },
+    {
+      name: 'Circle Area Calculator',
+      href: '/calculators/circle-area-calculator',
+      description: 'Calculate circle area from radius or diameter. Find radius from area. Supports multiple length and area units.',
+      gradient: 'from-purple-500 to-indigo-600',
+      tags: ['Circle', 'A = πr²', 'Geometry']
+    },
   ],
   'Statistics & Data': [
     {
