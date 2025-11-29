@@ -545,6 +545,13 @@ const calculators = {
       tags: ['BMR', 'TDEE', 'Weight Loss']
     },
     {
+      name: 'Maintenance Calorie Calculator',
+      href: '/calculators/maintenance-calorie-calculator',
+      description: 'Find how many calories you need to maintain your current weight. Calculate TDEE with BMR using Mifflin-St Jeor formula.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['TDEE', 'Maintenance', 'Daily Calories']
+    },
+    {
       name: 'Body Shape Calculator',
       href: '/calculators/body-shape-calculator',
       description: 'Find your body shape (hourglass, pear, apple, rectangle) from bust, waist, and hip measurements. Get personalized fashion tips.',
