@@ -368,6 +368,13 @@ const calculators = {
       gradient: 'from-indigo-600 to-violet-600',
       tags: ['Circle', 'Geometry', 'C = 2πr']
     },
+    {
+      name: 'Cylinder Volume Calculator',
+      href: '/calculators/cylinder-volume-calculator',
+      description: 'Calculate volume, surface area, and lateral area of solid or hollow cylinders. Uses V = πr²h formula with unit conversion.',
+      gradient: 'from-blue-600 to-cyan-600',
+      tags: ['Cylinder', 'Volume', 'V = πr²h']
+    },
   ],
   'Statistics & Data': [
     {
