@@ -726,6 +726,13 @@ const calculators = {
       gradient: 'from-cyan-500 to-blue-600',
       tags: ['Oz to Cups', 'Volume', 'Cooking']
     },
+    {
+      name: 'Tbsp to Grams Converter',
+      href: '/calculators/tbsp-to-grams-converter',
+      description: 'Convert tablespoons to grams for butter, flour, sugar, honey, oil, and 15+ ingredients. Works with metric and US tablespoons.',
+      gradient: 'from-orange-500 to-amber-600',
+      tags: ['Tbsp to Grams', 'Cooking', 'Baking']
+    },
   ],
   'Time & Date': [
     {
