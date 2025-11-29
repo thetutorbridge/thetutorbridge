@@ -241,6 +241,13 @@ const calculators = {
       tags: ['Stocks', 'Average Price', 'Trading']
     },
     {
+      name: 'Pay Raise Calculator',
+      href: '/calculators/pay-raise-calculator',
+      description: 'Calculate your new salary after a raise. See hourly, weekly, monthly, and annual pay breakdowns with raise percentage.',
+      gradient: 'from-teal-600 to-green-600',
+      tags: ['Salary', 'Raise', 'Income']
+    },
+    {
       name: 'Sukanya Samriddhi Yojana Calculator',
       href: '/calculators/sukanya-samriddhi-yojana-calculator',
       description: 'Calculate SSY maturity amount for girl child savings scheme with government interest.',
