@@ -1,5 +1,28 @@
 import { MetadataRoute } from 'next';
 import { createAdminClient } from '@/lib/supabase';
+import fs from 'fs';
+import path from 'path';
+
+// Helper function to get all calculator slugs dynamically from the filesystem
+function getCalculatorSlugs(): string[] {
+  try {
+    const calculatorsDir = path.join(process.cwd(), 'app', 'calculators');
+    const entries = fs.readdirSync(calculatorsDir, { withFileTypes: true });
+
+    return entries
+      .filter(entry => {
+        // Only include directories that have a page.tsx file (valid calculator pages)
+        if (!entry.isDirectory()) return false;
+        const pagePath = path.join(calculatorsDir, entry.name, 'page.tsx');
+        return fs.existsSync(pagePath);
+      })
+      .map(entry => entry.name)
+      .sort();
+  } catch (error) {
+    console.error('Error reading calculator directories:', error);
+    return [];
+  }
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.thetutorbridge.com';
@@ -82,125 +105,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // All individual calculator pages
-  const individualCalculators = [
-    'age-calculator',
-    'amortization-calculator',
-    'annual-income-calculator',
-    'area-of-a-circle-calculator',
-    'average-calculator',
-    'basic-calculator',
-    'birth-year-calculator',
-    'bmi-calculator',
-    'bmr-calculator',
-    'body-shape-calculator',
-    'calorie-calculator',
-    'calorie-deficit-calculator',
-    'calories-burned-walking-calculator',
-    'car-loan-emi-calculator',
-    'car-payment-calculator',
-    'celsius-to-fahrenheit-converter',
-    'cgpa-to-percentage-calculator',
-    'circle-area-calculator',
-    'circumference-calculator',
-    'college-gpa-calculator',
-    'combinations-calculator',
-    'compound-interest-calculator',
-    'cube-root-calculator',
-    'cubic-yards-calculator',
-    'cylinder-volume-calculator',
-    'decimal-to-fraction-calculator',
-    'dice-roller',
-    'discount-calculator',
-    'dog-size-calculator',
-    'download-time-calculator',
-    'duckworth-lewis-calculator',
-    'emi-calculator',
-    'ez-grader',
-    'face-shape-calculator',
-    'factoring-calculator',
-    'fahrenheit-to-celsius-converter',
-    'fd-calculator',
-    'feet-and-inches-calculator',
-    'fraction-to-decimal-calculator',
-    'fraction-to-percent-calculator',
-    'fractions-calculator',
-    'gcf-calculator',
-    'grade-calculator',
-    'gratuity-calculator',
-    'high-school-gpa-calculator',
-    'home-loan-emi-calculator',
-    'hours-calculator',
-    'income-tax-calculator',
-    'kg-to-lb-converter',
-    'lcm-calculator',
-    'long-division-calculator',
-    'love-calculator',
-    'lumpsum-calculator',
-    'maintenance-calorie-calculator',
-    'margin-calculator',
-    'marks-percentage-calculator',
-    'mean-mode-median-calculator',
-    'mg-to-ml-converter',
-    'middle-school-gpa-calculator',
-    'military-time-converter',
-    'mixed-numbers-calculator',
-    'ml-to-grams-converter',
-    'modulo-calculator',
-    'money-calculator',
-    'mortgage-calculator',
-    'nm-to-ft-lbs-converter',
-    'numbers-to-words-converter',
-    'overtime-calculator',
-    'oz-to-cups-converter',
-    'pay-raise-calculator',
-    'percent-error-calculator',
-    'percent-off-calculator',
-    'percentage-calculator',
-    'percentage-change-calculator',
-    'percentage-difference-calculator',
-    'percentage-increase-calculator',
-    'percentage-to-cgpa-calculator',
-    'percentile-calculator',
-    'personal-loan-emi-calculator',
-    'ppf-calculator',
-    'profit-margin-calculator',
-    'quadratic-formula-calculator',
-    'quartile-calculator',
-    'random-number-generator',
-    'ratio-calculator',
-    'roman-numeral-converter',
-    'rounding-numbers-calculator',
-    'salary-calculator',
-    'salary-to-hourly-calculator',
-    'sbi-sip-calculator',
-    'scientific-notation-converter',
-    'semester-grade-calculator',
-    'sgpa-to-cgpa-calculator',
-    'sgpa-to-percentage-calculator',
-    'simple-interest-calculator',
-    'simplifying-fractions-calculator',
-    'sip-calculator',
-    'slope-calculator',
-    'speed-distance-time-calculator',
-    'square-footage-calculator',
-    'standard-deviation-calculator',
-    'step-up-sip-calculator',
-    'steps-to-calories-calculator',
-    'steps-to-km-calculator',
-    'steps-to-miles-calculator',
-    'stock-average-calculator',
-    'sukanya-samriddhi-yojana-calculator',
-    'swp-calculator',
-    'tank-volume-calculator',
-    'tbsp-to-grams-converter',
-    'time-to-decimal-calculator',
-    'time-until-calculator',
-    'trigonometry-calculator',
-    'variance-calculator',
-    'vo2-max-calculator',
-    'work-hours-calculator',
-  ].map(calc => ({
+  // All individual calculator pages - dynamically read from filesystem
+  // This ensures new calculators are automatically included in the sitemap
+  const calculatorSlugs = getCalculatorSlugs();
+  const individualCalculators = calculatorSlugs.map(calc => ({
     url: `${baseUrl}/calculators/${calc}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
