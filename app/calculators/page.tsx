@@ -607,6 +607,13 @@ const calculators = {
       gradient: 'from-orange-600 to-red-600',
       tags: ['Torque', 'N·m to ft·lbs', 'Automotive']
     },
+    {
+      name: 'Steps to Miles Calculator',
+      href: '/calculators/steps-to-miles-calculator',
+      description: 'Convert walking steps to miles, kilometers, and other distances. Calculate based on stride length, height, or averages.',
+      gradient: 'from-teal-600 to-cyan-600',
+      tags: ['Steps', 'Distance', 'Walking']
+    },
   ],
   'Time & Date': [
     {
