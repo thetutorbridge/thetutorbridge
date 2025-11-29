@@ -3,6 +3,9 @@ import { createAdminClient } from '@/lib/supabase';
 import fs from 'fs';
 import path from 'path';
 
+// Revalidate sitemap every 60 seconds to pick up new blog posts automatically
+export const revalidate = 60;
+
 // Helper function to get all calculator slugs dynamically from the filesystem
 function getCalculatorSlugs(): string[] {
   try {

@@ -45,6 +45,16 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Sitemap should have short cache to pick up new content quickly
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=60, stale-while-revalidate=60',
+          },
+        ],
+      },
+      {
         source: '/(.*)',
         headers: [
           {
