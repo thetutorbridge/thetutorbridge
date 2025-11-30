@@ -557,6 +557,13 @@ const calculators = {
       tags: ['Margin', 'Gross', 'Net']
     },
     {
+      name: 'Markup Calculator',
+      href: '/calculators/markup-calculator',
+      description: 'Calculate markup percentage, selling price from cost, and convert between markup and margin.',
+      gradient: 'from-teal-600 to-green-600',
+      tags: ['Markup', 'Pricing', 'Cost']
+    },
+    {
       name: 'Money Calculator',
       href: '/calculators/money-calculator',
       description: 'Count money with bills and coins, calculate total cash value.',
