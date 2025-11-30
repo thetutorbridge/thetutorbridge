@@ -879,6 +879,13 @@ const calculators = {
       gradient: 'from-emerald-500 to-green-600',
       tags: ['Minecraft', 'Circle', 'Gaming']
     },
+    {
+      name: 'Height Calculator',
+      href: '/calculators/height-calculator',
+      description: 'Predict your child\'s future adult height using Khamis-Roche and Mid-Parental methods. For ages 4-17.',
+      gradient: 'from-teal-500 to-cyan-600',
+      tags: ['Height', 'Growth', 'Pediatric']
+    },
   ],
 };
 
