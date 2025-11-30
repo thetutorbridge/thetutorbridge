@@ -859,6 +859,13 @@ const calculators = {
       tags: ['Basic', 'Arithmetic', 'Simple']
     },
     {
+      name: 'Watt Calculator',
+      href: '/calculators/watt-calculator',
+      description: 'Calculate power (watts), voltage, current, and resistance using Ohm\'s Law. Supports unit conversions from mW to GW.',
+      gradient: 'from-amber-500 to-orange-600',
+      tags: ['Ohm\'s Law', 'Power', 'Electrical']
+    },
+    {
       name: 'Minecraft Circle Generator',
       href: '/calculators/minecraft-circle-generator',
       description: 'Generate perfect pixel circles for Minecraft builds. Customize diameter and thickness with visual block grid.',
