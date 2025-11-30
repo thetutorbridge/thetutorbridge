@@ -1,0 +1,107 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Pixels to Inches Converter - Convert px to in with PPI | The Tutor Bridge',
+  description: 'Free pixels to inches converter with PPI support. Convert pixels to inches or inches to pixels based on screen resolution. Calculate pixel density for monitors, phones, and print. Common PPI presets included.',
+  keywords: [
+    'pixels to inches',
+    'pixels to inches converter',
+    'px to inches',
+    'convert pixels to inches',
+    'inches to pixels',
+    'inches to pixels converter',
+    'pixel converter',
+    'ppi calculator',
+    'pixels per inch',
+    'dpi calculator',
+    'dots per inch',
+    'screen resolution converter',
+    'pixel density calculator',
+    'how many inches is 1920 pixels',
+    'how many pixels in an inch',
+    'pixel to inch formula',
+    'inch to pixel formula',
+    'monitor ppi calculator',
+    'screen ppi',
+    'display pixel density',
+    'image size converter',
+    'print resolution calculator',
+    '72 ppi',
+    '96 ppi',
+    '300 dpi',
+    'retina display ppi',
+    'iphone ppi',
+    '1080p pixels to inches',
+    '4k resolution inches',
+    'pixel measurement',
+    'digital image size',
+    'screen size calculator',
+    'pixels to cm',
+    'pixels to mm',
+    'web design pixels',
+    'print pixels',
+    'image resolution',
+    'pixel dimensions',
+    'free pixel converter',
+    'online pixel converter',
+    'pixel calculator',
+    'px to in calculator',
+    'in to px calculator',
+    'photo size calculator',
+    'image pixel calculator',
+    'display resolution',
+    'pixel pitch calculator',
+    'screen pixel calculator',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/calculators/pixels-to-inches-converter',
+  },
+  openGraph: {
+    title: 'Pixels to Inches Converter - Convert px to in with PPI',
+    description: 'Convert pixels to inches or inches to pixels based on PPI/DPI. Free tool with common screen resolution presets.',
+    url: 'https://thetutorbridge.com/calculators/pixels-to-inches-converter',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'Pixels to Inches Converter - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pixels to Inches Converter - Free Tool',
+    description: 'Convert pixels to inches or inches to pixels with PPI/DPI support. Includes common screen resolution presets.',
+    images: ['https://thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function PixelsToInchesConverterLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

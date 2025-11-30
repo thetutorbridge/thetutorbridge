@@ -866,6 +866,13 @@ const calculators = {
       tags: ['Ohm\'s Law', 'Power', 'Electrical']
     },
     {
+      name: 'Pixels to Inches Converter',
+      href: '/calculators/pixels-to-inches-converter',
+      description: 'Convert pixels to inches or inches to pixels based on PPI. Supports screens, monitors, phones, and print resolution.',
+      gradient: 'from-violet-500 to-purple-600',
+      tags: ['Pixels', 'PPI', 'Resolution']
+    },
+    {
       name: 'Minecraft Circle Generator',
       href: '/calculators/minecraft-circle-generator',
       description: 'Generate perfect pixel circles for Minecraft builds. Customize diameter and thickness with visual block grid.',
