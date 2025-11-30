@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Navigation } from '@/components/Navigation';
+import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
 import { Ruler, ChevronRight, ChevronDown, ChevronUp, RotateCcw, BookOpen, Calculator, HelpCircle, Info, Users, Baby } from 'lucide-react';
