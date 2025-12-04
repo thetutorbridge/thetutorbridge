@@ -8,6 +8,13 @@ import { useState } from 'react';
 const calculators = {
   'Academic & Education': [
     {
+      name: 'GPA Calculator',
+      href: '/calculators/gpa-calculator',
+      description: 'Calculate your Grade Point Average with multiple grading scales. Supports 4.0, weighted 5.0, semester and cumulative GPA.',
+      gradient: 'from-indigo-600 to-purple-600',
+      tags: ['4.0 Scale', 'Weighted GPA', 'Cumulative']
+    },
+    {
       name: 'College GPA Calculator',
       href: '/calculators/college-gpa-calculator',
       description: 'Calculate your cumulative college GPA with credit weighting across multiple semesters on 4.0 scale.',
