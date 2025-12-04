@@ -87,6 +87,13 @@ const calculators = {
   ],
   'Financial & Investment': [
     {
+      name: 'Currency Converter',
+      href: '/calculators/currency-converter',
+      description: 'Convert 150+ currencies with live exchange rates. USD to INR, EUR to INR, AED to INR, GBP to INR and more.',
+      gradient: 'from-blue-600 to-cyan-600',
+      tags: ['Exchange Rates', 'Forex', 'Live Rates']
+    },
+    {
       name: 'SIP Calculator',
       href: '/calculators/sip-calculator',
       description: 'Calculate SIP returns, maturity amount, and wealth gained through systematic investment plans.',
