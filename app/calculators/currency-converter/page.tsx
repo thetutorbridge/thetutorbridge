@@ -119,33 +119,33 @@ export default function CurrencyConverterPage() {
   const [showFromDropdown, setShowFromDropdown] = useState<boolean>(false);
   const [showToDropdown, setShowToDropdown] = useState<boolean>(false);
 
-  // Fetch exchange rates from free API
-  const fetchExchangeRates = useCallback(async () => {
+  // Fetch exchange rates from our server API (cached for 24 hours)
+  const fetchExchangeRates = useCallback(async (forceRefresh = false) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      // Check localStorage for cached rates
-      const cachedData = localStorage.getItem('exchangeRates');
-      const cachedTime = localStorage.getItem('exchangeRatesTime');
+      // Check localStorage for quick client-side cache (5 minutes)
+      if (!forceRefresh) {
+        const cachedData = localStorage.getItem('exchangeRates');
+        const cachedTime = localStorage.getItem('exchangeRatesTime');
 
-      if (cachedData && cachedTime) {
-        const cacheAge = Date.now() - parseInt(cachedTime);
-        const oneHour = 60 * 60 * 1000;
+        if (cachedData && cachedTime) {
+          const cacheAge = Date.now() - parseInt(cachedTime);
+          const fiveMinutes = 5 * 60 * 1000;
 
-        if (cacheAge < oneHour) {
-          const parsed = JSON.parse(cachedData);
-          setExchangeRates(parsed.rates);
-          setLastUpdated(new Date(parseInt(cachedTime)).toLocaleString());
-          setIsLoading(false);
-          return;
+          if (cacheAge < fiveMinutes) {
+            const parsed = JSON.parse(cachedData);
+            setExchangeRates(parsed.rates);
+            setLastUpdated(parsed.lastUpdated || new Date(parseInt(cachedTime)).toLocaleString());
+            setIsLoading(false);
+            return;
+          }
         }
       }
 
-      // Fetch from free API (fawazahmed0/exchange-api)
-      const response = await fetch(
-        'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json'
-      );
+      // Fetch from our server API (server caches for 24 hours)
+      const response = await fetch('/api/exchange-rates');
 
       if (!response.ok) {
         throw new Error('Failed to fetch exchange rates');
@@ -153,18 +153,23 @@ export default function CurrencyConverterPage() {
 
       const data = await response.json();
 
-      // Convert rates to uppercase keys and relative to USD
-      const rates: ExchangeRates = { USD: 1 };
-      Object.keys(data.usd).forEach((key) => {
-        rates[key.toUpperCase()] = data.usd[key];
-      });
+      if (data.success && data.rates) {
+        // Cache the rates locally for 5 minutes
+        localStorage.setItem('exchangeRates', JSON.stringify({
+          rates: data.rates,
+          lastUpdated: new Date(data.lastUpdated).toLocaleString()
+        }));
+        localStorage.setItem('exchangeRatesTime', Date.now().toString());
 
-      // Cache the rates
-      localStorage.setItem('exchangeRates', JSON.stringify({ rates }));
-      localStorage.setItem('exchangeRatesTime', Date.now().toString());
+        setExchangeRates(data.rates);
+        setLastUpdated(new Date(data.lastUpdated).toLocaleString());
 
-      setExchangeRates(rates);
-      setLastUpdated(new Date().toLocaleString());
+        if (data.source === 'fallback') {
+          setError('Using approximate rates. Live rates temporarily unavailable.');
+        }
+      } else {
+        throw new Error('Invalid response from server');
+      }
     } catch (err) {
       console.error('Error fetching rates:', err);
       setError('Unable to fetch latest rates. Using cached data if available.');
@@ -174,10 +179,7 @@ export default function CurrencyConverterPage() {
       if (cachedData) {
         const parsed = JSON.parse(cachedData);
         setExchangeRates(parsed.rates);
-        const cachedTime = localStorage.getItem('exchangeRatesTime');
-        if (cachedTime) {
-          setLastUpdated(new Date(parseInt(cachedTime)).toLocaleString() + ' (cached)');
-        }
+        setLastUpdated((parsed.lastUpdated || 'Unknown') + ' (cached)');
       }
     } finally {
       setIsLoading(false);
@@ -475,11 +477,12 @@ export default function CurrencyConverterPage() {
                       <span>Last updated: {lastUpdated || 'Loading...'}</span>
                     </div>
                     <Button
-                      onClick={fetchExchangeRates}
+                      onClick={() => fetchExchangeRates(true)}
                       variant="ghost"
                       size="sm"
                       disabled={isLoading}
                       className="text-[#2BAE66] hover:text-[#1A3D7C]"
+                      title="Refresh rates"
                     >
                       <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
                     </Button>
