@@ -234,6 +234,13 @@ const calculators = {
       tags: ['Income Tax', 'Tax Liability', 'Deductions']
     },
     {
+      name: 'Lottery Tax Calculator',
+      href: '/calculators/lottery-tax-calculator',
+      description: 'Calculate federal and state taxes on lottery winnings. Compare lump sum vs annuity payouts with 2024 tax brackets.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['Lottery Tax', 'Lump Sum', 'Annuity']
+    },
+    {
       name: 'Salary Calculator',
       href: '/calculators/salary-calculator',
       description: 'Calculate in-hand salary from CTC with tax deductions and allowances breakdown.',
