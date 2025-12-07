@@ -57,6 +57,13 @@ const calculators = {
       tags: ['Grading Chart', 'Printable', 'Teacher Tool']
     },
     {
+      name: 'Test Grade Calculator',
+      href: '/calculators/test-grade-calculator',
+      description: 'Calculate test scores, percentages, and letter grades instantly. Enter questions wrong or points earned with multiple grading scales.',
+      gradient: 'from-indigo-600 via-purple-600 to-pink-600',
+      tags: ['Test Score', 'Letter Grade', 'Percentage']
+    },
+    {
       name: 'CGPA to Percentage Calculator',
       href: '/calculators/cgpa-to-percentage-calculator',
       description: 'Convert CGPA to percentage for Indian universities and colleges with multiple conversion formulas.',
