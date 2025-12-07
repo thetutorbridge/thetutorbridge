@@ -524,6 +524,13 @@ const calculators = {
       gradient: 'from-green-600 to-emerald-600',
       tags: ['Cricket', 'DLS', 'Sports']
     },
+    {
+      name: 'P-Value Calculator',
+      href: '/calculators/p-value-calculator',
+      description: 'Calculate p-values from z-score, t-score, chi-square, or F-statistic. Supports one-tailed and two-tailed hypothesis tests.',
+      gradient: 'from-indigo-600 to-blue-600',
+      tags: ['P-Value', 'Hypothesis', 'Significance']
+    },
   ],
   'Fractions & Decimals': [
     {
