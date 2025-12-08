@@ -42,6 +42,14 @@ const roadmapSlugs = [
   'ios',
   'react-native',
   'software-architect',
+  'mlops',
+  'prompt-engineering',
+  'php',
+  'linux',
+  'angular',
+  'engineering-manager',
+  'rust',
+  'postgresql-dba',
 ];
 
 // All calculator slugs - manually maintained list

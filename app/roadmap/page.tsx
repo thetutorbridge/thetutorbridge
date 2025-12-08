@@ -36,7 +36,11 @@ import {
   Leaf,
   GraduationCap,
   PieChart,
-  Building2
+  Building2,
+  Cog,
+  MessageSquare,
+  FileCode,
+  Users
 } from 'lucide-react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
@@ -492,6 +496,87 @@ export default function RoadmapIndexPage() {
       isAvailable: true
     },
     {
+      title: 'MLOps Engineer',
+      description: 'Master ML pipelines, model deployment, CI/CD for ML, and production ML systems.',
+      icon: Cog,
+      href: '/roadmap/mlops',
+      gradient: 'bg-gradient-to-r from-violet-500 to-purple-600',
+      difficulty: 'Advanced' as const,
+      duration: '6-12 months',
+      isAvailable: true
+    },
+    {
+      title: 'Prompt Engineer',
+      description: 'Master LLM prompting, RAG systems, AI agents, and production prompt optimization.',
+      icon: MessageSquare,
+      href: '/roadmap/prompt-engineering',
+      gradient: 'bg-gradient-to-r from-purple-500 to-pink-500',
+      difficulty: 'Beginner' as const,
+      duration: '3-6 months',
+      isPopular: true,
+      isAvailable: true
+    },
+    {
+      title: 'PHP Developer',
+      description: 'Build web applications with PHP 8, Laravel, MySQL, and modern development practices.',
+      icon: Code,
+      href: '/roadmap/php',
+      gradient: 'bg-gradient-to-r from-indigo-500 to-purple-600',
+      difficulty: 'Beginner' as const,
+      duration: '4-6 months',
+      isAvailable: true
+    },
+    {
+      title: 'Linux',
+      description: 'Master command line, shell scripting, system administration, and DevOps.',
+      icon: Terminal,
+      href: '/roadmap/linux',
+      gradient: 'bg-gradient-to-r from-yellow-500 to-orange-500',
+      difficulty: 'Beginner' as const,
+      duration: '4-8 months',
+      isAvailable: true
+    },
+    {
+      title: 'Angular Developer',
+      description: 'Build enterprise apps with TypeScript, RxJS, NgRx, and Angular Material.',
+      icon: FileCode,
+      href: '/roadmap/angular',
+      gradient: 'bg-gradient-to-r from-red-500 to-pink-600',
+      difficulty: 'Intermediate' as const,
+      duration: '5-8 months',
+      isAvailable: true
+    },
+    {
+      title: 'Engineering Manager',
+      description: 'Master people management, hiring, performance reviews, and technical leadership.',
+      icon: Users,
+      href: '/roadmap/engineering-manager',
+      gradient: 'bg-gradient-to-r from-indigo-500 to-purple-600',
+      difficulty: 'Advanced' as const,
+      duration: '2-4 years',
+      isAvailable: true
+    },
+    {
+      title: 'Rust Developer',
+      description: 'Master ownership, borrowing, async programming, WebAssembly, and systems programming.',
+      icon: Cog,
+      href: '/roadmap/rust',
+      gradient: 'bg-gradient-to-r from-orange-500 to-red-500',
+      difficulty: 'Advanced' as const,
+      duration: '6-12 months',
+      isAvailable: true
+    },
+    {
+      title: 'PostgreSQL DBA',
+      description: 'Master performance tuning, replication, backup, security, and high availability.',
+      icon: Database,
+      href: '/roadmap/postgresql-dba',
+      gradient: 'bg-gradient-to-r from-blue-600 to-indigo-600',
+      difficulty: 'Intermediate' as const,
+      duration: '6-12 months',
+      isAvailable: true
+    },
+    {
       title: 'Mobile App Developer',
       description: 'Build iOS and Android apps with React Native or Flutter.',
       icon: Smartphone,
@@ -557,7 +642,7 @@ export default function RoadmapIndexPage() {
                   <div className="w-8 h-8 rounded-lg bg-[#2BAE66]/10 flex items-center justify-center">
                     <Layers className="w-4 h-4 text-[#2BAE66]" />
                   </div>
-                  <span><strong className="text-[#1A3D7C]">36+</strong> Paths</span>
+                  <span><strong className="text-[#1A3D7C]">44+</strong> Paths</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-lg bg-[#2BAE66]/10 flex items-center justify-center">
