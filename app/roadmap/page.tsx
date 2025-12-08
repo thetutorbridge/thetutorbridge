@@ -578,13 +578,103 @@ export default function RoadmapIndexPage() {
     },
     {
       title: 'Mobile App Developer',
-      description: 'Build iOS and Android apps with React Native or Flutter.',
+      description: 'Build iOS and Android apps with Flutter, React Native, or native development.',
       icon: Smartphone,
       href: '/roadmap/mobile-developer',
       gradient: 'bg-gradient-to-r from-cyan-500 to-blue-500',
       difficulty: 'Intermediate' as const,
       duration: '5-8 months',
-      isAvailable: false
+      isAvailable: true
+    },
+    {
+      title: 'Cloud Engineer',
+      description: 'Master AWS, Azure, GCP, infrastructure as code, and cloud architecture.',
+      icon: Cloud,
+      href: '/roadmap/cloud-engineer',
+      gradient: 'bg-gradient-to-r from-orange-500 to-yellow-500',
+      difficulty: 'Intermediate' as const,
+      duration: '6-12 months',
+      isAvailable: true
+    },
+    {
+      title: 'Site Reliability Engineer',
+      description: 'Master SLOs, observability, incident management, and reliability practices.',
+      icon: Shield,
+      href: '/roadmap/sre',
+      gradient: 'bg-gradient-to-r from-indigo-500 to-purple-500',
+      difficulty: 'Advanced' as const,
+      duration: '8-14 months',
+      isAvailable: true
+    },
+    {
+      title: 'Embedded Systems Engineer',
+      description: 'Master microcontrollers, RTOS, C/C++, and hardware interfaces.',
+      icon: Cpu,
+      href: '/roadmap/embedded-systems',
+      gradient: 'bg-gradient-to-r from-purple-500 to-indigo-500',
+      difficulty: 'Intermediate' as const,
+      duration: '8-14 months',
+      isAvailable: true
+    },
+    {
+      title: 'Firmware Engineer',
+      description: 'Master embedded C, bootloaders, device drivers, and hardware debugging.',
+      icon: Cpu,
+      href: '/roadmap/firmware-engineer',
+      gradient: 'bg-gradient-to-r from-violet-500 to-purple-500',
+      difficulty: 'Intermediate' as const,
+      duration: '8-14 months',
+      isAvailable: true
+    },
+    {
+      title: 'AR/VR Developer',
+      description: 'Build immersive experiences with Unity, Unreal, Meta Quest, and Vision Pro.',
+      icon: Gamepad2,
+      href: '/roadmap/ar-vr-developer',
+      gradient: 'bg-gradient-to-r from-cyan-500 to-blue-500',
+      difficulty: 'Intermediate' as const,
+      duration: '6-10 months',
+      isAvailable: true
+    },
+    {
+      title: 'Computer Vision Engineer',
+      description: 'Master OpenCV, deep learning, object detection, and visual AI.',
+      icon: Brain,
+      href: '/roadmap/computer-vision',
+      gradient: 'bg-gradient-to-r from-violet-500 to-purple-500',
+      difficulty: 'Advanced' as const,
+      duration: '8-14 months',
+      isAvailable: true
+    },
+    {
+      title: 'NLP Engineer',
+      description: 'Master transformers, BERT, GPT, LLMs, RAG, and conversational AI.',
+      icon: MessageSquare,
+      href: '/roadmap/nlp-engineer',
+      gradient: 'bg-gradient-to-r from-emerald-500 to-teal-500',
+      difficulty: 'Advanced' as const,
+      duration: '8-14 months',
+      isAvailable: true
+    },
+    {
+      title: 'Big Data Engineer',
+      description: 'Master Apache Spark, Kafka, Hadoop, data lakes, and distributed systems.',
+      icon: Database,
+      href: '/roadmap/big-data-engineer',
+      gradient: 'bg-gradient-to-r from-orange-500 to-red-500',
+      difficulty: 'Advanced' as const,
+      duration: '8-14 months',
+      isAvailable: true
+    },
+    {
+      title: 'Integration Engineer',
+      description: 'Master APIs, MuleSoft, enterprise integration patterns, and iPaaS platforms.',
+      icon: Network,
+      href: '/roadmap/integration-engineer',
+      gradient: 'bg-gradient-to-r from-blue-500 to-cyan-500',
+      difficulty: 'Intermediate' as const,
+      duration: '6-10 months',
+      isAvailable: true
     },
     {
       title: 'Cloud Architect',
@@ -642,7 +732,7 @@ export default function RoadmapIndexPage() {
                   <div className="w-8 h-8 rounded-lg bg-[#2BAE66]/10 flex items-center justify-center">
                     <Layers className="w-4 h-4 text-[#2BAE66]" />
                   </div>
-                  <span><strong className="text-[#1A3D7C]">44+</strong> Paths</span>
+                  <span><strong className="text-[#1A3D7C]">54+</strong> Paths</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-lg bg-[#2BAE66]/10 flex items-center justify-center">

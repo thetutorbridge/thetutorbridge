@@ -1,7 +1,7 @@
 # Calculator Creation Guide for The Tutor Bridge
 
 This comprehensive guide documents the patterns, structure, and best practices for creating calculator pages on The Tutor Bridge platform. Follow these guidelines to maintain consistency across all calculator implementations.
-
+c
 ## Table of Contents
 
 1. [Project Overview](#project-overview)

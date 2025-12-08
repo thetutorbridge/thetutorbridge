@@ -50,6 +50,16 @@ const roadmapSlugs = [
   'engineering-manager',
   'rust',
   'postgresql-dba',
+  'mobile-developer',
+  'cloud-engineer',
+  'sre',
+  'embedded-systems',
+  'firmware-engineer',
+  'ar-vr-developer',
+  'computer-vision',
+  'nlp-engineer',
+  'big-data-engineer',
+  'integration-engineer',
 ];
 
 // All calculator slugs - manually maintained list
