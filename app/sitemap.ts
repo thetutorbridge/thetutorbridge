@@ -4,6 +4,46 @@ import { createAdminClient } from '@/lib/supabase';
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
 
+// All roadmap slugs - manually maintained list
+const roadmapSlugs = [
+  'frontend-developer',
+  'backend-developer',
+  'full-stack-developer',
+  'devops',
+  'ai-engineer',
+  'data-analyst',
+  'data-scientist',
+  'data-engineer',
+  'cyber-security',
+  'python-developer',
+  'system-design',
+  'dsa',
+  'ai-data-scientist',
+  'java',
+  'javascript',
+  'blockchain',
+  'qa',
+  'machine-learning',
+  'aws',
+  'react',
+  'nodejs',
+  'product-manager',
+  'android',
+  'game-developer',
+  'ux-design',
+  'aspnet-core',
+  'golang',
+  'sql',
+  'flutter',
+  'cpp',
+  'spring-boot',
+  'computer-science',
+  'bi-analyst',
+  'ios',
+  'react-native',
+  'software-architect',
+];
+
 // All calculator slugs - manually maintained list
 // When adding a new calculator, add its slug here
 const calculatorSlugs = [
@@ -217,6 +257,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Roadmaps - Main page
+  const roadmapPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/roadmap`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  // All individual roadmap pages
+  const individualRoadmaps: MetadataRoute.Sitemap = roadmapSlugs.map(roadmap => ({
+    url: `${baseUrl}/roadmap/${roadmap}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Study Resources - Main page
   const studyResourcePages: MetadataRoute.Sitemap = [
     {
@@ -340,6 +398,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogPostPages,
     ...calculatorPages,
     ...individualCalculators,
+    ...roadmapPages,
+    ...individualRoadmaps,
     ...studyResourcePages,
     ...classMainPages,
     ...class6SubjectPages,
