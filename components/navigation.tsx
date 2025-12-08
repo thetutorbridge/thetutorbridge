@@ -33,6 +33,9 @@ export function Navigation() {
           <Link href="/calculators" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Calculators
           </Link>
+          <Link href="/roadmap" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
+            Roadmaps
+          </Link>
           <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
             Blog
           </Link>
@@ -72,6 +75,9 @@ export function Navigation() {
               </Link>
               <Link href="/calculators" className="block py-2 text-gray-700">
                 Calculators
+              </Link>
+              <Link href="/roadmap" className="block py-2 text-gray-700">
+                Roadmaps
               </Link>
               <Link href="/blog" className="block py-2 text-gray-700">
                 Blog
