@@ -42,6 +42,20 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   trailingSlash: false,
+  async redirects() {
+    return [
+      {
+        source: '/doubt-solving',
+        destination: '/homework-help',
+        permanent: true,
+      },
+      {
+        source: '/book-demo-class',
+        destination: '/tutoring/free-consultation',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

@@ -104,9 +104,9 @@ export default function RootLayout({
               logo: "https://www.thetutorbridge.com/TheTutorBridge Logo New.png",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+91-93100-96171",
+                email: "info@thetutorbridge.com",
                 contactType: "customer service",
-                availableLanguage: ["English", "Hindi"],
+                availableLanguage: ["English"],
               },
               address: {
                 "@type": "PostalAddress",

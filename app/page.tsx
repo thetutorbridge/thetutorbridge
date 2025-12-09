@@ -1,25 +1,65 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { BookOpen, MessageSquare, Users, Award, Star, CheckCircle, ArrowRight, Play, Target, Lightbulb, TrendingUp, Clock, Shield, Globe, UserCheck, BookMarked, Brain, Phone, Mail, MapPin, ChevronDown, ChevronUp, Calendar, User, GraduationCap, Zap, Heart, Trophy, Calculator } from "lucide-react"
+import { BookOpen, MessageSquare, Users, Award, Star, CheckCircle, ArrowRight, Target, TrendingUp, Clock, Shield, UserCheck, BookMarked, Brain, Calendar, GraduationCap, Zap, Trophy, Calculator, FileText, Video } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
-import FloaterMessenger from "@/app/components/FloaterMessenger"
-import FAQ from "@/components/FAQ"
 
 export const metadata: Metadata = {
-  title: "The Tutor Bridge – Guiding Students, Building Futures",
-  description:
-    "Academic support, career mentorship, and resources to help students from Class 6 to 12 discover their true path.",
+  title: "Online Homework Help & Tutoring for Grades 6-12 | Math, Science, English | The Tutor Bridge",
+  description: "Expert homework help and 1-on-1 online tutoring for middle & high school students. Math, Science, English. U.S.-certified tutors. Free consultation. Get help today!",
+  keywords: [
+    "homework help",
+    "online tutoring",
+    "math tutor",
+    "science tutor",
+    "english tutor",
+    "homework help online",
+    "tutoring for high school",
+    "middle school tutoring",
+    "algebra help",
+    "chemistry tutor",
+    "essay help"
+  ],
   alternates: {
     canonical: "https://www.thetutorbridge.com",
   },
+  openGraph: {
+    title: "Online Homework Help & Tutoring for Grades 6-12",
+    description: "Expert homework help and 1-on-1 online tutoring. Math, Science, English. U.S.-certified tutors.",
+    url: "https://www.thetutorbridge.com",
+    siteName: "The Tutor Bridge",
+    type: "website",
+  }
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "The Tutor Bridge",
+  description: "Expert homework help and online tutoring for grades 6-12 in Math, Science, and English",
+  url: "https://www.thetutorbridge.com",
+  logo: "https://www.thetutorbridge.com/TheTutorBridge Logo New.png",
+  sameAs: [
+    "https://www.linkedin.com/company/thetutorbridge/"
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "US"
+  },
+  areaServed: "US",
+  serviceType: ["Homework Help", "Online Tutoring", "Academic Support"]
 }
 
 export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col overflow-x-hidden font-merriweather">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Background */}
       <div className="fixed inset-0 -z-10 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1A3D7C]/5 via-[#2BAE66]/5 to-[#FFC857]/10" />
@@ -28,50 +68,225 @@ export default function Home() {
       <Navigation />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] text-white">
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="relative z-10 max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-poppins font-bold leading-tight mb-6">
-              Guiding Students.
-            <br />
-              <span className="text-[#FFC857]">Building Futures.</span>
-          </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8 font-merriweather">
-              Trusted mentorship for confident learners. Personalized education, career guidance, and academic support for students from Class 6 to 12.
-          </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link href="/book-demo-class">
-              <Button
-                size="lg"
-                  className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold"
-              >
-                  Book a Free Session
-              </Button>
-            </Link>
-            <Link href="/about">
-              <Button
-                size="lg"
-                variant="outline"
-                  className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold"
-              >
-                  How It Works
-              </Button>
-            </Link>
+        {/* Hero Section - Subtle & Center Aligned */}
+        <section className="relative py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#1A3D7C] leading-tight mb-4">
+                Homework Help & Expert Tutoring
+                <br />
+                <span className="text-2xl sm:text-3xl md:text-4xl text-gray-600 font-normal">for Grades 6-12</span>
+              </h1>
+
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
+                Stuck on homework? Need ongoing support? Get expert help in Math, Science, and English from U.S.-certified tutors.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Link href="/homework-help/submit">
+                  <Button
+                    size="lg"
+                    className="bg-[#1A3D7C] text-white rounded-xl px-8 py-4 hover:bg-[#1A3D7C]/90 transition-all font-semibold w-full sm:w-auto"
+                  >
+                    <FileText className="w-5 h-5 mr-2" />
+                    Submit Homework
+                  </Button>
+                </Link>
+                <Link href="/tutoring/free-consultation">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-[#1A3D7C] text-[#1A3D7C] rounded-xl px-8 py-4 hover:bg-[#1A3D7C] hover:text-white transition-all font-semibold w-full sm:w-auto"
+                  >
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Book Free Consultation
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                  <span>Step-by-step explanations</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                  <span>U.S.-certified tutors</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                  <span>Satisfaction guaranteed</span>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/80">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
-                <span>Free Demo Sessions</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
-                <span>Expert Mentors</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-[#FFC857]" />
-                <span>24/7 Support</span>
-              </div>
+          </div>
+        </section>
+
+        {/* Two Services Section */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
+                Two Ways to Get Help
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Choose what works best for you—quick homework help or ongoing tutoring support.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Homework Help Card */}
+              <Card className="p-8 border-2 border-[#1A3D7C]/20 hover:border-[#1A3D7C] transition-all hover:shadow-xl group">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <FileText className="w-8 h-8 text-[#1A3D7C]" />
+                  </div>
+                  <h3 className="text-2xl font-poppins font-bold text-[#1A3D7C] mb-3">Homework Help</h3>
+                  <p className="text-gray-600 mb-6">
+                    Need help with a specific assignment? Submit your homework and get expert solutions with step-by-step explanations. Pay only for what you need.
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>On-demand, pay-per-task</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Detailed explanations included</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Custom quote within 2 hours</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Starting at $15</span>
+                    </li>
+                  </ul>
+                  <Link href="/homework-help">
+                    <Button className="w-full bg-[#1A3D7C] hover:bg-[#1A3D7C]/90">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+
+              {/* Tutoring Card */}
+              <Card className="p-8 border-2 border-[#2BAE66]/20 hover:border-[#2BAE66] transition-all hover:shadow-xl group relative">
+                <div className="absolute -top-4 right-4 bg-[#2BAE66] text-white text-xs font-bold px-3 py-1 rounded-full">
+                  MOST POPULAR
+                </div>
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <GraduationCap className="w-8 h-8 text-[#2BAE66]" />
+                  </div>
+                  <h3 className="text-2xl font-poppins font-bold text-[#1A3D7C] mb-3">Weekly Tutoring</h3>
+                  <p className="text-gray-600 mb-6">
+                    Want lasting improvement? Work with the same expert tutor each week. Build a relationship, track progress, and boost grades.
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Same tutor every session</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Personalized lesson plans</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Weekly progress reports</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Starting at $120/month</span>
+                    </li>
+                  </ul>
+                  <Link href="/tutoring">
+                    <Button className="w-full bg-[#2BAE66] hover:bg-[#2BAE66]/90">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Subjects Section */}
+        <section className="py-16 sm:py-20 bg-[#F8FAFC]">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
+                Subjects We Cover
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Comprehensive support for the three core subjects that matter most for academic success.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {/* Math */}
+              <Link href="/homework-help/math">
+                <Card className="p-6 text-center hover:shadow-xl transition-all cursor-pointer group h-full">
+                  <CardContent className="p-0">
+                    <div className="w-20 h-20 bg-gradient-to-br from-[#1A3D7C] to-[#1A3D7C]/80 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <span className="text-3xl text-white font-bold">∑</span>
+                    </div>
+                    <h3 className="text-xl font-poppins font-bold text-[#1A3D7C] mb-3">Math</h3>
+                    <p className="text-gray-600 text-sm mb-4">Pre-Algebra through AP Calculus</p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {["Algebra", "Geometry", "Calculus", "Statistics"].map((topic) => (
+                        <span key={topic} className="px-3 py-1 bg-blue-50 text-[#1A3D7C] text-xs rounded-full">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              {/* Science */}
+              <Link href="/homework-help/science">
+                <Card className="p-6 text-center hover:shadow-xl transition-all cursor-pointer group h-full">
+                  <CardContent className="p-0">
+                    <div className="w-20 h-20 bg-gradient-to-br from-[#2BAE66] to-[#2BAE66]/80 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <span className="text-3xl">🔬</span>
+                    </div>
+                    <h3 className="text-xl font-poppins font-bold text-[#1A3D7C] mb-3">Science</h3>
+                    <p className="text-gray-600 text-sm mb-4">General Science through AP courses</p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {["Physics", "Chemistry", "Biology", "Earth Science"].map((topic) => (
+                        <span key={topic} className="px-3 py-1 bg-green-50 text-[#2BAE66] text-xs rounded-full">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              {/* English */}
+              <Link href="/homework-help/english">
+                <Card className="p-6 text-center hover:shadow-xl transition-all cursor-pointer group h-full">
+                  <CardContent className="p-0">
+                    <div className="w-20 h-20 bg-gradient-to-br from-[#FFC857] to-[#FFC857]/80 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <span className="text-3xl">📝</span>
+                    </div>
+                    <h3 className="text-xl font-poppins font-bold text-[#1A3D7C] mb-3">English</h3>
+                    <p className="text-gray-600 text-sm mb-4">Writing, Grammar, Literature</p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {["Essays", "Grammar", "Literature", "AP English"].map((topic) => (
+                        <span key={topic} className="px-3 py-1 bg-yellow-50 text-[#FFC857] text-xs rounded-full">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </div>
         </section>
@@ -79,424 +294,400 @@ export default function Home() {
         {/* Stats Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-4xl mx-auto">
               <div className="space-y-2">
-                <div className="text-3xl md:text-4xl font-bold text-[#1A3D7C]">5000+</div>
-                <div className="text-gray-600">Students Helped</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-3xl md:text-4xl font-bold text-[#2BAE66]">95%</div>
-                <div className="text-gray-600">Success Rate</div>
+                <div className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C]">500+</div>
+                <div className="text-gray-600">Families Served</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl md:text-4xl font-bold text-[#FFC857]">50+</div>
-                <div className="text-gray-600">Expert Mentors</div>
+                <div className="text-3xl md:text-4xl font-poppins font-bold text-[#2BAE66]">95%</div>
+                <div className="text-gray-600">Grade Improvement</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl md:text-4xl font-bold text-[#1A3D7C]">4.9★</div>
-                <div className="text-gray-600">Student Rating</div>
+                <div className="text-3xl md:text-4xl font-poppins font-bold text-[#FFC857]">50+</div>
+                <div className="text-gray-600">Expert Tutors</div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Problem/Challenge Section */}
-        <section className="py-20 bg-[#F8FAFC]">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
-                Feeling lost in the academic path?
-              </h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Many students and parents face these common challenges in their educational journey.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-8 h-8 text-red-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Overwhelmed with Subject Choices</h3>
-                <p className="text-gray-600">Too many options, not sure which path to take for your future career.</p>
+              <div className="space-y-2">
+                <div className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C]">4.9★</div>
+                <div className="text-gray-600">Average Rating</div>
               </div>
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-8 h-8 text-orange-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Unclear Exam Preparation</h3>
-                <p className="text-gray-600">Not sure how to prepare for competitive exams or board examinations effectively.</p>
-              </div>
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-yellow-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Lack of Guidance Leads to Stress</h3>
-                <p className="text-gray-600">Without proper mentorship, academic pressure becomes overwhelming and stressful.</p>
-              </div>
-            </div>
-            <div className="text-center mt-12">
-              <div className="bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
-                <div className="flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-[#FFC857] fill-current" />
-                  <Star className="w-6 h-6 text-[#FFC857] fill-current" />
-                  <Star className="w-6 h-6 text-[#FFC857] fill-current" />
-                  <Star className="w-6 h-6 text-[#FFC857] fill-current" />
-                  <Star className="w-6 h-6 text-[#FFC857] fill-current" />
-                </div>
-                <blockquote className="text-lg italic text-gray-700 mb-4">
-                  "I was struggling with math and didn't know how to prepare for JEE. The Tutor Bridge helped me understand concepts clearly and gave me a clear roadmap to success."
-                </blockquote>
-                <cite className="text-[#1A3D7C] font-semibold">- Priya Sharma, Class 12 Student</cite>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
-                Why Choose The Tutor Bridge?
-            </h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                We provide comprehensive educational support that goes beyond traditional tutoring to help students excel academically and personally.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Target className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Personalized Learning</h3>
-                  <p className="text-gray-600">Customized study plans tailored to each student's learning style and pace.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Clock className="w-8 h-8 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">24/7 Doubt Support</h3>
-                  <p className="text-gray-600">Get instant help with your academic questions anytime, anywhere.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="text-center">
-                  <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Lightbulb className="w-8 h-8 text-yellow-600" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Career Guidance</h3>
-                  <p className="text-gray-600">Expert mentorship to help you discover and pursue your passion.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <TrendingUp className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Proven Results</h3>
-                  <p className="text-gray-600">95% of our students show significant improvement in their grades.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="text-center">
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-red-600" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Safe & Secure</h3>
-                  <p className="text-gray-600">Your data and privacy are protected with enterprise-grade security.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="p-6 hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="text-center">
-                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Globe className="w-8 h-8 text-indigo-600" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Flexible Learning</h3>
-                  <p className="text-gray-600">Learn from anywhere with our online platform and mobile app.</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
-                How We Help You
-              </h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Comprehensive educational support designed to help students excel in their academic journey.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <Link href="/study-resources">
-                <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group">
-                  <CardContent className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <BookOpen className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Study Resources</h3>
-                    <p className="text-gray-600 text-sm mb-4">Comprehensive study materials, notes, and practice papers for classes 6-12.</p>
-                    <div className="flex items-center justify-center text-blue-600 font-semibold group-hover:translate-x-1 transition-transform">
-                      Explore <ArrowRight className="w-4 h-4 ml-1" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-
-              <Link href="/doubt-solving">
-                <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group">
-                  <CardContent className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <MessageSquare className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Doubt Solving</h3>
-                    <p className="text-gray-600 text-sm mb-4">Get instant answers to your academic questions from expert tutors.</p>
-                    <div className="flex items-center justify-center text-green-600 font-semibold group-hover:translate-x-1 transition-transform">
-                      Ask Now <ArrowRight className="w-4 h-4 ml-1" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-
-              <Link href="/career-guidance">
-                <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group">
-                  <CardContent className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <Users className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Career Guidance</h3>
-                    <p className="text-gray-600 text-sm mb-4">Expert mentorship to help you discover and pursue your passion.</p>
-                    <div className="flex items-center justify-center text-yellow-600 font-semibold group-hover:translate-x-1 transition-transform">
-                      Get Guidance <ArrowRight className="w-4 h-4 ml-1" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-
-              <Link href="/calculators">
-                <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group">
-                  <CardContent className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <Calculator className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Financial Calculators</h3>
-                    <p className="text-gray-600 text-sm mb-4">Free SIP and EMI calculators to plan your investments and loans.</p>
-                    <div className="flex items-center justify-center text-orange-600 font-semibold group-hover:translate-x-1 transition-transform">
-                      Calculate <ArrowRight className="w-4 h-4 ml-1" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-
-              <Link href="/blog">
-                <Card className="p-6 hover:shadow-xl transition-all duration-300 cursor-pointer group">
-                  <CardContent className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <Award className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-[#1A3D7C]">Educational Blog</h3>
-                    <p className="text-gray-600 text-sm mb-4">Insights, tips, and articles on education and career development.</p>
-                    <div className="flex items-center justify-center text-purple-600 font-semibold group-hover:translate-x-1 transition-transform">
-                      Read Blog <ArrowRight className="w-4 h-4 ml-1" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
             </div>
           </div>
         </section>
 
         {/* How It Works Section */}
-        <section className="py-20 bg-gradient-to-br from-[#F8FAFC] to-white">
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-[#F8FAFC] to-white">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
                 How It Works
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Our simple 4-step process ensures you get the best learning experience tailored to your needs.
+                Getting homework help is simple. Here's our quick 4-step process.
               </p>
             </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              <div className="text-center relative">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
-                  <Calendar className="w-10 h-10 text-white" />
+              {[
+                {
+                  step: 1,
+                  icon: FileText,
+                  title: "Submit Your Work",
+                  description: "Upload your homework, describe the problem, and set your deadline."
+                },
+                {
+                  step: 2,
+                  icon: Clock,
+                  title: "Get a Quote",
+                  description: "Receive a custom price quote within 2 hours—no obligation."
+                },
+                {
+                  step: 3,
+                  icon: CheckCircle,
+                  title: "Approve & Pay",
+                  description: "Review the quote, approve it, and we start working immediately."
+                },
+                {
+                  step: 4,
+                  icon: BookOpen,
+                  title: "Get Your Solution",
+                  description: "Receive step-by-step solutions with explanations you can learn from."
+                }
+              ].map((item, index) => (
+                <div key={index} className="text-center relative">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                    <item.icon className="w-10 h-10 text-white" />
+                  </div>
+                  {index < 3 && (
+                    <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
+                      <ArrowRight className="w-6 h-6 text-[#2BAE66]" />
+                    </div>
+                  )}
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#FFC857] rounded-full flex items-center justify-center text-[#1A3D7C] font-bold text-sm md:hidden">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-poppins font-bold text-[#1A3D7C] mb-3">{item.step}. {item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
                 </div>
-                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
-                  <ArrowRight className="w-6 h-6 text-[#2BAE66]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">1. Sign Up / Free Session</h3>
-                <p className="text-gray-600">Book a free demo session to experience our teaching methodology and meet your potential mentor.</p>
-              </div>
+              ))}
+            </div>
 
-              <div className="text-center relative">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#2BAE66] to-[#FFC857] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
-                  <UserCheck className="w-10 h-10 text-white" />
-                </div>
-                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
-                  <ArrowRight className="w-6 h-6 text-[#2BAE66]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">2. Assessment & Matching</h3>
-                <p className="text-gray-600">We assess your learning style and match you with the perfect mentor based on your needs.</p>
-              </div>
+            <div className="text-center mt-12">
+              <Link href="/how-it-works">
+                <Button variant="outline" className="border-[#1A3D7C] text-[#1A3D7C]">
+                  Learn More About Our Process
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
 
-              <div className="text-center relative">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#FFC857] to-[#1A3D7C] rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
-                  <BookMarked className="w-10 h-10 text-white" />
-                </div>
-                <div className="absolute top-10 left-1/2 transform translate-x-8 hidden lg:block">
-                  <ArrowRight className="w-6 h-6 text-[#2BAE66]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">3. Personalized Learning Plan</h3>
-                <p className="text-gray-600">Get a customized study plan designed specifically for your academic goals and learning pace.</p>
-              </div>
+        {/* Why Choose Us Section */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
+                Why Families Trust Us
+              </h2>
+            </div>
 
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#1A3D7C] to-[#2BAE66] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <TrendingUp className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1A3D7C] mb-3">4. Ongoing Support & Progress</h3>
-                <p className="text-gray-600">Receive continuous support, regular progress tracking, and adjustments to ensure your success.</p>
-              </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {[
+                {
+                  icon: Award,
+                  title: "Certified Tutors",
+                  description: "All our tutors are U.S.-certified educators with teaching credentials or advanced degrees.",
+                  color: "bg-blue-100",
+                  iconColor: "text-[#1A3D7C]"
+                },
+                {
+                  icon: Shield,
+                  title: "Satisfaction Guaranteed",
+                  description: "Not happy with your solution? We'll revise it for free or give you a full refund.",
+                  color: "bg-green-100",
+                  iconColor: "text-[#2BAE66]"
+                },
+                {
+                  icon: Target,
+                  title: "Learn, Don't Just Copy",
+                  description: "Every solution includes step-by-step explanations so you understand the concepts.",
+                  color: "bg-yellow-100",
+                  iconColor: "text-[#FFC857]"
+                },
+                {
+                  icon: Clock,
+                  title: "Fast Turnaround",
+                  description: "Get quotes within 2 hours. Most homework delivered within 24-72 hours.",
+                  color: "bg-purple-100",
+                  iconColor: "text-purple-600"
+                },
+                {
+                  icon: Users,
+                  title: "Same Tutor Every Week",
+                  description: "Build a relationship with a tutor who knows your learning style and tracks progress.",
+                  color: "bg-red-100",
+                  iconColor: "text-red-600"
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Proven Results",
+                  description: "95% of our tutoring students improve by at least one letter grade within 3 months.",
+                  color: "bg-indigo-100",
+                  iconColor: "text-indigo-600"
+                }
+              ].map((item, index) => (
+                <Card key={index} className="p-6 hover:shadow-lg transition-all">
+                  <CardContent className="p-0">
+                    <div className={`w-14 h-14 ${item.color} rounded-full flex items-center justify-center mb-4`}>
+                      <item.icon className={`w-7 h-7 ${item.iconColor}`} />
+                    </div>
+                    <h3 className="text-lg font-poppins font-bold text-[#1A3D7C] mb-2">{item.title}</h3>
+                    <p className="text-gray-600 text-sm">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-6">
-                What Our Students Say
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
+                What Parents Are Saying
               </h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Don't just take our word for it. Here's what our students have to say about their experience with The Tutor Bridge.
-              </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="p-6 bg-white/80 backdrop-blur-sm">
-                <CardContent>
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">
-                    "The Tutor Bridge helped me improve my math grades from 60% to 95%. The personalized approach and 24/7 doubt support made all the difference!"
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-blue-600 font-semibold">A</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Ananya Sharma</div>
-                      <div className="text-sm text-gray-600">Class 12, CBSE</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
 
-              <Card className="p-6 bg-white/80 backdrop-blur-sm">
-                <CardContent>
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">
-                    "The career guidance sessions helped me discover my passion for computer science. Now I'm pursuing my dream course at IIT!"
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-green-600 font-semibold">R</span>
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {[
+                {
+                  quote: "The homework help service is a lifesaver! My daughter was struggling with algebra, and the step-by-step explanations helped her finally understand the concepts.",
+                  name: "Jennifer M.",
+                  role: "Parent of 9th grader",
+                  initial: "J",
+                  color: "bg-blue-100 text-blue-600"
+                },
+                {
+                  quote: "We started with homework help and upgraded to weekly tutoring. Our son's grades went from C's to A's in just two months. Worth every penny!",
+                  name: "Michael T.",
+                  role: "Parent of 11th grader",
+                  initial: "M",
+                  color: "bg-green-100 text-green-600"
+                },
+                {
+                  quote: "The tutors are fantastic—patient, knowledgeable, and they really connect with kids. My daughter actually looks forward to her sessions now.",
+                  name: "Sarah K.",
+                  role: "Parent of 7th grader",
+                  initial: "S",
+                  color: "bg-purple-100 text-purple-600"
+                }
+              ].map((testimonial, index) => (
+                <Card key={index} className="p-6 bg-white">
+                  <CardContent className="p-0">
+                    <div className="flex items-center mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-[#FFC857] fill-current" />
+                      ))}
                     </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Rahul Kumar</div>
-                      <div className="text-sm text-gray-600">IIT Student</div>
+                    <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                    <div className="flex items-center">
+                      <div className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center mr-3`}>
+                        <span className="font-semibold">{testimonial.initial}</span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                        <div className="text-sm text-gray-600">{testimonial.role}</div>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="p-6 bg-white/80 backdrop-blur-sm">
-                <CardContent>
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">
-                    "The study resources are amazing! The notes are so well-structured and easy to understand. My physics concepts are now crystal clear."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-purple-600 font-semibold">P</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Priya Patel</div>
-                      <div className="text-sm text-gray-600">Class 11, ICSE</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <FAQ />
+        {/* Pricing Preview Section */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
+                Simple, Transparent Pricing
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                No hidden fees. No long-term contracts. Pay only for what you need.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Homework Help Pricing */}
+              <Card className="p-8 border-2 border-gray-200">
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-poppins font-bold text-[#1A3D7C] mb-4">Homework Help</h3>
+                  <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-2">
+                    From $15
+                  </div>
+                  <p className="text-gray-600 mb-6">per task</p>
+
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Single problems: $15-50</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Problem sets: $35-100</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Essays: $40-130</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Custom quote in 2 hours</span>
+                    </li>
+                  </ul>
+
+                  <Link href="/homework-help/submit">
+                    <Button className="w-full bg-[#1A3D7C]">
+                      Submit Homework
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+
+              {/* Tutoring Pricing */}
+              <Card className="p-8 border-2 border-[#2BAE66] relative">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#2BAE66] text-white text-xs font-bold px-3 py-1 rounded-full">
+                  BEST VALUE
+                </div>
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-poppins font-bold text-[#1A3D7C] mb-4">Weekly Tutoring</h3>
+                  <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-2">
+                    From $120
+                  </div>
+                  <p className="text-gray-600 mb-6">per month</p>
+
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>4 sessions: $120/mo</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>8 sessions: $200/mo (popular)</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>12 sessions: $350/mo</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-[#2BAE66]" />
+                      <span>Cancel anytime</span>
+                    </li>
+                  </ul>
+
+                  <Link href="/tutoring/free-consultation">
+                    <Button className="w-full bg-[#2BAE66]">
+                      Book Free Consultation
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-8">
+              <Link href="/pricing" className="text-[#1A3D7C] font-semibold hover:underline">
+                View Full Pricing Details →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Preview Section */}
+        <section className="py-16 sm:py-20 bg-[#F8FAFC]">
+          <div className="container mx-auto px-6 max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
+                Frequently Asked Questions
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  q: "Is this considered cheating?",
+                  a: "No. Our homework help provides step-by-step explanations designed to teach concepts, not just answers. We follow academic integrity guidelines, and our goal is to help students understand material so they can succeed independently."
+                },
+                {
+                  q: "How quickly can I get homework help?",
+                  a: "You'll receive a quote within 2 hours. Most standard assignments are delivered within 24-72 hours. Rush and urgent delivery options are available for tighter deadlines."
+                },
+                {
+                  q: "What if I'm not satisfied?",
+                  a: "We offer free revisions if you're not completely satisfied. If we can't resolve the issue, we provide a full refund. Your satisfaction is guaranteed."
+                }
+              ].map((faq, index) => (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <h3 className="font-poppins font-semibold text-[#1A3D7C] mb-2">{faq.q}</h3>
+                    <p className="text-gray-700">{faq.a}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link href="/faq" className="text-[#1A3D7C] font-semibold hover:underline">
+                View All FAQs →
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Final CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white">
+        <section className="py-16 sm:py-20 bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-5xl font-poppins font-bold mb-6">
-              Ready to Start Your Academic Journey?
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold mb-6">
+              Ready to Get Help?
             </h2>
-            <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Join thousands of successful students who have achieved their dreams with The Tutor Bridge. Book your free demo session today!
+            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Whether you need quick homework help or ongoing tutoring support, we're here to help your student succeed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/book-demo-class">
+              <Link href="/homework-help/submit">
                 <Button
                   size="lg"
-                  className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold"
+                  className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-6 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold w-full sm:w-auto"
                 >
-                  Book Your Free Session Now
+                  <FileText className="w-5 h-5 mr-2" />
+                  Submit Homework Now
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/tutoring/free-consultation">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white text-white rounded-xl px-8 py-4 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold"
+                  className="border-2 border-white text-white rounded-xl px-8 py-6 hover:bg-white hover:text-[#1A3D7C] transition-all text-lg font-semibold w-full sm:w-auto"
                 >
-                  Contact Us
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Book Free Consultation
                 </Button>
               </Link>
             </div>
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/80">
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/90">
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5 text-[#FFC857]" />
-                <span>No Obligation</span>
+                <span>No obligation</span>
               </div>
               <div className="flex items-center gap-2">
                 <Trophy className="w-5 h-5 text-[#FFC857]" />
-                <span>Satisfaction Guaranteed</span>
+                <span>Satisfaction guaranteed</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-[#FFC857]" />
-                <span>Instant Results</span>
+                <span>Fast turnaround</span>
               </div>
             </div>
           </div>
@@ -505,82 +696,60 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
-        <div className="container px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">TheTutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                India's leading online tutoring platform helping students achieve academic excellence since 2020.
+                Expert homework help and online tutoring for grades 6-12. Helping students succeed in Math, Science, and English.
               </p>
-              <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/company/thetutorbridge/" className="text-gray-400 hover:text-white transition-colors">
-                  LinkedIn
-                </a>
-                <a href="https://t.me/thetutorbridge" className="text-gray-400 hover:text-white transition-colors">
-                  Telegram
-                </a>
-              </div>
             </div>
-            {/* <div>
-              <h4 className="font-bold mb-4">Services</h4>
+            <div>
+              <h4 className="font-bold mb-4">Homework Help</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/doubt-solving" className="hover:text-white transition-colors">
-                    Doubt Solving
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/career-guidance" className="hover:text-white transition-colors">
-                    Career Guidance
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/study-resources" className="hover:text-white transition-colors">
-                    Study Resources
-                  </Link>
-                </li>
+                <li><Link href="/homework-help/math" className="hover:text-white">Math Help</Link></li>
+                <li><Link href="/homework-help/science" className="hover:text-white">Science Help</Link></li>
+                <li><Link href="/homework-help/english" className="hover:text-white">English Help</Link></li>
+                <li><Link href="/homework-help/submit" className="hover:text-white">Submit Homework</Link></li>
               </ul>
-            </div> */}
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Tutoring</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/tutoring/math" className="hover:text-white">Math Tutoring</Link></li>
+                <li><Link href="/tutoring/science" className="hover:text-white">Science Tutoring</Link></li>
+                <li><Link href="/tutoring/english" className="hover:text-white">English Tutoring</Link></li>
+                <li><Link href="/tutoring/free-consultation" className="hover:text-white">Free Consultation</Link></li>
+              </ul>
+            </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/about" className="hover:text-white transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="hover:text-white transition-colors">
-                    Blog
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>info@thetutorbridge.com</li>
-                <li>+91 9310096171</li>
+                <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
+                <li><Link href="/how-it-works" className="hover:text-white">How It Works</Link></li>
+                <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
+                <li><Link href="/about" className="hover:text-white">About Us</Link></li>
+                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>
-              © {new Date().getFullYear()} The Tutor Bridge. All rights reserved. | Helping students excel since 2020
-            </p>
+          <div className="border-t border-gray-800 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-400 text-center md:text-left">
+                © {new Date().getFullYear()} The Tutor Bridge. All rights reserved.
+              </p>
+              <div className="flex gap-6 text-gray-400">
+                <Link href="/calculators" className="hover:text-white text-sm">Calculators</Link>
+                <Link href="/roadmap" className="hover:text-white text-sm">Career Roadmaps</Link>
+                <Link href="/blog" className="hover:text-white text-sm">Blog</Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
-
-      <FloaterMessenger />
     </div>
   )
 }

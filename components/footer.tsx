@@ -56,7 +56,6 @@ export function Footer() {
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
               <li>info@thetutorbridge.com</li>
-              <li>+91 9310096171</li>
             </ul>
           </div>
         </div>

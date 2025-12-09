@@ -83,13 +83,13 @@ export default function About() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                    Founded in 2020, The Tutor Bridge was born from one mission: to make quality education accessible, 
-                    personalized, and inspiring. From instant doubt-solving to career guidance, we've supported 
-                    <span className="font-semibold text-[#1A3D7C]"> 10,000+ students</span> in achieving academic success.
+                    Founded in 2020, The Tutor Bridge was born from one mission: to make quality education accessible,
+                    personalized, and inspiring. From homework help to 1-on-1 tutoring, we've supported
+                    <span className="font-semibold text-[#1A3D7C]"> thousands of students</span> in achieving academic success.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    What started as a simple idea to bridge the gap between students and quality education has grown 
-                    into India's leading online tutoring platform, empowering learners across 15+ countries.
+                    What started as a simple idea to bridge the gap between students and quality education has grown
+                    into a trusted online tutoring platform, helping K-12 students across the United States excel in Math, Science, and English.
                   </p>
                 </div>
                 <div className="relative">
@@ -213,7 +213,7 @@ export default function About() {
                     <h3 className="text-2xl font-poppins font-bold text-[#1A3D7C] mb-4">Support</h3>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed text-center">
-                    24/7 doubt-solving & a friendly mentor community always ready to help you succeed.
+                    Dedicated homework help & a friendly tutor community always ready to help you succeed.
                   </p>
                 </div>
               </div>
@@ -237,26 +237,26 @@ export default function About() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="text-5xl md:text-6xl font-poppins font-bold text-[#FFC857] mb-4">
-                    10,000+
+                    95%
                   </div>
-                  <div className="text-2xl font-poppins font-semibold mb-2">Students Guided</div>
-                  <p className="text-white/90">Learners who have achieved academic success with our support</p>
+                  <div className="text-2xl font-poppins font-semibold mb-2">Satisfaction Rate</div>
+                  <p className="text-white/90">Students and parents who recommend our services</p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="text-5xl md:text-6xl font-poppins font-bold text-[#FFC857] mb-4">
-                    5,000+
+                    4.9/5
                   </div>
-                  <div className="text-2xl font-poppins font-semibold mb-2">Study Resources</div>
-                  <p className="text-white/90">Comprehensive materials shared across all subjects</p>
+                  <div className="text-2xl font-poppins font-semibold mb-2">Tutor Rating</div>
+                  <p className="text-white/90">Average rating from student feedback</p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="text-5xl md:text-6xl font-poppins font-bold text-[#FFC857] mb-4">
-                    15+
+                    50
                   </div>
-                  <div className="text-2xl font-poppins font-semibold mb-2">Countries</div>
-                  <p className="text-white/90">Global reach with learners from around the world</p>
+                  <div className="text-2xl font-poppins font-semibold mb-2">U.S. States</div>
+                  <p className="text-white/90">Serving students across all 50 states</p>
                 </div>
               </div>
             </div>
@@ -311,7 +311,7 @@ export default function About() {
                       </div>
                       <div>
                         <h3 className="font-poppins font-bold text-lg text-[#1A3D7C]">Support Team</h3>
-                        <p className="text-gray-600">24/7 community support for instant doubt resolution</p>
+                        <p className="text-gray-600">Dedicated support for homework help and tutoring questions</p>
                       </div>
                     </div>
                   </div>
@@ -351,54 +351,54 @@ export default function About() {
                 <div className="bg-[#F5F5F5] p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-[#1A3D7C] rounded-full flex items-center justify-center text-white font-bold">
-                      A
+                      E
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-poppins font-bold text-[#1A3D7C]">Ananya Sharma</h4>
-                      <p className="text-gray-600 text-sm">Class 12 Student</p>
+                      <h4 className="font-poppins font-bold text-[#1A3D7C]">Emily T.</h4>
+                      <p className="text-gray-600 text-sm">10th Grade Student, California</p>
                     </div>
                   </div>
                   <p className="text-gray-700 italic">
-                    "The instant doubt-solving feature saved me during my board exam preparation. 
-                    The mentors are so patient and explain concepts clearly!"
+                    "The homework help saved me during finals week! My tutor explained calculus concepts
+                    so clearly that I finally understood what my teacher couldn't explain."
                   </p>
                   <div className="flex text-[#FFC857] mt-4">
                     ⭐⭐⭐⭐⭐
                   </div>
                 </div>
-                
+
                 <div className="bg-[#F5F5F5] p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-[#2BAE66] rounded-full flex items-center justify-center text-white font-bold">
-                      R
+                      M
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-poppins font-bold text-[#1A3D7C]">Rajesh Kumar</h4>
-                      <p className="text-gray-600 text-sm">Parent</p>
+                      <h4 className="font-poppins font-bold text-[#1A3D7C]">Michael R.</h4>
+                      <p className="text-gray-600 text-sm">Parent, Texas</p>
                     </div>
                   </div>
                   <p className="text-gray-700 italic">
-                    "My daughter's confidence has grown tremendously since joining The Tutor Bridge. 
-                    The career guidance sessions helped her choose the right path."
+                    "My son's grades went from C's to A's in just two months of tutoring.
+                    The personalized attention made all the difference."
                   </p>
                   <div className="flex text-[#FFC857] mt-4">
                     ⭐⭐⭐⭐⭐
                   </div>
                 </div>
-                
+
                 <div className="bg-[#F5F5F5] p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-[#FFC857] rounded-full flex items-center justify-center text-white font-bold">
-                      P
+                      S
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-poppins font-bold text-[#1A3D7C]">Priya Patel</h4>
-                      <p className="text-gray-600 text-sm">Engineering Student</p>
+                      <h4 className="font-poppins font-bold text-[#1A3D7C]">Sarah M.</h4>
+                      <p className="text-gray-600 text-sm">8th Grade Student, New York</p>
                     </div>
                   </div>
                   <p className="text-gray-700 italic">
-                    "The study resources are comprehensive and well-organized. 
-                    It's like having a personal tutor available 24/7!"
+                    "I was struggling with chemistry, but my tutor made it fun and easy to understand.
+                    Now it's my favorite subject!"
                   </p>
                   <div className="flex text-[#FFC857] mt-4">
                     ⭐⭐⭐⭐⭐
@@ -422,13 +422,13 @@ export default function About() {
                   Join the Journey
                 </h2>
                 <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed px-4 max-w-3xl mx-auto">
-                  Whether you're in Class 6 or preparing for college, The Tutor Bridge is here to guide your path. 
+                  Whether you're in 6th grade or preparing for college, The Tutor Bridge is here to guide your path.
                   Let's build your future, together.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-                  <Link href="/book-demo-class" className="w-full sm:w-auto">
+                  <Link href="/tutoring/free-consultation" className="w-full sm:w-auto">
                     <span className="inline-block bg-white text-[#1A3D7C] text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-poppins font-semibold hover:bg-gray-100 transition-all w-full text-center">
-                      Start Your Journey
+                      Book Free Consultation
                     </span>
                   </Link>
                   <Link href="/contact" className="w-full sm:w-auto">
@@ -452,7 +452,7 @@ export default function About() {
                   <span className="text-xl font-bold">TheTutorBridge</span>
                 </div>
                 <p className="text-gray-400 leading-relaxed">
-                  India's leading online tutoring platform helping students achieve academic excellence since 2020.
+                  Expert homework help and 1-on-1 tutoring for grades 6-12 in Math, Science, and English.
                 </p>
                 <div className="flex space-x-4">
                   <a href="https://www.linkedin.com/company/thetutorbridge/" className="text-gray-400 hover:text-white transition-colors">
@@ -467,18 +467,18 @@ export default function About() {
                 <h4 className="font-bold mb-4">Services</h4>
                 <ul className="space-y-2 text-gray-400">
                   <li>
-                    <Link href="/doubt-solving" className="hover:text-white transition-colors">
-                      Doubt Solving
+                    <Link href="/homework-help" className="hover:text-white transition-colors">
+                      Homework Help
                     </Link>
                   </li>
                   <li>
-                    <Link href="/career-guidance" className="hover:text-white transition-colors">
-                      Career Guidance
+                    <Link href="/tutoring" className="hover:text-white transition-colors">
+                      1-on-1 Tutoring
                     </Link>
                   </li>
                   <li>
-                    <Link href="/study-resources" className="hover:text-white transition-colors">
-                      Study Resources
+                    <Link href="/tutoring/free-consultation" className="hover:text-white transition-colors">
+                      Free Consultation
                     </Link>
                   </li>
                 </ul>
@@ -507,7 +507,6 @@ export default function About() {
                 <h4 className="font-bold mb-4">Contact</h4>
                 <ul className="space-y-2 text-gray-400">
                   <li>info@thetutorbridge.com</li>
-                  <li>+91 9310096171</li>
                 </ul>
               </div>
             </div>

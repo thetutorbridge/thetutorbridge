@@ -122,11 +122,6 @@ export default function Contact() {
                 >
                   info@thetutorbridge.com
                 </a>
-                <br />
-                Call us:{" "}
-                <a href="tel:+919876543210" className="text-brand-blue underline">
-                  +91 9310096171
-                </a>
               </div>
             </div>
           </div>
