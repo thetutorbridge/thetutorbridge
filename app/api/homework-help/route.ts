@@ -47,8 +47,8 @@ export async function POST(request: NextRequest) {
       files
     } = body
 
-    // Validate required fields
-    if (!parentName || !studentName || !email || !phone || !grade || !subject || !description || !urgency) {
+    // Validate required fields (phone is optional)
+    if (!parentName || !studentName || !email || !grade || !subject || !description || !urgency) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -59,6 +59,9 @@ export async function POST(request: NextRequest) {
     const emailSubject = `New Homework Help Request - ${subject} - ${studentName}`
 
     const urgencyLabels: Record<string, string> = {
+      "immediate": "URGENT - Within 60 minutes (+$10)",
+      "24hr": "Priority - Within 24 hours",
+      "48hr": "Standard - Within 48 hours",
       "urgent": "URGENT (Under 24 hours)",
       "rush": "Rush (24-48 hours)",
       "standard": "Standard (48-72 hours)",
