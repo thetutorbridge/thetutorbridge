@@ -5,6 +5,10 @@ import { BookOpen, MessageSquare, Users, Award, Star, CheckCircle, ArrowRight, T
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
+import { createAdminClient } from "@/lib/supabase"
+
+// Revalidate every hour
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: "Online Homework Help & Tutoring for Grades 6-12 | Math, Science, English | The Tutor Bridge",
@@ -52,7 +56,30 @@ const jsonLd = {
   serviceType: ["Homework Help", "Online Tutoring", "Academic Support"]
 }
 
-export default function Home() {
+// Fetch latest blog posts for homepage
+async function getLatestPosts() {
+  try {
+    const supabase = createAdminClient()
+    const { data, error } = await supabase
+      .from('blog_posts')
+      .select('id, title, slug, excerpt, featured_image, published_at')
+      .eq('status', 'published')
+      .order('published_at', { ascending: false })
+      .limit(3)
+
+    if (error) {
+      console.error('Error fetching latest posts:', error)
+      return []
+    }
+    return data || []
+  } catch (error) {
+    console.error('Error fetching latest posts:', error)
+    return []
+  }
+}
+
+export default async function Home() {
+  const latestPosts = await getLatestPosts()
   return (
     <div className="relative min-h-screen flex flex-col overflow-x-hidden font-merriweather">
       <script
@@ -645,6 +672,61 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Latest From Our Blog Section - Critical for SEO */}
+        {latestPosts.length > 0 && (
+          <section className="py-16 sm:py-20 bg-white">
+            <div className="container mx-auto px-6">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
+                  Latest From Our Blog
+                </h2>
+                <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                  Study tips, educational insights, and resources to help students succeed.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {latestPosts.map((post) => (
+                  <Link key={post.id} href={`/blog/${post.slug}`}>
+                    <Card className="h-full hover:shadow-xl transition-all cursor-pointer group overflow-hidden">
+                      {post.featured_image && (
+                        <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
+                          <Image
+                            src={post.featured_image}
+                            alt={post.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      )}
+                      <CardContent className="p-6">
+                        <h3 className="text-lg font-poppins font-bold text-[#1A3D7C] mb-2 group-hover:text-[#2BAE66] transition-colors line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm line-clamp-2 mb-3">
+                          {post.excerpt}
+                        </p>
+                        <span className="text-[#2BAE66] text-sm font-semibold flex items-center gap-1">
+                          Read More <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="text-center mt-10">
+                <Link href="/blog">
+                  <Button variant="outline" className="border-[#1A3D7C] text-[#1A3D7C]">
+                    View All Articles
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Final CTA Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-r from-[#1A3D7C] to-[#2BAE66] text-white">

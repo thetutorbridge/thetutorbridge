@@ -85,7 +85,7 @@ async function getPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
-// Fetch related posts
+// Fetch related posts - try tag matching first, fall back to recent posts
 async function getRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
   try {
     const supabase = createAdminClient()
@@ -94,16 +94,25 @@ async function getRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
       .select('id, title, slug, excerpt, featured_image, author_name, published_at, tags')
       .eq('status', 'published')
       .neq('id', post.id)
+      .order('published_at', { ascending: false })
       .limit(100)
 
-    if (!data) return []
+    if (!data || data.length === 0) return []
 
-    // Filter posts with overlapping tags
-    const related = data
-      .filter(p => p.tags.some((tag: string) => post.tags.includes(tag)))
+    // Try to find posts with overlapping tags first
+    const tagMatches = data
+      .filter(p => p.tags && post.tags && p.tags.some((tag: string) => post.tags.includes(tag)))
       .slice(0, 3)
 
-    return related as BlogPost[]
+    // If we found tag matches, return them
+    if (tagMatches.length >= 3) {
+      return tagMatches as BlogPost[]
+    }
+
+    // Otherwise, fall back to most recent posts (excluding current)
+    // This ensures Related Articles ALWAYS shows something for internal linking
+    const recentPosts = data.slice(0, 3)
+    return recentPosts as BlogPost[]
   } catch (error) {
     console.error('❌ Error fetching related posts:', error)
     return []
