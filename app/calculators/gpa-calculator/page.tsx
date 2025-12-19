@@ -1131,6 +1131,48 @@ export default function GPACalculatorPage() {
         </div>
       </section>
 
+      {/* Related Articles Section */}
+      <section className="bg-white py-12 px-6 border-t border-gray-200">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-2xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+            <BookOpen className="w-6 h-6 mr-2 text-[#2BAE66]" />
+            Related Articles
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link href="/blog/20-reasons-why-education-is-important" className="group">
+              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:border-[#2BAE66] hover:shadow-lg transition-all">
+                <h3 className="font-semibold text-[#1A3D7C] group-hover:text-[#2BAE66] mb-2 line-clamp-2">
+                  20 Reasons Why Education Is Important
+                </h3>
+                <p className="text-sm text-gray-600 line-clamp-2">
+                  Discover why education matters for lifelong success and how GPA reflects academic achievement.
+                </p>
+              </div>
+            </Link>
+            <Link href="/blog/what-is-competency-based-education" className="group">
+              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:border-[#2BAE66] hover:shadow-lg transition-all">
+                <h3 className="font-semibold text-[#1A3D7C] group-hover:text-[#2BAE66] mb-2 line-clamp-2">
+                  What Is Competency-Based Education?
+                </h3>
+                <p className="text-sm text-gray-600 line-clamp-2">
+                  Learn about mastery-based learning approaches beyond traditional GPA grading systems.
+                </p>
+              </div>
+            </Link>
+            <Link href="/blog/what-country-has-the-best-education" className="group">
+              <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:border-[#2BAE66] hover:shadow-lg transition-all">
+                <h3 className="font-semibold text-[#1A3D7C] group-hover:text-[#2BAE66] mb-2 line-clamp-2">
+                  What Country Has the Best Education?
+                </h3>
+                <p className="text-sm text-gray-600 line-clamp-2">
+                  Compare global education systems and understand how different countries evaluate student performance.
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-[#1A3D7C] via-[#2BAE66] to-[#1A3D7C] text-white py-16 px-6">
         <div className="container mx-auto max-w-4xl text-center">

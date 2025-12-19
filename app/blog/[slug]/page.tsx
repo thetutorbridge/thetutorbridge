@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
+import { cache } from "react"
 import { ArrowLeft, Calendar, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -9,7 +10,6 @@ import { Navigation } from "@/components/navigation"
 import { createAdminClient } from "@/lib/supabase"
 import { BlogPostContent } from "./BlogPostContent"
 import '@/components/blog/editor-styles.css'
-import '@/app/globals.css'
 
 // Enable ISR - revalidate every hour for SEO stability
 // Shorter intervals can confuse search engines with constantly changing cache headers
@@ -40,26 +40,23 @@ interface BlogPost {
 // Generate static params for all published blog posts
 export async function generateStaticParams() {
   try {
-    console.log('🔄 Generating static params for blog posts...')
     const supabase = createAdminClient()
     const { data: posts } = await supabase
       .from('blog_posts')
       .select('slug')
       .eq('status', 'published')
 
-    console.log(`✅ Generated ${posts?.length || 0} static blog routes`)
-
     return posts?.map((post) => ({
       slug: post.slug,
     })) || []
   } catch (error) {
-    console.error('❌ Error generating static params:', error)
     return []
   }
 }
 
-// Fetch post data at build time
-async function getPost(slug: string): Promise<BlogPost | null> {
+// Fetch post data with React cache to prevent duplicate calls
+// generateMetadata and page component share the same cached result
+const getPost = cache(async (slug: string): Promise<BlogPost | null> => {
   try {
     const supabase = createAdminClient()
     const { data, error } = await supabase
@@ -70,32 +67,27 @@ async function getPost(slug: string): Promise<BlogPost | null> {
       .single()
 
     if (error || !data) {
-      console.error(`❌ Post not found: ${slug}`)
       return null
     }
 
-    console.log(`✅ Fetched blog post: ${data.title}`)
-    console.log(`📸 Featured image: ${data.featured_image}`)
-    console.log(`👤 Author image: ${data.author_image}`)
-    console.log(`📊 Full data keys:`, Object.keys(data))
     return data as BlogPost
   } catch (error) {
-    console.error('❌ Error fetching post:', error)
     return null
   }
-}
+})
 
 // Fetch related posts - try tag matching first, fall back to recent posts
 async function getRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
   try {
     const supabase = createAdminClient()
+    // Only fetch 10 posts since we only display 3
     const { data } = await supabase
       .from('blog_posts')
       .select('id, title, slug, excerpt, featured_image, author_name, published_at, tags')
       .eq('status', 'published')
       .neq('id', post.id)
       .order('published_at', { ascending: false })
-      .limit(100)
+      .limit(10)
 
     if (!data || data.length === 0) return []
 
@@ -114,7 +106,6 @@ async function getRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
     const recentPosts = data.slice(0, 3)
     return recentPosts as BlogPost[]
   } catch (error) {
-    console.error('❌ Error fetching related posts:', error)
     return []
   }
 }

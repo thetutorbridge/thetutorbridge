@@ -46,25 +46,20 @@ interface BlogPost {
 
 async function getPosts(): Promise<BlogPost[]> {
   try {
-    console.time('Fetching blog posts');
     const supabase = createAdminClient();
+    // Only select fields needed for display to reduce payload size
     const { data, error } = await supabase
       .from('blog_posts')
-      .select('id, title, slug, excerpt, featured_image, author_name, author_linkedin, author_image, tags, status, published_at, created_at, updated_at, view_count, read_time, meta_title, meta_description, meta_keywords')
+      .select('id, title, slug, excerpt, featured_image, author_name, published_at')
       .eq('status', 'published')
       .order('published_at', { ascending: false });
 
-    console.timeEnd('Fetching blog posts');
-
     if (error) {
-      console.error('Database error fetching posts:', error);
       return [];
     }
 
-    console.log(`✅ Fetched ${data?.length || 0} blog posts`);
     return data || [];
   } catch (error) {
-    console.error('Error fetching posts:', error);
     return [];
   }
 }
