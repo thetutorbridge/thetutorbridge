@@ -11,8 +11,9 @@ import { BlogPostContent } from "./BlogPostContent"
 import '@/components/blog/editor-styles.css'
 import '@/app/globals.css'
 
-// Enable ISR - revalidate every 10 seconds for faster content updates
-export const revalidate = 10
+// Enable ISR - revalidate every hour for SEO stability
+// Shorter intervals can confuse search engines with constantly changing cache headers
+export const revalidate = 3600
 
 interface BlogPost {
   id: string;
