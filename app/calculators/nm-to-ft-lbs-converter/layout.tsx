@@ -104,12 +104,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/nm-to-ft-lbs-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/nm-to-ft-lbs-converter',
   },
   openGraph: {
     title: 'Free Nm to ft-lbs Converter - Torque Unit Conversion',
     description: 'Convert torque between Newton-meters and foot-pounds instantly. Includes inch-pounds, kgf-m, and common automotive torque specifications.',
-    url: 'https://thetutorbridge.com/calculators/nm-to-ft-lbs-converter',
+    url: 'https://www.thetutorbridge.com/calculators/nm-to-ft-lbs-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

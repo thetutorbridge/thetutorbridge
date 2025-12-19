@@ -48,17 +48,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/vo2-max-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/vo2-max-calculator',
   },
   openGraph: {
     title: 'VO2 Max Calculator - Aerobic Capacity Test',
     description: 'Calculate your VO2 max using 5 different test methods. Get your fitness classification and tips to improve cardiovascular health.',
-    url: 'https://thetutorbridge.com/calculators/vo2-max-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/vo2-max-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'VO2 Max Calculator - The Tutor Bridge',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'VO2 Max Calculator - Free Tool',
     description: 'Calculate your aerobic capacity with 5 test methods. Free VO2 max calculator with fitness classification.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

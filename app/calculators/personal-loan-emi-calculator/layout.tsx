@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Personal Loan EMI Calculator - The Tutor Bridge",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Personal Loan EMI Calculator India — Calculate Personal Loan EMI",
     description: "Free personal loan EMI calculator. Calculate monthly payments instantly for all banks.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/calculators/personal-loan-emi-calculator",

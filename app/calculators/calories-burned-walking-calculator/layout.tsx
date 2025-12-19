@@ -132,12 +132,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/calories-burned-walking-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/calories-burned-walking-calculator',
   },
   openGraph: {
     title: 'Free Calories Burned Walking Calculator - Steps, Distance, Time',
     description: 'Calculate calories burned while walking by steps, distance, or time. Works for treadmill and outdoor walking with incline/decline adjustments.',
-    url: 'https://thetutorbridge.com/calculators/calories-burned-walking-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/calories-burned-walking-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

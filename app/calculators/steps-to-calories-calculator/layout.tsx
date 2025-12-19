@@ -116,12 +116,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/steps-to-calories-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/steps-to-calories-calculator',
   },
   openGraph: {
     title: 'Free Steps to Calories Calculator - Walking Calorie Counter',
     description: 'Calculate how many calories you burn walking based on your steps, weight, height, and walking speed. Perfect for tracking your fitness goals.',
-    url: 'https://thetutorbridge.com/calculators/steps-to-calories-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/steps-to-calories-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/feet-and-inches-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/feet-and-inches-calculator',
   },
   openGraph: {
     title: 'Feet and Inches Calculator - Add, Subtract, Multiply & Divide',
     description: 'Calculate with feet and inches using fractions and decimals. Perfect for construction, carpentry, and home improvement projects with step-by-step solutions.',
-    url: 'https://thetutorbridge.com/calculators/feet-and-inches-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/feet-and-inches-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Feet and Inches Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Feet and Inches Calculator - Free Tool',
     description: 'Add, subtract, multiply, and divide feet and inches with fractions. Perfect for construction and carpentry.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

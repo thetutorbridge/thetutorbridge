@@ -838,7 +838,7 @@ export default function StepsToKmCalculator() {
             "@type": "WebApplication",
             "name": "Steps to Km Calculator",
             "description": "Convert walking steps to kilometers based on stride length, height, or gender averages. Find how far 10,000 steps is in km.",
-            "url": "https://thetutorbridge.com/calculators/steps-to-km-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/steps-to-km-calculator",
             "applicationCategory": "UtilityApplication",
             "operatingSystem": "Any",
             "offers": {

@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/bmi-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/bmi-calculator',
   },
   openGraph: {
     title: 'BMI Calculator - Calculate Your Body Mass Index',
     description: 'Free BMI calculator for adults and children. Calculate Body Mass Index using metric or imperial units with BMI classification and healthy weight ranges.',
-    url: 'https://thetutorbridge.com/calculators/bmi-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/bmi-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'BMI Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'BMI Calculator - Calculate Your Body Mass Index',
     description: 'Calculate your BMI with our free calculator. Get BMI classification, healthy weight range, and health insights for adults and children.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

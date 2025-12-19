@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Class 10 Maths Study Resources - The Tutor Bridge",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Class 10 Maths Study Resources",
     description: "Complete Class 10 maths study resources including all chapters. Complete Maths study materials including all chapters covering algebra, geometry, arithmetic, and statistics concepts. Free notes, explanations, and practice questions.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/study-resources/class-10/maths",

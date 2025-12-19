@@ -103,12 +103,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/steps-to-miles-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/steps-to-miles-calculator',
   },
   openGraph: {
     title: 'Free Steps to Miles Calculator - Convert Walking Steps to Distance',
     description: 'Convert your walking steps to miles, kilometers, or meters. Calculate based on average stride length, your height, or custom measurements.',
-    url: 'https://thetutorbridge.com/calculators/steps-to-miles-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/steps-to-miles-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

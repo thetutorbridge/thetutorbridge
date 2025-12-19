@@ -595,7 +595,7 @@ export default function TbspToGramsConverter() {
             '@type': 'WebApplication',
             name: 'Tbsp to Grams Converter',
             description: 'Free tbsp to grams converter for cooking. Convert tablespoons to grams for butter, flour, sugar, honey, and 15+ ingredients.',
-            url: 'https://thetutorbridge.com/calculators/tbsp-to-grams-converter',
+            url: 'https://www.thetutorbridge.com/calculators/tbsp-to-grams-converter',
             applicationCategory: 'UtilityApplication',
             operatingSystem: 'Any',
             permissions: 'browser',

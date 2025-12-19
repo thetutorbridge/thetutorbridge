@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Motivational Sessions - The Tutor Bridge",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Motivational Sessions for Student Success",
     description: "Join our motivational sessions designed to boost student confidence, improve study habits, and achieve academic excellence.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/motivational-sessions",

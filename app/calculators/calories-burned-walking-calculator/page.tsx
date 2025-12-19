@@ -301,7 +301,7 @@ export default function CaloriesBurnedWalkingCalculator() {
     "@type": "WebApplication",
     "name": "Calories Burned Walking Calculator",
     "description": "Calculate calories burned while walking based on weight, distance, time, steps, speed, and terrain slope. Includes treadmill and outdoor walking.",
-    "url": "https://thetutorbridge.com/calculators/calories-burned-walking-calculator",
+    "url": "https://www.thetutorbridge.com/calculators/calories-burned-walking-calculator",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": {

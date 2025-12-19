@@ -65,17 +65,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/scientific-notation-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/scientific-notation-converter',
   },
   openGraph: {
     title: 'Scientific Notation Converter - Convert to Standard & E-notation',
     description: 'Free scientific notation converter with step-by-step conversions. Convert between scientific notation, standard form, e-notation, engineering notation, and word form instantly.',
-    url: 'https://thetutorbridge.com/calculators/scientific-notation-converter',
+    url: 'https://www.thetutorbridge.com/calculators/scientific-notation-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Scientific Notation Converter - The Tutor Bridge',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Scientific Notation Converter - Free Tool',
     description: 'Convert numbers between scientific notation, standard form, e-notation, and engineering notation with detailed explanations.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

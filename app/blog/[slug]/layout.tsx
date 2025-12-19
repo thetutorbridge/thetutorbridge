@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const title = post.meta_title || post.title || 'Blog Post'
     const description = post.meta_description || 'Read educational insights and study tips on The Tutor Bridge blog.'
     const keywords = post.meta_keywords || []
-    const imageUrl = post.featured_image || '/og-image.jpg'
+    const imageUrl = post.featured_image || '/og-image.png'
     const publishedDate = post.published_at
     const author = post.author_name || 'The Tutor Bridge'
 

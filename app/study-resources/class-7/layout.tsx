@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Class 7 Study Resources - The Tutor Bridge",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Class 7 Study Resources & Materials",
     description: "Comprehensive study resources for Class 7 students including science, mathematics, and other subjects.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/study-resources/class-7",

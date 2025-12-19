@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/random-number-generator',
+    canonical: 'https://www.thetutorbridge.com/calculators/random-number-generator',
   },
   openGraph: {
     title: 'Random Number Generator - Create Random Numbers Instantly',
     description: 'Free random number generator with custom range, quantity control, and sorting options. Generate random numbers for games, lottery, passwords, and more.',
-    url: 'https://thetutorbridge.com/calculators/random-number-generator',
+    url: 'https://www.thetutorbridge.com/calculators/random-number-generator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Random Number Generator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Random Number Generator - Free Random Picker Tool',
     description: 'Generate random numbers with custom range and options. Perfect for lottery, games, sampling, and random selection.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

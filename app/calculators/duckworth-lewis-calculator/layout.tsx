@@ -48,17 +48,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/duckworth-lewis-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/duckworth-lewis-calculator',
   },
   openGraph: {
     title: 'Duckworth Lewis Calculator - DLS Method for Cricket',
     description: 'Calculate revised targets for rain-interrupted cricket matches using the Duckworth Lewis Stern method. Free DLS calculator.',
-    url: 'https://thetutorbridge.com/calculators/duckworth-lewis-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/duckworth-lewis-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Duckworth Lewis Calculator - The Tutor Bridge',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Duckworth Lewis Calculator - Free DLS Tool',
     description: 'Calculate DLS revised targets for rain-interrupted cricket matches. Free online calculator.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Class 6 Science Chapter 3 - Mindful Eating A Path to a Healthy Body",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chapter 3: Mindful Eating - A Path to a Healthy Body - Class 6",
     description: "Learn about mindful eating and healthy body practices with Class 6 Science Chapter 3.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/study-resources/class-6/science/chapter-3-mindful-eating-a-path-to-a-healthy-body",

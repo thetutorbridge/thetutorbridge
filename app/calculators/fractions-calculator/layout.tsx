@@ -61,17 +61,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/fractions-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/fractions-calculator',
   },
   openGraph: {
     title: 'Fractions Calculator - Add, Subtract, Multiply, Divide with Steps',
     description: 'Free fractions calculator with step-by-step solutions and proper mathematical notation. Calculate LCD, simplify fractions, and convert to mixed numbers instantly.',
-    url: 'https://thetutorbridge.com/calculators/fractions-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/fractions-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Fractions Calculator - The Tutor Bridge',
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fractions Calculator - Free Fraction Operations Tool',
     description: 'Add, subtract, multiply, and divide fractions with detailed step-by-step solutions. Calculate LCD, simplify, and convert to mixed numbers.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

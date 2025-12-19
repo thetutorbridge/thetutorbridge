@@ -48,17 +48,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/grams-to-cups-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/grams-to-cups-calculator',
   },
   openGraph: {
     title: 'Grams to Cups Calculator - Cooking Conversion Tool',
     description: 'Convert grams to cups for any ingredient. Free cooking calculator with 20+ ingredients and multiple cup types.',
-    url: 'https://thetutorbridge.com/calculators/grams-to-cups-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/grams-to-cups-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Grams to Cups Calculator - The Tutor Bridge',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Grams to Cups Calculator - Free Tool',
     description: 'Convert grams to cups for flour, sugar, butter, and 20+ ingredients. Free cooking converter.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

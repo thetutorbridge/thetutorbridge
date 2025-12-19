@@ -65,17 +65,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/height-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/height-calculator',
   },
   openGraph: {
     title: 'Height Calculator - Predict Your Child\'s Adult Height',
     description: 'Predict your child\'s future adult height using Khamis-Roche and Mid-Parental methods. Free calculator for boys and girls.',
-    url: 'https://thetutorbridge.com/calculators/height-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/height-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Height Calculator - The Tutor Bridge',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Height Calculator - Child Height Predictor',
     description: 'Predict your child\'s future adult height using scientific methods. Free online calculator.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

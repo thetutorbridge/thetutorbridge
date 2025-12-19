@@ -776,7 +776,7 @@ export default function OvertimeCalculator() {
             "@type": "WebApplication",
             "name": "Overtime Calculator",
             "description": "Calculate overtime pay with regular hours, overtime hours, and multipliers. Supports time and a half (1.5x), double time (2x), and custom rates.",
-            "url": "https://thetutorbridge.com/calculators/overtime-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/overtime-calculator",
             "applicationCategory": "FinanceApplication",
             "operatingSystem": "Any",
             "offers": {

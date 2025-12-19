@@ -63,17 +63,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/love-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/love-calculator',
   },
   openGraph: {
     title: 'Love Calculator - Test Your Love Compatibility',
     description: 'Free love calculator to test romantic compatibility. Calculate your love match percentage between two names for fun!',
-    url: 'https://thetutorbridge.com/calculators/love-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/love-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Love Calculator - The Tutor Bridge',
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Love Calculator - Test Your Love Compatibility',
     description: 'Calculate your love compatibility percentage with our fun love calculator. Test romantic match between two names!',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

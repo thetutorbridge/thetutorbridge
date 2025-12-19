@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Class 6 Science Chapter 1 - The Wonderful World of Science",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chapter 1: The Wonderful World of Science - Class 6",
     description: "Learn about the wonderful world of science with comprehensive study materials for Class 6 Chapter 1.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/study-resources/class-6/science/chapter-1-the-wonderful-world-of-science",

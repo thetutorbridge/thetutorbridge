@@ -63,17 +63,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/simple-interest-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/simple-interest-calculator',
   },
   openGraph: {
     title: 'Simple Interest Calculator - Calculate SI, Principal, Rate & Time',
     description: 'Free calculator to compute simple interest, principal, rate, time, or total amount using A = P(1 + rt). Get detailed step-by-step solutions for all calculations.',
-    url: 'https://thetutorbridge.com/calculators/simple-interest-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/simple-interest-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Simple Interest Calculator - The Tutor Bridge',
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Simple Interest Calculator - Free Tool',
     description: 'Calculate simple interest, principal, rate, time, or total amount with step-by-step solutions using the formula A = P(1 + rt).',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

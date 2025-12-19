@@ -61,17 +61,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/steps-to-km-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/steps-to-km-calculator',
   },
   openGraph: {
     title: 'Steps to Km Calculator - Convert Steps to Kilometers',
     description: 'Free steps to km calculator. Convert walking steps to kilometers based on stride length, height, or averages. Find how far 10,000 steps is instantly.',
-    url: 'https://thetutorbridge.com/calculators/steps-to-km-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/steps-to-km-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Steps to Km Calculator - The Tutor Bridge',
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Steps to Km Calculator - Free Tool',
     description: 'Convert walking steps to kilometers based on stride length, height, or gender. Find how far 10,000 steps is in km.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

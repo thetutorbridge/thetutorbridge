@@ -65,17 +65,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/simplifying-fractions-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/simplifying-fractions-calculator',
   },
   openGraph: {
     title: 'Simplifying Fractions Calculator - Free Fraction Simplifier with Steps',
     description: 'Free simplifying fractions calculator with step-by-step solutions. Reduce fractions to simplest form using GCF. Convert improper fractions to mixed numbers.',
-    url: 'https://thetutorbridge.com/calculators/simplifying-fractions-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/simplifying-fractions-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Simplifying Fractions Calculator - The Tutor Bridge',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Simplifying Fractions Calculator - Free Tool with Steps',
     description: 'Simplify fractions instantly with step-by-step solutions using GCF method. Convert improper fractions to mixed numbers.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

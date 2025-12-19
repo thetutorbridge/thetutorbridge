@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/standard-deviation-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/standard-deviation-calculator',
   },
   openGraph: {
     title: 'Standard Deviation Calculator - Free Sample & Population SD Calculator',
     description: 'Calculate standard deviation, variance, mean, and sum of squares with step-by-step solutions and proper mathematical notation.',
-    url: 'https://thetutorbridge.com/calculators/standard-deviation-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/standard-deviation-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Standard Deviation Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Standard Deviation Calculator - Free Tool',
     description: 'Calculate sample and population standard deviation with detailed step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

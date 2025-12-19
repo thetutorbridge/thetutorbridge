@@ -50,17 +50,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/right-triangle-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/right-triangle-calculator',
   },
   openGraph: {
     title: 'Right Triangle Calculator - Pythagorean Theorem & Trigonometry Tool',
     description: 'Calculate right triangle sides, angles, area, and perimeter using the Pythagorean theorem and SOHCAHTOA. Free online calculator with multiple input modes.',
-    url: 'https://thetutorbridge.com/calculators/right-triangle-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/right-triangle-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Right Triangle Calculator - The Tutor Bridge',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Right Triangle Calculator - Free Online Tool',
     description: 'Solve right triangles using the Pythagorean theorem and trigonometry. Find sides, angles, area, and perimeter instantly.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

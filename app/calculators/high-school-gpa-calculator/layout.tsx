@@ -69,17 +69,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/high-school-gpa-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/high-school-gpa-calculator',
   },
   openGraph: {
     title: 'High School GPA Calculator - Weighted & Unweighted GPA with AP/IB/Honors',
     description: 'Calculate your high school GPA with weighted and unweighted scales. Support for AP, IB, honors classes on 4.0 and 5.0 scales with comprehensive examples.',
-    url: 'https://thetutorbridge.com/calculators/high-school-gpa-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/high-school-gpa-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'High School GPA Calculator - The Tutor Bridge',
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'High School GPA Calculator - Weighted & Unweighted GPA',
     description: 'Calculate weighted and unweighted high school GPA with AP, IB, and honors classes. Free calculator with comprehensive examples.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -100,12 +100,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/mg-to-ml-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/mg-to-ml-converter',
   },
   openGraph: {
     title: 'Free mg to ml Converter - Milligrams to Milliliters Calculator',
     description: 'Convert mg to ml instantly with our free calculator. Enter mass and density to calculate volume. Includes presets for water, oil, honey, medications, and more.',
-    url: 'https://thetutorbridge.com/calculators/mg-to-ml-converter',
+    url: 'https://www.thetutorbridge.com/calculators/mg-to-ml-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Calculate average buy price for multiple stock purchases. Free stock averaging calculator.",
     type: "website",
     siteName: "The Tutor Bridge",
-    images: [{url: "/og-image.jpg", width: 1200, height: 630, alt: "Stock Average Calculator"}],
+    images: [{url: "/og-image.png", width: 1200, height: 630, alt: "Stock Average Calculator"}],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/calculators/stock-average-calculator",

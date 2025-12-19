@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sukanya Samriddhi Yojana Calculator - The Tutor Bridge",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sukanya Samriddhi Yojana Calculator 2025 — SSY Calculator India",
     description: "Free SSY calculator with 8.2% interest rate. Calculate maturity amount for your daughter's future.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/calculators/sukanya-samriddhi-yojana-calculator",

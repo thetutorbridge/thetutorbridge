@@ -601,7 +601,7 @@ export default function DogSizeCalculator() {
             "@type": "WebApplication",
             "name": "Dog Size Calculator",
             "description": "Predict your puppy's adult weight and size category based on current age and weight.",
-            "url": "https://thetutorbridge.com/calculators/dog-size-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/dog-size-calculator",
             "applicationCategory": "UtilityApplication",
             "operatingSystem": "Any",
             "offers": {

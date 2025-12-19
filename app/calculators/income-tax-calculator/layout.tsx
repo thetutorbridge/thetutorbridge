@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/income-tax-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/income-tax-calculator',
   },
   openGraph: {
     title: 'Income Tax Calculator - FY 2024-25 India | The Tutor Bridge',
     description: 'Calculate income tax for FY 2024-25. Compare old vs new tax regime and maximize your tax savings with deductions.',
-    url: 'https://thetutorbridge.com/calculators/income-tax-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/income-tax-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Income Tax Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Income Tax Calculator - FY 2024-25',
     description: 'Calculate your income tax liability with old vs new regime comparison. Free tax calculator for India.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

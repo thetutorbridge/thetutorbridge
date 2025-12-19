@@ -63,17 +63,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/decimal-to-fraction-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/decimal-to-fraction-calculator',
   },
   openGraph: {
     title: 'Decimal to Fraction Calculator - Convert with Step-by-Step Solutions',
     description: 'Free decimal to fraction calculator with complete working. Convert any decimal to fraction or mixed number with GCF reduction and simplification steps.',
-    url: 'https://thetutorbridge.com/calculators/decimal-to-fraction-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/decimal-to-fraction-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Decimal to Fraction Calculator - The Tutor Bridge',
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Decimal to Fraction Calculator - Free Conversion Tool',
     description: 'Convert decimals to fractions with detailed step-by-step solutions. Shows GCF reduction and mixed number conversion.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

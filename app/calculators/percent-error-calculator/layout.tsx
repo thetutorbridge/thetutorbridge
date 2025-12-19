@@ -66,17 +66,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/percent-error-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/percent-error-calculator',
   },
   openGraph: {
     title: 'Percent Error Calculator - Calculate Percentage Error with Formula',
     description: 'Calculate percentage error between experimental and theoretical values with step-by-step solutions. Free tool for scientific measurements and lab reports.',
-    url: 'https://thetutorbridge.com/calculators/percent-error-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/percent-error-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Percent Error Calculator - The Tutor Bridge',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Percent Error Calculator - Free Tool',
     description: 'Calculate percentage error with step-by-step solutions. Perfect for chemistry, physics, and lab reports.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -551,7 +551,7 @@ export default function NmToFtLbsConverter() {
             "@type": "WebApplication",
             "name": "Nm to ft-lbs Converter",
             "description": "Convert torque between Newton-meters and foot-pounds. Includes inch-pounds, kilogram-force meters, and other torque units.",
-            "url": "https://thetutorbridge.com/calculators/nm-to-ft-lbs-converter",
+            "url": "https://www.thetutorbridge.com/calculators/nm-to-ft-lbs-converter",
             "applicationCategory": "UtilityApplication",
             "operatingSystem": "Any",
             "offers": {

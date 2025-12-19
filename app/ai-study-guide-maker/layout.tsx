@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'The Tutor Bridge',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'AI Study Guide Maker - The Tutor Bridge',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI Study Guide Maker - Create Smart Study Guides with AI Free',
     description: 'Transform your topics into comprehensive, research-based study guides with AI. Supports Hindi & English.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.thetutorbridge.com/ai-study-guide-maker',

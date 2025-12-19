@@ -28,7 +28,7 @@ function generateCleanHTML(content: ProcessedContent, topic: string, language: s
     <div class="study-guide-content">
       <div class="header-section">
         <div class="brand-section">
-          <a href="https://thetutorbridge.com" target="_blank" class="brand-link">
+          <a href="https://www.thetutorbridge.com" target="_blank" class="brand-link">
             <img src="/TheTutorBridge Logo New.png" alt="TheTutorBridge Logo" class="brand-logo">
             <div class="brand-text">
               <div class="brand-name">TheTutorBridge</div>
@@ -428,7 +428,7 @@ PREPARATION TIMELINE:
         const searchQuery = encodeURIComponent(topic.replace(/[^a-zA-Z0-9\s]/g, ' ').trim());
         const wikiResponse = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${searchQuery}`, {
           headers: {
-            'User-Agent': 'StudyGuideBot/2025 (https://thetutorbridge.com)'
+            'User-Agent': 'StudyGuideBot/2025 (https://www.thetutorbridge.com)'
           },
           timeout: 5000
         });
@@ -1346,7 +1346,7 @@ function generateProfessionalHTML(content: ProcessedContent, topic: string, lang
       <div class="study-guide">
         <div class="header">
           <div style="margin-bottom: 25px;">
-            <a href="https://thetutorbridge.com" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 15px;">
+            <a href="https://www.thetutorbridge.com" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 15px;">
               <img src="/TheTutorBridge Logo New.png" alt="TheTutorBridge Logo" style="height: 60px; width: auto;" onerror="this.style.display='none';">
               <div style="text-align: left;">
                 <div style="font-family: 'Poppins', sans-serif; font-size: 1.8em; font-weight: bold; color: #1A3D7C;">TheTutorBridge</div>
@@ -1450,7 +1450,7 @@ function generateProfessionalHTML(content: ProcessedContent, topic: string, lang
     </div>
 
     <div style="background: linear-gradient(135deg, #1A3D7C 0%, #2BAE66 100%); padding: 30px; border-radius: 12px; text-align: center; margin-top: 40px; color: white;">
-      <a href="https://thetutorbridge.com" target="_blank" style="color: white; text-decoration: none;">
+      <a href="https://www.thetutorbridge.com" target="_blank" style="color: white; text-decoration: none;">
         <div style="font-family: 'Poppins', sans-serif; font-size: 1.6em; font-weight: bold; margin-bottom: 10px;">📚 TheTutorBridge.com</div>
         <div style="font-size: 1em; opacity: 0.9; margin-bottom: 20px;">${isHindi ? 'भारत का सबसे अच्छा ऑनलाइन शिक्षा प्लेटफॉर्म' : 'India\'s Best Online Education Platform'}</div>
       </a>
@@ -1471,7 +1471,7 @@ function generateProfessionalHTML(content: ProcessedContent, topic: string, lang
           </div>
         </div>
         
-        <a href="https://thetutorbridge.com" target="_blank" style="display: inline-block; background: #FFC857; color: #1A3D7C; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-family: 'Poppins', sans-serif; font-weight: 600; margin-top: 20px; font-size: 1.1em;">
+        <a href="https://www.thetutorbridge.com" target="_blank" style="display: inline-block; background: #FFC857; color: #1A3D7C; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-family: 'Poppins', sans-serif; font-weight: 600; margin-top: 20px; font-size: 1.1em;">
           ${isHindi ? '🚀 अभी विजिट करें' : '🚀 Visit Now'}
         </a>
       </div>

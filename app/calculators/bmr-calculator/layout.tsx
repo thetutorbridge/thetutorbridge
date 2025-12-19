@@ -69,17 +69,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/bmr-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/bmr-calculator',
   },
   openGraph: {
     title: 'BMR Calculator - Calculate Basal Metabolic Rate & Daily Calorie Needs',
     description: 'Free BMR and TDEE calculator using 3 scientific formulas. Calculate your basal metabolic rate and daily calorie needs for all activity levels.',
-    url: 'https://thetutorbridge.com/calculators/bmr-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/bmr-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'BMR Calculator - The Tutor Bridge',
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'BMR Calculator - Calculate Your Basal Metabolic Rate',
     description: 'Calculate BMR and TDEE with 3 scientific formulas. Get daily calorie needs for weight loss, maintenance, or muscle gain.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

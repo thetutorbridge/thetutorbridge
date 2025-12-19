@@ -125,12 +125,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/pay-raise-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/pay-raise-calculator',
   },
   openGraph: {
     title: 'Free Pay Raise Calculator - Calculate Your New Salary',
     description: 'Find out your new salary after a raise! Enter your current pay and raise percentage to see hourly, weekly, monthly, and annual breakdowns instantly.',
-    url: 'https://thetutorbridge.com/calculators/pay-raise-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/pay-raise-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

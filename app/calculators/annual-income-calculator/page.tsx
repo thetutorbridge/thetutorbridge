@@ -156,7 +156,7 @@ export default function AnnualIncomeCalculatorPage() {
     '@type': 'WebApplication',
     name: 'Annual Income Calculator',
     description: 'Free annual income calculator to convert hourly wage to yearly salary and vice versa. Calculate gross and net income with tax deductions.',
-    url: 'https://thetutorbridge.com/calculators/annual-income-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/annual-income-calculator',
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Any',
     offers: {

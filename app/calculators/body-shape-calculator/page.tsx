@@ -269,7 +269,7 @@ export default function BodyShapeCalculatorPage() {
     '@type': 'WebApplication',
     name: 'Body Shape Calculator',
     description: 'Free body shape calculator to determine your body type based on bust, waist, and hip measurements. Get personalized fashion tips for your body shape.',
-    url: 'https://thetutorbridge.com/calculators/body-shape-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/body-shape-calculator',
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Any',
     offers: {

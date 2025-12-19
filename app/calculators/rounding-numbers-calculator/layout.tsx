@@ -60,17 +60,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/rounding-numbers-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/rounding-numbers-calculator',
   },
   openGraph: {
     title: 'Rounding Numbers Calculator - Round Decimals with Visual Steps',
     description: 'Free rounding calculator with visual digit highlighting and step-by-step explanations. Round to any place value instantly with detailed working.',
-    url: 'https://thetutorbridge.com/calculators/rounding-numbers-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/rounding-numbers-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Rounding Numbers Calculator - The Tutor Bridge',
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Rounding Numbers Calculator - Free Rounding Tool',
     description: 'Round numbers to any place value with visual explanations. Perfect for students learning rounding rules with step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

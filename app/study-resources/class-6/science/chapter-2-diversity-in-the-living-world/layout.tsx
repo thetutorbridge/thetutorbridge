@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Class 6 Science Chapter 2 - Diversity in the Living World",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chapter 2: Diversity in the Living World - Class 6",
     description: "Explore diversity in the living world with Class 6 Science Chapter 2 study materials.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/study-resources/class-6/science/chapter-2-diversity-in-the-living-world",

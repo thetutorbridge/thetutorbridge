@@ -52,17 +52,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/calorie-deficit-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/calorie-deficit-calculator',
   },
   openGraph: {
     title: 'Calorie Deficit Calculator - Plan Your Weight Loss',
     description: 'Calculate your calorie deficit for weight loss. Find BMR, TDEE, and daily calories needed to reach your target weight.',
-    url: 'https://thetutorbridge.com/calculators/calorie-deficit-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/calorie-deficit-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Calorie Deficit Calculator - The Tutor Bridge',
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Calorie Deficit Calculator - Free Tool',
     description: 'Calculate calorie deficit for weight loss. Find your BMR, TDEE, and daily calorie target.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

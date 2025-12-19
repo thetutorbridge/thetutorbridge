@@ -46,17 +46,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/quadratic-formula-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/quadratic-formula-calculator',
   },
   openGraph: {
     title: 'Quadratic Formula Calculator - Solve ax² + bx + c = 0 with Steps',
     description: 'Free quadratic equation solver with step-by-step solutions, discriminant analysis, and both exact and decimal forms. Handles real and complex roots.',
-    url: 'https://thetutorbridge.com/calculators/quadratic-formula-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/quadratic-formula-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Quadratic Formula Calculator - The Tutor Bridge',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Quadratic Formula Calculator - Free Equation Solver',
     description: 'Solve quadratic equations instantly with step-by-step solutions, discriminant analysis, and exact radical forms.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/money-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/money-calculator',
   },
   openGraph: {
     title: 'Money Calculator - Count Cash & Coins with Breakdown',
     description: 'Free money counting calculator with detailed breakdown. Count banknotes, coins, and rolled coins. Get instant total value with denomination-by-denomination calculation.',
-    url: 'https://thetutorbridge.com/calculators/money-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/money-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Money Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Money Calculator - Free Cash Counter Tool',
     description: 'Count banknotes, coins, and rolled coins with detailed breakdown. Get instant money total with denomination-by-denomination calculation.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

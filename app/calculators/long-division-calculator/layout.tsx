@@ -60,17 +60,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/long-division-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/long-division-calculator',
   },
   openGraph: {
     title: 'Long Division Calculator - Visual Step-by-Step Solutions',
     description: 'Free long division calculator with visual grid showing complete working. Divide any numbers and see quotient, remainder, and full solution process.',
-    url: 'https://thetutorbridge.com/calculators/long-division-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/long-division-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Long Division Calculator - The Tutor Bridge',
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Long Division Calculator - Free Tool with Steps',
     description: 'Solve long division problems with visual step-by-step solutions. See quotient, remainder, and complete working grid.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

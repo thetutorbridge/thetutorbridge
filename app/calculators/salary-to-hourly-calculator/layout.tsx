@@ -77,12 +77,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/salary-to-hourly-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/salary-to-hourly-calculator',
   },
   openGraph: {
     title: 'Free Salary to Hourly Calculator - Convert Any Salary to Hourly Rate',
     description: 'Convert annual, monthly, or weekly salary to hourly rate instantly. Calculate your wage across all time periods. Works for INR, USD, EUR, GBP.',
-    url: 'https://thetutorbridge.com/calculators/salary-to-hourly-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/salary-to-hourly-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

@@ -1,0 +1,53 @@
+# The Tutor Bridge - LLM Access Information
+
+> The Tutor Bridge is a leading online tutoring and educational platform for K-12 students. We offer homework help, tutoring services, study resources, calculators, and career guidance.
+
+## About Us
+The Tutor Bridge provides personalized online tutoring for grades 6-12, covering Math, Science, and English. We help students achieve academic excellence through 1-on-1 sessions, instant doubt solving, and comprehensive study materials.
+
+## Main Services
+
+### Homework Help
+- Math Homework Help: /homework-help/math
+- Science Homework Help: /homework-help/science
+- English Homework Help: /homework-help/english
+- Submit Homework Question: /homework-help/submit
+
+### Online Tutoring
+- Math Tutoring: /tutoring/math
+- Science Tutoring: /tutoring/science
+- English Tutoring: /tutoring/english
+- Free Consultation: /tutoring/free-consultation
+
+### Study Resources
+- Class 6 to Class 12 study materials
+- Subject-wise chapters and notes
+- NCERT solutions and explanations
+
+### Free Online Calculators
+Over 100+ free calculators including:
+- Percentage Calculator: /calculators/percentage-calculator
+- GPA Calculator: /calculators/gpa-calculator
+- BMI Calculator: /calculators/bmi-calculator
+- EMI Calculator: /calculators/emi-calculator
+- Age Calculator: /calculators/age-calculator
+- And many more at: /calculators
+
+### Career Roadmaps
+50+ detailed career roadmaps for:
+- Frontend Developer: /roadmap/frontend-developer
+- Backend Developer: /roadmap/backend-developer
+- Data Scientist: /roadmap/data-scientist
+- AI Engineer: /roadmap/ai-engineer
+- Full list at: /roadmap
+
+### Educational Blog
+Expert study tips, educational insights, and academic guidance at: /blog
+
+## Contact
+- Website: https://www.thetutorbridge.com
+- Email: info@thetutorbridge.com
+- Phone: +91 9310096171
+
+## Sitemap
+Full sitemap available at: https://www.thetutorbridge.com/sitemap.xml

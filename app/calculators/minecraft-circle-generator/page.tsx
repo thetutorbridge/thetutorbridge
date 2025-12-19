@@ -627,7 +627,7 @@ export default function MinecraftCircleGenerator() {
             '@type': 'WebApplication',
             name: 'Minecraft Circle Generator',
             description: 'Free Minecraft circle generator to create perfect pixel circles for your builds. Generate circles and ovals with customizable diameter and thickness.',
-            url: 'https://thetutorbridge.com/calculators/minecraft-circle-generator',
+            url: 'https://www.thetutorbridge.com/calculators/minecraft-circle-generator',
             applicationCategory: 'GameApplication',
             operatingSystem: 'Any',
             permissions: 'browser',

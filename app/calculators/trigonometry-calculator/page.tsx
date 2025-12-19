@@ -809,7 +809,7 @@ export default function TrigonometryCalculator() {
             "@type": "WebApplication",
             "name": "Trigonometry Calculator",
             "description": "Calculate sin, cos, tan and other trigonometric functions. Solve right triangles by finding missing sides and angles.",
-            "url": "https://thetutorbridge.com/calculators/trigonometry-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/trigonometry-calculator",
             "applicationCategory": "UtilityApplication",
             "operatingSystem": "Any",
             "offers": {

@@ -63,17 +63,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/tank-volume-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/tank-volume-calculator',
   },
   openGraph: {
     title: 'Tank Volume Calculator - Calculate Tank Capacity & Fill Volume',
     description: 'Calculate tank volume and capacity for all shapes. Free tool with results in gallons, liters, cubic feet, and cubic meters.',
-    url: 'https://thetutorbridge.com/calculators/tank-volume-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/tank-volume-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Tank Volume Calculator - The Tutor Bridge',
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tank Volume Calculator - Free Tool',
     description: 'Calculate tank volume and fill capacity for all tank shapes with instant results in multiple units.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

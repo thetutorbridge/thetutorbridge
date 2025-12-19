@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/watt-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/watt-calculator',
   },
   openGraph: {
     title: 'Watt Calculator - Calculate Power, Voltage, Current & Resistance',
     description: 'Calculate watts, volts, amps, and ohms using Ohm\'s Law with step-by-step solutions. Free electrical power calculator with unit conversions.',
-    url: 'https://thetutorbridge.com/calculators/watt-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/watt-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Watt Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Watt Calculator - Free Electrical Power Tool',
     description: 'Calculate power, voltage, current, and resistance with Ohm\'s Law. Step-by-step solutions included.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

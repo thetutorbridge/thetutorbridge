@@ -1081,7 +1081,7 @@ export default function VO2MaxCalculator() {
             '@type': 'WebApplication',
             name: 'VO2 Max Calculator',
             description: 'Free VO2 max calculator to measure aerobic capacity using 5 different test methods. Get your fitness classification and tips to improve cardiovascular health.',
-            url: 'https://thetutorbridge.com/calculators/vo2-max-calculator',
+            url: 'https://www.thetutorbridge.com/calculators/vo2-max-calculator',
             applicationCategory: 'HealthApplication',
             operatingSystem: 'Any',
             permissions: 'browser',

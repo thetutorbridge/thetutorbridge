@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/salary-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/salary-calculator',
   },
   openGraph: {
     title: 'Salary Calculator - CTC to Take Home Salary | The Tutor Bridge',
     description: 'Free CTC to in-hand salary calculator with instant breakdown of deductions, PF, and professional tax. Compare job offers and plan your finances.',
-    url: 'https://thetutorbridge.com/calculators/salary-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/salary-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Salary Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Salary Calculator - CTC to Take Home',
     description: 'Calculate your in-hand salary from CTC with detailed breakdown of all deductions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

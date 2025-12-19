@@ -815,7 +815,7 @@ export default function CylinderVolumeCalculator() {
             "@type": "WebApplication",
             "name": "Cylinder Volume Calculator",
             "description": "Calculate the volume, surface area, and properties of solid or hollow cylinders. Enter height and radius or diameter.",
-            "url": "https://thetutorbridge.com/calculators/cylinder-volume-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/cylinder-volume-calculator",
             "applicationCategory": "UtilityApplication",
             "operatingSystem": "Any",
             "offers": {

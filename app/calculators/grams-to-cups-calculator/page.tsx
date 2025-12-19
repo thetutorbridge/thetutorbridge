@@ -636,7 +636,7 @@ export default function GramsToCupsCalculator() {
             '@type': 'WebApplication',
             name: 'Grams to Cups Calculator',
             description: 'Free grams to cups converter for cooking. Convert grams to cups for flour, sugar, butter, honey, and 20+ ingredients.',
-            url: 'https://thetutorbridge.com/calculators/grams-to-cups-calculator',
+            url: 'https://www.thetutorbridge.com/calculators/grams-to-cups-calculator',
             applicationCategory: 'UtilitiesApplication',
             operatingSystem: 'Any',
             permissions: 'browser',

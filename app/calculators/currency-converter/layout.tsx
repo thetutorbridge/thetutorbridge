@@ -93,17 +93,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/currency-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/currency-converter',
   },
   openGraph: {
     title: 'Currency Converter - Free Real-Time Exchange Rates',
     description: 'Convert currencies instantly with live exchange rates. USD to INR, EUR to INR, AED to INR, GBP to INR and 150+ currencies supported.',
-    url: 'https://thetutorbridge.com/calculators/currency-converter',
+    url: 'https://www.thetutorbridge.com/calculators/currency-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Currency Converter - The Tutor Bridge',
@@ -114,7 +114,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Currency Converter - Free Exchange Rate Calculator',
     description: 'Convert 150+ currencies with live exchange rates. USD, EUR, GBP, AED, INR and more.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

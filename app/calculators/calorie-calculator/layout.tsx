@@ -69,17 +69,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/calorie-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/calorie-calculator',
   },
   openGraph: {
     title: 'Calorie Calculator - Calculate Daily Calorie Needs',
     description: 'Free calorie calculator for weight loss, maintenance, and muscle gain. Calculate BMR and TDEE using proven formulas with activity level adjustment.',
-    url: 'https://thetutorbridge.com/calculators/calorie-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/calorie-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Calorie Calculator - The Tutor Bridge',
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Calorie Calculator - Calculate Daily Calorie Needs',
     description: 'Calculate your daily calorie needs for weight loss, maintenance, or muscle gain with our free calculator using proven BMR formulas.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

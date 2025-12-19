@@ -100,12 +100,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/birth-year-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/birth-year-calculator',
   },
   openGraph: {
     title: 'Free Birth Year Calculator - Find Year of Birth from Age',
     description: 'Calculate birth year from age or find age from birth year. Includes generation classification, Chinese zodiac sign, and milestone years.',
-    url: 'https://thetutorbridge.com/calculators/birth-year-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/birth-year-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

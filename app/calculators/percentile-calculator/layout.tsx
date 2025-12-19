@@ -67,17 +67,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/percentile-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/percentile-calculator',
   },
   openGraph: {
     title: 'Percentile Calculator - Calculate Any Percentile with Solutions',
     description: 'Calculate any percentile (1st-99th) from datasets with step-by-step solutions. Display every nth percentile option for comprehensive analysis.',
-    url: 'https://thetutorbridge.com/calculators/percentile-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/percentile-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Percentile Calculator - The Tutor Bridge',
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Percentile Calculator - Free Tool',
     description: 'Calculate any percentile with step-by-step solutions. Display every nth percentile.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

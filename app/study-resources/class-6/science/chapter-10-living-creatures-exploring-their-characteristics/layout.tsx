@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'The Tutor Bridge',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Class 6 Science Chapter 10 - Living Creatures: Exploring their Characteristics - The Tutor Bridge',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Class 6 Science Chapter 10 Notes – Living Creatures: Exploring their Characteristics',
     description: 'Get Class 6 Science Chapter 10 notes – Living Creatures: Exploring their Characteristics. Covers MRS GREN + D life processes, germination conditions, plant growth and movement, phototropism, geotropism, and practical activities with daily life examples.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.thetutorbridge.com/study-resources/class-6/science/chapter-10-living-creatures-exploring-their-characteristics',

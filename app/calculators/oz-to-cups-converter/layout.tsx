@@ -51,17 +51,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/oz-to-cups-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/oz-to-cups-converter',
   },
   openGraph: {
     title: 'Oz to Cups Converter - Convert Fluid Ounces to Cups',
     description: 'Free oz to cups converter with US/UK fluid ounces and multiple cup types. Convert cooking measurements instantly.',
-    url: 'https://thetutorbridge.com/calculators/oz-to-cups-converter',
+    url: 'https://www.thetutorbridge.com/calculators/oz-to-cups-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Oz to Cups Converter - The Tutor Bridge',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Oz to Cups Converter - Free Tool',
     description: 'Convert fluid ounces to cups instantly. Supports US fl oz, UK fl oz, and multiple cup types.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

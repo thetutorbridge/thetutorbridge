@@ -60,17 +60,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/kg-to-lb-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/kg-to-lb-converter',
   },
   openGraph: {
     title: 'Kg to Lb Converter - Kilograms to Pounds Calculator',
     description: 'Free weight converter with step-by-step solutions. Convert kilograms to pounds (kg to lbs) and pounds to kilograms (lbs to kg) instantly with conversion formulas.',
-    url: 'https://thetutorbridge.com/calculators/kg-to-lb-converter',
+    url: 'https://www.thetutorbridge.com/calculators/kg-to-lb-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Kg to Lb Converter - The Tutor Bridge',
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kg to Lb Converter - Free Weight Converter',
     description: 'Convert weight between kilograms and pounds with detailed step-by-step solutions and conversion formulas.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

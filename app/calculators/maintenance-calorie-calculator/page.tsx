@@ -876,7 +876,7 @@ export default function MaintenanceCalorieCalculator() {
             "@type": "WebApplication",
             "name": "Maintenance Calorie Calculator",
             "description": "Calculate how many calories you need daily to maintain your current weight based on BMR, age, sex, and activity level.",
-            "url": "https://thetutorbridge.com/calculators/maintenance-calorie-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/maintenance-calorie-calculator",
             "applicationCategory": "HealthApplication",
             "operatingSystem": "Any",
             "offers": {

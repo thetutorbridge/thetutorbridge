@@ -76,12 +76,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/time-until-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/time-until-calculator',
   },
   openGraph: {
     title: 'Free Time Until Calculator - Live Countdown Timer',
     description: 'Calculate exact time remaining until any date with live updates. Get countdown in years, months, weeks, days, hours, minutes & seconds. Perfect for events, deadlines & celebrations.',
-    url: 'https://thetutorbridge.com/calculators/time-until-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/time-until-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

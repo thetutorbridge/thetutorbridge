@@ -63,17 +63,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/time-to-decimal-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/time-to-decimal-calculator',
   },
   openGraph: {
     title: 'Time to Decimal Calculator - Convert Time to Decimal Hours',
     description: 'Convert hours, minutes, and seconds to decimal format with step-by-step solutions. Perfect for payroll, timesheets, and billing.',
-    url: 'https://thetutorbridge.com/calculators/time-to-decimal-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/time-to-decimal-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Time to Decimal Calculator - The Tutor Bridge',
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Time to Decimal Calculator - Free Tool',
     description: 'Convert time (HH:MM:SS) to decimal hours, minutes, and seconds with detailed step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -58,17 +58,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/maintenance-calorie-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/maintenance-calorie-calculator',
   },
   openGraph: {
     title: 'Maintenance Calorie Calculator - Find Your Daily Calorie Needs',
     description: 'Free maintenance calorie calculator to find how many calories you need daily. Calculate BMR and TDEE using the Mifflin-St Jeor formula.',
-    url: 'https://thetutorbridge.com/calculators/maintenance-calorie-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/maintenance-calorie-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Maintenance Calorie Calculator - The Tutor Bridge',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Maintenance Calorie Calculator - Free TDEE Tool',
     description: 'Calculate how many calories you need to maintain your weight based on BMR, age, sex, and activity level.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

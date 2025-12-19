@@ -59,17 +59,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/ml-to-grams-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/ml-to-grams-converter',
   },
   openGraph: {
     title: 'ml to Grams Converter - Milliliters to Grams Calculator',
     description: 'Free ml to grams converter for cooking. Convert milliliters to grams for water, milk, flour, sugar, oil, honey and 30+ ingredients instantly.',
-    url: 'https://thetutorbridge.com/calculators/ml-to-grams-converter',
+    url: 'https://www.thetutorbridge.com/calculators/ml-to-grams-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'ml to Grams Converter - The Tutor Bridge',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ml to Grams Converter - Free Cooking Calculator',
     description: 'Convert milliliters to grams for cooking ingredients with density-based calculations and instant results.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

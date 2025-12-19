@@ -55,17 +55,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/lottery-tax-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/lottery-tax-calculator',
   },
   openGraph: {
     title: 'Lottery Tax Calculator - Federal & State Tax on Lottery Winnings',
     description: 'Free lottery tax calculator to estimate federal and state taxes. Compare lump sum vs annuity payouts with 2024 tax brackets.',
-    url: 'https://thetutorbridge.com/calculators/lottery-tax-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/lottery-tax-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Lottery Tax Calculator - The Tutor Bridge',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lottery Tax Calculator - Free Tool',
     description: 'Calculate lottery taxes on winnings. Compare lump sum vs annuity with federal and state tax breakdowns.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

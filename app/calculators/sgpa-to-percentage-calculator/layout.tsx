@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/sgpa-to-percentage-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/sgpa-to-percentage-calculator',
   },
   openGraph: {
     title: 'SGPA to Percentage Calculator - Convert GPA to % Instantly',
     description: 'Free SGPA to percentage calculator with step-by-step conversion formulas. Convert semester GPA to percentage for all universities with comprehensive examples.',
-    url: 'https://thetutorbridge.com/calculators/sgpa-to-percentage-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/sgpa-to-percentage-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'SGPA to Percentage Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SGPA to Percentage Calculator - Convert GPA to % Instantly',
     description: 'Calculate percentage from SGPA with detailed step-by-step solutions and comprehensive conversion formulas for all universities.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

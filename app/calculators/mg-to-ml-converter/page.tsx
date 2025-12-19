@@ -135,7 +135,7 @@ export default function MgToMlConverter() {
     "@type": "WebApplication",
     "name": "mg to ml Converter",
     "description": "Free mg to ml converter to convert milligrams to milliliters. Enter weight in mg and substance density to calculate volume in ml. Works for water, oils, medications, and more.",
-    "url": "https://thetutorbridge.com/calculators/mg-to-ml-converter",
+    "url": "https://www.thetutorbridge.com/calculators/mg-to-ml-converter",
     "applicationCategory": "CalculatorApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -146,7 +146,7 @@ export default function MgToMlConverter() {
     "provider": {
       "@type": "Organization",
       "name": "The Tutor Bridge",
-      "url": "https://thetutorbridge.com"
+      "url": "https://www.thetutorbridge.com"
     }
   };
 

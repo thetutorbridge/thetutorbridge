@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Calculate hours and minutes between two times. Free online time calculator with break deductions and multiple format outputs.",
     type: "website",
     siteName: "The Tutor Bridge",
-    images: [{url: "/og-image.jpg", width: 1200, height: 630, alt: "Hours Calculator"}],
+    images: [{url: "/og-image.png", width: 1200, height: 630, alt: "Hours Calculator"}],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/calculators/hours-calculator",

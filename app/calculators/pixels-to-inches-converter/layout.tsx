@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/pixels-to-inches-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/pixels-to-inches-converter',
   },
   openGraph: {
     title: 'Pixels to Inches Converter - Convert px to in with PPI',
     description: 'Convert pixels to inches or inches to pixels based on PPI/DPI. Free tool with common screen resolution presets.',
-    url: 'https://thetutorbridge.com/calculators/pixels-to-inches-converter',
+    url: 'https://www.thetutorbridge.com/calculators/pixels-to-inches-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Pixels to Inches Converter - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pixels to Inches Converter - Free Tool',
     description: 'Convert pixels to inches or inches to pixels with PPI/DPI support. Includes common screen resolution presets.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

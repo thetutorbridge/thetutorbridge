@@ -65,17 +65,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/percentage-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/percentage-calculator',
   },
   openGraph: {
     title: 'Percentage Calculator - Free % Calculator with Quick Solutions',
     description: 'Free percentage calculator with 3 quick solutions. Calculate percentages instantly with step-by-step explanations. Perfect for students and business.',
-    url: 'https://thetutorbridge.com/calculators/percentage-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/percentage-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Percentage Calculator - The Tutor Bridge',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Percentage Calculator - Free Tool with Quick Solutions',
     description: 'Calculate percentages instantly with 3 quick solutions and step-by-step explanations.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

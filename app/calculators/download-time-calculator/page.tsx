@@ -241,7 +241,7 @@ export default function DownloadTimeCalculator() {
     "@type": "WebApplication",
     "name": "Download Time Calculator",
     "description": "Free download time calculator to estimate how long a file download will take based on file size and internet speed. Works with MB, GB, TB and Mbps, Gbps speeds.",
-    "url": "https://thetutorbridge.com/calculators/download-time-calculator",
+    "url": "https://www.thetutorbridge.com/calculators/download-time-calculator",
     "applicationCategory": "CalculatorApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -252,7 +252,7 @@ export default function DownloadTimeCalculator() {
     "provider": {
       "@type": "Organization",
       "name": "The Tutor Bridge",
-      "url": "https://thetutorbridge.com"
+      "url": "https://www.thetutorbridge.com"
     }
   };
 

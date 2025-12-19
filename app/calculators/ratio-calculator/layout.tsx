@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/ratio-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/ratio-calculator',
   },
   openGraph: {
     title: 'Ratio Calculator - Solve Ratios with Steps',
     description: 'Free ratio calculator with step-by-step solutions. Solve A:B = C:D ratio problems, simplify ratios, find equivalent ratios, and verify ratio equality instantly.',
-    url: 'https://thetutorbridge.com/calculators/ratio-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/ratio-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Ratio Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ratio Calculator - Free Tool with Steps',
     description: 'Solve ratio problems A:B = C:D with detailed step-by-step solutions. Simplify ratios and check ratio equality instantly.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

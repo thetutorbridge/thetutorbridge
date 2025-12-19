@@ -753,7 +753,7 @@ export default function StepsToMilesCalculator() {
             "@type": "WebApplication",
             "name": "Steps to Miles Calculator",
             "description": "Convert walking steps to miles, kilometers, and other distance units based on stride length, height, or averages.",
-            "url": "https://thetutorbridge.com/calculators/steps-to-miles-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/steps-to-miles-calculator",
             "applicationCategory": "UtilityApplication",
             "operatingSystem": "Any",
             "offers": {

@@ -246,7 +246,7 @@ export default function PayRaiseCalculator() {
     "@type": "WebApplication",
     "name": "Pay Raise Calculator",
     "description": "Free pay raise calculator to compute your new salary after a raise. Enter your current pay and raise percentage to see hourly, weekly, monthly, and annual breakdowns.",
-    "url": "https://thetutorbridge.com/calculators/pay-raise-calculator",
+    "url": "https://www.thetutorbridge.com/calculators/pay-raise-calculator",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "offers": {

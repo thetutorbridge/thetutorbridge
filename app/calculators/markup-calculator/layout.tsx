@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/markup-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/markup-calculator',
   },
   openGraph: {
     title: 'Markup Calculator - Calculate Markup Percentage & Selling Price',
     description: 'Calculate markup percentage, selling price, and profit with step-by-step solutions. Convert between markup and margin. Free tool for business pricing.',
-    url: 'https://thetutorbridge.com/calculators/markup-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/markup-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Markup Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Markup Calculator - Free Tool',
     description: 'Calculate markup percentage and selling price with detailed step-by-step solutions. Free business pricing calculator.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

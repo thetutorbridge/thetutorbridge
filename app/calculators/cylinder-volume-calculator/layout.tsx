@@ -109,12 +109,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/cylinder-volume-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/cylinder-volume-calculator',
   },
   openGraph: {
     title: 'Free Cylinder Volume Calculator - V = πr²h',
     description: 'Calculate cylinder volume, surface area, and lateral area instantly. Works with solid and hollow cylinders. Enter height and radius or diameter.',
-    url: 'https://thetutorbridge.com/calculators/cylinder-volume-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/cylinder-volume-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

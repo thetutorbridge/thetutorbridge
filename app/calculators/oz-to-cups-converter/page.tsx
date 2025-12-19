@@ -674,7 +674,7 @@ export default function OzToCupsConverter() {
             '@type': 'WebApplication',
             name: 'Oz to Cups Converter',
             description: 'Free oz to cups converter. Convert fluid ounces to cups and cups to oz instantly with support for US/UK ounces and multiple cup types.',
-            url: 'https://thetutorbridge.com/calculators/oz-to-cups-converter',
+            url: 'https://www.thetutorbridge.com/calculators/oz-to-cups-converter',
             applicationCategory: 'UtilityApplication',
             operatingSystem: 'Any',
             permissions: 'browser',

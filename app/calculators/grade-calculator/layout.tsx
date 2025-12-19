@@ -73,17 +73,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/grade-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/grade-calculator',
   },
   openGraph: {
     title: 'Grade Calculator - Calculate Final Grade & Course Grade',
     description: 'Free weighted grade calculator to find your final grade, current grade, and required scores. Calculate what you need on finals to pass or achieve your target grade.',
-    url: 'https://thetutorbridge.com/calculators/grade-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/grade-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Grade Calculator - The Tutor Bridge',
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Grade Calculator - Calculate Final Grade & Course Grade',
     description: 'Calculate your final grade, current grade, and what you need to score on finals. Free weighted grade calculator for students.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       "India's leading online tutoring platform with 95% success rate. Get personalized tutoring, instant doubt solving & career guidance. Book free trial!",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "The Tutor Bridge - Online Tutoring Platform",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "The Tutor Bridge - #1 Online Tutoring Platform",
     description:
       "India's leading online tutoring platform with 95% success rate. Get personalized tutoring, instant doubt solving & career guidance.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   verification: {
     google: "KpkvQp8VxFV7-obKHHmwexGdICgx5vhXw8nLHEKPvog",
@@ -85,6 +85,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://zkphbzcomixukygigpka.supabase.co" />
+        <link rel="dns-prefetch" href="https://zkphbzcomixukygigpka.supabase.co" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />

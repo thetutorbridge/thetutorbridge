@@ -78,17 +78,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/gpa-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/gpa-calculator',
   },
   openGraph: {
     title: 'GPA Calculator - Calculate Your Grade Point Average Free',
     description: 'Free GPA calculator supporting 4.0 scale, weighted/unweighted GPA, cumulative and semester calculations. Perfect for high school and college students.',
-    url: 'https://thetutorbridge.com/calculators/gpa-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/gpa-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'GPA Calculator - The Tutor Bridge',
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GPA Calculator - Free Grade Point Average Calculator',
     description: 'Calculate your GPA instantly. Supports 4.0 scale, weighted GPA, cumulative GPA for high school and college.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -73,17 +73,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/middle-school-gpa-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/middle-school-gpa-calculator',
   },
   openGraph: {
     title: 'Middle School GPA Calculator - Calculate Junior High GPA',
     description: 'Free GPA calculator for middle school students (6th, 7th, 8th grade). Track your junior high grades, calculate GPA on 4.0 scale, and prepare for high school.',
-    url: 'https://thetutorbridge.com/calculators/middle-school-gpa-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/middle-school-gpa-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Middle School GPA Calculator - The Tutor Bridge',
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Middle School GPA Calculator - Calculate Junior High GPA',
     description: 'Calculate your middle school GPA for 6th, 7th, and 8th grade. Track grades, understand the 4.0 scale, and prepare for high school.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

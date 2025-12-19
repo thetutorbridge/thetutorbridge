@@ -73,17 +73,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/mortgage-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/mortgage-calculator',
   },
   openGraph: {
     title: 'Mortgage Calculator - Calculate Home Loan Payments with Amortization',
     description: 'Free mortgage calculator with taxes, insurance, PMI, and HOA fees. Get monthly payment estimates and detailed amortization schedule.',
-    url: 'https://thetutorbridge.com/calculators/mortgage-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/mortgage-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Mortgage Calculator - The Tutor Bridge',
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mortgage Calculator - Calculate Home Loan Payments',
     description: 'Calculate monthly mortgage payments with taxes, insurance, and fees. Get detailed amortization schedule and interest breakdown.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

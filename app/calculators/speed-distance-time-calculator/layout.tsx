@@ -63,17 +63,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/speed-distance-time-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/speed-distance-time-calculator',
   },
   openGraph: {
     title: 'Speed Distance Time Calculator - Calculate Speed, Distance & Time',
     description: 'Free calculator to solve for speed, distance, or time using the formula speed = distance/time. Get step-by-step solutions with unit conversions for mph, km/h, meters, miles, and more.',
-    url: 'https://thetutorbridge.com/calculators/speed-distance-time-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/speed-distance-time-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Speed Distance Time Calculator - The Tutor Bridge',
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Speed Distance Time Calculator - Free Tool',
     description: 'Calculate speed, distance, or time with step-by-step solutions. Convert between mph, km/h, meters, miles, and more.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

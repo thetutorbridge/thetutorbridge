@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/cubic-yards-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/cubic-yards-calculator',
   },
   openGraph: {
     title: 'Cubic Yards Calculator - Calculate Volume for All Shapes',
     description: 'Calculate cubic yards for concrete, mulch, gravel, and soil. Supports all shapes with cost calculator and multiple unit conversions.',
-    url: 'https://thetutorbridge.com/calculators/cubic-yards-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/cubic-yards-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Cubic Yards Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cubic Yards Calculator - Free Tool',
     description: 'Calculate cubic yards for any shape. Perfect for concrete, mulch, gravel, and landscaping projects.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

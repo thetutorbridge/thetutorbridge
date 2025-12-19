@@ -55,17 +55,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/overtime-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/overtime-calculator',
   },
   openGraph: {
     title: 'Overtime Calculator - Calculate Overtime Pay',
     description: 'Free overtime calculator with regular hours, overtime hours, and multipliers. Calculate total pay with 1.5x or 2x overtime rates.',
-    url: 'https://thetutorbridge.com/calculators/overtime-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/overtime-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Overtime Calculator - The Tutor Bridge',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Overtime Calculator - Free Tool',
     description: 'Calculate overtime pay with 1.5x, 2x multipliers. Find total earnings from regular and overtime hours.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/fraction-to-percent-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/fraction-to-percent-calculator',
   },
   openGraph: {
     title: 'Fraction to Percent Calculator - Free Converter with Steps',
     description: 'Free fraction to percent calculator with step-by-step solutions and mathematical notation. Convert fractions to percentages easily.',
-    url: 'https://thetutorbridge.com/calculators/fraction-to-percent-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/fraction-to-percent-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Fraction to Percent Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fraction to Percent Calculator - Free Tool',
     description: 'Convert fractions to percentages with detailed step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

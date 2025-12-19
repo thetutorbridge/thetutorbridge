@@ -152,7 +152,7 @@ export default function CircumferenceCalculator() {
     "@type": "WebApplication",
     "name": "Circumference Calculator",
     "description": "Free online circumference calculator to find circle circumference, radius, diameter, and area. Enter any value to calculate all circle properties instantly.",
-    "url": "https://thetutorbridge.com/calculators/circumference-calculator",
+    "url": "https://www.thetutorbridge.com/calculators/circumference-calculator",
     "applicationCategory": "CalculatorApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -163,7 +163,7 @@ export default function CircumferenceCalculator() {
     "provider": {
       "@type": "Organization",
       "name": "The Tutor Bridge",
-      "url": "https://thetutorbridge.com"
+      "url": "https://www.thetutorbridge.com"
     }
   };
 

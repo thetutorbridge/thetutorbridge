@@ -59,17 +59,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/area-of-a-circle-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/area-of-a-circle-calculator',
   },
   openGraph: {
     title: 'Area of a Circle Calculator - A = πr² Calculator',
     description: 'Free area of a circle calculator with step-by-step solutions. Calculate circle area from radius, diameter, or circumference instantly.',
-    url: 'https://thetutorbridge.com/calculators/area-of-a-circle-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/area-of-a-circle-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Area of a Circle Calculator - The Tutor Bridge',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Area of a Circle Calculator - Free Tool',
     description: 'Calculate circle area from radius, diameter, or circumference with detailed step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

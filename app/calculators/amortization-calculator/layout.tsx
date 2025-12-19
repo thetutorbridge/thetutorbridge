@@ -74,17 +74,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/amortization-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/amortization-calculator',
   },
   openGraph: {
     title: 'Amortization Calculator - Create Detailed Loan Amortization Schedules',
     description: 'Free amortization calculator with extra payment options. Get monthly and yearly amortization schedules, total interest, and principal breakdown.',
-    url: 'https://thetutorbridge.com/calculators/amortization-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/amortization-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Amortization Calculator - The Tutor Bridge',
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Amortization Calculator - Calculate Loan Amortization Schedules',
     description: 'Calculate loan amortization with extra payments. Get detailed schedules showing monthly principal, interest, and balance.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

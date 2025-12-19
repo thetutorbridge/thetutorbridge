@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/roman-numeral-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/roman-numeral-converter',
   },
   openGraph: {
     title: 'Roman Numeral Converter - Free Number Converter Tool',
     description: 'Convert numbers to Roman numerals and vice versa instantly. Bi-directional converter with step-by-step explanations for numbers 1-3999.',
-    url: 'https://thetutorbridge.com/calculators/roman-numeral-converter',
+    url: 'https://www.thetutorbridge.com/calculators/roman-numeral-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Roman Numeral Converter - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Roman Numeral Converter - Free Conversion Tool',
     description: 'Convert between numbers and Roman numerals instantly with step-by-step explanations.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

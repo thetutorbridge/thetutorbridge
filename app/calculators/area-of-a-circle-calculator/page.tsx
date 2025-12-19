@@ -130,7 +130,7 @@ export default function AreaOfCircleCalculator() {
     "@type": "WebApplication",
     "name": "Area of a Circle Calculator",
     "description": "Free online area of a circle calculator. Calculate circle area from radius, diameter, or find radius from area using A = πr² formula.",
-    "url": "https://thetutorbridge.com/calculators/area-of-a-circle-calculator",
+    "url": "https://www.thetutorbridge.com/calculators/area-of-a-circle-calculator",
     "applicationCategory": "CalculatorApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -141,7 +141,7 @@ export default function AreaOfCircleCalculator() {
     "provider": {
       "@type": "Organization",
       "name": "The Tutor Bridge",
-      "url": "https://thetutorbridge.com"
+      "url": "https://www.thetutorbridge.com"
     }
   };
 

@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/profit-margin-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/profit-margin-calculator',
   },
   openGraph: {
     title: 'Profit Margin Calculator - Calculate Net Profit Margin & Percentage',
     description: 'Calculate net profit margin, net profit, and profit percentage with step-by-step solutions. Free tool for business profitability analysis.',
-    url: 'https://thetutorbridge.com/calculators/profit-margin-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/profit-margin-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Profit Margin Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Profit Margin Calculator - Free Tool',
     description: 'Calculate net profit margin and profit percentage with detailed step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

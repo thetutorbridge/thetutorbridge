@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/gratuity-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/gratuity-calculator',
   },
   openGraph: {
     title: 'Gratuity Calculator - Calculate as per Act 1972 | The Tutor Bridge',
     description: 'Calculate your gratuity amount based on Payment of Gratuity Act 1972. Free calculator with tax exemption details and eligibility check.',
-    url: 'https://thetutorbridge.com/calculators/gratuity-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/gratuity-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Gratuity Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gratuity Calculator - As per Act 1972',
     description: 'Calculate your retirement gratuity amount with tax exemption details. Free online calculator.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

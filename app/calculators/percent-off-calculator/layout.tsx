@@ -58,17 +58,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/percent-off-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/percent-off-calculator',
   },
   openGraph: {
     title: 'Percent Off Calculator - Find Sale Prices & Savings',
     description: 'Free percent off calculator to find sale prices and savings. Calculate discounts with stackable percentages and sales tax.',
-    url: 'https://thetutorbridge.com/calculators/percent-off-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/percent-off-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Percent Off Calculator - The Tutor Bridge',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Percent Off Calculator - Free Discount Tool',
     description: 'Calculate sale prices, savings, and stackable discounts instantly. Perfect for shopping and Black Friday deals.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

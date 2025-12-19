@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/percentage-difference-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/percentage-difference-calculator',
   },
   openGraph: {
     title: 'Percentage Difference Calculator - Free Tool with Steps',
     description: 'Free percentage difference calculator with step-by-step solutions and mathematical notation. Calculate the symmetric percentage difference between any two values.',
-    url: 'https://thetutorbridge.com/calculators/percentage-difference-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/percentage-difference-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Percentage Difference Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Percentage Difference Calculator - Free Tool',
     description: 'Calculate percentage difference between two values with detailed step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

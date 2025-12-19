@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Calculate SBI mutual fund SIP and lumpsum returns. Official SBI MF calculator.",
     type: "website",
     siteName: "The Tutor Bridge",
-    images: [{url: "/og-image.jpg", width: 1200, height: 630, alt: "SBI SIP Calculator"}],
+    images: [{url: "/og-image.png", width: 1200, height: 630, alt: "SBI SIP Calculator"}],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/calculators/sbi-sip-calculator",

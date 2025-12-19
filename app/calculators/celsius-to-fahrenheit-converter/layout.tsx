@@ -61,17 +61,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/celsius-to-fahrenheit-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/celsius-to-fahrenheit-converter',
   },
   openGraph: {
     title: 'Celsius to Fahrenheit Converter - °C to °F Calculator',
     description: 'Free temperature converter with step-by-step solutions. Convert Celsius to Fahrenheit (°C to °F) and Fahrenheit to Celsius (°F to °C) instantly with conversion formulas.',
-    url: 'https://thetutorbridge.com/calculators/celsius-to-fahrenheit-converter',
+    url: 'https://www.thetutorbridge.com/calculators/celsius-to-fahrenheit-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Celsius to Fahrenheit Converter - The Tutor Bridge',
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Celsius to Fahrenheit Converter - Free Tool',
     description: 'Convert temperature between Celsius and Fahrenheit with detailed step-by-step solutions and conversion formulas.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

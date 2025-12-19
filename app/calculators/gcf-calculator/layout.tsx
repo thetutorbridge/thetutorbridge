@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/gcf-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/gcf-calculator',
   },
   openGraph: {
     title: 'GCF Calculator - Greatest Common Factor with Steps',
     description: 'Free GCF calculator with step-by-step solutions. Find the greatest common factor (GCF, HCF, GCD) using prime factorization, listing factors, or Euclidean algorithm.',
-    url: 'https://thetutorbridge.com/calculators/gcf-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/gcf-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'GCF Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GCF Calculator - Free Tool with Steps',
     description: 'Calculate the greatest common factor (GCF, HCF, GCD) with detailed step-by-step solutions and multiple methods.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -1162,7 +1162,7 @@ export default function RightTriangleCalculator() {
             "@type": "WebApplication",
             "name": "Right Triangle Calculator",
             "description": "Calculate sides, angles, area, and perimeter of right triangles using the Pythagorean theorem and trigonometry. Supports multiple input modes and units.",
-            "url": "https://thetutorbridge.com/calculators/right-triangle-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/right-triangle-calculator",
             "applicationCategory": "EducationalApplication",
             "operatingSystem": "Any",
             "offers": {

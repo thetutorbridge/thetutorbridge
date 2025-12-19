@@ -104,12 +104,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/dog-size-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/dog-size-calculator',
   },
   openGraph: {
     title: 'Free Dog Size Calculator - Predict Puppy Adult Weight',
     description: 'Find out how big your puppy will grow! Enter current age and weight to predict adult size. Includes size categories, growth milestones, and breed comparisons.',
-    url: 'https://thetutorbridge.com/calculators/dog-size-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/dog-size-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

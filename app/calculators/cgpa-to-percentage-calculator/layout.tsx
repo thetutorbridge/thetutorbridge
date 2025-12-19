@@ -66,17 +66,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/cgpa-to-percentage-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/cgpa-to-percentage-calculator',
   },
   openGraph: {
     title: 'CGPA to Percentage Calculator - Convert CGPA to % with Formula',
     description: 'Convert CGPA to percentage instantly with comprehensive formulas and examples. Supports 4.0, 10.0 grading scales with step-by-step conversion.',
-    url: 'https://thetutorbridge.com/calculators/cgpa-to-percentage-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/cgpa-to-percentage-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'CGPA to Percentage Calculator - The Tutor Bridge',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'CGPA to Percentage Calculator - Free Tool',
     description: 'Convert CGPA to percentage with formulas and examples. Supports multiple grading scales.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

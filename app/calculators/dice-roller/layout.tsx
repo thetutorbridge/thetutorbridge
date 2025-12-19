@@ -66,17 +66,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/dice-roller',
+    canonical: 'https://www.thetutorbridge.com/calculators/dice-roller',
   },
   openGraph: {
     title: 'Dice Roller - Online Virtual Dice for D&D, RPGs & Games',
     description: 'Free online dice roller with d4, d6, d8, d10, d12, d20, and d100 dice. Perfect for D&D, tabletop RPGs, board games, and learning probability.',
-    url: 'https://thetutorbridge.com/calculators/dice-roller',
+    url: 'https://www.thetutorbridge.com/calculators/dice-roller',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Dice Roller - The Tutor Bridge',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dice Roller - Online Virtual Dice for D&D, RPGs & Games',
     description: 'Roll virtual dice online with our free dice roller. Supports all polyhedral dice types with animations for gaming and probability.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

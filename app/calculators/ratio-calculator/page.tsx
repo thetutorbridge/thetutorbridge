@@ -742,7 +742,7 @@ export default function RatioCalculator() {
               Our expert tutors can help you master ratios, proportions, and all aspects of mathematics. Get personalized
               one-on-one instruction tailored to your learning style.
             </p>
-            <Link href="https://thetutorbridge.com/book-session">
+            <Link href="https://www.thetutorbridge.com/book-session">
               <Button
                 size="lg"
                 className="bg-white text-purple-600 hover:bg-purple-50 text-lg px-8 py-6 h-auto font-semibold"

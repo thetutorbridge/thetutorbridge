@@ -160,7 +160,7 @@ export default function BirthYearCalculatorPage() {
     '@type': 'WebApplication',
     name: 'Birth Year Calculator',
     description: 'Free birth year calculator to find birth year from age or calculate age from birth year. Includes generation info and Chinese zodiac sign.',
-    url: 'https://thetutorbridge.com/calculators/birth-year-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/birth-year-calculator',
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'Any',
     offers: {

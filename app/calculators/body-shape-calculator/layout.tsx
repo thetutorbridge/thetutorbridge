@@ -116,12 +116,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/body-shape-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/body-shape-calculator',
   },
   openGraph: {
     title: 'Free Body Shape Calculator - Find Your Body Type',
     description: 'Discover your body shape (hourglass, pear, apple, rectangle, or inverted triangle) based on your measurements. Get personalized fashion tips and style recommendations.',
-    url: 'https://thetutorbridge.com/calculators/body-shape-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/body-shape-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

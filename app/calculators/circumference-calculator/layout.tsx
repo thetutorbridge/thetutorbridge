@@ -110,12 +110,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/circumference-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/circumference-calculator',
   },
   openGraph: {
     title: 'Free Circumference Calculator - Circle Circumference, Radius, Diameter & Area',
     description: 'Calculate circle circumference using C = 2πr or C = πd formula. Enter radius, diameter, circumference, or area to find all circle properties instantly. Free online geometry tool.',
-    url: 'https://thetutorbridge.com/calculators/circumference-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/circumference-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

@@ -55,17 +55,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/discount-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/discount-calculator',
   },
   openGraph: {
     title: 'Discount Calculator - 10 Discount Types | Free Tool',
     description: 'Calculate discounts with 10 types: % off, 2 for 1, 3 for 2, fixed amount, double/triple discounts. Find final price and savings instantly.',
-    url: 'https://thetutorbridge.com/calculators/discount-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/discount-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Discount Calculator - The Tutor Bridge',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Discount Calculator - 10 Discount Types',
     description: 'Calculate discounts with % off, 2 for 1, 3 for 2, double/triple discounts and more. Free instant results.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

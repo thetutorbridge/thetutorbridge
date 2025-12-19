@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "The Tutor Bridge",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Class 6 Science Chapter 5 - Measurement of Length and Motion",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chapter 5: Measurement of Length and Motion - Class 6",
     description: "Learn about measurement of length and motion with Class 6 Science Chapter 5.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/study-resources/class-6/science/chapter-5-measurement-of-length-and-motion",

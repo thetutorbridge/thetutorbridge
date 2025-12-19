@@ -733,7 +733,7 @@ export default function FahrenheitToCelsiusConverter() {
               Our expert tutors can help you master temperature conversion, unit conversions, and all aspects of math and
               science. Get personalized one-on-one instruction tailored to your learning style.
             </p>
-            <Link href="https://thetutorbridge.com/book-session">
+            <Link href="https://www.thetutorbridge.com/book-session">
               <Button
                 size="lg"
                 className="bg-white text-orange-600 hover:bg-orange-50 text-lg px-8 py-6 h-auto font-semibold"

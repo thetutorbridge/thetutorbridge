@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Convert numbers to words instantly. Perfect for writing checks, invoices, and legal documents. Supports currency and custom letter cases.",
     type: "website",
     siteName: "The Tutor Bridge",
-    images: [{url: "/og-image.jpg", width: 1200, height: 630, alt: "Numbers to Words Converter"}],
+    images: [{url: "/og-image.png", width: 1200, height: 630, alt: "Numbers to Words Converter"}],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/calculators/numbers-to-words-converter",

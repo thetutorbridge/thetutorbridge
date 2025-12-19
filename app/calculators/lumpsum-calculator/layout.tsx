@@ -63,17 +63,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/lumpsum-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/lumpsum-calculator',
   },
   openGraph: {
     title: 'Lumpsum Calculator - One-Time Investment Returns | The Tutor Bridge',
     description: 'Calculate returns on lumpsum investments with compound interest. Free calculator for mutual funds, stocks, and one-time investments.',
-    url: 'https://thetutorbridge.com/calculators/lumpsum-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/lumpsum-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Lumpsum Calculator - The Tutor Bridge',
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lumpsum Calculator - Investment Returns',
     description: 'Calculate your one-time investment returns with compounding. Free lumpsum calculator with step-by-step projections.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

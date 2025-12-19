@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/combinations-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/combinations-calculator',
   },
   openGraph: {
     title: 'Combinations Calculator - Free nCr Calculator with Steps',
     description: 'Free combinations calculator (nCr) with step-by-step solutions and mathematical notation. Calculate combinations and permutations easily.',
-    url: 'https://thetutorbridge.com/calculators/combinations-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/combinations-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Combinations Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Combinations Calculator - Free nCr Calculator',
     description: 'Calculate combinations (nCr) with detailed step-by-step solutions and mathematical formulas.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

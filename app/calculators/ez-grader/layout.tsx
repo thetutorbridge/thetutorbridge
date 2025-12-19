@@ -66,17 +66,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/ez-grader',
+    canonical: 'https://www.thetutorbridge.com/calculators/ez-grader',
   },
   openGraph: {
     title: 'EZ Grader - Easy Grade Calculator & Printable Grading Chart',
     description: 'Free online EZ Grader to convert test scores to letter grades instantly. Generate grading charts, calculate percentages, and grade papers quickly.',
-    url: 'https://thetutorbridge.com/calculators/ez-grader',
+    url: 'https://www.thetutorbridge.com/calculators/ez-grader',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'EZ Grader Calculator - The Tutor Bridge',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'EZ Grader - Easy Grade Calculator & Grading Chart',
     description: 'Convert test scores to letter grades instantly with our free EZ Grader calculator. Printable grading charts included.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

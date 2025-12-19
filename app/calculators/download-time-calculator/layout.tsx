@@ -102,12 +102,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/download-time-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/download-time-calculator',
   },
   openGraph: {
     title: 'Free Download Time Calculator - Estimate File Download Duration',
     description: 'Calculate how long it takes to download files based on file size and internet speed. Works with MB, GB, TB and Mbps, Gbps. Includes speed comparison tables.',
-    url: 'https://thetutorbridge.com/calculators/download-time-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/download-time-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

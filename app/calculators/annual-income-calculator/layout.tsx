@@ -108,12 +108,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/annual-income-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/annual-income-calculator',
   },
   openGraph: {
     title: 'Free Annual Income Calculator - Hourly to Yearly Salary Converter',
     description: 'Convert hourly wage to annual salary instantly. Calculate gross and net income with tax deductions. Free online salary calculator for any work schedule.',
-    url: 'https://thetutorbridge.com/calculators/annual-income-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/annual-income-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

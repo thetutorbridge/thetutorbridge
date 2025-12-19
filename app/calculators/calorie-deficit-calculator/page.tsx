@@ -929,7 +929,7 @@ export default function CalorieDeficitCalculator() {
             '@type': 'WebApplication',
             name: 'Calorie Deficit Calculator',
             description: 'Free calorie deficit calculator to find how many calories to eat for weight loss. Calculate BMR, TDEE, and daily calorie intake.',
-            url: 'https://thetutorbridge.com/calculators/calorie-deficit-calculator',
+            url: 'https://www.thetutorbridge.com/calculators/calorie-deficit-calculator',
             applicationCategory: 'HealthApplication',
             operatingSystem: 'Any',
             permissions: 'browser',

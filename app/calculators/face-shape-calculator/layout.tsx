@@ -110,12 +110,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/face-shape-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/face-shape-calculator',
   },
   openGraph: {
     title: 'Free Face Shape Calculator - Discover Your Face Shape',
     description: 'Find your face shape with our free calculator. Enter facial measurements to discover if you have an oval, round, square, heart, or diamond face. Get personalized style tips.',
-    url: 'https://thetutorbridge.com/calculators/face-shape-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/face-shape-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

@@ -128,7 +128,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 <hr style="margin: 24px 0;">
                 <p>
                   <b>Stay connected:</b><br>
-                  <a href="https://thetutorbridge.com" target="_blank">Visit our website</a><br>
+                  <a href="https://www.thetutorbridge.com" target="_blank">Visit our website</a><br>
                   <a href="https://blog.thetutorbridge.com" target="_blank">Read our blog</a><br>
                   <a href="https://t.me/thetutorbridge" target="_blank">Join our Telegram</a><br>
                   <a href="https://wa.me/919310096171" target="_blank">WhatsApp us: +91-9310096171</a>

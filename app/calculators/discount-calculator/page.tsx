@@ -829,7 +829,7 @@ export default function DiscountCalculator() {
             "@type": "WebApplication",
             "name": "Discount Calculator",
             "description": "Calculate discounts with 10 types: % off, 2 for 1, 3 for 2, fixed amount, double/triple discounts. Find final price and savings instantly.",
-            "url": "https://thetutorbridge.com/calculators/discount-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/discount-calculator",
             "applicationCategory": "FinanceApplication",
             "operatingSystem": "Any",
             "offers": {

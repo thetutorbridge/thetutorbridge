@@ -82,12 +82,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/average-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/average-calculator',
   },
   openGraph: {
     title: 'Free Average Calculator - Mean, Median, Mode & Range',
     description: 'Calculate average (mean), median, mode, and range of any numbers instantly. Enter values separated by spaces or commas. Free online statistics tool.',
-    url: 'https://thetutorbridge.com/calculators/average-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/average-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

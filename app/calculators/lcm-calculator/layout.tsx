@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/lcm-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/lcm-calculator',
   },
   openGraph: {
     title: 'LCM Calculator - Least Common Multiple with Steps',
     description: 'Free LCM calculator for 2+ numbers. Find the Least Common Multiple with step-by-step solutions using multiple methods.',
-    url: 'https://thetutorbridge.com/calculators/lcm-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/lcm-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'LCM Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LCM Calculator - Free Tool with Steps',
     description: 'Calculate Least Common Multiple of 2+ numbers instantly with detailed step-by-step explanations.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -111,12 +111,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/trigonometry-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/trigonometry-calculator',
   },
   openGraph: {
     title: 'Free Trigonometry Calculator - Sin Cos Tan & Triangle Solver',
     description: 'Calculate trigonometric functions (sin, cos, tan) and solve right triangles instantly. Find missing sides and angles with SOHCAHTOA.',
-    url: 'https://thetutorbridge.com/calculators/trigonometry-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/trigonometry-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [

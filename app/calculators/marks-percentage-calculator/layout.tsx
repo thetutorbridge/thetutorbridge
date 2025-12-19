@@ -76,17 +76,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/marks-percentage-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/marks-percentage-calculator',
   },
   openGraph: {
     title: 'Marks Percentage Calculator - Calculate Exam Percentage Instantly',
     description: 'Calculate percentage from marks obtained and total marks with comprehensive formulas and examples. Free marks percentage calculator for students.',
-    url: 'https://thetutorbridge.com/calculators/marks-percentage-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/marks-percentage-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Marks Percentage Calculator - The Tutor Bridge',
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Marks Percentage Calculator - Free Student Tool',
     description: 'Calculate percentage from marks instantly with formulas and examples. Perfect for students and educators.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

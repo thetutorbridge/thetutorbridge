@@ -39,17 +39,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/square-footage-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/square-footage-calculator',
   },
   openGraph: {
     title: 'Square Footage Calculator - Free Area & Cost Calculator',
     description: 'Calculate square footage for any shape with unit conversions and cost estimation. Perfect for flooring, painting, roofing, and construction projects.',
-    url: 'https://thetutorbridge.com/calculators/square-footage-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/square-footage-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Square Footage Calculator - The Tutor Bridge',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Square Footage Calculator - Area & Material Cost Calculator',
     description: 'Free square footage calculator with waste factor and cost estimation for flooring, painting, and construction.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

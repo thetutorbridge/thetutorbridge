@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/modulo-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/modulo-calculator',
   },
   openGraph: {
     title: 'Modulo Calculator - Free Mod Operation with Steps',
     description: 'Free modulo calculator with step-by-step solutions and mathematical notation. Calculate remainders and understand modular arithmetic.',
-    url: 'https://thetutorbridge.com/calculators/modulo-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/modulo-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Modulo Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Modulo Calculator - Free Mod Tool',
     description: 'Calculate modulo (remainder division) with detailed step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

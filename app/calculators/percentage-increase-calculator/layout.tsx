@@ -46,17 +46,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/percentage-increase-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/percentage-increase-calculator',
   },
   openGraph: {
     title: 'Percentage Increase Calculator - Calculate % Change with Steps',
     description: 'Free percentage increase calculator with step-by-step solutions and mathematical notation. Perfect for calculating price increases, salary raises, and growth rates.',
-    url: 'https://thetutorbridge.com/calculators/percentage-increase-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/percentage-increase-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Percentage Increase Calculator - The Tutor Bridge',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Percentage Increase Calculator - Free % Change Tool',
     description: 'Calculate percentage increase instantly with step-by-step solutions. Perfect for business, finance, and education.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

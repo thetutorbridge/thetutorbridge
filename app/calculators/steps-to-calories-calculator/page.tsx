@@ -153,7 +153,7 @@ export default function StepsToCaloriesCalculatorPage() {
     '@type': 'WebApplication',
     name: 'Steps to Calories Calculator',
     description: 'Free steps to calories calculator to estimate calories burned from walking. Enter steps, weight, height, and walking speed for accurate results.',
-    url: 'https://thetutorbridge.com/calculators/steps-to-calories-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/steps-to-calories-calculator',
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Any',
     offers: {

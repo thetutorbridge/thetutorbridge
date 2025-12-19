@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/military-time-converter',
+    canonical: 'https://www.thetutorbridge.com/calculators/military-time-converter',
   },
   openGraph: {
     title: 'Military Time Converter - Convert 24 Hour to 12 Hour Time',
     description: 'Convert between 24-hour military time and 12-hour regular time instantly. Free tool with step-by-step explanations.',
-    url: 'https://thetutorbridge.com/calculators/military-time-converter',
+    url: 'https://www.thetutorbridge.com/calculators/military-time-converter',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Military Time Converter - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Military Time Converter - Free Tool',
     description: 'Convert military time to regular time and vice versa. Quick and accurate conversions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

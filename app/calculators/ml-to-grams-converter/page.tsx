@@ -154,7 +154,7 @@ export default function MlToGramsConverter() {
     "@type": "WebApplication",
     "name": "ml to Grams Converter",
     "description": "Free ml to grams converter for cooking ingredients. Convert milliliters to grams for water, milk, flour, sugar, oil, honey and more using density-based calculations.",
-    "url": "https://thetutorbridge.com/calculators/ml-to-grams-converter",
+    "url": "https://www.thetutorbridge.com/calculators/ml-to-grams-converter",
     "applicationCategory": "CalculatorApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -165,7 +165,7 @@ export default function MlToGramsConverter() {
     "provider": {
       "@type": "Organization",
       "name": "The Tutor Bridge",
-      "url": "https://thetutorbridge.com"
+      "url": "https://www.thetutorbridge.com"
     }
   };
 

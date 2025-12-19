@@ -811,7 +811,7 @@ export default function DuckworthLewisCalculator() {
             '@type': 'WebApplication',
             name: 'Duckworth Lewis Calculator',
             description: 'Free Duckworth Lewis Stern (DLS) calculator for cricket. Calculate revised targets for rain-interrupted ODI and T20 matches.',
-            url: 'https://thetutorbridge.com/calculators/duckworth-lewis-calculator',
+            url: 'https://www.thetutorbridge.com/calculators/duckworth-lewis-calculator',
             applicationCategory: 'SportsApplication',
             operatingSystem: 'Any',
             permissions: 'browser',

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Calculate compound interest with different compounding frequencies. Free CI calculator for investments.",
     type: "website",
     siteName: "The Tutor Bridge",
-    images: [{url: "/og-image.jpg", width: 1200, height: 630, alt: "Compound Interest Calculator"}],
+    images: [{url: "/og-image.png", width: 1200, height: 630, alt: "Compound Interest Calculator"}],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/calculators/compound-interest-calculator",

@@ -39,17 +39,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/work-hours-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/work-hours-calculator',
   },
   openGraph: {
     title: 'Work Hours Calculator - Free Time Card & Overtime Calculator',
     description: 'Calculate total work hours, breaks, and overtime automatically. Free timesheet calculator with printable time cards. Perfect for payroll and time tracking.',
-    url: 'https://thetutorbridge.com/calculators/work-hours-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/work-hours-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Work Hours Calculator - The Tutor Bridge',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Work Hours Calculator - Free Timesheet & Overtime Calculator',
     description: 'Calculate work hours with automatic overtime tracking and break deductions. Free time card calculator for payroll.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

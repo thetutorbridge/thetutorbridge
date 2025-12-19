@@ -65,17 +65,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/mean-mode-median-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/mean-mode-median-calculator',
   },
   openGraph: {
     title: 'Mean Median Mode Calculator - Complete Statistical Analysis',
     description: 'Free statistics calculator with mean, median, mode, range, quartiles, and outliers detection. Get instant results with detailed explanations.',
-    url: 'https://thetutorbridge.com/calculators/mean-mode-median-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/mean-mode-median-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Mean Median Mode Calculator - The Tutor Bridge',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mean Median Mode Calculator - Free Statistics Tool',
     description: 'Calculate mean, median, mode, range, quartiles, and identify outliers with step-by-step solutions. Perfect for statistics students.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

@@ -45,17 +45,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/minecraft-circle-generator',
+    canonical: 'https://www.thetutorbridge.com/calculators/minecraft-circle-generator',
   },
   openGraph: {
     title: 'Minecraft Circle Generator - Pixel Circle Maker',
     description: 'Generate perfect pixel circles for Minecraft builds. Customize diameter and thickness with visual block grid.',
-    url: 'https://thetutorbridge.com/calculators/minecraft-circle-generator',
+    url: 'https://www.thetutorbridge.com/calculators/minecraft-circle-generator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Minecraft Circle Generator - The Tutor Bridge',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Minecraft Circle Generator - Free Tool',
     description: 'Create perfect pixel circles for Minecraft. Free circle generator with visual grid.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

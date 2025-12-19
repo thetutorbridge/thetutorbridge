@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/college-gpa-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/college-gpa-calculator',
   },
   openGraph: {
     title: 'College GPA Calculator - Calculate Semester & Cumulative GPA',
     description: 'Free college GPA calculator to calculate semester and cumulative GPA with credit hours. Track academic performance and plan your grades.',
-    url: 'https://thetutorbridge.com/calculators/college-gpa-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/college-gpa-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'College GPA Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'College GPA Calculator - Calculate Semester & Cumulative GPA',
     description: 'Calculate semester and cumulative GPA with credit hours. Free college GPA calculator with comprehensive examples.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

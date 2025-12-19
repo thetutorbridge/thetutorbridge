@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'The Tutor Bridge',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Class 6 Science Chapter 8 - A Journey Through States of Water - The Tutor Bridge',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Class 6 Science Chapter 8 Notes – A Journey Through States of Water',
     description: 'Get Class 6 Science Chapter 8 notes – A Journey Through States of Water. Clear explanations of states (solid, liquid, gas), evaporation, condensation, melting/freezing, factors affecting drying, cooling by evaporation, cloud formation, and the water cycle—plus activities and HOTS questions.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.thetutorbridge.com/study-resources/class-6/science/chapter-8-a-journey-through-states-of-water',

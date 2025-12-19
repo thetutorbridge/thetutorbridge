@@ -62,17 +62,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/sgpa-to-cgpa-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/sgpa-to-cgpa-calculator',
   },
   openGraph: {
     title: 'SGPA to CGPA Calculator - Convert Semester GPA to Cumulative GPA',
     description: 'Free SGPA to CGPA calculator with step-by-step conversion formulas. Calculate cumulative GPA from semester GPAs with comprehensive examples.',
-    url: 'https://thetutorbridge.com/calculators/sgpa-to-cgpa-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/sgpa-to-cgpa-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'SGPA to CGPA Calculator - The Tutor Bridge',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SGPA to CGPA Calculator - Convert Semester GPA to Cumulative GPA',
     description: 'Calculate CGPA from SGPA with detailed step-by-step solutions and comprehensive conversion formulas.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

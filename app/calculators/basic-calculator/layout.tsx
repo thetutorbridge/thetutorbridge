@@ -39,17 +39,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/basic-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/basic-calculator',
   },
   openGraph: {
     title: 'Basic Calculator - Free Online Scientific Calculator',
     description: 'Free online calculator with memory functions, square root, percentage, and all basic arithmetic operations. Perfect for students, professionals, and quick calculations.',
-    url: 'https://thetutorbridge.com/calculators/basic-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/basic-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Basic Calculator - The Tutor Bridge',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Basic Calculator - Free Online Scientific Calculator',
     description: 'Free online calculator with memory, scientific functions, and calculation history. Works on all devices.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

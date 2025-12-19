@@ -69,17 +69,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/quartile-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/quartile-calculator',
   },
   openGraph: {
     title: 'Quartile Calculator - Calculate Q₁, Q₂, Q₃, and IQR',
     description: 'Calculate first, second, and third quartiles with interquartile range (IQR) and complete statistical analysis. Free tool for statistics students.',
-    url: 'https://thetutorbridge.com/calculators/quartile-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/quartile-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Quartile Calculator - The Tutor Bridge',
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Quartile Calculator - Free Tool',
     description: 'Calculate quartiles (Q₁, Q₂, Q₃) and IQR with step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

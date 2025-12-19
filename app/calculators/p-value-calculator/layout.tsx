@@ -54,17 +54,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/p-value-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/p-value-calculator',
   },
   openGraph: {
     title: 'P-Value Calculator - Calculate Statistical Significance',
     description: 'Free p-value calculator for hypothesis testing. Calculate p-values from z-score, t-score, chi-square, or F-statistic.',
-    url: 'https://thetutorbridge.com/calculators/p-value-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/p-value-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'P-Value Calculator - The Tutor Bridge',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'P-Value Calculator - Free Statistical Tool',
     description: 'Calculate p-values from z-score, t-score, chi-square, or F-statistic with visual distribution graphs.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

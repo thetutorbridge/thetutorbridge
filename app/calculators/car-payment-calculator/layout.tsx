@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/car-payment-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/car-payment-calculator',
   },
   openGraph: {
     title: 'Car Payment Calculator - Calculate Auto Loan & Monthly Payments',
     description: 'Free car payment calculator with amortization schedule. Calculate monthly payments, total interest, and total cost with trade-in, down payment, and sales tax.',
-    url: 'https://thetutorbridge.com/calculators/car-payment-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/car-payment-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Car Payment Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Car Payment Calculator - Calculate Auto Loan & Monthly Payments',
     description: 'Calculate your monthly car payment with our free calculator. Includes amortization schedule, trade-in value, down payment, and sales tax.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

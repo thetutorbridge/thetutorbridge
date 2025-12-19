@@ -65,17 +65,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/calculators/semester-grade-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/semester-grade-calculator',
   },
   openGraph: {
     title: 'Semester Grade Calculator - Calculate Weighted Semester Grades',
     description: 'Free semester grade calculator with step-by-step solutions. Calculate semester grades using quarterly grades and final exam scores with customizable weights.',
-    url: 'https://thetutorbridge.com/calculators/semester-grade-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/semester-grade-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Semester Grade Calculator - The Tutor Bridge',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Semester Grade Calculator - Calculate Weighted Semester Grades',
     description: 'Calculate your semester grade using quarterly grades and final exam scores. Free calculator with customizable weights and step-by-step solutions.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

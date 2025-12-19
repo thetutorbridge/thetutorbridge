@@ -676,7 +676,7 @@ export default function PercentOffCalculator() {
             "@type": "WebApplication",
             "name": "Percent Off Calculator",
             "description": "Calculate sale prices and savings instantly. Find discounts with stackable percentages and sales tax support.",
-            "url": "https://thetutorbridge.com/calculators/percent-off-calculator",
+            "url": "https://www.thetutorbridge.com/calculators/percent-off-calculator",
             "applicationCategory": "FinanceApplication",
             "operatingSystem": "Any",
             "offers": {

@@ -55,17 +55,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/test-grade-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/test-grade-calculator',
   },
   openGraph: {
     title: 'Test Grade Calculator - Calculate Test Scores & Letter Grades',
     description: 'Free test grade calculator to convert test scores to percentages and letter grades instantly. Multiple grading scales supported.',
-    url: 'https://thetutorbridge.com/calculators/test-grade-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/test-grade-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Test Grade Calculator - The Tutor Bridge',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Test Grade Calculator - Free Tool',
     description: 'Calculate test grades instantly. Convert scores to percentages and letter grades with multiple grading scales.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

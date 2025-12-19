@@ -191,8 +191,74 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     return null
   }
 
+  // Generate Article JSON-LD structured data
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.meta_title || post.title,
+    "description": post.meta_description || post.excerpt,
+    "image": post.featured_image ? [getActualImageUrl(post.featured_image)] : [],
+    "datePublished": post.published_at,
+    "dateModified": post.updated_at,
+    "author": {
+      "@type": "Person",
+      "name": post.author_name || "The Tutor Bridge",
+      "url": post.author_linkedin || "https://www.thetutorbridge.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Tutor Bridge",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.thetutorbridge.com/TheTutorBridge Logo New.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.thetutorbridge.com/blog/${slug}`
+    },
+    "keywords": post.meta_keywords?.join(", ") || post.tags?.join(", "),
+    "articleSection": "Education",
+    "wordCount": post.read_time ? post.read_time * 200 : undefined,
+    "inLanguage": "en-US"
+  }
+
+  // Generate BreadcrumbList JSON-LD
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.thetutorbridge.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.thetutorbridge.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": `https://www.thetutorbridge.com/blog/${slug}`
+      }
+    ]
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Navigation />
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-4">

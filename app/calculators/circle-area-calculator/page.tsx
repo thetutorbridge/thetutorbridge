@@ -851,7 +851,7 @@ export default function CircleAreaCalculator() {
             '@type': 'WebApplication',
             name: 'Circle Area Calculator',
             description: 'Free circle area calculator. Calculate area from radius or diameter. Find radius, diameter, and circumference from area.',
-            url: 'https://thetutorbridge.com/calculators/circle-area-calculator',
+            url: 'https://www.thetutorbridge.com/calculators/circle-area-calculator',
             applicationCategory: 'UtilityApplication',
             operatingSystem: 'Any',
             permissions: 'browser',

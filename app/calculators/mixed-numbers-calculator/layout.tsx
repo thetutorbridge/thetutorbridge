@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "Calculate with mixed numbers and fractions. Get step-by-step solutions with multiple solving methods. Perfect for students and teachers.",
     type: "website",
     siteName: "The Tutor Bridge",
-    images: [{url: "/og-image.jpg", width: 1200, height: 630, alt: "Mixed Numbers Calculator"}],
+    images: [{url: "/og-image.png", width: 1200, height: 630, alt: "Mixed Numbers Calculator"}],
   },
   alternates: {
     canonical: "https://www.thetutorbridge.com/calculators/mixed-numbers-calculator",

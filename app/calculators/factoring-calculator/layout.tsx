@@ -64,17 +64,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/calculators/factoring-calculator',
+    canonical: 'https://www.thetutorbridge.com/calculators/factoring-calculator',
   },
   openGraph: {
     title: 'Factoring Calculator - Find All Factors and Factor Pairs',
     description: 'Find all factors and factor pairs of any number with step-by-step solutions. Free tool for students and math learners.',
-    url: 'https://thetutorbridge.com/calculators/factoring-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/factoring-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
     images: [
       {
-        url: 'https://thetutorbridge.com/og-calculator.png',
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
         width: 1200,
         height: 630,
         alt: 'Factoring Calculator - The Tutor Bridge',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Factoring Calculator - Free Tool',
     description: 'Find all factors and factor pairs with step-by-step solutions. Perfect for homework and learning.',
-    images: ['https://thetutorbridge.com/og-calculator.png'],
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },
   robots: {
     index: true,

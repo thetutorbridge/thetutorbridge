@@ -389,7 +389,7 @@ export default function FaceShapeCalculatorPage() {
     '@type': 'WebApplication',
     name: 'Face Shape Calculator',
     description: 'Free face shape calculator to determine your face shape based on facial measurements. Get personalized hairstyle, glasses, and makeup recommendations.',
-    url: 'https://thetutorbridge.com/calculators/face-shape-calculator',
+    url: 'https://www.thetutorbridge.com/calculators/face-shape-calculator',
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Any',
     offers: {
