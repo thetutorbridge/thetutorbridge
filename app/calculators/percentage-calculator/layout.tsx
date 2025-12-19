@@ -1,5 +1,33 @@
 import { Metadata } from 'next';
 
+// FAQ data for schema
+const faqData = [
+  {
+    question: "What is a percentage?",
+    answer: "A percentage is a number or ratio expressed as a fraction of 100. It is denoted using the percent sign '%'. For example, 45% is equal to 45/100, or 0.45. Percentages are used to express how large or small one quantity is relative to another quantity."
+  },
+  {
+    question: "How do you calculate a percentage of a number?",
+    answer: "To calculate a percentage of a number, convert the percentage to a decimal by dividing by 100, then multiply by the number. For example, to find 20% of 150: (20 ÷ 100) × 150 = 0.20 × 150 = 30."
+  },
+  {
+    question: "How do you convert a decimal to a percentage?",
+    answer: "To convert a decimal to a percentage, multiply the decimal by 100 and add the percent sign. For example, 0.75 as a percentage is 0.75 × 100 = 75%. You can think of it as moving the decimal point two places to the right."
+  },
+  {
+    question: "How do you convert a fraction to a percentage?",
+    answer: "To convert a fraction to a percentage, divide the numerator by the denominator, then multiply by 100. For example, 3/4 as a percentage: (3 ÷ 4) × 100 = 0.75 × 100 = 75%."
+  },
+  {
+    question: "Can a percentage be greater than 100%?",
+    answer: "Yes! Percentages can be greater than 100%. This occurs when a value is larger than the reference value. For example, if sales increased from 50 to 150 units, the growth is 200%."
+  },
+  {
+    question: "How do you calculate percentage increase or decrease?",
+    answer: "To calculate percentage change: ((New Value - Old Value) / Old Value) × 100. If positive, it's an increase; if negative, it's a decrease. For example, if a price goes from $100 to $120: ((120 - 100) / 100) × 100 = 20% increase."
+  }
+];
+
 export const metadata: Metadata = {
   title: 'Percentage Calculator - Free % Calculator with Quick Solutions | The Tutor Bridge',
   description: 'Free percentage calculator with 3 quick solutions. Calculate what is X% of Y, X is what % of Y, and X is Y% of what. Perfect for students, business, and everyday calculations with step-by-step solutions.',
@@ -106,5 +134,61 @@ export default function PercentageCalculatorLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  // Generate FAQPage schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  // WebApplication schema for the calculator
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Percentage Calculator",
+    "description": "Free percentage calculator with 3 quick solutions. Calculate what is X% of Y, X is what % of Y, and X is Y% of what. Step-by-step solutions included.",
+    "url": "https://www.thetutorbridge.com/calculators/percentage-calculator",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "The Tutor Bridge",
+      "url": "https://www.thetutorbridge.com"
+    },
+    "featureList": [
+      "What is X% of Y calculation",
+      "X is what % of Y calculation",
+      "X is Y% of what calculation",
+      "Step-by-step solutions",
+      "Instant results",
+      "Free to use"
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+      />
+      {children}
+    </>
+  );
 }

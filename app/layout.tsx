@@ -10,25 +10,24 @@ const merriweather = Merriweather({ subsets: ["latin"], weight: ["400", "700"], 
 
 export const metadata: Metadata = {
   title: {
-    default: "The Tutor Bridge - #1 Online Tutoring Platform for Grades 6-12 | Math, Science, English",
+    default: "Online Homework Help & Tutoring for Grades 6-12 | Math, Science, English | The Tutor Bridge",
   },
   description:
-    "India's leading online tutoring platform offering personalized 1-on-1 sessions, instant doubt solving, career guidance & study resources for grades 6-12. 95% success rate. Book free trial today!",
+    "Expert homework help and 1-on-1 online tutoring for middle & high school students. Math, Science, English. U.S.-certified tutors. Free consultation. Get help today!",
   keywords: [
+    "homework help",
     "online tutoring",
-    "one on one tutoring",
-    "doubt solving",
-    "career guidance",
-    "study materials",
     "math tutor",
     "science tutor",
     "english tutor",
+    "homework help online",
+    "tutoring for high school",
+    "middle school tutoring",
+    "algebra help",
+    "chemistry tutor",
+    "essay help",
+    "one on one tutoring",
     "grades 6-12",
-    "JEE preparation",
-    "NEET preparation",
-    "board exam preparation",
-    "homework help",
-    "instant doubt clearing",
   ],
   authors: [{ name: "The Tutor Bridge" }],
   creator: "The Tutor Bridge",
@@ -46,27 +45,27 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
     url: "https://www.thetutorbridge.com",
     siteName: "The Tutor Bridge",
-    title: "The Tutor Bridge - #1 Online Tutoring Platform for Grades 6-12",
+    title: "Online Homework Help & Tutoring for Grades 6-12",
     description:
-      "India's leading online tutoring platform with 95% success rate. Get personalized tutoring, instant doubt solving & career guidance. Book free trial!",
+      "Expert homework help and 1-on-1 online tutoring. Math, Science, English. U.S.-certified tutors.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.thetutorbridge.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "The Tutor Bridge - Online Tutoring Platform",
+        alt: "The Tutor Bridge - Online Homework Help & Tutoring",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Tutor Bridge - #1 Online Tutoring Platform",
+    title: "Online Homework Help & Tutoring | The Tutor Bridge",
     description:
-      "India's leading online tutoring platform with 95% success rate. Get personalized tutoring, instant doubt solving & career guidance.",
-    images: ["/og-image.png"],
+      "Expert homework help and 1-on-1 online tutoring for grades 6-12. Math, Science, English. U.S.-certified tutors.",
+    images: ["https://www.thetutorbridge.com/og-image.png"],
   },
   verification: {
     google: "KpkvQp8VxFV7-obKHHmwexGdICgx5vhXw8nLHEKPvog",
@@ -95,7 +94,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
         <link rel="shortcut icon" href="/favicon.ico?v=2" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Note: viewport meta is handled by Next.js automatically */}
         <meta name="theme-color" content="#1A3D7C" />
         <script
           type="application/ld+json"
@@ -104,7 +103,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
               name: "The Tutor Bridge",
-              description: "India's leading online tutoring platform offering personalized education for grades 6-12",
+              description: "Expert homework help and online tutoring for grades 6-12 in Math, Science, and English",
               url: "https://www.thetutorbridge.com",
               logo: "https://www.thetutorbridge.com/TheTutorBridge Logo New.png",
               contactPoint: {
@@ -115,8 +114,10 @@ export default function RootLayout({
               },
               address: {
                 "@type": "PostalAddress",
-                addressCountry: "IN",
+                addressCountry: "US",
               },
+              areaServed: "US",
+              serviceType: ["Homework Help", "Online Tutoring", "Academic Support"],
               sameAs: [
                 "https://www.linkedin.com/company/thetutorbridge",
               ],

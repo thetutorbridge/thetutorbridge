@@ -471,18 +471,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .eq('status', 'published')
       .order('published_at', { ascending: false });
 
-    if (error) {
-      console.error('Error fetching blog posts for sitemap:', error);
-    } else {
-      blogPostPages = (posts || []).map((post) => ({
+    if (!error && posts) {
+      blogPostPages = posts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.updated_at || post.published_at),
         changeFrequency: 'weekly' as const,
         priority: 0.7,
       }));
     }
-  } catch (error) {
-    console.error('Error generating sitemap:', error);
+  } catch {
+    // Silent fail - sitemap will still work with static pages
   }
 
   // Combine all pages

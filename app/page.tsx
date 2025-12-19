@@ -67,13 +67,9 @@ async function getLatestPosts() {
       .order('published_at', { ascending: false })
       .limit(3)
 
-    if (error) {
-      console.error('Error fetching latest posts:', error)
-      return []
-    }
+    if (error) return []
     return data || []
-  } catch (error) {
-    console.error('Error fetching latest posts:', error)
+  } catch {
     return []
   }
 }
