@@ -18,16 +18,23 @@ export function Footer() {
               <span className="text-xl font-bold">TheTutorBridge</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              India's leading online tutoring platform helping students achieve academic excellence since 2020.
+              Expert online tutoring platform helping students achieve academic excellence. Personalized homework help and 1-on-1 tutoring for grades 6-12.
             </p>
             <div className="flex space-x-4">
               <a
                 href="https://www.linkedin.com/company/thetutorbridge/"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 LinkedIn
               </a>
-              <a href="https://t.me/thetutorbridge" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://t.me/thetutorbridge"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 Telegram
               </a>
             </div>

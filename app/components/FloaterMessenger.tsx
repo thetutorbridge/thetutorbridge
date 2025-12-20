@@ -17,17 +17,17 @@ export default function FloaterMessenger() {
             </svg>
           </button>
           <a
-            href="/doubt-solving/ask-doubt"
+            href="/homework-help/submit"
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 font-medium transition"
             onClick={() => setOpen(false)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.556 0 8.25-3.694 8.25-8.25S16.556 3.75 12 3.75 3.75 7.444 3.75 12c0 1.086.21 2.124.594 3.07a.75.75 0 01.056.47l-.36 2.16a.75.75 0 00.88.88l2.16-.36a.75.75 0 01.47.056A8.207 8.207 0 0012 20.25z" />
             </svg>
-            Ask Doubt
+            Get Help
           </a>
           <a
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-50 hover:bg-green-100 text-green-700 font-medium transition"
             onClick={() => setOpen(false)}
           >

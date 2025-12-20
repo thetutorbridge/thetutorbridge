@@ -1,29 +1,15 @@
 User-agent: *
 Allow: /
 
-# Sitemap - Dynamic sitemap that automatically includes all pages
+# Sitemap
 Sitemap: https://www.thetutorbridge.com/sitemap.xml
 
-# Explicitly allow static resources (fonts, CSS, JS)
-Allow: /_next/static/
-Allow: /_next/image/
+# Allow static resources
+Allow: /_next/static
+Allow: /_next/image
 
-# Disallow admin areas
-Disallow: /admin/
-Disallow: /api/
+# Disallow admin and API
+Disallow: /admin
+Disallow: /api
 
-# Allow all content pages
-Allow: /blog/
-Allow: /calculators/
-Allow: /roadmap/
-Allow: /study-resources/
-Allow: /homework-help/
-Allow: /tutoring/
-Allow: /career-guidance/
-Allow: /motivational-sessions/
-Allow: /about/
-Allow: /contact/
-Allow: /ai-study-guide-maker/
-
-# Crawl delay (optional)
-Crawl-delay: 1
+# Crawl-delay removed for faster indexing

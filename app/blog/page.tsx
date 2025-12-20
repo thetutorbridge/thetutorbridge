@@ -159,13 +159,13 @@ export default async function BlogPage() {
                 <span className="text-xl font-bold">TheTutorBridge</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                India's leading online tutoring platform helping students achieve academic excellence since 2020.
+                Expert online tutoring platform helping students achieve academic excellence. Personalized homework help and 1-on-1 tutoring for grades 6-12.
               </p>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/company/thetutorbridge/" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/company/thetutorbridge/" target="_blank" rel="noopener noreferrer nofollow" className="text-gray-400 hover:text-white transition-colors">
                   LinkedIn
                 </a>
-                <a href="https://t.me/thetutorbridge" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://t.me/thetutorbridge" target="_blank" rel="noopener noreferrer nofollow" className="text-gray-400 hover:text-white transition-colors">
                   Telegram
                 </a>
               </div>
@@ -174,8 +174,8 @@ export default async function BlogPage() {
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="/doubt-solving" className="hover:text-white transition-colors">
-                    Doubt Solving
+                  <Link href="/homework-help" className="hover:text-white transition-colors">
+                    Homework Help
                   </Link>
                 </li>
                 <li>
@@ -214,7 +214,6 @@ export default async function BlogPage() {
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>info@thetutorbridge.com</li>
-                <li>+91 9310096171</li>
               </ul>
             </div>
           </div>

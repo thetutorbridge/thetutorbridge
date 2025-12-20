@@ -319,7 +319,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         <a
                           href={post.author_linkedin}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noopener noreferrer nofollow"
                           className="text-blue-600 hover:text-blue-800 transition-colors"
                           title="View LinkedIn Profile"
                         >
@@ -365,7 +365,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         <a
                           href={post.author_linkedin}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noopener noreferrer nofollow"
                           className="text-blue-600 hover:text-blue-800 transition-colors"
                           title="View LinkedIn Profile"
                         >
@@ -428,12 +428,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Get personalized tutoring, instant doubt solving, and expert guidance from our experienced educators.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-demo-class">
+              <Link href="/tutoring/free-consultation">
                 <Button size="lg" className="bg-white text-brand-blue hover:bg-gray-100">
                   Book Free Session
                 </Button>
               </Link>
-              <Link href="/doubt-solving">
+              <Link href="/homework-help">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-blue">
                   Learn More
                 </Button>
@@ -452,13 +452,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <span className="text-xl font-bold">TheTutorBridge</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                India's leading online tutoring platform helping students achieve academic excellence since 2020.
+                Expert online tutoring platform helping students achieve academic excellence. Personalized homework help and 1-on-1 tutoring for grades 6-12.
               </p>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/company/thetutorbridge/" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/company/thetutorbridge/" target="_blank" rel="noopener noreferrer nofollow" className="text-gray-400 hover:text-white transition-colors">
                   LinkedIn
                 </a>
-                <a href="https://t.me/thetutorbridge" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://t.me/thetutorbridge" target="_blank" rel="noopener noreferrer nofollow" className="text-gray-400 hover:text-white transition-colors">
                   Telegram
                 </a>
               </div>
@@ -507,7 +507,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>info@thetutorbridge.com</li>
-                <li>+91 9310096171</li>
               </ul>
             </div>
           </div>

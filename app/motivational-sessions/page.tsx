@@ -66,7 +66,7 @@ export default function MotivationalSessions() {
               Our motivational sessions empower students with confidence, focus, and resilience — helping them dream bigger and achieve more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link href="/book-demo-class">
+              <Link href="/tutoring/free-consultation">
                 <Button
                   size="lg"
                   className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold"
@@ -491,7 +491,7 @@ export default function MotivationalSessions() {
               Our sessions ignite it into confidence and success. Join thousands of students who have transformed their mindset and achieved their goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/book-demo-class">
+              <Link href="/tutoring/free-consultation">
                 <Button
                   size="lg"
                   className="bg-white text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-white/90 transition-all text-lg font-semibold"
@@ -540,13 +540,13 @@ export default function MotivationalSessions() {
                 <span className="text-xl font-bold">TheTutorBridge</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                India's leading online tutoring platform helping students achieve academic excellence since 2020.
+                Expert online tutoring platform helping students achieve academic excellence. Personalized homework help and 1-on-1 tutoring for grades 6-12.
               </p>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/company/thetutorbridge/" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/company/thetutorbridge/" target="_blank" rel="noopener noreferrer nofollow" className="text-gray-400 hover:text-white transition-colors">
                   LinkedIn
                 </a>
-                <a href="https://t.me/thetutorbridge" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://t.me/thetutorbridge" target="_blank" rel="noopener noreferrer nofollow" className="text-gray-400 hover:text-white transition-colors">
                   Telegram
                 </a>
               </div>
@@ -555,8 +555,8 @@ export default function MotivationalSessions() {
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="/doubt-solving" className="hover:text-white transition-colors">
-                    Doubt Solving
+                  <Link href="/homework-help" className="hover:text-white transition-colors">
+                    Homework Help
                   </Link>
                 </li>
                 <li>
@@ -595,7 +595,6 @@ export default function MotivationalSessions() {
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>info@thetutorbridge.com</li>
-                <li>+91 9310096171</li>
               </ul>
             </div>
           </div>
