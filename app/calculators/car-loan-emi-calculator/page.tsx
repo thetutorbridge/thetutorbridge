@@ -100,7 +100,7 @@ export default function CarLoanEMICalculatorPage() {
                 Back to Calculators
               </Button>
             </Link>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold">
                 Book Free Session
               </Button>
@@ -651,7 +651,7 @@ export default function CarLoanEMICalculatorPage() {
                 Our expert tutors can help you master loan calculations, understand interest rates, and excel in financial mathematics. Get personalized one-on-one guidance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/book-demo-class">
+                <Link href="/tutoring/free-consultation">
                   <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors flex items-center justify-center gap-2">
                     Book Your Session
                     <ArrowRight className="w-5 h-5" />
@@ -690,7 +690,7 @@ export default function CarLoanEMICalculatorPage() {
               <ul className="space-y-2 text-gray-300">
                 <li><Link href="/study-resources" className="hover:text-[#2BAE66] transition-colors">Study Resources</Link></li>
                 <li><Link href="/calculators" className="hover:text-[#2BAE66] transition-colors">Calculators</Link></li>
-                <li><Link href="/doubt-solving" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
+                <li><Link href="/homework-help" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
                 <li><Link href="/career-guidance" className="hover:text-[#2BAE66] transition-colors">Career Guidance</Link></li>
               </ul>
             </div>
@@ -699,7 +699,6 @@ export default function CarLoanEMICalculatorPage() {
             <div className="text-center md:text-left">
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-300">
-                <p>+91 9310096171</p>
                 <p>info@thetutorbridge.com</p>
               </div>
             </div>

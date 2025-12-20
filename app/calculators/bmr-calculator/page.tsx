@@ -1005,7 +1005,7 @@ export default function BMRCalculatorPage() {
                   Our expert tutors can help you understand metabolism, nutrition science,
                   and create personalized fitness plans. Book a session today!
                 </p>
-                <Link href="/book-demo-class">
+                <Link href="/tutoring/free-consultation">
                   <Button className="bg-white text-orange-600 hover:bg-orange-50 font-semibold px-8 py-3">
                     Book Your Session
                     <ArrowRight className="w-4 h-4 ml-2" />

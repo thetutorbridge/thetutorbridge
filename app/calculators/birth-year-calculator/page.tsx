@@ -740,7 +740,7 @@ export default function BirthYearCalculatorPage() {
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
               Our expert tutors can help you understand mathematical concepts, from basic arithmetic to advanced calculations. Book a personalized session today!
             </p>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] hover:bg-[#ffb627] text-gray-900 font-semibold px-8">
                 Book Your Session
               </Button>

@@ -1053,7 +1053,7 @@ export default function VO2MaxCalculator() {
             Our expert tutors can help you understand exercise science, physiology, and develop effective training programs!
           </p>
           <Link
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-colors shadow-lg"
           >
             Book Your Free Session

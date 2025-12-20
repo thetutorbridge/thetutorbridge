@@ -618,7 +618,7 @@ export default function MarginCalculator() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="/book-demo-class"
+                href="/tutoring/free-consultation"
                 className="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-50 transition-colors shadow-lg hover:shadow-xl inline-block"
               >
                 Book a Free Demo Class

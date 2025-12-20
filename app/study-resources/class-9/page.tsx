@@ -69,7 +69,7 @@ export default function Class6Resources() {
                 Back to All Classes
               </Button>
             </Link>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold">
                 Book Free Session
               </Button>
@@ -126,7 +126,7 @@ export default function Class6Resources() {
                               View Chapter 1
                             </Button>
                           </Link>
-                          <Link href="/book-demo-class">
+                          <Link href="/tutoring/free-consultation">
                             <Button variant="outline" className="border-2 border-[#2BAE66] text-[#2BAE66] rounded-xl px-6 py-3 hover:bg-[#2BAE66] hover:text-white transition-all">
                               Book Free Session
                             </Button>
@@ -143,7 +143,7 @@ export default function Class6Resources() {
                           We're working hard to bring you comprehensive {subject.toLowerCase()} resources for Class 9. 
                           In the meantime, book a free session with our expert mentors.
                         </p>
-                        <Link href="/book-demo-class">
+                        <Link href="/tutoring/free-consultation">
                           <Button className="bg-[#2BAE66] text-white rounded-xl px-6 py-3 hover:bg-[#2BAE66]/90 transition-all">
                             Book Free Session
                           </Button>
@@ -168,7 +168,7 @@ export default function Class6Resources() {
             Our expert mentors can help you understand concepts better and excel in your Class 9 studies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold">
                 Book Free Session
               </Button>
@@ -204,7 +204,7 @@ export default function Class6Resources() {
                 <Link href="/about" className="block text-white/80 hover:text-[#FFC857] transition-colors">About Us</Link>
                 <Link href="/study-resources" className="block text-white/80 hover:text-[#FFC857] transition-colors">Study Resources</Link>
                 <Link href="/career-guidance" className="block text-white/80 hover:text-[#FFC857] transition-colors">Career Guidance</Link>
-                <Link href="/book-demo-class" className="block text-white/80 hover:text-[#FFC857] transition-colors">Book Demo</Link>
+                <Link href="/tutoring/free-consultation" className="block text-white/80 hover:text-[#FFC857] transition-colors">Book Demo</Link>
               </div>
             </div>
 
@@ -214,7 +214,6 @@ export default function Class6Resources() {
               <div className="space-y-3">
                 <div className="flex items-center justify-center md:justify-start gap-3">
                   <Phone className="w-5 h-5 text-[#FFC857]" />
-                  <span className="text-white/80">+91 9310096171</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-3">
                   <Mail className="w-5 h-5 text-[#FFC857]" />

@@ -884,7 +884,7 @@ export default function PercentErrorCalculator() {
             Our expert tutors can help you understand percent error, experimental design, and data analysis
           </p>
           <Link
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="inline-block bg-white text-[#1A3D7C] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
           >
             Book Your Free Demo Session

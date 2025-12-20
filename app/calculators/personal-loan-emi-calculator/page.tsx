@@ -552,7 +552,7 @@ export default function PersonalLoanEMICalculatorPage() {
                 Our expert tutors can help you understand EMI calculations, interest mathematics, and financial planning concepts. Get personalized one-on-one guidance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/book-demo-class">
+                <Link href="/tutoring/free-consultation">
                   <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3D7C] transition-colors flex items-center justify-center gap-2">
                     Book Your Session
                     <ArrowRight className="w-5 h-5" />
@@ -591,7 +591,7 @@ export default function PersonalLoanEMICalculatorPage() {
               <ul className="space-y-2 text-gray-300">
                 <li><Link href="/study-resources" className="hover:text-[#2BAE66] transition-colors">Study Resources</Link></li>
                 <li><Link href="/calculators" className="hover:text-[#2BAE66] transition-colors">Calculators</Link></li>
-                <li><Link href="/doubt-solving" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
+                <li><Link href="/homework-help" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
                 <li><Link href="/career-guidance" className="hover:text-[#2BAE66] transition-colors">Career Guidance</Link></li>
               </ul>
             </div>
@@ -600,7 +600,6 @@ export default function PersonalLoanEMICalculatorPage() {
             <div className="text-center md:text-left">
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-300">
-                <p>+91 9310096171</p>
                 <p>info@thetutorbridge.com</p>
               </div>
             </div>

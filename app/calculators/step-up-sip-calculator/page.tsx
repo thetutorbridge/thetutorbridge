@@ -100,7 +100,7 @@ export default function StepUpSipCalculatorPage() {
                 Back to Calculators
               </Button>
             </Link>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold">
                 Book Free Session
               </Button>
@@ -499,7 +499,7 @@ export default function StepUpSipCalculatorPage() {
                 Our expert mentors can guide you through Step Up SIP planning, mutual fund selection, and creating a systematic investment strategy that grows with your income.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/book-demo-class">
+                <Link href="/tutoring/free-consultation">
                   <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-[#FFC857]/90 transition-colors">
                     Book Free Session
                   </button>
@@ -527,7 +527,7 @@ export default function StepUpSipCalculatorPage() {
               Our expert tutors can help you understand step-up SIP calculations, compound interest, and investment mathematics. Get personalized one-on-one guidance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-demo-class">
+              <Link href="/tutoring/free-consultation">
                 <Button className="bg-[#FFC857] hover:bg-[#FFC857]/90 text-[#1A3D7C] px-8 py-6 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
                   Book Free Demo Class
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -560,14 +560,13 @@ export default function StepUpSipCalculatorPage() {
               <ul className="space-y-2 text-gray-300">
                 <li><Link href="/study-resources" className="hover:text-[#2BAE66] transition-colors">Study Resources</Link></li>
                 <li><Link href="/calculators" className="hover:text-[#2BAE66] transition-colors">Calculators</Link></li>
-                <li><Link href="/doubt-solving" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
+                <li><Link href="/homework-help" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
                 <li><Link href="/career-guidance" className="hover:text-[#2BAE66] transition-colors">Career Guidance</Link></li>
               </ul>
             </div>
             <div className="text-center md:text-left">
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-300">
-                <p>+91 9310096171</p>
                 <p>info@thetutorbridge.com</p>
               </div>
             </div>

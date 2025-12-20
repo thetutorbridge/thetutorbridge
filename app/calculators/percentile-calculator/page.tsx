@@ -555,7 +555,7 @@ export default function PercentileCalculator() {
             Our expert tutors can help you master percentiles, data analysis, and all statistics concepts
           </p>
           <Link
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="inline-block bg-white text-[#1A3D7C] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
           >
             Book Your Free Demo Session

@@ -68,7 +68,7 @@ export default function Chapter9Page() {
                 Back to Class 6 Science
               </Button>
             </Link>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold">
                 Book Free Session
               </Button>
@@ -558,7 +558,7 @@ export default function Chapter9Page() {
                 Our expert mentors can help you master separation techniques with hands-on experiments and real-world applications.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/book-demo-class">
+                <Link href="/tutoring/free-consultation">
                   <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-[#FFC857]/90 transition-colors">
                     Book Free Session
                   </button>
@@ -594,7 +594,7 @@ export default function Chapter9Page() {
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-gray-300">
                 <li><Link href="/study-resources" className="hover:text-[#2BAE66] transition-colors">Study Resources</Link></li>
-                <li><Link href="/doubt-solving" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
+                <li><Link href="/homework-help" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
                 <li><Link href="/career-guidance" className="hover:text-[#2BAE66] transition-colors">Career Guidance</Link></li>
                 <li><Link href="/motivational-sessions" className="hover:text-[#2BAE66] transition-colors">Motivational Sessions</Link></li>
               </ul>
@@ -606,7 +606,6 @@ export default function Chapter9Page() {
               <div className="space-y-2 text-gray-300">
                 <div className="flex items-center justify-center md:justify-start gap-2">
                   <BookOpen className="w-4 h-4" />
-                  <span>+91 9310096171</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-2">
                   <BookOpen className="w-4 h-4" />

@@ -818,7 +818,7 @@ export default function StepsToKmCalculator() {
               </div>
             </div>
             <Link
-              href="/book-demo-class"
+              href="/tutoring/free-consultation"
               className="inline-flex items-center px-6 py-3 bg-[#FFC857] text-[#1A3D7C] font-bold rounded-xl hover:bg-yellow-400 transition-colors whitespace-nowrap"
             >
               Book Your Session

@@ -823,7 +823,7 @@ export default function CircleAreaCalculator() {
             Our expert tutors can help you understand circle formulas, geometry concepts, and more!
           </p>
           <Link
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="inline-flex items-center px-6 py-3 bg-white text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-colors shadow-lg"
           >
             Book Your Free Session

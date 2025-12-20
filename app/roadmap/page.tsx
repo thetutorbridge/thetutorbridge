@@ -791,7 +791,7 @@ export default function RoadmapIndexPage() {
             <p className="text-white/90 mb-8 text-lg">
               Get one-on-one mentorship from industry experts who have walked this path.
             </p>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button className="bg-[#FFC857] text-[#1A3D7C] hover:bg-[#FFC857]/90 px-8 py-3 font-semibold rounded-xl text-lg">
                 Book Free Session
               </Button>

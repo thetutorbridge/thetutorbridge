@@ -607,7 +607,7 @@ export default function MinecraftCircleGenerator() {
             Our expert tutors can help you understand circles, geometry, and mathematical concepts for gaming and beyond!
           </p>
           <Link
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="inline-flex items-center px-6 py-3 bg-white text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-colors shadow-lg"
           >
             Book Your Free Session

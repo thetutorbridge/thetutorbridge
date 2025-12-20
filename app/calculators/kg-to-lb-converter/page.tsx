@@ -760,7 +760,7 @@ export default function KgToLbConverter() {
               Our expert tutors can help you master unit conversions, measurement systems, and excel in mathematics and science. Get personalized one-on-one guidance tailored to your learning style.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-demo-class">
+              <Link href="/tutoring/free-consultation">
                 <Button className="bg-[#FFC857] hover:bg-[#FFC857]/90 text-[#1A3D7C] px-8 py-6 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
                   Book Free Demo Class
                   <ArrowRight className="w-5 h-5 ml-2" />

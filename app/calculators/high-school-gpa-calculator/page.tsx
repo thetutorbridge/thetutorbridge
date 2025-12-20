@@ -1553,7 +1553,7 @@ export default function HighSchoolGPACalculator() {
               Our expert tutors can help you excel in AP, IB, and honors classes. Get personalized guidance to improve your grades, master challenging subjects, and achieve your college admission goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-demo-class">
+              <Link href="/tutoring/free-consultation">
                 <Button className="bg-[#FFC857] hover:bg-[#FFC857]/90 text-[#1A3D7C] px-8 py-6 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
                   Book Free Demo Class
                   <ArrowRight className="w-5 h-5 ml-2" />

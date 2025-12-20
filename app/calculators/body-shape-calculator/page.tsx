@@ -793,7 +793,7 @@ export default function BodyShapeCalculatorPage() {
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
               Our expert tutors can help you understand body composition, nutrition, fitness principles, and more. Book a personalized session today!
             </p>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] hover:bg-[#ffb627] text-gray-900 font-semibold px-8">
                 Book Your Session
               </Button>

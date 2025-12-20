@@ -705,7 +705,7 @@ export default function AIStudyGuideMakerPage() {
                 <Sparkles className="mr-2 h-5 w-5" />
                 Start Creating Now
               </Button>
-              <Link href="/book-demo-class">
+              <Link href="/tutoring/free-consultation">
                 <Button 
                   size="lg" 
                   variant="outline" 
@@ -740,7 +740,7 @@ export default function AIStudyGuideMakerPage() {
               <h3 className="text-lg font-semibold mb-4 text-ttb-teal">Services</h3>
               <ul className="space-y-2 text-gray-300">
                 <li><Link href="/study-resources" className="hover:text-ttb-teal transition-colors">Study Resources</Link></li>
-                <li><Link href="/doubt-solving" className="hover:text-ttb-teal transition-colors">Doubt Solving</Link></li>
+                <li><Link href="/homework-help" className="hover:text-ttb-teal transition-colors">Doubt Solving</Link></li>
                 <li><Link href="/career-guidance" className="hover:text-ttb-teal transition-colors">Career Guidance</Link></li>
                 <li><Link href="/motivational-sessions" className="hover:text-ttb-teal transition-colors">Motivational Sessions</Link></li>
               </ul>

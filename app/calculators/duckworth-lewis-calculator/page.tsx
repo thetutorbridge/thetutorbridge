@@ -783,7 +783,7 @@ export default function DuckworthLewisCalculator() {
             Our expert tutors can help you understand probability, statistics, and mathematical formulas used in sports analytics!
           </p>
           <Link
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="inline-flex items-center px-6 py-3 bg-white text-green-600 rounded-xl font-semibold hover:bg-green-50 transition-colors shadow-lg"
           >
             Book Your Free Session

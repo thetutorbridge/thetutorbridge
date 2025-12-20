@@ -609,7 +609,7 @@ export const CTASection = ({
       <h2 className="text-2xl md:text-4xl font-bold mb-4 font-poppins">{title}</h2>
       <p className="text-white/90 mb-8 md:text-lg">{description}</p>
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
-        <Link href="/book-demo-class">
+        <Link href="/tutoring/free-consultation">
           <Button className="bg-white text-gray-900 hover:bg-white/90 rounded-xl font-semibold w-full sm:w-auto px-8 py-3">
             Book Free Session
           </Button>

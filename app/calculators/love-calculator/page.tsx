@@ -761,7 +761,7 @@ export default function LoveCalculator() {
           <p className="text-xl mb-8 text-pink-50 max-w-3xl mx-auto">
             Our psychology and social science tutors can help you understand human relationships, communication, and emotional intelligence
           </p>
-          <Link href="/book-demo-class">
+          <Link href="/tutoring/free-consultation">
             <Button
               size="lg"
               className="bg-white text-pink-600 hover:bg-pink-50 text-lg px-8 py-6 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"

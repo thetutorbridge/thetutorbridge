@@ -993,7 +993,7 @@ export default function CarPaymentCalculator() {
           <p className="text-xl mb-8 text-blue-50 max-w-3xl mx-auto">
             Our expert tutors can help you understand loans, interest calculations, and make informed financial decisions
           </p>
-          <Link href="/book-demo-class">
+          <Link href="/tutoring/free-consultation">
             <Button
               size="lg"
               className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"

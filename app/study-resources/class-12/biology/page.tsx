@@ -68,7 +68,7 @@ export default function Class12BiologyPage() {
                 Back to Class 12
               </Button>
             </Link>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold">
                 Book Free Session
               </Button>
@@ -91,7 +91,7 @@ export default function Class12BiologyPage() {
                 We're working hard to bring you comprehensive Class 12 biology study materials. 
                 In the meantime, book a free session with our expert tutors to get personalized help.
               </p>
-              <Link href="/book-demo-class">
+              <Link href="/tutoring/free-consultation">
                 <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-[#FFC857]/90 transition-colors">
                   Book Free Session
                 </button>
@@ -109,7 +109,7 @@ export default function Class12BiologyPage() {
                 Our expert biology tutors can help you master all Class 12 topics with personalized guidance and interactive learning.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/book-demo-class">
+                <Link href="/tutoring/free-consultation">
                   <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-[#FFC857]/90 transition-colors">
                     Book Free Session
                   </button>
@@ -146,7 +146,7 @@ export default function Class12BiologyPage() {
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-gray-300">
                 <li><Link href="/study-resources" className="hover:text-[#2BAE66] transition-colors">Study Resources</Link></li>
-                <li><Link href="/doubt-solving" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
+                <li><Link href="/homework-help" className="hover:text-[#2BAE66] transition-colors">Doubt Solving</Link></li>
                 <li><Link href="/career-guidance" className="hover:text-[#2BAE66] transition-colors">Career Guidance</Link></li>
                 <li><Link href="/motivational-sessions" className="hover:text-[#2BAE66] transition-colors">Motivational Sessions</Link></li>
               </ul>
@@ -157,7 +157,6 @@ export default function Class12BiologyPage() {
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-300">
                 <div className="flex items-center justify-center md:justify-start gap-2">
-                  <span>+91 9310096171</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-2">
                   <span>info@thetutorbridge.com</span>

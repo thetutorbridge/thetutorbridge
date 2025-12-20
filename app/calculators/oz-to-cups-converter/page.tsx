@@ -643,7 +643,7 @@ export default function OzToCupsConverter() {
             Our expert tutors can help you understand measurement conversions, unit analysis, and more!
           </p>
           <Link
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="inline-flex items-center px-6 py-3 bg-white text-cyan-600 rounded-xl font-semibold hover:bg-cyan-50 transition-colors shadow-lg"
           >
             Book Your Free Session

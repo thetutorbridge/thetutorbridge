@@ -1185,7 +1185,7 @@ export default function AmortizationCalculatorPage() {
                   Our expert tutors can help you understand amortization, financial mathematics,
                   and loan analysis. Book a personalized session today!
                 </p>
-                <Link href="/book-demo-class">
+                <Link href="/tutoring/free-consultation">
                   <Button className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3">
                     Book Your Session
                     <ArrowRight className="w-4 h-4 ml-2" />

@@ -179,7 +179,7 @@ export default function Class6ScienceChapter4() {
                 Back to Class 6
               </Button>
             </Link>
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#FFC857] text-[#1A3D7C] rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#FFC857]/90 transition-all text-lg font-semibold">
                 Book Free Session
               </Button>
@@ -661,7 +661,7 @@ export default function Class6ScienceChapter4() {
             Our expert science mentors can help you understand magnetic concepts, conduct experiments, and explore the fascinating world of magnets!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/book-demo-class">
+            <Link href="/tutoring/free-consultation">
               <Button size="lg" className="bg-[#2BAE66] text-white rounded-xl px-8 py-4 hover:shadow-lg hover:bg-[#2BAE66]/90 transition-all text-lg font-semibold">
                 Book Free Science Session
               </Button>
@@ -697,7 +697,7 @@ export default function Class6ScienceChapter4() {
                 <Link href="/about" className="block text-white/80 hover:text-[#FFC857] transition-colors">About Us</Link>
                 <Link href="/study-resources" className="block text-white/80 hover:text-[#FFC857] transition-colors">Study Resources</Link>
                 <Link href="/career-guidance" className="block text-white/80 hover:text-[#FFC857] transition-colors">Career Guidance</Link>
-                <Link href="/book-demo-class" className="block text-white/80 hover:text-[#FFC857] transition-colors">Book Demo</Link>
+                <Link href="/tutoring/free-consultation" className="block text-white/80 hover:text-[#FFC857] transition-colors">Book Demo</Link>
               </div>
             </div>
 
@@ -707,7 +707,6 @@ export default function Class6ScienceChapter4() {
               <div className="space-y-3">
                 <div className="flex items-center justify-center md:justify-start gap-3">
                   <Phone className="w-5 h-5 text-[#FFC857]" />
-                  <span className="text-white/80">+91 9310096171</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-3">
                   <Mail className="w-5 h-5 text-[#FFC857]" />

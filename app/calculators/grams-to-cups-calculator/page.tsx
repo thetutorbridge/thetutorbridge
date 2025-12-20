@@ -604,7 +604,7 @@ export default function GramsToCupsCalculator() {
             Our expert tutors can help you understand cooking science, nutrition, and measurement conversions!
           </p>
           <Link
-            href="/book-demo-class"
+            href="/tutoring/free-consultation"
             className="inline-flex items-center px-6 py-3 bg-white text-orange-600 rounded-xl font-semibold hover:bg-orange-50 transition-colors shadow-lg"
           >
             Book Your Free Session

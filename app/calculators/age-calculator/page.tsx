@@ -650,7 +650,7 @@ export default function AgeCalculatorPage() {
                 The TutorBridge offers personalized tutoring for students of all ages. Get expert help in math, science, and all subjects.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/book-demo-class">
+                <Link href="/tutoring/free-consultation">
                   <button className="bg-[#FFC857] text-[#1A3D7C] px-8 py-3 rounded-xl font-semibold hover:bg-[#FFC857]/90 transition-colors">
                     Book Free Demo Class
                   </button>

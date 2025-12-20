@@ -142,7 +142,7 @@ export default function DoubtSolving() {
                   grade and subject for faster processing.
                 </p>
                 <div className="mt-4 p-4 bg-green-50 rounded-lg">
-                  <p className="text-sm text-green-700 font-medium">📱 WhatsApp: +91-9310096171</p>
+                  <p className="text-sm text-green-700 font-medium">📧 Email: help@thetutorbridge.com</p>
                 </div>
               </div>
               <div className="text-center group">
@@ -588,8 +588,7 @@ export default function DoubtSolving() {
             <div>
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>📱 WhatsApp: +91-93100-96171</li>
-                <li>📧 doubts@thetutorbridge.com</li>
+                <li>📧 help@thetutorbridge.com</li>
                 <li>🕒 Available: 24/7</li>
                 <li>⚡ Response: 30-60 minutes</li>
               </ul>
