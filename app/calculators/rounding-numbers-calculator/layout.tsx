@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Rounding Numbers Calculator - Round Decimals to Any Place Value | The Tutor Bridge',
-  description: 'Free rounding numbers calculator with step-by-step explanations. Round decimals to nearest whole number, tenths, hundredths, thousandths, or any place value. Perfect for students and teachers with visual digit highlighting.',
+  title: 'Rounding Numbers Calculator | Round 3.456 to Nearest Tenth [Free]',
+  description: 'Free rounding calculator: Round 3.456 to 3.5 (tenths), 3.46 (hundredths), or 3 (whole). Step-by-step visual explanations with rounding rules for students & teachers.',
   keywords: [
     'rounding numbers calculator',
     'rounding calculator',

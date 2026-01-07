@@ -8,8 +8,72 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Link from 'next/link';
+import Script from 'next/script';
 
 type ConversionType = '24-to-12' | '12-to-24';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is 0800 military time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "0800 military time is 8:00 AM in regular 12-hour time. It is pronounced 'zero eight hundred hours' or 'oh eight hundred hours'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 1300 military time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1300 military time is 1:00 PM in regular time. To convert, subtract 12 from 13 to get 1, then add PM. It's pronounced 'thirteen hundred hours'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 1800 military time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1800 military time is 6:00 PM in regular time. Subtract 12 from 18 to get 6 PM. It's pronounced 'eighteen hundred hours'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 2100 military time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2100 military time is 9:00 PM in regular time. Subtract 12 from 21 to get 9 PM. It's pronounced 'twenty-one hundred hours'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 0000 military time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "0000 military time is 12:00 AM (midnight) in regular time. It marks the start of a new day and is pronounced 'zero hundred hours'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert military time to regular time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For times 1300-2359, subtract 12 from the hour and add PM. For 0100-1159, remove leading zero and add AM. For 0000-0059, use 12:XX AM. For 1200-1259, use 12:XX PM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Zulu time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zulu time (Z time) is the military name for Coordinated Universal Time (UTC). It's called 'Zulu' from the NATO phonetic alphabet and is used in aviation, military operations, and international coordination."
+      }
+    }
+  ]
+};
 
 export default function MilitaryTimeConverter() {
   const [conversionType, setConversionType] = useState<ConversionType>('24-to-12');
@@ -117,16 +181,21 @@ export default function MilitaryTimeConverter() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-gray-100">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navigation />
 
       <main className="flex-grow container mx-auto px-4 py-8 mt-20 mb-12 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-[#1A3D7C] mb-4">
-            Military Time Converter
+            Military Time Converter (24-Hour to 12-Hour)
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-            Convert between 24-hour military time and 12-hour regular time with AM/PM. Perfect for understanding military, aviation, and international time formats.
+            Instantly convert military time (0800, 1300, 1800, 2100) to regular AM/PM time. Free tool for military, aviation, medical, and international time formats.
           </p>
         </div>
 
@@ -300,6 +369,53 @@ export default function MilitaryTimeConverter() {
                 </div>
               </div>
             )}
+          </div>
+        </div>
+
+        {/* Quick Time Conversions - Top Searched */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200">
+          <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6">Common Military Time Conversions</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-white p-4 rounded-lg shadow text-center">
+              <h3 className="font-bold text-lg text-orange-700">0800 Military Time</h3>
+              <p className="text-2xl font-bold text-gray-800">8:00 AM</p>
+              <p className="text-sm text-gray-600">Eight hundred hours</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow text-center">
+              <h3 className="font-bold text-lg text-orange-700">1300 Military Time</h3>
+              <p className="text-2xl font-bold text-gray-800">1:00 PM</p>
+              <p className="text-sm text-gray-600">Thirteen hundred hours</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow text-center">
+              <h3 className="font-bold text-lg text-orange-700">1800 Military Time</h3>
+              <p className="text-2xl font-bold text-gray-800">6:00 PM</p>
+              <p className="text-sm text-gray-600">Eighteen hundred hours</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow text-center">
+              <h3 className="font-bold text-lg text-orange-700">2100 Military Time</h3>
+              <p className="text-2xl font-bold text-gray-800">9:00 PM</p>
+              <p className="text-sm text-gray-600">Twenty-one hundred hours</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow text-center">
+              <h3 className="font-bold text-lg text-orange-700">0000 Military Time</h3>
+              <p className="text-2xl font-bold text-gray-800">12:00 AM</p>
+              <p className="text-sm text-gray-600">Midnight (Zero hundred)</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow text-center">
+              <h3 className="font-bold text-lg text-orange-700">0600 Military Time</h3>
+              <p className="text-2xl font-bold text-gray-800">6:00 AM</p>
+              <p className="text-sm text-gray-600">Zero six hundred hours</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow text-center">
+              <h3 className="font-bold text-lg text-orange-700">1500 Military Time</h3>
+              <p className="text-2xl font-bold text-gray-800">3:00 PM</p>
+              <p className="text-sm text-gray-600">Fifteen hundred hours</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow text-center">
+              <h3 className="font-bold text-lg text-orange-700">2000 Military Time</h3>
+              <p className="text-2xl font-bold text-gray-800">8:00 PM</p>
+              <p className="text-sm text-gray-600">Twenty hundred hours</p>
+            </div>
           </div>
         </div>
 

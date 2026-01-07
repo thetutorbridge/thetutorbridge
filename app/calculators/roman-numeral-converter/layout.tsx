@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Roman Numeral Converter - Free Number to Roman Numeral Converter | The Tutor Bridge',
-  description: 'Free Roman numeral converter with bi-directional conversion. Convert numbers to Roman numerals (1-3999) and Roman numerals to numbers instantly. Step-by-step explanations and comprehensive Roman numeral guide.',
+  title: 'Roman Numeral Converter | 2026=MMXXVI, 50=L, 100=C, 500=D [Free]',
+  description: 'Free Roman numeral converter: 2026=MMXXVI, 100=C, 500=D, 1000=M. Convert numbers to Roman numerals or decode Roman numerals to numbers (1-3999) with step-by-step explanations.',
   keywords: [
     'roman numeral converter',
     'convert to roman numerals',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     'roman numeral conversion rules',
     'subtractive notation roman numerals',
     'additive notation roman numerals',
-    'roman numerals 2024',
+    'roman numerals 2026',
     'current year in roman numerals',
     'age in roman numerals',
     'date in roman numerals',

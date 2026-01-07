@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Percentage Increase Calculator - Free % Change Calculator with Steps | The Tutor Bridge',
-  description: 'Free percentage increase calculator with step-by-step solutions. Calculate percentage change, growth rate, price increase, salary raise, and more with proper mathematical notation. Perfect for business, finance, and education.',
+  title: 'Percentage Increase Calculator | Formula: (New-Old)/Old × 100 [Free]',
+  description: 'Free percentage increase calculator: Use formula (New-Old)/Old × 100. Calculate price increase, salary raise, growth rate instantly with step-by-step solutions.',
   keywords: [
     'percentage increase calculator',
     'percentage change calculator',

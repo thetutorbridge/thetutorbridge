@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Steps to Km Calculator - Free Steps to Kilometers Converter | The Tutor Bridge',
-  description: 'Free steps to km calculator. Convert walking steps to kilometers based on stride length, height, or gender averages. Find how far 10,000 steps is in km with instant results.',
+  title: 'Steps to Km Calculator | 10,000 Steps = 8 Km (Walking Distance) [Free]',
+  description: 'Free steps to km calculator: 10,000 steps≈8km, 5,000 steps≈4km, 7,500 steps≈6km. Convert walking steps to kilometers based on your height, stride length, or average.',
   keywords: [
     'steps to km',
     'steps to kilometers',

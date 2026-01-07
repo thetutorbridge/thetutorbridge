@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Quadratic Formula Calculator - Free Quadratic Equation Solver with Steps | The Tutor Bridge',
-  description: 'Free quadratic formula calculator solves ax² + bx + c = 0 with step-by-step solutions. Get exact radical forms, decimal approximations, discriminant analysis, and complex roots. Perfect for algebra, physics, and engineering.',
+  title: 'Quadratic Formula Calculator | x=(-b±√(b²-4ac))/2a Solver [Free]',
+  description: 'Free quadratic formula calculator: Solve x²+5x+6=0 → x=-2,-3. Use x=(-b±√(b²-4ac))/2a with step-by-step solutions. Shows discriminant, exact radical & decimal forms.',
   keywords: [
     'quadratic formula calculator',
     'quadratic equation solver',

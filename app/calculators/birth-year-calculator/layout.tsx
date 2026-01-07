@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Birth Year Calculator - Find Birth Year from Age | Free Online Tool',
-  description: 'Free birth year calculator to find birth year from age or calculate age from birth year. Includes generation info, Chinese zodiac sign, and historical context.',
+  title: 'Birth Year Calculator | Age 30 → Born 1996, Age 25 → Born 2001 [Free]',
+  description: 'Free birth year calculator: Age 30 = born 1996, Age 25 = born 2001, Age 40 = born 1986. Find what year you were born or calculate age from birth year. Includes generation & zodiac.',
   keywords: [
     // Primary Keywords
     'birth year calculator',

@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Speed Distance Time Calculator - Solve for Speed, Distance & Time with Formula | The Tutor Bridge',
-  description: 'Free speed distance time calculator to solve for speed, distance, or time using the formula speed = distance/time. Calculate velocity, travel time, and distance with step-by-step solutions and unit conversions.',
+  title: 'Speed Distance Time Calculator | Speed=Distance÷Time Formula [Free]',
+  description: 'Free speed distance time calculator: 60mph for 2hrs = 120 miles. Solve for speed, distance, or time using formula S=D/T. Convert mph, km/h with step-by-step solutions.',
   keywords: [
     'speed distance time calculator',
     'speed calculator',

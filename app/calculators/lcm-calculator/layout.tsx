@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'LCM Calculator - Least Common Multiple Calculator with Steps | The Tutor Bridge',
-  description: 'Free LCM calculator to find the Least Common Multiple of 2 or more numbers. Shows step-by-step solutions using prime factorization, listing multiples, and division methods. Perfect for students learning LCM.',
+  title: 'LCM Calculator | LCM(4,6)=12, LCM(3,5)=15 with Steps [Free]',
+  description: 'Free LCM calculator: LCM(4,6)=12, LCM(12,18)=36, LCM(3,4,5)=60. Find Least Common Multiple using prime factorization, listing multiples, or division method with steps.',
   keywords: [
     'lcm calculator',
     'least common multiple calculator',

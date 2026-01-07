@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Script from 'next/script';
 import { Thermometer, ArrowRight, BookOpen, GraduationCap, Lightbulb, CheckCircle2, Info, ArrowLeftRight } from 'lucide-react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
@@ -8,6 +9,53 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is 32 degrees Fahrenheit in Celsius?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "32 degrees Fahrenheit equals 0 degrees Celsius. This is the freezing point of water. Formula: °C = (32 − 32) × 5/9 = 0°C"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 98.6 degrees Fahrenheit in Celsius?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "98.6 degrees Fahrenheit equals 37 degrees Celsius. This is the normal human body temperature. Formula: °C = (98.6 − 32) × 5/9 = 37°C"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 212 degrees Fahrenheit in Celsius?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "212 degrees Fahrenheit equals 100 degrees Celsius. This is the boiling point of water at sea level. Formula: °C = (212 − 32) × 5/9 = 100°C"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the formula to convert Fahrenheit to Celsius?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The formula is: °C = (°F − 32) × 5/9. Subtract 32 from Fahrenheit, then multiply by 5/9 (or divide by 1.8)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 0 degrees Fahrenheit in Celsius?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "0 degrees Fahrenheit equals -17.78 degrees Celsius. This is approximately -18°C. Formula: °C = (0 − 32) × 5/9 = -17.78°C"
+      }
+    }
+  ]
+};
 
 interface ConversionResult {
   inputValue: number;
@@ -87,6 +135,11 @@ export default function FahrenheitToCelsiusConverter() {
 
   return (
     <>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navigation />
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50">
         {/* Header Section */}

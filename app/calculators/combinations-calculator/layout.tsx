@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Combinations Calculator - nCr Calculator with Steps | The Tutor Bridge',
-  description: 'Free combinations calculator (nCr) with step-by-step solutions. Calculate combinations, permutations, and understand combinatorics. Perfect for students with comprehensive mathematical notation and formulas.',
+  title: 'Combinations Calculator (nCr) | 5C3=10 Formula: n!/r!(n-r)! [Free]',
+  description: 'Free nCr combinations calculator: 5C3=10, 10C2=45, 52C5=2,598,960. Use formula n!/r!(n-r)! with step-by-step solutions. Calculate lottery odds, poker hands & probability.',
   keywords: [
     'combinations calculator',
     'nCr calculator',

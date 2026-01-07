@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Steps to Miles Calculator - Convert Steps to Distance | Free Online Tool',
-  description: 'Free steps to miles calculator to convert walking steps to miles, kilometers, and other distances. Calculate based on average stride, your height, or custom stride length.',
+  title: 'Steps to Miles Calculator | 10,000 Steps = 4.5 Miles (by Height) [Free]',
+  description: 'Free steps to miles calculator: 10,000 steps≈4.5 miles, 5,000 steps≈2.25 miles. Convert walking steps to miles based on your height, stride length, or gender average.',
   keywords: [
     // Primary Keywords
     'steps to miles calculator',

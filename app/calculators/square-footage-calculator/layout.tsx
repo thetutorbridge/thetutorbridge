@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Square Footage Calculator - Free Area & Material Cost Calculator | The Tutor Bridge',
-  description: 'Free square footage calculator for rooms, floors, walls, and land. Calculate area in sq ft, sq in, sq yd, sq m, and acres with waste factor and cost estimation. Perfect for flooring, painting, roofing, and construction projects.',
+  title: 'Square Footage Calculator | 10×12 Room = 120 Sq Ft (L×W Formula) [Free]',
+  description: 'Free square footage calculator: 10×12=120 sq ft, 15×20=300 sq ft. Calculate area for rooms, flooring, paint. Formula: Length×Width. Includes material cost & waste factor.',
   keywords: [
     'square footage calculator',
     'square feet calculator',

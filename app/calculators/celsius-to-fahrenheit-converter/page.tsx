@@ -2,12 +2,60 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Calculator, Home, BookOpen, ArrowRight, Thermometer, ArrowLeftRight } from 'lucide-react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is 0 degrees Celsius in Fahrenheit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "0 degrees Celsius equals 32 degrees Fahrenheit. This is the freezing point of water. Formula: °F = (0 × 9/5) + 32 = 32°F"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 100 degrees Celsius in Fahrenheit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "100 degrees Celsius equals 212 degrees Fahrenheit. This is the boiling point of water at sea level. Formula: °F = (100 × 9/5) + 32 = 212°F"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 37 degrees Celsius in Fahrenheit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "37 degrees Celsius equals 98.6 degrees Fahrenheit. This is the normal human body temperature. Formula: °F = (37 × 9/5) + 32 = 98.6°F"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the formula to convert Celsius to Fahrenheit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The formula is: °F = (°C × 9/5) + 32, or equivalently °F = (°C × 1.8) + 32. Multiply Celsius by 9/5 (or 1.8), then add 32."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 20 degrees Celsius in Fahrenheit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "20 degrees Celsius equals 68 degrees Fahrenheit. This is considered comfortable room temperature. Formula: °F = (20 × 9/5) + 32 = 68°F"
+      }
+    }
+  ]
+};
 
 interface ConversionResult {
   inputValue: number;
@@ -93,6 +141,11 @@ export default function CelsiusToFahrenheitConverter() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}

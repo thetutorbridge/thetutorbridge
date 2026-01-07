@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Fractions Calculator - Add, Subtract, Multiply, Divide Fractions with Steps | The Tutor Bridge',
-  description: 'Free fractions calculator with step-by-step solutions. Add, subtract, multiply, and divide fractions easily. Calculate LCD, simplify fractions, convert to mixed numbers with detailed mathematical notation. Perfect for students, teachers, and professionals.',
+  title: 'Fractions Calculator | 1/2 + 1/4 = 3/4 (Add, Subtract, Multiply) [Free]',
+  description: 'Free fractions calculator: 1/2+1/4=3/4, 2/3×3/4=1/2, 3/4÷1/2=3/2. Add, subtract, multiply, divide fractions with step-by-step LCD solutions. Simplify & convert to mixed numbers.',
   keywords: [
     'fractions calculator',
     'fraction calculator',

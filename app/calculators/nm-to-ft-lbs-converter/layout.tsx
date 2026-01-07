@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Nm to ft-lbs Converter - Newton Meters to Foot Pounds | Free Torque Converter',
-  description: 'Free Nm to ft-lbs converter to convert torque between Newton-meters and foot-pounds. Includes inch-pounds, kilogram-force meters, and common automotive torque specifications.',
+  title: 'Nm to ft-lbs Converter | 1 Nm = 0.7376 ft-lb (Torque Calculator) [Free]',
+  description: 'Free Nm to ft-lbs torque converter: 1 Nm = 0.7376 ft-lbs. Convert Newton-meters to foot-pounds for automotive torque specs, lug nuts & engine bolts instantly.',
   keywords: [
     // Primary Keywords
     'nm to ft-lbs converter',

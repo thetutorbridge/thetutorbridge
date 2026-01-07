@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Fahrenheit to Celsius Converter - °F to °C Calculator with Formula | The Tutor Bridge',
-  description: 'Free Fahrenheit to Celsius converter (°F to °C) with step-by-step solutions. Convert temperature instantly with conversion formula, examples, and comprehensive temperature conversion guide.',
+  title: 'Fahrenheit to Celsius Converter | 32°F=0°C, 98.6°F=37°C [Free 2026]',
+  description: 'Free Fahrenheit to Celsius converter: 32°F=0°C, 68°F=20°C, 98.6°F=37°C, 212°F=100°C. Use formula °C=(°F-32)×5/9. Instant conversion with chart & examples.',
   keywords: [
     'fahrenheit to celsius',
     'f to c',

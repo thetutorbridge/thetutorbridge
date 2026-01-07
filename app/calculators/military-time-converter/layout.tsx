@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Military Time Converter - Convert 24 Hour to 12 Hour Time | The Tutor Bridge',
-  description: 'Free military time converter. Convert between 24-hour military time and 12-hour regular time with AM/PM. Instant conversion with step-by-step explanations and comprehensive time format guide.',
+  title: 'Military Time Converter | 0800, 1300, 2100 to Regular Time [Free 2026]',
+  description: 'Free military time converter: Convert 0800, 1300, 1800, 2100 hours to regular AM/PM time instantly. See 0000 to 2359 military time chart + how to read & pronounce 24-hour clock.',
   keywords: [
     'military time converter',
     '24 hour time converter',

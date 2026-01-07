@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Decimal to Fraction Calculator - Convert Decimals to Fractions with Steps | The Tutor Bridge',
-  description: 'Free decimal to fraction calculator with step-by-step solutions. Convert any decimal to a fraction or mixed number instantly. Shows complete working including GCF reduction and simplification. Perfect for students learning fraction conversion.',
+  title: 'Decimal to Fraction Calculator | 0.75=3/4, 0.5=1/2, 0.25=1/4 [Free]',
+  description: 'Free decimal to fraction calculator: 0.75=3/4, 0.5=1/2, 0.25=1/4, 0.333=1/3. Convert any decimal to simplified fraction with step-by-step GCF reduction. Handles repeating decimals.',
   keywords: [
     'decimal to fraction calculator',
     'decimal to fraction',

@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'GCF Calculator - Greatest Common Factor, HCF, GCD Calculator with Steps | The Tutor Bridge',
-  description: 'Free GCF calculator finds the greatest common factor (GCF, HCF, GCD) of 2 or more numbers with step-by-step solutions. Shows prime factorization, listing factors, and Euclidean algorithm methods with detailed explanations.',
+  title: 'GCF Calculator | GCF(12,18)=6, GCF(24,36)=12 with Steps [Free]',
+  description: 'Free GCF calculator: GCF(12,18)=6, GCF(24,36)=12, GCF(15,25)=5. Find Greatest Common Factor (HCF/GCD) using prime factorization, listing factors, or Euclidean algorithm with steps.',
   keywords: [
     'gcf calculator',
     'greatest common factor calculator',

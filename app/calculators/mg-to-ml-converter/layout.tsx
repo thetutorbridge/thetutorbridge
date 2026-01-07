@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'mg to ml Converter - Convert Milligrams to Milliliters | Free Online Tool',
-  description: 'Free mg to ml converter to convert milligrams to milliliters instantly. Enter mass in mg and substance density to calculate volume in ml. Works for water, oil, medications, and more.',
+  title: 'mg to mL Converter | 500mg = ? mL (Formula: mg ÷ density) [Free]',
+  description: 'Free mg to mL converter: Use formula mL = mg ÷ density. For water: 1mg = 0.001mL. Convert medication dosages, liquid medicine & cooking ingredients instantly.',
   keywords: [
     // Primary Keywords
     'mg to ml converter',
