@@ -7,10 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: false, // Enable image optimization for WebP conversion & performance
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: true, // Disable Vercel image optimization to avoid 402 PAYMENT_REQUIRED errors - Supabase CDN handles images directly
     remotePatterns: [
       {
         protocol: 'https',
