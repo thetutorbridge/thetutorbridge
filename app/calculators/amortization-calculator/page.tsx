@@ -47,7 +47,7 @@ export default function AmortizationCalculatorPage() {
   const [loanTermMonths, setLoanTermMonths] = useState<string>('0');
   const [interestRate, setInterestRate] = useState<string>('6.5');
   const [startMonth, setStartMonth] = useState<string>('1');
-  const [startYear, setStartYear] = useState<string>('2025');
+  const [startYear, setStartYear] = useState<string>('2026');
 
   // Extra payments
   const [showExtraPayments, setShowExtraPayments] = useState<boolean>(false);
@@ -72,7 +72,7 @@ export default function AmortizationCalculatorPage() {
         type,
         amount: '',
         startMonth: type !== 'onetime' ? '1' : undefined,
-        date: type === 'onetime' ? '2025-01' : undefined,
+        date: type === 'onetime' ? '2026-01' : undefined,
       }
     ]);
     setNextId(nextId + 1);
@@ -94,7 +94,7 @@ export default function AmortizationCalculatorPage() {
     const monthsVal = parseInt(loanTermMonths) || 0;
     const rate = parseFloat(interestRate) || 0;
     const startMonthVal = parseInt(startMonth) || 1;
-    const startYearVal = parseInt(startYear) || 2025;
+    const startYearVal = parseInt(startYear) || 2026;
 
     if (principal <= 0 || (yearsVal === 0 && monthsVal === 0) || rate < 0) {
       alert('Please enter valid values');
@@ -250,7 +250,7 @@ export default function AmortizationCalculatorPage() {
     setLoanTermMonths('0');
     setInterestRate('6.5');
     setStartMonth('1');
-    setStartYear('2025');
+    setStartYear('2026');
     setExtraPayments([]);
     setMonthlyPayment(null);
     setTotalPayment(null);
@@ -403,7 +403,7 @@ export default function AmortizationCalculatorPage() {
                         type="number"
                         value={startYear}
                         onChange={(e) => setStartYear(e.target.value)}
-                        placeholder="2025"
+                        placeholder="2026"
                       />
                     </div>
                   </div>

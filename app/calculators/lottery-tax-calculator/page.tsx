@@ -10,8 +10,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-// 2024 Federal Tax Brackets (Single Filer)
-const federalTaxBrackets2024 = [
+// 2026 Federal Tax Brackets (Single Filer)
+const federalTaxBrackets2026 = [
   { min: 0, max: 11600, rate: 0.10 },
   { min: 11600, max: 47150, rate: 0.12 },
   { min: 47150, max: 100525, rate: 0.22 },
@@ -21,7 +21,7 @@ const federalTaxBrackets2024 = [
   { min: 609350, max: Infinity, rate: 0.37 },
 ];
 
-// State tax rates for lottery winnings (2024)
+// State tax rates for lottery winnings (2026)
 const stateTaxRates: Record<string, { name: string; rate: number; noTax?: boolean }> = {
   'AL': { name: 'Alabama', rate: 0.05 },
   'AK': { name: 'Alaska', rate: 0, noTax: true },
@@ -121,7 +121,7 @@ export default function LotteryTaxCalculator() {
     let tax = 0;
     let remainingIncome = taxableIncome;
 
-    for (const bracket of federalTaxBrackets2024) {
+    for (const bracket of federalTaxBrackets2026) {
       if (remainingIncome <= 0) break;
 
       const taxableInBracket = Math.min(remainingIncome, bracket.max - bracket.min);
@@ -307,7 +307,7 @@ export default function LotteryTaxCalculator() {
               Lottery Tax Calculator
             </h1>
             <p className="text-lg md:text-xl text-green-100 max-w-2xl mx-auto leading-relaxed">
-              Calculate how much you&apos;ll actually take home from lottery winnings after federal and state taxes. Compare lump sum vs annuity payouts with accurate 2024 tax brackets.
+              Calculate how much you&apos;ll actually take home from lottery winnings after federal and state taxes. Compare lump sum vs annuity payouts with accurate 2026 tax brackets.
             </p>
           </div>
         </div>
@@ -803,7 +803,7 @@ export default function LotteryTaxCalculator() {
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>37% Top Bracket:</strong> Large winnings push you into the highest federal tax bracket (37% for 2024).</span>
+                      <span><strong>37% Top Bracket:</strong> Large winnings push you into the highest federal tax bracket (37% for 2026).</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -821,7 +821,7 @@ export default function LotteryTaxCalculator() {
             {/* Federal Tax Brackets */}
             <section className="mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                2024 Federal Tax Brackets
+                2026 Federal Tax Brackets
               </h2>
 
               <p className="text-gray-700 mb-4">

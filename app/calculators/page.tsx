@@ -236,7 +236,7 @@ const calculators = {
     {
       name: 'Lottery Tax Calculator',
       href: '/calculators/lottery-tax-calculator',
-      description: 'Calculate federal and state taxes on lottery winnings. Compare lump sum vs annuity payouts with 2024 tax brackets.',
+      description: 'Calculate federal and state taxes on lottery winnings. Compare lump sum vs annuity payouts with 2026 tax brackets.',
       gradient: 'from-green-600 to-emerald-600',
       tags: ['Lottery Tax', 'Lump Sum', 'Annuity']
     },
@@ -1100,7 +1100,7 @@ export default function CalculatorsPage() {
                 Your trusted source for accurate online calculators. From academic tools to financial planning, we provide free, comprehensive calculators for everyone.
               </p>
               <div className="flex items-center text-sm text-gray-400">
-                <span>© 2024 The Tutor Bridge</span>
+                <span>© 2026 The Tutor Bridge</span>
               </div>
             </div>
 

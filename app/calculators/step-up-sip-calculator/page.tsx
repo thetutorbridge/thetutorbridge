@@ -81,7 +81,7 @@ export default function StepUpSipCalculatorPage() {
           <div className="flex items-center justify-center mb-6">
             <TrendingUp className="w-12 h-12 text-[#FFC857] mr-4" />
             <h1 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
-              Step Up SIP Calculator India 2025 — Calculate Growing SIP Returns
+              Step Up SIP Calculator India 2026 — Calculate Growing SIP Returns
             </h1>
           </div>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
@@ -424,7 +424,7 @@ export default function StepUpSipCalculatorPage() {
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                 <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">6. When does the step-up happen—monthly or yearly?</h3>
-                <p className="text-gray-700">Step-up happens <strong>yearly (12 months after SIP start date)</strong>. If you start ₹10,000/month SIP on 5th Jan 2025 with 10% step-up, it increases to ₹11,000 from 5th Jan 2026. The amount remains same for all 12 months of each year.</p>
+                <p className="text-gray-700">Step-up happens <strong>yearly (12 months after SIP start date)</strong>. If you start ₹10,000/month SIP on 5th Jan 2026 with 10% step-up, it increases to ₹11,000 from 5th Jan 2026. The amount remains same for all 12 months of each year.</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
@@ -572,7 +572,7 @@ export default function StepUpSipCalculatorPage() {
             </div>
           </div>
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2025 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

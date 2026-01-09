@@ -118,7 +118,7 @@ export default function About() {
                           <span className="text-2xl">🌍</span>
                         </div>
                         <div>
-                          <h3 className="font-poppins font-bold text-lg">2025</h3>
+                          <h3 className="font-poppins font-bold text-lg">2026</h3>
                           <p className="text-white/90">Global Reach</p>
                         </div>
                       </div>

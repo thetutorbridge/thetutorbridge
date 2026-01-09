@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Lottery Tax Calculator - Federal & State Tax on Lottery Winnings | The Tutor Bridge',
-  description: 'Free lottery tax calculator to estimate federal and state taxes on lottery winnings. Compare lump sum vs annuity payouts, calculate take-home amount with 2024 tax brackets.',
+  description: 'Free lottery tax calculator to estimate federal and state taxes on lottery winnings. Compare lump sum vs annuity payouts, calculate take-home amount with 2026 tax brackets.',
   keywords: [
     'lottery tax calculator',
     'lottery winnings tax calculator',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     'prize money tax calculator',
     'lottery lump sum payout percentage',
     'lottery annuity payments',
-    'lottery tax brackets 2024',
+    'lottery tax brackets 2026',
     'how to calculate lottery tax',
     'lottery winnings tax rate',
     'federal withholding lottery',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Lottery Tax Calculator - Federal & State Tax on Lottery Winnings',
-    description: 'Free lottery tax calculator to estimate federal and state taxes. Compare lump sum vs annuity payouts with 2024 tax brackets.',
+    description: 'Free lottery tax calculator to estimate federal and state taxes. Compare lump sum vs annuity payouts with 2026 tax brackets.',
     url: 'https://www.thetutorbridge.com/calculators/lottery-tax-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',

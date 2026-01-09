@@ -565,7 +565,7 @@ export default function AgeCalculatorPage() {
                 <h3 className="text-xl font-semibold text-[#1A3D7C] mb-3">Example Calculation</h3>
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <p className="mb-2"><strong>Birth Date:</strong> January 15, 2000</p>
-                  <p className="mb-4"><strong>Target Date:</strong> October 28, 2025</p>
+                  <p className="mb-4"><strong>Target Date:</strong> October 28, 2026</p>
                   <p className="mb-2"><strong>Result:</strong></p>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>25 years, 9 months, 13 days</li>
@@ -635,7 +635,7 @@ export default function AgeCalculatorPage() {
               </Link>
               <Link href="/calculators/income-tax-calculator" className="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-lg border-2 border-blue-200 hover:border-[#2BAE66] transition-all hover:shadow-lg">
                 <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">Income Tax Calculator</h3>
-                <p className="text-gray-700 text-sm">Calculate income tax for FY 2025-26 with deductions</p>
+                <p className="text-gray-700 text-sm">Calculate income tax for FY 2026-26 with deductions</p>
               </Link>
             </div>
           </div>

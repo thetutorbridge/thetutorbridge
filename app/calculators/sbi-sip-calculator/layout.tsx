@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'SBI SIP Calculator 2025 — SBI Mutual Fund SIP Calculator India',
+  title: 'SBI SIP Calculator 2026 — SBI Mutual Fund SIP Calculator India',
   description: 'Official SBI SIP calculator for SBI mutual funds. Calculate SIP and lumpsum returns for SBI schemes. Plan your investments with SBI MF calculator.',
   keywords: "SBI SIP calculator, SBI mutual fund calculator, SBI MF SIP, SBI lumpsum calculator, SBI investment calculator",
   openGraph: {
-    title: "SBI SIP Calculator 2025",
+    title: "SBI SIP Calculator 2026",
     description: "Calculate SBI mutual fund SIP and lumpsum returns. Official SBI MF calculator.",
     type: "website",
     siteName: "The Tutor Bridge",

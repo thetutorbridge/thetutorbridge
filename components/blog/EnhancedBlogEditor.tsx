@@ -537,7 +537,7 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
               { 
                 type: 'tableCell', 
                 attrs: { rowspan: 3 },
-                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Saturday, 15th February, 2025' }] }] 
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Saturday, 15th February, 2026' }] }] 
               },
               { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '101' }] }] },
               { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'English (Communicative)' }] }] }
@@ -563,7 +563,7 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
               { 
                 type: 'tableCell', 
                 attrs: { rowspan: 5 },
-                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Monday, 17th February, 2025' }] }] 
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Monday, 17th February, 2026' }] }] 
               },
               { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: '036' }] }] },
               { type: 'tableCell', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Hindustani Music (Per Ins)' }] }] }

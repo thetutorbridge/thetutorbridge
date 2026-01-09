@@ -31,8 +31,8 @@ tags: ["tag1", "tag2", "tag3"]
 featured_image: "/path/to/image.jpg"
 read_time: 5
 status: "published"
-published_at: "2024-01-15T10:00:00Z"
-created_at: "2024-01-15T10:00:00Z"
+published_at: "2026-01-15T10:00:00Z"
+created_at: "2026-01-15T10:00:00Z"
 ---
 ```
 
@@ -63,8 +63,8 @@ created_at: "2024-01-15T10:00:00Z"
 | `featured_image` | No | Path to featured image | `"/bannerHome4.jpg"` |
 | `read_time` | No | Estimated reading time in minutes | `5` |
 | `status` | Yes | `"draft"` or `"published"` | `"published"` |
-| `published_at` | No | Publication date (ISO format) | `"2024-01-15T10:00:00Z"` |
-| `created_at` | No | Creation date (ISO format) | `"2024-01-15T10:00:00Z"` |
+| `published_at` | No | Publication date (ISO format) | `"2026-01-15T10:00:00Z"` |
+| `created_at` | No | Creation date (ISO format) | `"2026-01-15T10:00:00Z"` |
 
 ## Default Values
 
@@ -174,8 +174,8 @@ tags: ["study-tips", "academic-success", "learning-methods", "productivity"]
 featured_image: "/resources.jpg"
 read_time: 8
 status: "published"
-published_at: "2024-01-20T14:30:00Z"
-created_at: "2024-01-20T14:30:00Z"
+published_at: "2026-01-20T14:30:00Z"
+created_at: "2026-01-20T14:30:00Z"
 ---
 
 # 10 Effective Study Techniques That Actually Work

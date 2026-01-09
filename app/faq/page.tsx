@@ -133,7 +133,7 @@ const faqs = {
       },
       {
         q: "How much does tutoring cost?",
-        a: "Monthly packages: Starter (4 sessions) $120/month, Standard (8 sessions) $200/month, Premium (12 sessions) $350/month. All sessions are 1 hour each. Multi-subject and sibling discounts available."
+        a: "Our tutoring starts at $25/hr. Packages: Starter (4 sessions) $30/hr, Standard (8 sessions) $25/hr - our most popular option, Premium (12 sessions) $29/hr with senior tutors. All sessions are 1 hour each. Multi-subject and sibling discounts available."
       },
       {
         q: "Are there any hidden fees?",

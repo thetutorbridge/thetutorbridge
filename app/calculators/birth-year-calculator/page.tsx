@@ -183,7 +183,7 @@ export default function BirthYearCalculatorPage() {
         name: 'How do I calculate birth year from age?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'To calculate birth year from age, subtract the age from the current year. If the birthday hasn\'t occurred yet this year, subtract an additional year. For example, if someone is 25 in 2024 and their birthday is after today, they were born in 1999. If their birthday has passed, they were born in 1999.',
+          text: 'To calculate birth year from age, subtract the age from the current year. If the birthday hasn\'t occurred yet this year, subtract an additional year. For example, if someone is 25 in 2026 and their birthday is after today, they were born in 1999. If their birthday has passed, they were born in 1999.',
         },
       },
       {
@@ -191,7 +191,7 @@ export default function BirthYearCalculatorPage() {
         name: 'What year was I born if I am a certain age?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Use the formula: Birth Year = Current Year - Age. Adjust by subtracting 1 if your birthday hasn\'t occurred yet this year. For example, if you\'re 30 in 2024 and your birthday has passed, you were born in 1994.',
+          text: 'Use the formula: Birth Year = Current Year - Age. Adjust by subtracting 1 if your birthday hasn\'t occurred yet this year. For example, if you\'re 30 in 2026 and your birthday has passed, you were born in 1994.',
         },
       },
       {
@@ -646,16 +646,16 @@ export default function BirthYearCalculatorPage() {
                   <div className="p-4 bg-gray-50 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-2">Example 1: Birthday has passed</h4>
                     <p className="text-gray-700 text-sm">
-                      Someone is 30 years old in 2024 and their birthday was in March (it&apos;s now November).<br/>
-                      <span className="font-mono">2024 - 30 = 1994</span><br/>
+                      Someone is 30 years old in 2026 and their birthday was in March (it&apos;s now November).<br/>
+                      <span className="font-mono">2026 - 30 = 1994</span><br/>
                       <strong>Birth Year: 1994</strong>
                     </p>
                   </div>
                   <div className="p-4 bg-gray-50 rounded-lg">
                     <h4 className="font-semibold text-gray-800 mb-2">Example 2: Birthday hasn&apos;t passed</h4>
                     <p className="text-gray-700 text-sm">
-                      Someone is 30 years old in 2024 and their birthday is in December (it&apos;s now November).<br/>
-                      <span className="font-mono">2024 - 30 - 1 = 1993</span><br/>
+                      Someone is 30 years old in 2026 and their birthday is in December (it&apos;s now November).<br/>
+                      <span className="font-mono">2026 - 30 - 1 = 1993</span><br/>
                       <strong>Birth Year: 1993</strong>
                     </p>
                   </div>
@@ -699,11 +699,11 @@ export default function BirthYearCalculatorPage() {
               {[
                 {
                   q: 'How do I calculate birth year from age?',
-                  a: 'Subtract the age from the current year. If the birthday hasn\'t occurred yet this year, subtract an additional year. For example: In 2024, a 25-year-old (birthday passed) was born in 1999.',
+                  a: 'Subtract the age from the current year. If the birthday hasn\'t occurred yet this year, subtract an additional year. For example: In 2026, a 25-year-old (birthday passed) was born in 1999.',
                 },
                 {
                   q: 'What year was I born if I am 30?',
-                  a: 'If you\'re 30 in 2024 and your birthday has passed, you were born in 1994. If your birthday hasn\'t occurred yet, you were born in 1993.',
+                  a: 'If you\'re 30 in 2026 and your birthday has passed, you were born in 1994. If your birthday hasn\'t occurred yet, you were born in 1993.',
                 },
                 {
                   q: 'Why is the birthday timing important?',

@@ -1,7 +1,7 @@
 # BLOG CREATION WORKFLOW - FAST & RELIABLE PROCESS
 
 **Version:** 1.0 - Proven Approach for TheTutorBridge
-**Last Updated:** November 2025
+**Last Updated:** November 2026
 **Status:** ✅ TESTED & WORKING
 
 This document outlines the **fast and reliable** workflow for creating comprehensive blog posts for TheTutorBridge. This approach is designed for efficient content creation using MCP (Model Context Protocol) tools for direct database operations.
@@ -312,7 +312,7 @@ const sql = \`INSERT INTO blog_posts (
   NOW(),
   NOW(),
   NULL,
-  'SEO-Optimized Meta Title [2025] | TheTutorBridge',
+  'SEO-Optimized Meta Title [2026] | TheTutorBridge',
   'SEO meta description with keywords and value proposition (150-160 characters)...',
   ARRAY['keyword1', 'keyword2', 'keyword3', 'keyword4', 'keyword5'],
   ARRAY['tag1', 'tag2', 'tag3'],
@@ -817,7 +817,7 @@ INSERT INTO blog_posts (
   NOW(),
   NOW(),
   NULL,
-  'CBSE Class 10 Maths Guide: Complete Preparation Strategy [2025]',
+  'CBSE Class 10 Maths Guide: Complete Preparation Strategy [2026]',
   'Master CBSE Class 10 Mathematics with our comprehensive guide. Expert strategies, chapter-wise tips, practice resources, and exam preparation techniques for 95+ scores.',
   ARRAY['CBSE', 'Class 10', 'Mathematics', 'Study Guide', 'Exam Preparation'],
   ARRAY['class 10', 'maths', 'CBSE'],

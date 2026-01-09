@@ -770,7 +770,7 @@ export default function WorkHoursCalculatorPage() {
               </div>
             </div>
             <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60 text-sm">
-              <p>&copy; 2025 The Tutor Bridge. All rights reserved.</p>
+              <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
             </div>
           </div>
         </footer>

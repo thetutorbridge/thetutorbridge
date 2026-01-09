@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Income Tax Calculator - Calculate Tax for FY 2024-25 | The Tutor Bridge',
-  description: 'Free income tax calculator for India FY 2024-25. Compare old vs new tax regime, calculate tax liability, and plan tax savings with deductions. Updated as per latest IT rules.',
+  title: 'Income Tax Calculator - Calculate Tax for FY 2026-25 | The Tutor Bridge',
+  description: 'Free income tax calculator for India FY 2026-25. Compare old vs new tax regime, calculate tax liability, and plan tax savings with deductions. Updated as per latest IT rules.',
   keywords: [
     'income tax calculator',
     'income tax calculator india',
-    'tax calculator 2024-25',
-    'income tax calculator 2024',
+    'tax calculator 2026-25',
+    'income tax calculator 2026',
     'new tax regime calculator',
     'old tax regime calculator',
     'tax calculator old vs new',
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.thetutorbridge.com/calculators/income-tax-calculator',
   },
   openGraph: {
-    title: 'Income Tax Calculator - FY 2024-25 India | The Tutor Bridge',
-    description: 'Calculate income tax for FY 2024-25. Compare old vs new tax regime and maximize your tax savings with deductions.',
+    title: 'Income Tax Calculator - FY 2026-25 India | The Tutor Bridge',
+    description: 'Calculate income tax for FY 2026-25. Compare old vs new tax regime and maximize your tax savings with deductions.',
     url: 'https://www.thetutorbridge.com/calculators/income-tax-calculator',
     siteName: 'The Tutor Bridge',
     type: 'website',
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Income Tax Calculator - FY 2024-25',
+    title: 'Income Tax Calculator - FY 2026-25',
     description: 'Calculate your income tax liability with old vs new regime comparison. Free tax calculator for India.',
     images: ['https://www.thetutorbridge.com/og-calculator.png'],
   },

@@ -16,7 +16,7 @@ export default function SSYCalculatorPage() {
   const [girlAge, setGirlAge] = useState<number>(5);
   const [startYear, setStartYear] = useState<number>(currentYear);
 
-  const SSY_INTEREST_RATE = 8.2; // Current SSY interest rate for 2025
+  const SSY_INTEREST_RATE = 8.2; // Current SSY interest rate for 2026
 
   const calculateSSY = () => {
     const annualRate = SSY_INTEREST_RATE / 100;
@@ -267,7 +267,7 @@ export default function SSYCalculatorPage() {
 
                   <div className="bg-white/10 p-3 md:p-4 rounded-xl backdrop-blur">
                     <p className="text-xs text-white/70">
-                      <strong>Note:</strong> Interest rate is subject to quarterly revision by the Government of India. Current rate: {SSY_INTEREST_RATE}% (Q4 2024-25).
+                      <strong>Note:</strong> Interest rate is subject to quarterly revision by the Government of India. Current rate: {SSY_INTEREST_RATE}% (Q4 2026-25).
                     </p>
                   </div>
                 </div>
@@ -531,10 +531,10 @@ export default function SSYCalculatorPage() {
 
               <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
                 <h3 className="font-semibold text-[#1A3D7C] mb-2 text-lg">
-                  1. What is the current interest rate for Sukanya Samriddhi Yojana in 2025?
+                  1. What is the current interest rate for Sukanya Samriddhi Yojana in 2026?
                 </h3>
                 <p className="text-gray-700">
-                  The current interest rate for SSY is 8.2% per annum (October-December 2024 quarter), compounded annually. The interest rate is revised quarterly by the Government of India based on market conditions. This rate is significantly higher than most other savings schemes and bank fixed deposits.
+                  The current interest rate for SSY is 8.2% per annum (October-December 2026 quarter), compounded annually. The interest rate is revised quarterly by the Government of India based on market conditions. This rate is significantly higher than most other savings schemes and bank fixed deposits.
                 </p>
               </div>
 
@@ -597,7 +597,7 @@ export default function SSYCalculatorPage() {
                   8. When does the SSY account mature?
                 </h3>
                 <p className="text-gray-700">
-                  The SSY account matures 21 years from the date of account opening. For example, if you open the account in 2025, it will mature in 2046. However, deposits need to be made only for the first 15 years. From year 16 to 21, the account continues to earn interest but no deposits are required or allowed.
+                  The SSY account matures 21 years from the date of account opening. For example, if you open the account in 2026, it will mature in 2046. However, deposits need to be made only for the first 15 years. From year 16 to 21, the account continues to earn interest but no deposits are required or allowed.
                 </p>
               </div>
 
@@ -713,7 +713,7 @@ export default function SSYCalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2025 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -81,9 +81,9 @@ const structuredData = {
     "description": "1-on-1 online tutoring sessions with expert tutors",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "120",
+      "price": "25",
       "priceCurrency": "USD",
-      "unitText": "per month"
+      "unitText": "per hour"
     }
   }
 }
@@ -375,68 +375,92 @@ export default function Tutoring() {
             </div>
           </section>
 
-          {/* How It Works */}
+          {/* How It Works - Clean & Subtle */}
           <section className="py-16 sm:py-20 bg-white">
             <div className="container mx-auto px-4 sm:px-6">
-              <div className="text-center mb-12 sm:mb-16">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#1A3D7C] mb-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
                   How Our Tutoring Works
                 </h2>
-                <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                  Getting started is easy. We match you with the perfect tutor for your child's needs.
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Getting started is easy. We match you with the perfect tutor.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[#1A3D7C] rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
-                    1
+              {/* Process Steps */}
+              <div className="max-w-4xl mx-auto">
+                {/* Desktop: Horizontal with connecting line */}
+                <div className="hidden md:block relative">
+                  {/* Connecting Line */}
+                  <div className="absolute top-10 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-[#1A3D7C] via-[#2BAE66] to-[#FFC857] opacity-30"></div>
+
+                  <div className="grid grid-cols-4 gap-4">
+                    {[
+                      { num: 1, icon: MessageSquare, title: "Consult", desc: "Tell us about your child's needs", color: "#1A3D7C" },
+                      { num: 2, icon: Users, title: "Match", desc: "We find the perfect tutor", color: "#2BAE66" },
+                      { num: 3, icon: Video, title: "Trial", desc: "Meet your tutor for free", color: "#FFC857" },
+                      { num: 4, icon: TrendingUp, title: "Grow", desc: "Watch confidence build weekly", color: "#1A3D7C" }
+                    ].map((step) => (
+                      <div key={step.num} className="flex flex-col items-center text-center">
+                        <div
+                          className="w-20 h-20 rounded-full flex items-center justify-center mb-4 relative bg-white shadow-sm border-2 transition-transform hover:scale-105"
+                          style={{ borderColor: step.color }}
+                        >
+                          <step.icon className="w-8 h-8" style={{ color: step.color }} />
+                          <div
+                            className="absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold"
+                            style={{ backgroundColor: step.color }}
+                          >
+                            {step.num}
+                          </div>
+                        </div>
+                        <h3 className="font-poppins font-semibold text-[#1A3D7C] mb-1">{step.title}</h3>
+                        <p className="text-gray-500 text-sm">{step.desc}</p>
+                      </div>
+                    ))}
                   </div>
-                  <h3 className="font-poppins font-bold text-[#1A3D7C] mb-2">Free Consultation</h3>
-                  <p className="text-gray-600 text-sm">
-                    Tell us about your child's needs, goals, and schedule.
-                  </p>
                 </div>
 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[#2BAE66] rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
-                    2
-                  </div>
-                  <h3 className="font-poppins font-bold text-[#1A3D7C] mb-2">Tutor Matching</h3>
-                  <p className="text-gray-600 text-sm">
-                    We match you with an expert tutor who fits your student's learning style.
-                  </p>
-                </div>
+                {/* Mobile: Vertical timeline */}
+                <div className="md:hidden">
+                  <div className="relative pl-8">
+                    {/* Vertical line */}
+                    <div className="absolute left-3 top-3 bottom-3 w-0.5 bg-gradient-to-b from-[#1A3D7C] via-[#2BAE66] to-[#FFC857] opacity-30"></div>
 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[#FFC857] rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
-                    3
+                    <div className="space-y-6">
+                      {[
+                        { num: 1, icon: MessageSquare, title: "Free Consultation", desc: "Tell us about your child's needs and goals", color: "#1A3D7C" },
+                        { num: 2, icon: Users, title: "Tutor Matching", desc: "We find the perfect tutor for your student", color: "#2BAE66" },
+                        { num: 3, icon: Video, title: "Trial Session", desc: "Meet your tutor in a free trial session", color: "#FFC857" },
+                        { num: 4, icon: TrendingUp, title: "Watch Them Grow", desc: "Weekly sessions build lasting confidence", color: "#1A3D7C" }
+                      ].map((step) => (
+                        <div key={step.num} className="flex gap-4 relative">
+                          <div
+                            className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 relative z-10"
+                            style={{ backgroundColor: step.color }}
+                          >
+                            {step.num}
+                          </div>
+                          <div className="flex-1 pb-2">
+                            <div className="flex items-center gap-2 mb-1">
+                              <step.icon className="w-4 h-4" style={{ color: step.color }} />
+                              <h3 className="font-poppins font-semibold text-[#1A3D7C]">{step.title}</h3>
+                            </div>
+                            <p className="text-gray-500 text-sm">{step.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <h3 className="font-poppins font-bold text-[#1A3D7C] mb-2">Trial Session</h3>
-                  <p className="text-gray-600 text-sm">
-                    Meet your tutor in a free trial session to ensure it's a good fit.
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[#1A3D7C] rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
-                    4
-                  </div>
-                  <h3 className="font-poppins font-bold text-[#1A3D7C] mb-2">Weekly Sessions</h3>
-                  <p className="text-gray-600 text-sm">
-                    Begin regular sessions and watch your child's confidence grow.
-                  </p>
                 </div>
               </div>
 
+              {/* CTA */}
               <div className="text-center mt-12">
                 <Link href="/tutoring/free-consultation">
-                  <Button
-                    size="lg"
-                    className="bg-[#1A3D7C] text-white rounded-xl px-8 py-6 text-lg font-semibold"
-                  >
+                  <Button className="bg-[#2BAE66] hover:bg-[#2BAE66]/90 px-8">
                     Start With Free Consultation
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
               </div>
@@ -461,9 +485,9 @@ export default function Tutoring() {
                   <CardContent className="p-0">
                     <div className="text-sm font-semibold text-gray-500 mb-2">STARTER</div>
                     <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">
-                      $120<span className="text-lg text-gray-500 font-normal">/mo</span>
+                      $30<span className="text-lg text-gray-500 font-normal">/hr</span>
                     </div>
-                    <p className="text-gray-600 mb-6">4 sessions per month</p>
+                    <p className="text-gray-600 mb-6">4 sessions per month ($120/mo)</p>
                     <ul className="space-y-3 text-sm text-gray-600 text-left mb-6">
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-[#2BAE66] flex-shrink-0" />
@@ -496,9 +520,9 @@ export default function Tutoring() {
                   <CardContent className="p-0">
                     <div className="text-sm font-semibold text-[#2BAE66] mb-2">STANDARD</div>
                     <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">
-                      $200<span className="text-lg text-gray-500 font-normal">/mo</span>
+                      $25<span className="text-lg text-gray-500 font-normal">/hr</span>
                     </div>
-                    <p className="text-gray-600 mb-6">8 sessions per month</p>
+                    <p className="text-gray-600 mb-6">8 sessions per month ($200/mo)</p>
                     <ul className="space-y-3 text-sm text-gray-600 text-left mb-6">
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-[#2BAE66] flex-shrink-0" />
@@ -532,9 +556,9 @@ export default function Tutoring() {
                   <CardContent className="p-0">
                     <div className="text-sm font-semibold text-[#FFC857] mb-2">PREMIUM</div>
                     <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">
-                      $350<span className="text-lg text-gray-500 font-normal">/mo</span>
+                      $29<span className="text-lg text-gray-500 font-normal">/hr</span>
                     </div>
-                    <p className="text-gray-600 mb-6">12 sessions per month</p>
+                    <p className="text-gray-600 mb-6">12 sessions per month ($350/mo)</p>
                     <ul className="space-y-3 text-sm text-gray-600 text-left mb-6">
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-[#2BAE66] flex-shrink-0" />

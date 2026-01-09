@@ -770,7 +770,7 @@ export default function AIStudyGuideMakerPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2025 TheTutorBridge. All rights reserved. Empowering education through AI.</p>
+            <p>&copy; 2026 TheTutorBridge. All rights reserved. Empowering education through AI.</p>
           </div>
         </div>
       </footer>

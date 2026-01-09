@@ -273,7 +273,7 @@ export default function RomanNumeralConverter() {
                     <Input
                       id="input"
                       type="text"
-                      placeholder={conversionType === 'toRoman' ? 'e.g., 2024' : 'e.g., MMXXIV'}
+                      placeholder={conversionType === 'toRoman' ? 'e.g., 2026' : 'e.g., MMXXIV'}
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
                       className="text-center text-lg font-medium border-2 uppercase"
@@ -307,7 +307,7 @@ export default function RomanNumeralConverter() {
                 <div className="mt-6 p-4 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl">
                   <h3 className="text-sm font-bold text-gray-900 mb-2">Quick Examples:</h3>
                   <div className="space-y-1 text-sm text-gray-700">
-                    <p>• 2024 = MMXXIV</p>
+                    <p>• 2026 = MMXXIV</p>
                     <p>• 1999 = MCMXCIX</p>
                     <p>• XIV = 14</p>
                     <p>• XCIX = 99</p>
@@ -509,7 +509,7 @@ export default function RomanNumeralConverter() {
                   </p>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="font-mono text-lg mb-2">MDCCLXXVI = M + D + C + C + L + X + X + V + I = <strong>1776</strong></p>
-                    <p className="font-mono text-lg">MMXXIV = M + M + X + X + IV = <strong>2024</strong></p>
+                    <p className="font-mono text-lg">MMXXIV = M + M + X + X + IV = <strong>2026</strong></p>
                   </div>
                 </div>
               </div>
@@ -601,8 +601,8 @@ export default function RomanNumeralConverter() {
                     <div className="flex justify-between"><span>1945</span><span className="font-bold text-xs">MCMXLV</span></div>
                     <div className="flex justify-between"><span>2000</span><span className="font-bold">MM</span></div>
                     <div className="flex justify-between"><span>2020</span><span className="font-bold">MMXX</span></div>
-                    <div className="flex justify-between"><span>2024</span><span className="font-bold">MMXXIV</span></div>
-                    <div className="flex justify-between"><span>2025</span><span className="font-bold">MMXXV</span></div>
+                    <div className="flex justify-between"><span>2026</span><span className="font-bold">MMXXIV</span></div>
+                    <div className="flex justify-between"><span>2026</span><span className="font-bold">MMXXV</span></div>
                     <div className="flex justify-between"><span>3000</span><span className="font-bold">MMM</span></div>
                     <div className="flex justify-between"><span>3999</span><span className="font-bold text-xs">MMMCMXCIX</span></div>
                   </div>

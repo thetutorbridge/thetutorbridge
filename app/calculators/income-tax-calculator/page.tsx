@@ -12,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 
 export default function IncomeTaxCalculatorPage() {
   // Assessment year and age
-  const [assessmentYear, setAssessmentYear] = useState<string>('2025-2026');
+  const [assessmentYear, setAssessmentYear] = useState<string>('2026-2026');
   const [ageCategory, setAgeCategory] = useState<string>('below60');
 
   // Income fields
@@ -121,14 +121,14 @@ export default function IncomeTaxCalculatorPage() {
     const totalIncome = grossSalary + otherIncome + interestIncome + rentalIncome;
 
     // New Regime allows very limited deductions
-    const standardDeduction = Math.min(75000, grossSalary); // New regime standard deduction (FY 2025-26)
+    const standardDeduction = Math.min(75000, grossSalary); // New regime standard deduction (FY 2026-26)
     const homeLoanDeduction = homeLoanInterestLetOut; // Only for let-out property
 
     const totalDeductions = standardDeduction + homeLoanDeduction;
 
     const netTaxableIncome = Math.max(0, totalIncome - totalDeductions);
 
-    // New Tax Regime Slabs (FY 2025-26)
+    // New Tax Regime Slabs (FY 2026-26)
     let tax = 0;
 
     if (netTaxableIncome > 400000) {
@@ -210,7 +210,7 @@ export default function IncomeTaxCalculatorPage() {
                   Income Tax Calculator
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl">
-                  Calculate your tax liability for FY 2025-26 under Old and New Tax Regime. Compare both regimes and choose the best option for maximum savings.
+                  Calculate your tax liability for FY 2026-26 under Old and New Tax Regime. Compare both regimes and choose the best option for maximum savings.
                 </p>
               </div>
               <div className="flex-shrink-0">
@@ -245,8 +245,8 @@ export default function IncomeTaxCalculatorPage() {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="2026-2027">2026 - 2027</SelectItem>
-                        <SelectItem value="2025-2026">2025 - 2026</SelectItem>
-                        <SelectItem value="2024-2025">2024 - 2025</SelectItem>
+                        <SelectItem value="2026-2026">2026 - 2026</SelectItem>
+                        <SelectItem value="2026-2026">2026 - 2026</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -607,7 +607,7 @@ export default function IncomeTaxCalculatorPage() {
                     Accurate Tax Planning
                   </h3>
                   <p className="text-white/90">
-                    Plan your investments and deductions throughout the year to minimize tax liability. Updated with latest FY 2025-26 tax slabs and rebate limits for accurate calculations.
+                    Plan your investments and deductions throughout the year to minimize tax liability. Updated with latest FY 2026-26 tax slabs and rebate limits for accurate calculations.
                   </p>
                 </div>
                 <div className="bg-white/10 p-5 rounded-xl">
@@ -640,7 +640,7 @@ export default function IncomeTaxCalculatorPage() {
                 <div className="bg-white/10 p-5 rounded-xl">
                   <h3 className="font-semibold text-[#FFC857] mb-2 flex items-center">
                     <CheckCircle className="w-5 h-5 mr-2" />
-                    Updated for Budget 2025
+                    Updated for Budget 2026
                   </h3>
                   <p className="text-white/90">
                     Calculator reflects latest tax changes including increased standard deduction to ₹75,000, enhanced Section 87A rebate to ₹60,000, and new tax slabs.
@@ -667,13 +667,13 @@ export default function IncomeTaxCalculatorPage() {
                   What is the difference between Old and New tax regimes?
                 </h3>
                 <p className="text-gray-700 pl-6">
-                  The <strong>Old Tax Regime</strong> offers multiple deductions (80C, 80D, HRA, etc.) but has higher tax rates. The <strong>New Tax Regime</strong> has lower tax rates and higher standard deduction (₹75,000 for FY 2025-26) but doesn't allow most deductions. You can choose either regime when filing ITR.
+                  The <strong>Old Tax Regime</strong> offers multiple deductions (80C, 80D, HRA, etc.) but has higher tax rates. The <strong>New Tax Regime</strong> has lower tax rates and higher standard deduction (₹75,000 for FY 2026-26) but doesn't allow most deductions. You can choose either regime when filing ITR.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                 <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                  What are the tax slabs for FY 2025-26 under the New Regime?
+                  What are the tax slabs for FY 2026-26 under the New Regime?
                 </h3>
                 <p className="text-gray-700 pl-6">
                   <strong>New Regime tax slabs:</strong> Up to ₹4L (0%), ₹4-8L (5%), ₹8-12L (10%), ₹12-16L (15%), ₹16-20L (20%), ₹20-24L (25%), Above ₹24L (30%). Plus 4% Health & Education Cess. Section 87A rebate of ₹60,000 available for income up to ₹12 lakh.
@@ -727,7 +727,7 @@ export default function IncomeTaxCalculatorPage() {
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                 <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2 border-l-4 border-[#2BAE66] pl-4">
-                  What is the standard deduction for FY 2025-26?
+                  What is the standard deduction for FY 2026-26?
                 </h3>
                 <p className="text-gray-700 pl-6">
                   Standard deduction is <strong>₹50,000 in Old Regime</strong> and <strong>₹75,000 in New Regime</strong> for salaried individuals. It's automatically deducted from gross salary. The increased standard deduction in New Regime makes it more attractive for many taxpayers.
@@ -886,7 +886,7 @@ export default function IncomeTaxCalculatorPage() {
             </div>
           </div>
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60 text-sm">
-            <p>&copy; 2025 The Tutor Bridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

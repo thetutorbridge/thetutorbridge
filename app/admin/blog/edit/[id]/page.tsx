@@ -86,7 +86,7 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.NEXT_PUBLIC_REVALIDATION_SECRET || 'ttb-revalidate-secret-key-2024'}`
+                'Authorization': `Bearer ${process.env.NEXT_PUBLIC_REVALIDATION_SECRET || 'ttb-revalidate-secret-key-2026'}`
               },
               body: JSON.stringify({ slug: data.slug })
             })
@@ -129,7 +129,7 @@ export default function EditBlogPostPage({ params }: EditBlogPostPageProps) {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${process.env.NEXT_PUBLIC_REVALIDATION_SECRET || 'ttb-revalidate-secret-key-2024'}`
+              'Authorization': `Bearer ${process.env.NEXT_PUBLIC_REVALIDATION_SECRET || 'ttb-revalidate-secret-key-2026'}`
             },
             body: JSON.stringify({ slug: data.slug })
           })

@@ -26,7 +26,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Pricing | Homework Help & Tutoring Plans | The Tutor Bridge",
-  description: "Affordable homework help starting at $15. Weekly tutoring packages from $120/month. No contracts, satisfaction guaranteed. See our transparent pricing for Math, Science & English.",
+  description: "Affordable homework help starting at $15. Expert 1-on-1 tutoring from $25/hr. No contracts, satisfaction guaranteed. See our transparent pricing for Math, Science & English.",
   keywords: [
     "tutoring prices",
     "homework help cost",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Pricing | Homework Help & Tutoring Plans",
-    description: "Affordable homework help from $15. Tutoring packages from $120/month. Transparent pricing, no hidden fees.",
+    description: "Affordable homework help from $15. Expert 1-on-1 tutoring from $25/hr. Transparent pricing, no hidden fees.",
     url: "https://www.thetutorbridge.com/pricing",
     siteName: "The Tutor Bridge",
     type: "website",
@@ -295,8 +295,8 @@ export default function Pricing() {
                 <CardContent className="p-0">
                   <div className="text-center mb-6">
                     <h3 className="font-poppins font-bold text-gray-500 text-sm mb-2">STARTER</h3>
-                    <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">$120</div>
-                    <div className="text-gray-500">per month</div>
+                    <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">$30</div>
+                    <div className="text-gray-500">per hour</div>
                   </div>
 
                   <div className="bg-gray-50 rounded-lg p-4 mb-6 text-center">
@@ -324,7 +324,7 @@ export default function Pricing() {
                   </ul>
 
                   <div className="text-center text-sm text-gray-500 mb-4">
-                    $30 per session
+                    $120/month total
                   </div>
 
                   <Link href="/tutoring/free-consultation" className="block">
@@ -343,8 +343,8 @@ export default function Pricing() {
                 <CardContent className="p-0">
                   <div className="text-center mb-6">
                     <h3 className="font-poppins font-bold text-[#2BAE66] text-sm mb-2">STANDARD</h3>
-                    <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">$200</div>
-                    <div className="text-gray-500">per month</div>
+                    <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">$25</div>
+                    <div className="text-gray-500">per hour</div>
                   </div>
 
                   <div className="bg-green-50 rounded-lg p-4 mb-6 text-center">
@@ -380,7 +380,7 @@ export default function Pricing() {
                   </ul>
 
                   <div className="text-center text-sm text-[#2BAE66] font-semibold mb-4">
-                    $25 per session • Save $40/mo
+                    $200/month total • Best value
                   </div>
 
                   <Link href="/tutoring/free-consultation" className="block">
@@ -396,8 +396,8 @@ export default function Pricing() {
                 <CardContent className="p-0">
                   <div className="text-center mb-6">
                     <h3 className="font-poppins font-bold text-[#FFC857] text-sm mb-2">PREMIUM</h3>
-                    <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">$350</div>
-                    <div className="text-gray-500">per month</div>
+                    <div className="text-4xl font-poppins font-bold text-[#1A3D7C] mb-1">$29</div>
+                    <div className="text-gray-500">per hour</div>
                   </div>
 
                   <div className="bg-yellow-50 rounded-lg p-4 mb-6 text-center">
@@ -429,7 +429,7 @@ export default function Pricing() {
                   </ul>
 
                   <div className="text-center text-sm text-[#FFC857] font-semibold mb-4">
-                    $29 per session • Best for intensive prep
+                    $350/month total • Best for intensive prep
                   </div>
 
                   <Link href="/tutoring/free-consultation" className="block">
@@ -578,8 +578,8 @@ export default function Pricing() {
                         </tr>
                         <tr className="bg-gray-50">
                           <td className="px-6 py-4 text-gray-700">Starting price</td>
-                          <td className="px-6 py-4 text-center font-bold text-[#1A3D7C]">$15</td>
-                          <td className="px-6 py-4 text-center font-bold text-[#2BAE66]">$120/mo</td>
+                          <td className="px-6 py-4 text-center font-bold text-[#1A3D7C]">$15/task</td>
+                          <td className="px-6 py-4 text-center font-bold text-[#2BAE66]">$25/hr</td>
                         </tr>
                       </tbody>
                     </table>

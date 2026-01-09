@@ -498,7 +498,7 @@ export default function Class6ScienceChapter1() {
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center">
             <p className="text-white/60">
-              © 2025 The Tutor Bridge. All rights reserved.
+              © 2026 The Tutor Bridge. All rights reserved.
             </p>
           </div>
         </div>

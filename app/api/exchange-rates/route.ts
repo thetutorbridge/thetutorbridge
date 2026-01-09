@@ -5,7 +5,7 @@ let cachedRates: { [key: string]: number } | null = null;
 let cacheTimestamp: number = 0;
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-// Fallback rates (used if API fails) - Updated Dec 2024
+// Fallback rates (used if API fails) - Updated Dec 2026
 const FALLBACK_RATES: { [key: string]: number } = {
   USD: 1,
   EUR: 0.92,

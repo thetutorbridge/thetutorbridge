@@ -854,8 +854,8 @@ export default function TimeUntilCalculatorPage() {
                   <div>
                     <p className="text-gray-700 mb-2"><strong>Given:</strong></p>
                     <ul className="text-gray-600 space-y-1">
-                      <li>Start Date: October 31, 2025 (Halloween)</li>
-                      <li>Target Date: December 25, 2025 (Christmas)</li>
+                      <li>Start Date: October 31, 2026 (Halloween)</li>
+                      <li>Target Date: December 25, 2026 (Christmas)</li>
                     </ul>
                   </div>
                   <div>
@@ -878,7 +878,7 @@ export default function TimeUntilCalculatorPage() {
                   <div>
                     <p className="text-gray-700 mb-2"><strong>Given:</strong></p>
                     <ul className="text-gray-600 space-y-1">
-                      <li>Start Date: December 1, 2025, 12:00 PM</li>
+                      <li>Start Date: December 1, 2026, 12:00 PM</li>
                       <li>Target Date: January 1, 2026, 12:00 AM</li>
                     </ul>
                   </div>
@@ -902,8 +902,8 @@ export default function TimeUntilCalculatorPage() {
                     <p className="text-gray-700 mb-2"><strong>Scenario:</strong></p>
                     <p className="text-gray-600">A student needs to submit their thesis in exactly 6 months.</p>
                     <ul className="text-gray-600 space-y-1 mt-2">
-                      <li>Start Date: June 15, 2025</li>
-                      <li>Target Date: December 15, 2025</li>
+                      <li>Start Date: June 15, 2026</li>
+                      <li>Target Date: December 15, 2026</li>
                     </ul>
                   </div>
                   <div>

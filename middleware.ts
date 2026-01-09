@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server';
 // These are blog posts that were previously at root level (e.g., /post-slug)
 // and now live at /blog/post-slug
 const OLD_WORDPRESS_BLOG_SLUGS = new Set([
-  'cbse-class-10-and-class-12-date-sheet-2025',
+  'cbse-class-10-and-class-12-date-sheet-2026',
   'studying-101-study-smarter-not-harder',
   'what-education-is-required-to-be-a-pharmacist',
   'what-can-you-do-with-an-early-childhood-education-degree',

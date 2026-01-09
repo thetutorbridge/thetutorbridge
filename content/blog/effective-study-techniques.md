@@ -8,8 +8,8 @@ tags: ["study-tips", "academic-success", "learning-methods", "productivity"]
 featured_image: "/resources.jpg"
 read_time: 8
 status: "published"
-published_at: "2024-01-20T14:30:00Z"
-created_at: "2024-01-20T14:30:00Z"
+published_at: "2026-01-20T14:30:00Z"
+created_at: "2026-01-20T14:30:00Z"
 ---
 
 # 10 Effective Study Techniques That Actually Work

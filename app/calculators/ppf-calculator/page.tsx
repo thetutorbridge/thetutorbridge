@@ -84,7 +84,7 @@ export default function PPFCalculatorPage() {
           <div className="flex items-center justify-center mb-6">
             <Landmark className="w-12 h-12 text-[#FFC857] mr-4" />
             <h1 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
-              PPF Calculator India 2025 — Public Provident Fund Calculator
+              PPF Calculator India 2026 — Public Provident Fund Calculator
             </h1>
           </div>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
@@ -230,7 +230,7 @@ export default function PPFCalculatorPage() {
 
                   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                     <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                      <strong className="text-[#1A3D7C]">Note:</strong> Current PPF interest rate is 7.1% p.a. (Q4 2024-25). Minimum deposit: ₹500/year, Maximum: ₹1.5 lakh/year. Lock-in period: 15 years. Fully exempt under EEE (Exempt-Exempt-Exempt) tax status.
+                      <strong className="text-[#1A3D7C]">Note:</strong> Current PPF interest rate is 7.1% p.a. (Q4 2026-25). Minimum deposit: ₹500/year, Maximum: ₹1.5 lakh/year. Lock-in period: 15 years. Fully exempt under EEE (Exempt-Exempt-Exempt) tax status.
                     </p>
                   </div>
                 </div>
@@ -359,7 +359,7 @@ export default function PPFCalculatorPage() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                  <span><strong>Interest Rate:</strong> 7.1% p.a. (Q4 2024-25, revised quarterly by Govt)</span>
+                  <span><strong>Interest Rate:</strong> 7.1% p.a. (Q4 2026-25, revised quarterly by Govt)</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
@@ -469,8 +469,8 @@ export default function PPFCalculatorPage() {
             <div className="space-y-4">
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">1. What is the current PPF interest rate in 2025?</h3>
-                <p className="text-gray-700">The current PPF interest rate is <strong>7.1% per annum</strong> (Q4 2024-25). The government revises PPF rates quarterly. Interest is compounded annually.</p>
+                <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">1. What is the current PPF interest rate in 2026?</h3>
+                <p className="text-gray-700">The current PPF interest rate is <strong>7.1% per annum</strong> (Q4 2026-25). The government revises PPF rates quarterly. Interest is compounded annually.</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
@@ -628,7 +628,7 @@ export default function PPFCalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2025 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

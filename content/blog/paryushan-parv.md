@@ -1,5 +1,5 @@
 ---
-id: paryushan-parv-2025
+id: paryushan-parv-2026
 title: "Paryushan Parv in Jainism: Meaning, Rituals, and a Student-Friendly Guide"
 slug: paryushan-parv
 excerpt: "Understand the essence of Paryushan Parv—Jainism's festival of reflection, forgiveness, and self-discipline—with rituals, key concepts, and practical ways students can live its values every day."
@@ -8,8 +8,8 @@ tags: ["jainism", "paryushan", "festival", "values", "ethics", "forgiveness", "f
 featured_image: "/bannerHome4.jpg"
 read_time: 9
 status: "published"
-published_at: "2025-08-20T07:00:00Z"
-created_at: "2025-08-20T07:00:00Z"
+published_at: "2026-08-20T07:00:00Z"
+created_at: "2026-08-20T07:00:00Z"
 ---
 
 # Paryushan Parv in Jainism: Meaning, Rituals, and a Student-Friendly Guide

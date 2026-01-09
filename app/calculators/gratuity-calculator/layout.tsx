@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     'continuous service gratuity',
     'gratuity on death',
     'gratuity tax exemption section 10(10)',
-    'gratuity maximum limit 2024',
+    'gratuity maximum limit 2026',
     'gratuity calculation example',
     'how to claim gratuity',
     'gratuity documents required',
