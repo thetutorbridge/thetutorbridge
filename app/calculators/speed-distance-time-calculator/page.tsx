@@ -235,6 +235,10 @@ export default function SpeedDistanceTimeCalculatorPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the formula for speed?","acceptedAnswer":{"@type":"Answer","text":"The formula for speed is: speed = distance ÷ time. This means speed equals the distance traveled divided by the time taken. For example, if you travel 100 miles in 2 hours, your speed is 100 ÷ 2 = 50 mph."}}]}' }}
+      />
       <Navigation />
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-4">
         <div className="max-w-5xl mx-auto">

@@ -200,6 +200,23 @@ export default function CalorieDeficitCalculator() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How accurate is this calorie deficit calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator uses the Mifflin-St Jeor equation, which is considered one of the most accurate formulas for estimating BMR. However, individual results may vary based on metabolism, muscle mass, and other factors. Use the results as a starting point and adjust based on your actual progress."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

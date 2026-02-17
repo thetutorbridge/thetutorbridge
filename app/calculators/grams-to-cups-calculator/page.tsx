@@ -119,6 +119,23 @@ export default function GramsToCupsCalculator() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many grams are in a cup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the ingredient. For water, 1 US cup = 236.59g. For flour, 1 cup ≈ 125g. For sugar, 1 cup ≈ 200g. Always use ingredient-specific conversions for accuracy."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-golang-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Golang Developer Roadmap 2026 - The Tutor Bridge',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Golang Developer Roadmap 2026 - Complete Learning Path',
     description: 'Master Go (Golang) with our comprehensive 2026 roadmap. Concurrency, microservices & cloud-native.',
-    images: ['https://www.thetutorbridge.com/og-golang-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

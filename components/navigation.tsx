@@ -25,7 +25,7 @@ export function Navigation() {
             <Link href="/" className="flex items-center gap-3">
               <Image src="/TheTutorBridge Logo New.png" width={40} height={40} alt="The Tutor Bridge Logo" className="h-10 w-10" />
               <span className="text-2xl font-bold bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent">
-                TheTutorBridge
+                The Tutor Bridge
               </span>
             </Link>
 

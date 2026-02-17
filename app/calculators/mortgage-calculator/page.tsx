@@ -147,6 +147,10 @@ export default function MortgageCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Need Help Understanding Mortgages?","acceptedAnswer":{"@type":"Answer","text":"Our expert tutors can help you understand mortgage calculations, financial planning, and real estate mathematics. Book a personalized session today!"}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

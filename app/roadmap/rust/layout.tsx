@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Rust Developer Roadmap 2026',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Rust Developer Roadmap 2026 - Complete Learning Path',
     description: 'Master Rust with our comprehensive 2026 roadmap. Learn ownership, borrowing, lifetimes, async programming, WebAssembly, and systems programming.',
-    images: ['/og-image.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

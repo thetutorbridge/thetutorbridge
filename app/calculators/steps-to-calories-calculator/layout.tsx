@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Steps to Calories Calculator - The Tutor Bridge',
@@ -137,7 +137,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Steps to Calories Calculator',
     description: 'Convert your daily steps into calories burned. Find out how many calories 10,000 steps burns based on your personal metrics.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

@@ -173,6 +173,10 @@ export default function BMRCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Need Help with Nutrition & Fitness Planning?","acceptedAnswer":{"@type":"Answer","text":"Our expert tutors can help you understand metabolism, nutrition science, and create personalized fitness plans. Book a session today!"}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

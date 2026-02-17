@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-ux-design-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'UX Design Roadmap 2026 - The Tutor Bridge',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'UX Design Roadmap 2026 - Complete Learning Path',
     description: 'Master UX Design with our comprehensive 2026 roadmap. Research, prototyping & design systems.',
-    images: ['https://www.thetutorbridge.com/og-ux-design-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

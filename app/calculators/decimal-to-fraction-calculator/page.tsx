@@ -180,6 +180,95 @@ export default function DecimalToFractionCalculator() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a decimal number?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A decimal number is a number that contains a decimal point, representing a whole number plus a fractional part. The digits to the right of the decimal point represent tenths, hundredths, thousandths, and so on. For example, 3.75 means 3 whole units plus 7 tenths plus 5 hundredths."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do we convert decimals to fractions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fractions are often easier to work with in mathematical operations, especially multiplication and division. They\\"re also more precise than decimals (for example, ⅓ is exact, while 0.333 is an approximation). In practical applications like cooking, construction, and music, fractions align better with standard measuring tools and notation systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I handle repeating decimals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Repeating decimals (like 0.333... or 0.142857142857...) require special handling. Our calculator has a field to specify how many trailing digits repeat. For simple cases, you can use the algebraic method: let x = 0.333..., then 10x = 3.333..., so 10x - x = 3, giving x = 3/9 = 1/3. For complex repeating patterns, using a calculator is recommended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What"s the difference between a proper and improper fraction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A proper fraction has a numerator smaller than its denominator (like ¾), representing a value less than 1. An improper fraction has a numerator larger than or equal to its denominator (like 7/4), representing a value of 1 or greater. Improper fractions can be converted to mixed numbers for easier interpretation in real-world contexts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can all decimals be converted to fractions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All terminating decimals and repeating decimals can be converted to exact fractions. However, irrational numbers (like π = 3.14159... or √2 = 1.41421...) cannot be expressed as exact fractions because their decimal representations neither terminate nor repeat. These can only be approximated as fractions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if my fraction is in simplest form?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A fraction is in simplest form (or lowest terms) when the Greatest Common Factor (GCF) of the numerator and denominator is 1—meaning they share no common factors other than 1. For example, ¾ is in simplest form because GCF(3,4) = 1, but 6/8 is not because GCF(6,8) = 2, and it reduces to ¾."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does \"repeating digits\" mean in the calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The \"repeating digits\" field specifies how many of the trailing decimal digits repeat infinitely. For example, in 0.1666... the \"6\" repeats, so you would enter 1 repeating digit. In 0.142857142857... all six digits repeat, so you would enter 6. For non-repeating (terminating) decimals, leave this at 0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do we use the GCF instead of just any common factor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Using the Greatest Common Factor ensures you reduce the fraction completely in one step, reaching the simplest form immediately. If you use a smaller common factor, you\\"ll have to repeat the process multiple times. For 24/36, using GCF = 12 gives ⅔ in one step, while using 2 would require multiple reductions: 24/36 → 12/18 → 6/9 → 2/3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this calculator for negative decimals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Our calculator handles negative decimals perfectly. Simply enter the negative sign before the decimal number (like -0.75), and the calculator will preserve the negative sign throughout the conversion process, giving you the correct negative fraction (like -¾)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is this calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calculator uses precise mathematical algorithms to ensure 100% accuracy for all terminating decimals. It automatically finds the GCF using the Euclidean algorithm and reduces fractions to their simplest form. For repeating decimals, accuracy depends on correctly specifying which digits repeat. The calculator shows all steps transparently so you can verify the work."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}

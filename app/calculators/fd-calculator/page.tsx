@@ -47,6 +47,10 @@ export default function FDCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1. What is the minimum and maximum amount for FD investment?","acceptedAnswer":{"@type":"Answer","text":"The minimum FD amount varies by bank, typically ranging from ₹1,000 to ₹10,000. There is usually no maximum limit, though banks may have special schemes for high-value deposits. Senior citizens and NRIs may have different limits and rates."}},{"@type":"Question","name":"2. What is the difference between cumulative and non-cumulative FD?","acceptedAnswer":{"@type":"Answer","text":"In a cumulative FD, the interest is compounded quarterly and paid at maturity along with the principal, resulting in higher returns. In a non-cumulative FD, interest is paid out at regular intervals (monthly, quarterly, or annually), providing regular income but lower overall returns."}},{"@type":"Question","name":"3. Is the interest earned on FD taxable?","acceptedAnswer":{"@type":"Answer","text":"Yes, interest earned on FDs is fully taxable as per your income tax slab. Banks deduct TDS at 10% if total interest exceeds ₹40,000 per year (₹50,000 for senior citizens). However, 5-year tax-saving FDs qualify for deduction under Section 80C up to ₹1.5 lakhs."}},{"@type":"Question","name":"4. Can I break my FD before maturity?","acceptedAnswer":{"@type":"Answer","text":"Yes, premature withdrawal is allowed but attracts a penalty of 0.5% to 1% on the interest rate. The interest is recalculated based on the actual deposit period at a reduced rate. Tax-saving FDs (5-year lock-in) cannot be withdrawn before maturity."}},{"@type":"Question","name":"5. What happens to my FD after maturity?","acceptedAnswer":{"@type":"Answer","text":"After maturity, if you don\'t provide instructions, most banks auto-renew the FD for the same tenure at prevailing interest rates. You can also choose to withdraw the amount or transfer it to your savings account. Some banks offer a grace period of 7-14 days post maturity."}},{"@type":"Question","name":"6. Can I get a loan against my FD?","acceptedAnswer":{"@type":"Answer","text":"Yes, most banks offer loans against FDs up to 75-90% of the deposit value at interest rates typically 1-2% higher than the FD rate. This is a good emergency funding option as you continue earning interest on your FD while using the loan facility."}},{"@type":"Question","name":"7. How is FD interest rate calculated?","acceptedAnswer":{"@type":"Answer","text":"FD interest is calculated using the compound interest formula: A = P(1 + r/n)^(nt), where P is principal, r is annual rate, n is compounding frequency (usually 4 for quarterly), and t is time in years. Our calculator uses this exact formula for accurate results."}},{"@type":"Question","name":"8. Are bank FDs safe and insured?","acceptedAnswer":{"@type":"Answer","text":"Yes, bank FDs are very safe and insured by the Deposit Insurance and Credit Guarantee Corporation (DICGC) up to ₹5 lakhs per depositor per bank. This includes both principal and interest. Post Office FDs are backed by the Government of India, making them extremely secure."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}
@@ -668,7 +672,7 @@ export default function FDCalculatorPage() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering students with personalized education and career guidance for a brighter future.
@@ -696,7 +700,7 @@ export default function FDCalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'The Tutor Bridge',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Class 6 Science Chapter 9 - Methods of Separation in Everyday Life - The Tutor Bridge',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Class 6 Science Chapter 9 Notes – Methods of Separation in Everyday Life',
     description: 'Get Class 6 Science Chapter 9 notes – Methods of Separation in Everyday Life. Covers handpicking, threshing, winnowing, sieving, sedimentation, decantation, filtration, evaporation, churning, magnetic separation, and practical applications with daily life examples.',
-    images: ['/og-image.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.thetutorbridge.com/study-resources/class-6/science/chapter-9-methods-of-separation-in-everyday-life',

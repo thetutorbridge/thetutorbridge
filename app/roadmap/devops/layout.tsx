@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-devops-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'DevOps Engineer Roadmap 2026 - The Tutor Bridge',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DevOps Engineer Roadmap 2026 - Complete Learning Path',
     description: 'Master DevOps with Docker, Kubernetes, CI/CD, AWS, and Terraform.',
-    images: ['https://www.thetutorbridge.com/og-devops-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

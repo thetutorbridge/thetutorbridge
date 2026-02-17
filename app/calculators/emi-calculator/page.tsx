@@ -50,6 +50,10 @@ export default function EMICalculatorPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1. What is EMI in simple terms?","acceptedAnswer":{"@type":"Answer","text":"EMI stands for Equated Monthly Installment . It\'s a fixed amount you pay every month to repay a loan, including both principal and interest."}},{"@type":"Question","name":"2. How is EMI calculated?","acceptedAnswer":{"@type":"Answer","text":"EMI is calculated using the formula: EMI = [P × R × (1+R)^N] / [(1+R)^N - 1] , where P is principal, R is monthly interest rate, and N is tenure in months."}},{"@type":"Question","name":"3. Does EMI include both principal and interest?","acceptedAnswer":{"@type":"Answer","text":"Yes, each EMI payment includes both principal repayment and interest charges. Initially, a larger portion goes toward interest, and gradually more goes toward the principal."}},{"@type":"Question","name":"4. What happens if I miss an EMI payment?","acceptedAnswer":{"@type":"Answer","text":"Missing EMI payments can result in late payment fees, penalty charges, negative impact on credit score, and in extreme cases, legal action by the lender. Always pay EMIs on time."}},{"@type":"Question","name":"5. Can I prepay my loan to reduce EMI burden?","acceptedAnswer":{"@type":"Answer","text":"Yes, most loans allow partial or full prepayment. Prepaying reduces your outstanding principal, which can either reduce your EMI or shorten the loan tenure . Check with your lender about prepayment charges."}},{"@type":"Question","name":"6. What is a good EMI-to-income ratio?","acceptedAnswer":{"@type":"Answer","text":"Financial experts recommend keeping your total EMI (all loans combined) below 40-50% of your monthly income to maintain financial stability and avoid over-leverage."}},{"@type":"Question","name":"7. Should I choose a longer or shorter loan tenure?","acceptedAnswer":{"@type":"Answer","text":"Shorter tenure: Higher EMI but lower total interest. Longer tenure: Lower EMI but higher total interest. Choose based on your monthly budget and long-term financial goals."}},{"@type":"Question","name":"8. Are education loan EMIs different?","acceptedAnswer":{"@type":"Answer","text":"Education loans often have a moratorium period (during study + grace period) where you don\'t pay EMIs. EMI repayment typically starts after you complete your course and the grace period ends."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}
@@ -816,7 +820,7 @@ export default function EMICalculatorPage() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering students with personalized education and career guidance for a brighter future.
@@ -844,7 +848,7 @@ export default function EMICalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

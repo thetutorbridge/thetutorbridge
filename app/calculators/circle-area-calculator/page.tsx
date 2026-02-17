@@ -274,6 +274,23 @@ export default function CircleAreaCalculator() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I find the area of a circle from radius?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiply pi (π ≈ 3.14159) by the radius squared. Formula: A = πr². For example, if radius is 4 cm, area = 3.14159 × 4² = 50.27 cm²."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

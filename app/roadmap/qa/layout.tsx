@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-qa-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'QA Engineer Roadmap 2026 - The Tutor Bridge',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'QA Engineer Roadmap 2026 - Complete Learning Path',
     description: 'Master QA Engineering with our comprehensive 2026 roadmap. Manual testing, automation, Selenium, Cypress & CI/CD.',
-    images: ['https://www.thetutorbridge.com/og-qa-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

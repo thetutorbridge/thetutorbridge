@@ -61,6 +61,10 @@ export default function SWPCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1. What is the difference between SWP and dividend plans?","acceptedAnswer":{"@type":"Answer","text":"In SWP, you decide the withdrawal amount and frequency - it\'s guaranteed and regular. Dividend plans pay dividends only when the fund declares them, which is uncertain and irregular. SWP provides predictable cash flow and is more tax-efficient as you\'re redeeming your own units (capital gains tax) versus receiving dividends (taxed as income)."}},{"@type":"Question","name":"2. How is SWP taxed?","acceptedAnswer":{"@type":"Answer","text":"SWP taxation depends on the fund type and holding period. For equity funds: LTCG (>1 year) is taxed at 10% on gains above ₹1 lakh; STCG at 15%. For debt funds: LTCG (>3 years) gets indexation benefit, taxed at 20%; STCG taxed as per your slab. Only the capital gains portion is taxed, not the entire withdrawal amount, making it very tax-efficient."}},{"@type":"Question","name":"3. What is the ideal withdrawal rate for SWP?","acceptedAnswer":{"@type":"Answer","text":"Financial experts recommend the \'4% rule\' - withdraw 4% of your initial corpus annually (0.33% monthly). This ensures your money lasts 25-30 years with moderate growth. Conservative investors can use 3-3.5%, while aggressive investors with higher expected returns can go up to 5-6%. Always factor in inflation and adjust withdrawal amounts periodically."}},{"@type":"Question","name":"4. Can I change my SWP amount or stop it?","acceptedAnswer":{"@type":"Answer","text":"Yes, SWP offers complete flexibility. You can increase/decrease withdrawal amount, change frequency (monthly to quarterly), pause temporarily, or stop permanently anytime. Simply submit a request to your fund house or AMC. Changes typically take effect from the next withdrawal cycle. This flexibility makes SWP far superior to fixed annuity plans."}},{"@type":"Question","name":"5. Which mutual funds are best for SWP?","acceptedAnswer":{"@type":"Answer","text":"Balanced/Hybrid funds (60-70% equity, 30-40% debt) are ideal for SWP as they provide stability with growth. Alternatives: Conservative Hybrid Funds (75-90% debt), Equity Savings Funds, or Balanced Advantage Funds. Avoid pure equity funds for SWP due to high volatility. For very conservative investors, short-duration or corporate bond funds work well but with lower returns."}},{"@type":"Question","name":"6. What happens if my SWP corpus gets exhausted?","acceptedAnswer":{"@type":"Answer","text":"If withdrawals exceed returns consistently, your corpus will eventually deplete. The AMC will continue withdrawals until the balance becomes zero or falls below the withdrawal amount. You\'ll receive communication when balance is low. To prevent this: reduce withdrawal amount, choose funds with better returns, or top up your corpus periodically."}},{"@type":"Question","name":"7. Is SWP safe for retirees?","acceptedAnswer":{"@type":"Answer","text":"SWP can be safe for retirees if done correctly. Choose low-volatility funds (balanced/hybrid), keep withdrawal rate conservative (3-4%), maintain emergency funds separately, and diversify across 2-3 fund categories. SWP is safer than relying solely on equity funds but carries more risk than bank FDs. It\'s best suited for retirees with moderate risk appetite seeking tax-efficient regular income."}},{"@type":"Question","name":"8. Should I start SWP immediately after retirement?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. If markets are down during your retirement, wait for recovery before starting SWP. Meanwhile, use liquid funds or FDs for expenses. Starting SWP at market lows means redeeming more units per withdrawal, depleting corpus faster. Ideally, accumulate corpus 1-2 years before retirement and start SWP when NAV is reasonably high."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}
@@ -726,7 +730,7 @@ export default function SWPCalculatorPage() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering students with personalized education and career guidance for a brighter future.
@@ -754,7 +758,7 @@ export default function SWPCalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

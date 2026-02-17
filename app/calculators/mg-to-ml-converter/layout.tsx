@@ -110,7 +110,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'mg to ml Converter - The Tutor Bridge',
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free mg to ml Converter',
     description: 'Convert milligrams to milliliters with density. Works for water, oil, medications, and any liquid. Instant results with step-by-step explanation.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

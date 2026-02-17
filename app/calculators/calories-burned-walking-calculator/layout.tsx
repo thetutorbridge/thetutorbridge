@@ -142,7 +142,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Calories Burned Walking Calculator - The Tutor Bridge',
@@ -153,7 +153,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Walking Calorie Calculator',
     description: 'How many calories does walking burn? Calculate by steps, distance, or time. Includes treadmill incline and outdoor walking.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

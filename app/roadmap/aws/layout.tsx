@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-aws-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'AWS Roadmap 2026 - The Tutor Bridge',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AWS Roadmap 2026 - Complete Learning Path',
     description: 'Master Amazon Web Services with our comprehensive 2026 roadmap. EC2, S3, Lambda, IAM & cloud architecture.',
-    images: ['https://www.thetutorbridge.com/og-aws-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

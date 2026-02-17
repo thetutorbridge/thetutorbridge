@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-system-design-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'System Design Roadmap 2026 - The Tutor Bridge',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'System Design Roadmap 2026 - Complete Learning Path',
     description: 'Master system design with scalability, databases, caching, and distributed systems.',
-    images: ['https://www.thetutorbridge.com/og-system-design-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

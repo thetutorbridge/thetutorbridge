@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-dsa-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Data Structures & Algorithms Roadmap 2026 - The Tutor Bridge',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Data Structures & Algorithms Roadmap 2026 - Complete Learning Path',
     description: 'Master DSA with arrays, trees, graphs, and dynamic programming.',
-    images: ['https://www.thetutorbridge.com/og-dsa-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

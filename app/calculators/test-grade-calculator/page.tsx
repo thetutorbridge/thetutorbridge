@@ -230,6 +230,10 @@ export default function TestGradeCalculator() {
     };
     return (
       <span className={`inline-flex flex-col items-center justify-center mx-1 ${sizeClasses[size]}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"HelpCircle className=\"w-5 h-5 text-indigo-600\" />\n                    What percentage is needed to pass a test?","acceptedAnswer":{"@type":"Answer","text":"In most U.S. schools, 60% is the minimum passing grade, corresponding to a D. However, some schools or courses may require 65% or 70% to pass. College courses often require a C (70-73%) minimum. Always check your course syllabus for specific requirements."}}]}' }}
+      />
         <span className="font-semibold px-2">{numerator}</span>
         <span className="w-full border-t-2 border-current"></span>
         <span className="font-semibold px-2">{denominator}</span>

@@ -271,6 +271,23 @@ export default function VO2MaxCalculator() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which VO2 max test method is most accurate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The gold standard is a lab test with gas analysis during maximal exercise. Among field tests, the 1.5-mile run test is most accurate for active individuals, while the walking test is better for beginners or older adults. The resting heart rate method is least accurate but most convenient."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

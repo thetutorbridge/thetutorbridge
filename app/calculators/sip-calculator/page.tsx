@@ -48,6 +48,10 @@ export default function SIPCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1. How much can I invest in a SIP in India?","acceptedAnswer":{"@type":"Answer","text":"You can invest as low as ₹500 per month in most mutual funds. There is no upper limit—you can invest as much as you want based on your financial capacity."}},{"@type":"Question","name":"2. What is the maximum tenure of a SIP?","acceptedAnswer":{"@type":"Answer","text":"There\'s no fixed maximum tenure. You can invest through SIP for as long as you like—many investors continue SIPs for 10, 20, or even 30+ years to maximize the benefits of compounding."}},{"@type":"Question","name":"3. Can I modify my SIP amount later?","acceptedAnswer":{"@type":"Answer","text":"Yes! Most mutual funds allow you to increase, decrease, or pause your SIP contributions. You can also stop your SIP anytime without penalties (though you should check specific fund terms)."}},{"@type":"Question","name":"4. Are SIPs only for equity mutual funds?","acceptedAnswer":{"@type":"Answer","text":"No! You can invest via SIP in equity, debt, or hybrid mutual funds . SIP is simply a method of investment, not a specific type of fund."}},{"@type":"Question","name":"5. What types of SIPs are available in India?","acceptedAnswer":{"@type":"Answer","text":"In SIPs, returns are compounded monthly. This means the returns you earn each month are reinvested, and you earn returns on those returns too. Over time, this compounding effect can significantly boost your wealth—especially for long-term investments."}},{"@type":"Question","name":"7. Is SIP better than lump-sum investment?","acceptedAnswer":{"@type":"Answer","text":"SIP is ideal for disciplined investing and rupee cost averaging—it reduces the impact of market volatility. Lump sum may be better if markets are down or you have a large amount to invest at once. Both have their benefits depending on your situation and risk appetite."}},{"@type":"Question","name":"8. How to estimate SIP returns accurately?","acceptedAnswer":{"@type":"Answer","text":"Use realistic expected annual returns (typically 8-15% for equity funds, 6-9% for debt funds) and your actual monthly contribution amount. Our SIP calculator provides precise estimates based on monthly compounding, but remember—actual market returns may vary."}},{"@type":"Question","name":"9. Can students start investing in SIPs?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! Students can start with as little as ₹500 per month. Starting early gives you the advantage of time—even small investments can grow substantially over 10-15 years due to compounding. It\'s a great way to build financial discipline early."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}
@@ -731,7 +735,7 @@ export default function SIPCalculatorPage() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering students with personalized education and career guidance for a brighter future.
@@ -759,7 +763,7 @@ export default function SIPCalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -122,6 +122,10 @@ export default function EZGrader() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"BookMarked className=\"w-5 h-5\" />\n                    How accurate is the EZ Grader calculator?","acceptedAnswer":{"@type":"Answer","text":"strong> for all calculations. It uses precise mathematical formulas to convert scores to percentages and applies the selected grading scale consistently. The calculator eliminates human error in calculations, though you should still verify your count of wrong answers to ensure accuracy."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}

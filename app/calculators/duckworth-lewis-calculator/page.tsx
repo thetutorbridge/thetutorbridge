@@ -206,6 +206,23 @@ export default function DuckworthLewisCalculator() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does par score mean in DLS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Par score is the score Team 2 needs to tie the match at any point during their innings. If Team 2 is ahead of par when rain stops play, they win. If they are behind par, Team 1 wins."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

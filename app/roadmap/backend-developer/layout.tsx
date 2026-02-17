@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-backend-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Backend Developer Roadmap 2026 - The Tutor Bridge',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Backend Developer Roadmap 2026 - Complete Learning Path',
     description: 'Master backend development with our comprehensive 2026 roadmap. Server-side languages, databases, APIs & DevOps.',
-    images: ['https://www.thetutorbridge.com/og-backend-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

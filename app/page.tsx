@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { BookOpen, MessageSquare, Users, Award, Star, CheckCircle, ArrowRight, Target, TrendingUp, Clock, Shield, UserCheck, BookMarked, Brain, Calendar, GraduationCap, Zap, Trophy, Calculator, FileText, Video } from "lucide-react"
+import { BookOpen, MessageSquare, Users, Award, Star, CheckCircle, ArrowRight, Target, TrendingUp, Clock, Shield, UserCheck, BookMarked, Brain, Calendar, Zap, Trophy, Calculator, Video, FileText } from "lucide-react"
+import { HomeworkHelpIcon, WeeklyTutoringIcon, MathIcon, ScienceIcon, EnglishIcon, SubmitIcon, QuoteIcon, ApproveIcon, SuccessIcon, CertifiedIcon, GuaranteeIcon, LearnIcon, FastIcon, SameTutorIcon, ResultsIcon, AvatarFemale1, AvatarMale1, AvatarFemale2 } from "@/components/service-icons"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
@@ -161,8 +162,8 @@ export default async function Home() {
               {/* Homework Help Card */}
               <Card className="p-8 border-2 border-[#1A3D7C]/20 hover:border-[#1A3D7C] transition-all hover:shadow-xl group">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <FileText className="w-8 h-8 text-[#1A3D7C]" />
+                  <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <HomeworkHelpIcon className="w-14 h-14 text-[#1A3D7C]" />
                   </div>
                   <h3 className="text-2xl font-poppins font-bold text-[#1A3D7C] mb-3">Homework Help</h3>
                   <p className="text-gray-600 mb-6">
@@ -201,8 +202,8 @@ export default async function Home() {
                   MOST POPULAR
                 </div>
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <GraduationCap className="w-8 h-8 text-[#2BAE66]" />
+                  <div className="w-20 h-20 bg-green-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <WeeklyTutoringIcon className="w-14 h-14 text-[#2BAE66]" />
                   </div>
                   <h3 className="text-2xl font-poppins font-bold text-[#1A3D7C] mb-3">Weekly Tutoring</h3>
                   <p className="text-gray-600 mb-6">
@@ -255,8 +256,8 @@ export default async function Home() {
               <Link href="/homework-help/math">
                 <Card className="p-6 text-center hover:shadow-xl transition-all cursor-pointer group h-full">
                   <CardContent className="p-0">
-                    <div className="w-20 h-20 bg-gradient-to-br from-[#1A3D7C] to-[#1A3D7C]/80 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <span className="text-3xl text-white font-bold">∑</span>
+                    <div className="w-24 h-24 bg-gradient-to-br from-[#1A3D7C]/10 to-[#1A3D7C]/5 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <MathIcon className="w-16 h-16 text-[#1A3D7C]" />
                     </div>
                     <h3 className="text-xl font-poppins font-bold text-[#1A3D7C] mb-3">Math</h3>
                     <p className="text-gray-600 text-sm mb-4">Pre-Algebra through AP Calculus</p>
@@ -275,8 +276,8 @@ export default async function Home() {
               <Link href="/homework-help/science">
                 <Card className="p-6 text-center hover:shadow-xl transition-all cursor-pointer group h-full">
                   <CardContent className="p-0">
-                    <div className="w-20 h-20 bg-gradient-to-br from-[#2BAE66] to-[#2BAE66]/80 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <span className="text-3xl">🔬</span>
+                    <div className="w-24 h-24 bg-gradient-to-br from-[#2BAE66]/10 to-[#2BAE66]/5 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <ScienceIcon className="w-16 h-16 text-[#2BAE66]" />
                     </div>
                     <h3 className="text-xl font-poppins font-bold text-[#1A3D7C] mb-3">Science</h3>
                     <p className="text-gray-600 text-sm mb-4">General Science through AP courses</p>
@@ -295,14 +296,14 @@ export default async function Home() {
               <Link href="/homework-help/english">
                 <Card className="p-6 text-center hover:shadow-xl transition-all cursor-pointer group h-full">
                   <CardContent className="p-0">
-                    <div className="w-20 h-20 bg-gradient-to-br from-[#FFC857] to-[#FFC857]/80 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <span className="text-3xl">📝</span>
+                    <div className="w-24 h-24 bg-gradient-to-br from-[#FFC857]/15 to-[#FFC857]/5 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <EnglishIcon className="w-16 h-16 text-[#D4A84B]" />
                     </div>
                     <h3 className="text-xl font-poppins font-bold text-[#1A3D7C] mb-3">English</h3>
                     <p className="text-gray-600 text-sm mb-4">Writing, Grammar, Literature</p>
                     <div className="flex flex-wrap gap-2 justify-center">
                       {["Essays", "Grammar", "Literature", "AP English"].map((topic) => (
-                        <span key={topic} className="px-3 py-1 bg-yellow-50 text-[#FFC857] text-xs rounded-full">
+                        <span key={topic} className="px-3 py-1 bg-yellow-50 text-[#D4A84B] text-xs rounded-full">
                           {topic}
                         </span>
                       ))}
@@ -359,17 +360,17 @@ export default async function Home() {
 
                 <div className="grid grid-cols-4 gap-4">
                   {[
-                    { num: 1, icon: FileText, title: "Submit", desc: "Upload your homework with deadline", color: "#1A3D7C" },
-                    { num: 2, icon: Clock, title: "Quote", desc: "Get a price within 2 hours", color: "#2BAE66" },
-                    { num: 3, icon: CheckCircle, title: "Approve", desc: "Review and pay to start", color: "#FFC857" },
-                    { num: 4, icon: Trophy, title: "Success", desc: "Get step-by-step solutions", color: "#1A3D7C" }
+                    { num: 1, icon: SubmitIcon, title: "Submit", desc: "Upload your homework with deadline", color: "#1A3D7C" },
+                    { num: 2, icon: QuoteIcon, title: "Quote", desc: "Get a price within 2 hours", color: "#2BAE66" },
+                    { num: 3, icon: ApproveIcon, title: "Approve", desc: "Review and pay to start", color: "#D4A84B" },
+                    { num: 4, icon: SuccessIcon, title: "Success", desc: "Get step-by-step solutions", color: "#1A3D7C" }
                   ].map((step) => (
                     <div key={step.num} className="flex flex-col items-center text-center">
                       <div
                         className="w-20 h-20 rounded-full flex items-center justify-center mb-4 relative bg-white shadow-sm border-2 transition-transform hover:scale-105"
                         style={{ borderColor: step.color }}
                       >
-                        <step.icon className="w-8 h-8" style={{ color: step.color }} />
+                        <step.icon className="w-10 h-10" style={{ color: step.color }} />
                         <div
                           className="absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold"
                           style={{ backgroundColor: step.color }}
@@ -392,10 +393,10 @@ export default async function Home() {
 
                   <div className="space-y-6">
                     {[
-                      { num: 1, icon: FileText, title: "Submit Your Work", desc: "Upload homework with your deadline", color: "#1A3D7C" },
-                      { num: 2, icon: Clock, title: "Get a Quote", desc: "Receive a custom price within 2 hours", color: "#2BAE66" },
-                      { num: 3, icon: CheckCircle, title: "Approve & Pay", desc: "Review, approve, and we start immediately", color: "#FFC857" },
-                      { num: 4, icon: Trophy, title: "Success!", desc: "Get step-by-step solutions you can learn from", color: "#1A3D7C" }
+                      { num: 1, icon: SubmitIcon, title: "Submit Your Work", desc: "Upload homework with your deadline", color: "#1A3D7C" },
+                      { num: 2, icon: QuoteIcon, title: "Get a Quote", desc: "Receive a custom price within 2 hours", color: "#2BAE66" },
+                      { num: 3, icon: ApproveIcon, title: "Approve & Pay", desc: "Review, approve, and we start immediately", color: "#D4A84B" },
+                      { num: 4, icon: SuccessIcon, title: "Success!", desc: "Get step-by-step solutions you can learn from", color: "#1A3D7C" }
                     ].map((step) => (
                       <div key={step.num} className="flex gap-4 relative">
                         <div
@@ -442,52 +443,52 @@ export default async function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {[
                 {
-                  icon: Award,
+                  icon: CertifiedIcon,
                   title: "Certified Tutors",
                   description: "All our tutors are U.S.-certified educators with teaching credentials or advanced degrees.",
-                  color: "bg-blue-100",
+                  color: "bg-blue-50",
                   iconColor: "text-[#1A3D7C]"
                 },
                 {
-                  icon: Shield,
+                  icon: GuaranteeIcon,
                   title: "Satisfaction Guaranteed",
                   description: "Not happy with your solution? We'll revise it for free or give you a full refund.",
-                  color: "bg-green-100",
+                  color: "bg-green-50",
                   iconColor: "text-[#2BAE66]"
                 },
                 {
-                  icon: Target,
+                  icon: LearnIcon,
                   title: "Learn, Don't Just Copy",
                   description: "Every solution includes step-by-step explanations so you understand the concepts.",
-                  color: "bg-yellow-100",
-                  iconColor: "text-[#FFC857]"
+                  color: "bg-yellow-50",
+                  iconColor: "text-[#D4A84B]"
                 },
                 {
-                  icon: Clock,
+                  icon: FastIcon,
                   title: "Fast Turnaround",
                   description: "Get quotes within 2 hours. Most homework delivered within 24-72 hours.",
-                  color: "bg-purple-100",
+                  color: "bg-purple-50",
                   iconColor: "text-purple-600"
                 },
                 {
-                  icon: Users,
+                  icon: SameTutorIcon,
                   title: "Same Tutor Every Week",
                   description: "Build a relationship with a tutor who knows your learning style and tracks progress.",
-                  color: "bg-red-100",
-                  iconColor: "text-red-600"
+                  color: "bg-red-50",
+                  iconColor: "text-red-500"
                 },
                 {
-                  icon: TrendingUp,
+                  icon: ResultsIcon,
                   title: "Proven Results",
                   description: "95% of our tutoring students improve by at least one letter grade within 3 months.",
-                  color: "bg-indigo-100",
+                  color: "bg-indigo-50",
                   iconColor: "text-indigo-600"
                 }
               ].map((item, index) => (
                 <Card key={index} className="p-6 hover:shadow-lg transition-all">
                   <CardContent className="p-0">
                     <div className={`w-14 h-14 ${item.color} rounded-full flex items-center justify-center mb-4`}>
-                      <item.icon className={`w-7 h-7 ${item.iconColor}`} />
+                      <item.icon className={`w-9 h-9 ${item.iconColor}`} />
                     </div>
                     <h3 className="text-lg font-poppins font-bold text-[#1A3D7C] mb-2">{item.title}</h3>
                     <p className="text-gray-600 text-sm">{item.description}</p>
@@ -513,22 +514,22 @@ export default async function Home() {
                   quote: "The homework help service is a lifesaver! My daughter was struggling with algebra, and the step-by-step explanations helped her finally understand the concepts.",
                   name: "Jennifer M.",
                   role: "Parent of 9th grader",
-                  initial: "J",
-                  color: "bg-blue-100 text-blue-600"
+                  Avatar: AvatarFemale1,
+                  avatarColor: "text-[#8B6914]"
                 },
                 {
                   quote: "We started with homework help and upgraded to weekly tutoring. Our son's grades went from C's to A's in just two months. Worth every penny!",
                   name: "Michael T.",
                   role: "Parent of 11th grader",
-                  initial: "M",
-                  color: "bg-green-100 text-green-600"
+                  Avatar: AvatarMale1,
+                  avatarColor: "text-[#1A3D7C]"
                 },
                 {
                   quote: "The tutors are fantastic—patient, knowledgeable, and they really connect with kids. My daughter actually looks forward to her sessions now.",
                   name: "Sarah K.",
                   role: "Parent of 7th grader",
-                  initial: "S",
-                  color: "bg-purple-100 text-purple-600"
+                  Avatar: AvatarFemale2,
+                  avatarColor: "text-[#7B4B94]"
                 }
               ].map((testimonial, index) => (
                 <Card key={index} className="p-6 bg-white">
@@ -540,8 +541,8 @@ export default async function Home() {
                     </div>
                     <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
                     <div className="flex items-center">
-                      <div className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center mr-3`}>
-                        <span className="font-semibold">{testimonial.initial}</span>
+                      <div className="w-12 h-12 mr-3">
+                        <testimonial.Avatar className={`w-full h-full ${testimonial.avatarColor}`} />
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">{testimonial.name}</div>

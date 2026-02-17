@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-data-engineer-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Data Engineer Roadmap 2026 - The Tutor Bridge',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Data Engineer Roadmap 2026 - Complete Learning Path',
     description: 'Master data engineering with SQL, Python, Spark, and cloud platforms.',
-    images: ['https://www.thetutorbridge.com/og-data-engineer-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

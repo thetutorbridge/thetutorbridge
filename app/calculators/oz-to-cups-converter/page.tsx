@@ -129,6 +129,23 @@ export default function OzToCupsConverter() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many cups is 8 oz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "8 fluid ounces equals exactly 1 US customary cup. This is the standard conversion used in most American recipes."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

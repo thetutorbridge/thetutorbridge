@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'PHP Developer Roadmap 2026',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PHP Developer Roadmap 2026 - Complete Learning Path',
     description: 'Master PHP with our comprehensive 2026 roadmap. Learn Laravel, Symfony, MySQL, REST APIs, testing, and modern PHP development.',
-    images: ['/og-image.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

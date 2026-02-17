@@ -353,6 +353,10 @@ export default function PValueCalculator() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"HelpCircle className=\"w-5 h-5 text-indigo-600\" />\n                    What does a p-value of 0.05 mean?","acceptedAnswer":{"@type":"Answer","text":"strong> of obtaining results at least as extreme as the observed results, assuming the null hypothesis is true. In other words, if H₀ were true, you would expect to see such extreme results only 5% of the time by random chance."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}

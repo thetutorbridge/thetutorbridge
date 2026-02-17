@@ -7,7 +7,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true, // Disable Vercel image optimization to avoid 402 PAYMENT_REQUIRED errors - Supabase CDN handles images directly
+    // Re-enabled image optimization for better Core Web Vitals (LCP)
+    // Local images will be optimized, remote patterns allow external sources
     remotePatterns: [
       {
         protocol: 'https',
@@ -47,6 +48,18 @@ const nextConfig = {
   trailingSlash: false,
   async redirects() {
     return [
+      // Redirect non-www to www for canonical consistency
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'thetutorbridge.com',
+          },
+        ],
+        destination: 'https://www.thetutorbridge.com/:path*',
+        permanent: true,
+      },
       {
         source: '/doubt-solving',
         destination: '/homework-help',

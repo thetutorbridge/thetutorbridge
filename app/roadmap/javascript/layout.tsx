@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-javascript-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'JavaScript Developer Roadmap 2026 - The Tutor Bridge',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'JavaScript Developer Roadmap 2026 - Complete Learning Path',
     description: 'Master JavaScript with our comprehensive 2026 roadmap. ES6+, DOM, async programming & Node.js.',
-    images: ['https://www.thetutorbridge.com/og-javascript-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

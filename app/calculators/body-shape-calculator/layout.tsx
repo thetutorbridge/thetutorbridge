@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Body Shape Calculator - The Tutor Bridge',
@@ -137,7 +137,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Body Shape Calculator',
     description: 'Find your body shape with our free calculator. Enter bust, waist, and hip measurements to discover your body type and get fashion recommendations.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

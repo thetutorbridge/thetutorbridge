@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     description: 'Calculate your exact age or time interval between two dates instantly. Get age in years, months, weeks, days, hours, and seconds. Perfect for students and professionals.',
     type: 'website',
     url: 'https://www.thetutorbridge.com/calculators/age-calculator',
-    siteName: 'The TutorBridge',
+    siteName: 'The Tutor Bridge',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Age Calculator - The TutorBridge',
+        alt: 'Age Calculator - The Tutor Bridge',
       },
     ],
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Age Calculator - Calculate Exact Age Online',
     description: 'Calculate your exact age or time interval between two dates in years, months, weeks, days, hours, minutes & seconds.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.thetutorbridge.com/calculators/age-calculator',

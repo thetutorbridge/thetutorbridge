@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-machine-learning-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Machine Learning Engineer Roadmap 2026 - The Tutor Bridge',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Machine Learning Engineer Roadmap 2026 - Complete Learning Path',
     description: 'Master Machine Learning with our comprehensive 2026 roadmap. Mathematics, Python, ML algorithms & deep learning.',
-    images: ['https://www.thetutorbridge.com/og-machine-learning-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

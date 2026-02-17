@@ -72,6 +72,10 @@ export default function CubeRootCalculator() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-gray-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between cube root and square root?","acceptedAnswer":{"@type":"Answer","text":"A square root (√x) finds a number that when multiplied by itself equals x, while a cube root (∛x) finds a number that when multiplied by itself three times equals x. Square roots of negative numbers are imaginary, but cube roots of negative numbers are real negative values."}},{"@type":"Question","name":"Can you take the cube root of a negative number?","acceptedAnswer":{"@type":"Answer","text":"Yes! Unlike square roots, cube roots of negative numbers are real. For example, ∛(-8) = -2 because (-2)³ = -8. A negative number cubed is always negative, so its cube root is also negative."}},{"@type":"Question","name":"How many cube roots does a number have?","acceptedAnswer":{"@type":"Answer","text":"Every non-zero number has exactly three cube roots: one real root and two complex conjugate roots. For positive numbers, the real root is positive. For negative numbers, the real root is negative. The complex roots involve imaginary numbers."}},{"@type":"Question","name":"What is a perfect cube?","acceptedAnswer":{"@type":"Answer","text":"A perfect cube is a number that is the cube of an integer. Examples include 1 (1³), 8 (2³), 27 (3³), 64 (4³), etc. The cube root of a perfect cube is always a whole number. Perfect cubes can be positive or negative."}}]}' }}
+      />
       <Navigation />
 
       <main className="flex-grow container mx-auto px-4 py-8 mt-20 mb-12 max-w-7xl">

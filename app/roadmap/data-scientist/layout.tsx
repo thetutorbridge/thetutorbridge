@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-data-scientist-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Data Scientist Roadmap 2026 - The Tutor Bridge',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Data Scientist Roadmap 2026 - Complete Learning Path',
     description: 'Master data science with Python, machine learning, deep learning, and MLOps.',
-    images: ['https://www.thetutorbridge.com/og-data-scientist-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

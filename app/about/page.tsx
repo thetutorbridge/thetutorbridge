@@ -449,7 +449,7 @@ export default function About() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                  <span className="text-xl font-bold">TheTutorBridge</span>
+                  <span className="text-xl font-bold">The Tutor Bridge</span>
                 </div>
                 <p className="text-gray-400 leading-relaxed">
                   Expert homework help and 1-on-1 tutoring for grades 6-12 in Math, Science, and English.

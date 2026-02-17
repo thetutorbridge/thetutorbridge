@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Steps to Miles Calculator - The Tutor Bridge',
@@ -124,7 +124,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Steps to Miles Calculator',
     description: 'Find out how many miles your steps equal. 10,000 steps = ~4-5 miles. Calculate your exact distance based on stride length.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

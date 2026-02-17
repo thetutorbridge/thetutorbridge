@@ -114,7 +114,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Dog Size Calculator - The Tutor Bridge',
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Dog Size Calculator',
     description: 'Predict your puppy\'s adult weight and size category. Find out if your pup will be toy, small, medium, large, or giant sized!',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

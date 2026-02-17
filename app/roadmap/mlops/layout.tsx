@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'MLOps Developer Roadmap 2026',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MLOps Roadmap 2026 - Complete Learning Path',
     description: 'Master MLOps with our comprehensive 2026 roadmap. Learn ML pipelines, model deployment, CI/CD for ML, monitoring, and production ML systems.',
-    images: ['/og-image.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

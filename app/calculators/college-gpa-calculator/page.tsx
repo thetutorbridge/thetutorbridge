@@ -167,6 +167,10 @@ export default function CollegeGPACalculator() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"BookMarked className=\"w-5 h-5\" />\n                    What is a good college GPA?","acceptedAnswer":{"@type":"Answer","text":"strong> is typically considered below satisfactory. However, remember that GPA is just one factor - internships, research, and extracurriculars also matter significantly."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}

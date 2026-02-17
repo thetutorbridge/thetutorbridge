@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-product-manager-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Product Manager Roadmap 2026 - The Tutor Bridge',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Product Manager Roadmap 2026 - Complete Learning Path',
     description: 'Master Product Management with our comprehensive 2026 roadmap. Strategy, research, roadmapping & analytics.',
-    images: ['https://www.thetutorbridge.com/og-product-manager-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

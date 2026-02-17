@@ -294,6 +294,23 @@ export default function TimeUntilCalculatorPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How accurate is the time until calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calculator is 100% accurate. It accounts for leap years, varying month lengths (28-31 days), and calculates down to the exact second. The calculations use JavaScript\\"
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

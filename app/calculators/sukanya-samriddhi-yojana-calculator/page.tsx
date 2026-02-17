@@ -57,6 +57,10 @@ export default function SSYCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1. What is the current interest rate for Sukanya Samriddhi Yojana in 2026?","acceptedAnswer":{"@type":"Answer","text":"The current interest rate for SSY is 8.2% per annum (October-December 2026 quarter), compounded annually. The interest rate is revised quarterly by the Government of India based on market conditions. This rate is significantly higher than most other savings schemes and bank fixed deposits."}},{"@type":"Question","name":"2. Can I open an SSY account for my daughter who is 11 years old?","acceptedAnswer":{"@type":"Answer","text":"No, the account can only be opened for a girl child who is below 10 years of age. The age is calculated from the date of birth to the date of account opening. If your daughter has already turned 10, you won\'t be eligible to open an SSY account for her."}},{"@type":"Question","name":"3. How many SSY accounts can I open?","acceptedAnswer":{"@type":"Answer","text":"A maximum of two accounts can be opened by a family - one for each daughter. Only one account per girl child is allowed. In case of twins or triplets born in the second delivery, a third account can be opened with supporting documents. No more than three accounts are permitted under any circumstances."}},{"@type":"Question","name":"4. What happens if I don\'t deposit the minimum amount in a year?","acceptedAnswer":{"@type":"Answer","text":"If you fail to deposit the minimum amount of ₹250 in a financial year, your account will be considered \'discontinued\' or \'defaulted\'. You can revive the account by paying ₹50 penalty for each year of default, along with the minimum deposit for those years. The account will continue to earn interest even if it\'s defaulted."}},{"@type":"Question","name":"5. Can I withdraw money from SSY account before maturity?","acceptedAnswer":{"@type":"Answer","text":"Partial withdrawal of up to 50% of the balance is allowed after the girl child turns 18 years old, specifically for higher education expenses. The account can be prematurely closed after the girl turns 18 for marriage purposes. In case of medical emergency or death of the account holder, premature closure is allowed with supporting documents."}},{"@type":"Question","name":"6. What are the tax benefits of SSY?","acceptedAnswer":{"@type":"Answer","text":"SSY enjoys EEE (Exempt-Exempt-Exempt) tax status. Investment up to ₹1.5 lakh qualifies for deduction under Section 80C of Income Tax Act. The interest earned is completely tax-free, and the maturity amount is also fully exempt from tax. This makes SSY one of the most tax-efficient investment options available."}},{"@type":"Question","name":"7. Where can I open a Sukanya Samriddhi Account?","acceptedAnswer":{"@type":"Answer","text":"SSY accounts can be opened at any post office across India or at authorized branches of commercial banks including SBI, PNB, ICICI Bank, HDFC Bank, Axis Bank, and many others. You need to submit the account opening form along with the girl child\'s birth certificate and KYC documents of the guardian."}},{"@type":"Question","name":"8. When does the SSY account mature?","acceptedAnswer":{"@type":"Answer","text":"The SSY account matures 21 years from the date of account opening. For example, if you open the account in 2026, it will mature in 2046. However, deposits need to be made only for the first 15 years. From year 16 to 21, the account continues to earn interest but no deposits are required or allowed."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}
@@ -685,7 +689,7 @@ export default function SSYCalculatorPage() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering students with personalized education and career guidance for a brighter future.
@@ -713,7 +717,7 @@ export default function SSYCalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

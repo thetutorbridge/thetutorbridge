@@ -89,6 +89,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://zkphbzcomixukygigpka.supabase.co" />
         <link rel="dns-prefetch" href="https://zkphbzcomixukygigpka.supabase.co" />
+        {/* Preload critical assets for better LCP */}
+        <link rel="preload" href="/TheTutorBridge Logo New.png" as="image" type="image/png" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />

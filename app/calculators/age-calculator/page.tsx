@@ -119,8 +119,60 @@ export default function AgeCalculatorPage() {
     return new Intl.NumberFormat('en-IN').format(num);
   };
 
+  // FAQ Schema data for SEO
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How accurate is the age calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our age calculator is 100% accurate. It accounts for leap years, varying month lengths (28-31 days), and calculates down to the exact second. The calculations are based on the Gregorian calendar system used worldwide."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate age for future dates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can set the 'Age at the Date of' field to any future date to calculate how old someone will be on that specific date. This is useful for planning milestone birthdays or checking age eligibility for future events."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do I need to know age in different units?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Different situations require different units. Medical professionals often need age in months for infants, legal documents may require exact days, event planners count down in weeks, and some scientific calculations need precision in hours or seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the calculator handle leap years?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator automatically accounts for leap years (years divisible by 4, except century years unless divisible by 400). This ensures accurate day counts for people born on or around February 29."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my date of birth stored or shared?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No! All calculations happen in your browser (client-side). We do not store, track, or transmit any personal information or dates you enter. Your privacy is completely protected."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}
@@ -647,7 +699,7 @@ export default function AgeCalculatorPage() {
                 Need Academic Guidance?
               </h2>
               <p className="text-lg mb-6 opacity-90">
-                The TutorBridge offers personalized tutoring for students of all ages. Get expert help in math, science, and all subjects.
+                The Tutor Bridge offers personalized tutoring for students of all ages. Get expert help in math, science, and all subjects.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/tutoring/free-consultation">

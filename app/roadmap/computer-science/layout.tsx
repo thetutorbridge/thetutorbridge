@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-computer-science-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Computer Science Roadmap 2026 - The Tutor Bridge',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Computer Science Roadmap 2026 - Complete Learning Path',
     description: 'Master Computer Science with our comprehensive 2026 roadmap. DSA, OS & databases.',
-    images: ['https://www.thetutorbridge.com/og-computer-science-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

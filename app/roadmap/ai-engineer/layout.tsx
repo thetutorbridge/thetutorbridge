@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-ai-engineer-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'AI Engineer Roadmap 2026 - The Tutor Bridge',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI Engineer Roadmap 2026 - Complete Learning Path',
     description: 'Master AI engineering with LLMs, RAG, Vector Databases, and AI Agents.',
-    images: ['https://www.thetutorbridge.com/og-ai-engineer-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

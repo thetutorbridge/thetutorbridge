@@ -114,7 +114,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Nm to ft-lbs Converter - The Tutor Bridge',
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Nm to ft-lbs Converter',
     description: 'Convert Newton-meters to foot-pounds and other torque units. Perfect for automotive, engineering, and mechanical applications.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

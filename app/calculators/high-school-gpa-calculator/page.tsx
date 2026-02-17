@@ -168,6 +168,10 @@ export default function HighSchoolGPACalculator() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"BookMarked className=\"w-5 h-5\" />\n                    What\'s more important: weighted or unweighted GPA?","acceptedAnswer":{"@type":"Answer","text":"strong> (5.0 scale) for class rank and honors. The best strategy: take challenging courses (boosting weighted GPA) while earning strong grades (maintaining unweighted GPA)."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}

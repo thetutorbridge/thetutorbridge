@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-software-architect-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Software Architect Roadmap 2026 - The Tutor Bridge',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Software Architect Roadmap 2026 - Complete Learning Path',
     description: 'Master Software Architecture with our comprehensive 2026 roadmap. Design patterns & system design.',
-    images: ['https://www.thetutorbridge.com/og-software-architect-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

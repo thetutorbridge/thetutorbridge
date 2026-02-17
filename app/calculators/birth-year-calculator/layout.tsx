@@ -110,7 +110,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Birth Year Calculator - The Tutor Bridge',
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Birth Year Calculator',
     description: 'Find birth year from age instantly. Includes generation info, Chinese zodiac, and historical context for your birth year.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

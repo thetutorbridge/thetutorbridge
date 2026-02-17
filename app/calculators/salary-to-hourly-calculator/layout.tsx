@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Salary to Hourly Calculator - The Tutor Bridge',
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Salary to Hourly Calculator',
     description: 'Convert annual, monthly, or weekly salary to hourly rate. Calculate daily, weekly, biweekly, and monthly wages instantly.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

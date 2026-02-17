@@ -141,6 +141,23 @@ export default function SalaryToHourlyCalculatorPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert my annual salary to hourly rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide your annual salary by the total number of working hours in a year. For a standard 40-hour workweek over 52 weeks, that\\"
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

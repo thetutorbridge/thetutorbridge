@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-aspnet-core-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'ASP.NET Core Roadmap 2026 - The Tutor Bridge',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ASP.NET Core Roadmap 2026 - Complete Learning Path',
     description: 'Master ASP.NET Core with our comprehensive 2026 roadmap. C#, Web APIs & Entity Framework.',
-    images: ['https://www.thetutorbridge.com/og-aspnet-core-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

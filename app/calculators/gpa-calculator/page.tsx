@@ -245,6 +245,10 @@ export default function GPACalculatorPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is considered a good GPA?","acceptedAnswer":{"@type":"Answer","text":"A \'good\' GPA depends on your goals. Generally: 3.5-4.0 is excellent and competitive for top graduate programs; 3.0-3.49 is good and meets most scholarship requirements; 2.5-2.99 is average; below 2.0 is typically below satisfactory. Remember that GPA is just one factor - internships, research, and extracurriculars also matter."}},{"@type":"Question","name":"What is the difference between weighted and unweighted GPA?","acceptedAnswer":{"@type":"Answer","text":"Unweighted GPA uses the standard 4.0 scale where all courses are treated equally regardless of difficulty. Weighted GPA gives extra points for advanced courses (AP, IB, Honors) - typically on a 5.0 scale. For example, an A in an AP course might be worth 5.0 instead of 4.0. Weighted GPAs are more common in high school; most colleges use unweighted 4.0 scales."}},{"@type":"Question","name":"How do I calculate cumulative GPA?","acceptedAnswer":{"@type":"Answer","text":"To calculate cumulative GPA: (1) Multiply your previous GPA by previous total credits to get previous quality points. (2) Add your new semester\'s quality points. (3) Divide total quality points by total credits. Formula: Cumulative GPA = (Previous GPA × Previous Credits + New Quality Points) ÷ Total Credits."}},{"@type":"Question","name":"Can I raise a low GPA?","acceptedAnswer":{"@type":"Answer","text":"Yes, but it becomes harder as you complete more credits. Early in your academic career (first 1-2 years), you can significantly improve your GPA with strong performance. The key is to start improving immediately and be realistic about what\'s achievable. Focus on consistent improvement rather than drastic overnight changes."}},{"@type":"Question","name":"Do Pass/Fail courses affect my GPA?","acceptedAnswer":{"@type":"Answer","text":"Pass/Fail (P/F) courses typically do not affect your GPA - they don\'t contribute quality points or count in total credits for GPA calculation. However, taking too many P/F courses can impact financial aid, academic progress, and how graduate schools view your transcript. Check your school\'s specific policy."}},{"@type":"Question","name":"What happens if I retake a course?","acceptedAnswer":{"@type":"Answer","text":"Retake policies vary by institution. Common approaches include: Replacement (new grade replaces old in GPA), Averaging (both grades count), or Forgiveness (higher grade used). Some schools limit how many courses you can retake or only allow retakes for grades below C. Always check your school\'s specific retake policy."}},{"@type":"Question","name":"Should I include GPA on my resume?","acceptedAnswer":{"@type":"Answer","text":"Include your GPA if: (1) It\'s 3.5 or higher (3.0+ for some fields); (2) You\'re a recent graduate or student; (3) The job posting requests it. Omit it if it\'s below 3.0, you\'ve been out of school for years, or you have significant work experience. You can list just your major GPA if it\'s higher than cumulative."}},{"@type":"Question","name":"What GPA do I need for graduate school?","acceptedAnswer":{"@type":"Answer","text":"Graduate school requirements vary: 3.0 is typically the minimum for admission consideration; 3.5+ is competitive for most programs; 3.7+ is competitive for top-tier programs (Ivy League, Stanford, MIT). However, factors beyond GPA matter including test scores, research experience, recommendations, and personal statements."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}
@@ -1206,7 +1210,7 @@ export default function GPACalculatorPage() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering students with personalized education and career guidance for a brighter future.
@@ -1232,7 +1236,7 @@ export default function GPACalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

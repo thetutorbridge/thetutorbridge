@@ -11,14 +11,31 @@ import { BlogSearchClient } from "./BlogSearchClient"
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: "TheTutorBridge Blog - Expert Study Tips & Educational Resources",
+  title: "The Tutor Bridge Blog - Expert Study Tips & Educational Resources",
   description: "Expert insights, study tips, and educational resources to help you excel in your academic journey",
+  alternates: {
+    canonical: "https://www.thetutorbridge.com/blog",
+  },
   openGraph: {
-    title: "TheTutorBridge Blog",
+    title: "The Tutor Bridge Blog",
     description: "Expert insights, study tips, and educational resources",
     url: "https://www.thetutorbridge.com/blog",
-    siteName: "TheTutorBridge",
+    siteName: "The Tutor Bridge",
     type: "website",
+    images: [
+      {
+        url: "https://www.thetutorbridge.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "The Tutor Bridge Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Tutor Bridge Blog",
+    description: "Expert insights, study tips, and educational resources",
+    images: ["https://www.thetutorbridge.com/og-image.png"],
   },
 }
 
@@ -156,7 +173,7 @@ export default async function BlogPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">TheTutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
                 Expert online tutoring platform helping students achieve academic excellence. Personalized homework help and 1-on-1 tutoring for grades 6-12.

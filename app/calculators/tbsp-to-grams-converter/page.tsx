@@ -106,6 +106,23 @@ export default function TbspToGramsConverter() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many grams is 1 tablespoon of butter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One tablespoon (15 ml) of butter weighs approximately 14.4 grams. This is because butter has a density of about 0.959 g/ml, making it slightly lighter than water."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

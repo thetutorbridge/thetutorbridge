@@ -273,6 +273,10 @@ export default function AmortizationCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Need Help with Loan Calculations?","acceptedAnswer":{"@type":"Answer","text":"Our expert tutors can help you understand amortization, financial mathematics, and loan analysis. Book a personalized session today!"}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

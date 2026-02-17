@@ -15,7 +15,7 @@ export function Footer() {
                 alt="The Tutor Bridge Logo"
                 className="h-8 w-8"
               />
-              <span className="text-xl font-bold">TheTutorBridge</span>
+              <span className="text-xl font-bold">The Tutor Bridge</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
               Expert online tutoring platform helping students achieve academic excellence. Personalized homework help and 1-on-1 tutoring for grades 6-12.

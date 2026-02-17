@@ -127,6 +127,10 @@ export default function MoneyCalculatorPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What denominations of US currency are currently in circulation?","acceptedAnswer":{"@type":"Answer","text":"The US currently circulates bills in $1, $2, $5, $10, $20, $50, and $100 denominations. Coins include 1¢ (penny), 5¢ (nickel), 10¢ (dime), 25¢ (quarter), 50¢ (half dollar), and $1 (dollar coin). While $2 bills, half dollars, and dollar coins are legal tender, they\'re rarely seen in everyday transactions."}}]}' }}
+      />
       <Navigation />
       <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white py-12 px-4">
         <div className="max-w-5xl mx-auto">

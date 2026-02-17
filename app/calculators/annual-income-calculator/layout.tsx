@@ -118,7 +118,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Annual Income Calculator - The Tutor Bridge',
@@ -129,7 +129,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Annual Income Calculator',
     description: 'Convert hourly wage to yearly salary. Calculate gross and net income with tax deductions. Instant results with income breakdown.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

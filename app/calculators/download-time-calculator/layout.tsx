@@ -112,7 +112,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Download Time Calculator - The Tutor Bridge',
@@ -123,7 +123,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Download Time Calculator',
     description: 'Calculate download time for any file size and internet speed. Estimate how long games, movies, and updates will take to download.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

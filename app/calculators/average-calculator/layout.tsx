@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Average Calculator - The Tutor Bridge',
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Average Calculator - Mean, Median, Mode & Range',
     description: 'Calculate average (mean), median, mode, and range of any numbers. Instant results with variance and standard deviation.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

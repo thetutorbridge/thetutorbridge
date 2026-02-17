@@ -139,6 +139,95 @@ export default function PercentageCalculator() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-orange-50 via-red-50 to-pink-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A percentage is a number or ratio expressed as a fraction of 100. It is denoted using the percent sign \"%\". For example, 45% (read as \"forty-five percent\") is equal to 45/100, or 0.45. Percentages are used to express how large or small one quantity is relative to another quantity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate a percentage of a number?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate a percentage of a number, convert the percentage to a decimal by dividing by 100, then multiply by the number. For example, to find 20% of 150: (20 ÷ 100) × 150 = 0.20 × 150 = 30. Alternatively, you can use the formula: (Percentage/100) × Number = Result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you convert a decimal to a percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To convert a decimal to a percentage, multiply the decimal by 100 and add the percent sign. For example, 0.75 as a percentage is 0.75 × 100 = 75%. Similarly, 0.5 = 50%, 1.2 = 120%, and 0.03 = 3%. You can think of it as moving the decimal point two places to the right."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you convert a fraction to a percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To convert a fraction to a percentage, divide the numerator by the denominator, then multiply by 100. For example, 3/4 as a percentage: (3 ÷ 4) × 100 = 0.75 × 100 = 75%. Similarly, 1/2 = 50%, 1/4 = 25%, and 3/5 = 60%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a percentage be greater than 100%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Percentages can be greater than 100%. This occurs when a value is larger than the reference value. For example, if sales increased from 50 to 150 units, the growth is 200% (150 is 200% more than the original 50, or 300% of the original value). Percentages over 100% are common in growth rates, returns on investment, and comparisons."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What"s the difference between percentage and percentile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A percentage is a fraction of 100 (like scoring 80% on a test means 80 out of 100). A percentile is a value below which a certain percentage of observations fall (scoring in the 80th percentile means you scored better than 80% of people). They\\"re related but different concepts used in different contexts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate percentage increase or decrease?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate percentage change: ((New Value - Old Value) / Old Value) × 100. If positive, it\\"s an increase; if negative, it\\"s a decrease. For example, if a price goes from $100 to $120: ((120 - 100) / 100) × 100 = 20% increase. If it goes from $100 to $80: ((80 - 100) / 100) × 100 = -20% decrease."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you add or subtract percentages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You cannot simply add or subtract percentages unless they\\"re of the same base value. Convert each percentage to its actual value first, then add or subtract those values. For example, if product A increased 10% and product B increased 20%, you can\\"t say the total increase is 30% without knowing the original values of A and B."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the fastest way to calculate 15% for tips?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To quickly calculate a 15% tip: First find 10% by moving the decimal one place left, then find 5% by halving the 10% value, and add them together. For example, on a $60 bill: 10% = $6, 5% = $3, so 15% = $6 + $3 = $9. Or simply move the decimal left one place and add half that amount."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is this percentage calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our percentage calculator is 100% accurate for all standard calculations. It uses precise mathematical formulas and displays results with appropriate decimal places. The step-by-step solutions show exactly how each calculation is performed, ensuring transparency and educational value. You can trust this calculator for homework, business, and everyday percentage calculations."
+          }
+        }
+      ]
+    }) }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}

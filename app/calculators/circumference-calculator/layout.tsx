@@ -120,7 +120,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Circumference Calculator - The Tutor Bridge',
@@ -131,7 +131,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Circumference Calculator - C = 2πr',
     description: 'Calculate circumference, radius, diameter, and area of any circle. Enter one value to find all circle properties instantly.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-full-stack-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Full Stack Developer Roadmap 2026 - The Tutor Bridge',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Full Stack Developer Roadmap 2026 - Complete Learning Path',
     description: 'Master full stack development with our comprehensive 2026 roadmap. Frontend, backend, databases, DevOps & career guidance.',
-    images: ['https://www.thetutorbridge.com/og-full-stack-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

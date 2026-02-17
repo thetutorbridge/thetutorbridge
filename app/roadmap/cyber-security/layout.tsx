@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-cyber-security-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Cyber Security Roadmap 2026 - The Tutor Bridge',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cyber Security Roadmap 2026 - Complete Learning Path',
     description: 'Master cyber security with networking, penetration testing, and certifications.',
-    images: ['https://www.thetutorbridge.com/og-cyber-security-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://www.thetutorbridge.com/og-python-roadmap.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Python Developer Roadmap 2026 - The Tutor Bridge',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Python Developer Roadmap 2026 - Complete Learning Path',
     description: 'Master Python programming with web frameworks, automation, and data science.',
-    images: ['https://www.thetutorbridge.com/og-python-roadmap.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

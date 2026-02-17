@@ -276,6 +276,10 @@ export default function LotteryTaxCalculator() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"HelpCircle className=\"w-5 h-5 text-green-600\" />\n                    Is the 24% federal withholding my only tax?","acceptedAnswer":{"@type":"Answer","text":"strong> The 24% is just the initial withholding - essentially a prepayment. For large winnings, your actual tax rate will be closer to 37% (the top federal bracket). You&apos;ll owe the difference when you file your tax return. Additionally, you&apos;ll owe state taxes (0-10.9% depending on your state)."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}

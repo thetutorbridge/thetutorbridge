@@ -135,7 +135,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Pay Raise Calculator - The Tutor Bridge',
@@ -146,7 +146,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Pay Raise Calculator',
     description: 'Calculate your new salary after a raise. See the difference in hourly, weekly, monthly, and annual pay instantly!',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

@@ -121,7 +121,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Trigonometry Calculator - The Tutor Bridge',
@@ -132,7 +132,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Trigonometry Calculator',
     description: 'Calculate sin, cos, tan and solve right triangles. Enter any two values to find the rest. Perfect for students and professionals.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

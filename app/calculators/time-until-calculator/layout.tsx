@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Time Until Calculator - The Tutor Bridge',
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Time Until Calculator - Live Countdown Timer',
     description: 'Calculate exact time remaining until any date. Live countdown in years, months, weeks, days, hours, minutes & seconds.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

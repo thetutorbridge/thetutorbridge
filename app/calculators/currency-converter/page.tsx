@@ -248,6 +248,10 @@ export default function CurrencyConverterPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1. How accurate are these exchange rates?","acceptedAnswer":{"@type":"Answer","text":"Our rates are sourced from reliable financial data providers and represent mid-market rates — the fairest exchange rate available. Rates are updated daily. Note that banks and money transfer services may offer slightly different rates due to their markup."}},{"@type":"Question","name":"2. What is the mid-market rate?","acceptedAnswer":{"@type":"Answer","text":"The mid-market rate is the midpoint between the buy and sell prices of a currency pair. It\'s considered the \'real\' exchange rate and is used by banks for large transactions. Our converter uses this rate for accurate comparisons."}},{"@type":"Question","name":"3. Why is the rate I get at banks different?","acceptedAnswer":{"@type":"Answer","text":"Banks and currency exchange services add a markup to the mid-market rate — this is how they make profit. The difference can range from 1% to 5% or more. Always compare rates before exchanging money."}},{"@type":"Question","name":"4. How often do exchange rates change?","acceptedAnswer":{"@type":"Answer","text":"Forex markets operate 24/5, so rates change constantly during trading hours. For most practical purposes, daily rates are sufficient. Our converter updates rates once per day."}},{"@type":"Question","name":"5. Which currency is the strongest in the world?","acceptedAnswer":{"@type":"Answer","text":"The Kuwaiti Dinar (KWD) is the world\'s highest-valued currency, followed by the Bahraini Dinar (BHD) and Omani Rial (OMR). This doesn\'t necessarily mean their economies are the strongest — it reflects their exchange rate policy."}},{"@type":"Question","name":"6. What does it mean when a currency is \"pegged\"?","acceptedAnswer":{"@type":"Answer","text":"A pegged (or fixed) currency has its value tied to another currency at a fixed rate. For example, the UAE Dirham is pegged to USD at approximately 3.67 AED per dollar. This provides stability for trade and investment."}},{"@type":"Question","name":"7. Can I use this converter for business transactions?","acceptedAnswer":{"@type":"Answer","text":"Yes, our converter provides accurate indicative rates for planning and comparison. However, for actual business transactions, always confirm the rate with your bank or payment provider as they may apply different rates and fees."}},{"@type":"Question","name":"8. How many currencies does this converter support?","acceptedAnswer":{"@type":"Answer","text":"Our currency converter supports 150+ world currencies , including all major currencies (USD, EUR, GBP, JPY, etc.), popular currencies for remittances (AED, SAR, KWD), and many emerging market currencies."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}
@@ -1118,7 +1122,7 @@ export default function CurrencyConverterPage() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering students with personalized education and career guidance for a brighter future.
@@ -1146,7 +1150,7 @@ export default function CurrencyConverterPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>

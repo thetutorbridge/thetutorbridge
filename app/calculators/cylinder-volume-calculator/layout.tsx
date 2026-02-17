@@ -119,7 +119,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/TheTutorBridge Logo New.png',
+        url: 'https://www.thetutorbridge.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Cylinder Volume Calculator - The Tutor Bridge',
@@ -130,7 +130,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Cylinder Volume Calculator',
     description: 'Calculate volume of solid or hollow cylinders using V = πr²h. Get surface area, lateral area, and base area with unit conversion.',
-    images: ['/TheTutorBridge Logo New.png'],
+    images: ['https://www.thetutorbridge.com/og-image.png'],
   },
   robots: {
     index: true,

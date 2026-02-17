@@ -47,6 +47,10 @@ export default function PersonalLoanEMICalculatorPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1. What is the maximum personal loan amount I can get?","acceptedAnswer":{"@type":"Answer","text":"Personal loan amounts typically range from ₹10,000 to ₹40 lakhs depending on your income, credit score, and lender policies. Most banks offer up to 10-20 times your monthly salary. For example, if you earn ₹50,000/month, you may be eligible for ₹5-10 lakhs. Higher amounts require excellent credit scores (750+) and strong income proof."}},{"@type":"Question","name":"2. What credit score is needed for a personal loan?","acceptedAnswer":{"@type":"Answer","text":"While the minimum credit score is typically 650-700, a score of 750 or above is recommended for best interest rates and quick approval. Scores between 700-750 get moderate rates, while below 650 may face rejection or very high interest rates (18-24%). Check your CIBIL score before applying and improve it if needed by clearing existing debts."}},{"@type":"Question","name":"3. How long does personal loan approval take?","acceptedAnswer":{"@type":"Answer","text":"Modern digital lenders offer instant approval and disbursal within 24-48 hours if you have all documents ready and a good credit score. Traditional banks may take 3-7 days. Pre-approved loans for existing customers can be disbursed in hours. Delays happen due to incomplete documentation, low credit scores, or verification issues."}},{"@type":"Question","name":"4. Can I prepay my personal loan without penalty?","acceptedAnswer":{"@type":"Answer","text":"As per RBI guidelines, there\'s no prepayment penalty on floating rate personal loans. However, fixed-rate loans may have prepayment charges (2-5% of outstanding amount). Some lenders waive charges after a lock-in period (12 months). Always check your loan agreement for prepayment terms before taking the loan."}},{"@type":"Question","name":"5. What happens if I miss an EMI payment?","acceptedAnswer":{"@type":"Answer","text":"Missing an EMI attracts late payment charges (₹500-1000 or 2% of EMI), affects your credit score negatively, and may lead to penalty interest. Continuous defaults (90+ days) make the loan NPA (Non-Performing Asset), severely damaging credit score and making future loans difficult. If facing issues, contact your lender immediately to discuss restructuring options."}},{"@type":"Question","name":"6. Is personal loan interest tax deductible?","acceptedAnswer":{"@type":"Answer","text":"Generally, personal loan interest is NOT tax deductible. However, if you use the loan for business purposes, you can claim interest as business expense. If used for buying/renovating a house, you may claim deduction under Section 24(b) up to ₹2 lakhs. Always maintain proper documentation and consult a tax advisor."}},{"@type":"Question","name":"7. Can I get a personal loan with a low salary?","acceptedAnswer":{"@type":"Answer","text":"Yes, many lenders offer personal loans with minimum salary requirement of ₹15,000-25,000 per month. However, lower salaries typically mean lower loan amounts (₹50,000-2 lakhs) and higher interest rates. Having a good credit score, stable employment (2+ years), and additional income sources can help. Some NBFCs are more flexible than banks for low-income applicants."}},{"@type":"Question","name":"8. What are the processing fees for personal loans?","acceptedAnswer":{"@type":"Answer","text":"Processing fees typically range from 1% to 3% of the loan amount plus GST. For a ₹3 lakh loan, you may pay ₹3,000-9,000 as processing fee. Some lenders waive fees during special offers or for existing customers. This fee is non-refundable even if your loan gets rejected. Always factor in processing fees when calculating total loan cost."}}]}' }}
+      />
       <Navigation />
 
       {/* Breadcrumb Navigation */}
@@ -578,7 +582,7 @@ export default function PersonalLoanEMICalculatorPage() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The TutorBridge</span>
+                <span className="text-xl font-bold">The Tutor Bridge</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering students with personalized education and career guidance for a brighter future.
@@ -606,7 +610,7 @@ export default function PersonalLoanEMICalculatorPage() {
           </div>
 
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 The TutorBridge. All rights reserved.</p>
+            <p>&copy; 2026 The Tutor Bridge. All rights reserved.</p>
           </div>
         </div>
       </footer>
