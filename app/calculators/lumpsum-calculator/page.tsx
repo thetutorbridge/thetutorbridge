@@ -483,7 +483,7 @@ export default function LumpsumCalculatorPage() {
                 <li className="flex items-start">
                   <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
                   <p className="text-gray-700">
-                    <strong>Consider tax implications:</strong> LTCG on equity >₹1.25L taxed at 12.5%. Debt funds taxed as per slab. ELSS provides Section 80C deduction up to ₹1.5L. PPF is EEE (exempt-exempt-exempt). Choose tax-efficient instruments based on your income tax bracket.
+                    <strong>Consider tax implications:</strong> LTCG on equity &gt;₹1.25L taxed at 12.5%. Debt funds taxed as per slab. ELSS provides Section 80C deduction up to ₹1.5L. PPF is EEE (exempt-exempt-exempt). Choose tax-efficient instruments based on your income tax bracket.
                   </p>
                 </li>
                 <li className="flex items-start">

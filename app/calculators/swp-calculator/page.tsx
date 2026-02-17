@@ -588,7 +588,7 @@ export default function SWPCalculatorPage() {
                   2. How is SWP taxed?
                 </h3>
                 <p className="text-gray-700">
-                  SWP taxation depends on the fund type and holding period. For equity funds: LTCG (>1 year) is taxed at 10% on gains above ₹1 lakh; STCG at 15%. For debt funds: LTCG (>3 years) gets indexation benefit, taxed at 20%; STCG taxed as per your slab. Only the capital gains portion is taxed, not the entire withdrawal amount, making it very tax-efficient.
+                  SWP taxation depends on the fund type and holding period. For equity funds: LTCG (&gt;1 year) is taxed at 10% on gains above ₹1 lakh; STCG at 15%. For debt funds: LTCG (&gt;3 years) gets indexation benefit, taxed at 20%; STCG taxed as per your slab. Only the capital gains portion is taxed, not the entire withdrawal amount, making it very tax-efficient.
                 </p>
               </div>
 

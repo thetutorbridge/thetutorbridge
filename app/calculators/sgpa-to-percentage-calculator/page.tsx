@@ -995,7 +995,7 @@ export default function SGPAToPercentageCalculator() {
                 <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-500">
                   <h3 className="text-xl font-bold text-red-800 mb-3">❌ Mistake 3: Exceeding 100%</h3>
                   <p className="text-gray-700 mb-3">
-                    Some formulas (like CBSE with high SGPA) can theoretically give >100%. Cap your result at 100%.
+                    Some formulas (like CBSE with high SGPA) can theoretically give &gt;100%. Cap your result at 100%.
                   </p>
                   <div className="bg-white rounded p-3 text-sm">
                     <p>SGPA = 10.0, Using CBSE: 10.0 × 9.5 = 95%</p>
@@ -1095,7 +1095,7 @@ export default function SGPAToPercentageCalculator() {
                     Q8: Can percentage be higher than SGPA × 10?
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
-                    No, percentage cannot legitimately exceed SGPA × 10 for a 10-point scale (which would mean more than 100% for SGPA 10). Standard formulas like CBSE (× 9.5) ensure percentage stays realistic. If any formula gives you >100%, cap it at 100%. Some students mistakenly use SGPA × 10 thinking it gives maximum percentage, but this is incorrect. The CBSE multiplier of 9.5 was specifically chosen to keep maximum percentage around 95% for perfect SGPA of 10.
+                    No, percentage cannot legitimately exceed SGPA × 10 for a 10-point scale (which would mean more than 100% for SGPA 10). Standard formulas like CBSE (× 9.5) ensure percentage stays realistic. If any formula gives you &gt;100%, cap it at 100%. Some students mistakenly use SGPA × 10 thinking it gives maximum percentage, but this is incorrect. The CBSE multiplier of 9.5 was specifically chosen to keep maximum percentage around 95% for perfect SGPA of 10.
                   </p>
                 </div>
 

@@ -554,7 +554,7 @@ export default function FractionToPercentCalculator() {
 
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6">
                   <h3 className="text-lg font-bold text-green-900 mb-3">✨ Greater Than 100%</h3>
-                  <p className="text-gray-700">Improper fractions (numerator > denominator) convert to percentages greater than 100%. Example: 5/4 = 125%.</p>
+                  <p className="text-gray-700">Improper fractions (numerator &gt; denominator) convert to percentages greater than 100%. Example: 5/4 = 125%.</p>
                 </div>
               </div>
             </section>

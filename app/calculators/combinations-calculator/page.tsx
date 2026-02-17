@@ -957,7 +957,7 @@ export default function CombinationsCalculator() {
                     Can r be greater than n in combinations?
                   </h3>
                   <p className="text-gray-700">
-                    No, r cannot be greater than n in standard combinations or permutations. You cannot choose or arrange more items than you have available. The valid range is 0 ≤ r ≤ n. If r > n, the result is mathematically defined as 0 (zero ways to choose more items than exist).
+                    No, r cannot be greater than n in standard combinations or permutations. You cannot choose or arrange more items than you have available. The valid range is 0 ≤ r ≤ n. If r &gt; n, the result is mathematically defined as 0 (zero ways to choose more items than exist).
                   </p>
                 </div>
 

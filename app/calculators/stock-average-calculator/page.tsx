@@ -300,7 +300,7 @@ export default function StockAverageCalculatorPage() {
 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                   <h3 className="text-lg font-semibold text-[#1A3D7C] mb-2">4. How does average price help with tax filing?</h3>
-                  <p className="text-gray-700">Average purchase price = <strong>Cost of Acquisition for capital gains</strong>. When selling: (Sale Price - Average Cost) × Quantity = Capital Gain. LTCG (>1 year): >₹1.25L taxed @ 12.5%. STCG (≤1 year): @ 20%. Accurate average ensures correct tax calculation and claims.</p>
+                  <p className="text-gray-700">Average purchase price = <strong>Cost of Acquisition for capital gains</strong>. When selling: (Sale Price - Average Cost) × Quantity = Capital Gain. LTCG (&gt;1 year): &gt;₹1.25L taxed @ 12.5%. STCG (≤1 year): @ 20%. Accurate average ensures correct tax calculation and claims.</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
@@ -361,7 +361,7 @@ export default function StockAverageCalculatorPage() {
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />
-                    <p className="text-gray-700"><strong>Don't average down with entire capital:</strong> Keep reserve for further dips. If stock at ₹100 (your avg ₹150), use 30-40% capital. If it falls to ₹80, you can average again. Staggered averaging > one-time averaging.</p>
+                    <p className="text-gray-700"><strong>Don't average down with entire capital:</strong> Keep reserve for further dips. If stock at ₹100 (your avg ₹150), use 30-40% capital. If it falls to ₹80, you can average again. Staggered averaging &gt; one-time averaging.</p>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-[#2BAE66] mr-3 mt-0.5 flex-shrink-0" />

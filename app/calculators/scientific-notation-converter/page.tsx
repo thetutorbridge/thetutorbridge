@@ -194,11 +194,7 @@ export default function ScientificNotationConverterPage() {
 
       // Real number
       let realNumber: string;
-      if (Math.abs(value) >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What\'s the difference between scientific notation and standard form?","acceptedAnswer":{"@type":"Answer","text":"Scientific notation (a × 10ⁿ) expresses numbers as a coefficient between 1 and 10 multiplied by a power of 10, while standard form is the regular decimal representation. For example, 5,000 is standard form, while 5 × 10³ is scientific notation."}}]}' }}
-      />= 1e15 || (Math.abs(value) < 0.000001 && value !== 0)) {
+      if (Math.abs(value) >= 1e15 || (Math.abs(value) < 0.000001 && value !== 0)) {
         realNumber = value.toExponential(0).replace('e+', 'e').replace('e0', '');
         realNumber = realNumber.split('e')[0].replace(/\.0+$/, '');
         if (realNumber.length > 13) {
