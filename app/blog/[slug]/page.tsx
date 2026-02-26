@@ -283,7 +283,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   fill
                   className="object-contain"
                   priority
-                  unoptimized={!post.featured_image.includes('supabase.co')}
+                  unoptimized
                 />
               </div>
             )}
@@ -398,6 +398,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             alt={relatedPost.title}
                             fill
                             className="object-cover"
+                            unoptimized
                           />
                         </div>
                       )}
