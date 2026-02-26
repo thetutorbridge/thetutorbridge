@@ -268,6 +268,39 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
       attributes: {
         class: 'prose prose-lg max-w-none focus:outline-none min-h-[500px] p-6 border border-gray-200 rounded-lg bg-white editor-content',
       },
+      handlePaste: (view, event, slice) => {
+        const items = event.clipboardData?.items
+        if (!items) return false
+
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i]
+          if (item.type.startsWith('image/')) {
+            event.preventDefault()
+            const file = item.getAsFile()
+            if (file) {
+              // Upload pasted image to Supabase
+              handlePastedImage(file)
+            }
+            return true
+          }
+        }
+        return false
+      },
+      handleDrop: (view, event, slice, moved) => {
+        const files = event.dataTransfer?.files
+        if (!files || files.length === 0) return false
+
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i]
+          if (file.type.startsWith('image/')) {
+            event.preventDefault()
+            // Upload dropped image to Supabase
+            handlePastedImage(file)
+            return true
+          }
+        }
+        return false
+      },
       handleClick: (view, pos, event) => {
         const target = event.target as HTMLElement
         if (target.tagName === 'IMG') {
@@ -352,6 +385,53 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
     
     // Store reference to the image element for updating
     ;(window as any).editingImageElement = imgElement
+  }
+
+  // Handle pasted/dropped images - upload to Supabase and insert
+  const handlePastedImage = async (file: File) => {
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      return
+    }
+
+    // Validate file size (5MB limit)
+    if (file.size > 5 * 1024 * 1024) {
+      alert('Image size must be less than 5MB.')
+      return
+    }
+
+    try {
+      // Show uploading indicator
+      const tempId = Date.now().toString()
+      editor?.chain().focus().insertContent({
+        type: 'paragraph',
+        content: [{ type: 'text', text: `[Uploading image...]` }]
+      }).run()
+
+      const result = await uploadBlogImage(file)
+
+      if (result.success && result.publicUrl) {
+        // Remove the uploading placeholder and insert the actual image
+        editor?.chain()
+          .focus()
+          .undo() // Remove the "Uploading..." text
+          .setImage({
+            src: result.publicUrl,
+            alt: file.name.replace(/\.[^/.]+$/, ""),
+            title: ''
+          })
+          .insertContent({ type: 'paragraph' }) // Add paragraph after image
+          .run()
+      } else {
+        // Remove placeholder on error
+        editor?.chain().focus().undo().run()
+        alert('Failed to upload image: ' + (result.error || 'Unknown error'))
+      }
+    } catch (error) {
+      console.error('Error uploading pasted image:', error)
+      editor?.chain().focus().undo().run()
+      alert('Error uploading image')
+    }
   }
 
   // Link interaction handler
