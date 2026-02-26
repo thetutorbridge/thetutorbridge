@@ -129,7 +129,7 @@ export default async function BlogPage() {
                 data-post-title={post.title}
                 data-post-excerpt={post.excerpt}
               >
-                {post.featured_image && (
+                {post.featured_image && post.featured_image.trim() !== '' && (
                   <div className="relative w-full aspect-video bg-gray-100 overflow-hidden border-b border-gray-200">
                     <Image
                       src={post.featured_image}

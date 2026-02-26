@@ -275,7 +275,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-            {post.featured_image && (
+            {post.featured_image && post.featured_image.trim() !== '' && (
               <div className="relative w-full aspect-video bg-gray-100">
                 <Image
                   src={getActualImageUrl(post.featured_image)}
@@ -391,7 +391,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {relatedPosts.map((relatedPost) => (
                   <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`}>
                     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                      {relatedPost.featured_image && (
+                      {relatedPost.featured_image && relatedPost.featured_image.trim() !== '' && (
                         <div className="relative h-48">
                           <Image
                             src={getActualImageUrl(relatedPost.featured_image)}

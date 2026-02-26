@@ -88,14 +88,12 @@ function LinkDialog({ isOpen, onClose, onSetLink, currentUrl = '', currentText =
   const [text, setText] = useState(currentText)
   const [nofollow, setNofollow] = useState(false) // Always default to dofollow (unchecked)
 
-  // Update state when props change (but keep nofollow as false by default)
+  // Update state when props change - always reset nofollow to ensure dofollow by default
   useEffect(() => {
     setUrl(currentUrl)
     setText(currentText)
-    // Only set nofollow to true if explicitly set, otherwise keep as false (dofollow)
-    if (currentNofollow === true) {
-      setNofollow(true)
-    }
+    // Always explicitly set nofollow - default to false (dofollow) unless explicitly true
+    setNofollow(currentNofollow === true)
   }, [currentUrl, currentText, currentNofollow])
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -451,27 +449,31 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
   const insertImageWithMetadata = (alt: string, description: string) => {
     const imageUrl = (window as any).pendingImageUrl
     const editingImageElement = (window as any).editingImageElement
-    
+
     if (imageUrl) {
-      // Inserting new image
-      editor?.chain().focus().setImage({ 
-        src: imageUrl, 
-        alt: alt,
-        title: description 
-      }).run()
+      // Inserting new image - add paragraph after to prevent next line from disappearing
+      editor?.chain()
+        .focus()
+        .setImage({
+          src: imageUrl,
+          alt: alt,
+          title: description
+        })
+        .insertContent({ type: 'paragraph' }) // Add empty paragraph after image
+        .run()
       delete (window as any).pendingImageUrl
     } else if (editingImageElement) {
       // Editing existing image
       if (editor) {
         const pos = editor.view.posAtDOM(editingImageElement, 0)
-        editor.commands.updateAttributes('image', { 
+        editor.commands.updateAttributes('image', {
           alt: alt,
-          title: description 
+          title: description
         })
       }
       delete (window as any).editingImageElement
     }
-    
+
     setImageDialog({ isOpen: false })
   }
 

@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
       slug: finalSlug,
       content,
       excerpt,
-      featured_image,
+      featured_image: featured_image && featured_image.trim() !== '' ? featured_image : null, // Store null if empty
       author_name,
       author_linkedin,
       author_image: author_image || author_avatar, // Use either field
