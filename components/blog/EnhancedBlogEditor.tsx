@@ -88,13 +88,17 @@ function LinkDialog({ isOpen, onClose, onSetLink, currentUrl = '', currentText =
   const [text, setText] = useState(currentText)
   const [nofollow, setNofollow] = useState(false) // Always default to dofollow (unchecked)
 
-  // Update state when props change - always reset nofollow to ensure dofollow by default
+  // Reset ALL state whenever dialog opens - this ensures fresh state every time
   useEffect(() => {
-    setUrl(currentUrl)
-    setText(currentText)
-    // Always explicitly set nofollow - default to false (dofollow) unless explicitly true
-    setNofollow(currentNofollow === true)
-  }, [currentUrl, currentText, currentNofollow])
+    if (isOpen) {
+      setUrl(currentUrl)
+      setText(currentText)
+      // CRITICAL: Always reset nofollow based on the link being edited
+      // For new links (no currentUrl), this will be false (dofollow)
+      // For existing links, this will reflect the actual link's nofollow state
+      setNofollow(currentNofollow === true)
+    }
+  }, [isOpen, currentUrl, currentText, currentNofollow])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -400,22 +404,17 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
       return
     }
 
-    try {
-      // Show uploading indicator
-      const tempId = Date.now().toString()
-      editor?.chain().focus().insertContent({
-        type: 'paragraph',
-        content: [{ type: 'text', text: `[Uploading image...]` }]
-      }).run()
+    // Save current cursor position BEFORE any async operation
+    const currentPos = editor?.state.selection.anchor || 0
 
+    try {
       const result = await uploadBlogImage(file)
 
       if (result.success && result.publicUrl) {
-        // Remove the uploading placeholder and insert the actual image
+        // Insert image at the saved position without affecting other content
         editor?.chain()
           .focus()
-          .undo() // Remove the "Uploading..." text
-          .insertContent([
+          .insertContentAt(currentPos, [
             {
               type: 'image',
               attrs: {
@@ -430,13 +429,10 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
           ])
           .run()
       } else {
-        // Remove placeholder on error
-        editor?.chain().focus().undo().run()
         alert('Failed to upload image: ' + (result.error || 'Unknown error'))
       }
     } catch (error) {
       console.error('Error uploading pasted image:', error)
-      editor?.chain().focus().undo().run()
       alert('Error uploading image')
     }
   }
@@ -488,6 +484,9 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
       return
     }
 
+    // Save cursor position BEFORE async upload
+    const savedPosition = editor?.state.selection.anchor || 0
+
     try {
       const result = await uploadBlogImage(file)
       if (result.success && result.publicUrl) {
@@ -497,8 +496,9 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
           alt: file.name.replace(/\.[^/.]+$/, ""), // Use filename as default alt text
           description: ''
         })
-        // Store the image URL temporarily to insert after dialog
+        // Store the image URL and position temporarily to insert after dialog
         ;(window as any).pendingImageUrl = result.publicUrl
+        ;(window as any).pendingImagePosition = savedPosition
       } else {
         alert('Failed to upload image')
       }
@@ -535,13 +535,15 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
 
   const insertImageWithMetadata = (alt: string, description: string) => {
     const imageUrl = (window as any).pendingImageUrl
+    const savedPosition = (window as any).pendingImagePosition
     const editingImageElement = (window as any).editingImageElement
 
     if (imageUrl) {
-      // Inserting new image - insert as content block to preserve surrounding content
+      // Inserting new image - use saved position to preserve surrounding content
+      const insertPosition = savedPosition || editor?.state.selection.anchor || 0
       editor?.chain()
         .focus()
-        .insertContent([
+        .insertContentAt(insertPosition, [
           {
             type: 'image',
             attrs: {
@@ -556,6 +558,7 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
         ])
         .run()
       delete (window as any).pendingImageUrl
+      delete (window as any).pendingImagePosition
     } else if (editingImageElement) {
       // Editing existing image
       if (editor) {
