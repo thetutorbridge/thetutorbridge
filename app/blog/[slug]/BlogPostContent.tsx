@@ -276,13 +276,12 @@ export function BlogPostContent({ content }: BlogPostContentProps) {
           return (
             <div key={index} className="my-8 text-center">
               <div className="relative w-full h-auto max-h-[500px] mx-auto">
-                <Image
+                <img
                   src={imageUrl}
                   alt={node.attrs?.alt || 'Image'}
-                  width={800}
-                  height={400}
-                  className="max-w-full h-auto mx-auto"
+                  className="max-w-full h-auto mx-auto rounded-lg"
                   style={{ maxHeight: '500px', objectFit: 'contain' }}
+                  loading="lazy"
                 />
               </div>
             </div>

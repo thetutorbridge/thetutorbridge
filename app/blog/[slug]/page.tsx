@@ -302,6 +302,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         alt={post.author_name || 'Author'}
                         fill
                         className="object-cover"
+                        unoptimized
                       />
                     ) : (
                       <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-lg">
@@ -348,6 +349,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         alt={post.author_name || 'Author'}
                         fill
                         className="object-cover"
+                        unoptimized
                       />
                     ) : (
                       <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-xl">
