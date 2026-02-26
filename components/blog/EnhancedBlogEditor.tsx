@@ -805,8 +805,8 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
         attributes.rel = 'noopener noreferrer nofollow'
         attributes.target = '_blank'
       } else {
-        // For external dofollow links, add noopener noreferrer for security
-        attributes.rel = 'noopener noreferrer'
+        // For external dofollow links, explicitly set dofollow
+        attributes.rel = 'noopener noreferrer dofollow'
         attributes.target = '_blank'
       }
     }
