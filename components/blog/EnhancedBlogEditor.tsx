@@ -415,12 +415,19 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
         editor?.chain()
           .focus()
           .undo() // Remove the "Uploading..." text
-          .setImage({
-            src: result.publicUrl,
-            alt: file.name.replace(/\.[^/.]+$/, ""),
-            title: ''
-          })
-          .insertContent({ type: 'paragraph' }) // Add paragraph after image
+          .insertContent([
+            {
+              type: 'image',
+              attrs: {
+                src: result.publicUrl,
+                alt: file.name.replace(/\.[^/.]+$/, ""),
+                title: ''
+              }
+            },
+            {
+              type: 'paragraph'
+            }
+          ])
           .run()
       } else {
         // Remove placeholder on error
@@ -531,15 +538,22 @@ export default function EnhancedBlogEditor({ initialData, onSave, isSaving, mode
     const editingImageElement = (window as any).editingImageElement
 
     if (imageUrl) {
-      // Inserting new image - add paragraph after to prevent next line from disappearing
+      // Inserting new image - insert as content block to preserve surrounding content
       editor?.chain()
         .focus()
-        .setImage({
-          src: imageUrl,
-          alt: alt,
-          title: description
-        })
-        .insertContent({ type: 'paragraph' }) // Add empty paragraph after image
+        .insertContent([
+          {
+            type: 'image',
+            attrs: {
+              src: imageUrl,
+              alt: alt,
+              title: description
+            }
+          },
+          {
+            type: 'paragraph'
+          }
+        ])
         .run()
       delete (window as any).pendingImageUrl
     } else if (editingImageElement) {
