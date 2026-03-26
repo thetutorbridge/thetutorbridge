@@ -13,6 +13,16 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: "The Tutor Bridge Blog - Expert Study Tips & Educational Resources",
   description: "Expert insights, study tips, and educational resources to help you excel in your academic journey",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: "https://www.thetutorbridge.com/blog",
   },
@@ -94,6 +104,21 @@ async function getPosts(): Promise<BlogPost[]> {
 
 export default async function BlogPage() {
   const posts = await getPosts();
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "The Tutor Bridge Blog",
+    "url": "https://www.thetutorbridge.com/blog",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": posts.slice(0, 50).map((post, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://www.thetutorbridge.com/blog/${post.slug}`,
+        "name": post.title,
+      })),
+    },
+  }
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return 'Not published'
@@ -104,6 +129,10 @@ export default async function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <Navigation />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-brand-blue via-brand-teal to-brand-amber text-white">

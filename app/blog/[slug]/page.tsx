@@ -82,6 +82,7 @@ async function fetchRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const post = await getPost(slug)
+  const postUrl = `https://www.thetutorbridge.com/blog/${slug}`
 
   if (!post) {
     return {
@@ -98,6 +99,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: post.meta_description || post.excerpt,
       images: post.featured_image ? [post.featured_image] : [],
       type: 'article',
+      url: postUrl,
       publishedTime: post.published_at || undefined,
       authors: [post.author_name],
     },
@@ -106,6 +108,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.meta_title || post.title,
       description: post.meta_description || post.excerpt,
       images: post.featured_image ? [post.featured_image] : [],
+    },
+    alternates: {
+      canonical: postUrl,
     },
   }
 }
@@ -149,21 +154,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     return url
   }
 
-  const getAuthorImageUrl = (imagePath: string | null) => {
-    if (!imagePath) return null
-    if (imagePath.startsWith('http')) {
-      return imagePath
-    }
-    if (imagePath.includes('.')) {
-      return `/${imagePath}`
-    }
-    return null
-  }
-
   // Generate Article JSON-LD structured data
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": post.meta_title || post.title,
     "description": post.meta_description || post.excerpt,
     "image": post.featured_image ? [getActualImageUrl(post.featured_image)] : [],

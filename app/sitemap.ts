@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { createAdminClient } from '@/lib/supabase';
+import { getAllBlogPosts } from '@/lib/markdown-blog';
 
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
@@ -461,24 +461,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  // Fetch blog posts from Supabase
+  // Fetch blog posts from markdown files
   let blogPostPages: MetadataRoute.Sitemap = [];
   try {
-    const supabase = createAdminClient();
-    const { data: posts, error } = await supabase
-      .from('blog_posts')
-      .select('slug, updated_at, published_at')
-      .eq('status', 'published')
-      .order('published_at', { ascending: false });
-
-    if (!error && posts) {
-      blogPostPages = posts.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.updated_at || post.published_at),
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      }));
-    }
+    const posts = getAllBlogPosts(false);
+    blogPostPages = posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.updated_at || post.published_at || new Date()),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
   } catch {
     // Silent fail - sitemap will still work with static pages
   }
