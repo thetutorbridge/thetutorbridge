@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer"
 
 interface BlogPostContentProps {
   content: any;
@@ -493,6 +494,12 @@ export function BlogPostContent({ content }: BlogPostContentProps) {
     }
   }
 
+  // If content is a string (markdown), use MarkdownRenderer
+  if (typeof content === 'string') {
+    return <MarkdownRenderer content={content} />
+  }
+
+  // Otherwise use the Tiptap JSON renderer
   return (
     <div className="prose prose-lg max-w-none">
       {renderContent(content)}

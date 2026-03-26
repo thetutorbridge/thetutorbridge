@@ -4,8 +4,8 @@ import Image from "next/image"
 import { Search, Calendar } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
-import { createAdminClient } from "@/lib/supabase"
 import { BlogSearchClient } from "./BlogSearchClient"
+import { getAllBlogPosts } from "@/lib/markdown-blog"
 
 // Enable ISR - revalidate every 60 seconds
 export const revalidate = 60
@@ -63,20 +63,31 @@ interface BlogPost {
 
 async function getPosts(): Promise<BlogPost[]> {
   try {
-    const supabase = createAdminClient();
-    // Only select fields needed for display to reduce payload size
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('id, title, slug, excerpt, featured_image, author_name, published_at')
-      .eq('status', 'published')
-      .order('published_at', { ascending: false });
-
-    if (error) {
-      return [];
-    }
-
-    return data || [];
+    const posts = getAllBlogPosts(false);
+    // Return only fields needed for display to reduce payload size
+    return posts.map(post => ({
+      id: post.id,
+      title: post.title,
+      slug: post.slug,
+      excerpt: post.excerpt,
+      featured_image: post.featured_image,
+      author_name: post.author_name,
+      published_at: post.published_at,
+      content: '', // Not needed for listing
+      author_linkedin: '',
+      author_image: '',
+      tags: [],
+      status: post.status,
+      created_at: post.created_at,
+      updated_at: post.updated_at,
+      view_count: post.view_count,
+      read_time: post.read_time,
+      meta_title: '',
+      meta_description: '',
+      meta_keywords: [],
+    }));
   } catch (error) {
+    console.error('Error loading blog posts:', error);
     return [];
   }
 }
@@ -136,6 +147,7 @@ export default async function BlogPage() {
                       alt={post.title}
                       fill
                       className="object-contain group-hover:scale-105 transition-transform duration-300"
+                      unoptimized
                     />
                   </div>
                 )}

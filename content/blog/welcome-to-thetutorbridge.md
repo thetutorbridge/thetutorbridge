@@ -1,15 +1,25 @@
 ---
-id: welcome-post
 title: "Welcome to TheTutorBridge - Your Gateway to Academic Excellence"
-slug: welcome-to-thetutorbridge
+slug: "welcome-to-thetutorbridge"
 excerpt: "Discover how TheTutorBridge is revolutionizing online education in India with personalized tutoring, instant doubt solving, and comprehensive study resources."
-author: "The Tutor Bridge Team"
-tags: ["education", "online-tutoring", "academic-excellence", "study-tips"]
 featured_image: "/bannerHome4.jpg"
-read_time: 5
+author_name: "Rishabh Jain"
+author_linkedin: "https://www.linkedin.com/in/rishabh-jain-33b946214/"
+author_image: "/rishabh-jain.jpg"
+tags:
+  - education
+  - online-tutoring
+  - academic-excellence
+  - study-tips
 status: "published"
-published_at: "2026-01-15T10:00:00Z"
-created_at: "2026-01-15T10:00:00Z"
+published_at: "2024-06-14T06:27:00.000Z"
+created_at: "2024-02-10T10:00:00+00:00"
+updated_at: "2024-02-10T10:00:00+00:00"
+view_count: 0
+read_time: 5
+meta_title: "Welcome to TheTutorBridge - Your Gateway to Academic Excellence"
+meta_description: "Discover how TheTutorBridge is revolutionizing online education in India with personalized tutoring, instant doubt solving, and comprehensive study resources."
+meta_keywords: []
 ---
 
 # Welcome to TheTutorBridge - Your Gateway to Academic Excellence

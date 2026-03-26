@@ -1,15 +1,25 @@
 ---
-id: study-techniques-post
 title: "10 Effective Study Techniques That Actually Work"
-slug: effective-study-techniques
+slug: "effective-study-techniques"
 excerpt: "Discover proven study methods that can transform your learning experience and help you achieve better grades with less stress."
-author: "Dr. Priya Sharma"
-tags: ["study-tips", "academic-success", "learning-methods", "productivity"]
 featured_image: "/resources.jpg"
-read_time: 8
+author_name: "Rishabh Jain"
+author_linkedin: "https://www.linkedin.com/in/rishabh-jain-33b946214/"
+author_image: "/rishabh-jain.jpg"
+tags:
+  - study-tips
+  - academic-success
+  - learning-methods
+  - productivity
 status: "published"
-published_at: "2026-01-20T14:30:00Z"
-created_at: "2026-01-20T14:30:00Z"
+published_at: "2024-02-19T12:02:00.000Z"
+created_at: "2024-03-15T10:00:00+00:00"
+updated_at: "2024-03-15T10:00:00+00:00"
+view_count: 0
+read_time: 8
+meta_title: "10 Effective Study Techniques That Actually Work"
+meta_description: "Discover proven study methods that can transform your learning experience and help you achieve better grades with less stress."
+meta_keywords: []
 ---
 
 # 10 Effective Study Techniques That Actually Work

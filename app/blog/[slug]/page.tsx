@@ -7,7 +7,7 @@ import { ArrowLeft, Calendar, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Navigation } from "@/components/navigation"
-import { createAdminClient } from "@/lib/supabase"
+import { getBlogPostBySlug, getAllBlogSlugs, getRelatedPosts, type BlogPost as MarkdownBlogPost } from "@/lib/markdown-blog"
 import { BlogPostContent } from "./BlogPostContent"
 import '@/components/blog/editor-styles.css'
 
@@ -40,16 +40,12 @@ interface BlogPost {
 // Generate static params for all published blog posts
 export async function generateStaticParams() {
   try {
-    const supabase = createAdminClient()
-    const { data: posts } = await supabase
-      .from('blog_posts')
-      .select('slug')
-      .eq('status', 'published')
-
-    return posts?.map((post) => ({
-      slug: post.slug,
-    })) || []
+    const slugs = getAllBlogSlugs()
+    return slugs.map((slug) => ({
+      slug: slug,
+    }))
   } catch (error) {
+    console.error('Error generating static params:', error)
     return []
   }
 }
@@ -58,54 +54,26 @@ export async function generateStaticParams() {
 // generateMetadata and page component share the same cached result
 const getPost = cache(async (slug: string): Promise<BlogPost | null> => {
   try {
-    const supabase = createAdminClient()
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .eq('slug', slug)
-      .eq('status', 'published')
-      .single()
+    const post = getBlogPostBySlug(slug)
 
-    if (error || !data) {
+    if (!post || post.status !== 'published') {
       return null
     }
 
-    return data as BlogPost
+    return post as BlogPost
   } catch (error) {
+    console.error('Error fetching post:', error)
     return null
   }
 })
 
 // Fetch related posts - try tag matching first, fall back to recent posts
-async function getRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
+async function fetchRelatedPosts(post: BlogPost): Promise<BlogPost[]> {
   try {
-    const supabase = createAdminClient()
-    // Only fetch 10 posts since we only display 3
-    const { data } = await supabase
-      .from('blog_posts')
-      .select('id, title, slug, excerpt, featured_image, author_name, published_at, tags')
-      .eq('status', 'published')
-      .neq('id', post.id)
-      .order('published_at', { ascending: false })
-      .limit(10)
-
-    if (!data || data.length === 0) return []
-
-    // Try to find posts with overlapping tags first
-    const tagMatches = data
-      .filter(p => p.tags && post.tags && p.tags.some((tag: string) => post.tags.includes(tag)))
-      .slice(0, 3)
-
-    // If we found tag matches, return them
-    if (tagMatches.length >= 3) {
-      return tagMatches as BlogPost[]
-    }
-
-    // Otherwise, fall back to most recent posts (excluding current)
-    // This ensures Related Articles ALWAYS shows something for internal linking
-    const recentPosts = data.slice(0, 3)
-    return recentPosts as BlogPost[]
+    const related = getRelatedPosts(post as MarkdownBlogPost, 3)
+    return related as BlogPost[]
   } catch (error) {
+    console.error('Error fetching related posts:', error)
     return []
   }
 }
@@ -156,7 +124,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  const relatedPosts = await getRelatedPosts(post)
+  const relatedPosts = await fetchRelatedPosts(post)
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return 'Not published'
@@ -295,22 +263,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                    {getAuthorImageUrl(post.author_image) ? (
-                      <Image
-                        src={getAuthorImageUrl(post.author_image)!}
-                        alt={post.author_name || 'Author'}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                      />
-                    ) : (
-                      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-lg">
-                        {(post.author_name || 'A').charAt(0).toUpperCase()}
-                      </div>
-                    )}
-                  </div>
-
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                       <span className="font-medium text-gray-900">
@@ -342,22 +294,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               <div className="mt-12 p-6 bg-gray-50 rounded-lg">
                 <div className="flex items-start gap-4">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
-                    {getAuthorImageUrl(post.author_image) ? (
-                      <Image
-                        src={getAuthorImageUrl(post.author_image)!}
-                        alt={post.author_name || 'Author'}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                      />
-                    ) : (
-                      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-xl">
-                        {(post.author_name || 'A').charAt(0).toUpperCase()}
-                      </div>
-                    )}
-                  </div>
-
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
                       <h3 className="text-lg font-semibold text-gray-900">
