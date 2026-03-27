@@ -152,6 +152,36 @@ const nextConfig = {
           },
         ],
       },
+      // Cache fraction converter pages for 1 hour
+      {
+        source: '/fraction-to-decimal/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      // Cache equation solver pages for 1 hour
+      {
+        source: '/solve/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      // Cache percentage calculator pages for 1 hour
+      {
+        source: '/percentage/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
       // Cache about, FAQ, pricing pages for 1 hour
       {
         source: '/about',
