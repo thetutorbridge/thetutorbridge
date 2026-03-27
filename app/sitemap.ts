@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/markdown-blog';
+import { getAllEquationSlugs } from '@/lib/equations-data';
 
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
@@ -475,6 +476,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Silent fail - sitemap will still work with static pages
   }
 
+  // Equation Solver - Main page
+  const equationSolverPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/solve`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  // All individual equation solver pages
+  const equationSlugs = getAllEquationSlugs();
+  const individualEquations: MetadataRoute.Sitemap = equationSlugs.map(slug => ({
+    url: `${baseUrl}/solve/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Combine all pages
   return [
     ...staticPages,
@@ -490,5 +510,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...class6ScienceChapters,
     ...otherClassSubjectPages,
     ...seniorClassSubjectPages,
+    ...equationSolverPages,
+    ...individualEquations,
   ];
 }
