@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/markdown-blog';
 import { getAllEquationSlugs } from '@/lib/equations-data';
 import { getAllFractionSlugs } from '@/lib/fractions-data';
+import { getAllPercentageSlugs } from '@/lib/percentage-data';
 
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
@@ -515,6 +516,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Percentage Calculator - Main page
+  const percentagePages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/percentage`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  // All individual percentage calculation pages
+  const percentageSlugs = getAllPercentageSlugs();
+  const individualPercentages: MetadataRoute.Sitemap = percentageSlugs.map(slug => ({
+    url: `${baseUrl}/percentage/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Combine all pages
   return [
     ...staticPages,
@@ -534,5 +554,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...individualEquations,
     ...fractionConverterPages,
     ...individualFractions,
+    ...percentagePages,
+    ...individualPercentages,
   ];
 }
