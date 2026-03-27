@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/markdown-blog';
 import { getAllEquationSlugs } from '@/lib/equations-data';
+import { getAllFractionSlugs } from '@/lib/fractions-data';
 
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
@@ -495,6 +496,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Fraction to Decimal - Main page
+  const fractionConverterPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/fraction-to-decimal`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  // All individual fraction to decimal pages
+  const fractionSlugs = getAllFractionSlugs();
+  const individualFractions: MetadataRoute.Sitemap = fractionSlugs.map(slug => ({
+    url: `${baseUrl}/fraction-to-decimal/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Combine all pages
   return [
     ...staticPages,
@@ -512,5 +532,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...seniorClassSubjectPages,
     ...equationSolverPages,
     ...individualEquations,
+    ...fractionConverterPages,
+    ...individualFractions,
   ];
 }
