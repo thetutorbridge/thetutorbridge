@@ -21,8 +21,8 @@ export default function FractionToDecimalMainPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebPage',
-            name: 'Fraction to Decimal Converter - 100+ Fractions',
-            description: 'Convert fractions to decimals with comprehensive step-by-step guides for 100+ popular fractions.',
+            name: 'Fraction to Decimal Converter - 200+ Fractions',
+            description: 'Convert fractions to decimals with comprehensive step-by-step guides for 200+ popular fractions.',
             url: 'https://www.thetutorbridge.com/fraction-to-decimal',
             publisher: {
               '@type': 'Organization',
@@ -56,11 +56,11 @@ export default function FractionToDecimalMainPage() {
               <h1 className="text-5xl md:text-6xl font-bold">Fraction to Decimal Converter</h1>
             </div>
             <p className="text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
-              Convert fractions to decimals with step-by-step explanations for 100+ popular fractions
+              Convert fractions to decimals with step-by-step explanations for 200+ popular fractions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
-                <p className="text-3xl font-bold text-[#FFC857]">100+</p>
+                <p className="text-3xl font-bold text-[#FFC857]">200+</p>
                 <p className="text-sm text-blue-100">Fractions Covered</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
