@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Free Online Calculators - GPA, Finance, Math & More",
-  description: "Free online calculators for students and professionals. Calculate GPA, grades, SIP returns, EMI, percentages, time conversions, and more educational tools.",
+  description: "Free online calculators for students. Calculate GPA, grades, EMI, SIP returns, percentages & more educational tools.",
   keywords: "online calculators, GPA calculator, grade calculator, SIP calculator, EMI calculator, percentage calculator, math calculators, educational tools",
   openGraph: {
     title: "Free Online Calculators - GPA, Finance, Math & More",
-    description: "Free online calculators for students and professionals. Calculate GPA, grades, SIP returns, EMI, percentages, time conversions, and more educational tools.",
+    description: "Free online calculators for students. Calculate GPA, grades, EMI, SIP returns, percentages & more.",
     type: "website",
     siteName: "The Tutor Bridge",
     images: [

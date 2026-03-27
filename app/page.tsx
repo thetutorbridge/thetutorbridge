@@ -13,7 +13,7 @@ export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: "Online Homework Help & Tutoring for Grades 6-12 | Math, Science, English | The Tutor Bridge",
-  description: "Expert homework help and 1-on-1 online tutoring for middle & high school students. Math, Science, English. U.S.-certified tutors. Free consultation. Get help today!",
+  description: "Expert homework help & 1-on-1 tutoring for grades 6-12. Math, Science, English. U.S.-certified tutors. Free consultation!",
   keywords: [
     "homework help",
     "online tutoring",
@@ -46,6 +46,13 @@ const jsonLd = {
   description: "Expert homework help and online tutoring for grades 6-12 in Math, Science, and English",
   url: "https://www.thetutorbridge.com",
   logo: "https://www.thetutorbridge.com/TheTutorBridge Logo New.png",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    bestRating: "5",
+    worstRating: "1",
+    ratingCount: "500"
+  },
   sameAs: [
     "https://www.linkedin.com/company/thetutorbridge/"
   ],

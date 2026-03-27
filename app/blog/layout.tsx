@@ -1,12 +1,12 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Educational Blog & Study Tips",
-  description: "Discover expert study tips, educational insights, and academic guidance on The Tutor Bridge blog. Learn effective study techniques, exam strategies, and subject-specific tutorials.",
+  title: "Educational Blog & Study Tips | The Tutor Bridge",
+  description: "Expert study tips, career guidance & academic advice for students. STEM education, college prep & learning strategies.",
   keywords: "study tips, educational blog, exam preparation, academic guidance, learning strategies, student success",
   openGraph: {
-    title: "Educational Blog & Study Tips",
-    description: "Discover expert study tips, educational insights, and academic guidance on The Tutor Bridge blog. Learn effective study techniques, exam strategies, and subject-specific tutorials.",
+    title: "Educational Blog & Study Tips | The Tutor Bridge",
+    description: "Expert study tips, career guidance & academic advice for students. STEM education, college prep & learning strategies.",
     type: "website",
     siteName: "The Tutor Bridge",
     images: [
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Educational Blog & Study Tips",
-    description: "Discover expert study tips, educational insights, and academic guidance on The Tutor Bridge blog.",
+    title: "Educational Blog & Study Tips | The Tutor Bridge",
+    description: "Expert study tips, career guidance & academic advice for students. College prep & learning strategies.",
     images: ["/og-image.png"],
   },
   alternates: {

@@ -24,7 +24,7 @@ export function Footer() {
               <a
                 href="https://www.linkedin.com/company/thetutorbridge/"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 LinkedIn
@@ -32,7 +32,7 @@ export function Footer() {
               <a
                 href="https://t.me/thetutorbridge"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 Telegram

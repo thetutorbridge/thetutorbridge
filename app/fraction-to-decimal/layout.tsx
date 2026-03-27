@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Fraction to Decimal Converter - Convert 200+ Popular Fractions',
   description:
-    'Convert fractions to decimals with step-by-step explanations. Get detailed solutions for 200+ popular fractions including 1/2, 1/3, 3/4, and more. Free math help for students.',
+    'Convert 200+ fractions to decimals with step-by-step solutions. Free math help including 1/2, 1/3, 3/4 & more.',
   keywords: [
     'fraction to decimal',
     'decimal converter',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Fraction to Decimal Converter',
-    description: 'Convert 200+ popular fractions to decimals with detailed step-by-step solutions.',
+    description: 'Convert 200+ fractions to decimals with step-by-step solutions. Free math help for students.',
     type: 'website',
     url: 'https://www.thetutorbridge.com/fraction-to-decimal',
   },
