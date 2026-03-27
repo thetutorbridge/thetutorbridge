@@ -27,6 +27,8 @@ import {
   CTASection,
   RoadmapStage
 } from '@/components/roadmap/RoadmapComponents';
+import { RelatedCalculators } from '@/components/RelatedCalculators';
+import { getRoadmapRelatedCalculators } from '@/lib/content-relationships';
 
 // Roadmap Stages Data
 const roadmapStages: RoadmapStage[] = [
@@ -420,6 +422,11 @@ export default function FrontendDeveloperRoadmapPage() {
         <FAQSection faqs={faqs} />
 
         <RelatedRoadmapsSection roadmaps={relatedRoadmaps} />
+
+        {/* Related Calculators */}
+        <div className="bg-gray-50">
+          <RelatedCalculators calculators={getRoadmapRelatedCalculators('frontend-developer')} variant="compact" />
+        </div>
 
         <CTASection
           title="Ready to Start Your Frontend Journey?"

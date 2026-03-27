@@ -15,6 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { RelatedCalculators } from '@/components/RelatedCalculators';
+import { getRelatedCalculators } from '@/lib/content-relationships';
 
 interface CalculationResult {
   question: string;
@@ -936,6 +938,9 @@ export default function PercentageCalculator() {
           </div>
         </div>
       </div>
+
+      {/* Related Calculators Section */}
+      <RelatedCalculators calculators={getRelatedCalculators('percentage-calculator')} />
 
       {/* Related Articles Section */}
       <section className="bg-white py-12 px-6 border-t border-gray-200">

@@ -10,6 +10,8 @@ import { Navigation } from "@/components/navigation"
 import { getBlogPostBySlug, getAllBlogSlugs, getRelatedPosts, type BlogPost as MarkdownBlogPost } from "@/lib/markdown-blog"
 import { BlogPostContent } from "./BlogPostContent"
 import '@/components/blog/editor-styles.css'
+import { RelatedCalculators } from "@/components/RelatedCalculators"
+import { getBlogRelatedCalculators } from "@/lib/content-relationships"
 
 // Enable ISR - revalidate every hour for SEO stability
 // Shorter intervals can confuse search engines with constantly changing cache headers
@@ -354,6 +356,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             </div>
           )}
+
+          {/* Related Calculators Section */}
+          <div className="mt-12">
+            <RelatedCalculators calculators={getBlogRelatedCalculators(slug)} variant="compact" />
+          </div>
 
           <div className="mt-12 bg-gradient-to-r from-brand-blue to-brand-teal text-white rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Excel in Your Studies?</h2>

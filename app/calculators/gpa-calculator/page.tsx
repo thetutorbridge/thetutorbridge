@@ -25,6 +25,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { RelatedCalculators } from '@/components/RelatedCalculators';
+import { getRelatedCalculators } from '@/lib/content-relationships';
 
 // Grade point scales
 const gradeScales = {
@@ -1134,6 +1136,9 @@ export default function GPACalculatorPage() {
 
         </div>
       </section>
+
+      {/* Related Calculators Section */}
+      <RelatedCalculators calculators={getRelatedCalculators('gpa-calculator')} />
 
       {/* Related Articles Section */}
       <section className="bg-white py-12 px-6 border-t border-gray-200">
