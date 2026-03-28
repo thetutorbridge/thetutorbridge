@@ -6,6 +6,7 @@ import { getAllPercentageSlugs } from '@/lib/percentage-data';
 import { getAllConversionSlugs } from '@/lib/conversions-data';
 import { getAllGeometrySlugs } from '@/lib/geometry-data';
 import { getAllFormulaSlugs } from '@/lib/formulas-data';
+import { getAllWordProblemSlugs } from '@/lib/word-problems-data';
 
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
@@ -595,6 +596,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Word Problems Solver - Main page
+  const wordProblemsPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/word-problems`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  // All individual word problem pages
+  const wordProblemSlugs = getAllWordProblemSlugs();
+  const individualWordProblems: MetadataRoute.Sitemap = wordProblemSlugs.map(slug => ({
+    url: `${baseUrl}/word-problems/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Combine all pages
   return [
     ...staticPages,
@@ -622,5 +642,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...individualGeometry,
     ...formulasPages,
     ...individualFormulas,
+    ...wordProblemsPages,
+    ...individualWordProblems,
   ];
 }
