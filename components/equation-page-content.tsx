@@ -14,34 +14,84 @@ interface EquationPageContentProps {
 }
 
 export function EquationPageContent({ equationData, equationSlug }: EquationPageContentProps) {
+  // Article Schema
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `Solve ${equationData.equationPlain} (Step-by-Step Solution)`,
+    description: `Learn how to solve ${equationData.equationPlain} with our step-by-step guide.`,
+    author: {
+      '@type': 'Organization',
+      name: 'The Tutor Bridge',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Tutor Bridge',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.thetutorbridge.com/TheTutorBridge Logo New.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.thetutorbridge.com/solve/${equationSlug}`,
+    },
+  };
+
+  // HowTo Schema
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Solve ${equationData.equationPlain}`,
+    description: `Step-by-step guide to solve the equation ${equationData.equationPlain}`,
+    step: equationData.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.explanation,
+      text: `${step.equation}: ${step.explanation}`,
+    })),
+    totalTime: 'PT3M',
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.thetutorbridge.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Equation Solver',
+        item: 'https://www.thetutorbridge.com/solve',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: equationData.equationPlain,
+        item: `https://www.thetutorbridge.com/solve/${equationSlug}`,
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: `Solve ${equationData.equationPlain} (Step-by-Step Solution)`,
-            description: `Learn how to solve ${equationData.equationPlain} with our step-by-step guide.`,
-            author: {
-              '@type': 'Organization',
-              name: 'The Tutor Bridge',
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'The Tutor Bridge',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.thetutorbridge.com/TheTutorBridge Logo New.png',
-              },
-            },
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': `https://www.thetutorbridge.com/solve/${equationSlug}`,
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navigation />
 

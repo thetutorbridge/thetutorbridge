@@ -14,34 +14,84 @@ interface FractionPageContentProps {
 }
 
 export function FractionPageContent({ fractionData, fractionSlug }: FractionPageContentProps) {
+  // Article Schema
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `${fractionData.fraction} as a Decimal - Conversion & Examples`,
+    description: `Learn how to convert ${fractionData.fraction} to decimal form: ${fractionData.decimal}`,
+    author: {
+      '@type': 'Organization',
+      name: 'The Tutor Bridge',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Tutor Bridge',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.thetutorbridge.com/TheTutorBridge Logo New.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.thetutorbridge.com/fraction-to-decimal/${fractionSlug}`,
+    },
+  };
+
+  // HowTo Schema
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Convert ${fractionData.fraction} to Decimal`,
+    description: `Step-by-step guide to convert the fraction ${fractionData.fraction} to decimal form`,
+    step: fractionData.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.description,
+      text: step.calculation || step.result || step.description,
+    })),
+    totalTime: 'PT2M',
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.thetutorbridge.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Fraction to Decimal',
+        item: 'https://www.thetutorbridge.com/fraction-to-decimal',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: fractionData.fraction,
+        item: `https://www.thetutorbridge.com/fraction-to-decimal/${fractionSlug}`,
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: `${fractionData.fraction} as a Decimal - Conversion & Examples`,
-            description: `Learn how to convert ${fractionData.fraction} to decimal form: ${fractionData.decimal}`,
-            author: {
-              '@type': 'Organization',
-              name: 'The Tutor Bridge',
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'The Tutor Bridge',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.thetutorbridge.com/TheTutorBridge Logo New.png',
-              },
-            },
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': `https://www.thetutorbridge.com/fraction-to-decimal/${fractionSlug}`,
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navigation />
 

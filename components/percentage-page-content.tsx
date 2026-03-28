@@ -11,7 +11,8 @@ interface PercentagePageContentProps {
 }
 
 export default function PercentagePageContent({ data }: PercentagePageContentProps) {
-  const jsonLd = {
+  // Article Schema
+  const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: `What is ${data.percent}% of ${data.of}?`,
@@ -30,11 +31,65 @@ export default function PercentagePageContent({ data }: PercentagePageContentPro
     },
   };
 
+  // HowTo Schema for SEO
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Calculate ${data.percent}% of ${data.of}`,
+    description: `Step-by-step guide to calculate ${data.percent} percent of ${data.of}`,
+    step: data.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.description,
+      text: step.calculation || step.result || step.description,
+    })),
+    totalTime: 'PT2M',
+    tool: [{
+      '@type': 'HowToTool',
+      name: 'Calculator (optional)',
+    }],
+    supply: [],
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.thetutorbridge.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Percentage Calculator',
+        item: 'https://www.thetutorbridge.com/percentage',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: `${data.percent}% of ${data.of}`,
+        item: `https://www.thetutorbridge.com/percentage/${data.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Navigation />
 
