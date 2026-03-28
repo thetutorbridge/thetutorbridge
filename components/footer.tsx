@@ -89,7 +89,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/tools" className="hover:text-white transition-colors font-semibold">
-                  View All 24 Tools →
+                  View All 27 Tools →
                 </Link>
               </li>
             </ul>
@@ -120,6 +120,11 @@ export function Footer() {
               <li>
                 <Link href="/tools/md5-generator" className="hover:text-white transition-colors">
                   Hash Generator
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/uuid-generator" className="hover:text-white transition-colors">
+                  UUID Generator
                 </Link>
               </li>
             </ul>

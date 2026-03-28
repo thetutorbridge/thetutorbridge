@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home, Clock, Type, Lock, Dices, CaseSensitive, ArrowRight, Zap, Shield, Sparkles, Calendar, DollarSign, Thermometer, FileText, Ruler, User, Hash, Code, Palette, Globe, Repeat, ArrowLeftRight, FileJson } from 'lucide-react';
+import { Home, Clock, Type, Lock, Dices, CaseSensitive, ArrowRight, Zap, Shield, Sparkles, Calendar, DollarSign, Thermometer, FileText, Ruler, User, Hash, Code, Palette, Globe, Repeat, ArrowLeftRight, FileJson, Key, Link as LinkIcon, Code2 } from 'lucide-react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 
@@ -220,10 +220,37 @@ const tools = [
     traffic: '1M+',
     features: ['Event Countdown', 'Quick Presets', 'Days/Hours/Min/Sec', 'Custom Title'],
   },
+  {
+    name: 'UUID Generator',
+    slug: 'uuid-generator',
+    icon: Key,
+    description: 'Generate unique UUIDs (GUIDs) instantly. Version 4 (random) or Version 1 (time-based) support.',
+    color: 'from-indigo-500 to-indigo-600',
+    traffic: '1.5M+',
+    features: ['UUID v4 & v1', 'Bulk Generation', 'Copy Individual', '100% Unique'],
+  },
+  {
+    name: 'URL Encoder/Decoder',
+    slug: 'url-encoder-decoder',
+    icon: LinkIcon,
+    description: 'Encode and decode URLs instantly. Convert URLs to percent-encoded format or decode them back.',
+    color: 'from-cyan-500 to-cyan-600',
+    traffic: '1M+',
+    features: ['Encode & Decode', 'Auto-convert', 'Load Sample', 'Copy Output'],
+  },
+  {
+    name: 'HTML Encoder/Decoder',
+    slug: 'html-encoder-decoder',
+    icon: Code2,
+    description: 'Encode and decode HTML entities instantly. Prevent XSS attacks and display code safely.',
+    color: 'from-emerald-500 to-emerald-600',
+    traffic: '1M+',
+    features: ['Encode & Decode', 'XSS Prevention', 'Auto-convert', 'Entity Reference'],
+  },
 ];
 
 export default function ToolsPage() {
-  const totalTraffic = '55M+';
+  const totalTraffic = '58M+';
 
   return (
     <div className="flex flex-col min-h-screen">
