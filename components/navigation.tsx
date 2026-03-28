@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, ChevronDown, FileText, GraduationCap, Calculator, BookOpen, Map } from "lucide-react"
+import { Menu, X, ChevronDown, FileText, GraduationCap, Calculator, BookOpen, Map, Wrench, Shapes, ArrowRightLeft, Variable, Percent, Divide, FlaskConical, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Navigation() {
@@ -111,12 +111,14 @@ export function Navigation() {
           <div className="container mx-auto px-4">
             <div className="flex justify-center">
               <div
-                className="bg-white rounded-lg shadow-xl border border-gray-100 p-3 min-w-[240px]"
+                className="bg-white rounded-lg shadow-xl border border-gray-100 p-3 min-w-[280px]"
                 style={{
                   marginLeft: activeDesktopDropdown === 'homework' ? '-200px' :
                               activeDesktopDropdown === 'tutoring' ? '-80px' :
-                              '40px',
-                  boxShadow: '0 10px 40px rgba(0,0,0,0.12)'
+                              '-40px',
+                  boxShadow: '0 10px 40px rgba(0,0,0,0.12)',
+                  maxHeight: '80vh',
+                  overflowY: 'auto'
                 }}
               >
                 {activeDesktopDropdown === 'homework' && (
@@ -179,12 +181,52 @@ export function Navigation() {
 
                 {activeDesktopDropdown === 'resources' && (
                   <>
+                    <Link href="/tools" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
+                      <Wrench className="w-5 h-5 text-[#2BAE66]" />
+                      <div>
+                        <div className="font-medium text-gray-900">Tools</div>
+                        <div className="text-xs text-gray-500">Timer, Password Gen & More</div>
+                      </div>
+                    </Link>
                     <Link href="/calculators" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
                       <Calculator className="w-5 h-5 text-[#1A3D7C]" />
-                      <span className="text-gray-700">Calculators</span>
+                      <div>
+                        <div className="font-medium text-gray-900">Calculators</div>
+                        <div className="text-xs text-gray-500">200+ Free Calculators</div>
+                      </div>
                     </Link>
+                    <div className="border-t my-2"></div>
+                    <Link href="/geometry" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
+                      <Shapes className="w-5 h-5 text-purple-600" />
+                      <span className="text-gray-700">Geometry Calculator</span>
+                    </Link>
+                    <Link href="/convert" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
+                      <ArrowRightLeft className="w-5 h-5 text-blue-600" />
+                      <span className="text-gray-700">Unit Converter</span>
+                    </Link>
+                    <Link href="/solve" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
+                      <Variable className="w-5 h-5 text-orange-600" />
+                      <span className="text-gray-700">Equation Solver</span>
+                    </Link>
+                    <Link href="/percentage" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
+                      <Percent className="w-5 h-5 text-green-600" />
+                      <span className="text-gray-700">Percentage Calculator</span>
+                    </Link>
+                    <Link href="/fraction-to-decimal" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
+                      <Divide className="w-5 h-5 text-pink-600" />
+                      <span className="text-gray-700">Fraction to Decimal</span>
+                    </Link>
+                    <Link href="/formulas" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
+                      <FlaskConical className="w-5 h-5 text-teal-600" />
+                      <span className="text-gray-700">Formulas Database</span>
+                    </Link>
+                    <Link href="/word-problems" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
+                      <MessageSquare className="w-5 h-5 text-indigo-600" />
+                      <span className="text-gray-700">Word Problems</span>
+                    </Link>
+                    <div className="border-t my-2"></div>
                     <Link href="/roadmap" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
-                      <Map className="w-5 h-5 text-[#2BAE66]" />
+                      <Map className="w-5 h-5 text-[#1A3D7C]" />
                       <span className="text-gray-700">Career Roadmaps</span>
                     </Link>
                     <Link href="/study-resources" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setActiveDesktopDropdown(null)}>
@@ -281,17 +323,42 @@ export function Navigation() {
               </button>
               {openDropdown === 'resources' && (
                 <div className="pl-4 space-y-1 pb-2">
-                  <Link href="/calculators" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
-                    Calculators
+                  <Link href="/tools" className="block py-2 text-[#2BAE66] font-medium" onClick={() => setIsOpen(false)}>
+                    🛠️ Tools
                   </Link>
+                  <Link href="/calculators" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
+                    🧮 Calculators (200+)
+                  </Link>
+                  <Link href="/geometry" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
+                    📐 Geometry Calculator
+                  </Link>
+                  <Link href="/convert" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
+                    🔄 Unit Converter
+                  </Link>
+                  <Link href="/solve" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
+                    ✏️ Equation Solver
+                  </Link>
+                  <Link href="/percentage" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
+                    📊 Percentage Calculator
+                  </Link>
+                  <Link href="/fraction-to-decimal" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
+                    ➗ Fraction to Decimal
+                  </Link>
+                  <Link href="/formulas" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
+                    🧪 Formulas Database
+                  </Link>
+                  <Link href="/word-problems" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
+                    💬 Word Problems
+                  </Link>
+                  <div className="border-t my-2"></div>
                   <Link href="/roadmap" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
-                    Career Roadmaps
+                    🗺️ Career Roadmaps
                   </Link>
                   <Link href="/study-resources" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
-                    Study Resources
+                    📚 Study Resources
                   </Link>
                   <Link href="/blog" className="block py-2 text-gray-600" onClick={() => setIsOpen(false)}>
-                    Blog
+                    📝 Blog
                   </Link>
                 </div>
               )}
