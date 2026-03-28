@@ -3,6 +3,7 @@ import { getAllBlogPosts } from '@/lib/markdown-blog';
 import { getAllEquationSlugs } from '@/lib/equations-data';
 import { getAllFractionSlugs } from '@/lib/fractions-data';
 import { getAllPercentageSlugs } from '@/lib/percentage-data';
+import { getAllConversionSlugs } from '@/lib/conversions-data';
 
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
@@ -535,6 +536,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Unit Converter - Main page
+  const conversionPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/convert`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  // All individual unit conversion pages
+  const conversionSlugs = getAllConversionSlugs();
+  const individualConversions: MetadataRoute.Sitemap = conversionSlugs.map(slug => ({
+    url: `${baseUrl}/convert/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Combine all pages
   return [
     ...staticPages,
@@ -556,5 +576,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...individualFractions,
     ...percentagePages,
     ...individualPercentages,
+    ...conversionPages,
+    ...individualConversions,
   ];
 }
