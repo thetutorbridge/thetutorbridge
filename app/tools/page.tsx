@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home, Clock, Type, Lock, Dices, CaseSensitive, ArrowRight, Zap, Shield, Sparkles } from 'lucide-react';
+import { Home, Clock, Type, Lock, Dices, CaseSensitive, ArrowRight, Zap, Shield, Sparkles, Calendar, DollarSign, Thermometer, FileText, Ruler, User, Hash, Code } from 'lucide-react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 
@@ -49,10 +49,100 @@ const tools = [
     traffic: '500k+',
     features: ['7 Case Types', 'Real-time Preview', 'Copy or Apply', 'Instant Results'],
   },
+  {
+    name: 'Age Calculator',
+    slug: 'age-calculator',
+    icon: Calendar,
+    description: 'Calculate your exact age in years, months, days, weeks, and hours. Find days until next birthday. Perfect for documents and age verification.',
+    color: 'from-teal-500 to-teal-600',
+    traffic: '3M+',
+    features: ['Exact Age', 'Birthday Countdown', 'Total Days/Weeks', 'Detailed Breakdown'],
+  },
+  {
+    name: 'Date Calculator',
+    slug: 'date-calculator',
+    icon: Calendar,
+    description: 'Add or subtract days, weeks, months, and years from any date. Quick presets for common calculations. Perfect for project planning.',
+    color: 'from-indigo-500 to-indigo-600',
+    traffic: '2.5M+',
+    features: ['Add/Subtract Time', 'Quick Presets', 'Custom Calculations', 'Future & Past Dates'],
+  },
+  {
+    name: 'Days Between Dates',
+    slug: 'days-between-dates',
+    icon: Calendar,
+    description: 'Calculate the exact number of days, weeks, and months between two dates. Includes weekday and weekend analysis.',
+    color: 'from-cyan-500 to-cyan-600',
+    traffic: '2M+',
+    features: ['Date Difference', 'Weekday Count', 'Multiple Units', 'Detailed Stats'],
+  },
+  {
+    name: 'Tip Calculator',
+    slug: 'tip-calculator',
+    icon: DollarSign,
+    description: 'Calculate restaurant tips and split bills easily. Quick tip percentages (10-25%) or custom amounts. Perfect for dining out.',
+    color: 'from-emerald-500 to-emerald-600',
+    traffic: '1.5M+',
+    features: ['Tip Percentages', 'Bill Splitting', 'Custom Amounts', 'Total Summary'],
+  },
+  {
+    name: 'Temperature Converter',
+    slug: 'temperature-converter',
+    icon: Thermometer,
+    description: 'Convert between Celsius, Fahrenheit, and Kelvin instantly. Includes common temperature references and conversion formulas.',
+    color: 'from-red-500 to-red-600',
+    traffic: '1.5M+',
+    features: ['3 Temperature Scales', 'Common Temps', 'Conversion Formulas', 'Instant Conversion'],
+  },
+  {
+    name: 'Word Counter',
+    slug: 'word-counter',
+    icon: FileText,
+    description: 'Count words, characters, sentences, and paragraphs instantly. Includes reading time estimates and common word count limits.',
+    color: 'from-lime-500 to-lime-600',
+    traffic: '1.5M+',
+    features: ['Word Count', 'Character Count', 'Reading Time', 'Text Statistics'],
+  },
+  {
+    name: 'Length Converter',
+    slug: 'length-converter',
+    icon: Ruler,
+    description: 'Convert between metric and imperial length units. Includes mm, cm, m, km, inches, feet, yards, and miles.',
+    color: 'from-yellow-500 to-yellow-600',
+    traffic: '1.2M+',
+    features: ['8 Length Units', 'Metric & Imperial', 'Common Conversions', 'Instant Results'],
+  },
+  {
+    name: 'Random Name Generator',
+    slug: 'random-name-generator',
+    icon: User,
+    description: 'Generate realistic random names for characters, stories, games, and testing. Choose male, female, or both.',
+    color: 'from-fuchsia-500 to-fuchsia-600',
+    traffic: '1.2M+',
+    features: ['Realistic Names', 'Gender Options', 'Bulk Generation', 'Copy Individual'],
+  },
+  {
+    name: 'MD5 Hash Generator',
+    slug: 'md5-generator',
+    icon: Hash,
+    description: 'Generate SHA-256 hashes from any text. 100% secure - all hashing done locally in your browser.',
+    color: 'from-slate-500 to-slate-600',
+    traffic: '1.2M+',
+    features: ['SHA-256 Hash', 'Client-Side', 'Instant Results', '100% Secure'],
+  },
+  {
+    name: 'Base64 Encoder/Decoder',
+    slug: 'base64-encoder-decoder',
+    icon: Code,
+    description: 'Encode and decode Base64 text instantly. Perfect for developers, APIs, and data URIs. All conversion done locally.',
+    color: 'from-amber-500 to-amber-600',
+    traffic: '1.7M+',
+    features: ['Encode & Decode', 'Switch Mode', 'Error Handling', '100% Private'],
+  },
 ];
 
 export default function ToolsPage() {
-  const totalTraffic = '27M+';
+  const totalTraffic = '45M+';
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -174,7 +264,7 @@ export default function ToolsPage() {
           <div className="mt-16 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border-2 border-yellow-200 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">More Tools Coming Soon!</h2>
             <p className="text-xl text-gray-700 mb-4">
-              We're building 50+ more free tools including Age Calculator, Color Picker, Date Calculator, and many more.
+              We're building 40+ more free tools including Color Picker, World Clock, QR Code Generator, and many more.
             </p>
             <p className="text-gray-600">
               Bookmark this page to stay updated with new tool releases.
