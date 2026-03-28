@@ -4,6 +4,7 @@ import { getAllEquationSlugs } from '@/lib/equations-data';
 import { getAllFractionSlugs } from '@/lib/fractions-data';
 import { getAllPercentageSlugs } from '@/lib/percentage-data';
 import { getAllConversionSlugs } from '@/lib/conversions-data';
+import { getAllGeometrySlugs } from '@/lib/geometry-data';
 
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
@@ -555,6 +556,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Geometry Calculator - Main page
+  const geometryPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/geometry`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  // All individual geometry calculation pages
+  const geometrySlugs = getAllGeometrySlugs();
+  const individualGeometry: MetadataRoute.Sitemap = geometrySlugs.map(slug => ({
+    url: `${baseUrl}/geometry/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Combine all pages
   return [
     ...staticPages,
@@ -578,5 +598,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...individualPercentages,
     ...conversionPages,
     ...individualConversions,
+    ...geometryPages,
+    ...individualGeometry,
   ];
 }
