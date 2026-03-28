@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, BookOpen, Calculator, Shapes, TrendingUp, BarChart3, Atom, Flask, ArrowRight } from 'lucide-react';
+import { Home, BookOpen, Calculator, Shapes, TrendingUp, BarChart3, Atom, ArrowRight } from 'lucide-react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { getAllFormulas, getFormulasByCategory } from '@/lib/formulas-data';
@@ -81,7 +81,7 @@ export default function FormulasMainPage() {
     },
     {
       name: 'Chemistry',
-      icon: Flask,
+      icon: Atom,
       color: 'from-pink-500 to-rose-500',
       bgColor: 'bg-pink-50',
       borderColor: 'border-pink-200',
