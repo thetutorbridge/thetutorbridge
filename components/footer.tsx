@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="container px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-5 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <Image
@@ -55,6 +55,71 @@ export function Footer() {
               <li>
                 <Link href="/blog" className="hover:text-white transition-colors">
                   Blog
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold mb-4">Popular Tools</h4>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li>
+                <Link href="/tools/timer" className="hover:text-white transition-colors">
+                  Timer & Stopwatch
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/password-generator" className="hover:text-white transition-colors">
+                  Password Generator
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/character-counter" className="hover:text-white transition-colors">
+                  Character Counter
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/age-calculator" className="hover:text-white transition-colors">
+                  Age Calculator
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/color-picker" className="hover:text-white transition-colors">
+                  Color Picker
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools" className="hover:text-white transition-colors font-semibold">
+                  View All 24 Tools →
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold mb-4">More Tools</h4>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li>
+                <Link href="/tools/world-clock" className="hover:text-white transition-colors">
+                  World Clock
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/json-formatter" className="hover:text-white transition-colors">
+                  JSON Formatter
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/countdown-timer" className="hover:text-white transition-colors">
+                  Countdown Timer
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/base64-encoder-decoder" className="hover:text-white transition-colors">
+                  Base64 Encoder
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools/md5-generator" className="hover:text-white transition-colors">
+                  Hash Generator
                 </Link>
               </li>
             </ul>

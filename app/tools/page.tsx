@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home, Clock, Type, Lock, Dices, CaseSensitive, ArrowRight, Zap, Shield, Sparkles, Calendar, DollarSign, Thermometer, FileText, Ruler, User, Hash, Code } from 'lucide-react';
+import { Home, Clock, Type, Lock, Dices, CaseSensitive, ArrowRight, Zap, Shield, Sparkles, Calendar, DollarSign, Thermometer, FileText, Ruler, User, Hash, Code, Palette, Globe, Repeat, ArrowLeftRight, FileJson } from 'lucide-react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 
@@ -139,10 +139,91 @@ const tools = [
     traffic: '1.7M+',
     features: ['Encode & Decode', 'Switch Mode', 'Error Handling', '100% Private'],
   },
+  {
+    name: 'Color Picker',
+    slug: 'color-picker',
+    icon: Palette,
+    description: 'Pick colors and get HEX, RGB, and HSL codes instantly. Includes 21 preset colors and custom color selection.',
+    color: 'from-rose-500 to-rose-600',
+    traffic: '2M+',
+    features: ['HEX/RGB/HSL Codes', 'Color Preview', '21 Presets', 'Copy to Clipboard'],
+  },
+  {
+    name: 'World Clock',
+    slug: 'world-clock',
+    icon: Globe,
+    description: 'View current time in 12 major cities worldwide. Real-time updates with time zones and country flags.',
+    color: 'from-sky-500 to-sky-600',
+    traffic: '1.5M+',
+    features: ['12 World Cities', 'Real-time Updates', 'Time Zones', 'Country Flags'],
+  },
+  {
+    name: 'Time Zone Converter',
+    slug: 'time-zone-converter',
+    icon: Clock,
+    description: 'Convert time between different time zones worldwide. Perfect for international meetings and travel planning.',
+    color: 'from-violet-500 to-violet-600',
+    traffic: '1.2M+',
+    features: ['12 Time Zones', 'Instant Conversion', 'Meeting Scheduler', 'Date Support'],
+  },
+  {
+    name: 'RGB/HEX Converter',
+    slug: 'rgb-hex-converter',
+    icon: Palette,
+    description: 'Convert between RGB and HEX color codes instantly. Live color preview and bidirectional conversion.',
+    color: 'from-fuchsia-500 to-fuchsia-600',
+    traffic: '1.5M+',
+    features: ['RGB to HEX', 'HEX to RGB', 'Color Preview', 'Copy Codes'],
+  },
+  {
+    name: 'Lorem Ipsum Generator',
+    slug: 'lorem-ipsum-generator',
+    icon: FileText,
+    description: 'Generate placeholder text in paragraphs, sentences, or words. Perfect for web design and mockups.',
+    color: 'from-stone-500 to-stone-600',
+    traffic: '800k+',
+    features: ['Paragraphs/Words/Sentences', 'Custom Count', 'Copy Text', 'Instant Generation'],
+  },
+  {
+    name: 'Text Repeater',
+    slug: 'text-repeater',
+    icon: Repeat,
+    description: 'Repeat any text multiple times with custom separators. Perfect for testing and formatting.',
+    color: 'from-red-500 to-red-600',
+    traffic: '600k+',
+    features: ['Custom Separators', 'Count Control', 'Line Breaks', 'Copy Output'],
+  },
+  {
+    name: 'Reverse Text',
+    slug: 'reverse-text',
+    icon: ArrowLeftRight,
+    description: 'Reverse text character by character, reverse word order, or reverse lines instantly.',
+    color: 'from-orange-500 to-orange-600',
+    traffic: '500k+',
+    features: ['3 Reverse Modes', 'Characters/Words/Lines', 'Swap Text', 'Auto-reverse'],
+  },
+  {
+    name: 'JSON Formatter',
+    slug: 'json-formatter',
+    icon: FileJson,
+    description: 'Format, minify, and validate JSON data instantly. Perfect for developers and API testing.',
+    color: 'from-green-500 to-green-600',
+    traffic: '1.2M+',
+    features: ['Format JSON', 'Minify JSON', 'Validate JSON', 'Load Sample'],
+  },
+  {
+    name: 'Countdown Timer',
+    slug: 'countdown-timer',
+    icon: Clock,
+    description: 'Create countdown timers for events, deadlines, and special occasions. Quick set presets included.',
+    color: 'from-blue-500 to-blue-600',
+    traffic: '1M+',
+    features: ['Event Countdown', 'Quick Presets', 'Days/Hours/Min/Sec', 'Custom Title'],
+  },
 ];
 
 export default function ToolsPage() {
-  const totalTraffic = '45M+';
+  const totalTraffic = '55M+';
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -264,7 +345,7 @@ export default function ToolsPage() {
           <div className="mt-16 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border-2 border-yellow-200 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">More Tools Coming Soon!</h2>
             <p className="text-xl text-gray-700 mb-4">
-              We're building 40+ more free tools including Color Picker, World Clock, QR Code Generator, and many more.
+              We're building 30+ more free tools including QR Code Generator, Image Converter, Unit Converter, and many more.
             </p>
             <p className="text-gray-600">
               Bookmark this page to stay updated with new tool releases.
