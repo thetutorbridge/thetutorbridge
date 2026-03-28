@@ -5,6 +5,7 @@ import { getAllFractionSlugs } from '@/lib/fractions-data';
 import { getAllPercentageSlugs } from '@/lib/percentage-data';
 import { getAllConversionSlugs } from '@/lib/conversions-data';
 import { getAllGeometrySlugs } from '@/lib/geometry-data';
+import { getAllFormulaSlugs } from '@/lib/formulas-data';
 
 // Revalidate sitemap every 60 seconds to pick up new blog posts automatically
 export const revalidate = 60;
@@ -575,6 +576,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Math Formulas Database - Main page
+  const formulasPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/formulas`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  // All individual formula pages
+  const formulaSlugs = getAllFormulaSlugs();
+  const individualFormulas: MetadataRoute.Sitemap = formulaSlugs.map(slug => ({
+    url: `${baseUrl}/formulas/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Combine all pages
   return [
     ...staticPages,
@@ -600,5 +620,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...individualConversions,
     ...geometryPages,
     ...individualGeometry,
+    ...formulasPages,
+    ...individualFormulas,
   ];
 }
