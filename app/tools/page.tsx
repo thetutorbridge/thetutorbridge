@@ -517,7 +517,6 @@ const tools = [
     traffic: '500k+',
     features: ['Custom Dice', 'Multiple Rolls', 'Quick Presets', 'Total Calculation'],
   },
-];
   {
     name: 'Text Statistics',
     slug: 'text-statistics',
@@ -743,6 +742,7 @@ const tools = [
     traffic: '400k+',
     features: ['Remove Spaces', 'Trim Text', 'Clean Format', 'Copy Output'],
   },
+];
 
 export default function ToolsPage() {
   const totalTraffic = '108M+';
