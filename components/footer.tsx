@@ -89,7 +89,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/tools" className="hover:text-white transition-colors font-semibold">
-                  View All 27 Tools →
+                  View All 57 Tools →
                 </Link>
               </li>
             </ul>
@@ -98,33 +98,33 @@ export function Footer() {
             <h4 className="font-bold mb-4">More Tools</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <Link href="/tools/world-clock" className="hover:text-white transition-colors">
-                  World Clock
+                <Link href="/tools/qr-code-generator" className="hover:text-white transition-colors">
+                  QR Code Generator
                 </Link>
               </li>
               <li>
-                <Link href="/tools/json-formatter" className="hover:text-white transition-colors">
-                  JSON Formatter
+                <Link href="/tools/bmi-calculator" className="hover:text-white transition-colors">
+                  BMI Calculator
                 </Link>
               </li>
               <li>
-                <Link href="/tools/countdown-timer" className="hover:text-white transition-colors">
-                  Countdown Timer
+                <Link href="/tools/percentage-calculator" className="hover:text-white transition-colors">
+                  Percentage Calculator
                 </Link>
               </li>
               <li>
-                <Link href="/tools/base64-encoder-decoder" className="hover:text-white transition-colors">
-                  Base64 Encoder
+                <Link href="/tools/unit-converter" className="hover:text-white transition-colors">
+                  Unit Converter
                 </Link>
               </li>
               <li>
-                <Link href="/tools/md5-generator" className="hover:text-white transition-colors">
-                  Hash Generator
+                <Link href="/tools/invoice-generator" className="hover:text-white transition-colors">
+                  Invoice Generator
                 </Link>
               </li>
               <li>
-                <Link href="/tools/uuid-generator" className="hover:text-white transition-colors">
-                  UUID Generator
+                <Link href="/tools/resume-builder" className="hover:text-white transition-colors">
+                  Resume Builder
                 </Link>
               </li>
             </ul>
