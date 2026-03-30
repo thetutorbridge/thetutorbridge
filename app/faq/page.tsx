@@ -1,39 +1,39 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { Navigation } from "@/components/navigation"
+import { ComprehensiveFooter } from "@/components/comprehensive-footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   ChevronRight,
   HelpCircle,
-  FileText,
-  GraduationCap,
-  DollarSign,
+  Calculator,
+  Brain,
+  BookOpen,
+  Code2,
+  Sparkles,
   Shield,
-  Clock,
-  Users,
-  Calendar,
   Mail
 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FAQ | Frequently Asked Questions | The Tutor Bridge",
-  description: "Get answers to common questions about The Tutor Bridge homework help and tutoring services. Pricing, process, tutors, scheduling, and more.",
+  description: "Get answers to common questions about The Tutor Bridge learning platform. Learn about our free tools, calculators, brain games, study resources, and more.",
   keywords: [
-    "tutoring FAQ",
-    "homework help questions",
-    "online tutoring FAQ",
-    "tutoring questions answered",
-    "tutoring help",
-    "homework assistance FAQ"
+    "learning platform FAQ",
+    "digital tutor questions",
+    "free learning tools",
+    "online tools FAQ",
+    "brain games questions",
+    "calculator FAQ",
+    "study resources help"
   ],
   alternates: {
     canonical: "https://www.thetutorbridge.com/faq",
   },
   openGraph: {
     title: "FAQ | Frequently Asked Questions",
-    description: "Common questions about our homework help and tutoring services answered.",
+    description: "Common questions about our free learning platform answered.",
     url: "https://www.thetutorbridge.com/faq",
     siteName: "The Tutor Bridge",
     type: "website",
@@ -46,150 +46,154 @@ const faqs = {
     icon: HelpCircle,
     questions: [
       {
-        q: "What grades and subjects do you cover?",
-        a: "We provide homework help and tutoring for students in grades 6-12 (middle school and high school) in Math, Science, and English. This includes all levels from Pre-Algebra to AP Calculus, General Science to AP Physics/Chemistry/Biology, and basic English to AP Literature."
+        q: "What is The Tutor Bridge?",
+        a: "The Tutor Bridge is your 24/7 digital tutor—a free learning platform with 100+ interactive tools, calculators, brain games, study resources, and career roadmaps. We help learners of all ages master new skills through self-paced, interactive learning. No signup required, completely free forever."
       },
       {
-        q: "Are your tutors qualified?",
-        a: "Yes! All our tutors are U.S.-based, certified educators with teaching credentials or advanced degrees in their subject areas. They undergo a rigorous vetting process including background checks, subject assessments, and teaching demonstrations. We maintain a 4.8+ average rating among our tutoring staff."
+        q: "Is The Tutor Bridge really free?",
+        a: "Yes, 100% free. No hidden costs, no premium features, no paywalls, no trials that expire. Every single tool, game, calculator, and resource is completely free to use, forever. We believe education should be accessible to everyone."
       },
       {
-        q: "What's the difference between homework help and tutoring?",
-        a: "Homework help is on-demand, pay-per-task assistance for specific assignments. Tutoring is ongoing, scheduled 1-on-1 sessions with the same tutor each week, designed for long-term improvement and grade boosting. Many families start with homework help and upgrade to tutoring when they see the value."
+        q: "Do I need to create an account?",
+        a: "Nope! No signup, no email, no password required. Just visit our site, click on any tool or game, and start learning immediately. Your digital tutor is ready 24/7 with zero barriers."
       },
       {
-        q: "How do online sessions work?",
-        a: "Sessions are conducted via Zoom video call with screen sharing and an interactive whiteboard. You just need a computer, tablet, or phone with a camera and internet connection. We provide a virtual learning environment that mimics in-person tutoring."
+        q: "Who is this platform for?",
+        a: "Everyone! Students, professionals, self-learners, developers, job seekers—anyone who wants to learn or improve their skills. While we started with students in mind, our tools serve learners of all ages and backgrounds."
       },
       {
-        q: "Is this considered cheating?",
-        a: "No. Our homework help provides step-by-step explanations designed to teach concepts, not just provide answers. We follow academic integrity guidelines and our goal is to help students understand material so they can succeed on their own. Tutoring sessions are focused on teaching and skill-building."
+        q: "What makes The Tutor Bridge different from other learning platforms?",
+        a: "We focus on interactive, hands-on learning with instant feedback. No video lectures to sit through, no courses to enroll in. Just tools you can use immediately to practice and improve. Plus, everything is 100% free with no signup required—truly barrier-free learning."
+      },
+      {
+        q: "How often do you add new tools?",
+        a: "We constantly add new tools, games, and resources based on user needs and feedback. Follow us on LinkedIn to stay updated on new releases!"
       }
     ]
   },
-  homeworkHelp: {
-    title: "Homework Help",
-    icon: FileText,
+  toolsAndCalculators: {
+    title: "Tools & Calculators",
+    icon: Calculator,
     questions: [
       {
-        q: "How do I submit homework?",
-        a: "Simply visit our Submit Homework page, fill out the form with your assignment details, upload any files or photos, set your deadline, and submit. You'll receive a custom quote within 2 hours."
+        q: "What types of calculators do you offer?",
+        a: "We have 100+ calculators covering Math (GPA, Percentage, Scientific, Algebra, Geometry), Science (Physics, Chemistry, Density), Finance (Loan, Interest, Discount), Health (BMI, Calorie, Body Fat), and more. Each provides instant results with step-by-step explanations."
       },
       {
-        q: "How long does it take to get help?",
-        a: "Quote delivery: Within 2 hours. Standard assignments: 24-72 hours. Rush delivery: 24-48 hours. Urgent requests: Under 24 hours. Actual timelines depend on complexity and are confirmed in your quote."
+        q: "Are the calculator results accurate?",
+        a: "Yes! All our calculators use verified formulas and algorithms. However, for critical decisions (medical, financial, legal), always consult a qualified professional. Our tools are educational aids, not substitutes for professional advice."
       },
       {
-        q: "What if I'm not satisfied with the work?",
-        a: "We offer free revisions if you're not completely satisfied. If we can't resolve the issue, we provide a full refund. Your satisfaction is guaranteed."
+        q: "Can I use these tools on my phone?",
+        a: "Absolutely! All our tools are fully responsive and work perfectly on phones, tablets, and computers. Learn on the go, anytime, anywhere."
       },
       {
-        q: "Can I ask follow-up questions?",
-        a: "Yes! After receiving your solution, you can ask clarifying questions within 24 hours at no additional cost. We want to make sure you understand the material."
+        q: "Do you save my inputs or calculations?",
+        a: "No. Since we don't require accounts, we don't store any of your data. Your inputs stay private on your device. This means maximum privacy but also means you'll need to bookmark results if you want to save them."
       },
       {
-        q: "What subjects and types of assignments do you help with?",
-        a: "We help with all Math (algebra through calculus), Science (physics, chemistry, biology, earth science), and English (essays, grammar, literature analysis) assignments. This includes problem sets, essays, lab reports, projects, study guides, and more."
+        q: "Can I suggest a new tool or calculator?",
+        a: "Yes! We love feedback. Email us at info@thetutorbridge.com with your suggestion. We prioritize tools that serve the most learners and fill gaps in available resources."
       }
     ]
   },
-  tutoring: {
-    title: "Tutoring",
-    icon: GraduationCap,
+  brainGames: {
+    title: "Brain Games",
+    icon: Brain,
     questions: [
       {
-        q: "How do I get started with tutoring?",
-        a: "Book a free 20-minute consultation through our website. We'll discuss your child's needs, goals, and learning style, then match them with an ideal tutor. After a trial session to ensure good fit, regular weekly sessions begin."
+        q: "What are brain games?",
+        a: "Brain games are interactive, fun exercises that test and improve your skills in areas like math, memory, typing, logic, and problem-solving. They provide instant feedback and often include difficulty levels or scoring to track improvement."
       },
       {
-        q: "Will my child have the same tutor each week?",
-        a: "Yes! Consistency is key to academic improvement. Your child will work with the same dedicated tutor every session, building a relationship and allowing the tutor to deeply understand their learning style and needs."
+        q: "Do brain games actually help with learning?",
+        a: "Yes! Active practice with immediate feedback is one of the most effective learning methods. Brain games make practice engaging and help build automaticity—the ability to recall information or perform tasks quickly and accurately."
       },
       {
-        q: "What if my child doesn't click with their tutor?",
-        a: "No problem! We offer free tutor rematching. Just let us know within the first few sessions and we'll find a better fit—no questions asked and no extra charge."
+        q: "Are brain games suitable for all ages?",
+        a: "Most of our brain games are suitable for ages 10+, though younger children may enjoy some with adult guidance. Games have varying difficulty levels, so everyone from beginners to experts can find appropriate challenges."
       },
       {
-        q: "How often should my child have tutoring sessions?",
-        a: "It depends on goals and needs. We offer packages of 4 sessions/month (1x/week) for maintenance, 8 sessions/month (2x/week) for improvement (most popular), and 12 sessions/month (3x/week) for intensive prep or significant struggles."
+        q: "How do I track my progress in brain games?",
+        a: "Many games show your score, time, or accuracy immediately after playing. Since we don't require accounts, progress isn't saved between sessions—but you can track your personal bests manually or challenge yourself to beat previous scores."
       },
       {
-        q: "Can I sit in on my child's sessions?",
-        a: "Absolutely! Parents are welcome to observe any session. We also provide regular progress reports and are always available to discuss your child's progress separately."
-      },
-      {
-        q: "What happens if we need to miss a session?",
-        a: "Sessions can be rescheduled up to 24 hours in advance at no charge. Last-minute cancellations (less than 24 hours) will count toward your monthly sessions. We understand life happens and work with you to be flexible."
+        q: "Which brain game should I start with?",
+        a: "Try the Times Tables Speed Test for math practice, Memory Match for cognitive skills, or Typing Speed Test for practical keyboard skills. Pick what aligns with your goals!"
       }
     ]
   },
-  pricing: {
-    title: "Pricing & Payment",
-    icon: DollarSign,
+  developerTools: {
+    title: "Developer Tools",
+    icon: Code2,
     questions: [
       {
-        q: "How much does homework help cost?",
-        a: "Prices vary based on complexity, length, and deadline. Simple problems start at $15, problem sets at $35-60, essays at $40-75, and full assignments at $75+. Rush and urgent deadlines cost more. You always receive a custom quote before paying."
+        q: "What developer tools do you offer?",
+        a: "We have 80+ tools for developers including JSON formatters, Base64 encoder/decoder, URL encoder, MD5/SHA generators, UUID generator, regex tester, color picker, code minifiers, and many converters. All tools work entirely in your browser for privacy."
       },
       {
-        q: "How much does tutoring cost?",
-        a: "Our tutoring starts at $25/hr. Packages: Starter (4 sessions) $30/hr, Standard (8 sessions) $25/hr - our most popular option, Premium (12 sessions) $29/hr with senior tutors. All sessions are 1 hour each. Multi-subject and sibling discounts available."
+        q: "Are developer tools safe to use with sensitive data?",
+        a: "Yes. All our developer tools run locally in your browser—no data is sent to our servers. Your code, API keys, and sensitive information never leave your device. However, as always, exercise caution with truly sensitive data."
       },
       {
-        q: "Are there any hidden fees?",
-        a: "No hidden fees, ever. The price quoted is the price you pay. No signup fees, no cancellation fees, no surprise charges."
+        q: "Can I use these tools for commercial projects?",
+        a: "Absolutely! All our tools are free for personal and commercial use. Use them in your development workflow, at work, or for client projects—no attribution required."
       },
       {
-        q: "What payment methods do you accept?",
-        a: "We currently accept PayPal and Wise (formerly TransferWise) for secure, convenient payments. Both options support international transfers and provide buyer protection."
-      },
-      {
-        q: "Are there any discounts available?",
-        a: "Yes! Multi-subject discount: 10% off for 2 subjects, 15% off for 3+ subjects. Sibling discount: 10% off for second child, 15% off for 3+ children. Contact us about family plans."
+        q: "Why should I use your tools instead of npm packages?",
+        a: "Quick tasks don't need installations! Our tools are instant, browser-based, and perfect for one-off operations. No package.json bloat, no dependencies, no setup. For repeated automated tasks, npm packages are still the way to go."
       }
     ]
   },
-  scheduling: {
-    title: "Scheduling & Logistics",
-    icon: Calendar,
+  studyResources: {
+    title: "Study Resources & Roadmaps",
+    icon: BookOpen,
     questions: [
       {
-        q: "What hours are you available?",
-        a: "Homework help quotes are provided 7 days a week, typically within 2 hours. Tutoring sessions are available Monday-Saturday, with times ranging from after school (3pm) to evening (9pm) in all U.S. time zones."
+        q: "What study resources do you provide?",
+        a: "We offer comprehensive NCERT study guides for Classes 6-12, covering all major subjects. Each resource includes chapter summaries, key concepts, important questions, and learning tips to help students prepare for exams and understand difficult topics."
       },
       {
-        q: "What timezone do you operate in?",
-        a: "We work with students in all U.S. time zones: Eastern, Central, Mountain, Pacific, Alaska, and Hawaii. When you book, we'll schedule in your local time."
+        q: "What are career roadmaps?",
+        a: "Career roadmaps are step-by-step guides showing the skills, technologies, and learning path to become a professional in various tech fields (Frontend Developer, Data Scientist, DevOps Engineer, etc.). Each roadmap includes beginner to expert progression with resources and milestones."
       },
       {
-        q: "How far in advance do I need to book tutoring sessions?",
-        a: "Once enrolled, your weekly session time is locked in. If you need to reschedule, just give us 24 hours notice. For the initial consultation, we typically have availability within 48 hours."
+        q: "Are career roadmaps updated regularly?",
+        a: "Yes! Tech evolves fast, and we update our roadmaps regularly to reflect current industry standards, trending technologies, and employer requirements. We base updates on job market analysis and industry feedback."
       },
       {
-        q: "What technology do I need?",
-        a: "A computer, tablet, or phone with a camera and internet connection. We use Zoom for video calls and provide access to virtual whiteboards. We'll send setup instructions and test everything before your first session."
+        q: "Can I use study resources for exam preparation?",
+        a: "Absolutely! Our study resources are designed to help students prepare for school exams, board exams, and competitive tests. They complement textbooks and classroom learning with clear summaries and practice questions."
+      },
+      {
+        q: "Which career roadmap should I follow?",
+        a: "It depends on your interests! If you love design and user interfaces, try Frontend Developer. If you enjoy data and analysis, explore Data Scientist. If you're interested in systems and automation, check DevOps. Read a few roadmaps to see what excites you!"
       }
     ]
   },
-  safety: {
-    title: "Safety & Trust",
+  technical: {
+    title: "Technical & Privacy",
     icon: Shield,
     questions: [
       {
-        q: "Are tutors background checked?",
-        a: "Yes, every tutor undergoes a comprehensive background check before joining our platform. Your child's safety is our top priority."
+        q: "Do you collect any personal data?",
+        a: "We collect minimal analytics (page views, tool usage) to understand what's helpful and improve the platform. We don't collect names, emails, or personal information since you don't need accounts. No data is sold to third parties. See our Privacy Policy for full details."
       },
       {
-        q: "How do you ensure quality?",
-        a: "All tutors are vetted for qualifications, subject expertise, and teaching ability. We collect ratings after every session and maintain a 4.8+ standard. Tutors who fall below standards are retrained or removed."
+        q: "Do tools work offline?",
+        a: "Most tools require an internet connection to load, but many (especially developer tools like JSON formatter, Base64 encoder) continue working once loaded since they run in your browser. We're exploring progressive web app features for better offline support."
       },
       {
-        q: "Is my payment information secure?",
-        a: "Yes. All payments are processed through secure, encrypted payment processors (Stripe). We never store your full credit card information on our servers."
+        q: "Why do some tools ask for browser permissions?",
+        a: "Some tools need specific permissions to function—for example, the Pomodoro Timer may request notification permissions to alert you when time's up. We only request necessary permissions and explain why. You can always deny and the tool will work with reduced features."
       },
       {
-        q: "What's your privacy policy?",
-        a: "We take privacy seriously. Your personal information is never sold or shared with third parties. Student data is used only to provide and improve our services. See our full Privacy Policy for details."
+        q: "Is the website accessible for users with disabilities?",
+        a: "We strive to make our platform accessible to all learners. We follow WCAG guidelines for keyboard navigation, screen reader support, and color contrast. If you encounter accessibility issues, please email us so we can improve."
+      },
+      {
+        q: "Which browsers are supported?",
+        a: "All modern browsers work great: Chrome, Firefox, Safari, Edge. We recommend keeping your browser updated for the best experience. Some older browsers (IE11) may have compatibility issues with certain tools."
       }
     ]
   }
@@ -236,23 +240,28 @@ export default function FAQ() {
           </div>
         </div>
 
-        {/* Hero Section - Subtle & Center Aligned */}
+        {/* Hero Section */}
         <section className="relative py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 text-center">
             <div className="max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 bg-[#2BAE66]/10 text-[#2BAE66] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <Sparkles className="w-4 h-4" />
+                Your Questions Answered
+              </div>
+
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#1A3D7C] leading-tight mb-4">
                 Frequently Asked Questions
               </h1>
 
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Everything you need to know about our homework help and tutoring services. Can't find what you're looking for? Contact us!
+                Everything you need to know about your digital tutor. Can't find what you're looking for? Email us at info@thetutorbridge.com
               </p>
             </div>
           </div>
         </section>
 
         {/* Quick Navigation */}
-        <section className="py-8 bg-white border-b sticky top-0 z-20">
+        <section className="py-8 bg-white border-b sticky top-0 z-20 shadow-sm">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex flex-wrap justify-center gap-3">
               {Object.entries(faqs).map(([key, category]) => (
@@ -270,7 +279,7 @@ export default function FAQ() {
         </section>
 
         {/* FAQ Sections */}
-        <section className="py-12 sm:py-16">
+        <section className="py-12 sm:py-16 bg-[#F8FAFC]">
           <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
             {Object.entries(faqs).map(([key, category]) => (
               <div key={key} id={key} className="mb-12 scroll-mt-24">
@@ -285,7 +294,7 @@ export default function FAQ() {
 
                 <div className="space-y-4">
                   {category.questions.map((faq, index) => (
-                    <Card key={index} className="overflow-hidden">
+                    <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow">
                       <CardContent className="p-6">
                         <h3 className="font-poppins font-semibold text-[#1A3D7C] mb-3 flex items-start gap-2">
                           <span className="w-6 h-6 bg-[#FFC857] text-[#1A3D7C] rounded-full flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
@@ -294,7 +303,7 @@ export default function FAQ() {
                           {faq.q}
                         </h3>
                         <div className="pl-8">
-                          <p className="text-gray-700">{faq.a}</p>
+                          <p className="text-gray-700 leading-relaxed">{faq.a}</p>
                         </div>
                       </CardContent>
                     </Card>
@@ -306,14 +315,14 @@ export default function FAQ() {
         </section>
 
         {/* Still Have Questions */}
-        <section className="py-16 sm:py-20 bg-[#F8FAFC]">
+        <section className="py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl sm:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
                 Still Have Questions?
               </h2>
               <p className="text-lg text-gray-700 mb-8">
-                We're here to help! Reach out and we'll get back to you as soon as possible.
+                We're here to help! Send us an email and we'll get back to you as soon as possible.
               </p>
 
               <div className="flex justify-center mb-8">
@@ -323,7 +332,7 @@ export default function FAQ() {
                       <Mail className="w-7 h-7 text-[#1A3D7C]" />
                     </div>
                     <h3 className="font-poppins font-bold text-[#1A3D7C] mb-2">Email Us</h3>
-                    <a href="mailto:info@thetutorbridge.com" className="text-gray-600 hover:text-[#1A3D7C]">
+                    <a href="mailto:info@thetutorbridge.com" className="text-[#2BAE66] hover:text-[#1A3D7C] font-semibold">
                       info@thetutorbridge.com
                     </a>
                   </CardContent>
@@ -331,16 +340,16 @@ export default function FAQ() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/tutoring/free-consultation">
-                  <Button size="lg" className="bg-[#2BAE66] hover:bg-[#2BAE66]/90 px-8 py-6 text-lg font-semibold">
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Book Free Consultation
+                <Link href="/tools">
+                  <Button size="lg" className="bg-[#1A3D7C] text-white rounded-xl px-8 py-6 text-lg font-semibold hover:bg-[#1A3D7C]/90">
+                    <Brain className="w-5 h-5 mr-2" />
+                    Explore Tools & Games
                   </Button>
                 </Link>
-                <Link href="/homework-help/submit">
-                  <Button size="lg" variant="outline" className="border-2 border-[#1A3D7C] text-[#1A3D7C] px-8 py-6 text-lg font-semibold hover:bg-[#1A3D7C] hover:text-white">
-                    <FileText className="w-5 h-5 mr-2" />
-                    Submit Homework
+                <Link href="/calculators">
+                  <Button size="lg" className="bg-[#2BAE66] text-white rounded-xl px-8 py-6 text-lg font-semibold hover:bg-[#2BAE66]/90">
+                    <Calculator className="w-5 h-5 mr-2" />
+                    Browse Calculators
                   </Button>
                 </Link>
               </div>
@@ -349,47 +358,7 @@ export default function FAQ() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Image src="/TheTutorBridge Logo New.png" width={32} height={32} alt="The Tutor Bridge Logo" className="h-8 w-8" />
-                <span className="text-xl font-bold">The Tutor Bridge</span>
-              </div>
-              <p className="text-gray-400">Expert homework help and tutoring for grades 6-12.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Homework Help</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/homework-help/math" className="hover:text-white">Math Help</Link></li>
-                <li><Link href="/homework-help/science" className="hover:text-white">Science Help</Link></li>
-                <li><Link href="/homework-help/english" className="hover:text-white">English Help</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Tutoring</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/tutoring/math" className="hover:text-white">Math Tutoring</Link></li>
-                <li><Link href="/tutoring/science" className="hover:text-white">Science Tutoring</Link></li>
-                <li><Link href="/tutoring/english" className="hover:text-white">English Tutoring</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/about" className="hover:text-white">About Us</Link></li>
-                <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
-                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>© {new Date().getFullYear()} The Tutor Bridge. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <ComprehensiveFooter />
     </div>
   )
 }
