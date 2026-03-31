@@ -1117,6 +1117,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  // Brain Games - Main page and individual games
+  const brainGamesPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/brain-games`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/brain-games/times-table-speed-test`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+  ];
+
   // Combine all pages
   return [
     ...staticPages,
@@ -1147,5 +1163,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...wordProblemsPages,
     ...individualWordProblems,
     ...toolPages,
+    ...brainGamesPages,
   ];
 }

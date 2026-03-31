@@ -17,8 +17,8 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Brain Games - Coming Soon | The Tutor Bridge",
-  description: "Fun and interactive brain games are coming soon to The Tutor Bridge. Practice mental math, memory, typing speed, and more. Your digital tutor makes learning fun!",
+  title: "Brain Games - Fun Learning Games | The Tutor Bridge",
+  description: "Free interactive brain games for learning. Practice times tables, memory, typing speed, and more. Make learning fun with The Tutor Bridge brain games!",
   keywords: [
     "brain games",
     "educational games",
@@ -27,14 +27,16 @@ export const metadata: Metadata = {
     "typing games",
     "learning games",
     "interactive games",
-    "free brain games"
+    "free brain games",
+    "times tables game",
+    "multiplication practice"
   ],
   alternates: {
     canonical: "https://www.thetutorbridge.com/brain-games",
   },
   openGraph: {
-    title: "Brain Games - Coming Soon",
-    description: "Interactive brain games for learning and practice. Coming soon!",
+    title: "Brain Games - Fun Learning Games",
+    description: "Free interactive brain games for learning and practice. Start playing now!",
     url: "https://www.thetutorbridge.com/brain-games",
     siteName: "The Tutor Bridge",
     type: "website",
@@ -62,7 +64,7 @@ export default function BrainGames() {
           </div>
         </div>
 
-        {/* Hero Section - Coming Soon */}
+        {/* Hero Section */}
         <section className="relative py-20 sm:py-32 bg-gradient-to-br from-[#2BAE66] to-[#1A3D7C] text-white overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
@@ -73,7 +75,7 @@ export default function BrainGames() {
             <div className="max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 <Sparkles className="w-4 h-4" />
-                Coming Soon
+                New Games Available!
               </div>
 
               <div className="mb-8 flex justify-center">
@@ -84,42 +86,54 @@ export default function BrainGames() {
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-poppins font-bold leading-tight mb-6">
                 Brain Games<br />
-                <span className="text-[#FFC857]">Launching Soon!</span>
+                <span className="text-[#FFC857]">Make Learning Fun!</span>
               </h1>
 
               <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
-                Get ready for fun, interactive games that make learning exciting. Practice mental math, boost memory, improve typing speed, and more!
+                Play interactive games that make learning exciting. Practice mental math, boost memory, improve typing speed, and more!
               </p>
 
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-xl">
-                <Clock className="w-5 h-5" />
-                <span className="font-semibold">We're building something amazing for you</span>
-              </div>
+              <Link href="/brain-games/times-table-speed-test">
+                <Button size="lg" className="bg-[#FFC857] text-[#1A3D7C] hover:bg-[#FFC857]/90 rounded-xl px-8 py-6 text-lg font-semibold">
+                  <Trophy className="w-5 h-5 mr-2" />
+                  Play Times Tables Challenge
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* What to Expect Section */}
+        {/* Available Games Section */}
         <section className="py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-[#1A3D7C] mb-4">
-                What to Expect
+                Available Games
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Our brain games will help you learn while having fun. Here's what's coming:
+                Start playing now or see what's coming soon!
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Times Tables Challenge - AVAILABLE */}
+              <Link href="/brain-games/times-table-speed-test">
+                <Card className="p-6 hover:shadow-xl transition-all border-2 border-[#2BAE66] relative cursor-pointer group">
+                  <div className="absolute top-4 right-4 bg-[#2BAE66] text-white text-xs font-bold px-3 py-1 rounded-full">
+                    PLAY NOW
+                  </div>
+                  <CardContent className="p-0">
+                    <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Target className="w-8 h-8 text-[#1A3D7C]" />
+                    </div>
+                    <h3 className="font-poppins font-bold text-xl text-[#1A3D7C] mb-2">Times Tables Challenge</h3>
+                    <p className="text-gray-600">Master multiplication with speed tests and challenges. Track your progress and improve your speed.</p>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              {/* Coming Soon Games */}
               {[
-                {
-                  icon: Target,
-                  title: "Times Tables Challenge",
-                  description: "Master multiplication with speed tests and challenges. Track your progress and improve your speed.",
-                  color: "bg-blue-50",
-                  iconColor: "text-[#1A3D7C]"
-                },
                 {
                   icon: Brain,
                   title: "Memory Games",
@@ -156,7 +170,10 @@ export default function BrainGames() {
                   iconColor: "text-indigo-600"
                 }
               ].map((game, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                <Card key={index} className="p-6 hover:shadow-lg transition-shadow relative opacity-75">
+                  <div className="absolute top-4 right-4 bg-gray-400 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    COMING SOON
+                  </div>
                   <CardContent className="p-0">
                     <div className={`w-16 h-16 ${game.color} rounded-full flex items-center justify-center mb-4`}>
                       <game.icon className={`w-8 h-8 ${game.iconColor}`} />
