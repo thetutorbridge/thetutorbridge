@@ -30,7 +30,7 @@ export function ComprehensiveFooter() {
               <li><Link href="/calculators/gpa-calculator" className="hover:text-white transition-colors">GPA Calculator</Link></li>
               <li><Link href="/calculators/grade-calculator" className="hover:text-white transition-colors">Grade Calculator</Link></li>
               <li><Link href="/calculators/percentage-calculator" className="hover:text-white transition-colors">Percentage Calculator</Link></li>
-              <li><Link href="/calculators/scientific-calculator" className="hover:text-white transition-colors">Scientific Calculator</Link></li>
+              <li><Link href="/calculators/basic-calculator" className="hover:text-white transition-colors">Basic Calculator</Link></li>
               <li><Link href="/calculators/bmi-calculator" className="hover:text-white transition-colors">BMI Calculator</Link></li>
               <li><Link href="/calculators/age-calculator" className="hover:text-white transition-colors">Age Calculator</Link></li>
               <li><Link href="/calculators/money-calculator" className="hover:text-white transition-colors">Money Calculator</Link></li>
@@ -71,35 +71,35 @@ export function ComprehensiveFooter() {
           <h4 className="font-bold mb-4 text-lg">All Calculators & Tools</h4>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-2 text-gray-400 text-sm">
             {/* Math Calculators */}
-            <Link href="/calculators/algebra-calculator" className="hover:text-white transition-colors">Algebra Calculator</Link>
-            <Link href="/calculators/fraction-calculator" className="hover:text-white transition-colors">Fraction Calculator</Link>
-            <Link href="/calculators/decimal-to-fraction-calculator" className="hover:text-white transition-colors">Decimal to Fraction</Link>
-            <Link href="/calculators/equation-solver" className="hover:text-white transition-colors">Equation Solver</Link>
             <Link href="/calculators/quadratic-formula-calculator" className="hover:text-white transition-colors">Quadratic Formula</Link>
-            <Link href="/calculators/triangle-calculator" className="hover:text-white transition-colors">Triangle Calculator</Link>
-            <Link href="/calculators/circle-calculator" className="hover:text-white transition-colors">Circle Calculator</Link>
-            <Link href="/calculators/area-calculator" className="hover:text-white transition-colors">Area Calculator</Link>
-            <Link href="/calculators/volume-calculator" className="hover:text-white transition-colors">Volume Calculator</Link>
-            <Link href="/calculators/pythagorean-theorem-calculator" className="hover:text-white transition-colors">Pythagorean Theorem</Link>
+            <Link href="/calculators/fractions-calculator" className="hover:text-white transition-colors">Fraction Calculator</Link>
+            <Link href="/calculators/decimal-to-fraction-calculator" className="hover:text-white transition-colors">Decimal to Fraction</Link>
+            <Link href="/calculators/slope-calculator" className="hover:text-white transition-colors">Slope Calculator</Link>
+            <Link href="/calculators/factoring-calculator" className="hover:text-white transition-colors">Factoring Calculator</Link>
+            <Link href="/calculators/right-triangle-calculator" className="hover:text-white transition-colors">Right Triangle Calculator</Link>
+            <Link href="/calculators/circle-area-calculator" className="hover:text-white transition-colors">Circle Area Calculator</Link>
+            <Link href="/calculators/square-footage-calculator" className="hover:text-white transition-colors">Square Footage Calculator</Link>
+            <Link href="/calculators/tank-volume-calculator" className="hover:text-white transition-colors">Tank Volume Calculator</Link>
+            <Link href="/calculators/circumference-calculator" className="hover:text-white transition-colors">Circumference Calculator</Link>
 
-            {/* Science Calculators */}
-            <Link href="/calculators/physics-calculator" className="hover:text-white transition-colors">Physics Calculator</Link>
-            <Link href="/calculators/chemistry-calculator" className="hover:text-white transition-colors">Chemistry Calculator</Link>
-            <Link href="/calculators/density-calculator" className="hover:text-white transition-colors">Density Calculator</Link>
-            <Link href="/calculators/velocity-calculator" className="hover:text-white transition-colors">Velocity Calculator</Link>
+            {/* Science & Measurement Calculators */}
+            <Link href="/calculators/speed-distance-time-calculator" className="hover:text-white transition-colors">Speed Distance Time</Link>
+            <Link href="/calculators/trigonometry-calculator" className="hover:text-white transition-colors">Trigonometry Calculator</Link>
+            <Link href="/calculators/cylinder-volume-calculator" className="hover:text-white transition-colors">Cylinder Volume</Link>
+            <Link href="/calculators/cubic-yards-calculator" className="hover:text-white transition-colors">Cubic Yards Calculator</Link>
 
             {/* Finance Calculators */}
-            <Link href="/calculators/interest-calculator" className="hover:text-white transition-colors">Interest Calculator</Link>
-            <Link href="/calculators/loan-calculator" className="hover:text-white transition-colors">Loan Calculator</Link>
+            <Link href="/calculators/compound-interest-calculator" className="hover:text-white transition-colors">Compound Interest</Link>
+            <Link href="/calculators/emi-calculator" className="hover:text-white transition-colors">EMI Calculator</Link>
             <Link href="/calculators/mortgage-calculator" className="hover:text-white transition-colors">Mortgage Calculator</Link>
-            <Link href="/calculators/investment-calculator" className="hover:text-white transition-colors">Investment Calculator</Link>
-            <Link href="/calculators/tip-calculator" className="hover:text-white transition-colors">Tip Calculator</Link>
+            <Link href="/calculators/sip-calculator" className="hover:text-white transition-colors">SIP Calculator</Link>
+            <Link href="/calculators/income-tax-calculator" className="hover:text-white transition-colors">Income Tax Calculator</Link>
             <Link href="/calculators/discount-calculator" className="hover:text-white transition-colors">Discount Calculator</Link>
 
             {/* Health Calculators */}
             <Link href="/calculators/calorie-calculator" className="hover:text-white transition-colors">Calorie Calculator</Link>
-            <Link href="/calculators/body-fat-calculator" className="hover:text-white transition-colors">Body Fat Calculator</Link>
-            <Link href="/calculators/ideal-weight-calculator" className="hover:text-white transition-colors">Ideal Weight</Link>
+            <Link href="/calculators/bmi-calculator" className="hover:text-white transition-colors">BMI Calculator</Link>
+            <Link href="/calculators/bmr-calculator" className="hover:text-white transition-colors">BMR Calculator</Link>
 
             {/* Text Tools */}
             <Link href="/tools/case-converter" className="hover:text-white transition-colors">Case Converter</Link>
