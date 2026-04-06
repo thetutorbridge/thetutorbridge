@@ -132,15 +132,24 @@ export default function BrainGames() {
                 </Card>
               </Link>
 
+              {/* Memory Card Match - AVAILABLE */}
+              <Link href="/brain-games/memory-card-match">
+                <Card className="p-6 hover:shadow-xl transition-all border-2 border-[#2BAE66] relative cursor-pointer group">
+                  <div className="absolute top-4 right-4 bg-[#2BAE66] text-white text-xs font-bold px-3 py-1 rounded-full">
+                    PLAY NOW
+                  </div>
+                  <CardContent className="p-0">
+                    <div className="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Brain className="w-8 h-8 text-purple-600" />
+                    </div>
+                    <h3 className="font-poppins font-bold text-xl text-[#1A3D7C] mb-2">Memory Card Match</h3>
+                    <p className="text-gray-600">Boost your memory by matching multiplication equations with their answers. Multiple difficulty levels!</p>
+                  </CardContent>
+                </Card>
+              </Link>
+
               {/* Coming Soon Games */}
               {[
-                {
-                  icon: Brain,
-                  title: "Memory Games",
-                  description: "Boost your memory with card matching, sequence memorization, and pattern recognition games.",
-                  color: "bg-purple-50",
-                  iconColor: "text-purple-600"
-                },
                 {
                   icon: Timer,
                   title: "Typing Speed Test",
