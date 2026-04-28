@@ -102,7 +102,7 @@ Assessment in CBE serves learning rather than just measuring it. Characteristics
 - Immediate, actionable feedback that guides improvement
 - Assessment integrated throughout learning, not just at the end
 
-Students can track their progress using tools like our [GPA calculator](https://www.thetutorbridge.com/calculators/gpa-calculator) and [grade calculator](https://www.thetutorbridge.com/calculators/grade-calculator) to understand their standing and set improvement goals.
+Students can track their progress using tools like our [GPA calculator](https://www.thetutorbridge.com/calculators/gpa-calculator) and [grade calculator](https://www.thetutorbridge.com/calculators/grade-calculator) to understand their standing and set improvement goals. Teachers can use assessment platforms like [AssessPrep](https://www.assessprep.com/features/analyse) that help in tracking standards base grading.
 
 ### Pillar 4: Personalized Learning Support
 
