@@ -48,15 +48,6 @@ Over the past 6 months, I've personally tested **21 online tutoring platforms** 
 
 Whether you're a **parent** looking for [homework help](/homework-help) for your child, a **college student** struggling with calculus, or an **adult learner** wanting to pick up Spanish, this guide will help you find the perfect platform.
 
-**Quick Navigation:**
-
-- [Comparison Table (At-a-Glance)](#comparison-table)
-- [Quick Summary: Top 5 Picks](#quick-summary)
-- [Detailed Platform Reviews](#detailed-reviews)
-- [Online Tutoring Market Statistics 2026](#market-statistics)
-- [How to Choose the Right Platform](#how-to-choose)
-- [FAQs](#faqs)
-
 ## Comparison Table: 21 Best Online Tutoring Platforms at a Glance {#comparison-table}
 
 Before diving deep, here's a quick comparison to help you shortlist:
