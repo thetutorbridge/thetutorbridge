@@ -685,6 +685,13 @@ const calculators = {
       tags: ['Due Date', 'Pregnancy', 'Milestones']
     },
     {
+      name: 'Ovulation Calculator',
+      href: '/calculators/ovulation-calculator',
+      description: 'Find your most fertile days and predict ovulation. Track your menstrual cycle and maximize chances of getting pregnant.',
+      gradient: 'from-pink-500 to-rose-500',
+      tags: ['Fertility', 'Ovulation', 'Conception']
+    },
+    {
       name: 'Body Shape Calculator',
       href: '/calculators/body-shape-calculator',
       description: 'Find your body shape (hourglass, pear, apple, rectangle) from bust, waist, and hip measurements. Get personalized fashion tips.',

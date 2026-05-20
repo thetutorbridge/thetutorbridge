@@ -152,6 +152,7 @@ const calculatorSlugs = [
   'nm-to-ft-lbs-converter',
   'numbers-to-words-converter',
   'overtime-calculator',
+  'ovulation-calculator',
   'oz-to-cups-converter',
   'p-value-calculator',
   'pay-raise-calculator',
