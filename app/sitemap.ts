@@ -165,6 +165,7 @@ const calculatorSlugs = [
   'personal-loan-emi-calculator',
   'pixels-to-inches-converter',
   'ppf-calculator',
+  'ppp-salary-calculator',
   'profit-margin-calculator',
   'quadratic-formula-calculator',
   'quartile-calculator',

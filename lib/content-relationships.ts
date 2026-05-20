@@ -206,6 +206,37 @@ export const calculatorRelationships: Record<string, {
     ],
     relatedBlogs: []
   },
+  'ppp-salary-calculator': {
+    relatedCalculators: [
+      {
+        title: 'Salary Calculator',
+        description: 'Calculate take-home salary from CTC',
+        href: '/calculators/salary-calculator'
+      },
+      {
+        title: 'Currency Converter',
+        description: 'Convert between 150+ world currencies',
+        href: '/calculators/currency-converter'
+      },
+      {
+        title: 'Salary to Hourly Calculator',
+        description: 'Convert salary to hourly rate',
+        href: '/calculators/salary-to-hourly-calculator'
+      },
+      {
+        title: 'Annual Income Calculator',
+        description: 'Calculate annual income from hourly wage',
+        href: '/calculators/annual-income-calculator'
+      }
+    ],
+    relatedBlogs: [
+      {
+        title: '20 Reasons Why Education Is Important',
+        description: 'Understanding global opportunities and career growth',
+        href: '/blog/20-reasons-why-education-is-important'
+      }
+    ]
+  },
   'grade-calculator': {
     relatedCalculators: [
       {

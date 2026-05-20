@@ -255,6 +255,13 @@ const calculators = {
       tags: ['Hourly Rate', 'Wage Converter', 'Salary']
     },
     {
+      name: 'PPP Salary Calculator',
+      href: '/calculators/ppp-salary-calculator',
+      description: 'Compare salaries across countries using Purchasing Power Parity. Calculate equivalent salary and cost of living adjustments.',
+      gradient: 'from-purple-600 to-indigo-600',
+      tags: ['PPP', 'Global Salary', 'Cost of Living']
+    },
+    {
       name: 'Gratuity Calculator',
       href: '/calculators/gratuity-calculator',
       description: 'Calculate gratuity amount based on last drawn salary and years of service.',

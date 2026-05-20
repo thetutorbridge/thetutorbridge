@@ -1,0 +1,108 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'PPP Salary Calculator - Free Purchasing Power Parity Calculator | The Tutor Bridge',
+  description: 'Free PPP Salary Calculator to compare salaries across countries using Purchasing Power Parity. Calculate equivalent salary, compare cost of living, and make informed relocation decisions. Instant PPP conversion.',
+  keywords: [
+    'ppp salary calculator',
+    'purchasing power parity calculator',
+    'ppp calculator',
+    'salary comparison calculator',
+    'cost of living calculator',
+    'salary ppp converter',
+    'purchasing power calculator',
+    'international salary comparison',
+    'ppp conversion calculator',
+    'salary equivalent calculator',
+    'compare salaries between countries',
+    'ppp salary comparison',
+    'purchasing power parity salary',
+    'relocation salary calculator',
+    'expat salary calculator',
+    'global salary comparison',
+    'salary adjustment calculator',
+    'cost of living salary calculator',
+    'real salary calculator',
+    'ppp adjusted salary',
+    'salary purchasing power',
+    'ppp converter',
+    'salary ppp calculator',
+    'how to calculate ppp salary',
+    'ppp salary converter',
+    'purchasing power parity conversion',
+    'international salary converter',
+    'salary ppp comparison',
+    'living cost salary calculator',
+    'global ppp calculator',
+    'ppp salary equivalence',
+    'salary across countries',
+    'comparative salary calculator',
+    'world salary comparison',
+    'salary by country calculator',
+    'ppp rate calculator',
+    'salary adjustment ppp',
+    'economic salary calculator',
+    'real value salary calculator',
+    'ppp income calculator',
+    'salary power calculator',
+    'cross country salary comparison',
+    'salary localization calculator',
+    'ppp exchange rate calculator',
+    'equivalent income calculator',
+    'salary normalization calculator',
+    'what is ppp salary',
+    'ppp salary meaning',
+    'ppp salary formula',
+  ],
+  authors: [{ name: 'The Tutor Bridge' }],
+  creator: 'The Tutor Bridge',
+  publisher: 'The Tutor Bridge',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: 'https://www.thetutorbridge.com/calculators/ppp-salary-calculator',
+  },
+  openGraph: {
+    title: 'PPP Salary Calculator - Purchasing Power Parity | The Tutor Bridge',
+    description: 'Free PPP Salary Calculator to compare salaries across countries. Calculate equivalent salary using Purchasing Power Parity and make informed relocation decisions.',
+    url: 'https://www.thetutorbridge.com/calculators/ppp-salary-calculator',
+    siteName: 'The Tutor Bridge',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.thetutorbridge.com/og-calculator.png',
+        width: 1200,
+        height: 630,
+        alt: 'PPP Salary Calculator - The Tutor Bridge',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PPP Salary Calculator - Free Purchasing Power Parity Tool',
+    description: 'Compare salaries across countries using PPP. Calculate your equivalent salary in any country instantly.',
+    images: ['https://www.thetutorbridge.com/og-calculator.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export default function PPPSalaryCalculatorLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}
