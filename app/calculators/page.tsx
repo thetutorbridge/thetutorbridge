@@ -98,6 +98,13 @@ const calculators = {
       gradient: 'from-green-600 to-emerald-600',
       tags: ['Marks', 'Percentage', 'Exams']
     },
+    {
+      name: 'Scientific Calculator',
+      href: '/calculators/scientific-calculator',
+      description: 'Full-featured scientific calculator with trigonometry, logarithms, exponents, and memory functions. Perfect for math and science.',
+      gradient: 'from-blue-600 to-indigo-600',
+      tags: ['Trig', 'Logarithms', 'Advanced Math']
+    },
   ],
   'Financial & Investment': [
     {
@@ -295,6 +302,13 @@ const calculators = {
       description: 'Calculate SSY maturity amount for girl child savings scheme with government interest.',
       gradient: 'from-pink-600 to-purple-600',
       tags: ['SSY', 'Girl Child', 'Savings']
+    },
+    {
+      name: 'Student Loan Calculator',
+      href: '/calculators/student-loan-calculator',
+      description: 'Calculate student loan payments, total interest, and payoff timeline. See how extra payments save money.',
+      gradient: 'from-blue-600 to-purple-600',
+      tags: ['Student Loans', 'Education', 'Repayment']
     },
   ],
   'Percentage & Math': [
@@ -648,6 +662,27 @@ const calculators = {
       description: 'Calculate how many calories to eat for weight loss. Find your daily calorie target based on goal weight and target date.',
       gradient: 'from-green-500 to-emerald-600',
       tags: ['Weight Loss', 'Deficit', 'TDEE']
+    },
+    {
+      name: 'TDEE Calculator',
+      href: '/calculators/tdee-calculator',
+      description: 'Calculate Total Daily Energy Expenditure. Find how many calories you burn daily based on age, weight, height, and activity level.',
+      gradient: 'from-orange-600 to-red-600',
+      tags: ['TDEE', 'Calories', 'Energy Expenditure']
+    },
+    {
+      name: 'Macro Calculator',
+      href: '/calculators/macro-calculator',
+      description: 'Calculate daily protein, carbs, and fat needs for weight loss, muscle gain, or maintenance. Personalized macro split.',
+      gradient: 'from-green-600 to-emerald-600',
+      tags: ['Macros', 'Protein', 'Diet']
+    },
+    {
+      name: 'Pregnancy Calculator',
+      href: '/calculators/pregnancy-calculator',
+      description: 'Calculate your due date and track pregnancy milestones. Get conception date, trimester info, and week-by-week progress.',
+      gradient: 'from-pink-500 to-purple-500',
+      tags: ['Due Date', 'Pregnancy', 'Milestones']
     },
     {
       name: 'Body Shape Calculator',
