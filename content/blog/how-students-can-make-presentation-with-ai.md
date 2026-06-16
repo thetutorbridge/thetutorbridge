@@ -72,7 +72,7 @@ Generate professional infographics, process diagrams, and illustrations using Al
 
 - Import & Beautify Existing Decks
 
-Already have a PowerPoint or PDF from your notes? Upload and redesign existing slides using AI. Alai transforms rough drafts into polished, modern presentations instantly, perfect for upgrading old work without starting over.
+Already have a PowerPoint or [PDF flipbook](https://www.flipsnack.com/pdf-to-flipbook) from your notes? Upload and redesign existing slides using AI. Alai transforms rough drafts into polished, modern presentations instantly, perfect for upgrading old work without starting over.
 
 - Professional Design Elements
 
