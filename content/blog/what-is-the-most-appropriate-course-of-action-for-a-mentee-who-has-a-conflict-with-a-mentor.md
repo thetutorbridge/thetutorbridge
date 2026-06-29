@@ -87,7 +87,7 @@ Signs of misaligned expectations:
 
 Mentors and mentees are human — and sometimes, personalities simply don’t click. Whether it’s a difference in tone, working pace, or feedback style, these can compound over time if not acknowledged.
 
-Common signs:
+Common signs you need to [improve communication skills](https://5app.com/resources/the-art-of-great-workplace-communication):
 
 - Discomfort during conversations
 - Passive-aggressive feedback
