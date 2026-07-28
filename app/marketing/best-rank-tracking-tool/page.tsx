@@ -47,7 +47,7 @@ const localLogoPaths: { [key: string]: string } = {
   "Advanced Web Ranking": "/advanced web ranking logo.jpeg",
   "Authority Labs": "/authority labs logo.png",
   "AgencyAnalytics": "/agency analytics logo.png",
-  "Rank Tracker (SEO PowerSuite)": "/seo powersuite logo.png",
+  "SEO PowerSuite": "/seo powersuite logo.png",
   "KeySearch": "/KeySearch Logo.png",
   "Ranktracker": "/Ranktracker logo.jpeg",
   "LowFruits": "/LowFruits Logo.jpeg",
@@ -64,7 +64,7 @@ const customLogoDomains: { [key: string]: string } = {
   "Semrush Position Tracking": "semrush.com",
   "Ahrefs Rank Tracker": "ahrefs.com",
   "Moz Pro Rank Tracker": "moz.com",
-  "Rank Tracker (SEO PowerSuite)": "link-assistant.com",
+  "SEO PowerSuite": "link-assistant.com",
 };
 
 // Premium Logo component
@@ -560,7 +560,7 @@ const rankTrackingTools = [
   },
   {
     id: 14,
-    name: "Rank Tracker (SEO PowerSuite)",
+    name: "SEO PowerSuite",
     category: "Desktop Solution",
     bestFor: "Desktop-based unlimited tracking",
     pricing: "Freemium",
