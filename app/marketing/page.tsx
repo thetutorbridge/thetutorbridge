@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target } from 'lucide-react';
 
 const marketingResources = [
   {
@@ -13,6 +13,13 @@ const marketingResources = [
     href: "/marketing/best-seo-tools",
     icon: Search,
     tags: ["SEO", "Tools", "Free & Paid"]
+  },
+  {
+    title: "Best Rank Tracking Tools",
+    description: "21 best rank tracking tools for 2026. Monitor your keyword rankings with Semrush, Ahrefs, AccuRanker, and more.",
+    href: "/marketing/best-rank-tracking-tool",
+    icon: Target,
+    tags: ["Rank Tracking", "SEO", "Keywords"]
   }
 ];
 
