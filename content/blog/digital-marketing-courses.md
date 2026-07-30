@@ -101,7 +101,7 @@ HubSpot Academy’s **Digital Marketing Certification Course** is one of the bes
 
 ### **Key Highlights**
 
-- Covers topics like **SEO, content marketing, social media, and email marketing.**
+- Covers topics like **SEO, content marketing, social media, and [email marketing](https://www.benchmarkemail.com/email-marketing/).**
 - Provides **certification** that adds value to your resume.
 - Features **expert-led video tutorials** and case studies.
 
