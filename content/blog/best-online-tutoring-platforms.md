@@ -48,6 +48,8 @@ Over the past 6 months, I've personally tested **21 online tutoring platforms** 
 
 Whether you're a **parent** looking for [homework help](/homework-help) for your child, a **college student** struggling with calculus, or an **adult learner** wanting to pick up Spanish, this guide will help you find the perfect platform.
 
+Learners can use tools like Lara Translate to [translate](https://laratranslate.com/translate) study notes, reading materials, and tutor-provided documents before discussing difficult vocabulary or concepts with their tutor.
+
 ## Comparison Table: 21 Best Online Tutoring Platforms at a Glance {#comparison-table}
 
 Before diving deep, here's a quick comparison to help you shortlist:

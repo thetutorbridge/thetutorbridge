@@ -77,6 +77,8 @@ Key aspects of educational equity include:
 
 The distinction between equity and equality is crucial. For example, providing every student with the same textbook (equality) doesn't help students who need audio versions due to visual impairments or translations due to language barriers. Equity means ensuring each student has access to materials in formats they can use effectively.
 
+Schools can use tools like Lara Translate to [translate](https://laratranslate.com/translate) learning materials, school notices, and family communications for multilingual students and parents.
+
 Educational equity also connects to broader questions about access to quality education. Our article on [why should education be free](https://www.thetutorbridge.com/blog/why-should-education-be-free) examines how financial barriers affect educational opportunity.
 
 ### Inclusion: Creating Belonging for Everyone
