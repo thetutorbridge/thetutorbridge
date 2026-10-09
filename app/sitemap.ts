@@ -18,7 +18,6 @@ const roadmapSlugs = [
   'full-stack-developer',
   'devops',
   'ai-engineer',
-  'ai-ml',
   'data-analyst',
   'data-scientist',
   'data-engineer',
@@ -29,7 +28,6 @@ const roadmapSlugs = [
   'ai-data-scientist',
   'java',
   'javascript',
-  'javascript-questions',
   'blockchain',
   'qa',
   'machine-learning',
@@ -43,7 +41,6 @@ const roadmapSlugs = [
   'aspnet-core',
   'golang',
   'sql',
-  'sql-questions',
   'flutter',
   'cpp',
   'spring-boot',
@@ -70,11 +67,9 @@ const roadmapSlugs = [
   'nlp-engineer',
   'big-data-engineer',
   'integration-engineer',
-  'projects',
 ];
 
 // All calculator slugs - manually maintained list
-// When adding a new calculator, add its slug here
 const calculatorSlugs = [
   'age-calculator',
   'amortization-calculator',
@@ -213,1082 +208,294 @@ const calculatorSlugs = [
   'work-hours-calculator',
 ];
 
+// All tool slugs
+const toolSlugs = [
+  'timer',
+  'character-counter',
+  'password-generator',
+  'random-number-generator',
+  'case-converter',
+  'age-calculator',
+  'date-calculator',
+  'days-between-dates',
+  'tip-calculator',
+  'temperature-converter',
+  'word-counter',
+  'length-converter',
+  'random-name-generator',
+  'md5-generator',
+  'base64-encoder-decoder',
+  'color-picker',
+  'world-clock',
+  'time-zone-converter',
+  'rgb-hex-converter',
+  'lorem-ipsum-generator',
+  'text-repeater',
+  'reverse-text',
+  'json-formatter',
+  'countdown-timer',
+  'uuid-generator',
+  'url-encoder-decoder',
+  'html-encoder-decoder',
+  'qr-code-generator',
+  'percentage-calculator',
+  'bmi-calculator',
+  'discount-calculator',
+  'unit-converter',
+  'loan-calculator',
+  'pomodoro-timer',
+  'text-diff-checker',
+  'markdown-to-html',
+  'csv-to-json',
+  'binary-converter',
+  'hex-converter',
+  'roman-numeral-converter',
+  'epoch-converter',
+  'color-palette-generator',
+  'gradient-generator',
+  'box-shadow-generator',
+  'css-minifier',
+  'js-minifier',
+  'sql-formatter',
+  'xml-formatter',
+  'yaml-to-json',
+  'string-utility',
+  'color-contrast-checker',
+  'image-to-base64',
+  'invoice-generator',
+  'resume-builder',
+  'qr-code-scanner',
+  'barcode-generator',
+  'dice-roller',
+  'text-statistics',
+  'regex-tester',
+  'json-to-xml',
+  'json-to-csv-converter',
+  'html-table-generator',
+  'markdown-table-generator',
+  'html-beautifier',
+  'css-beautifier',
+  'js-beautifier',
+  'color-shades-generator',
+  'morse-code-translator',
+  'number-base-converter',
+  'scientific-calculator',
+  'find-and-replace',
+  'text-cleaner',
+  'list-randomizer',
+  'word-frequency-counter',
+  'character-frequency-counter',
+  'rgb-hsl-converter',
+  'random-color-generator',
+  'decimal-binary-converter',
+  'ascii-text-generator',
+  'line-sorter',
+  'list-deduplicator',
+  'whitespace-remover',
+];
+
+// Brain games slugs
+const brainGamesSlugs = [
+  'times-table-speed-test',
+  'memory-card-match',
+  'mental-math-grade-3',
+  'mental-math-grade-4',
+  'mental-math-grade-5',
+  'mental-math-grade-6',
+  'mental-math-grade-7',
+  'mental-math-grade-8',
+];
+
+// Times tables slugs
+const timesTablesSlugs = [
+  '2-times-table',
+  '3-times-table',
+  '4-times-table',
+  '5-times-table',
+  '6-times-table',
+  '7-times-table',
+  '8-times-table',
+  '9-times-table',
+  '10-times-table',
+  '11-times-table',
+  '12-times-table',
+];
+
+// Class 6 science chapters
+const class6ScienceChapters = [
+  'chapter-1-the-wonderful-world-of-science',
+  'chapter-2-diversity-in-the-living-world',
+  'chapter-3-mindful-eating-a-path-to-a-healthy-body',
+  'chapter-4-exploring-magnets',
+  'chapter-5-measurement-of-length-and-motion',
+  'chapter-6-materials-around-us',
+  'chapter-7-temperature-and-its-measurement',
+  'chapter-8-a-journey-through-states-of-water',
+  'chapter-9-methods-of-separation-in-everyday-life',
+  'chapter-10-living-creatures-exploring-their-characteristics',
+];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.thetutorbridge.com';
+  const lastModified = new Date();
 
-  // Static pages - Main
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/how-it-works`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Homework Help pages
-    {
-      url: `${baseUrl}/homework-help`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/homework-help/submit`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/homework-help/math`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/homework-help/science`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/homework-help/english`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Tutoring pages
-    {
-      url: `${baseUrl}/tutoring`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tutoring/free-consultation`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tutoring/math`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tutoring/science`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tutoring/english`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Other pages
-    {
-      url: `${baseUrl}/ai-study-guide-maker`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/motivational-sessions`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/career-guidance`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-  ];
+  // Helper function to create sitemap entry
+  const entry = (path: string) => ({ url: `${baseUrl}${path}`, lastModified });
 
-  // Blog pages
-  const blogPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-  ];
+  // Static pages
+  const staticPages = [
+    '',
+    '/about',
+    '/contact',
+    '/faq',
+    '/pricing',
+    '/how-it-works',
+    '/book-demo-class',
+    '/homework-help',
+    '/homework-help/submit',
+    '/homework-help/math',
+    '/homework-help/science',
+    '/homework-help/english',
+    '/tutoring',
+    '/tutoring/free-consultation',
+    '/tutoring/math',
+    '/tutoring/science',
+    '/tutoring/english',
+    '/ai-study-guide-maker',
+    '/motivational-sessions',
+    '/career-guidance',
+    '/doubt-solving',
+    '/doubt-solving/ask-doubt',
+    '/blog',
+    '/calculators',
+    '/roadmap',
+    '/study-resources',
+    '/study-resources/work-in-progress',
+    '/solve',
+    '/fraction-to-decimal',
+    '/percentage',
+    '/convert',
+    '/geometry',
+    '/formulas',
+    '/word-problems',
+    '/tools',
+    '/brain-games',
+    '/times-tables',
+    '/marketing',
+    '/marketing/ai-marketing-tools',
+    '/marketing/best-rank-tracking-tool',
+    '/marketing/best-rank-tracking-tools',
+    '/marketing/best-seo-tools',
+    '/marketing/best-seo-automation-software',
+    '/college-acceptance-rates',
+    '/cost-of-education-by-country',
+    '/education-statistics',
+    '/student-mental-health-statistics',
+    '/teacher-salary-statistics',
+    '/worksheets',
+    '/worksheets/grade-6',
+    '/worksheets/grade-7',
+    '/worksheets/grade-8',
+  ].map(entry);
 
-  // Calculators - Main page
-  const calculatorPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/calculators`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
+  // Calculator pages
+  const calculatorPages = calculatorSlugs.map(slug => entry(`/calculators/${slug}`));
 
-  // All individual calculator pages
-  const individualCalculators: MetadataRoute.Sitemap = calculatorSlugs.map(calc => ({
-    url: `${baseUrl}/calculators/${calc}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
+  // Roadmap pages
+  const roadmapPages = roadmapSlugs.map(slug => entry(`/roadmap/${slug}`));
 
-  // Roadmaps - Main page
-  const roadmapPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/roadmap`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
+  // Tool pages
+  const toolPages = toolSlugs.map(slug => entry(`/tools/${slug}`));
 
-  // All individual roadmap pages
-  const individualRoadmaps: MetadataRoute.Sitemap = roadmapSlugs.map(roadmap => ({
-    url: `${baseUrl}/roadmap/${roadmap}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
+  // Brain games pages
+  const brainGamesPages = brainGamesSlugs.map(slug => entry(`/brain-games/${slug}`));
 
-  // Study Resources - Main page
-  const studyResourcePages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/study-resources`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/study-resources/work-in-progress`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-  ];
+  // Times tables pages
+  const timesTablesPages = timesTablesSlugs.map(slug => entry(`/times-tables/${slug}`));
 
-  // Study Resources - All class pages
+  // Study resources - class pages
   const classPages = ['class-6', 'class-7', 'class-8', 'class-9', 'class-10', 'class-11', 'class-12'];
-  const classMainPages: MetadataRoute.Sitemap = classPages.map(className => ({
-    url: `${baseUrl}/study-resources/${className}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
+  const classMainPages = classPages.map(cls => entry(`/study-resources/${cls}`));
 
-  // Study Resources - Class 6 subject pages
-  const class6SubjectPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/study-resources/class-6/maths`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/study-resources/class-6/science`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/study-resources/class-6/english`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-  ];
+  // Study resources - class 6 subjects
+  const class6SubjectPages = ['maths', 'science', 'english'].map(subject =>
+    entry(`/study-resources/class-6/${subject}`)
+  );
 
-  // Study Resources - Class 6 Science Chapters (Individual)
-  const class6ScienceChapters: MetadataRoute.Sitemap = [
-    'chapter-1-the-wonderful-world-of-science',
-    'chapter-2-diversity-in-the-living-world',
-    'chapter-3-mindful-eating-a-path-to-a-healthy-body',
-    'chapter-4-exploring-magnets',
-    'chapter-5-measurement-of-length-and-motion',
-    'chapter-6-materials-around-us',
-    'chapter-7-temperature-and-its-measurement',
-    'chapter-8-a-journey-through-states-of-water',
-    'chapter-9-methods-of-separation-in-everyday-life',
-    'chapter-10-living-creatures-exploring-their-characteristics',
-  ].map(chapter => ({
-    url: `${baseUrl}/study-resources/class-6/science/${chapter}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
+  // Study resources - class 6 science chapters
+  const class6SciencePages = class6ScienceChapters.map(chapter =>
+    entry(`/study-resources/class-6/science/${chapter}`)
+  );
 
-  // Study Resources - Class 7, 8, 9, 10 subject pages
-  const otherClassSubjectPages: MetadataRoute.Sitemap = [];
-  ['class-7', 'class-8', 'class-9', 'class-10'].forEach(className => {
+  // Study resources - class 7-10 subjects
+  const class7to10SubjectPages: MetadataRoute.Sitemap = [];
+  ['class-7', 'class-8', 'class-9', 'class-10'].forEach(cls => {
     ['maths', 'science', 'english'].forEach(subject => {
-      otherClassSubjectPages.push({
-        url: `${baseUrl}/study-resources/${className}/${subject}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      });
+      class7to10SubjectPages.push(entry(`/study-resources/${cls}/${subject}`));
     });
   });
 
-  // Study Resources - Class 11 and 12 subject pages
-  const seniorClassSubjectPages: MetadataRoute.Sitemap = [];
-  ['class-11', 'class-12'].forEach(className => {
+  // Study resources - class 11-12 subjects
+  const class11to12SubjectPages: MetadataRoute.Sitemap = [];
+  ['class-11', 'class-12'].forEach(cls => {
     ['maths', 'physics', 'chemistry', 'biology', 'english'].forEach(subject => {
-      seniorClassSubjectPages.push({
-        url: `${baseUrl}/study-resources/${className}/${subject}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      });
+      class11to12SubjectPages.push(entry(`/study-resources/${cls}/${subject}`));
     });
   });
 
-  // Fetch blog posts from markdown files
+  // Blog posts
   let blogPostPages: MetadataRoute.Sitemap = [];
   try {
     const posts = getAllBlogPosts(false);
-    blogPostPages = posts.map((post) => ({
+    blogPostPages = posts.map(post => ({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post.updated_at || post.published_at || new Date()),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
     }));
   } catch {
-    // Silent fail - sitemap will still work with static pages
+    // Silent fail
   }
 
-  // Equation Solver - Main page
-  const equationSolverPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/solve`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
+  // Equation solver pages
+  const equationPages = getAllEquationSlugs().map(slug => entry(`/solve/${slug}`));
 
-  // All individual equation solver pages
-  const equationSlugs = getAllEquationSlugs();
-  const individualEquations: MetadataRoute.Sitemap = equationSlugs.map(slug => ({
-    url: `${baseUrl}/solve/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
+  // Fraction to decimal pages
+  const fractionPages = getAllFractionSlugs().map(slug => entry(`/fraction-to-decimal/${slug}`));
 
-  // Fraction to Decimal - Main page
-  const fractionConverterPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/fraction-to-decimal`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
+  // Percentage pages
+  const percentagePages = getAllPercentageSlugs().map(slug => entry(`/percentage/${slug}`));
 
-  // All individual fraction to decimal pages
-  const fractionSlugs = getAllFractionSlugs();
-  const individualFractions: MetadataRoute.Sitemap = fractionSlugs.map(slug => ({
-    url: `${baseUrl}/fraction-to-decimal/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
+  // Conversion pages
+  const conversionPages = getAllConversionSlugs().map(slug => entry(`/convert/${slug}`));
 
-  // Percentage Calculator - Main page
-  const percentagePages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/percentage`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
+  // Geometry pages
+  const geometryPages = getAllGeometrySlugs().map(slug => entry(`/geometry/${slug}`));
 
-  // All individual percentage calculation pages
-  const percentageSlugs = getAllPercentageSlugs();
-  const individualPercentages: MetadataRoute.Sitemap = percentageSlugs.map(slug => ({
-    url: `${baseUrl}/percentage/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
+  // Formula pages
+  const formulaPages = getAllFormulaSlugs().map(slug => entry(`/formulas/${slug}`));
 
-  // Unit Converter - Main page
-  const conversionPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/convert`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
-
-  // All individual unit conversion pages
-  const conversionSlugs = getAllConversionSlugs();
-  const individualConversions: MetadataRoute.Sitemap = conversionSlugs.map(slug => ({
-    url: `${baseUrl}/convert/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  // Geometry Calculator - Main page
-  const geometryPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/geometry`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
-
-  // All individual geometry calculation pages
-  const geometrySlugs = getAllGeometrySlugs();
-  const individualGeometry: MetadataRoute.Sitemap = geometrySlugs.map(slug => ({
-    url: `${baseUrl}/geometry/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  // Math Formulas Database - Main page
-  const formulasPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/formulas`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
-
-  // All individual formula pages
-  const formulaSlugs = getAllFormulaSlugs();
-  const individualFormulas: MetadataRoute.Sitemap = formulaSlugs.map(slug => ({
-    url: `${baseUrl}/formulas/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  // Word Problems Solver - Main page
-  const wordProblemsPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/word-problems`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
-
-  // All individual word problem pages
-  const wordProblemSlugs = getAllWordProblemSlugs();
-  const individualWordProblems: MetadataRoute.Sitemap = wordProblemSlugs.map(slug => ({
-    url: `${baseUrl}/word-problems/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  // Tools - Main page and individual tool pages
-  const toolPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/tools`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tools/timer`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/character-counter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/password-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/random-number-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/case-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/age-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/date-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/days-between-dates`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/tip-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/temperature-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/word-counter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/length-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/random-name-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/md5-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/base64-encoder-decoder`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/color-picker`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/world-clock`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/time-zone-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/rgb-hex-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/lorem-ipsum-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/text-repeater`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/reverse-text`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/json-formatter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/countdown-timer`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/uuid-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/url-encoder-decoder`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/html-encoder-decoder`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/qr-code-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/percentage-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/bmi-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/discount-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/unit-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/loan-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/pomodoro-timer`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/text-diff-checker`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/markdown-to-html`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/csv-to-json`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/binary-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/hex-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/roman-numeral-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/epoch-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/color-palette-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/gradient-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/box-shadow-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/css-minifier`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/js-minifier`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/sql-formatter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/xml-formatter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/yaml-to-json`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/string-utility`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/color-contrast-checker`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/image-to-base64`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/invoice-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/resume-builder`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/qr-code-scanner`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/barcode-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/dice-roller`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/text-statistics`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/regex-tester`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/json-to-xml`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/json-to-csv-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/html-table-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/markdown-table-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/html-beautifier`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/css-beautifier`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/js-beautifier`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/color-shades-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/morse-code-translator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/number-base-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/scientific-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/find-and-replace`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/text-cleaner`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/list-randomizer`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/word-frequency-counter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/character-frequency-counter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/rgb-hsl-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/random-color-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/decimal-binary-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/ascii-text-generator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/line-sorter`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/list-deduplicator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/whitespace-remover`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ];
-
-  // Brain Games - Main page and individual games
-  const brainGamesPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/brain-games`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/brain-games/times-table-speed-test`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/brain-games/memory-card-match`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/brain-games/mental-math-grade-3`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/brain-games/mental-math-grade-4`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/brain-games/mental-math-grade-5`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/brain-games/mental-math-grade-6`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/brain-games/mental-math-grade-7`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/brain-games/mental-math-grade-8`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-  ];
-
-  // Times Tables - Main page and individual tables
-  const timesTablesPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/times-tables`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/times-tables/2-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/3-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/4-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/5-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/6-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/7-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/8-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/9-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/10-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/11-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/times-tables/12-times-table`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ];
+  // Word problem pages
+  const wordProblemPages = getAllWordProblemSlugs().map(slug => entry(`/word-problems/${slug}`));
 
   // Combine all pages
   return [
     ...staticPages,
-    ...blogPages,
     ...blogPostPages,
     ...calculatorPages,
-    ...individualCalculators,
     ...roadmapPages,
-    ...individualRoadmaps,
-    ...studyResourcePages,
-    ...classMainPages,
-    ...class6SubjectPages,
-    ...class6ScienceChapters,
-    ...otherClassSubjectPages,
-    ...seniorClassSubjectPages,
-    ...equationSolverPages,
-    ...individualEquations,
-    ...fractionConverterPages,
-    ...individualFractions,
-    ...percentagePages,
-    ...individualPercentages,
-    ...conversionPages,
-    ...individualConversions,
-    ...geometryPages,
-    ...individualGeometry,
-    ...formulasPages,
-    ...individualFormulas,
-    ...wordProblemsPages,
-    ...individualWordProblems,
     ...toolPages,
     ...brainGamesPages,
     ...timesTablesPages,
+    ...classMainPages,
+    ...class6SubjectPages,
+    ...class6SciencePages,
+    ...class7to10SubjectPages,
+    ...class11to12SubjectPages,
+    ...equationPages,
+    ...fractionPages,
+    ...percentagePages,
+    ...conversionPages,
+    ...geometryPages,
+    ...formulaPages,
+    ...wordProblemPages,
   ];
 }
