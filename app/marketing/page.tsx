@@ -4,9 +4,16 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles } from 'lucide-react';
 
 const marketingResources = [
+  {
+    title: "Best AI Marketing Tools",
+    description: "35 best AI marketing tools for 2026. ChatGPT, Jasper, Copy.ai & more. Transform your marketing with AI content creation, automation & analytics.",
+    href: "/marketing/ai-marketing-tools",
+    icon: Brain,
+    tags: ["AI Marketing", "AI Tools", "Content Creation"]
+  },
   {
     title: "Best SEO Tools",
     description: "32 best SEO tools for 2026: free and paid options. Compare features, pricing, and find the perfect tools for your needs.",
@@ -16,10 +23,17 @@ const marketingResources = [
   },
   {
     title: "Best Rank Tracking Tools",
-    description: "21 best rank tracking tools for 2026. Monitor your keyword rankings with Semrush, Ahrefs, AccuRanker, and more.",
-    href: "/marketing/best-rank-tracking-tool",
+    description: "10 best rank tracking tools for 2026. Monitor keyword positions with Semrush, Ahrefs, AccuRanker, Nightwatch & more.",
+    href: "/marketing/best-rank-tracking-tools",
     icon: Target,
     tags: ["Rank Tracking", "SEO", "Keywords"]
+  },
+  {
+    title: "21 Rank Tracking Tools Compared",
+    description: "Comprehensive comparison of 21 rank tracking tools including Semrush, Ahrefs, SE Ranking, Moz Pro, and more SERP trackers.",
+    href: "/marketing/best-rank-tracking-tool",
+    icon: BarChart3,
+    tags: ["Rank Tracking", "SERP Tools", "Comparison"]
   }
 ];
 
