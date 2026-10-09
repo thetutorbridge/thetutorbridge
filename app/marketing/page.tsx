@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu } from 'lucide-react';
 
 const marketingResources = [
   {
@@ -20,6 +20,13 @@ const marketingResources = [
     href: "/marketing/best-seo-tools",
     icon: Search,
     tags: ["SEO", "Tools", "Free & Paid"]
+  },
+  {
+    title: "Best SEO Automation Software",
+    description: "10 best SEO automation tools for 2026. Automate technical audits, content optimization, reporting & more with Semrush, Surfer SEO, Screaming Frog.",
+    href: "/marketing/best-seo-automation-software",
+    icon: Cpu,
+    tags: ["SEO Automation", "Automated SEO", "Workflow"]
   },
   {
     title: "Best Rank Tracking Tools",
