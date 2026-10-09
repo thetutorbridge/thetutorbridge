@@ -51,9 +51,9 @@ const localLogoPaths: { [key: string]: string } = {
   "Screaming Frog": "/screaming frog logo.png",
   "SE Ranking": "/se ranking logo.png",
   "Ahrefs": "/ahrefs logo.png",
-  "Botify": "/botify logo.png",
-  "Conductor": "/conductor logo.png",
-  "Alli AI": "/alli ai logo.png",
+  "Botify": "/Botify logo.png",
+  "Conductor": "/conductor logo.jpeg",
+  "Alli AI": "/Alli AI logo.jpg",
   "Clearscope": "/clearscope logo.jpeg",
   "Zapier": "/zapier logo.png",
 };
