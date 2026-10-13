@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2 } from 'lucide-react';
 
 const marketingResources = [
   {
@@ -27,6 +27,13 @@ const marketingResources = [
     href: "/marketing/best-keyword-research-tools",
     icon: Key,
     tags: ["Keyword Research", "SEO", "Keywords"]
+  },
+  {
+    title: "Best Link Building Tools",
+    description: "15 best link building tools for 2026. Ahrefs, Semrush, Pitchbox, Hunter.io & more backlink tools for SEO link building & outreach.",
+    href: "/marketing/best-link-building-tools",
+    icon: Link2,
+    tags: ["Link Building", "Backlinks", "Outreach"]
   },
   {
     title: "Best SEO Automation Software",
