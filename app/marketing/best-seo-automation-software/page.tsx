@@ -31,7 +31,8 @@ import {
   Bot,
   Cpu,
   Workflow,
-  RefreshCw
+  RefreshCw,
+  Linkedin
 } from 'lucide-react';
 
 // Helper function to extract domain from website URL
@@ -733,6 +734,29 @@ export default function BestSEOAutomationSoftwarePage() {
                 to Automate Your Workflow
               </span>
             </h1>
+
+            {/* Author Byline */}
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <img
+                src="/rishabh-jain.webp"
+                alt="Rishabh Jain"
+                className="w-10 h-10 rounded-full object-cover ring-2 ring-white/30"
+              />
+              <div className="flex items-center gap-2 text-sm">
+                <span className="text-gray-300">By</span>
+                <a
+                  href="https://www.linkedin.com/in/rishabh-jain-33b946214/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-white hover:text-blue-300 transition-colors flex items-center gap-1"
+                >
+                  Rishabh Jain
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <span className="text-gray-400">·</span>
+                <span className="text-gray-400">Oct 2026</span>
+              </div>
+            </div>
 
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
               10 expert-reviewed <strong className="text-white">SEO automation tools</strong> to streamline your SEO workflow.

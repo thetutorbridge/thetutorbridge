@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key } from 'lucide-react';
 
 const marketingResources = [
   {
@@ -20,6 +20,13 @@ const marketingResources = [
     href: "/marketing/best-seo-tools",
     icon: Search,
     tags: ["SEO", "Tools", "Free & Paid"]
+  },
+  {
+    title: "Best Keyword Research Tools",
+    description: "7 best keyword research tools for 2026. Find profitable keywords with Semrush, Ahrefs, Google Keyword Planner & more keyword research software.",
+    href: "/marketing/best-keyword-research-tools",
+    icon: Key,
+    tags: ["Keyword Research", "SEO", "Keywords"]
   },
   {
     title: "Best SEO Automation Software",
