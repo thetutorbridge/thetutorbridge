@@ -77,6 +77,54 @@ export default function PercentagePageContent({ data }: PercentagePageContentPro
     ],
   };
 
+  // FAQ Schema for SEO
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `How do you calculate ${data.percent}% of ${data.of}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Multiply ${data.of} by ${data.percent}/100 (or ${(data.percent / 100).toFixed(4)}). The calculation is: ${data.of} × ${(data.percent / 100).toFixed(4)} = ${data.resultFormatted}.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the formula for finding a percentage of a number?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `The formula is: (Percentage ÷ 100) × Number = Result. For this problem: ${data.of} × (${data.percent}/100) = ${data.resultFormatted}.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `How do you convert ${data.percent}% to a decimal?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `To convert any percentage to a decimal, divide by 100. ${data.percent}% = ${data.percent} ÷ 100 = ${(data.percent / 100).toFixed(4)}.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `What is ${data.percent}% as a fraction?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${data.percent}% as a fraction is ${data.percent}/100. This represents ${data.percent} parts out of 100 equal parts.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where are percentage calculations used in real life?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Percentages are used in calculating discounts, tips at restaurants, tax calculations, interest rates on loans and savings, test scores, nutritional information, and business metrics like profit margins and growth rates.'
+        }
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <script
@@ -90,6 +138,10 @@ export default function PercentagePageContent({ data }: PercentagePageContentPro
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navigation />
 
@@ -303,6 +355,170 @@ export default function PercentagePageContent({ data }: PercentagePageContentPro
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Mathematical Background */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6">
+              The Mathematics Behind Percentages
+            </h2>
+            <div className="prose max-w-none text-gray-700">
+              <p className="mb-4">
+                The word "percent" comes from the Latin "per centum," meaning "by the hundred." A percentage is simply a way of expressing a number as a fraction of 100. When we say {data.percent}%, we mean {data.percent} parts out of every 100 parts.
+              </p>
+              <p className="mb-4">
+                The concept of percentages has been used for centuries because base-100 calculations are intuitive for humans (likely because we have 10 fingers, making base-10 and base-100 systems natural). Ancient Romans used fractions with denominators of 100, and by the 15th century, the % symbol emerged in Italian manuscripts.
+              </p>
+              <p className="mb-4">
+                There are three main types of percentage problems:
+              </p>
+              <ul className="list-disc list-inside space-y-2 mb-4">
+                <li><strong>Finding a percentage of a number</strong> (like this problem: What is {data.percent}% of {data.of}?)</li>
+                <li><strong>Finding what percentage one number is of another</strong> (e.g., What percentage is 25 of 50?)</li>
+                <li><strong>Finding the whole when given a part and percentage</strong> (e.g., 30 is 15% of what number?)</li>
+              </ul>
+              <p>
+                Mastering these three types of percentage problems will help you handle virtually any percentage calculation you encounter in daily life, academics, or professional work.
+              </p>
+            </div>
+          </div>
+
+          {/* Common Mistakes */}
+          <div className="bg-red-50 rounded-2xl shadow-xl p-8 mb-8 border-2 border-red-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <span className="text-red-600 mr-2">⚠️</span> Common Mistakes to Avoid
+            </h2>
+            <div className="space-y-4">
+              <div className="flex items-start bg-white p-4 rounded-lg">
+                <span className="text-red-600 font-bold mr-3">✗</span>
+                <div>
+                  <p className="font-semibold text-gray-900">Moving the decimal point incorrectly</p>
+                  <p className="text-gray-600 text-sm">When converting {data.percent}% to a decimal, divide by 100 (move decimal 2 places left). {data.percent}% = {(data.percent / 100).toFixed(4)}. Many students move it only one place.</p>
+                </div>
+              </div>
+              <div className="flex items-start bg-white p-4 rounded-lg">
+                <span className="text-red-600 font-bold mr-3">✗</span>
+                <div>
+                  <p className="font-semibold text-gray-900">Confusing percentage increase/decrease with the percentage of</p>
+                  <p className="text-gray-600 text-sm">"A {data.percent}% increase" means adding {data.percent}% to the original. "What is {data.percent}% of something" is just {data.percent}% × that number.</p>
+                </div>
+              </div>
+              <div className="flex items-start bg-white p-4 rounded-lg">
+                <span className="text-red-600 font-bold mr-3">✗</span>
+                <div>
+                  <p className="font-semibold text-gray-900">Forgetting that percentages over 100 are valid</p>
+                  <p className="text-gray-600 text-sm">You can have percentages greater than 100%. 200% of 50 = 100. This represents more than the whole, which is common when discussing growth or multiples.</p>
+                </div>
+              </div>
+              <div className="flex items-start bg-white p-4 rounded-lg">
+                <span className="text-red-600 font-bold mr-3">✗</span>
+                <div>
+                  <p className="font-semibold text-gray-900">Not checking if the answer makes sense</p>
+                  <p className="text-gray-600 text-sm">If {data.percent}% is less than 50%, your answer should be less than half of {data.of}. If more than 50%, it should be more than half. Quick checks prevent big errors.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tips for Success */}
+          <div className="bg-green-50 rounded-2xl shadow-xl p-8 mb-8 border-2 border-green-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <span className="text-green-600 mr-2">💡</span> Tips for Mastering Percentages
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">Know Your Benchmarks</h3>
+                <p className="text-gray-600 text-sm">Memorize that 10% is ÷10, 25% is ÷4, 50% is ÷2, and 1% is ÷100. These benchmarks make mental math easier.</p>
+              </div>
+              <div className="bg-white p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">Use the Commutative Property</h3>
+                <p className="text-gray-600 text-sm">{data.percent}% of {data.of} equals {data.of}% of {data.percent}. Sometimes one calculation is easier! Try both ways.</p>
+              </div>
+              <div className="bg-white p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">Break Down Complex Percentages</h3>
+                <p className="text-gray-600 text-sm">Calculate 15% as 10% + 5%. Calculate 35% as 25% + 10%. Breaking down makes calculations manageable.</p>
+              </div>
+              <div className="bg-white p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">Convert to Fractions When Helpful</h3>
+                <p className="text-gray-600 text-sm">25% = ¼, 20% = ⅕, 50% = ½. Sometimes fraction multiplication is easier than decimal multiplication.</p>
+              </div>
+              <div className="bg-white p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">Estimate First</h3>
+                <p className="text-gray-600 text-sm">Before calculating {data.percent}% of {data.of}, estimate: Is {data.percent}% close to 10%, 25%, 50%? This helps verify your final answer.</p>
+              </div>
+              <div className="bg-white p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">Practice with Real Prices</h3>
+                <p className="text-gray-600 text-sm">Calculate discounts while shopping. Figure out tips mentally at restaurants. Real practice builds lasting skills.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ Section with Schema */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <span className="mr-2">❓</span> Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              <div className="border-b border-gray-200 pb-4">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">How do you calculate {data.percent}% of {data.of}?</h3>
+                <p className="text-gray-600">Multiply {data.of} by {data.percent}/100 (or {(data.percent / 100).toFixed(4)}). The calculation is: {data.of} × {(data.percent / 100).toFixed(4)} = {data.resultFormatted}. You can also use the fraction method: {data.of} × {data.percent}/100.</p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-4">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">What is the formula for finding a percentage of a number?</h3>
+                <p className="text-gray-600">The formula is: (Percentage ÷ 100) × Number = Result. Or equivalently: Number × (Percentage/100) = Result. For this problem: {data.of} × ({data.percent}/100) = {data.resultFormatted}.</p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-4">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">How do you convert {data.percent}% to a decimal?</h3>
+                <p className="text-gray-600">To convert any percentage to a decimal, divide by 100 (or move the decimal point two places to the left). {data.percent}% = {data.percent} ÷ 100 = {(data.percent / 100).toFixed(4)}.</p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-4">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">What is {data.percent}% as a fraction?</h3>
+                <p className="text-gray-600">{data.percent}% as a fraction is {data.percent}/100. This can potentially be simplified depending on the numbers. The fraction represents {data.percent} parts out of 100 equal parts.</p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-4">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">How can I check if my percentage calculation is correct?</h3>
+                <p className="text-gray-600">Use estimation: If the percentage is less than 50%, your answer should be less than half the original number. If it's 100%, your answer equals the original. For {data.percent}% of {data.of}, since {data.percent}% is {data.percent > 50 ? 'more' : 'less'} than half, {data.resultFormatted} should be {data.percent > 50 ? 'more' : 'less'} than {data.of / 2}.</p>
+              </div>
+
+              <div className="pb-4">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">Where are percentage calculations used in real life?</h3>
+                <p className="text-gray-600">Percentages are used in calculating discounts (e.g., {data.percent}% off sale), tips at restaurants, tax calculations, interest rates on loans and savings, test scores and grades, nutritional information on food labels, statistical data, and business metrics like profit margins and growth rates.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Practice */}
+          <div className="bg-blue-50 rounded-2xl shadow-xl p-8 mb-8 border-2 border-blue-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Build Your Percentage Skills</h2>
+            <p className="text-gray-700 mb-4">
+              To become confident with percentages, practice these types of problems:
+            </p>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                <span>Calculate tips (15%, 18%, 20%) on restaurant bills</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                <span>Find sale prices with various discount percentages</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                <span>Convert test scores to percentages and letter grades</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                <span>Calculate percentage increase and decrease in prices or values</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+                <span>Work with compound percentages (e.g., 20% off, then additional 10% off)</span>
+              </li>
+            </ul>
           </div>
 
           {/* CTA */}

@@ -79,6 +79,54 @@ export function FractionPageContent({ fractionData, fractionSlug }: FractionPage
     ],
   };
 
+  // FAQ Schema for SEO
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `What is ${fractionData.fraction} as a decimal?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${fractionData.fraction} as a decimal is ${fractionData.decimal}. This is calculated by dividing the numerator (${fractionData.numerator}) by the denominator (${fractionData.denominator}).`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `How do you convert ${fractionData.fraction} to a decimal?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `To convert ${fractionData.fraction} to a decimal, divide ${fractionData.numerator} by ${fractionData.denominator}. The result is ${fractionData.decimal}.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `What is ${fractionData.fraction} as a percentage?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${fractionData.fraction} as a percentage is ${fractionData.asPercentage}. To convert a fraction to a percentage, first convert to decimal (${fractionData.decimal}), then multiply by 100.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `Is ${fractionData.decimal} a terminating or repeating decimal?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${fractionData.decimal} is a ${fractionData.decimalType} decimal. ${fractionData.decimalType === 'terminating' ? 'Terminating decimals have a finite number of digits.' : 'Repeating decimals have a pattern of digits that repeats infinitely.'}`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `What are equivalent fractions to ${fractionData.fraction}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Equivalent fractions to ${fractionData.fraction} include: ${fractionData.equivalentFractions.join(', ')}. All these fractions equal the same decimal value: ${fractionData.decimal}.`
+        }
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <script
@@ -92,6 +140,10 @@ export function FractionPageContent({ fractionData, fractionSlug }: FractionPage
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navigation />
 
@@ -321,6 +373,166 @@ export function FractionPageContent({ fractionData, fractionSlug }: FractionPage
                   </Link>
                 );
               })}
+            </div>
+          </div>
+
+          {/* Common Mistakes to Avoid */}
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center">
+              <span className="text-red-500 mr-3">⚠️</span>
+              Common Mistakes to Avoid
+            </h2>
+            <div className="space-y-4">
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-red-800 mb-2">Dividing in the Wrong Order</h3>
+                <p className="text-gray-700">
+                  Always divide the <strong>numerator by the denominator</strong>, not the other way around.
+                  For {fractionData.fraction}, divide {fractionData.numerator} ÷ {fractionData.denominator},
+                  not {fractionData.denominator} ÷ {fractionData.numerator}.
+                </p>
+              </div>
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-red-800 mb-2">Forgetting to Place the Decimal Point</h3>
+                <p className="text-gray-700">
+                  When doing long division, make sure to place the decimal point correctly.
+                  A misplaced decimal can change your answer dramatically (0.{fractionData.decimal.replace('.', '')} vs {fractionData.decimal}).
+                </p>
+              </div>
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-red-800 mb-2">Stopping Too Early with Repeating Decimals</h3>
+                <p className="text-gray-700">
+                  {fractionData.decimalType === 'repeating'
+                    ? `Since ${fractionData.fraction} is a repeating decimal, don't stop dividing too early. Continue until you see the pattern repeat to get the full answer: ${fractionData.repeatEnd}.`
+                    : `While ${fractionData.fraction} terminates cleanly at ${fractionData.decimal}, some fractions produce repeating decimals. Always check if the pattern continues.`
+                  }
+                </p>
+              </div>
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-red-800 mb-2">Confusing Fractions with Similar Numbers</h3>
+                <p className="text-gray-700">
+                  Don't confuse {fractionData.fraction} with similar fractions. Each fraction has a unique decimal value.
+                  For example, {fractionData.fraction} = {fractionData.decimal}, but changing either the numerator
+                  or denominator by even 1 gives a different result.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Understanding Decimal Types */}
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Understanding Terminating vs Repeating Decimals
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className={`p-6 rounded-xl border-2 ${fractionData.decimalType === 'terminating' ? 'border-green-500 bg-green-50' : 'border-gray-200 bg-gray-50'}`}>
+                <h3 className="text-xl font-bold text-green-700 mb-3 flex items-center">
+                  <span className="mr-2">✓</span> Terminating Decimals
+                </h3>
+                <p className="text-gray-700 mb-3">
+                  A terminating decimal has a <strong>finite number of digits</strong> after the decimal point. It ends.
+                </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Example: 1/4 = 0.25 (terminates after 2 digits)</li>
+                  <li>• Example: 3/8 = 0.375 (terminates after 3 digits)</li>
+                  <li>• Occurs when denominator factors are only 2s and 5s</li>
+                </ul>
+                {fractionData.decimalType === 'terminating' && (
+                  <div className="mt-4 p-3 bg-green-100 rounded-lg">
+                    <strong className="text-green-800">{fractionData.fraction} = {fractionData.decimal}</strong> is a terminating decimal!
+                  </div>
+                )}
+              </div>
+              <div className={`p-6 rounded-xl border-2 ${fractionData.decimalType === 'repeating' ? 'border-purple-500 bg-purple-50' : 'border-gray-200 bg-gray-50'}`}>
+                <h3 className="text-xl font-bold text-purple-700 mb-3 flex items-center">
+                  <span className="mr-2">∞</span> Repeating Decimals
+                </h3>
+                <p className="text-gray-700 mb-3">
+                  A repeating decimal has digits that <strong>repeat infinitely</strong> in a pattern.
+                </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Example: 1/3 = 0.333... (3 repeats forever)</li>
+                  <li>• Example: 2/7 = 0.285714... (pattern repeats)</li>
+                  <li>• Occurs when denominator has factors other than 2 and 5</li>
+                </ul>
+                {fractionData.decimalType === 'repeating' && (
+                  <div className="mt-4 p-3 bg-purple-100 rounded-lg">
+                    <strong className="text-purple-800">{fractionData.fraction} = {fractionData.repeatEnd}</strong> is a repeating decimal!
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Frequently Asked Questions */}
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  What is {fractionData.fraction} as a decimal?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  {fractionData.fraction} as a decimal is <strong>{fractionData.decimal}</strong>. This is calculated by
+                  dividing the numerator ({fractionData.numerator}) by the denominator ({fractionData.denominator}).
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  How do you convert {fractionData.fraction} to a decimal?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  To convert {fractionData.fraction} to a decimal, perform the division: {fractionData.numerator} ÷ {fractionData.denominator}.
+                  You can use long division or a calculator. The result is {fractionData.decimal}.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  What is {fractionData.fraction} as a percentage?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  {fractionData.fraction} as a percentage is <strong>{fractionData.asPercentage}</strong>. To convert a fraction
+                  to a percentage, first convert to decimal ({fractionData.decimal}), then multiply by 100.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  Is {fractionData.decimal} a terminating or repeating decimal?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  {fractionData.decimal} is a <strong>{fractionData.decimalType} decimal</strong>.
+                  {fractionData.decimalType === 'terminating'
+                    ? ' Terminating decimals have a finite number of digits and come from fractions where the denominator (when simplified) has only factors of 2 and 5.'
+                    : ' Repeating decimals have a pattern of digits that repeats infinitely. This happens when the denominator has prime factors other than 2 and 5.'
+                  }
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  What fractions are equivalent to {fractionData.fraction}?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  Equivalent fractions to {fractionData.fraction} include: <strong>{fractionData.equivalentFractions.join(', ')}</strong>.
+                  All these fractions simplify to the same value and equal {fractionData.decimal} as a decimal.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  Why is learning fraction to decimal conversion important?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  Converting fractions to decimals is essential for everyday math, from calculating tips and discounts
+                  to understanding statistics and measurements. Decimals are often easier to compare and use in calculations,
+                  while fractions show exact values. Mastering both forms helps in math, science, finance, and daily life.
+                </div>
+              </details>
             </div>
           </div>
 

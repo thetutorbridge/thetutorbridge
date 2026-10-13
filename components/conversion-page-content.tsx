@@ -72,6 +72,56 @@ export default function ConversionPageContent({ data }: ConversionPageContentPro
     ],
   };
 
+  // FAQ Schema for SEO
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `How many ${data.toUnitFull} are in ${data.value} ${data.fromUnitFull}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${data.value} ${data.fromUnitFull} equals ${data.resultFormatted} ${data.toUnitFull}. This is calculated using the formula: ${data.formula}.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `How do you convert ${data.fromUnitFull} to ${data.toUnitFull}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `To convert ${data.fromUnitFull} to ${data.toUnitFull}, use the formula: ${data.formula}. For ${data.value} ${data.fromUnit}, the result is ${data.resultFormatted} ${data.toUnit}.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `What is the formula for converting ${data.fromUnit} to ${data.toUnit}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `The formula for converting ${data.fromUnitFull} to ${data.toUnitFull} is: ${data.formula}. Simply multiply your value in ${data.fromUnit} by the conversion factor to get the equivalent in ${data.toUnit}.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `Is ${data.fromUnit} bigger than ${data.toUnit}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: parseFloat(data.resultFormatted.replace(/,/g, '')) > parseFloat(data.value)
+            ? `No, ${data.fromUnit} is larger than ${data.toUnit}. That's why ${data.value} ${data.fromUnit} equals ${data.resultFormatted} ${data.toUnit} - you get more ${data.toUnit} because each unit is smaller.`
+            : `Yes, ${data.fromUnit} is smaller than ${data.toUnit}. That's why ${data.value} ${data.fromUnit} equals ${data.resultFormatted} ${data.toUnit} - you get fewer ${data.toUnit} because each unit is larger.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `Why is unit conversion important?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Unit conversion is essential for international communication, scientific research, cooking, travel, construction, and many other everyday activities. Different countries use different measurement systems (metric vs imperial), so converting between units helps ensure accuracy and understanding across different contexts.'
+        }
+      }
+    ]
+  };
+
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
       length: 'from-[#2BAE66] to-[#1A3D7C]',
@@ -97,6 +147,10 @@ export default function ConversionPageContent({ data }: ConversionPageContentPro
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navigation />
 
@@ -261,6 +315,158 @@ export default function ConversionPageContent({ data }: ConversionPageContentPro
               </div>
             </div>
           )}
+
+          {/* Common Mistakes to Avoid */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <span className="text-red-500 mr-3">⚠️</span>
+              Common Mistakes to Avoid
+            </h2>
+            <div className="space-y-4">
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-red-800 mb-2">Using the Wrong Conversion Factor</h3>
+                <p className="text-gray-700">
+                  Always double-check that you're using the correct conversion factor for {data.fromUnit} to {data.toUnit}.
+                  The formula is: <strong>{data.formula}</strong>. Using a similar but incorrect factor can lead to significant errors.
+                </p>
+              </div>
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-red-800 mb-2">Multiplying When You Should Divide (or Vice Versa)</h3>
+                <p className="text-gray-700">
+                  When converting to larger units, divide. When converting to smaller units, multiply.
+                  Since {data.resultFormatted} {data.toUnit} = {data.value} {data.fromUnit},
+                  {parseFloat(data.resultFormatted.replace(/,/g, '')) > parseFloat(data.value)
+                    ? ` you multiply because ${data.toUnit} is a smaller unit than ${data.fromUnit}.`
+                    : ` you divide because ${data.toUnit} is a larger unit than ${data.fromUnit}.`}
+                </p>
+              </div>
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-red-800 mb-2">Forgetting to Include All Decimal Places</h3>
+                <p className="text-gray-700">
+                  When precision matters, ensure you keep enough decimal places during your calculation.
+                  Rounding too early can lead to inaccurate results, especially when the converted value is used in further calculations.
+                </p>
+              </div>
+              <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-red-800 mb-2">Confusing Similar Units</h3>
+                <p className="text-gray-700">
+                  Be careful not to confuse {data.fromUnit} with similar-sounding units. Different measurement systems
+                  (metric, imperial, US customary) sometimes have units with similar names but different values.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Tips for Accurate Conversions */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6 flex items-center">
+              <span className="text-green-500 mr-3">💡</span>
+              Tips for Accurate Conversions
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-green-800 mb-2">Memorize Common Conversions</h3>
+                <p className="text-gray-700">
+                  Learning frequently used conversion factors by heart saves time and reduces errors.
+                  Practice converting {data.fromUnit} to {data.toUnit} until it becomes second nature.
+                </p>
+              </div>
+              <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-green-800 mb-2">Use Estimation to Check</h3>
+                <p className="text-gray-700">
+                  Before accepting your answer, estimate whether it makes sense.
+                  {data.value} {data.fromUnit} should logically convert to approximately {data.resultFormatted} {data.toUnit}.
+                </p>
+              </div>
+              <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-green-800 mb-2">Show Your Work</h3>
+                <p className="text-gray-700">
+                  Write out each step of your conversion. This makes it easier to spot errors
+                  and helps others understand your calculation process.
+                </p>
+              </div>
+              <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg">
+                <h3 className="font-bold text-green-800 mb-2">Understand the Relationship</h3>
+                <p className="text-gray-700">
+                  Don't just memorize—understand why {data.fromUnitFull} and {data.toUnitFull} relate
+                  the way they do. This deeper understanding helps prevent mistakes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Frequently Asked Questions */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 className="text-3xl font-bold text-[#1A3D7C] mb-6">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  How many {data.toUnitFull} are in {data.value} {data.fromUnitFull}?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  {data.value} {data.fromUnitFull} equals <strong>{data.resultFormatted} {data.toUnitFull}</strong>.
+                  This is calculated using the formula: {data.formula}.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  How do you convert {data.fromUnit} to {data.toUnit}?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  To convert {data.fromUnitFull} to {data.toUnitFull}, use this formula: <strong>{data.formula}</strong>.
+                  Simply apply this formula to your value. For example, {data.value} {data.fromUnit} = {data.resultFormatted} {data.toUnit}.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  What is the conversion formula for {data.fromUnit} to {data.toUnit}?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  The formula for converting {data.fromUnitFull} to {data.toUnitFull} is: <strong>{data.formula}</strong>.
+                  This formula works for any value in {data.fromUnit} that you need to convert to {data.toUnit}.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  Which is larger: {data.fromUnit} or {data.toUnit}?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  {parseFloat(data.resultFormatted.replace(/,/g, '')) > parseFloat(data.value)
+                    ? `${data.fromUnitFull} is larger than ${data.toUnitFull}. That's why ${data.value} ${data.fromUnit} equals ${data.resultFormatted} ${data.toUnit} - you get more ${data.toUnit} because each unit is smaller.`
+                    : `${data.toUnitFull} is larger than ${data.fromUnitFull}. That's why ${data.value} ${data.fromUnit} equals ${data.resultFormatted} ${data.toUnit} - you get fewer ${data.toUnit} because each unit is larger.`}
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  Why do we need different units of measurement?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  Different units exist for historical and practical reasons. The metric system (used by most countries)
+                  is based on powers of 10, making conversions easier. The imperial/US customary system developed
+                  historically in Britain and America. Having both systems means we need conversion skills for
+                  international communication, travel, science, and everyday tasks.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  Can I convert {data.toUnit} back to {data.fromUnit}?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  Yes! To convert {data.resultFormatted} {data.toUnit} back to {data.fromUnit}, you would reverse
+                  the formula. Check out our <a href={`/convert/${data.reverseConversion}`} className="text-blue-600 hover:underline">
+                  {data.toUnit} to {data.fromUnit} converter</a> for the reverse calculation.
+                </div>
+              </details>
+            </div>
+          </div>
 
           {/* Educational Content */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">

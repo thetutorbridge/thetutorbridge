@@ -79,6 +79,54 @@ export function EquationPageContent({ equationData, equationSlug }: EquationPage
     ],
   };
 
+  // FAQ Schema for SEO
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `What is the solution to ${equationData.equationPlain}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `The solution to ${equationData.equationPlain} is ${equationData.solution}. This is found by isolating the variable x using inverse operations while maintaining balance on both sides of the equation.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: `How do you solve ${equationData.equationPlain} step by step?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `To solve ${equationData.equationPlain}: ${equationData.steps.map((s, i) => `Step ${i + 1}: ${s.description}`).join('. ')}. The final answer is ${equationData.solution}.`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What is a linear equation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A linear equation is an algebraic equation where each term is either a constant or the product of a constant and a single variable raised to the first power. Linear equations form straight lines when graphed and have exactly one solution (unless the equation is an identity or contradiction).'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How do you verify a solution to an equation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `To verify a solution, substitute the value back into the original equation and check if both sides are equal. For ${equationData.equationPlain}, substituting ${equationData.solution} confirms: ${equationData.verification}`
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What are inverse operations in algebra?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Inverse operations are mathematical operations that undo each other. Addition and subtraction are inverse operations, as are multiplication and division. When solving equations, we use inverse operations to isolate the variable while keeping the equation balanced.'
+        }
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <script
@@ -92,6 +140,10 @@ export function EquationPageContent({ equationData, equationSlug }: EquationPage
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navigation />
 
@@ -247,6 +299,157 @@ export function EquationPageContent({ equationData, equationSlug }: EquationPage
                   </Link>
                 );
               })}
+            </div>
+          </div>
+
+          {/* Understanding Linear Equations */}
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Understanding Linear Equations
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-blue-50 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-blue-800 mb-3 flex items-center">
+                  <span className="mr-2">📐</span> What is a Linear Equation?
+                </h3>
+                <p className="text-gray-700 mb-3">
+                  A linear equation is an equation where the highest power of the variable is 1.
+                  The equation <strong>{equationData.equationPlain}</strong> is linear because x appears
+                  only to the first power.
+                </p>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  <li>• Has exactly one variable (typically x)</li>
+                  <li>• Variable is raised to the first power only</li>
+                  <li>• Graphs as a straight line</li>
+                  <li>• Usually has exactly one solution</li>
+                </ul>
+              </div>
+              <div className="bg-green-50 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-green-800 mb-3 flex items-center">
+                  <span className="mr-2">⚖️</span> The Balance Principle
+                </h3>
+                <p className="text-gray-700 mb-3">
+                  Think of an equation like a balanced scale. Whatever you do to one side,
+                  you must do to the other to keep it balanced.
+                </p>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  <li>• Add the same number to both sides ✓</li>
+                  <li>• Subtract the same number from both sides ✓</li>
+                  <li>• Multiply both sides by the same number ✓</li>
+                  <li>• Divide both sides by the same number ✓</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Step-by-Step Solving Strategy */}
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              General Strategy for Solving Equations
+            </h2>
+            <div className="space-y-4">
+              <div className="flex items-start p-4 bg-purple-50 rounded-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">1</div>
+                <div>
+                  <h3 className="font-bold text-purple-800">Simplify Each Side</h3>
+                  <p className="text-gray-700">Remove parentheses using the distributive property and combine like terms on each side.</p>
+                </div>
+              </div>
+              <div className="flex items-start p-4 bg-purple-50 rounded-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">2</div>
+                <div>
+                  <h3 className="font-bold text-purple-800">Collect Variable Terms</h3>
+                  <p className="text-gray-700">Use addition or subtraction to get all variable terms on one side and constants on the other.</p>
+                </div>
+              </div>
+              <div className="flex items-start p-4 bg-purple-50 rounded-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">3</div>
+                <div>
+                  <h3 className="font-bold text-purple-800">Isolate the Variable</h3>
+                  <p className="text-gray-700">Use multiplication or division to get the variable alone with a coefficient of 1.</p>
+                </div>
+              </div>
+              <div className="flex items-start p-4 bg-green-50 rounded-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold mr-4">4</div>
+                <div>
+                  <h3 className="font-bold text-green-800">Check Your Answer</h3>
+                  <p className="text-gray-700">Always substitute your solution back into the original equation to verify it works!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Frequently Asked Questions */}
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  What is the solution to {equationData.equationPlain}?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  The solution is <strong>{equationData.solution}</strong>. This means when you substitute this value
+                  for x in the original equation, both sides will be equal.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  How do I know if my answer is correct?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  Substitute your answer back into the original equation. If both sides are equal, your answer is correct.
+                  For this equation: {equationData.verification}
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  What are inverse operations?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  Inverse operations are operations that "undo" each other. Addition and subtraction are inverses
+                  (adding 5 is undone by subtracting 5). Multiplication and division are inverses (multiplying by 3
+                  is undone by dividing by 3). We use inverse operations to isolate the variable.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  Why do we need to balance both sides?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  An equation states that two expressions are equal. If we only change one side, they would no longer
+                  be equal, and we'd lose the relationship we're trying to solve. By doing the same operation to both
+                  sides, we maintain the equality while transforming the equation into a simpler form.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  Can a linear equation have no solution or infinite solutions?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  Yes! Most linear equations have exactly one solution, but some are special cases. An equation like
+                  "x + 1 = x + 2" has no solution (it's a contradiction). An equation like "2x = x + x" is true for
+                  all values of x (it's an identity). The equation {equationData.equationPlain} has exactly one
+                  solution: {equationData.solution}.
+                </div>
+              </details>
+              <details className="group bg-gray-50 rounded-lg">
+                <summary className="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900">
+                  What if the answer is a fraction or decimal?
+                  <span className="transform group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-700">
+                  Many equations have fractional or decimal solutions—that's completely normal! You can express the
+                  answer as a fraction (often preferred in algebra) or as a decimal. Both are correct as long as
+                  they represent the same value.
+                </div>
+              </details>
             </div>
           </div>
 
