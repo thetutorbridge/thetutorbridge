@@ -383,10 +383,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/times-tables',
     '/marketing',
     '/marketing/ai-marketing-tools',
+    '/marketing/best-keyword-research-tools',
+    '/marketing/best-link-building-tools',
     '/marketing/best-rank-tracking-tool',
     '/marketing/best-rank-tracking-tools',
     '/marketing/best-seo-tools',
     '/marketing/best-seo-automation-software',
+    '/sales',
     '/college-acceptance-rates',
     '/cost-of-education-by-country',
     '/education-statistics',
@@ -396,6 +399,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/worksheets/grade-6',
     '/worksheets/grade-7',
     '/worksheets/grade-8',
+    '/cover-letter/example/tech/technical-program-manager',
+    '/cover-letter/example/tech/software-engineer',
+    '/cover-letter/example/tech/software-developer',
   ].map(entry);
 
   // Calculator pages
