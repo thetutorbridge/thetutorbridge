@@ -408,3 +408,187 @@ export function getBlogRelatedCalculators(blogSlug: string): RelatedCalculator[]
 export function getRoadmapRelatedCalculators(roadmapSlug: string): RelatedCalculator[] {
   return roadmapCalculators[roadmapSlug] || [];
 }
+
+// GTM Learning Hub relationships
+export interface RelatedGTMTerm {
+  title: string;
+  description: string;
+  href: string;
+}
+
+export interface RelatedMarketingResource {
+  title: string;
+  description: string;
+  href: string;
+}
+
+// GTM terms related to marketing pages
+export const marketingGTMTerms: Record<string, RelatedGTMTerm[]> = {
+  'best-seo-tools': [
+    {
+      title: 'Organic Acquisition',
+      description: 'Learn how SEO drives unpaid customer acquisition',
+      href: '/learning-gtm/organic-acquisition'
+    },
+    {
+      title: 'Demand Capture',
+      description: 'Converting existing search demand into leads',
+      href: '/learning-gtm/demand-capture'
+    },
+    {
+      title: 'Content Marketing',
+      description: 'Understanding content-driven GTM strategies',
+      href: '/learning-gtm/demand-generation'
+    }
+  ],
+  'best-keyword-research-tools': [
+    {
+      title: 'ICP (Ideal Customer Profile)',
+      description: 'Target the right customers with keyword research',
+      href: '/learning-gtm/icp-ideal-customer-profile'
+    },
+    {
+      title: 'Demand Generation',
+      description: 'Create demand through content and SEO',
+      href: '/learning-gtm/demand-generation'
+    },
+    {
+      title: 'Organic Acquisition',
+      description: 'Drive growth through unpaid channels',
+      href: '/learning-gtm/organic-acquisition'
+    }
+  ],
+  'best-link-building-tools': [
+    {
+      title: 'Demand Generation',
+      description: 'Build awareness and demand through backlinks',
+      href: '/learning-gtm/demand-generation'
+    },
+    {
+      title: 'Organic Acquisition',
+      description: 'Grow your traffic without paid advertising',
+      href: '/learning-gtm/organic-acquisition'
+    }
+  ],
+  'ai-marketing-tools': [
+    {
+      title: 'AI SDR',
+      description: 'AI-powered sales development',
+      href: '/learning-gtm/ai-sdr'
+    },
+    {
+      title: 'AI Agents',
+      description: 'Autonomous systems for GTM workflows',
+      href: '/learning-gtm/ai-agents'
+    },
+    {
+      title: 'Agentic GTM',
+      description: 'Using AI to execute GTM activities',
+      href: '/learning-gtm/agentic-gtm'
+    },
+    {
+      title: 'Personalization at Scale',
+      description: 'AI-powered customized experiences',
+      href: '/learning-gtm/personalization-at-scale'
+    }
+  ]
+};
+
+// Marketing resources related to GTM terms
+export const gtmMarketingResources: Record<string, RelatedMarketingResource[]> = {
+  'demand-generation': [
+    {
+      title: 'Best SEO Tools',
+      description: 'Tools to drive organic demand generation',
+      href: '/marketing/best-seo-tools'
+    },
+    {
+      title: 'Best Keyword Research Tools',
+      description: 'Find keywords your ICP is searching for',
+      href: '/marketing/best-keyword-research-tools'
+    }
+  ],
+  'organic-acquisition': [
+    {
+      title: 'Best SEO Tools',
+      description: 'Complete guide to SEO tools for organic growth',
+      href: '/marketing/best-seo-tools'
+    },
+    {
+      title: 'Best Link Building Tools',
+      description: 'Build backlinks for organic rankings',
+      href: '/marketing/best-link-building-tools'
+    }
+  ],
+  'demand-capture': [
+    {
+      title: 'Best Keyword Research Tools',
+      description: 'Find high-intent keywords to capture demand',
+      href: '/marketing/best-keyword-research-tools'
+    },
+    {
+      title: 'Best SEO Tools',
+      description: 'Optimize for search to capture buyer intent',
+      href: '/marketing/best-seo-tools'
+    }
+  ],
+  'ai-sdr': [
+    {
+      title: 'Best AI Marketing Tools',
+      description: 'AI tools for marketing automation',
+      href: '/marketing/ai-marketing-tools'
+    }
+  ],
+  'ai-agents': [
+    {
+      title: 'Best AI Marketing Tools',
+      description: 'AI-powered marketing tools',
+      href: '/marketing/ai-marketing-tools'
+    }
+  ],
+  'agentic-gtm': [
+    {
+      title: 'Best AI Marketing Tools',
+      description: 'AI tools transforming go-to-market',
+      href: '/marketing/ai-marketing-tools'
+    }
+  ],
+  'personalization-at-scale': [
+    {
+      title: 'Best AI Marketing Tools',
+      description: 'AI tools for personalized marketing',
+      href: '/marketing/ai-marketing-tools'
+    }
+  ],
+  'icp-ideal-customer-profile': [
+    {
+      title: 'Best Keyword Research Tools',
+      description: 'Find what your ICP searches for',
+      href: '/marketing/best-keyword-research-tools'
+    }
+  ],
+  'pipeline-generation': [
+    {
+      title: 'Best SEO Tools',
+      description: 'Generate pipeline through organic traffic',
+      href: '/marketing/best-seo-tools'
+    }
+  ],
+  'conversion-rate-optimization': [
+    {
+      title: 'Best SEO Tools',
+      description: 'SEO tools with CRO features',
+      href: '/marketing/best-seo-tools'
+    }
+  ]
+};
+
+// Helper function to get GTM terms for marketing pages
+export function getMarketingGTMTerms(marketingSlug: string): RelatedGTMTerm[] {
+  return marketingGTMTerms[marketingSlug] || [];
+}
+
+// Helper function to get marketing resources for GTM terms
+export function getGTMMarketingResources(gtmSlug: string): RelatedMarketingResource[] {
+  return gtmMarketingResources[gtmSlug] || [];
+}

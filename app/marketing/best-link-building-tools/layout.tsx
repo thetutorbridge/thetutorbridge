@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     title: '15 Best Link Building Tools in 2026 (Free & Paid)',
     description: 'Compare the best link building tools including Ahrefs, Semrush, Pitchbox, Hunter.io & more. Find the perfect backlink software for your SEO link building strategy.',
     type: 'article',
-    url: 'https://thetutorbridge.com/marketing/best-link-building-tools',
+    url: 'https://www.thetutorbridge.com/marketing/best-link-building-tools',
     siteName: 'The Tutor Bridge',
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/marketing/best-link-building-tools'
+    canonical: 'https://www.thetutorbridge.com/marketing/best-link-building-tools'
   }
 };
 

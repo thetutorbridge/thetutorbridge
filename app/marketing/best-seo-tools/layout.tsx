@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: '32 Best SEO Tools for 2026 (Free & Paid) - Complete Guide',
     description: 'Compare 32 top SEO tools with pricing, features, pros & cons. Find the perfect tools for keyword research, technical SEO, content optimization & more.',
     type: 'article',
-    url: 'https://thetutorbridge.com/marketing/best-seo-tools',
+    url: 'https://www.thetutorbridge.com/marketing/best-seo-tools',
     siteName: 'The Tutor Bridge',
   },
   twitter: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Compare 32 top SEO tools - Ahrefs, Semrush, Moz & more. Free & paid options reviewed.',
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/marketing/best-seo-tools'
+    canonical: 'https://www.thetutorbridge.com/marketing/best-seo-tools'
   },
   robots: {
     index: true,

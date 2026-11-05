@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     title: 'Sales Guides & Tools | The Tutor Bridge',
     description: 'Comprehensive sales guides to help you close more deals and grow revenue.',
     type: 'website',
-    url: 'https://thetutorbridge.com/sales',
+    url: 'https://www.thetutorbridge.com/sales',
     siteName: 'The Tutor Bridge',
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/sales'
+    canonical: 'https://www.thetutorbridge.com/sales'
   }
 };
 

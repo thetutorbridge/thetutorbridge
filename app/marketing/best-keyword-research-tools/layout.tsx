@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     title: '7 Best Keyword Research Tools in 2026 (Free & Paid)',
     description: 'Compare the best keyword research tools including Semrush, Ahrefs, Google Keyword Planner & more. Find the perfect keyword research software for your SEO strategy.',
     type: 'article',
-    url: 'https://thetutorbridge.com/marketing/best-keyword-research-tools',
+    url: 'https://www.thetutorbridge.com/marketing/best-keyword-research-tools',
     siteName: 'The Tutor Bridge',
   },
   alternates: {
-    canonical: 'https://thetutorbridge.com/marketing/best-keyword-research-tools'
+    canonical: 'https://www.thetutorbridge.com/marketing/best-keyword-research-tools'
   }
 };
 
