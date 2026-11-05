@@ -53,20 +53,20 @@ import {
 
 // TEA Enrollment Report 2024-25
 const enrollmentTrendData = [
-  { year: '2019-20', enrollment: 5.43 },
   { year: '2020-21', enrollment: 5.37 },
   { year: '2021-22', enrollment: 5.43 },
   { year: '2022-23', enrollment: 5.49 },
   { year: '2023-24', enrollment: 5.53 },
   { year: '2024-25', enrollment: 5.54 },
+  { year: '2025-26', enrollment: 5.47 },
 ];
 
-// TEA STAAR Results 2024
+// TEA STAAR Results 2026
 const staarScoresData = [
-  { subject: 'Reading/RLA', meets: 49, prePandemic: 54 },
-  { subject: 'Math', meets: 41, prePandemic: 52 },
-  { subject: 'Algebra I', meets: 45, prePandemic: 62 },
-  { subject: 'English II', meets: 60, prePandemic: 68 },
+  { subject: 'Reading/RLA', meets: 54, prePandemic: 45 },
+  { subject: 'Math (Gr 3-8)', meets: 44, prePandemic: 52 },
+  { subject: 'Algebra I', meets: 54, prePandemic: 62 },
+  { subject: 'English II', meets: 60, prePandemic: 51 },
 ];
 
 // TEA Enrollment Demographics 2024-25
@@ -78,33 +78,34 @@ const studentDemographicsData = [
   { name: 'Multiracial/Other', value: 3.7, color: '#6b7280' },
 ];
 
-// TEA/Stride K12 Virtual School Data 2024-25
+// TEA/Stride K12 Virtual School Data 2025-26
 const virtualSchoolGrowthData = [
   { year: '2014', students: 5000 },
   { year: '2017', students: 12000 },
   { year: '2020', students: 28000 },
   { year: '2022', students: 45000 },
   { year: '2024', students: 62200 },
+  { year: '2026', students: 76000 },
 ];
 
 // TEA Teacher Certification Data
 const uncertifiedTeachersData = [
-  { year: '2019-20', percentage: 3.8 },
-  { year: '2020-21', percentage: 5.2 },
+  { year: '2020-21', percentage: 4.0 },
   { year: '2021-22', percentage: 7.1 },
   { year: '2022-23', percentage: 9.4 },
   { year: '2023-24', percentage: 10.8 },
-  { year: '2024-25', percentage: 12.0 },
+  { year: '2024-25', percentage: 11.3 },
+  { year: '2025-26', percentage: 12.0 },
 ];
 
 // TEA/CHILDREN AT RISK Chronic Absenteeism Data
 const chronicAbsenteeismData = [
-  { year: '2018-19', rate: 11 },
   { year: '2019-20', rate: 12 },
   { year: '2020-21', rate: 18 },
   { year: '2021-22', rate: 24.2 },
   { year: '2022-23', rate: 20 },
   { year: '2023-24', rate: 19 },
+  { year: '2025-26', rate: 20.3 },
 ];
 
 const COLORS = ['#f59e0b', '#3b82f6', '#8b5cf6', '#10b981', '#6b7280', '#ec4899'];
@@ -114,21 +115,21 @@ const COLORS = ['#f59e0b', '#3b82f6', '#8b5cf6', '#10b981', '#6b7280', '#ec4899'
 // ============================================================================
 
 const citations = [
-  { id: 1, name: 'TEA - Enrollment in Texas Public Schools 2024-25', url: 'https://tea.texas.gov/reports-and-data/school-performance/accountability-research/enroll-2024-25.pdf' },
-  { id: 2, name: 'TEA - 2024 STAAR 3-8 Assessment Results', url: 'https://tea.texas.gov/about-tea/news-and-multimedia/news-releases/news-2024/tea-releases-results-for-2024-staar-3-8-assessments' },
-  { id: 3, name: 'TEA - 2024 STAAR End-of-Course Results', url: 'https://tea.texas.gov/about-tea/news-and-multimedia/news-releases/news-2024/tea-releases-2024-staar-end-of-course-assessment-results' },
-  { id: 4, name: 'TEA - Actual Financial Data 2024-25', url: 'https://tea.texas.gov/finance-and-grants/state-funding/state-funding-reports-and-data/peims-financial-standard-reports' },
-  { id: 5, name: 'Houston Chronicle - Texas Virtual School Enrollment', url: 'https://www.houstonchronicle.com/news/houston-texas/education/article/virtual-school-expansion-texas-20785112.php' },
-  { id: 6, name: 'The Texan - Uncertified Teachers in Texas', url: 'https://thetexan.news/issues/education/tea-data-shows-percentage-of-uncertified-teachers-in-texas-tripled-in-last-five-years/article_cfb0e326-3a0b-4786-a8dd-392912404f68.html' },
-  { id: 7, name: 'Learning Policy Institute - State Teacher Shortages 2024', url: 'https://learningpolicyinstitute.org/product/state-teacher-shortages-vacancy-resource-tool-2024' },
-  { id: 8, name: 'Dallas Morning News - Texas Chronic Absenteeism', url: 'https://www.dallasnews.com/news/education/2024/08/15/1-in-5-texas-students-considered-chronically-absent-new-analysis-reveals/' },
-  { id: 9, name: 'Rice University Kinder Institute - Texas Absenteeism', url: 'https://kinder.rice.edu/urbanedge/1-5-texas-students-are-still-missing-lots-school-and-attendance-isnt-getting-much-better' },
-  { id: 10, name: 'Texas 2036 - STAAR Results Analysis', url: 'https://texas2036.org/news-analysis/staar-results-are-in-your-questions-answered/' },
+  { id: 1, name: 'TEA - Enrollment in Texas Public Schools 2025-26', url: 'https://tea.texas.gov/data-reports/school-performance/accountability-research/enroll-2025-26.pdf' },
+  { id: 2, name: 'Texas 2036 - 2026 STAAR Results Analysis', url: 'https://texas2036.org/texas-staar-results-2026/' },
+  { id: 3, name: 'The Texan - 2026 STAAR Math and Reading Results', url: 'https://thetexan.news/issues/education/2026-staar-scores-show-improvement-in-math-little-to-none-in-reading/article_6967ff62-2f68-4a26-9aab-262d59cb62df.html' },
+  { id: 4, name: 'Texas Tribune - 2026 STAAR Results', url: 'https://www.texastribune.org/2026/06/16/texas-staar-results-2026-elementary-middle-school/' },
+  { id: 5, name: 'Texas 2036 - TX Enrollment Report 2026', url: 'https://texas2036.org/wp-content/uploads/2026/05/TX36_Enrollment_Report_2026.pdf' },
+  { id: 6, name: 'TEA - Teacher Employment and Attrition 2026', url: 'https://tea.texas.gov/texas-educators/superintendents/teacher-employment-attrition-and-hiring-published-april-16-2026.pdf' },
+  { id: 7, name: 'UH Report - Texas Teacher Workforce 2026', url: 'https://www.uh.edu/news-events/stories/2026/march/03262026-texas-teacher-workforce-report.php' },
+  { id: 8, name: 'KSAT - Texas Charter School Uncertified Teachers', url: 'https://www.ksat.com/news/ksat-investigates/2026/08/25/texas-charter-school-teachers-are-nearly-7-times-as-likely-to-be-uncertified-tea-data-shows/' },
+  { id: 9, name: 'AEI - Chronic Absenteeism Report 2026', url: 'https://www.aei.org/wp-content/uploads/2026/06/From-Attendance-Crisis-to-Chronic-Condition-Tracking-Post-Pandemic-Chronic-Absenteeism-into-2025.pdf' },
+  { id: 10, name: 'Texas Policy Research - 2026-27 State Budget', url: 'https://www.texaspolicyresearch.com/texas-2026-27-state-budget-record-spending-missed-opportunities/' },
   { id: 11, name: 'KRLD/Audacy - Texas K-12 Spending $104 Billion', url: 'https://www.audacy.com/krld/news/local/texas-k-12-spending-reaches-104-billion-nearly-19000-per-student' },
-  { id: 12, name: 'Texas Tribune - Uncertified Teachers', url: 'https://www.texastribune.org/2024/09/04/texas-uncertified-teachers-staff-shortages/' },
-  { id: 13, name: 'TXVSN - Texas Virtual School Network', url: 'https://txvsn.org/' },
+  { id: 12, name: 'Texas Comptroller - TEFA Enrollment 2026-27', url: 'https://educationfreedom.texas.gov/wp-content/uploads/2026/07/TEFA-Annual-Demographic-Report.pdf' },
+  { id: 13, name: 'The Texan - Districts Launching Virtual Schools 2026-27', url: 'https://thetexan.news/issues/education/heres-a-look-at-the-texas-school-districts-launching-virtual-schools-for-the-2026-2027/article_a2b88607-afaa-440d-9af1-6d9ea9015514.html' },
   { id: 14, name: 'Texas Home School Coalition - Homeschool Facts', url: 'https://thsc.org/homeschooling-facts/' },
-  { id: 15, name: 'AEI - Chronic Absenteeism Report 2024', url: 'https://www.aei.org/research-products/report/lingering-absence-in-public-schools-tracking-post-pandemic-chronic-absenteeism-into-2024/' },
+  { id: 15, name: 'SchoolStatus - 2025-26 Attendance Trends Report', url: 'https://www.schoolstatus.com/blog/new-data-from-1-1-million-students-shows-chronic-absenteeism-falling-for-third-straight-year-in-142-k-12-districts' },
 ];
 
 // ============================================================================
@@ -138,35 +139,35 @@ const citations = [
 const faqs = [
   {
     question: 'How many students are enrolled in Texas public schools?',
-    answer: 'Texas public schools enrolled 5,544,255 students in the 2024-25 school year according to the Texas Education Agency, making it the second-largest public school system in the nation after California. This represents a 0.2% increase (+13,019 students) from the prior year.'
+    answer: 'Texas public schools enrolled 5,467,642 students in 2025-26 according to TEA Commissioner testimony, making it the second-largest public school system in the nation. This represents a decline of nearly 77,000 students (-1.4%) from 2024-25—the first enrollment decline outside of a pandemic in nearly 40 years.'
   },
   {
     question: 'What percentage of Texas students meet grade level on STAAR tests?',
-    answer: 'In 2024, 49% of Texas students in grades 3-8 met grade level standards in reading/language arts, and approximately 41% met grade level in math. Math performance remains 10+ percentage points below pre-pandemic (2019) levels. In Algebra I, 45% met grade level, which is 17 points below 2019.'
+    answer: 'In 2026, 54% of Texas students in grades 3-8 met grade level in reading—now surpassing pre-pandemic levels by 9 points. Math results are mixed: 4th grade leads at 49% (above 2019), but 7th grade dropped to just 29%. Algebra I improved to 54% (up from 47%) but remains below the 62% in 2019.'
   },
   {
     question: 'How many students attend online/virtual schools in Texas?',
-    answer: 'Approximately 62,200 Texas students were enrolled in full-time virtual schools in 2024-25, according to TEA data. This represents a 1,200% increase from fewer than 5,000 students in 2014. There are now 24 full-time virtual schools operating statewide through the Texas Virtual School Network (TXVSN).'
+    answer: 'Approximately 76,000 Texas students were enrolled in full-time virtual schools in 2025-26, representing a 1,200%+ increase from fewer than 5,000 students in 2014. Multiple districts are launching new virtual programs for 2026-27 as Senate Bill 569 modernizes virtual education laws.'
   },
   {
     question: 'What is Texas chronic absenteeism rate?',
-    answer: '19% of Texas students were chronically absent (missing 10%+ of school days) in 2023-24. This has improved from a peak of 24.2% in 2021-22 but remains well above the pre-pandemic rate of 11% in 2018-19. Economically disadvantaged students have a higher rate at 23.1%.'
+    answer: 'Chronic absenteeism remains around 20% in Texas (20.29% in studied districts per SchoolStatus 2025-26 report). The Legislature defined chronic absenteeism in statute for the first time via S.B. 991. TEA data shows districts converted only 91.61% of enrollment into funded attendance, a $2.83 billion gap.'
   },
   {
     question: 'How much does Texas spend per student on education?',
-    answer: 'Texas spent $104.89 billion on K-12 education in 2024-25, equaling $18,972 per pupil from all sources (including facilities and debt). For current operating spending, Texas spends $12,895 per pupil, ranking 47th nationally and about $4,700 below the national average.'
+    answer: 'Texas spent $104.9 billion on K-12 education in 2024-25, equaling $18,972 per pupil from all sources. Current operating spending is $12,895 per pupil, ranking 43rd-47th nationally—about $4,700 below the national average of $17,619. The 2026-27 biennium budget allocates $97.1 billion for K-12.'
   },
   {
     question: 'How severe is Texas teacher shortage?',
-    answer: '12% of Texas teachers were uncertified in 2024-25, up from 3.8% in 2019-20—a tripling in five years. This equals 42,100 uncertified teachers. Additionally, 34% of newly hired teachers in 2023-24 had no Texas teaching certification. Houston ISD has the highest rate at 20.58% uncertified.'
+    answer: 'Over 52% of first-year teachers in 2024-25 entered without certification. About 41,500 teachers are uncertified in 2025-26 (11.3%), up from under 4% in 2020-21. Charter schools are 7x more likely to have uncertified teachers than traditional public schools. HB 2 now requires transition back to certified teachers.'
   },
   {
     question: 'What are Texas student demographics?',
-    answer: 'Texas public schools are majority-minority: Hispanic/Latino students make up 53.5% of enrollment, followed by White (24.4%), Black/African American (12.8%), Asian (5.6%), and multiracial/other (3.7%). White enrollment declined by 31,585 students (-2.3%) from 2023-24 to 2024-25.'
+    answer: 'Texas public schools are majority-minority: Hispanic/Latino students make up 53.5% of enrollment, followed by White (24.4%), Black/African American (12.8%), Asian (5.6%), and multiracial/other (3.7%). 60% of the enrollment loss in 2025-26 was in Grades K-5.'
   },
   {
     question: 'How many homeschooled students are in Texas?',
-    answer: 'There is no official count because Texas does not require homeschool registration. The Texas Home School Coalition estimates 500,000-750,000 students are homeschooled, and data indicates approximately 50,000 students withdraw from public schools to homeschool each year.'
+    answer: 'There is no official count because Texas does not require homeschool registration. The Texas Home School Coalition estimates 500,000-750,000 students are homeschooled. The new TEFA school choice program enrolled 53,000+ students for 2026-27 with 121,000+ on the waiting list.'
   },
   {
     question: 'What is the largest school district in Texas?',
@@ -174,7 +175,7 @@ const faqs = [
   },
   {
     question: 'How is Texas recovering from COVID learning loss?',
-    answer: 'Recovery has been slow. Math scores remain 10+ percentage points below 2019 levels across all grades. Reading has recovered better, with some grades now exceeding pre-pandemic levels. The TEA reports gains in grades 4 and 6 reading, but declines in grades 3, 5, and 8.'
+    answer: 'Reading has fully recovered in grades 3-8, now 9 points above 2019 levels. Math recovery is slower—4th grade exceeds 2019 by 3 points, but 7th grade dropped 2 points. Biology and English EOC scores now exceed pre-pandemic levels. STAAR ends after 2026-27 (HB 8), replaced by the Student Success Tool.'
   }
 ];
 
@@ -258,7 +259,7 @@ const tableOfContents = [
 
 export default function TexasStatsPage() {
   const [expandedFaq, setExpandedFaq] = React.useState<number | null>(null);
-  const lastUpdated = 'October 2025';
+  const lastUpdated = 'November 2027';
 
   return (
     <div className="min-h-screen bg-[#FAFBFC]">
@@ -269,7 +270,7 @@ export default function TexasStatsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Texas Online Learning Statistics 2025: 100+ Facts & Data",
+            "headline": "Texas Online Learning Statistics 2027: 100+ Facts & Data",
             "description": "Comprehensive Texas online learning and education statistics including K-12 enrollment, STAAR test scores, virtual schools, and teacher shortage data.",
             "author": {
               "@type": "Organization",
@@ -284,7 +285,7 @@ export default function TexasStatsPage() {
                 "url": "https://www.thetutorbridge.com/logo.png"
               }
             },
-            "datePublished": "2025-01-20",
+            "datePublished": "2027-01-20",
             "dateModified": new Date().toISOString(),
             "mainEntityOfPage": {
               "@type": "WebPage",
@@ -301,7 +302,7 @@ export default function TexasStatsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Dataset",
-            "name": "Texas Online Learning Statistics 2025",
+            "name": "Texas Online Learning Statistics 2027",
             "description": "Comprehensive dataset of Texas education, online learning, and K-12 statistics",
             "url": "https://www.thetutorbridge.com/statistics/online-learning/usa/texas",
             "keywords": ["Texas", "education", "online learning", "K-12", "virtual schools", "STAAR"],
@@ -309,7 +310,7 @@ export default function TexasStatsPage() {
               "@type": "Organization",
               "name": "The Tutor Bridge"
             },
-            "temporalCoverage": "2018/2025",
+            "temporalCoverage": "2020/2027",
             "spatialCoverage": "Texas, United States"
           })
         }}
@@ -395,7 +396,7 @@ export default function TexasStatsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
               Texas Online Learning
               <span className="block text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #ef4444, #dc2626)' }}>
-                Statistics 2025
+                Statistics 2027
               </span>
             </h1>
 
@@ -428,19 +429,19 @@ export default function TexasStatsPage() {
             {/* Hero Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-white">5.54M</div>
+                <div className="text-3xl md:text-4xl font-bold text-white">5.47M</div>
                 <div className="text-sm text-gray-300 mt-1">K-12 Students</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-red-400">41%</div>
-                <div className="text-sm text-gray-300 mt-1">Math Proficiency</div>
+                <div className="text-3xl md:text-4xl font-bold text-emerald-400">54%</div>
+                <div className="text-sm text-gray-300 mt-1">Reading Proficiency</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-amber-400">$18.9K</div>
+                <div className="text-3xl md:text-4xl font-bold text-amber-400">$19K</div>
                 <div className="text-sm text-gray-300 mt-1">Per Pupil Spending</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400">62.2K</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-400">76K</div>
                 <div className="text-sm text-gray-300 mt-1">Virtual School Students</div>
               </div>
             </div>
@@ -481,16 +482,16 @@ export default function TexasStatsPage() {
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  { stat: '5.54 million', text: 'students in TX public schools - 2nd largest in US [1]' },
-                  { stat: '41%', text: 'of students meet math standards (vs 52% pre-COVID) [2]' },
-                  { stat: '49%', text: 'of students meet reading/RLA standards [2]' },
-                  { stat: '62,200', text: 'students in virtual schools - up 1,200% since 2014 [5]' },
-                  { stat: '12%', text: 'of teachers uncertified (up from 3.8% in 2019) [6]' },
-                  { stat: '19%', text: 'chronic absenteeism rate (down from 24% peak) [8]' },
-                  { stat: '$104.9B', text: 'total K-12 education spending [11]' },
-                  { stat: '$18,972', text: 'per pupil spending (ranks 47th nationally) [4]' },
-                  { stat: '53.5%', text: 'of students are Hispanic/Latino [1]' },
-                  { stat: '42,100', text: 'uncertified teachers in Texas schools [6]' },
+                  { stat: '5.47 million', text: 'students in TX public schools - 1st decline in 40 years [1]' },
+                  { stat: '54%', text: 'of students meet reading standards (above pre-COVID!) [2]' },
+                  { stat: '44%', text: 'of students meet math standards (varies by grade) [3]' },
+                  { stat: '76,000', text: 'students in virtual schools - up 1,200%+ since 2014 [5]' },
+                  { stat: '52%', text: 'of first-year teachers entered uncertified in 2024-25 [7]' },
+                  { stat: '~20%', text: 'chronic absenteeism rate (S.B. 991 defines it) [9]' },
+                  { stat: '$97.1B', text: 'K-12 allocation in 2026-27 biennium [10]' },
+                  { stat: '$18,972', text: 'per pupil spending (ranks 43rd-47th nationally) [11]' },
+                  { stat: '53,000+', text: 'students enrolled in TEFA school choice program [12]' },
+                  { stat: '41,500', text: 'uncertified teachers in Texas schools (11.3%) [6]' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3 bg-white/60 rounded-xl p-4">
                     <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -520,21 +521,21 @@ export default function TexasStatsPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <StatCard
-                value="5.54M"
+                value="5.47M"
                 label="Total Enrollment"
-                subtext="2024-25 school year"
+                subtext="2025-26 school year"
                 icon={<Users className="w-6 h-6 text-blue-600" />}
                 color="bg-blue-100"
                 sourceId={1}
               />
               <StatCard
-                value="+13,019"
+                value="-77,000"
                 label="Annual Change"
-                subtext="+0.2% from prior year"
-                icon={<TrendingUp className="w-6 h-6 text-emerald-600" />}
-                color="bg-emerald-100"
-                sourceId={1}
-                trend="up"
+                subtext="-1.4% (1st decline in 40 yrs)"
+                icon={<TrendingDown className="w-6 h-6 text-red-600" />}
+                color="bg-red-100"
+                sourceId={5}
+                trend="down"
               />
               <StatCard
                 value="1,200+"
@@ -545,12 +546,12 @@ export default function TexasStatsPage() {
                 sourceId={1}
               />
               <StatCard
-                value="371,144"
-                label="Total Teachers"
-                subtext="In Texas public schools"
+                value="53,000+"
+                label="TEFA Enrollees"
+                subtext="School choice program 2026-27"
                 icon={<GraduationCap className="w-6 h-6 text-amber-600" />}
                 color="bg-amber-100"
-                sourceId={7}
+                sourceId={12}
               />
             </div>
 
@@ -604,51 +605,53 @@ export default function TexasStatsPage() {
               <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
                 <Target className="w-5 h-5 text-red-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">STAAR Test Scores (2024)</h2>
+              <h2 className="text-2xl font-bold text-gray-900">STAAR Test Scores (2026)</h2>
             </div>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Texas students continue to struggle with pandemic recovery, particularly in mathematics.
-              Math scores remain 10+ percentage points below pre-pandemic levels across all grades.
+              Texas 2026 STAAR results show significant progress in reading—now surpassing pre-pandemic levels.
+              Math recovery is mixed, with 4th grade exceeding 2019 but other grades still catching up. STAAR ends after 2026-27.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <StatCard
-                value="49%"
+                value="54%"
                 label="RLA Meets Grade Level"
-                subtext="Grades 3-8"
-                icon={<BookOpen className="w-6 h-6 text-blue-600" />}
-                color="bg-blue-100"
-                sourceId={2}
-              />
-              <StatCard
-                value="41%"
-                label="Math Meets Grade Level"
-                subtext="Grades 3-8"
-                icon={<BarChart3 className="w-6 h-6 text-red-600" />}
-                color="bg-red-100"
-                sourceId={2}
-              />
-              <StatCard
-                value="45%"
-                label="Algebra I Proficiency"
-                subtext="17 points below 2019"
-                icon={<Brain className="w-6 h-6 text-violet-600" />}
-                color="bg-violet-100"
-                sourceId={3}
-              />
-              <StatCard
-                value="60%"
-                label="English II Proficiency"
-                subtext="+4% from prior year"
+                subtext="Grades 3-8 (+9 pts vs 2019)"
                 icon={<BookOpen className="w-6 h-6 text-emerald-600" />}
                 color="bg-emerald-100"
+                sourceId={2}
+                trend="up"
+              />
+              <StatCard
+                value="44%"
+                label="Math Meets Grade Level"
+                subtext="Grades 3-8 (varies by grade)"
+                icon={<BarChart3 className="w-6 h-6 text-amber-600" />}
+                color="bg-amber-100"
                 sourceId={3}
+              />
+              <StatCard
+                value="54%"
+                label="Algebra I Proficiency"
+                subtext="Up from 47%, below 62% in 2019"
+                icon={<Brain className="w-6 h-6 text-violet-600" />}
+                color="bg-violet-100"
+                sourceId={2}
+                trend="up"
+              />
+              <StatCard
+                value="71%"
+                label="Biology Proficiency"
+                subtext="Above 63% in 2025, 64% in 2019"
+                icon={<BookOpen className="w-6 h-6 text-emerald-600" />}
+                color="bg-emerald-100"
+                sourceId={2}
                 trend="up"
               />
             </div>
 
-            <ChartWrapper title="STAAR: Current vs Pre-Pandemic (% Meets Grade Level)" sourceIds={[2, 3, 10]}>
+            <ChartWrapper title="STAAR 2026 vs Pre-Pandemic (% Meets Grade Level)" sourceIds={[2, 3, 4]}>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={staarScoresData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -656,22 +659,22 @@ export default function TexasStatsPage() {
                   <YAxis tick={{ fontSize: 12 }} domain={[0, 80]} />
                   <Tooltip />
                   <Legend />
-                  <Bar dataKey="meets" name="2024" fill="#ef4444" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="meets" name="2026" fill="#3b82f6" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="prePandemic" name="2019 (Pre-COVID)" fill="#22c55e" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </ChartWrapper>
 
-            <div className="mt-6 bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 border border-red-100">
-              <h3 className="font-semibold text-gray-900 mb-4">Key STAAR Findings</h3>
+            <div className="mt-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+              <h3 className="font-semibold text-gray-900 mb-4">Key STAAR 2026 Findings</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-red-600 font-semibold mb-2">Math Still Lagging</div>
-                  <p className="text-sm text-gray-600">No grade level has fully recovered in math. 8th grade math dropped to just 40% at grade level. [2]</p>
+                  <div className="text-emerald-600 font-semibold mb-2">Reading Recovered</div>
+                  <p className="text-sm text-gray-600">Reading/RLA grades 3-8 now at 54%—9 percentage points ABOVE 2019 pre-pandemic levels. [2]</p>
                 </div>
                 <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-emerald-600 font-semibold mb-2">Reading Improving</div>
-                  <p className="text-sm text-gray-600">Grades 4 and 6 reading rose by 3-4 percentage points. Some grades now exceed 2019 levels. [2]</p>
+                  <div className="text-amber-600 font-semibold mb-2">Math Mixed Results</div>
+                  <p className="text-sm text-gray-600">4th grade math at 49% (3 pts above 2019), but 7th grade dropped to 29%. Biology at 71% exceeds 2019. [3]</p>
                 </div>
               </div>
             </div>
@@ -693,15 +696,15 @@ export default function TexasStatsPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <StatCard
-                value="62,200"
+                value="76,000"
                 label="Virtual School Students"
-                subtext="2024-25 school year"
+                subtext="2025-26 school year"
                 icon={<Laptop className="w-6 h-6 text-violet-600" />}
                 color="bg-violet-100"
                 sourceId={5}
               />
               <StatCard
-                value="1,200%"
+                value="1,200%+"
                 label="Growth Since 2014"
                 subtext="From ~5,000 students"
                 icon={<TrendingUp className="w-6 h-6 text-emerald-600" />}
@@ -710,9 +713,9 @@ export default function TexasStatsPage() {
                 trend="up"
               />
               <StatCard
-                value="24"
-                label="Virtual Schools"
-                subtext="Full-time programs"
+                value="S.B. 569"
+                label="New Virtual Ed Law"
+                subtext="Modernizes online learning"
                 icon={<School className="w-6 h-6 text-blue-600" />}
                 color="bg-blue-100"
                 sourceId={13}
@@ -756,43 +759,43 @@ export default function TexasStatsPage() {
             </div>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Texas faces a severe teacher shortage, with the percentage of uncertified teachers tripling
-              in five years. The state has 92,268 teachers not fully certified for their assignments.
+              Texas faces a severe teacher shortage, with over half of first-year teachers entering without certification.
+              House Bill 2 now requires districts to transition back to certified teachers in foundation courses.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <StatCard
-                value="12%"
-                label="Teachers Uncertified"
-                subtext="2024-25 (was 3.8% in 2019)"
+                value="52.3%"
+                label="1st-Year Teachers Uncertified"
+                subtext="In 2024-25"
                 icon={<AlertCircle className="w-6 h-6 text-amber-600" />}
                 color="bg-amber-100"
-                sourceId={6}
+                sourceId={7}
                 trend="down"
               />
               <StatCard
-                value="42,100"
+                value="41,500"
                 label="Uncertified Teachers"
-                subtext="Up from 12,900 in 2019"
+                subtext="11.3% in 2025-26"
                 icon={<UserMinus className="w-6 h-6 text-red-600" />}
                 color="bg-red-100"
                 sourceId={6}
               />
               <StatCard
-                value="34%"
-                label="New Hires Uncertified"
-                subtext="2023-24 newly hired"
+                value="7x"
+                label="Charter vs Traditional"
+                subtext="More likely uncertified"
                 icon={<Users className="w-6 h-6 text-violet-600" />}
                 color="bg-violet-100"
-                sourceId={12}
+                sourceId={8}
               />
               <StatCard
-                value="12.9%"
+                value="12%"
                 label="Attrition Rate"
                 subtext="Teachers leaving"
                 icon={<TrendingDown className="w-6 h-6 text-blue-600" />}
                 color="bg-blue-100"
-                sourceId={7}
+                sourceId={6}
               />
             </div>
 
@@ -809,15 +812,15 @@ export default function TexasStatsPage() {
             </ChartWrapper>
 
             <div className="mt-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100">
-              <h3 className="font-semibold text-gray-900 mb-4">District Spotlight</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">Key Findings</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-amber-600 font-semibold mb-2">Houston ISD</div>
-                  <p className="text-sm text-gray-600">20.58% of teachers uncertified - highest in the state, up from 12% in 2023-24. [6]</p>
+                  <div className="text-amber-600 font-semibold mb-2">Impact on Students</div>
+                  <p className="text-sm text-gray-600">Students with new uncertified teachers lose ~4 months in reading and 3 months in math. 72% of new uncertified teachers lack prior public school experience. [7]</p>
                 </div>
                 <div className="bg-white/60 rounded-xl p-4">
                   <div className="text-amber-600 font-semibold mb-2">Charter Schools</div>
-                  <p className="text-sm text-gray-600">60% of new hires at Texas charter schools in 2023-24 had no formal classroom training. [12]</p>
+                  <p className="text-sm text-gray-600">Charter school teachers are nearly 7x as likely to be uncertified as those in traditional public schools. HB 2 requires transition to certified teachers. [8]</p>
                 </div>
               </div>
             </div>
@@ -833,18 +836,18 @@ export default function TexasStatsPage() {
             </div>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Texas has made progress reducing chronic absenteeism from pandemic peaks, but rates remain
-              well above pre-pandemic levels. Nearly 1 in 5 students is chronically absent.
+              Texas chronic absenteeism remains around 20%. The Legislature defined chronic absenteeism in statute
+              for the first time via S.B. 991. TEA data shows a $2.83 billion gap from attendance-based funding loss.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <StatCard
-                value="19%"
+                value="~20%"
                 label="Chronic Absenteeism"
-                subtext="2023-24 rate"
+                subtext="2025-26 rate"
                 icon={<UserMinus className="w-6 h-6 text-red-600" />}
                 color="bg-red-100"
-                sourceId={8}
+                sourceId={15}
               />
               <StatCard
                 value="24.2%"
@@ -855,19 +858,19 @@ export default function TexasStatsPage() {
                 sourceId={9}
               />
               <StatCard
-                value="11%"
-                label="Pre-Pandemic"
-                subtext="2018-19 rate"
-                icon={<Target className="w-6 h-6 text-emerald-600" />}
-                color="bg-emerald-100"
-                sourceId={8}
+                value="$2.83B"
+                label="Funding Gap"
+                subtext="From attendance losses"
+                icon={<DollarSign className="w-6 h-6 text-red-600" />}
+                color="bg-red-100"
+                sourceId={9}
               />
               <StatCard
-                value="23.1%"
-                label="Low-Income Students"
-                subtext="Higher than average"
-                icon={<Users className="w-6 h-6 text-violet-600" />}
-                color="bg-violet-100"
+                value="S.B. 991"
+                label="New Definition"
+                subtext="Chronic absence in statute"
+                icon={<Target className="w-6 h-6 text-emerald-600" />}
+                color="bg-emerald-100"
                 sourceId={9}
               />
             </div>
@@ -901,18 +904,18 @@ export default function TexasStatsPage() {
             </div>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Texas spent $104.9 billion on K-12 education in 2024-25—more than the entire state budgets
-              of 47 other states. However, per-pupil spending ranks 47th nationally.
+              The 2026-27 Texas biennium budget is the largest in state history at $336.1 billion, with education
+              claiming $129.7 billion (39%). K-12 receives $97.1 billion, including HB 2's $4.5 billion annual increase.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               <StatCard
-                value="$104.9B"
-                label="Total K-12 Spending"
-                subtext="2024-25"
+                value="$97.1B"
+                label="K-12 Budget"
+                subtext="2026-27 biennium"
                 icon={<DollarSign className="w-6 h-6 text-emerald-600" />}
                 color="bg-emerald-100"
-                sourceId={11}
+                sourceId={10}
               />
               <StatCard
                 value="$18,972"
@@ -920,14 +923,14 @@ export default function TexasStatsPage() {
                 subtext="Including facilities/debt"
                 icon={<Users className="w-6 h-6 text-blue-600" />}
                 color="bg-blue-100"
-                sourceId={4}
+                sourceId={11}
               />
               <StatCard
-                value="47th"
+                value="43rd"
                 label="National Ranking"
                 subtext="Per-pupil spending"
-                icon={<BarChart3 className="w-6 h-6 text-red-600" />}
-                color="bg-red-100"
+                icon={<BarChart3 className="w-6 h-6 text-amber-600" />}
+                color="bg-amber-100"
                 sourceId={11}
               />
             </div>
@@ -943,11 +946,11 @@ export default function TexasStatsPage() {
                 </div>
               </div>
               <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-                <h4 className="font-semibold text-gray-900 mb-4">Context</h4>
+                <h4 className="font-semibold text-gray-900 mb-4">2026-27 Budget Highlights</h4>
                 <div className="space-y-3 text-sm text-gray-600">
-                  <p>Texas K-12 spending of $104.9 billion exceeds the entire state budgets of 47 other states.</p>
-                  <p>The state educates 5.5+ million students across 1,200+ districts and charter schools.</p>
-                  <p>Per NEA data, Texas spent $13,189 per student in average daily attendance—$5,664 less than the $18,853 national average.</p>
+                  <p>Total state budget: $336.1 billion (largest in Texas history).</p>
+                  <p>Education claims $129.7 billion (39% of total appropriations).</p>
+                  <p>HB 2 added ~$4.5 billion annually, increasing per-student funding by $700-$800.</p>
                 </div>
               </div>
             </div>

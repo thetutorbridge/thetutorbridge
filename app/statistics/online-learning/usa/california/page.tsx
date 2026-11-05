@@ -52,44 +52,44 @@ import {
 // ============================================================================
 
 const enrollmentTrendData = [
-  { year: '2019-20', enrollment: 6.16 },
   { year: '2020-21', enrollment: 6.00 },
   { year: '2021-22', enrollment: 5.89 },
   { year: '2022-23', enrollment: 5.85 },
   { year: '2023-24', enrollment: 5.84 },
   { year: '2024-25', enrollment: 5.81 },
+  { year: '2025-26', enrollment: 5.73 },
 ];
 
 const caasppScoresData = [
-  { subject: 'ELA', current: 47, prePandemic: 51.7 },
-  { subject: 'Math', current: 35.5, prePandemic: 37.1 },
-  { subject: 'Science', current: 30.7, prePandemic: 33 },
+  { subject: 'ELA', current: 49.3, prePandemic: 51.1 },
+  { subject: 'Math', current: 38.4, prePandemic: 39.7 },
+  { subject: 'Science', current: 36, prePandemic: 33 },
 ];
 
 const mathProficiencyByRaceData = [
-  { group: 'Asian', proficiency: 70 },
-  { group: 'White', proficiency: 50 },
-  { group: 'Hispanic', proficiency: 24 },
-  { group: 'Black', proficiency: 18 },
+  { group: 'Asian', proficiency: 70.5 },
+  { group: 'White', proficiency: 51.4 },
+  { group: 'Hispanic', proficiency: 26 },
+  { group: 'Black', proficiency: 20 },
 ];
 
 const communityCollegeOnlineData = [
-  { year: '2019', online: 16 },
   { year: '2020', online: 45 },
   { year: '2021', online: 63 },
   { year: '2022', online: 52 },
   { year: '2023', online: 48 },
   { year: '2024', online: 43 },
+  { year: '2025', online: 41 },
 ];
 
 const chronicAbsenteeismData = [
-  { year: '2018-19', rate: 12 },
   { year: '2019-20', rate: 14 },
   { year: '2020-21', rate: 22 },
   { year: '2021-22', rate: 30 },
   { year: '2022-23', rate: 26 },
   { year: '2023-24', rate: 22 },
   { year: '2024-25', rate: 19.4 },
+  { year: '2025-26', rate: 18.3 },
 ];
 
 const studentDemographicsData = [
@@ -124,21 +124,21 @@ const COLORS = ['#f59e0b', '#3b82f6', '#10b981', '#8b5cf6', '#6b7280', '#ec4899'
 // ============================================================================
 
 const citations = [
-  { id: 1, name: 'CA Dept of Education - Enrollment Data 2024-25', url: 'https://www.cde.ca.gov/Nr/ne/yr25/yr25rel28.asp' },
-  { id: 2, name: 'PPIC - Chronic Absenteeism in California Report', url: 'https://www.ppic.org/publication/chronic-absenteeism-in-california/' },
-  { id: 3, name: 'EdSource - California CAASPP Test Scores 2024', url: 'https://edsource.org/2024/state-test-scores-inch-up-but-still-lag-pre-covid-numbers/720392' },
-  { id: 4, name: 'Stanford Education Data Archive - CA Recovery Data', url: 'https://edsource.org/2025/stanfords-national-database-adds-a-new-twist-to-californias-pandemic-learning-loss/726637' },
+  { id: 1, name: 'CA Dept of Education - Enrollment Data 2025-26', url: 'https://www.cde.ca.gov/ds/cm/documents/dqae26.pdf' },
+  { id: 2, name: 'EdSource - California Enrollment Decline 2026', url: 'https://edsource.org/2026/declining-school-enrollment-california/756174' },
+  { id: 3, name: 'EdSource - California CAASPP Test Scores 2026', url: 'https://edsource.org/2026/california-student-test-scores/768182' },
+  { id: 4, name: 'CSBA - 2026 CAASPP and Dashboard Release', url: 'https://blog.csba.org/2026-state-data/' },
   { id: 5, name: 'CA Community Colleges - Online Education Study Report', url: 'https://cccco.edu/-/media/CCCCO-Website/docs/report/sb117-comprehensive-online-ed-study-report-ada.pdf' },
-  { id: 6, name: 'Learning Policy Institute - State Teacher Shortages 2024', url: 'https://learningpolicyinstitute.org/product/state-teacher-shortages-vacancy-resource-tool-2024' },
-  { id: 7, name: 'CA Assembly Budget Floor Report 2024-25', url: 'https://abgt.assembly.ca.gov/system/files/2024-06/floor-report-of-the-2024-25-budget-june-22-2024.pdf' },
-  { id: 8, name: 'PPIC - CA School Enrollment Decline Analysis', url: 'https://www.ppic.org/blog/unpacking-californias-continued-school-enrollment-decline/' },
-  { id: 9, name: 'PPIC - Online Learning at CA Community Colleges', url: 'https://www.ppic.org/blog/online-learning-is-here-to-stay-at-california-community-colleges/' },
-  { id: 10, name: 'CSBA - 2023-24 CAASPP Scores and Achievement Gaps', url: 'https://blog.csba.org/caaspp-2023-24-assessment/' },
-  { id: 11, name: 'EdPolicyInCA - Chronic Absence Crisis Through 2024-25', url: 'https://edpolicyinca.org/publications/unpacking-californias-chronic-absence-crisis-through-2024-25' },
-  { id: 12, name: 'EdSource - CA TK-12 Enrollment 2025', url: 'https://edsource.org/2025/california-school-enrollment-decline/733193' },
-  { id: 13, name: 'CA School Dashboard - Academic Engagement Report', url: 'https://www.caschooldashboard.org/reports/ca/2025/academic-engagement' },
-  { id: 14, name: 'CAVA - School Accountability Report Card 2024-25', url: 'https://cava.k12.com/wp-content/uploads/sites/20/2026/01/2025_school_accountability_report_card_california_virtual_academy__san_diego.pdf' },
-  { id: 15, name: 'CSBA - Chronic Absenteeism 2024-25 Analysis', url: 'https://blog.csba.org/chronic-absenteeism-2024-25/' },
+  { id: 6, name: 'Learning Policy Institute - State Teacher Shortages 2026', url: 'https://learningpolicyinstitute.org/media/5002/download?inline=&amp=&file=State_Vacancy_2026_RESOURCE.pdf' },
+  { id: 7, name: 'CA LAO - 2026-27 Budget: Proposition 98 and K-12', url: 'https://lao.ca.gov/Publications/Report/5110' },
+  { id: 8, name: 'CA Dept of Finance - K-12 Enrollment Projections', url: 'https://dof.ca.gov/Forecasting/Demographics/public-k-12-graded-enrollment/' },
+  { id: 9, name: 'CA School Dashboard - Academic Engagement 2026', url: 'https://www.caschooldashboard.org/reports/ca/2026/academic-engagement' },
+  { id: 10, name: 'CA School Dashboard - Academic Performance 2026', url: 'https://www.caschooldashboard.org/reports/ca/2026/academic-performance' },
+  { id: 11, name: 'CDE - New Data Shows Continued Progress 2026', url: 'https://www.cde.ca.gov/nr/ne/yr26/yr26rel44.asp' },
+  { id: 12, name: 'EdSource - California Graduation Rates 2026', url: 'https://edsource.org/2026/california-graduation-rates-decade-high/768178' },
+  { id: 13, name: 'Ed100 - 2026-27 Education Budget Explained', url: 'https://ed100.org/blog/budget-26-27' },
+  { id: 14, name: 'CAVA - California Virtual Academies Enrollment', url: 'https://cava.k12.com/enrollment/' },
+  { id: 15, name: 'EdSource - Newsom Budget Schools 2026-27', url: 'https://edsource.org/2026/newsoms-last-budget-as-governor-would-give-schools-and-community-colleges-an-unexpected-22-billion/748676' },
 ];
 
 // ============================================================================
@@ -148,43 +148,43 @@ const citations = [
 const faqs = [
   {
     question: 'How many students are enrolled in California public schools?',
-    answer: 'California has approximately 5.8 million students enrolled in K-12 public schools as of 2024-25, making it the largest public school system in the United States. This represents an 8th consecutive year of enrollment decline, down from about 6.2 million in 2014-15.'
+    answer: 'California has approximately 5.73 million students enrolled in K-12 public schools as of 2025-26, making it the largest public school system in the United States. This represents a 9th consecutive year of enrollment decline, with a decrease of 74,961 students (-1.3%) from the prior year.'
   },
   {
     question: 'What percentage of California students meet state standards in math?',
-    answer: 'Only 35.5% of California students met or exceeded state standards in mathematics on the 2023-24 CAASPP assessment. This is still below the pre-pandemic level of 37.1% in 2018-19. There are significant disparities by race: Asian students score 70%, White students 50%, Hispanic students 24%, and Black students 18%.'
+    answer: '38.4% of California students met or exceeded state standards in mathematics on the 2025-26 CAASPP assessment, up 1.1 percentage points from the prior year. This remains slightly below pre-pandemic levels of 39.7%. Asian students lead at 70.5%, followed by White students at 51.4%, Hispanic students at 26%, and Black students at 20%.'
   },
   {
     question: 'How many students attend online/virtual schools in California?',
-    answer: 'Over 56,000 California students take one or more online classes. The California Virtual Academy (CAVA) network serves approximately 15,000+ students across 9 campuses statewide. Additionally, 93% of California\'s 5.75 million public school students are connected to online educational resources.'
+    answer: 'California Virtual Academies (CAVA) operates 9 campuses serving thousands of students statewide in grades TK-12. The network includes campuses in Los Angeles, San Diego, Fresno, Kings, Maricopa, San Joaquin, San Mateo, Sonoma, and Sutter, covering 45 counties across California.'
   },
   {
     question: 'What is California\'s chronic absenteeism rate?',
-    answer: 'California\'s chronic absenteeism rate is 19% in 2024-25, representing about 1.1 million students. This has decreased from a peak of 30% in 2021-22 but remains above the pre-pandemic rate of 12% in 2018-19. High schoolers have the highest rate at 24%.'
+    answer: 'California\'s chronic absenteeism rate declined to 18.3% in 2025-26, down 1.1 percentage points from the prior year. This represents about 1.06 million students. The rate has decreased significantly from the pandemic peak of 30% in 2021-22. California has pledged to reduce chronic absence by 50% by 2030.'
   },
   {
     question: 'How much does California spend per student on education?',
-    answer: 'California spends approximately $24,000-$24,600 per pupil in 2024-25 from all sources, including about $18,400 from Proposition 98 funds. The total K-12 education budget is approximately $136 billion from all funding sources.'
+    answer: 'California spends $27,418 per pupil in 2026-27 from all sources (including federal funds), with $20,512 per student from Proposition 98 funds alone. The total TK-12 education budget is $151.4 billion, a record high driven by AI stock market gains.'
   },
   {
     question: 'How severe is California\'s teacher shortage?',
-    answer: 'California has over 10,000 unfilled teacher positions and 35,182 teachers who are not fully certified. About 8,000 emergency-style permits were granted in 2024-25, with 51% of new Education Specialist teachers entering on emergency permits. Annual teacher turnover is 14%.'
+    answer: 'California has 35,182 teachers who are not fully certified—the second-largest count in the nation. Over 32,200 teachers lack full certification for the subjects they teach. Annual teacher turnover is 14% (~39,000 teachers), and 40% of California teachers are considering leaving their jobs.'
   },
   {
     question: 'What percentage of California community college classes are online?',
-    answer: '43% of California community college instruction is now online, up dramatically from just 6% before the pandemic. The system serves 2.1 million students across 114 colleges, offering over 10,000 online courses, 90 fully online associate degrees, and 80 fully online certificate programs.'
+    answer: 'About 41% of California community college instruction remains online, down slightly from 43% in 2024. The system serves 2.1 million students across 114 colleges, offering over 10,000 online courses, 90 fully online associate degrees, and 80 fully online certificate programs.'
   },
   {
     question: 'How many homeschooled students are in California?',
-    answer: 'California has approximately 547,561 homeschooled children as of September 2024, representing 13% of all U.S. homeschoolers—the highest of any state. Private school filings with fewer than 6 students (a homeschool proxy) grew 44% from pre-COVID levels.'
+    answer: 'California has approximately 550,000+ homeschooled children, representing about 13% of all U.S. homeschoolers—the highest of any state. Private school filings with fewer than 6 students (a homeschool proxy) remain elevated compared to pre-pandemic levels.'
   },
   {
     question: 'What is the largest school district in California?',
-    answer: 'Los Angeles Unified School District (LAUSD) is the largest district in California and the second-largest in the nation, with 497,105 students enrolled in 2025-26. The district covers over 700 square miles and serves students who are approximately 90% students of color.'
+    answer: 'Los Angeles Unified School District (LAUSD) is the largest district in California and the second-largest in the nation, with approximately 356,719 graded enrollment (522,080 total including early education and charters) projected for 2026-27. The district serves students who are approximately 90% students of color.'
   },
   {
     question: 'How is California recovering from COVID learning loss?',
-    answer: 'Recovery has been slow. Only 10% of California students attend districts that have recovered in both math and reading. The state has a $6 billion Learning Recovery Emergency Block Grant available through 2027-28, but only 30% of districts have spent on tutoring so far.'
+    answer: 'Recovery continues slowly. Math is now 1.4 points below 2019 after falling about 6 points by 2022. ELA is 1.6 points below after falling about 4 points. Progress slowed in 2025-26, with gains of just 0.5 points in ELA and 1.1 points in math, compared to 1.8 points each in the prior year.'
   }
 ];
 
@@ -274,7 +274,7 @@ const tableOfContents = [
 
 export default function CaliforniaStatsPage() {
   const [expandedFaq, setExpandedFaq] = React.useState<number | null>(null);
-  const lastUpdated = 'October 2025';
+  const lastUpdated = 'November 2027';
 
   return (
     <div className="min-h-screen bg-[#FAFBFC]">
@@ -285,7 +285,7 @@ export default function CaliforniaStatsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "California Online Learning Statistics 2025: 100+ Facts & Data",
+            "headline": "California Online Learning Statistics 2027: 100+ Facts & Data",
             "description": "Comprehensive California online learning and education statistics including K-12 enrollment, test scores, virtual schools, and community college data.",
             "author": {
               "@type": "Organization",
@@ -300,7 +300,7 @@ export default function CaliforniaStatsPage() {
                 "url": "https://www.thetutorbridge.com/logo.png"
               }
             },
-            "datePublished": "2025-01-15",
+            "datePublished": "2027-01-15",
             "dateModified": new Date().toISOString(),
             "mainEntityOfPage": {
               "@type": "WebPage",
@@ -317,7 +317,7 @@ export default function CaliforniaStatsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Dataset",
-            "name": "California Online Learning Statistics 2025",
+            "name": "California Online Learning Statistics 2027",
             "description": "Comprehensive dataset of California education, online learning, and K-12 statistics",
             "url": "https://www.thetutorbridge.com/statistics/online-learning/usa/california",
             "keywords": ["California", "education", "online learning", "K-12", "virtual schools"],
@@ -325,7 +325,7 @@ export default function CaliforniaStatsPage() {
               "@type": "Organization",
               "name": "The Tutor Bridge"
             },
-            "temporalCoverage": "2018/2025",
+            "temporalCoverage": "2020/2027",
             "spatialCoverage": "California, United States"
           })
         }}
@@ -411,7 +411,7 @@ export default function CaliforniaStatsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
               California Online Learning
               <span className="block text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #fbbf24, #f59e0b)' }}>
-                Statistics 2025
+                Statistics 2027
               </span>
             </h1>
 
@@ -444,19 +444,19 @@ export default function CaliforniaStatsPage() {
             {/* Hero Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-white">5.8M</div>
+                <div className="text-3xl md:text-4xl font-bold text-white">5.73M</div>
                 <div className="text-sm text-gray-300 mt-1">K-12 Students</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-red-400">35.5%</div>
+                <div className="text-3xl md:text-4xl font-bold text-red-400">38.4%</div>
                 <div className="text-sm text-gray-300 mt-1">Math Proficiency</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-amber-400">$24K+</div>
+                <div className="text-3xl md:text-4xl font-bold text-amber-400">$27.4K</div>
                 <div className="text-sm text-gray-300 mt-1">Per Pupil Spending</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400">43%</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-400">41%</div>
                 <div className="text-sm text-gray-300 mt-1">CC Classes Online</div>
               </div>
             </div>
@@ -497,16 +497,16 @@ export default function CaliforniaStatsPage() {
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  { stat: '5.8 million', text: 'students in CA public schools - largest in US' },
-                  { stat: '8 years', text: 'of consecutive enrollment decline' },
-                  { stat: '35.5%', text: 'of students meet math standards (vs 37% pre-COVID)' },
-                  { stat: '47%', text: 'of students meet ELA standards' },
-                  { stat: '19%', text: 'chronic absenteeism rate (1.1M students)' },
-                  { stat: '10,000+', text: 'unfilled teacher positions statewide' },
-                  { stat: '$136B', text: 'total K-12 education budget (all sources)' },
-                  { stat: '43%', text: 'of community college classes now online' },
-                  { stat: '547,561', text: 'homeschooled children (#1 state in US)' },
-                  { stat: '145', text: 'EdTech startups in San Francisco alone' },
+                  { stat: '5.73 million', text: 'students in CA public schools - largest in US' },
+                  { stat: '9 years', text: 'of consecutive enrollment decline (-74,961 in 2025-26)' },
+                  { stat: '38.4%', text: 'of students meet math standards (up from 35.5%)' },
+                  { stat: '49.3%', text: 'of students meet ELA standards' },
+                  { stat: '18.3%', text: 'chronic absenteeism rate (down from 19.4%)' },
+                  { stat: '35,182', text: 'teachers not fully certified - 2nd highest in US' },
+                  { stat: '$151.4B', text: 'total TK-12 education budget (record high)' },
+                  { stat: '41%', text: 'of community college classes now online' },
+                  { stat: '550,000+', text: 'homeschooled children (#1 state in US)' },
+                  { stat: '$27,418', text: 'per pupil spending (up 61% since 2018-19)' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3 bg-white/60 rounded-xl p-4">
                     <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
@@ -536,24 +536,24 @@ export default function CaliforniaStatsPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <StatCard
-                value="5.81M"
+                value="5.73M"
                 label="Total Enrollment"
-                subtext="2024-25 school year"
+                subtext="2025-26 school year"
                 icon={<Users className="w-6 h-6 text-blue-600" />}
                 color="bg-blue-100"
                 sourceId={1}
               />
               <StatCard
-                value="-31,500"
+                value="-74,961"
                 label="Annual Change"
-                subtext="-0.54% from prior year"
+                subtext="-1.3% from prior year"
                 icon={<TrendingDown className="w-6 h-6 text-red-600" />}
                 color="bg-red-100"
-                sourceId={1}
+                sourceId={2}
                 trend="down"
               />
               <StatCard
-                value="10,303"
+                value="9,947"
                 label="Public Schools"
                 subtext="Across the state"
                 icon={<School className="w-6 h-6 text-emerald-600" />}
@@ -561,9 +561,9 @@ export default function CaliforniaStatsPage() {
                 sourceId={1}
               />
               <StatCard
-                value="20.9:1"
-                label="Student-Teacher Ratio"
-                subtext="State average"
+                value="1,011"
+                label="School Districts"
+                subtext="Statewide"
                 icon={<GraduationCap className="w-6 h-6 text-violet-600" />}
                 color="bg-violet-100"
                 sourceId={1}
@@ -589,7 +589,7 @@ export default function CaliforniaStatsPage() {
                 </ResponsiveContainer>
               </ChartWrapper>
 
-              <ChartWrapper title="Largest School Districts (2025-26)" sourceIds={[1]}>
+              <ChartWrapper title="Largest School Districts (2026-27)" sourceIds={[1]}>
                 <ResponsiveContainer width="100%" height={300}>
                   <BarChart data={largestDistrictsData} layout="vertical">
                     <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -617,11 +617,11 @@ export default function CaliforniaStatsPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
-                    <tr><td className="px-6 py-4 text-sm">Total K-12 Enrollment (2024-25)</td><td className="px-6 py-4 text-sm font-semibold">5,806,221</td><td className="px-6 py-4 text-sm text-gray-500">8th consecutive decline</td></tr>
-                    <tr><td className="px-6 py-4 text-sm">Transitional Kindergarten</td><td className="px-6 py-4 text-sm font-semibold">151,491</td><td className="px-6 py-4 text-sm text-gray-500">Doubled since 2021-22</td></tr>
-                    <tr><td className="px-6 py-4 text-sm">Los Angeles Unified</td><td className="px-6 py-4 text-sm font-semibold">497,105</td><td className="px-6 py-4 text-sm text-gray-500">2nd largest in US</td></tr>
-                    <tr><td className="px-6 py-4 text-sm">San Diego Unified</td><td className="px-6 py-4 text-sm font-semibold">112,250</td><td className="px-6 py-4 text-sm text-gray-500">2nd largest in CA</td></tr>
-                    <tr><td className="px-6 py-4 text-sm">Projected 2034-35</td><td className="px-6 py-4 text-sm font-semibold">5,219,700</td><td className="px-6 py-4 text-sm text-gray-500">-586,500 projected decline</td></tr>
+                    <tr><td className="px-6 py-4 text-sm">Total K-12 Enrollment (2025-26)</td><td className="px-6 py-4 text-sm font-semibold">5,731,260</td><td className="px-6 py-4 text-sm text-gray-500">9th consecutive decline</td></tr>
+                    <tr><td className="px-6 py-4 text-sm">Transitional Kindergarten</td><td className="px-6 py-4 text-sm font-semibold">+35,743</td><td className="px-6 py-4 text-sm text-gray-500">+20.1% increase (full 4-year-old eligibility)</td></tr>
+                    <tr><td className="px-6 py-4 text-sm">Los Angeles Unified</td><td className="px-6 py-4 text-sm font-semibold">~522,080</td><td className="px-6 py-4 text-sm text-gray-500">2nd largest in US (total including charters)</td></tr>
+                    <tr><td className="px-6 py-4 text-sm">Annual Decline</td><td className="px-6 py-4 text-sm font-semibold">-74,961</td><td className="px-6 py-4 text-sm text-gray-500">Largest decline since 2021-22</td></tr>
+                    <tr><td className="px-6 py-4 text-sm">Projected 2034-35</td><td className="px-6 py-4 text-sm font-semibold">~5.2M</td><td className="px-6 py-4 text-sm text-gray-500">Only 14 counties projected to grow</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -634,7 +634,7 @@ export default function CaliforniaStatsPage() {
               <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
                 <Target className="w-5 h-5 text-red-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">CAASPP Test Scores (2024)</h2>
+              <h2 className="text-2xl font-bold text-gray-900">CAASPP Test Scores (2026)</h2>
             </div>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -644,33 +644,33 @@ export default function CaliforniaStatsPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               <StatCard
-                value="47%"
+                value="49.3%"
                 label="ELA Proficiency"
                 subtext="Met/exceeded standard"
                 icon={<BookOpen className="w-6 h-6 text-blue-600" />}
                 color="bg-blue-100"
-                sourceId={1}
+                sourceId={3}
               />
               <StatCard
-                value="35.5%"
+                value="38.4%"
                 label="Math Proficiency"
                 subtext="Met/exceeded standard"
                 icon={<BarChart3 className="w-6 h-6 text-red-600" />}
                 color="bg-red-100"
-                sourceId={1}
+                sourceId={3}
               />
               <StatCard
-                value="30.7%"
+                value="36%"
                 label="Science Proficiency"
                 subtext="Met/exceeded standard"
                 icon={<Brain className="w-6 h-6 text-violet-600" />}
                 color="bg-violet-100"
-                sourceId={1}
+                sourceId={3}
               />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-6">
-              <ChartWrapper title="Current vs Pre-Pandemic Proficiency (%)" sourceIds={[1, 3]}>
+              <ChartWrapper title="2026 vs Pre-Pandemic Proficiency (%)" sourceIds={[3, 4]}>
                 <ResponsiveContainer width="100%" height={300}>
                   <BarChart data={caasppScoresData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -678,7 +678,7 @@ export default function CaliforniaStatsPage() {
                     <YAxis tick={{ fontSize: 12 }} domain={[0, 60]} />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="current" name="2023-24" fill="#ef4444" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="current" name="2025-26" fill="#ef4444" radius={[4, 4, 0, 0]} />
                     <Bar dataKey="prePandemic" name="2018-19" fill="#22c55e" radius={[4, 4, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
@@ -701,12 +701,12 @@ export default function CaliforniaStatsPage() {
               <h3 className="font-semibold text-gray-900 mb-4">Achievement Gap Highlights</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-red-600 font-semibold mb-2">Widest Gap in Nation</div>
-                  <p className="text-sm text-gray-600">California has the widest achievement gap between socioeconomically disadvantaged and affluent students, second only to Massachusetts.</p>
+                  <div className="text-red-600 font-semibold mb-2">Persistent Gaps</div>
+                  <p className="text-sm text-gray-600">Black and Latino students trail white students by 22-30 points and Asian students by 34-49 points in math and ELA proficiency, though they showed the largest gains in 2025-26.</p>
                 </div>
                 <div className="bg-white/60 rounded-xl p-4">
-                  <div className="text-red-600 font-semibold mb-2">11th Grade Crisis</div>
-                  <p className="text-sm text-gray-600">Only 27.9% of 11th graders meet math standards. For Latino, Black, and Native American students, it's below 14.1%.</p>
+                  <div className="text-red-600 font-semibold mb-2">11th Grade Math Crisis</div>
+                  <p className="text-sm text-gray-600">Only 31.9% of high school juniors scored proficient in math. Cal State uses these junior-year scores to place admitted freshmen.</p>
                 </div>
               </div>
             </div>
@@ -892,15 +892,15 @@ export default function CaliforniaStatsPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <StatCard
-                value="19%"
+                value="18.3%"
                 label="Chronic Absenteeism"
-                subtext="2024-25 rate"
+                subtext="2025-26 rate"
                 icon={<UserMinus className="w-6 h-6 text-red-600" />}
                 color="bg-red-100"
-                sourceId={10}
+                sourceId={11}
               />
               <StatCard
-                value="1.1M"
+                value="1.06M"
                 label="Students Affected"
                 subtext="Chronically absent"
                 icon={<Users className="w-6 h-6 text-amber-600" />}
@@ -913,15 +913,15 @@ export default function CaliforniaStatsPage() {
                 subtext="2021-22 (pandemic)"
                 icon={<TrendingUp className="w-6 h-6 text-red-600" />}
                 color="bg-red-100"
-                sourceId={2}
+                sourceId={9}
               />
               <StatCard
-                value="12%"
-                label="Pre-Pandemic"
-                subtext="2018-19 rate"
+                value="12.5%"
+                label="2030 Goal"
+                subtext="50% reduction target"
                 icon={<Target className="w-6 h-6 text-emerald-600" />}
                 color="bg-emerald-100"
-                sourceId={2}
+                sourceId={11}
               />
             </div>
 
@@ -1058,28 +1058,28 @@ export default function CaliforniaStatsPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               <StatCard
-                value="$136B"
-                label="Total K-12 Budget"
-                subtext="2024-25"
+                value="$151.4B"
+                label="Total TK-12 Budget"
+                subtext="2026-27 (record high)"
                 icon={<DollarSign className="w-6 h-6 text-emerald-600" />}
                 color="bg-emerald-100"
                 sourceId={7}
               />
               <StatCard
-                value="$24,000+"
+                value="$27,418"
                 label="Per Pupil Spending"
                 subtext="From all sources"
                 icon={<Users className="w-6 h-6 text-blue-600" />}
                 color="bg-blue-100"
-                sourceId={7}
+                sourceId={13}
               />
               <StatCard
-                value="$6B"
-                label="Learning Recovery Grant"
-                subtext="Available through 2027-28"
+                value="$20,512"
+                label="Prop 98 Per Pupil"
+                subtext="+10.1% from prior year"
                 icon={<Target className="w-6 h-6 text-amber-600" />}
                 color="bg-amber-100"
-                sourceId={3}
+                sourceId={7}
               />
             </div>
 
@@ -1087,17 +1087,17 @@ export default function CaliforniaStatsPage() {
               <div className="bg-white rounded-2xl p-6 border border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-4">Per-Pupil Spending Details</h4>
                 <div className="space-y-3">
-                  <div className="flex justify-between py-2 border-b border-gray-100"><span>Total from all sources</span><span className="font-bold">$24,000-$24,626</span></div>
-                  <div className="flex justify-between py-2 border-b border-gray-100"><span>Prop 98 funds only</span><span className="font-bold">$17,502</span></div>
-                  <div className="flex justify-between py-2 border-b border-gray-100"><span>5-year increase</span><span className="font-bold text-emerald-600">+35%</span></div>
+                  <div className="flex justify-between py-2 border-b border-gray-100"><span>Total from all sources (2026-27)</span><span className="font-bold">$27,418</span></div>
+                  <div className="flex justify-between py-2 border-b border-gray-100"><span>Prop 98 funds only</span><span className="font-bold">$20,512</span></div>
+                  <div className="flex justify-between py-2 border-b border-gray-100"><span>Increase since 2018-19</span><span className="font-bold text-emerald-600">+61%</span></div>
                 </div>
               </div>
               <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                <h4 className="font-semibold text-gray-900 mb-4">Equity Premiums</h4>
+                <h4 className="font-semibold text-gray-900 mb-4">2026-27 Budget Highlights</h4>
                 <div className="space-y-3">
-                  <div className="flex justify-between py-2 border-b border-gray-100"><span>Low-income student premium</span><span className="font-bold text-emerald-600">+$2,700/student</span></div>
-                  <div className="flex justify-between py-2 border-b border-gray-100"><span>English Learner premium</span><span className="font-bold text-emerald-600">+$1,200/student</span></div>
-                  <div className="flex justify-between py-2"><span>Black/Latino student premium</span><span className="font-bold text-emerald-600">+$3,000/student</span></div>
+                  <div className="flex justify-between py-2 border-b border-gray-100"><span>Special education increase</span><span className="font-bold text-emerald-600">+$2.4B (+43%)</span></div>
+                  <div className="flex justify-between py-2 border-b border-gray-100"><span>Prop 98 year-over-year</span><span className="font-bold text-emerald-600">+10.1%</span></div>
+                  <div className="flex justify-between py-2"><span>Total TK-14 education</span><span className="font-bold">$125.5B</span></div>
                 </div>
               </div>
             </div>

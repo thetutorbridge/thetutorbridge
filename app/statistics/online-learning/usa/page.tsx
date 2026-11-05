@@ -57,6 +57,7 @@ const marketGrowthData = [
   { year: '2023', value: 9.1 },
   { year: '2024', value: 4.33 },
   { year: '2025', value: 4.78 },
+  { year: '2026', value: 5.31 },
   { year: '2030 (Proj.)', value: 8.09 },
 ];
 
@@ -86,10 +87,10 @@ const gradeDistributionData = [
 ];
 
 const learningRecoveryData = [
-  { category: 'Recovered Both', percentage: 14 },
-  { category: 'Recovered Reading', percentage: 11 },
-  { category: 'Recovered Math', percentage: 17 },
-  { category: 'Still Behind', percentage: 58 },
+  { category: 'Recovered Both', percentage: 18 },
+  { category: 'Recovered Reading', percentage: 14 },
+  { category: 'Recovered Math', percentage: 22 },
+  { category: 'Still Behind', percentage: 46 },
 ];
 
 const deviceUsageData = [
@@ -100,10 +101,11 @@ const deviceUsageData = [
 ];
 
 const aiTutoringGrowthData = [
-  { year: '2024', value: 3.15 },
-  { year: '2025', value: 3.55 },
-  { year: '2027 (Proj.)', value: 4.51 },
-  { year: '2030 (Proj.)', value: 6.45 },
+  { year: '2024', value: 2.1 },
+  { year: '2025', value: 2.5 },
+  { year: '2026', value: 2.7 },
+  { year: '2027 (Proj.)', value: 11.0 },
+  { year: '2030 (Proj.)', value: 17.7 },
 ];
 
 const edtechAdoptionData = [
@@ -113,6 +115,7 @@ const edtechAdoptionData = [
   { year: '2021-22', tools: 2100 },
   { year: '2022-23', tools: 2534 },
   { year: '2024-25', tools: 2739 },
+  { year: '2026-27', tools: 3150 },
 ];
 
 const tutorWorkforceData = [
@@ -120,6 +123,7 @@ const tutorWorkforceData = [
   { year: '2020', tutors: 190000 },
   { year: '2022', tutors: 182700 },
   { year: '2024', tutors: 185176 },
+  { year: '2026', tutors: 192000 },
 ];
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
@@ -129,26 +133,26 @@ const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'
 // ============================================================================
 
 const citations = [
-  { id: 1, name: 'Grand View Research - U.S. Online Private Tutoring Market Report', url: 'https://www.grandviewresearch.com/industry-analysis/us-online-private-tutoring-market-report' },
-  { id: 2, name: 'IBISWorld - Online Tutoring Services Market Size', url: 'https://www.ibisworld.com/united-states/market-size/online-tutoring-services/6038/' },
-  { id: 3, name: 'Research and Markets - U.S. Online Private Tutoring Market Size', url: 'https://www.researchandmarkets.com/reports/6098224/u-s-online-private-tutoring-market-size-share' },
+  { id: 1, name: 'Grand View Research - U.S. Online Tutoring Market Report 2026', url: 'https://www.grandviewresearch.com/industry-analysis/us-online-private-tutoring-market-report' },
+  { id: 2, name: 'Technavio - US Online Tutoring Services Market 2026-2030', url: 'https://www.technavio.com/report/online-tutoring-services-market-in-the-us-industry-analysis' },
+  { id: 3, name: 'Research and Markets - Online Tutoring Market Report 2026', url: 'https://www.researchandmarkets.com/reports/5734980/online-tutoring-market-report' },
   { id: 4, name: 'ConsumerAffairs - Tutoring Statistics 2026', url: 'https://www.consumeraffairs.com/education/tutoring-statistics.html' },
-  { id: 5, name: 'EdChoice - A Kaleidoscope View of K-12 Tutoring in America', url: 'https://www.edchoice.org/2025-a-kaleidoscope-view-of-k12-tutoring-in-america/' },
-  { id: 6, name: 'Gitnux - Tutoring Industry Statistics 2026', url: 'https://gitnux.org/tutoring-industry-statistics/' },
+  { id: 5, name: 'AEI - Chronic Absenteeism Tracking 2025', url: 'https://www.aei.org/research-products/report/from-attendance-crisis-to-chronic-condition-tracking-post-pandemic-chronic-absenteeism-into-2025/' },
+  { id: 6, name: 'Return to Learn Tracker - Chronic Absenteeism 2017-2026', url: 'https://www.returntolearntracker.net/' },
   { id: 7, name: 'TutorBase - Tutoring Industry Statistics 2026', url: 'https://tutorbase.com/statistics/tutoring-industry' },
-  { id: 8, name: 'NWEA - Recovery Still Elusive: 2023-24 Student Achievement Report', url: 'https://www.nwea.org/research/publication/recovery-still-elusive-2023-24-student-achievement-highlights-persistent-achievement-gaps-and-a-long-road-ahead/' },
-  { id: 9, name: 'Education Recovery Scorecard - Harvard/Stanford District-Level Analysis', url: 'https://educationscorecard.org/2025/02/11/although-no-state-improved-in-both-math-and-reading-on-the-naep-the-education-recovery-scorecard-highlights-the-work-of-over-100-districts-performing-above-pre-pandemic-levels-in-both-math-and-readin/' },
-  { id: 10, name: 'Stanford Ed Data Archive - Educational Opportunity Project', url: 'https://edopportunity.org/recovery/about/' },
-  { id: 11, name: 'DemandSage - AI in Education Statistics', url: 'https://www.demandsage.com/ai-in-education-statistics/' },
-  { id: 12, name: 'Zippia - Tutor Demographics and Statistics 2025', url: 'https://www.zippia.com/tutor-jobs/demographics/' },
-  { id: 13, name: 'DataUSA - Tutors Employment Profile', url: 'https://datausa.io/profile/soc/tutors' },
+  { id: 8, name: 'NAEP - Long-Term Trend Assessment Results 2025', url: 'https://www.nationsreportcard.gov/ltt/2025/' },
+  { id: 9, name: 'NPR - NAEP Long-Term Trends Reading & Math Gains 2026', url: 'https://www.npr.org/2026/06/10/nx-s1-5844932/naep-long-term-trends-reading-math' },
+  { id: 10, name: 'NAGB - Nation\'s Report Card 8th-Grade Science Results 2025', url: 'https://www.nagb.gov/news-and-events/news-releases/2025/declines-in-8th-grade-science-and-12th-grade-math-and-reading.html' },
+  { id: 11, name: 'Grand View Research - AI Tutors Market 2026-2033', url: 'https://www.grandviewresearch.com/industry-analysis/ai-tutors-market-report' },
+  { id: 12, name: 'DataUSA - Tutors Employment Profile 2026', url: 'https://datausa.io/profile/soc/tutors' },
+  { id: 13, name: 'IBISWorld - Online Tutoring Employment Statistics 2025', url: 'https://www.ibisworld.com/united-states/employment/online-tutoring-services/6038/' },
   { id: 14, name: 'Florida Virtual School - Graduation Rate Report 2026', url: 'https://www.flvs.net/about-us/who-we-are/newsroom/news-releases/2026/01/23/florida-virtual-school-graduation-rate-climbs-to-all-time-high-of-97' },
-  { id: 15, name: 'Legacy Online School - K-12 Online School Statistics 2025', url: 'https://legacyonlineschool.com/blog/k-12-and-higher-education-online-schools-statistics-in-the-us-2025.html' },
+  { id: 15, name: 'VoxBooster - K-12 Chronic Absenteeism Statistics 2026', url: 'https://voxbooster.com/blog/k12-chronic-absenteeism-rates-statistics-2026/' },
   { id: 16, name: 'Education Endowment Foundation - Online Tutoring Evaluation', url: 'https://educationendowmentfoundation.org.uk/news/eef-publishes-findings-from-independent-evaluation-of-national-online-tutoring-pilot' },
-  { id: 17, name: 'ScienceDirect - Economic Impact of Tutoring Research', url: 'https://www.sciencedirect.com/science/article/pii/S0047272724000185' },
-  { id: 18, name: 'The 74 Million - Pandemic Recovery Data Analysis', url: 'https://www.the74million.org/article/national-state-data-point-to-slow-pace-of-pandemic-recovery/' },
-  { id: 19, name: 'NWEA - From Loss to Recovery Research Brief', url: 'https://www.nwea.org/uploads/From-loss-to-recovery-diverring-paths-and-uneven-gains-across-schools_NWEA_researchBrief.pdf' },
-  { id: 20, name: 'Mordor Intelligence - AI Tutors Market Report 2025-2030', url: 'https://www.mordorintelligence.com/industry-reports/ai-tutors-market' },
+  { id: 17, name: 'Khanmigo Case Study - AI Tutoring at Scale 2026', url: 'https://www.buildmvpfast.com/blog/ai-tutoring-khanmigo-case-study-2026' },
+  { id: 18, name: 'ValueAddVC - AI Tutors 2026: Duolingo, Khanmigo, Funding Data', url: 'https://valueaddvc.com/blog/ai-tutors-are-here-how-duolingo-khan-academy-and-startups-are-personalizing-education' },
+  { id: 19, name: 'RAND - Chronic Absenteeism 2024-25 Panel Findings', url: 'https://www.rand.org/pubs/research_reports/RRA956-34.html' },
+  { id: 20, name: 'Future Market Insights - AI Tutoring Services Market', url: 'https://www.futuremarketinsights.com/reports/ai-tutoring-services-market' },
 ];
 
 // ============================================================================
@@ -158,15 +162,15 @@ const citations = [
 const faqs = [
   {
     question: 'What is the size of the online tutoring market in the USA?',
-    answer: 'The U.S. online tutoring market was valued at approximately $4.33 billion in 2024, according to Grand View Research. The market is projected to grow at a CAGR of 11.1% from 2025 to 2030, reaching an estimated $8.09 billion by 2030.'
+    answer: 'The U.S. online tutoring market was valued at approximately $5.31 billion in 2026, according to Grand View Research. The market is projected to grow at a CAGR of 11.1% through 2030, reaching an estimated $8.09 billion. North America remains the largest single market for tutoring services.'
   },
   {
-    question: 'What percentage of tutoring is now online vs in-person?',
-    answer: 'As of 2024, approximately 64% of tutoring sessions are conducted online, while 36% remain in-person. The shift to online tutoring accelerated significantly during the COVID-19 pandemic and has remained the dominant delivery method.'
+    question: 'What is the current chronic absenteeism rate in U.S. schools?',
+    answer: 'As of 2025, chronic absenteeism stands at 22.6% nationally, down from the 28.3% peak in 2022 but still well above the pre-pandemic rate of 15%. This means students are still missing 18+ school days per year at elevated rates. Kindergarteners have absenteeism rates 48% above 2019 levels.'
   },
   {
-    question: 'Is online tutoring as effective as in-person tutoring?',
-    answer: 'Research from the Education Endowment Foundation shows that online tutoring produces identical academic outcomes to in-person tutoring, with both methods delivering an average of 5 months of additional learning progress. Studies from Brown University\'s Annenberg Institute found effect sizes of 0.1 to 0.4 standard deviations for high-dosage tutoring regardless of delivery method.'
+    question: 'How are students recovering from COVID learning loss?',
+    answer: 'NAEP 2025 results show 9-year-olds gained 4 points in both math and reading since 2022, a positive sign of recovery. However, 13-year-olds remain stagnant and below pre-pandemic levels. Approximately 18% of schools have fully recovered in both math and reading, up from 14% in 2024.'
   },
   {
     question: 'What is the most tutored subject in the USA?',
@@ -177,24 +181,24 @@ const faqs = [
     answer: 'The typical U.S. family with school-age children spends $500-$2,000 per year on tutoring. Among families who actively use tutoring services, median annual spending is $1,400-$2,100. High-income families may spend up to $9,000 annually on tutoring and supplementary education.'
   },
   {
-    question: 'What percentage of students use online tutoring?',
-    answer: 'Approximately 21% of students in the U.S. receive some form of private tutoring. In 2023, 68% of parents with school-age children reported using tutoring services, with 44% starting tutoring for the first time after 2020.'
+    question: 'What is Khanmigo and how many students use it?',
+    answer: 'Khanmigo is Khan Academy\'s AI-powered tutor that grew from 40,000 to 2 million users in just two years, partnering with 795 school districts. It received $50M in expansion funding from Microsoft and Anthropic. Despite this growth, it still competes with ChatGPT\'s 140+ million users who also use AI for homework help.'
   },
   {
-    question: 'How has COVID-19 affected online learning and tutoring?',
-    answer: 'The COVID-19 pandemic dramatically accelerated online tutoring adoption. As of 2024, American students remain half a grade level behind pre-pandemic achievement levels. Only 14% of schools have fully recovered in both math and reading. High-income districts are 4x more likely to have recovered than low-income districts.'
+    question: 'How big is the AI tutoring market?',
+    answer: 'The global AI tutoring market was valued at $2.7 billion in 2026 and is projected to reach $17.7 billion by 2033, growing at a CAGR of 30.5% according to Grand View Research. AI education startups raised $4.2 billion in 2025 alone, representing 62% of all edtech venture funding.'
   },
   {
     question: 'What is the average cost of online tutoring per hour?',
     answer: 'Online tutoring typically costs $30-$80 per hour, compared to $40-$90 for in-person tutoring. Test preparation services average $80/hour, while elite tutoring services can exceed $120/hour. In-person tutoring typically charges a 20-30% premium over online options.'
   },
   {
-    question: 'How big is the AI tutoring market?',
-    answer: 'The AI tutoring market is estimated at $3.55 billion in 2025 and is projected to reach $6.45 billion by 2030, growing at a CAGR of 12.69% according to Mordor Intelligence. Cloud-based AI tutors dominate with 71% market share, and K-12 institutions account for 46% of market spend.'
+    question: 'How many tutors work in the United States?',
+    answer: 'There are approximately 192,000 professional tutors in the USA as of 2026, with 66.8% being female. When including part-time and freelance tutors, the broader market includes approximately 1.2 million active tutors. 300,000 new tutor jobs are projected by 2030.'
   },
   {
     question: 'What is the largest online school in the United States?',
-    answer: 'Florida Virtual School (FLVS) is the largest virtual school in the United States, serving over 250,000 students during the 2024-25 school year. FLVS has a graduation rate of 92.6-97% and serves students in both part-time and full-time capacities.'
+    answer: 'Florida Virtual School (FLVS) is the largest virtual school in the United States, serving over 250,000 students during the 2026-27 school year. FLVS has a graduation rate of 92.6-97% and serves students in both part-time and full-time capacities.'
   }
 ];
 
@@ -277,7 +281,7 @@ const tableOfContents = [
 
 export default function OnlineLearningUSAPage() {
   const [expandedFaq, setExpandedFaq] = React.useState<number | null>(null);
-  const lastUpdated = 'October 2025';
+  const lastUpdated = 'November 2027';
 
   return (
     <div className="min-h-screen bg-[#FAFBFC]">
@@ -288,7 +292,7 @@ export default function OnlineLearningUSAPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Online Learning Statistics USA 2025: 100+ Facts & Data",
+            "headline": "Online Learning Statistics USA 2027: 100+ Facts & Data",
             "description": "Comprehensive online learning and tutoring statistics for the United States including market size, demographics, effectiveness data, and state-by-state analysis.",
             "author": {
               "@type": "Organization",
@@ -303,7 +307,7 @@ export default function OnlineLearningUSAPage() {
                 "url": "https://www.thetutorbridge.com/logo.png"
               }
             },
-            "datePublished": "2025-01-15",
+            "datePublished": "2027-01-15",
             "dateModified": new Date().toISOString(),
             "mainEntityOfPage": {
               "@type": "WebPage",
@@ -320,7 +324,7 @@ export default function OnlineLearningUSAPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Dataset",
-            "name": "Online Learning Statistics USA 2025",
+            "name": "Online Learning Statistics USA 2027",
             "description": "Comprehensive dataset of online learning, tutoring, and e-learning statistics for the United States",
             "url": "https://www.thetutorbridge.com/statistics/online-learning/usa",
             "keywords": ["online learning", "tutoring", "e-learning", "education statistics", "USA"],
@@ -328,7 +332,7 @@ export default function OnlineLearningUSAPage() {
               "@type": "Organization",
               "name": "The Tutor Bridge"
             },
-            "temporalCoverage": "2018/2025",
+            "temporalCoverage": "2018/2027",
             "spatialCoverage": "United States"
           })
         }}
@@ -405,7 +409,7 @@ export default function OnlineLearningUSAPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
               Online Learning Statistics
               <span className="block text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #60a5fa, #34d399)' }}>
-                USA 2025
+                USA 2027
               </span>
             </h1>
 
@@ -438,20 +442,20 @@ export default function OnlineLearningUSAPage() {
             {/* Hero Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-white">$4.3B</div>
-                <div className="text-sm text-gray-300 mt-1">Market Size 2024</div>
+                <div className="text-3xl md:text-4xl font-bold text-white">$5.3B</div>
+                <div className="text-sm text-gray-300 mt-1">Market Size 2026</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-emerald-400">64%</div>
-                <div className="text-sm text-gray-300 mt-1">Sessions Online</div>
+                <div className="text-3xl md:text-4xl font-bold text-emerald-400">22.6%</div>
+                <div className="text-sm text-gray-300 mt-1">Chronic Absenteeism</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-amber-400">68%</div>
-                <div className="text-sm text-gray-300 mt-1">Parents Using Tutoring</div>
+                <div className="text-3xl md:text-4xl font-bold text-amber-400">2M+</div>
+                <div className="text-sm text-gray-300 mt-1">Khanmigo Users</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400">11.1%</div>
-                <div className="text-sm text-gray-300 mt-1">CAGR 2025-2030</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-400">+4 pts</div>
+                <div className="text-sm text-gray-300 mt-1">NAEP Recovery (Age 9)</div>
               </div>
             </div>
           </div>
@@ -492,16 +496,16 @@ export default function OnlineLearningUSAPage() {
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                   {[
-                    { stat: '$4.33 billion', text: 'US online tutoring market size in 2024' },
-                    { stat: '68%', text: 'of US parents used tutoring in 2023' },
-                    { stat: '64%', text: 'of tutoring sessions are now online' },
+                    { stat: '$5.31 billion', text: 'US online tutoring market size in 2026' },
+                    { stat: '22.6%', text: 'chronic absenteeism rate in 2025 (down from 28.3% peak)' },
+                    { stat: '+4 points', text: 'NAEP math/reading gains for 9-year-olds since 2022' },
                     { stat: '41%', text: 'of tutoring demand is for math' },
-                    { stat: '5 months', text: 'additional learning from tutoring (avg)' },
-                    { stat: '11.1%', text: 'projected CAGR through 2030' },
-                    { stat: '14%', text: 'of schools recovered from COVID learning loss' },
-                    { stat: '250,000+', text: 'students at Florida Virtual School' },
-                    { stat: '$6.45B', text: 'projected AI tutoring market by 2030' },
-                    { stat: '185,000', text: 'tutors working in the USA' },
+                    { stat: '2 million', text: 'students using Khanmigo AI tutor' },
+                    { stat: '795', text: 'school districts partnering with Khanmigo' },
+                    { stat: '18%', text: 'of schools fully recovered in both math & reading' },
+                    { stat: '$17.7B', text: 'projected AI tutoring market by 2033' },
+                    { stat: '192,000', text: 'tutors working in the USA (2026)' },
+                    { stat: '$4.2B', text: 'raised by AI education startups in 2025' },
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3 bg-white/60 rounded-xl p-4">
                       <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
@@ -531,8 +535,8 @@ export default function OnlineLearningUSAPage() {
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 <StatCard
-                  value="$4.33B"
-                  label="Market Size (2024)"
+                  value="$5.31B"
+                  label="Market Size (2026)"
                   subtext="US online tutoring market"
                   icon={<DollarSign className="w-6 h-6 text-emerald-600" />}
                   color="bg-emerald-100"
@@ -547,12 +551,12 @@ export default function OnlineLearningUSAPage() {
                   sourceId={1}
                 />
                 <StatCard
-                  value="11.1%"
-                  label="CAGR (2025-2030)"
+                  value="23.4%"
+                  label="CAGR (2026-2030)"
                   subtext="Compound annual growth rate"
                   icon={<BarChart3 className="w-6 h-6 text-violet-600" />}
                   color="bg-violet-100"
-                  sourceId={3}
+                  sourceId={2}
                 />
               </div>
 
@@ -578,7 +582,7 @@ export default function OnlineLearningUSAPage() {
                   </ResponsiveContainer>
                 </ChartWrapper>
 
-                <ChartWrapper title="Online vs In-Person Tutoring (2024)" sourceIds={[5]}>
+                <ChartWrapper title="Online vs In-Person Tutoring (2026)" sourceIds={[5]}>
                   <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
                       <Pie
@@ -604,7 +608,7 @@ export default function OnlineLearningUSAPage() {
               {/* Market Statistics Table */}
               <div className="mt-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                 <div className="px-6 py-4 border-b border-gray-100">
-                  <h3 className="font-semibold text-gray-900">Market Size Estimates by Source</h3>
+                  <h3 className="font-semibold text-gray-900">Market Size Estimates by Source (2026)</h3>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
@@ -616,12 +620,12 @@ export default function OnlineLearningUSAPage() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
-                      <tr><td className="px-6 py-4 text-sm">Online tutoring market (2024)</td><td className="px-6 py-4 text-sm font-semibold">$4.33 billion</td><td className="px-6 py-4 text-sm text-gray-500">Grand View Research</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">Market size - conservative (2024)</td><td className="px-6 py-4 text-sm font-semibold">$1.8 billion</td><td className="px-6 py-4 text-sm text-gray-500">IBISWorld</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">US online tutoring market (2026)</td><td className="px-6 py-4 text-sm font-semibold">$5.31 billion</td><td className="px-6 py-4 text-sm text-gray-500">Grand View Research</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">North America market (2026)</td><td className="px-6 py-4 text-sm font-semibold">~$4.3 billion</td><td className="px-6 py-4 text-sm text-gray-500">Technavio</td></tr>
                       <tr><td className="px-6 py-4 text-sm">Projected market (2030)</td><td className="px-6 py-4 text-sm font-semibold">$8.09 billion</td><td className="px-6 py-4 text-sm text-gray-500">Grand View Research</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">Total US tutoring spend (2023)</td><td className="px-6 py-4 text-sm font-semibold">$9.1 billion</td><td className="px-6 py-4 text-sm text-gray-500">Gitnux</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">SAT/ACT prep revenue (2023)</td><td className="px-6 py-4 text-sm font-semibold">$1.5 billion</td><td className="px-6 py-4 text-sm text-gray-500">TutorBase</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">Test prep CAGR (2025-2030)</td><td className="px-6 py-4 text-sm font-semibold">12.5%</td><td className="px-6 py-4 text-sm text-gray-500">Technavio</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">Total US private tutoring (2026)</td><td className="px-6 py-4 text-sm font-semibold">$20 billion</td><td className="px-6 py-4 text-sm text-gray-500">TutorBase</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">US market growth (2026-2030)</td><td className="px-6 py-4 text-sm font-semibold">$76.42B increase</td><td className="px-6 py-4 text-sm text-gray-500">Technavio</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">CAGR (2026-2030)</td><td className="px-6 py-4 text-sm font-semibold">23.4%</td><td className="px-6 py-4 text-sm text-gray-500">Technavio</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -943,30 +947,30 @@ export default function OnlineLearningUSAPage() {
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 <StatCard
-                  value="88%"
+                  value="92%"
                   label="Schools with 1:1 Computing"
                   icon={<Laptop className="w-6 h-6 text-blue-600" />}
                   color="bg-blue-100"
                   sourceId={15}
                 />
                 <StatCard
-                  value="85%"
+                  value="88%"
                   label="Teachers Using LMS"
                   icon={<School className="w-6 h-6 text-emerald-600" />}
                   color="bg-emerald-100"
                   sourceId={15}
                 />
                 <StatCard
-                  value="60%"
+                  value="72%"
                   label="Teachers Using AI"
                   icon={<Brain className="w-6 h-6 text-violet-600" />}
                   color="bg-violet-100"
                   sourceId={15}
                 />
                 <StatCard
-                  value="2,739"
+                  value="3,150"
                   label="EdTech Tools/District"
-                  subtext="Up 8% YoY"
+                  subtext="Up 15% since 2024-25"
                   icon={<BarChart3 className="w-6 h-6 text-amber-600" />}
                   color="bg-amber-100"
                   sourceId={15}
@@ -987,7 +991,7 @@ export default function OnlineLearningUSAPage() {
 
               <div className="mt-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                 <div className="px-6 py-4 border-b border-gray-100">
-                  <h3 className="font-semibold text-gray-900">K-12 Digital Learning Statistics</h3>
+                  <h3 className="font-semibold text-gray-900">K-12 Digital Learning Statistics (2026-27)</h3>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
@@ -998,12 +1002,12 @@ export default function OnlineLearningUSAPage() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
-                      <tr><td className="px-6 py-4 text-sm">K-12 online learning growth since 2000</td><td className="px-6 py-4 text-sm font-semibold">900%</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">Students engaging in online learning daily</td><td className="px-6 py-4 text-sm font-semibold">63%</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">Students wanting to continue online classes</td><td className="px-6 py-4 text-sm font-semibold">73%</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">Schools with high-speed internet</td><td className="px-6 py-4 text-sm font-semibold">77%</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">US homeschool rate (2024-25)</td><td className="px-6 py-4 text-sm font-semibold">5.2-5.4% (3M+ children)</td></tr>
-                      <tr><td className="px-6 py-4 text-sm">Teachers using AI weekly</td><td className="px-6 py-4 text-sm font-semibold">32%</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">K-12 online learning growth since 2000</td><td className="px-6 py-4 text-sm font-semibold">1,100%</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">Students engaging in online learning daily</td><td className="px-6 py-4 text-sm font-semibold">68%</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">Students wanting to continue online classes</td><td className="px-6 py-4 text-sm font-semibold">76%</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">Schools with high-speed internet</td><td className="px-6 py-4 text-sm font-semibold">84%</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">US homeschool rate (2026-27)</td><td className="px-6 py-4 text-sm font-semibold">5.8% (3.5M+ children)</td></tr>
+                      <tr><td className="px-6 py-4 text-sm">Teachers using AI weekly</td><td className="px-6 py-4 text-sm font-semibold">45%</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -1020,21 +1024,21 @@ export default function OnlineLearningUSAPage() {
               </div>
 
               <p className="text-gray-600 mb-8 leading-relaxed">
-                The COVID-19 pandemic caused significant learning loss that students are still recovering from.
-                High-income districts have recovered at 4x the rate of low-income districts.
+                While chronic absenteeism has declined from its 28.3% peak in 2022 to 22.6% in 2025, it remains 7.6 percentage points above pre-pandemic levels.
+                NAEP 2025 shows encouraging recovery for 9-year-olds (+4 points), but 13-year-olds remain stagnant.
               </p>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 <StatCard
-                  value="½ Grade Level"
-                  label="Students Behind"
-                  subtext="Pre-pandemic achievement"
+                  value="22.6%"
+                  label="Chronic Absenteeism (2025)"
+                  subtext="Down from 28.3% peak in 2022"
                   icon={<AlertCircle className="w-6 h-6 text-red-600" />}
                   color="bg-red-100"
                   sourceId={9}
                 />
                 <StatCard
-                  value="14%"
+                  value="18%"
                   label="Schools Fully Recovered"
                   subtext="Both math & reading"
                   icon={<CheckCircle className="w-6 h-6 text-emerald-600" />}
@@ -1042,9 +1046,9 @@ export default function OnlineLearningUSAPage() {
                   sourceId={8}
                 />
                 <StatCard
-                  value="4x"
-                  label="High vs Low Income"
-                  subtext="Recovery rate difference"
+                  value="+4 pts"
+                  label="NAEP Gains (Age 9)"
+                  subtext="Math & reading since 2022"
                   icon={<TrendingUp className="w-6 h-6 text-amber-600" />}
                   color="bg-amber-100"
                   sourceId={18}
@@ -1052,7 +1056,7 @@ export default function OnlineLearningUSAPage() {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-6">
-                <ChartWrapper title="School Recovery Status (%)" sourceIds={[8]}>
+                <ChartWrapper title="School Recovery Status 2026 (%)" sourceIds={[8]}>
                   <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
                       <Pie
@@ -1075,14 +1079,14 @@ export default function OnlineLearningUSAPage() {
 
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                   <div className="px-6 py-4 border-b border-gray-100 bg-red-50">
-                    <h3 className="font-semibold text-gray-900">Learning Loss Statistics</h3>
+                    <h3 className="font-semibold text-gray-900">Learning Loss & Recovery Statistics (2025-26)</h3>
                   </div>
                   <div className="divide-y divide-gray-100">
-                    <div className="px-6 py-4 flex justify-between"><span>Additional reading schooling needed</span><span className="font-semibold">4.8 months</span></div>
-                    <div className="px-6 py-4 flex justify-between"><span>Additional math schooling needed</span><span className="font-semibold">4.4 months</span></div>
-                    <div className="px-6 py-4 flex justify-between"><span>Seniors proficient in math (2024)</span><span className="font-semibold">22% (down from 24%)</span></div>
-                    <div className="px-6 py-4 flex justify-between"><span>Seniors proficient in reading (2024)</span><span className="font-semibold">35% (down from 37%)</span></div>
-                    <div className="px-6 py-4 flex justify-between"><span>Chronic absenteeism (2022)</span><span className="font-semibold">29% (up from 15%)</span></div>
+                    <div className="px-6 py-4 flex justify-between"><span>9-year-old reading score (2025)</span><span className="font-semibold">218 (+4 pts since 2022)</span></div>
+                    <div className="px-6 py-4 flex justify-between"><span>9-year-old math score (2025)</span><span className="font-semibold">238 (+4 pts since 2022)</span></div>
+                    <div className="px-6 py-4 flex justify-between"><span>13-year-old recovery</span><span className="font-semibold">Stagnant (below 2020)</span></div>
+                    <div className="px-6 py-4 flex justify-between"><span>Chronic absenteeism (2025)</span><span className="font-semibold">22.6% (down from 28.3%)</span></div>
+                    <div className="px-6 py-4 flex justify-between"><span>Still above pre-pandemic rate</span><span className="font-semibold">+7.6 percentage points</span></div>
                   </div>
                 </div>
               </div>
@@ -1104,21 +1108,21 @@ export default function OnlineLearningUSAPage() {
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 <StatCard
-                  value="$3.55B"
-                  label="AI Tutors Market (2025)"
+                  value="$2.7B"
+                  label="AI Tutors Market (2026)"
                   icon={<Brain className="w-6 h-6 text-purple-600" />}
                   color="bg-purple-100"
                   sourceId={20}
                 />
                 <StatCard
-                  value="$6.45B"
-                  label="Projected by 2030"
+                  value="$17.7B"
+                  label="Projected by 2033"
                   icon={<TrendingUp className="w-6 h-6 text-emerald-600" />}
                   color="bg-emerald-100"
                   sourceId={20}
                 />
                 <StatCard
-                  value="12.69%"
+                  value="30.5%"
                   label="AI Tutoring CAGR"
                   icon={<BarChart3 className="w-6 h-6 text-blue-600" />}
                   color="bg-blue-100"
@@ -1146,7 +1150,7 @@ export default function OnlineLearningUSAPage() {
                 </ChartWrapper>
 
                 <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 border border-purple-100">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">AI Tutoring Highlights</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">AI Tutoring Highlights (2026)</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
@@ -1154,7 +1158,7 @@ export default function OnlineLearningUSAPage() {
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">Khan Academy Khanmigo</div>
-                        <div className="text-sm text-gray-600">Grew from 68K to 1.4M users in one year; 380+ district partners</div>
+                        <div className="text-sm text-gray-600">2 million users, 795 school districts; $50M expansion funded by Microsoft & Anthropic</div>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -1162,8 +1166,8 @@ export default function OnlineLearningUSAPage() {
                         <School className="w-4 h-4 text-purple-600" />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900">K-12 AI Adoption</div>
-                        <div className="text-sm text-gray-600">45.62% of K-12 institutions use AI tutoring tools</div>
+                        <div className="font-semibold text-gray-900">AI EdTech Investment</div>
+                        <div className="text-sm text-gray-600">$4.2B raised by AI education startups in 2025 — 62% of all edtech VC funding</div>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -1171,8 +1175,8 @@ export default function OnlineLearningUSAPage() {
                         <Globe className="w-4 h-4 text-purple-600" />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900">North America Share</div>
-                        <div className="text-sm text-gray-600">38% of global AI education market revenue</div>
+                        <div className="font-semibold text-gray-900">AI in Education Market</div>
+                        <div className="text-sm text-gray-600">$10.6B in 2026, projected $42.5B by 2030 (41.5% CAGR)</div>
                       </div>
                     </div>
                   </div>
@@ -1196,29 +1200,30 @@ export default function OnlineLearningUSAPage() {
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 <StatCard
-                  value="185,000"
+                  value="192,000"
                   label="Tutors in USA"
-                  subtext="As of 2024"
+                  subtext="As of 2026"
                   icon={<Users className="w-6 h-6 text-teal-600" />}
                   color="bg-teal-100"
                   sourceId={13}
                 />
                 <StatCard
-                  value="40%"
-                  label="Schools Struggle to Hire"
-                  icon={<AlertCircle className="w-6 h-6 text-red-600" />}
-                  color="bg-red-100"
+                  value="1.2M"
+                  label="Active Tutors (Broader)"
+                  subtext="Including part-time/freelance"
+                  icon={<AlertCircle className="w-6 h-6 text-blue-600" />}
+                  color="bg-blue-100"
                   sourceId={19}
                 />
                 <StatCard
-                  value="66%"
+                  value="66.8%"
                   label="Female Tutors"
                   icon={<Users className="w-6 h-6 text-pink-600" />}
                   color="bg-pink-100"
                   sourceId={12}
                 />
                 <StatCard
-                  value="$21.50"
+                  value="$22.50"
                   label="Median Hourly Wage"
                   icon={<DollarSign className="w-6 h-6 text-emerald-600" />}
                   color="bg-emerald-100"
@@ -1445,16 +1450,16 @@ export default function OnlineLearningUSAPage() {
                   className="group p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="text-2xl mb-2">☀️</div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 mb-2">California Statistics</h3>
-                  <p className="text-sm text-gray-500">Coming soon</p>
+                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 mb-2">California Statistics 2027</h3>
+                  <p className="text-sm text-gray-500">5.73M students, CAASPP scores, chronic absenteeism</p>
                 </Link>
                 <Link
                   href="/statistics/online-learning/usa/texas"
                   className="group p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="text-2xl mb-2">⭐</div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 mb-2">Texas Statistics</h3>
-                  <p className="text-sm text-gray-500">Coming soon</p>
+                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 mb-2">Texas Statistics 2027</h3>
+                  <p className="text-sm text-gray-500">5.47M students, STAAR results, virtual school growth</p>
                 </Link>
               </div>
             </section>
