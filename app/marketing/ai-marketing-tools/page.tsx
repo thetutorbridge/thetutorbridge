@@ -2255,32 +2255,6 @@ export default function AIMarketingToolsPage() {
         </div>
       </section>
 
-      {/* CTA Section - Premium Design */}
-      <section className="py-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%)' }}>
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
-
-        <div className="container mx-auto max-w-3xl text-center relative">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm mb-6" style={{ color: '#d1d5db' }}>
-            <Brain className="w-4 h-4 text-violet-300" />
-            Start your AI marketing journey
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Marketing with AI?</h2>
-          <p className="text-lg mb-8 max-w-xl mx-auto" style={{ color: '#d1d5db' }}>
-            Start with free <strong className="text-white">AI marketing tools</strong> like ChatGPT and Canva, then scale up as your needs grow.
-          </p>
-          <a
-            href="https://chat.openai.com"
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all shadow-xl hover:-translate-y-0.5"
-            style={{ backgroundColor: '#ffffff', color: '#4c1d95' }}
-          >
-            Start with ChatGPT Free
-            <ArrowRight className="w-5 h-5" />
-          </a>
-        </div>
-      </section>
-
       {/* Related Content - Premium Grid */}
       <section className="py-16 px-4 sm:px-6 bg-[#FAFBFC]">
         <div className="container mx-auto max-w-6xl">

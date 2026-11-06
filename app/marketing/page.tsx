@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2 } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2, Users, DollarSign, Eye } from 'lucide-react';
 
 const marketingResources = [
   {
@@ -55,6 +55,27 @@ const marketingResources = [
     href: "/marketing/best-rank-tracking-tool",
     icon: BarChart3,
     tags: ["Rank Tracking", "SERP Tools", "Comparison"]
+  },
+  {
+    title: "Best Competitive Intelligence Tools",
+    description: "18 best competitive intelligence tools for 2026. Track competitors with Crayon, Klue, Semrush, SimilarWeb & more CI software.",
+    href: "/marketing/best-competitive-intelligence-tools",
+    icon: Eye,
+    tags: ["Competitive Intelligence", "Market Research", "CI Tools"]
+  },
+  {
+    title: "Best PR & Outreach Tools",
+    description: "18 best PR & outreach tools for 2026. Cision, Muck Rack, Prowly, HARO & more media relations and outreach software.",
+    href: "/marketing/best-pr-outreach-tools",
+    icon: Users,
+    tags: ["PR Tools", "Media Outreach", "Public Relations"]
+  },
+  {
+    title: "Best Affiliate Marketing Tools",
+    description: "18 best affiliate marketing tools for 2026. ShareASale, Impact, CJ Affiliate, Rakuten & more affiliate management platforms.",
+    href: "/marketing/best-affiliate-marketing-tools",
+    icon: DollarSign,
+    tags: ["Affiliate Marketing", "Partner Programs", "Revenue"]
   }
 ];
 
