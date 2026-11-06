@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2, Users, DollarSign, Eye } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2, Users, DollarSign, Eye, FileText } from 'lucide-react';
 
 const marketingResources = [
   {
@@ -76,6 +76,13 @@ const marketingResources = [
     href: "/marketing/best-affiliate-marketing-tools",
     icon: DollarSign,
     tags: ["Affiliate Marketing", "Partner Programs", "Revenue"]
+  },
+  {
+    title: "Best AI Contract Generators",
+    description: "18 best AI contract generators for 2026. Juro, Ironclad, DocuSign CLM, PandaDoc & more contract automation platforms.",
+    href: "/marketing/best-ai-contract-generators",
+    icon: FileText,
+    tags: ["AI Contracts", "Legal Tech", "Contract Automation"]
   }
 ];
 
