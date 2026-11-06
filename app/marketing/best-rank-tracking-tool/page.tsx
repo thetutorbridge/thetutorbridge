@@ -1237,16 +1237,6 @@ export default function BestRankTrackingToolPage() {
                         </div>
                       </div>
                     </div>
-                    <a
-                      href={tool.website}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-colors shadow-lg shrink-0"
-                      style={{ backgroundColor: '#0f172a', color: '#ffffff' }}
-                    >
-                      Visit Website
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
                   </div>
                 </div>
 

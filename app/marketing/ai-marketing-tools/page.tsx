@@ -2014,7 +2014,13 @@ export default function AIMarketingToolsPage() {
                       </div>
                       <div>
                         <div className="flex items-center gap-3 flex-wrap mb-2">
-                          <h3 className="text-xl font-bold text-gray-900">{tool.name}</h3>
+                          {tool.name === 'Knock AI' || tool.name === 'LovedByAI' ? (
+                            <a href={tool.website} target="_blank" rel="nofollow noopener noreferrer" className="text-xl font-bold text-gray-900 hover:text-violet-600 transition-colors">
+                              {tool.name}
+                            </a>
+                          ) : (
+                            <h3 className="text-xl font-bold text-gray-900">{tool.name}</h3>
+                          )}
                           <span
                             className="px-2.5 py-1 text-xs font-semibold rounded-lg"
                             style={
@@ -2050,16 +2056,6 @@ export default function AIMarketingToolsPage() {
                         </div>
                       </div>
                     </div>
-                    <a
-                      href={tool.website}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-colors shadow-lg shrink-0"
-                      style={{ backgroundColor: '#4c1d95', color: '#ffffff' }}
-                    >
-                      Visit Website
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
                   </div>
                 </div>
 
