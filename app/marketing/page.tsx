@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2, Users, DollarSign, Eye, FileText } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2, Users, DollarSign, Eye, FileText, Settings } from 'lucide-react';
 
 const marketingResources = [
   {
@@ -83,6 +83,13 @@ const marketingResources = [
     href: "/marketing/best-ai-contract-generators",
     icon: FileText,
     tags: ["AI Contracts", "Legal Tech", "Contract Automation"]
+  },
+  {
+    title: "Best Technical SEO Tools",
+    description: "25 best technical SEO tools for 2026. Screaming Frog, Sitebulb, DeepCrawl, Botify & more site audit and crawler tools.",
+    href: "/marketing/best-technical-seo-tools",
+    icon: Settings,
+    tags: ["Technical SEO", "Site Audits", "Crawlers"]
   }
 ];
 
