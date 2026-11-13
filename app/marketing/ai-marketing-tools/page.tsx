@@ -70,6 +70,7 @@ const localLogoPaths: { [key: string]: string } = {
   "Notion AI": "/notion logo.png",
   "Zapier": "/zapier logo.png",
   "Knock AI": "/knock ai logo.png",
+  "Valley": "/JoinValley.png",
   "LovedByAI": "/lovedbyai logo.png",
   "Synthesia": "/synthesia logo.png",
   "Descript": "/descript logo.png",
@@ -109,6 +110,7 @@ const customLogoDomains: { [key: string]: string } = {
   "Writesonic": "writesonic.com",
   "Rytr": "rytr.me",
   "Knock AI": "knock-ai.com",
+  "Valley": "joinvalley.co",
   "LovedByAI": "lovedby.ai",
   "Synthesia": "synthesia.io",
   "Descript": "descript.com",
@@ -605,6 +607,41 @@ const aiMarketingTools = [
   },
   {
     id: 13,
+    name: "Valley",
+    category: "AI Outbound & Prospecting",
+    bestFor: "Signal-based AI outbound across email and LinkedIn",
+    pricing: "Paid",
+    pricingDetails: "7-day free trial / $149/mo (billed quarterly) / $199/mo (monthly)",
+    website: "https://www.joinvalley.co",
+    rating: 4.7,
+    difficulty: "Intermediate",
+    description: "Valley is an AI outbound platform that finds likely buyers and messages them in your voice across email and LinkedIn. Among tools for signal-based outbound, it reports 15-45% reply rates, against a category average of about 2%.",
+    keyFeatures: [
+      "Live buying signals",
+      "Plain-English buyer search",
+      "Slack alerts",
+      "ICP qualification",
+      "200+ source research",
+      "Your-voice messaging",
+      "Two-channel sending",
+      "Message approval"
+    ],
+    pros: [
+      "Email plus LinkedIn",
+      "You approve messages",
+      "Zero restrictions, 1,000+ accounts",
+      "Core platform unlocked"
+    ],
+    cons: [
+      "Low email volume",
+      "Not hands-off",
+      "Deep search credits",
+      "B2B only"
+    ],
+    useCases: ["Signal-based outbound", "B2B sales teams", "Lead gen agencies", "B2B founders"]
+  },
+  {
+    id: 14,
     name: "Mailchimp",
     category: "AI Email Marketing",
     bestFor: "AI email marketing optimization",
@@ -639,7 +676,7 @@ const aiMarketingTools = [
     useCases: ["Email marketing", "Small business marketing", "Newsletter automation", "E-commerce email"]
   },
   {
-    id: 14,
+    id: 15,
     name: "Hootsuite",
     category: "AI Social Media",
     bestFor: "AI social media management",
@@ -674,7 +711,7 @@ const aiMarketingTools = [
     useCases: ["Social media marketing", "Multi-platform management", "Social listening", "Team collaboration"]
   },
   {
-    id: 15,
+    id: 16,
     name: "Buffer",
     category: "AI Social Media",
     bestFor: "Simple AI social media scheduling",
@@ -709,7 +746,7 @@ const aiMarketingTools = [
     useCases: ["Small business social media", "Content scheduling", "Solopreneurs", "Simple social marketing"]
   },
   {
-    id: 16,
+    id: 17,
     name: "Sprout Social",
     category: "AI Social Media",
     bestFor: "Enterprise AI social media intelligence",
@@ -744,7 +781,7 @@ const aiMarketingTools = [
     useCases: ["Enterprise social media", "Brand monitoring", "Social analytics", "Customer care"]
   },
   {
-    id: 17,
+    id: 18,
     name: "Clearscope",
     category: "AI SEO Tools",
     bestFor: "Premium AI content optimization",
@@ -779,7 +816,7 @@ const aiMarketingTools = [
     useCases: ["Enterprise content", "SEO content teams", "Content agencies", "SaaS marketing"]
   },
   {
-    id: 18,
+    id: 19,
     name: "Frase",
     category: "AI SEO Tools",
     bestFor: "AI content briefs and writing",
@@ -814,7 +851,7 @@ const aiMarketingTools = [
     useCases: ["Content briefs", "AI content writing", "SEO research", "Content marketing"]
   },
   {
-    id: 19,
+    id: 20,
     name: "MarketMuse",
     category: "AI SEO Tools",
     bestFor: "AI content strategy and planning",
@@ -849,7 +886,7 @@ const aiMarketingTools = [
     useCases: ["Content strategy", "Enterprise SEO", "Topical authority", "Content audits"]
   },
   {
-    id: 20,
+    id: 21,
     name: "LovedByAI",
     category: "AI SEO Tools",
     bestFor: "GEO optimization for small businesses",
@@ -884,7 +921,7 @@ const aiMarketingTools = [
     useCases: ["GEO optimization", "AI search visibility", "Small business marketing", "Local business AI presence"]
   },
   {
-    id: 21,
+    id: 22,
     name: "Writesonic",
     category: "AI Copywriting",
     bestFor: "Affordable AI marketing content",
@@ -919,7 +956,7 @@ const aiMarketingTools = [
     useCases: ["Blog writing", "Ad copy", "Product descriptions", "Small business marketing"]
   },
   {
-    id: 22,
+    id: 23,
     name: "Rytr",
     category: "AI Copywriting",
     bestFor: "Budget AI marketing writing",
@@ -954,7 +991,7 @@ const aiMarketingTools = [
     useCases: ["Budget marketing", "Small businesses", "Basic copywriting", "Email drafts"]
   },
   {
-    id: 23,
+    id: 24,
     name: "Notion AI",
     category: "AI Productivity",
     bestFor: "AI marketing workflow management",
@@ -989,7 +1026,7 @@ const aiMarketingTools = [
     useCases: ["Marketing documentation", "Team collaboration", "Content planning", "Meeting notes"]
   },
   {
-    id: 24,
+    id: 25,
     name: "Zapier",
     category: "AI Marketing Automation",
     bestFor: "AI-powered marketing automation",
@@ -1024,7 +1061,7 @@ const aiMarketingTools = [
     useCases: ["Marketing automation", "Lead workflows", "Data sync", "Cross-platform automation"]
   },
   {
-    id: 25,
+    id: 26,
     name: "Synthesia",
     category: "AI Video Marketing",
     bestFor: "AI avatar video marketing",
@@ -1059,7 +1096,7 @@ const aiMarketingTools = [
     useCases: ["Marketing videos", "Product demos", "Training content", "Multilingual marketing"]
   },
   {
-    id: 26,
+    id: 27,
     name: "Descript",
     category: "AI Video Marketing",
     bestFor: "AI video and podcast editing",
@@ -1094,7 +1131,7 @@ const aiMarketingTools = [
     useCases: ["Video marketing", "Podcast editing", "Content repurposing", "Social video clips"]
   },
   {
-    id: 27,
+    id: 28,
     name: "Pictory",
     category: "AI Video Marketing",
     bestFor: "AI video creation from text",
@@ -1129,7 +1166,7 @@ const aiMarketingTools = [
     useCases: ["Blog to video", "Social media videos", "Content repurposing", "YouTube marketing"]
   },
   {
-    id: 28,
+    id: 29,
     name: "Lumen5",
     category: "AI Video Marketing",
     bestFor: "AI social video creation",
@@ -1164,7 +1201,7 @@ const aiMarketingTools = [
     useCases: ["Social media videos", "Content marketing", "Brand awareness", "Quick video creation"]
   },
   {
-    id: 29,
+    id: 30,
     name: "AdCreative.ai",
     category: "AI Advertising",
     bestFor: "AI ad creative generation",
@@ -1199,7 +1236,7 @@ const aiMarketingTools = [
     useCases: ["Facebook ads", "Display advertising", "Social media ads", "Performance marketing"]
   },
   {
-    id: 30,
+    id: 31,
     name: "Phrasee",
     category: "AI Advertising",
     bestFor: "Enterprise AI ad copy optimization",
@@ -1234,7 +1271,7 @@ const aiMarketingTools = [
     useCases: ["Enterprise email", "Push notifications", "Ad copy at scale", "CRM marketing"]
   },
   {
-    id: 31,
+    id: 32,
     name: "Persado",
     category: "AI Advertising",
     bestFor: "Enterprise AI marketing language",
@@ -1269,7 +1306,7 @@ const aiMarketingTools = [
     useCases: ["Enterprise marketing", "Financial services", "Retail marketing", "Cross-channel optimization"]
   },
   {
-    id: 32,
+    id: 33,
     name: "Albert AI",
     category: "AI Advertising",
     bestFor: "Autonomous AI ad management",
@@ -1304,7 +1341,7 @@ const aiMarketingTools = [
     useCases: ["Paid media management", "Multi-channel advertising", "Performance marketing", "Enterprise ads"]
   },
   {
-    id: 33,
+    id: 34,
     name: "Seventh Sense",
     category: "AI Email Marketing",
     bestFor: "AI email send time optimization",
@@ -1339,7 +1376,7 @@ const aiMarketingTools = [
     useCases: ["Email optimization", "HubSpot users", "Marketo users", "B2B email marketing"]
   },
   {
-    id: 34,
+    id: 35,
     name: "Brandwatch",
     category: "AI Marketing Analytics",
     bestFor: "AI social listening and analytics",
@@ -1374,7 +1411,7 @@ const aiMarketingTools = [
     useCases: ["Brand monitoring", "Consumer insights", "Competitive intelligence", "Crisis management"]
   },
   {
-    id: 35,
+    id: 36,
     name: "Sprinklr",
     category: "AI Marketing Analytics",
     bestFor: "Unified AI marketing platform",
@@ -2062,7 +2099,13 @@ export default function AIMarketingToolsPage() {
                 {/* Card Body */}
                 <div className="p-6 md:p-8">
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed mb-8">{tool.description}</p>
+                  <p className="text-gray-600 leading-relaxed mb-8">
+                    {tool.name === 'Valley' ? (
+                      <>Valley is an AI outbound platform that finds likely buyers and messages them in your voice across email and LinkedIn. Among <a href="https://www.joinvalley.co/blog/best-warm-outbound-signal-based-tools" target="_blank" rel="nofollow noopener noreferrer" className="text-violet-600 hover:text-violet-700 underline">tools for signal-based outbound</a>, it reports 15-45% reply rates, against a category average of about 2%.</>
+                    ) : (
+                      tool.description
+                    )}
+                  </p>
 
                   {/* Pricing Banner */}
                   <div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-xl p-4 mb-8 border border-violet-100">
