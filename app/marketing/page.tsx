@@ -4,7 +4,7 @@ import React from 'react';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import Link from 'next/link';
-import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2, Users, DollarSign, Eye, FileText, Settings } from 'lucide-react';
+import { Search, TrendingUp, BarChart3, Megaphone, Home, ArrowRight, Target, Brain, Sparkles, Cpu, Key, Link2, Users, DollarSign, Eye, FileText, Settings, Linkedin } from 'lucide-react';
 
 const marketingResources = [
   {
@@ -90,6 +90,13 @@ const marketingResources = [
     href: "/marketing/best-technical-seo-tools",
     icon: Settings,
     tags: ["Technical SEO", "Site Audits", "Crawlers"]
+  },
+  {
+    title: "Best LinkedIn Automation Tools",
+    description: "10 best LinkedIn automation tools for 2026. Dripify, Expandi, Phantombuster & more lead generation and outreach tools.",
+    href: "/marketing/linkedin-automation-tools",
+    icon: Linkedin,
+    tags: ["LinkedIn", "Automation", "Lead Generation"]
   }
 ];
 

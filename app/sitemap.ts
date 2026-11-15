@@ -394,6 +394,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/marketing/best-affiliate-marketing-tools',
     '/marketing/best-ai-contract-generators',
     '/marketing/best-technical-seo-tools',
+    '/marketing/linkedin-automation-tools',
     '/sales',
     '/college-acceptance-rates',
     '/cost-of-education-by-country',
