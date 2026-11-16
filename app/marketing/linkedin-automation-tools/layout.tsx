@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '10 Best LinkedIn Automation Tools for 2026 (Free & Paid) - Complete Guide',
-  description: 'Discover the best LinkedIn automation tools for 2026. Compare 10 LinkedIn automation tools for lead generation, outreach, prospecting & sales. Dripify, Expandi, Phantombuster & more reviewed.',
+  title: '11 Best LinkedIn Automation Tools for 2026 (Free & Paid) - Complete Guide',
+  description: 'Discover the best LinkedIn automation tools for 2026. Compare 11 LinkedIn automation tools for lead generation, outreach, prospecting & sales. Dripify, Expandi, Valley & more reviewed.',
   keywords: [
     'linkedin automation',
     'linkedin automation tools',
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     'linkedin sales navigator tools',
     'dripify',
     'expandi',
+    'valley ai outbound',
     'phantombuster linkedin',
     'waalaxy',
     'linkedin crm',
@@ -31,16 +32,16 @@ export const metadata: Metadata = {
     'safe linkedin automation'
   ],
   openGraph: {
-    title: '10 Best LinkedIn Automation Tools for 2026 - Complete Guide',
-    description: 'Compare 10 top LinkedIn automation tools with pricing, features, pros & cons. Find the perfect tools for LinkedIn lead generation, outreach, and sales automation.',
+    title: '11 Best LinkedIn Automation Tools for 2026 - Complete Guide',
+    description: 'Compare 11 top LinkedIn automation tools with pricing, features, pros & cons. Find the perfect tools for LinkedIn lead generation, outreach, and sales automation.',
     type: 'article',
     url: 'https://thetutorbridge.com/marketing/linkedin-automation-tools',
     siteName: 'The Tutor Bridge',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '10 Best LinkedIn Automation Tools for 2026 (Free & Paid)',
-    description: 'Compare 10 top LinkedIn automation tools - Dripify, Expandi, Phantombuster & more. Free & paid LinkedIn tools for lead generation reviewed.',
+    title: '11 Best LinkedIn Automation Tools for 2026 (Free & Paid)',
+    description: 'Compare 11 top LinkedIn automation tools - Dripify, Expandi, Valley & more. Free & paid LinkedIn tools for lead generation reviewed.',
   },
   alternates: {
     canonical: 'https://thetutorbridge.com/marketing/linkedin-automation-tools'

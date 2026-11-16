@@ -43,6 +43,7 @@ const getDomainFromUrl = (url: string): string => {
 const localLogoPaths: { [key: string]: string } = {
   "LinkedIn Sales Navigator": "/linkedin logo.png",
   "Dripify": "/dripify logo.png",
+  "Valley": "/JoinValley.png",
   "Expandi": "/expandi logo.png",
   "Phantombuster": "/phantombuster logo.png",
   "Waalaxy": "/waalaxy logo.png",
@@ -65,6 +66,7 @@ const customLogoDomains: { [key: string]: string } = {
   "Zopto": "zopto.com",
   "MeetAlfred": "meetalfred.com",
   "Skylead": "skylead.io",
+  "Valley": "joinvalley.co",
 };
 
 // Premium Logo component
@@ -114,7 +116,7 @@ const ToolLogo = ({ name, website, size = 40 }: { name: string; website: string;
   );
 };
 
-// LinkedIn Automation Tools Data - 10 Tools
+// LinkedIn Automation Tools Data - 11 Tools
 const linkedinTools = [
   {
     id: 1,
@@ -182,6 +184,37 @@ const linkedinTools = [
   },
   {
     id: 3,
+    name: "Valley",
+    category: "AI Outbound Platform",
+    bestFor: "Signal-based outreach across email and LinkedIn",
+    pricing: "Paid",
+    pricingDetails: "$149/mo (billed quarterly) / $199/mo (monthly)",
+    website: "https://joinvalley.co",
+    rating: 4.7,
+    difficulty: "Intermediate",
+    description: "Valley is an AI outbound platform that finds the people most likely to buy from you. It picks up people who viewed your profile, engaged with your posts or follow your competitors, qualifies them against your ICP, and researches each one across 200+ sources. Messages are written in the sender's voice and go out across email and LinkedIn, and you approve every one or let them flow. It suits teams comparing warm outbound tools, where finding the right person and writing the message happen in one place.",
+    keyFeatures: [
+      "Buying signals: profile viewers, post engagers, competitor followers",
+      "Plain-English buyer search",
+      "ICP qualification that filters out low-fit leads",
+      "Research across 200+ sources per prospect",
+      "Messages written in your own voice",
+      "Email and LinkedIn from one system"
+    ],
+    pros: [
+      "15-45% reply rates against a category average of about 2%",
+      "Zero restrictions across 1,000+ accounts",
+      "Approve every message or let them flow",
+      "Everything in the core platform unlocked on every plan"
+    ],
+    cons: [
+      "Low volume by design, about 30 emails a day per seat",
+      "No mailbox warm-up or managed inboxes"
+    ],
+    useCases: ["Founders", "B2B sales teams", "Lead gen agencies", "Warm outbound"]
+  },
+  {
+    id: 4,
     name: "Expandi",
     category: "Cloud-Based Automation",
     bestFor: "Safe LinkedIn automation with smart limits",
@@ -213,7 +246,7 @@ const linkedinTools = [
     useCases: ["Safe outreach at scale", "Omnichannel campaigns", "Event-based outreach", "Agency client management"]
   },
   {
-    id: 4,
+    id: 5,
     name: "Phantombuster",
     category: "Multi-Platform Automation",
     bestFor: "LinkedIn scraping and multi-platform automation",
@@ -245,7 +278,7 @@ const linkedinTools = [
     useCases: ["Data extraction", "Multi-platform automation", "Lead list building", "Growth hacking"]
   },
   {
-    id: 5,
+    id: 6,
     name: "Waalaxy",
     category: "Cloud-Based Automation",
     bestFor: "LinkedIn + Email prospecting combined",
@@ -277,7 +310,7 @@ const linkedinTools = [
     useCases: ["SMB prospecting", "Multichannel outreach", "Lead generation", "Startup sales"]
   },
   {
-    id: 6,
+    id: 7,
     name: "Octopus CRM",
     category: "Browser Extension",
     bestFor: "Simple LinkedIn automation with CRM features",
@@ -309,7 +342,7 @@ const linkedinTools = [
     useCases: ["Individual prospecting", "Freelancer outreach", "Small business sales", "Personal branding"]
   },
   {
-    id: 7,
+    id: 8,
     name: "Dux-Soup",
     category: "Browser Extension",
     bestFor: "Veteran LinkedIn automation with proven track record",
@@ -341,7 +374,7 @@ const linkedinTools = [
     useCases: ["Lead generation", "CRM enrichment", "Sales prospecting", "Profile data export"]
   },
   {
-    id: 8,
+    id: 9,
     name: "Zopto",
     category: "Cloud-Based Automation",
     bestFor: "Enterprise LinkedIn automation with advanced filtering",
@@ -373,7 +406,7 @@ const linkedinTools = [
     useCases: ["Enterprise sales teams", "Account-based marketing", "Agency client campaigns", "High-volume outreach"]
   },
   {
-    id: 9,
+    id: 10,
     name: "MeetAlfred",
     category: "Multi-Channel Automation",
     bestFor: "LinkedIn, Email, and Twitter combined automation",
@@ -405,7 +438,7 @@ const linkedinTools = [
     useCases: ["Multi-channel outreach", "Social selling", "Recruitment", "Event promotion"]
   },
   {
-    id: 10,
+    id: 11,
     name: "Skylead",
     category: "Cloud-Based Automation",
     bestFor: "Smart LinkedIn + Email sequences with if/else logic",
@@ -473,7 +506,8 @@ const categories = [
   "Cloud-Based Automation",
   "Browser Extension",
   "Multi-Channel Automation",
-  "Multi-Platform Automation"
+  "Multi-Platform Automation",
+  "AI Outbound Platform"
 ];
 
 // Use case categories
@@ -482,7 +516,7 @@ const useCaseCategories = [
     title: "Best for Sales Teams",
     icon: Target,
     description: "Tools for B2B sales outreach and lead generation at scale.",
-    tools: ["LinkedIn Sales Navigator", "Dripify", "Expandi", "Zopto"]
+    tools: ["LinkedIn Sales Navigator", "Dripify", "Valley", "Expandi"]
   },
   {
     title: "Best for Recruiters",
@@ -506,7 +540,7 @@ const useCaseCategories = [
     title: "Best for Multi-Channel",
     icon: Send,
     description: "Tools that combine LinkedIn with email and other platforms.",
-    tools: ["MeetAlfred", "Expandi", "Skylead", "Waalaxy"]
+    tools: ["Valley", "MeetAlfred", "Expandi", "Skylead"]
   },
   {
     title: "Best for Data Extraction",
@@ -533,8 +567,8 @@ export default function LinkedInAutomationToolsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "10 Best LinkedIn Automation Tools for 2026 (Free & Paid) - Complete Guide",
-            "description": "Comprehensive guide to the best LinkedIn automation tools in 2026. Compare features, pricing, pros & cons of 10 top tools for LinkedIn lead generation, outreach, and sales automation.",
+            "headline": "11 Best LinkedIn Automation Tools for 2026 (Free & Paid) - Complete Guide",
+            "description": "Comprehensive guide to the best LinkedIn automation tools in 2026. Compare features, pricing, pros & cons of 11 top tools for LinkedIn lead generation, outreach, and sales automation.",
             "author": {
               "@type": "Organization",
               "name": "The Tutor Bridge"
@@ -647,19 +681,19 @@ export default function LinkedInAutomationToolsPage() {
             </div>
 
             <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed mb-10">
-              10 expert-reviewed LinkedIn automation tools to supercharge your lead generation.
+              11 expert-reviewed LinkedIn automation tools to supercharge your lead generation.
               From cloud-based platforms to browser extensions—find the perfect tools for LinkedIn outreach.
             </p>
 
             {/* Stats row */}
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               <div className="text-center">
-                <div className="text-4xl font-bold text-white">10</div>
+                <div className="text-4xl font-bold text-white">11</div>
                 <div className="text-sm text-blue-200 mt-1">Tools Reviewed</div>
               </div>
               <div className="h-10 w-px bg-white/20 hidden sm:block" />
               <div className="text-center">
-                <div className="text-4xl font-bold text-white">5</div>
+                <div className="text-4xl font-bold text-white">6</div>
                 <div className="text-sm text-blue-200 mt-1">Categories</div>
               </div>
               <div className="h-10 w-px bg-white/20 hidden sm:block" />
@@ -699,7 +733,7 @@ export default function LinkedInAutomationToolsPage() {
               <ArrowRight className="absolute top-5 right-5 w-4 h-4 text-gray-300 group-hover:text-gray-500 group-hover:translate-x-1 transition-all" />
             </a>
             <a
-              href="#tool-3"
+              href="#tool-4"
               className="group relative bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 mb-3">
@@ -710,7 +744,7 @@ export default function LinkedInAutomationToolsPage() {
               <ArrowRight className="absolute top-5 right-5 w-4 h-4 text-gray-300 group-hover:text-gray-500 group-hover:translate-x-1 transition-all" />
             </a>
             <a
-              href="#tool-6"
+              href="#tool-7"
               className="group relative bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-lg hover:border-amber-200 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-amber-50 text-amber-600 mb-3">
@@ -839,7 +873,7 @@ export default function LinkedInAutomationToolsPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Complete LinkedIn Automation Tools Comparison</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">Compare all 10 <strong>LinkedIn automation tools</strong> at a glance—pricing, ratings, and categories.</p>
+            <p className="text-gray-500 max-w-xl mx-auto">Compare all 11 <strong>LinkedIn automation tools</strong> at a glance—pricing, ratings, and categories.</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
@@ -987,7 +1021,11 @@ export default function LinkedInAutomationToolsPage() {
                 <div className="p-6 md:p-8">
                   {/* Description */}
                   <p className="text-gray-600 leading-relaxed mb-8">
-                    {tool.description}
+                    {tool.name === 'Valley' ? (
+                      <>Valley is an AI outbound platform that finds the people most likely to buy from you. It picks up people who viewed your profile, engaged with your posts or follow your competitors, qualifies them against your ICP, and researches each one across 200+ sources. Messages are written in the sender's voice and go out across email and LinkedIn, and you approve every one or let them flow. It suits teams comparing <a href="https://www.joinvalley.co/blog/best-warm-outbound-signal-based-tools" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">warm outbound tools</a>, where finding the right person and writing the message happen in one place.</>
+                    ) : (
+                      tool.description
+                    )}
                   </p>
 
                   {/* Pricing Banner */}
